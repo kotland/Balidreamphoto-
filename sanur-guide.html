@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+
+<h1><em>Санур</em></h1>
+<p class="sub">Полный гайд по району · @balidreamphoto</p>
+
+<div class="tag">🏖 Спокойный пляж</div>
+<div class="tag">🚲 Велосипеды</div>
+<div class="tag">👨‍👩‍👧 Семьи</div>
+<div class="tag">🐠 Снорклинг</div>
+<div class="tag">🌅 Восходы</div>
+<div class="tag">🍜 Рестораны</div>
+<div class="tag">🤿 Дайвинг</div>
+
+<div class="vibe">«Велосипед вдоль океана, завтрак с видом на Нуса Пениду, купание без волн. Санур — Бали для тех, кто уже наелся хаоса.»</div>
+
+<p>Санур — восточное побережье, спокойная вода, длинная набережная, семейная атмосфера. Тут живут пенсионеры-экспаты, семьи с детьми и дайверы. Риф защищает от волн — можно купаться! Рядом с аэропортом, паром на Нуса Пениду. Средний возраст 35-55.</p>
+
+<h2>☕ Кофейни</h2>
+
+<div class="place">
+<div class="place-name">Genius Cafe Sanur</div>
+<div class="place-desc">Specialty кофе, хороший WiFi, тихая атмосфера для работы.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · Кофе 35-55K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Dusk Blue Cafe</div>
+<div class="place-desc">Стильная кофейня с авторскими напитками. Pour-over, cold brew.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · Кофе 35-50K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Sanur Brewing Company</div>
+<div class="place-desc">Кофейня + мини-пивоварня. Завтраки, бранч, хороший эспрессо.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · Кофе 30-50K</div>
+</div>
+
+<h2>💻 Коворкинги</h2>
+<p>Выделенных коворкингов в Сануре мало. Работают из кафе (Genius, Dusk Blue — хороший WiFi). Для серьёзного коворкинга: <strong>Чангу</strong> (1 час) или <strong>Денпасар</strong> (20 мин).</p>
+
+<h2>🍜 Рестораны</h2>
+
+<h3>Бюджетно (25-50K)</h3>
+<div class="place">
+<div class="place-name">Warung Mak Beng</div>
+<div class="place-desc">Легенда Санура с 1941 года! Только одно блюдо — жареная рыба с рисом. Очередь стоит того.</div>
+<div class="place-meta">📍 Jl. Hang Tuah · 35K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Baby Monkeys</div>
+<div class="place-desc">Местная кухня: наси чампур, сото аям. Дёшево, вкусно, семейная атмосфера.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 25-45K</div>
+</div>
+
+<h3>Средне (80-180K)</h3>
+<div class="place">
+<div class="place-name">Three Monkeys Sanur</div>
+<div class="place-desc">Красивый ресторан в тропическом саду. Западная и азиатская кухня.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 80-170K</div>
+</div>
+<div class="place">
+<div class="place-name">Massimo</div>
+<div class="place-desc">Лучшая итальянская кухня в Сануре. Паста, пицца из дровяной печи, джелато.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 90-200K</div>
+</div>
+
+<h3>Fine dining (200K+)</h3>
+<div class="place">
+<div class="place-name">Kayumanis Sanur</div>
+<div class="place-desc">Fine dining в тропическом саду. Индонезийская кухня высокого уровня.</div>
+<div class="place-meta">📍 Jl. Pungutan · 200-500K</div>
+</div>
+
+<h2>🥗 Вегетарианские заведения</h2>
+
+<div class="place">
+<div class="place-name">Soul on the Beach</div>
+<div class="place-desc">Вегетарианское кафе на набережной. Боулы, салаты, свежевыжатые соки.</div>
+<div class="place-meta">📍 Beachfront · 60-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Organik Sanur</div>
+<div class="place-desc">Органические блюда, вегетарианское меню. Смузи-боулы, тосты.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 55-110K</div>
+</div>
+
+<h2>🌱 Веганские заведения</h2>
+
+<div class="place">
+<div class="place-name">Nourish Sanur</div>
+<div class="place-desc">Plant-based кафе: веганские боулы, десерты из кешью, соки.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 55-100K</div>
+</div>
+<div class="place">
+<div class="place-name">The Greenhouse</div>
+<div class="place-desc">Веганское меню + органический магазинчик. Raw десерты.</div>
+<div class="place-meta">📍 Jl. Bypass Ngurah Rai · 50-100K</div>
+</div>
+
+<h2>🏄 Сёрфинг</h2>
+
+<div class="place">
+<div class="place-name">Sanur Reef</div>
+<div class="place-desc">Рифовый спот для среднего уровня. Правый брейк, нужна лодка до спота.</div>
+<div class="place-meta">📍 Offshore · Лодка 100K</div>
+</div>
+<div class="place">
+<div class="place-name">Hyatt Reef</div>
+<div class="place-desc">Ещё один рифовый спот. Средний уровень. Волны меньше чем в Чангу.</div>
+</div>
+<p>Сёрфинг в Сануре — не главное. Волны слабые, рифовые. Для хорошего сёрфа: <strong>Чангу</strong> (1 час), <strong>Керамас</strong> (30 мин).</p>
+
+<h2>🤿 Дайвинг</h2>
+
+<div class="place">
+<div class="place-name">Crystal Divers</div>
+<div class="place-desc">Один из лучших дайв-центров Бали. PADI курсы, трипы на Nusa Penida и Tulamben.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · Open Water от 6M</div>
+</div>
+<div class="place">
+<div class="place-name">Blue Season Bali</div>
+<div class="place-desc">Профессиональный центр: курсы, дей-трипы, сафари. Пикап от отеля.</div>
+<div class="place-meta">📍 Jl. Danau Poso · Дей-трип от 1.5M</div>
+</div>
+<p>Санур — главная база дайверов на Бали. Близко к пристани на Nusa Penida, удобно для дей-трипов.</p>
+
+<h2>🫁 Фридайвинг</h2>
+
+<div class="place">
+<div class="place-name">Bali Freediving</div>
+<div class="place-desc">Курсы SSI в Сануре. Pool sessions + open water на Nusa Penida.</div>
+<div class="place-meta">📍 Sanur · Курс от 4.5M</div>
+</div>
+
+<h2>🐠 Снорклинг</h2>
+
+<div class="place">
+<div class="place-name">Sanur Reef (с берега)</div>
+<div class="place-desc">Прямо с пляжа! Риф в 50-100м от берега. Рыбки, кораллы. Маска + ласты — всё.</div>
+<div class="place-meta">📍 Любой пляж Санура · Бесплатно</div>
+</div>
+<div class="place">
+<div class="place-name">Serangan Island</div>
+<div class="place-desc">Turtle Island — черепахи + рифы. 15 мин на лодке от Санура.</div>
+<div class="place-meta">📍 Лодка от 200K</div>
+</div>
+
+<h2>🏖 Пляжи без волн</h2>
+
+<div class="place">
+<div class="place-name">Sanur Beach</div>
+<div class="place-desc">ВСЕ пляжи Санура спокойные! Риф защищает от волн. Идеально для детей и купания.</div>
+<div class="place-meta">📍 Вся набережная · 4 км пляжей</div>
+</div>
+<div class="place">
+<div class="place-name">Mertasari Beach</div>
+<div class="place-desc">Южная часть. Чуть шире, тише. Кайтсёрфинг в сезон ветров.</div>
+</div>
+<div class="place">
+<div class="place-name">Sindhu Beach</div>
+<div class="place-desc">Центральный пляж. Набережная, кафе, лодки на Пениду. Красивый восход.</div>
+</div>
+
+<h2>🧘 Йога и велнес</h2>
+
+<div class="place">
+<div class="place-name">Power of Now Oasis</div>
+<div class="place-desc">Йога-студия на пляже. Утренние классы с видом на океан. Медитации.</div>
+<div class="place-meta">📍 Beachfront · 120-150K/занятие</div>
+</div>
+<div class="place">
+<div class="place-name">Jamu Spa</div>
+<div class="place-desc">Традиционный балийский спа. Массаж, цветочные ванны, скрабы.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · Массаж от 150K</div>
+</div>
+
+<h2>🏋️ Спортзалы</h2>
+
+<div class="place">
+<div class="place-name">Taman Gym Sanur</div>
+<div class="place-desc">Основной зал. Тренажёры, свободные веса, кардио.</div>
+<div class="place-meta">📍 Jl. Bypass Ngurah Rai · 60K/день · 500K/мес</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Fitness Sanur</div>
+<div class="place-desc">Небольшой зал с базовым оборудованием.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 50K/день · 400K/мес</div>
+</div>
+
+<h2>🌅 Закаты / Восходы</h2>
+
+<table>
+<tr><th>Место</th><th>Тип</th><th>Вайб</th></tr>
+<tr><td><strong>Sindhu Beach</strong></td><td>🌄 Восход</td><td>Лучший восход Бали — Нуса Пенида на горизонте</td></tr>
+<tr><td><strong>Набережная</strong></td><td>🌄 Восход</td><td>Велосипед на рассвете вдоль пляжа</td></tr>
+<tr><td><strong>Sanur Beach</strong></td><td>🌄 Восход</td><td>Рыбацкие лодки в утреннем свете</td></tr>
+</table>
+<p>Санур — восточное побережье, тут <strong>восходы, не закаты</strong>. Для закатов: ехать в Чангу/Семиньяк (1 час).</p>
+
+<h2>🌋 Вулканы и горы рядом</h2>
+<div class="place">
+<div class="place-name">Гунунг Батур</div>
+<div class="place-desc">1.5-2 часа от Санура. Восхождение на рассвете.</div>
+<div class="place-meta">📍 Кинтамани · от 400K</div>
+</div>
+<div class="place">
+<div class="place-name">Гунунг Агунг</div>
+<div class="place-desc">2-2.5 часа от Санура.</div>
+<div class="place-meta">📍 Карангасем · от 800K</div>
+</div>
+
+<h2>🌾 Рисовые террасы рядом</h2>
+<p>В Сануре нет рисовых террас — городская зона. Ближайшие: <strong>Tegallalang</strong> (Убуд, 1.5 часа), <strong>Jatiluwih</strong> (2 часа).</p>
+
+<h2>⛳ Гольф</h2>
+<div class="place">
+<div class="place-name">Bali Beach Golf Course</div>
+<div class="place-desc">9 лунок прямо в Сануре! У океана, доступные цены. Для отдыха.</div>
+<div class="place-meta">📍 Grand Inna Bali Beach · от 700K/раунд</div>
+</div>
+
+<h2>🍓 Фермы</h2>
+<p>В Сануре нет ферм — город у побережья. Ближайшие: <strong>Bali Pulina</strong> (Убуд, 1.5 часа) — кофе, <strong>Strawberry Farm</strong> (Бедугул, 2 часа).</p>
+
+<h2>🍉 Фруктовые рынки</h2>
+<div class="place">
+<div class="place-name">Pasar Sindhu</div>
+<div class="place-desc">Утренний рынок + ночной рынок (Night Market). Фрукты, уличная еда, атмосфера.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · Утро 6-10 / Вечер 17-22</div>
+</div>
+
+<h2>🛍 Шоппинг</h2>
+<div class="place">
+<div class="place-name">Jl. Danau Tamblingan</div>
+<div class="place-desc">Главная улица: бутики, галереи, сувенирные. Расслабленный шоппинг.</div>
+</div>
+<div class="place">
+<div class="place-name">Hardy's Supermarket</div>
+<div class="place-desc">Большой универмаг: одежда, сувениры, продукты — всё в одном.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan</div>
+</div>
+
+<h2>🛒 Продуктовые магазины</h2>
+<div class="place">
+<div class="place-name">Hardy's Sanur</div>
+<div class="place-desc">Большой супермаркет. Местные и импортные продукты, бытовая химия.</div>
+</div>
+<div class="place">
+<div class="place-name">Pepito Market</div>
+<div class="place-desc">Импортные продукты: сыры, вино, европейские бренды.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan</div>
+</div>
+
+<h2>👕 Прачечные</h2>
+<div class="place">
+<div class="place-name">Sanur Laundry</div>
+<div class="place-desc">Стирка + глажка, пикап и доставка. Быстро и дёшево.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · от 7K/кг</div>
+</div>
+
+<h2>🎉 Клубы и ночная жизнь</h2>
+<p>Санур — тихий район. Клубов нет. Бары закрываются к 23:00. Есть:</p>
+<div class="place">
+<div class="place-name">Casablanca Sanur</div>
+<div class="place-desc">Бар с живой музыкой. Коктейли, расслабленная атмосфера.</div>
+</div>
+<div class="place">
+<div class="place-name">Lilla Pantai</div>
+<div class="place-desc">Пляжный бар на набережной. Пиво, закат (ну почти), дружелюбная публика.</div>
+</div>
+<p>Для ночной жизни: <strong>Семиньяк</strong> (30 мин) или <strong>Кута</strong> (20 мин).</p>
+
+<h2>🏥 Клиники и аптеки</h2>
+
+<div class="place">
+<div class="place-name">Kasih Ibu Hospital</div>
+<div class="place-desc">Полноценная больница с ER, хирургия, педиатрия. Один из лучших госпиталей на Бали.</div>
+<div class="place-meta">📍 Jl. Teuku Umar · 15 мин от центра</div>
+</div>
+<div class="place">
+<div class="place-name">Sanur Clinic</div>
+<div class="place-desc">Частная клиника: терапевт, анализы. Англоговорящий персонал.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · Приём от 200K</div>
+</div>
+
+<h2>🛕 Храмы</h2>
+
+<div class="place">
+<div class="place-name">Pura Blanjong</div>
+<div class="place-desc">Древний храм с каменной стелой IX века — старейшая надпись на Бали.</div>
+<div class="place-meta">📍 Jl. Danau Poso · Бесплатно</div>
+</div>
+<div class="place">
+<div class="place-name">Le Mayeur Museum</div>
+<div class="place-desc">Дом-музей бельгийского художника на пляже. Живопись, сад, история.</div>
+<div class="place-meta">📍 Beachfront · Вход 50K</div>
+</div>
+
+<h2>🇷🇺 Русское комьюнити</h2>
+<p>Русских в Сануре мало — район больше для австралийцев и пенсионеров. Русскоговорящие есть, но отдельного комьюнити нет. Чаты: «Бали Чат», «Бали Русские» — общие.</p>
+
+<h2>🎒 Детские сады и школы</h2>
+
+<div class="place">
+<div class="place-name">Sanur Independent School</div>
+<div class="place-desc">Международная школа. Cambridge program, маленькие классы.</div>
+<div class="place-meta">📍 Sanur · от $4000/год</div>
+</div>
+<div class="place">
+<div class="place-name">Taman Rama School</div>
+<div class="place-desc">Балийская школа с международной аккредитацией. Доступнее.</div>
+<div class="place-meta">📍 Jl. Bypass · от $2000/год</div>
+</div>
+
+<h2>📸 Фото-локации</h2>
+<p>• Восход на Sindhu Beach — рыбацкие лодки<br>
+• Набережная — велосипеды, пальмы<br>
+• Le Mayeur Museum — колониальная архитектура<br>
+• Pasar Sindhu Night Market — уличная еда<br>
+• Вид на Нуса Пениду с пляжа</p>
+
+<h2>🏠 Жильё</h2>
+
+<table>
+<tr><th>Тип</th><th>Цена/мес</th><th>Где искать</th></tr>
+<tr><td>Комната / гестхаус</td><td>$200-350</td><td>Booking, на месте</td></tr>
+<tr><td>Студия / 1BR</td><td>$350-600</td><td>Facebook groups</td></tr>
+<tr><td>Вилла с бассейном</td><td>$600-1200</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Luxury вилла</td><td>$1500-3000</td><td>Агенты</td></tr>
+</table>
+<p>Санур дешевле Семиньяка и Чангу. Хорошая инфраструктура, тихо, идеально для семей.</p>
+
+<h2>🛵 Транспорт</h2>
+<p>• <strong>Велосипед:</strong> лучший транспорт в Сануре! Набережная плоская. Аренда от 50K/день<br>
+• <strong>Скутер:</strong> 600K-800K/мес<br>
+• <strong>Grab/Gojek:</strong> от 10K, хорошо работает<br>
+• <strong>До аэропорта:</strong> 25-35 мин, 80-150K<br>
+• <strong>Паром на Nusa Penida:</strong> пристань прямо в Сануре, 200K, 30 мин</p>
+
+<div class="divider"></div>
+
+<div class="secret">
+<div class="secret-title">🤫 Секрет района</div>
+<div class="secret-text">Pasar Sindhu Night Market — лучший ночной рынок с уличной едой на юге Бали. Сатай за 15K, мартабак за 20K, свежий сок за 10K. Атмосфера настоящей Индонезии — без туристических наценок.</div>
+</div>
+
+<div class="warn">
+<div class="warn-title">⚠️ Минусы</div>
+<div class="warn-text">Скучно для молодёжи. Мало ночной жизни. Пляж мутноват в прилив. «Бабушкин район» — средний возраст экспатов 50+. WiFi слабее чем в Чангу. Мало коворкингов.</div>
+</div>
+
+<div class="divider"></div>
+
+<h2>💰 Бюджет на месяц</h2>
+
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Минимум</div>
+<div class="budget-price">$450</div>
+<div class="budget-unit">в месяц</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Комфортно</div>
+<div class="budget-price">$1000</div>
+<div class="budget-unit">в месяц</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$2500</div>
+<div class="budget-unit">в месяц</div>
+</div>
+</div>
+
+<div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
+
+</body>
+</html>

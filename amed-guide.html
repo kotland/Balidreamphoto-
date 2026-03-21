@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+
+<h1><em>Амед</em></h1>
+<p class="sub">Полный гайд по району · @balidreamphoto</p>
+
+<div class="tag">🤿 Дайвинг</div>
+<div class="tag">🫁 Фридайвинг</div>
+<div class="tag">🐠 Снорклинг</div>
+<div class="tag">🌋 Вулканы</div>
+<div class="tag">🏖 Пляжи</div>
+<div class="tag">🧘 Йога</div>
+<div class="tag">🌅 Восходы</div>
+
+<div class="vibe">«Чёрный вулканический песок, Агунг на горизонте, нырнул с берега — и ты среди кораллов. Бали без Instagram-фильтров.»</div>
+
+<p>Амед — рыбацкая деревня на северо-востоке Бали. Столица дайвинга и фридайвинга на острове. Чёрные пляжи, спокойная вода, коралловые рифы прямо с берега, вид на Агунг. Тут живут дайверы, фридайверы и те, кто устал от южного хаоса. Минимальная инфраструктура, максимальная красота. Средний возраст 25-40.</p>
+
+<h2>☕ Кофейни</h2>
+
+<div class="place">
+<div class="place-name">Wawa Wewe II Cafe</div>
+<div class="place-desc">Кафе с видом на бухту и Агунг. Балийский кофе, простой завтрак. Атмосфера!</div>
+<div class="place-meta">📍 Jl. Raya Amed · Кофе 20-35K · WiFi ⭐⭐</div>
+</div>
+
+<div class="place">
+<div class="place-name">Gusto Cafe</div>
+<div class="place-desc">Лучший кофе в Амеде. Итальянский эспрессо, свежая выпечка, тихий сад.</div>
+<div class="place-meta">📍 Bunutan · Кофе 30-50K · WiFi ⭐⭐⭐</div>
+</div>
+
+<div class="place">
+<div class="place-name">Blue Earth Village Cafe</div>
+<div class="place-desc">Кафе при эко-отеле. Organic кофе, здоровые завтраки, вид на океан.</div>
+<div class="place-meta">📍 Lean · Кофе 25-40K · WiFi ⭐⭐⭐</div>
+</div>
+
+<h2>💻 Коворкинги</h2>
+<p>В Амеде нет коворкингов. WiFi в кафе и гестхаусах — 5-20 Mbps (нестабильно). Для серьёзной работы: <strong>Чангу</strong> (3 часа) или <strong>Убуд</strong> (2 часа). Многие remote workers берут Starlink или 4G-роутер.</p>
+
+<h2>🍜 Рестораны</h2>
+
+<h3>Бюджетно (25-50K)</h3>
+<div class="place">
+<div class="place-name">Warung Enak</div>
+<div class="place-desc">Домашняя индонезийская еда. Наси чампур, ми горенг. Вид на бухту.</div>
+<div class="place-meta">📍 Amed Beach · 20-40K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Ombak</div>
+<div class="place-desc">Варунг на берегу. Свежая рыба на гриле прямо из лодок рыбаков.</div>
+<div class="place-meta">📍 Jemeluk · 25-50K</div>
+</div>
+
+<h3>Средне (70-150K)</h3>
+<div class="place">
+<div class="place-name">Galanga Restaurant</div>
+<div class="place-desc">Тайская и индонезийская кухня. Карри, пад тай, свежие морепродукты.</div>
+<div class="place-meta">📍 Bunutan · 60-130K</div>
+</div>
+<div class="place">
+<div class="place-name">The Grill Amed</div>
+<div class="place-desc">Морепродукты на гриле: лобстер, барракуда, кальмары. Выбираешь у прилавка.</div>
+<div class="place-meta">📍 Jl. Raya Amed · 70-180K</div>
+</div>
+
+<h3>Fine dining (150K+)</h3>
+<div class="place">
+<div class="place-name">Blue Earth Village Restaurant</div>
+<div class="place-desc">Органическая кухня, дегустационные сеты, вид на океан. Лучший ресторан Амеда.</div>
+<div class="place-meta">📍 Lean · 150-300K</div>
+</div>
+
+<h2>🥗 Вегетарианские заведения</h2>
+
+<div class="place">
+<div class="place-name">Smiling Buddha</div>
+<div class="place-desc">Вегетарианское кафе с большим меню: тофу-карри, темпе, свежие соки.</div>
+<div class="place-meta">📍 Jemeluk · 50-100K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Pantai</div>
+<div class="place-desc">Варунг с хорошими вегетарианскими опциями: гадо-гадо, овощное карри.</div>
+<div class="place-meta">📍 Amed Beach · 35-70K</div>
+</div>
+
+<h2>🌱 Веганские заведения</h2>
+
+<div class="place">
+<div class="place-name">Blue Earth Village</div>
+<div class="place-desc">Много веганских опций: боулы, салаты, raw десерты. Organic ингредиенты.</div>
+<div class="place-meta">📍 Lean · 55-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Apneista Cafe</div>
+<div class="place-desc">Кафе при школе фридайвинга. Здоровая еда, веганские боулы, смузи.</div>
+<div class="place-meta">📍 Jemeluk · 50-100K</div>
+</div>
+
+<h2>🏄 Сёрфинг</h2>
+<p>В Амеде нет сёрфинга — спокойная вода, защищённые бухты. Ближайший: <strong>Керамас</strong> (1.5 часа) — мощные волны, продвинутый уровень. <strong>Чангу</strong> (3 часа) — для всех уровней.</p>
+
+<h2>🤿 Дайвинг</h2>
+
+<div class="place">
+<div class="place-name">USS Liberty Shipwreck (Туламбен)</div>
+<div class="place-desc">Затонувший корабль WWII — лучший дайв-сайт Бали! Вход с берега, глубина 5-30м. Кораллы, рыбы, черепахи.</div>
+<div class="place-meta">📍 Tulamben · 20 мин от Амеда</div>
+</div>
+<div class="place">
+<div class="place-name">Jemeluk Bay</div>
+<div class="place-desc">Коралловый сад прямо с берега. Wall dive, кораллы, рыба-ангел, черепахи.</div>
+<div class="place-meta">📍 Jemeluk · Shore entry</div>
+</div>
+<div class="place">
+<div class="place-name">Japanese Shipwreck</div>
+<div class="place-desc">Маленький затонувший корабль на 3-12м. Идеально для начинающих.</div>
+<div class="place-meta">📍 Lipah Bay · Shore entry</div>
+</div>
+<div class="place">
+<div class="place-name">Pyramids (Amed)</div>
+<div class="place-desc">Искусственный риф — пирамиды на песке. Много рыбы, красивое место.</div>
+</div>
+
+<p><strong>Школы:</strong></p>
+<div class="place">
+<div class="place-name">Adventure Divers Bali</div>
+<div class="place-desc">PADI 5-star. Open Water от 5.5M, Discover Scuba от 1M. Русскоговорящие инструкторы!</div>
+<div class="place-meta">📍 Amed · PADI курсы + fun dives</div>
+</div>
+<div class="place">
+<div class="place-name">Euro Dive Amed</div>
+<div class="place-desc">Профессиональный центр. Технический дайвинг, ребризеры. Для серьёзных.</div>
+<div class="place-meta">📍 Jemeluk · Open Water от 6M</div>
+</div>
+
+<h2>🫁 Фридайвинг</h2>
+
+<div class="place">
+<div class="place-name">Apneista</div>
+<div class="place-desc">Лучшая школа фридайвинга на Бали (и одна из лучших в мире). Курсы AIDA/SSI, глубина прямо с берега до 60м+.</div>
+<div class="place-meta">📍 Jemeluk · AIDA 2 от 5M · AIDA 3 от 6M</div>
+</div>
+<div class="place">
+<div class="place-name">Freedive Amed</div>
+<div class="place-desc">Курсы для начинающих и продвинутых. Pool + open water. Маленькие группы.</div>
+<div class="place-meta">📍 Amed · Курс от 4M</div>
+</div>
+<div class="place">
+<div class="place-name">Ocean Sun Freediving</div>
+<div class="place-desc">SSI курсы, тренировочные сессии, фридайв-сафари.</div>
+<div class="place-meta">📍 Amed · Курс от 4.5M</div>
+</div>
+<p>Амед — <strong>столица фридайвинга Бали</strong>. Глубина начинается прямо от берега, спокойная вода, тёплая (28-30°C). Идеальные условия круглый год.</p>
+
+<h2>🐠 Снорклинг</h2>
+
+<div class="place">
+<div class="place-name">Jemeluk Bay</div>
+<div class="place-desc">Лучший снорклинг на Бали прямо с берега! Кораллы, клоун-фиш, черепахи. Маска + ласты — всё.</div>
+<div class="place-meta">📍 Jemeluk · Бесплатно · Аренда маски 30K</div>
+</div>
+<div class="place">
+<div class="place-name">Japanese Shipwreck</div>
+<div class="place-desc">Затонувший корабль на 3м глубины — видно даже со снорклингом!</div>
+<div class="place-meta">📍 Lipah Bay · Бесплатно</div>
+</div>
+<div class="place">
+<div class="place-name">USS Liberty (Tulamben)</div>
+<div class="place-desc">Части корабля на 3-5м — доступны со снорклингом. Потрясающе!</div>
+<div class="place-meta">📍 Tulamben · 20 мин · Вход 30K</div>
+</div>
+
+<h2>🏖 Пляжи без волн</h2>
+
+<div class="place">
+<div class="place-name">Jemeluk Bay</div>
+<div class="place-desc">Защищённая бухта, спокойная вода, чёрный песок. Купание + снорклинг.</div>
+</div>
+<div class="place">
+<div class="place-name">Amed Beach</div>
+<div class="place-desc">Главный пляж деревни. Рыбацкие лодки (jukung), спокойная вода, вид на Агунг.</div>
+</div>
+<div class="place">
+<div class="place-name">Lipah Bay</div>
+<div class="place-desc">Маленькая бухта с галькой. Очень спокойная вода, отличный снорклинг.</div>
+</div>
+<p>Почти все пляжи Амеда — без волн. Идеально для купания!</p>
+
+<h2>🧘 Йога и велнес</h2>
+
+<div class="place">
+<div class="place-name">Blue Earth Village Yoga</div>
+<div class="place-desc">Утренняя йога в бамбуковом шала с видом на океан. Виньяса, хатха.</div>
+<div class="place-meta">📍 Lean · 100-130K/занятие</div>
+</div>
+<div class="place">
+<div class="place-name">Amed Spa & Massage</div>
+<div class="place-desc">Балийский массаж на берегу. Просто, дёшево, расслабляюще.</div>
+<div class="place-meta">📍 По берегу · Массаж от 80K</div>
+</div>
+
+<h2>🏋️ Спортзалы</h2>
+<p>В Амеде нет тренажёрных залов. Тренировки: плавание в океане, фридайвинг, хайкинг на вулкан. Для зала: ехать в <strong>Карангасем</strong> (30 мин) — есть простой зал.</p>
+
+<h2>🌅 Закаты / Восходы</h2>
+
+<table>
+<tr><th>Место</th><th>Тип</th><th>Вайб</th></tr>
+<tr><td><strong>Jemeluk Viewpoint</strong></td><td>🌄 Восход</td><td>Агунг на рассвете — один из лучших видов на Бали</td></tr>
+<tr><td><strong>Amed Beach</strong></td><td>🌄 Восход</td><td>Рыбацкие лодки в утреннем свете</td></tr>
+<tr><td><strong>Любое кафе на берегу</strong></td><td>🌅 Закат</td><td>Солнце садится за горы — розово-оранжевый</td></tr>
+</table>
+<p>Амед — <strong>восточное побережье</strong>, тут потрясающие восходы с видом на Ломбок. Закаты тоже красивые — солнце садится за Агунг.</p>
+
+<h2>🌋 Вулканы и горы рядом</h2>
+
+<div class="place">
+<div class="place-name">Гунунг Агунг</div>
+<div class="place-desc">Главный вулкан Бали (3142м) — прямо над головой! Восхождение начинается из Pura Besakih или Pasar Agung.</div>
+<div class="place-meta">📍 30-45 мин до начала трека · Трекинг 6-8 часов · от 800K с гидом</div>
+</div>
+<div class="place">
+<div class="place-name">Гунунг Лемпуянг</div>
+<div class="place-desc">«Ворота в рай» — знаменитый храм с видом на Агунг. Трекинг на вершину.</div>
+<div class="place-meta">📍 40 мин от Амеда · Вход 50K</div>
+</div>
+<div class="place">
+<div class="place-name">Гунунг Батур</div>
+<div class="place-desc">Восхождение на рассвете. 1.5 часа от Амеда.</div>
+<div class="place-meta">📍 Кинтамани · от 400K</div>
+</div>
+
+<h2>🌾 Рисовые террасы рядом</h2>
+<div class="place">
+<div class="place-name">Tirta Gangga</div>
+<div class="place-desc">Водный дворец + рисовые поля вокруг. Красивейшие виды восточного Бали.</div>
+<div class="place-meta">📍 30 мин от Амеда · Вход 40K</div>
+</div>
+<div class="place">
+<div class="place-name">Рисовые поля Sidemen</div>
+<div class="place-desc">Тихая долина с террасами, плетение икат. Балийская глубинка.</div>
+<div class="place-meta">📍 1 час от Амеда</div>
+</div>
+
+<h2>⛳ Гольф</h2>
+<p>В Амеде и окрестностях нет гольф-полей. Ближайший: <strong>Handara Golf</strong> (Бедугул, 3 часа), <strong>Bali National</strong> (Nusa Dua, 3 часа).</p>
+
+<h2>🍓 Фермы</h2>
+<div class="place">
+<div class="place-name">Кофейные плантации Sidemen</div>
+<div class="place-desc">Маленькие семейные фермы. Кофе, какао, ваниль. Туры по договорённости.</div>
+<div class="place-meta">📍 Sidemen · 1 час от Амеда</div>
+</div>
+<div class="place">
+<div class="place-name">Tirta Gangga Salt Farm</div>
+<div class="place-desc">Солёные террасы — традиционная добыча соли. Уникальное зрелище.</div>
+<div class="place-meta">📍 Amed coast · Бесплатно</div>
+</div>
+
+<h2>🍉 Фруктовые рынки</h2>
+<div class="place">
+<div class="place-name">Pasar Karangasem</div>
+<div class="place-desc">Большой местный рынок в городе Карангасем. Фрукты, овощи, рыба. Настоящий Бали.</div>
+<div class="place-meta">📍 Карангасем · 30 мин от Амеда · Утро</div>
+</div>
+<p>В самом Амеде — маленькие лавки с базовыми фруктами. Для большого выбора — рынок в Карангасеме.</p>
+
+<h2>🛍 Шоппинг</h2>
+<p>Шоппинга в Амеде практически нет. Маленькие сувенирные, пляжная одежда. Для шоппинга: <strong>Убуд</strong> (2 часа) или <strong>Семиньяк</strong> (3 часа).</p>
+
+<h2>🛒 Продуктовые магазины</h2>
+<div class="place">
+<div class="place-name">Minimarket (Alfamart / Indomaret)</div>
+<div class="place-desc">Маленькие магазины с базовым набором: вода, снеки, лапша, средства гигиены.</div>
+<div class="place-meta">📍 По дороге Amed</div>
+</div>
+<p>Импортных продуктов нет. Для европейских товаров: заказ онлайн или поездка в <strong>Денпасар</strong>.</p>
+
+<h2>👕 Прачечные</h2>
+<div class="place">
+<div class="place-name">Прачечные при гестхаусах</div>
+<div class="place-desc">Большинство отелей и гестхаусов стирают за 5-8K/кг. Самообслуживания нет.</div>
+</div>
+
+<h2>🎉 Клубы и ночная жизнь</h2>
+<p>Ночной жизни в Амеде нет. Вечером — ужин в варунге, пиво (Bintang 25-35K) на берегу, звёзды. Клубов, баров с DJ — ноль. Это деревня. Для тусовок: <strong>Семиньяк</strong> (3 часа) или <strong>Чангу</strong> (3 часа).</p>
+
+<h2>🏥 Клиники и аптеки</h2>
+
+<div class="place">
+<div class="place-name">Amed Clinic</div>
+<div class="place-desc">Маленькая клиника для базовых проблем. Англоговорящий доктор.</div>
+<div class="place-meta">📍 Amed · Приём от 150K</div>
+</div>
+<div class="place">
+<div class="place-name">RSUD Karangasem Hospital</div>
+<div class="place-desc">Ближайшая больница. Базовая, но есть ER.</div>
+<div class="place-meta">📍 Карангасем · 30 мин от Амеда</div>
+</div>
+<p>Для серьёзной медицины: <strong>BIMC</strong> или <strong>Kasih Ibu</strong> в Денпасаре (2.5-3 часа). Имей страховку с эвакуацией!</p>
+
+<h2>🛕 Храмы</h2>
+
+<div class="place">
+<div class="place-name">Pura Lempuyang (Luhur Lempuyang)</div>
+<div class="place-desc">«Ворота в рай» — рамка с видом на Агунг. 7 храмов по пути на вершину.</div>
+<div class="place-meta">📍 40 мин от Амеда · Вход 50K · Саронг обязателен</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Besakih</div>
+<div class="place-desc">Мать всех храмов Бали. Огромный комплекс на склоне Агунга.</div>
+<div class="place-meta">📍 1 час от Амеда · Вход 60K</div>
+</div>
+<div class="place">
+<div class="place-name">Tirta Gangga</div>
+<div class="place-desc">Водный дворец раджи. Фонтаны, бассейны, карпы кои. Красиво!</div>
+<div class="place-meta">📍 30 мин от Амеда · Вход 40K</div>
+</div>
+
+<h2>🇷🇺 Русское комьюнити</h2>
+<p>Русских в Амеде мало, но фридайверское комьюнити интернациональное — русские инструкторы есть. Ищи в чатах: «Бали Восток», «Фридайвинг Бали». Русских ресторанов нет.</p>
+
+<h2>🎒 Детские сады и школы</h2>
+<p>В Амеде нет детских садов и школ для экспатов. Район не для семей с детьми школьного возраста. Ближайшие школы: <strong>Убуд</strong> (2 часа) — Green School, Pelangi.</p>
+
+<h2>📸 Фото-локации</h2>
+<p>• Jemeluk Bay viewpoint — Агунг на рассвете<br>
+• Рыбацкие лодки (jukung) на пляже<br>
+• Underwater — кораллы, черепахи, Liberty wreck<br>
+• Pura Lempuyang — «Ворота в рай»<br>
+• Tirta Gangga — водный дворец<br>
+• Солёные террасы на побережье<br>
+• Вид на Ломбок с восточной точки</p>
+
+<h2>🏠 Жильё</h2>
+
+<table>
+<tr><th>Тип</th><th>Цена/мес</th><th>Где искать</th></tr>
+<tr><td>Комната / гестхаус</td><td>$150-300</td><td>Booking, на месте</td></tr>
+<tr><td>Бунгало у пляжа</td><td>$300-500</td><td>На месте, Facebook</td></tr>
+<tr><td>Вилла с видом</td><td>$500-1000</td><td>Airbnb</td></tr>
+<tr><td>Luxury вилла</td><td>$1000-2000</td><td>Airbnb, прямые контакты</td></tr>
+</table>
+<p>Амед — один из самых дешёвых районов Бали. Бронируй первые дни онлайн, потом ищи на месте — дешевле в 2 раза.</p>
+
+<h2>🛵 Транспорт</h2>
+<p>• <strong>Скутер:</strong> 500K-700K/мес (ОБЯЗАТЕЛЕН — общественного транспорта нет)<br>
+• <strong>Grab/Gojek:</strong> почти не работает<br>
+• <strong>До аэропорта:</strong> 2.5-3 часа, 500-700K (трансфер)<br>
+• <strong>До Убуда:</strong> 2 часа<br>
+• <strong>До Туламбена:</strong> 20 мин<br>
+• <strong>До Лемпуянга:</strong> 40 мин</p>
+
+<div class="divider"></div>
+
+<div class="secret">
+<div class="secret-title">🤫 Секрет района</div>
+<div class="secret-text">В полнолуние на Jemeluk Bay выходят ночные обитатели рифа. Ночной снорклинг с фонариком — осьминоги, креветки-богомолы, спящие рыбы-попугаи. Спроси в дайв-центре про night snorkeling. Незабываемо.</div>
+</div>
+
+<div class="warn">
+<div class="warn-title">⚠️ Минусы</div>
+<div class="warn-text">Очень далеко от аэропорта (3 часа). Плохой WiFi. Мало магазинов, нет импортных продуктов. Нет ночной жизни. Нет спортзалов. Узкая дорога вдоль побережья (опасно ночью). Мало медицинских услуг. В сезон дождей дорогу иногда размывает.</div>
+</div>
+
+<div class="divider"></div>
+
+<h2>💰 Бюджет на месяц</h2>
+
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Минимум</div>
+<div class="budget-price">$350</div>
+<div class="budget-unit">в месяц</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Комфортно</div>
+<div class="budget-price">$700</div>
+<div class="budget-unit">в месяц</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$1500</div>
+<div class="budget-unit">в месяц</div>
+</div>
+</div>
+
+<div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
+
+</body>
+</html>

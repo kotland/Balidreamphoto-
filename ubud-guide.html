@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+
+<h1><em>Убуд</em></h1>
+<p class="sub">Полный гайд по району · @balidreamphoto</p>
+
+<div class="tag">🧘 Йога</div>
+<div class="tag">🌾 Рисовые террасы</div>
+<div class="tag">🎨 Искусство</div>
+<div class="tag">🌱 Веган</div>
+<div class="tag">🛕 Храмы</div>
+<div class="tag">🌋 Вулканы</div>
+<div class="tag">💻 Коворкинги</div>
+<div class="tag">🍜 Рестораны</div>
+
+<div class="vibe">«Проснулся в джунглях, йога на рассвете, кофе с видом на рисовые террасы, вечером звуки гамелана из храма.»</div>
+
+<p>Убуд — культурное сердце Бали. Джунгли, храмы, рисовые поля, йога-ретриты и лучшая вегетарианская еда на острове. Тут живут художники, духовные искатели и remote workers, которым не нужен океан. Средний возраст 30-45. Тише и дешевле Чангу.</p>
+
+<h2>☕ Кофейни</h2>
+
+<div class="place">
+<div class="place-name">Seniman Coffee Studio</div>
+<div class="place-desc">Лучший specialty coffee в Убуде. Свои зёрна, обжарка на месте, pour-over, cold brew.</div>
+<div class="place-meta">📍 Jl. Sriwedari · Кофе 35-60K · WiFi ⭐⭐⭐⭐</div>
+</div>
+
+<div class="place">
+<div class="place-name">Anomali Coffee</div>
+<div class="place-desc">Индонезийский specialty бренд. Зёрна со всего архипелага. Уютная терраса.</div>
+<div class="place-meta">📍 Jl. Raya Ubud · Кофе 35-55K · WiFi ⭐⭐⭐⭐</div>
+</div>
+
+<div class="place">
+<div class="place-name">Mudra Cafe</div>
+<div class="place-desc">Кофе + raw десерты. Тихая атмосфера, вид на сад. Идеально для утра.</div>
+<div class="place-meta">📍 Jl. Hanoman · Кофе 30-50K · WiFi ⭐⭐⭐</div>
+</div>
+
+<div class="place">
+<div class="place-name">Kopi Toko Djawa</div>
+<div class="place-desc">Колониальный стиль, балкон с видом на улицу. Яванский и балийский кофе.</div>
+<div class="place-meta">📍 Jl. Goutama · Кофе 30-45K · WiFi ⭐⭐⭐</div>
+</div>
+
+<h2>💻 Коворкинги</h2>
+
+<div class="place">
+<div class="place-name">Outpost Ubud</div>
+<div class="place-desc">Главный коворкинг в Убуде. Бамбуковое здание в джунглях, бассейн, быстрый WiFi.</div>
+<div class="place-meta">📍 Jl. Raya Nyuh Kuning · 250K/день · 3M/мес · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+
+<div class="place">
+<div class="place-name">Hubud (ныне Livit Hub)</div>
+<div class="place-desc">Легенда среди коворкингов. Бамбуковая конструкция, комьюнити-ивенты, воркшопы.</div>
+<div class="place-meta">📍 Jl. Monkey Forest · 200K/день · 2.5M/мес · WiFi ⭐⭐⭐⭐</div>
+</div>
+
+<div class="place">
+<div class="place-name">Genius Cafe</div>
+<div class="place-desc">Кафе-коворкинг с тихой зоной. Хороший кофе + рабочее пространство.</div>
+<div class="place-meta">📍 Jl. Raya Ubud · 150K минимум заказ · WiFi ⭐⭐⭐⭐</div>
+</div>
+
+<h2>🍜 Рестораны</h2>
+
+<h3>Бюджетно (25-50K)</h3>
+<div class="place">
+<div class="place-name">Warung Biah Biah</div>
+<div class="place-desc">Настоящая балийская кухня: наси чампур, лавар, сатай. Местные цены.</div>
+<div class="place-meta">📍 Jl. Suweta · 20-40K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Igelanca</div>
+<div class="place-desc">Домашняя еда. Babi guling (жареный поросёнок) — специалитет.</div>
+<div class="place-meta">📍 Jl. Raya Ubud · 25-45K</div>
+</div>
+<div class="place">
+<div class="place-name">Pasar Ubud (рынок)</div>
+<div class="place-desc">Утренний рынок с уличной едой. Баксо, мартабак, наси горенг от 15K.</div>
+<div class="place-meta">📍 Центр Убуда · 15-35K</div>
+</div>
+
+<h3>Средне (80-180K)</h3>
+<div class="place">
+<div class="place-name">Locavore To Go</div>
+<div class="place-desc">Бюджетная версия знаменитого Locavore. Фермерские продукты, сэндвичи, боулы.</div>
+<div class="place-meta">📍 Jl. Dewi Sita · 70-140K</div>
+</div>
+<div class="place">
+<div class="place-name">Clear Cafe</div>
+<div class="place-desc">Многоуровневый ресторан в тропическом саду. Азия-фьюжн, здоровая еда.</div>
+<div class="place-meta">📍 Jl. Hanoman · 80-160K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Pulau Kelapa</div>
+<div class="place-desc">Индонезийская кухня в красивом саду. Ренданг, пепес, гадо-гадо.</div>
+<div class="place-meta">📍 Jl. Monkey Forest · 70-150K</div>
+</div>
+
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Locavore</div>
+<div class="place-desc">Топ-1 ресторан Бали. Фермерские дегустационные сеты. Бронь за месяц!</div>
+<div class="place-meta">📍 Jl. Dewi Sita · Сет от 1.2M</div>
+</div>
+<div class="place">
+<div class="place-name">Mozaic</div>
+<div class="place-desc">Французско-индонезийский фьюжн. Романтический сад, дегустационное меню.</div>
+<div class="place-meta">📍 Jl. Raya Sanggingan · Сет от 900K</div>
+</div>
+
+<h2>🥗 Вегетарианские заведения</h2>
+
+<div class="place">
+<div class="place-name">Sage</div>
+<div class="place-desc">Полностью вегетарианский ресторан. Красивые тарелки, органические ингредиенты.</div>
+<div class="place-meta">📍 Jl. Goutama · 70-140K</div>
+</div>
+<div class="place">
+<div class="place-name">Moksa</div>
+<div class="place-desc">Farm-to-table вегетарианский. Свой огород, кулинарные классы.</div>
+<div class="place-meta">📍 Jl. Puskesmas · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Earth Cafe</div>
+<div class="place-desc">Вегетарианское кафе с огромным меню: азиатское, западное, raw food.</div>
+<div class="place-meta">📍 Jl. Goutama Selatan · 55-110K</div>
+</div>
+
+<h2>🌱 Веганские заведения</h2>
+
+<div class="place">
+<div class="place-name">Alchemy</div>
+<div class="place-desc">Культовое raw vegan кафе. Салат-бар, соки cold-pressed, шоколад из какао-бобов.</div>
+<div class="place-meta">📍 Jl. Penestanan Kelod · 60-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Sayuri Healing Food</div>
+<div class="place-desc">Японско-веганский фьюжн. Raw суши, живые десерты, уникальная концепция.</div>
+<div class="place-meta">📍 Jl. Sukma · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Seeds of Life</div>
+<div class="place-desc">Raw vegan ресторан + академия raw food. Лучшие сыроедческие десерты на Бали.</div>
+<div class="place-meta">📍 Jl. Goutama · 55-120K</div>
+</div>
+
+<h2>🏄 Сёрфинг</h2>
+<p>В Убуде нет сёрфинга — это горный район без выхода к океану. Ближайший: <strong>Чангу</strong> (1-1.5 часа), <strong>Керамас</strong> (45 мин, продвинутый уровень).</p>
+
+<h2>🤿 Дайвинг</h2>
+<p>В Убуде нет — нет побережья. Ближайший: <strong>Падангбай</strong> (1.5 часа) — Blue Lagoon, рифы. <strong>Туламбен</strong> (2 часа) — USS Liberty. <strong>Nusa Penida</strong> (2+ часа) — манты.</p>
+
+<h2>🫁 Фридайвинг</h2>
+<p>В Убуде нет — ближайший: <strong>Амед</strong> (2 часа), <strong>Nusa Penida</strong> (2.5 часа). Школы организуют трансферы.</p>
+
+<h2>🐠 Снорклинг</h2>
+<p>В Убуде нет — ближайший: <strong>Падангбай</strong> (Blue Lagoon, 1.5 часа), <strong>Амед</strong> (Japanese Shipwreck, 2 часа).</p>
+
+<h2>🏖 Пляжи без волн</h2>
+<p>В Убуде нет пляжей — горный район. Ближайший: <strong>Sanur</strong> (1 час) — спокойная вода, идеально для купания.</p>
+
+<h2>🧘 Йога и велнес</h2>
+
+<div class="place">
+<div class="place-name">Yoga Barn</div>
+<div class="place-desc">Главная йога-студия Убуда. 15+ классов в день: виньяса, кундалини, экстатик-дэнс. Сад, кафе.</div>
+<div class="place-meta">📍 Jl. Hanoman · 130-180K/занятие · Безлимит от 1.5M/нед</div>
+</div>
+<div class="place">
+<div class="place-name">Radiantly Alive</div>
+<div class="place-desc">Йога для всех уровней. Профессиональные преподаватели, красивый шала.</div>
+<div class="place-meta">📍 Jl. Jembawan · 150-180K/занятие</div>
+</div>
+<div class="place">
+<div class="place-name">Intuitive Flow</div>
+<div class="place-desc">Виньяса и хатха в открытом шала с видом на рисовые поля. Магия.</div>
+<div class="place-meta">📍 Jl. Tirta Tawar · 120-150K/занятие</div>
+</div>
+<div class="place">
+<div class="place-name">Taksu Spa</div>
+<div class="place-desc">Балийский массаж, цветочные ванны, энергетическое целительство. Спа в саду.</div>
+<div class="place-meta">📍 Jl. Goutama · Массаж от 200K</div>
+</div>
+
+<h2>🏋️ Спортзалы</h2>
+
+<div class="place">
+<div class="place-name">Ubud Fitness Center</div>
+<div class="place-desc">Основной тренажёрный зал. Кардио, свободные веса, простое оборудование.</div>
+<div class="place-meta">📍 Jl. Hanoman · 80K/день · 600K/мес</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Fitness Ubud</div>
+<div class="place-desc">Небольшой зал с хорошими тренажёрами. Кроссфит-зона.</div>
+<div class="place-meta">📍 Jl. Raya Pengosekan · 70K/день · 500K/мес</div>
+</div>
+<p>Убуд — не про качалки. Тут больше йога, бег по рисовым полям и треккинг. Серьёзных залов мало.</p>
+
+<h2>🌅 Закаты / Восходы</h2>
+
+<table>
+<tr><th>Место</th><th>Тип</th><th>Вайб</th></tr>
+<tr><td><strong>Campuhan Ridge Walk</strong></td><td>🌅 Закат / 🌄 Восход</td><td>Тропа по холму между двух долин. Золотой свет.</td></tr>
+<tr><td><strong>Tegallalang</strong></td><td>🌄 Восход</td><td>Рисовые террасы в утреннем тумане</td></tr>
+<tr><td><strong>Mount Batur</strong></td><td>🌄 Восход</td><td>Рассвет с вулкана — must do</td></tr>
+<tr><td><strong>Karsa Spa</strong></td><td>🌅 Закат</td><td>Вид на рисовые поля из кафе</td></tr>
+<tr><td><strong>Sari Organik</strong></td><td>🌅 Закат</td><td>Ресторан среди рисовых полей</td></tr>
+</table>
+
+<h2>🌋 Вулканы и горы рядом</h2>
+
+<div class="place">
+<div class="place-name">Гунунг Батур</div>
+<div class="place-desc">Восхождение на рассвете (2 часа подъём). Вид на озеро в кратере. Must-do!</div>
+<div class="place-meta">📍 Кинтамани · 1 час от Убуда · Трекинг от 400K с гидом</div>
+</div>
+<div class="place">
+<div class="place-name">Гунунг Агунг</div>
+<div class="place-desc">Главный вулкан Бали (3142м). Серьёзный трекинг 6-8 часов. Гид обязателен.</div>
+<div class="place-meta">📍 Карангасем · 2 часа от Убуда · от 800K</div>
+</div>
+<div class="place">
+<div class="place-name">Гунунг Абанг</div>
+<div class="place-desc">Третий по высоте вулкан. Меньше туристов, джунгли, вид на Батур.</div>
+<div class="place-meta">📍 Кинтамани · 1.5 часа от Убуда · от 500K</div>
+</div>
+
+<h2>🌾 Рисовые террасы рядом</h2>
+
+<div class="place">
+<div class="place-name">Tegallalang Rice Terrace</div>
+<div class="place-desc">Знаменитые каскадные террасы. Инстаграмная классика. Приходи к 7 утра — без толп.</div>
+<div class="place-meta">📍 15 мин от центра · Вход 25K</div>
+</div>
+<div class="place">
+<div class="place-name">Campuhan Ridge Walk</div>
+<div class="place-desc">Тропа по гребню холма. Рисовые поля с обеих сторон. Бесплатно.</div>
+<div class="place-meta">📍 5 мин от центра</div>
+</div>
+<div class="place">
+<div class="place-name">Jatiluwih</div>
+<div class="place-desc">UNESCO. Огромные террасы без толп. Самые впечатляющие на Бали.</div>
+<div class="place-meta">📍 1 час от Убуда · Вход 40K</div>
+</div>
+
+<h2>⛳ Гольф</h2>
+<p>В Убуде нет гольф-полей. Ближайший: <strong>Handara Golf & Resort</strong> (Бедугул, 1 час) — горное поле в кратере, от 1.2M/раунд. <strong>Bali National Golf Club</strong> (Nusa Dua, 1.5 часа).</p>
+
+<h2>🍓 Фермы</h2>
+
+<div class="place">
+<div class="place-name">Bali Pulina</div>
+<div class="place-desc">Кофейная плантация с дегустацией кофе лювак. Бесплатный тур, виды на джунгли.</div>
+<div class="place-meta">📍 Tegallalang · 20 мин от центра</div>
+</div>
+<div class="place">
+<div class="place-name">Satria Coffee Plantation</div>
+<div class="place-desc">Маленькая семейная ферма. Процесс обработки кофе, чай, какао. Без толп.</div>
+<div class="place-meta">📍 Tegallalang · 25 мин от центра</div>
+</div>
+<div class="place">
+<div class="place-name">Ubud Organic Farm</div>
+<div class="place-desc">Органическая ферма с туром. Выращивают овощи, специи, учат готовить.</div>
+<div class="place-meta">📍 Jl. Suweta · 30 мин от центра</div>
+</div>
+
+<h2>🍉 Фруктовые рынки</h2>
+
+<div class="place">
+<div class="place-name">Pasar Ubud (утренний рынок)</div>
+<div class="place-desc">До 8 утра — настоящий фермерский рынок. Фрукты, овощи, специи по местным ценам.</div>
+<div class="place-meta">📍 Центр Убуда · 5-8 утра</div>
+</div>
+<div class="place">
+<div class="place-name">Organic Farmers Market</div>
+<div class="place-desc">По субботам. Органические овощи, фрукты, хлеб, джемы от местных фермеров.</div>
+<div class="place-meta">📍 Pizza Bagus, Jl. Pengosekan · Сб 9-13</div>
+</div>
+
+<h2>🛍 Шоппинг</h2>
+
+<div class="place">
+<div class="place-name">Pasar Ubud (дневной)</div>
+<div class="place-desc">После 10 утра — сувенирный рынок. Саронги, статуэтки, корзины. Торгуйся на 50%!</div>
+<div class="place-meta">📍 Центр Убуда</div>
+</div>
+<div class="place">
+<div class="place-name">Jl. Hanoman Boutiques</div>
+<div class="place-desc">Дизайнерские бутики: одежда из натуральных тканей, ювелирка, керамика.</div>
+</div>
+<div class="place">
+<div class="place-name">Threads of Life</div>
+<div class="place-desc">Галерея текстиля: традиционные ткани ручной работы от деревенских мастеров.</div>
+<div class="place-meta">📍 Jl. Kajeng</div>
+</div>
+
+<h2>🛒 Продуктовые магазины</h2>
+
+<div class="place">
+<div class="place-name">Bintang Supermarket</div>
+<div class="place-desc">Главный супермаркет Убуда. Импортные продукты, сыры, вино, бытовая химия.</div>
+<div class="place-meta">📍 Jl. Raya Sanggingan</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Buda</div>
+<div class="place-desc">Органические продукты: безглютеновое, тофу, темпе, ореховое молоко.</div>
+<div class="place-meta">📍 Jl. Jembawan</div>
+</div>
+<div class="place">
+<div class="place-name">Delta Dewata</div>
+<div class="place-desc">Большой супермаркет с широким ассортиментом, включая импорт.</div>
+<div class="place-meta">📍 Jl. Andong</div>
+</div>
+
+<h2>👕 Прачечные</h2>
+
+<div class="place">
+<div class="place-name">Ubud Laundry</div>
+<div class="place-desc">Быстрая стирка + глажка. Пикап и доставка по Убуду.</div>
+<div class="place-meta">📍 Jl. Hanoman · от 7K/кг</div>
+</div>
+<div class="place">
+<div class="place-name">Green Laundry</div>
+<div class="place-desc">Эко-стирка, деликатные вещи. Качественный сервис.</div>
+<div class="place-meta">📍 Jl. Monkey Forest · от 10K/кг</div>
+</div>
+<p>Self-service мало. Большинство — drop-off: сдал утром, забрал вечером или на следующий день.</p>
+
+<h2>🎉 Клубы и ночная жизнь</h2>
+<p>Убуд — не тусовочное место. Баров мало, клубов нет. Но есть:</p>
+<div class="place">
+<div class="place-name">CP Lounge</div>
+<div class="place-desc">Джаз-бар с живой музыкой. Коктейли, камерная атмосфера.</div>
+<div class="place-meta">📍 Jl. Monkey Forest</div>
+</div>
+<div class="place">
+<div class="place-name">No Más</div>
+<div class="place-desc">Бар с мексиканской кухней. Маргариты, лайв-музыка по пятницам.</div>
+<div class="place-meta">📍 Jl. Goutama</div>
+</div>
+<div class="place">
+<div class="place-name">Yoga Barn Ecstatic Dance</div>
+<div class="place-desc">Экстатик-дэнс по пятницам. Трезвая вечеринка: танцы босиком до рассвета.</div>
+<div class="place-meta">📍 Jl. Hanoman · 150K</div>
+</div>
+
+<h2>🏥 Клиники и аптеки</h2>
+
+<div class="place">
+<div class="place-name">Ubud Care Clinic</div>
+<div class="place-desc">Англоговорящие врачи, общая практика, стоматология. Приём от 200K.</div>
+<div class="place-meta">📍 Jl. Raya Ubud</div>
+</div>
+<div class="place">
+<div class="place-name">Toya Medika Clinic</div>
+<div class="place-desc">Круглосуточная клиника с анализами. Приём от 150K.</div>
+<div class="place-meta">📍 Jl. Raya Mas</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma / K24</div>
+<div class="place-desc">Аптеки с базовыми лекарствами. Антибиотики, обезболивающие — дёшево.</div>
+<div class="place-meta">📍 Центр Убуда · от 10K</div>
+</div>
+
+<h2>🛕 Храмы</h2>
+
+<div class="place">
+<div class="place-name">Pura Tirta Empul</div>
+<div class="place-desc">Священный источник. Ритуальное омовение — мощный опыт. Саронг обязателен.</div>
+<div class="place-meta">📍 Tampaksiring · 30 мин от Убуда · Вход 50K</div>
+</div>
+<div class="place">
+<div class="place-name">Goa Gajah (Слоновья пещера)</div>
+<div class="place-desc">Древний храм IX века в пещере. Барельефы, купальни, мистическая атмосфера.</div>
+<div class="place-meta">📍 6 км от центра · Вход 50K</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Gunung Kawi</div>
+<div class="place-desc">Высеченные в скале храмы XI века. 300 ступеней вниз через рисовые поля.</div>
+<div class="place-meta">📍 Tampaksiring · 30 мин от Убуда · Вход 50K</div>
+</div>
+<div class="place">
+<div class="place-name">Saraswati Temple</div>
+<div class="place-desc">Храм на пруду с лотосами в центре Убуда. Бесплатно. Вечерние танцы легонг.</div>
+<div class="place-meta">📍 Jl. Raya Ubud · Бесплатно</div>
+</div>
+
+<h2>🇷🇺 Русское комьюнити</h2>
+
+<div class="place">
+<div class="place-name">Телеграм-чаты</div>
+<div class="place-desc">«Убуд Русские», «Бали Убуд Чат» — аренда, рекомендации, мероприятия.</div>
+</div>
+<div class="place">
+<div class="place-name">Русское комьюнити</div>
+<div class="place-desc">Меньше чем в Чангу, но стабильное. Русскоязычные йога-ретриты, женские круги.</div>
+</div>
+<div class="place">
+<div class="place-name">Русскоговорящие специалисты</div>
+<div class="place-desc">Ищи в чатах: натуропаты, аюрведа-консультанты, гиды — всё есть.</div>
+</div>
+
+<h2>🎒 Детские сады и школы</h2>
+
+<div class="place">
+<div class="place-name">Green School Bali</div>
+<div class="place-desc">Знаменитая эко-школа из бамбука. Международная программа, природа. 3-18 лет.</div>
+<div class="place-meta">📍 Jl. Raya Sibang Kaja · от $10,000/год</div>
+</div>
+<div class="place">
+<div class="place-name">Pelangi School</div>
+<div class="place-desc">Балийская международная школа. Доступнее Green School. 2-12 лет.</div>
+<div class="place-meta">📍 Jl. Raya Nyuh Kuning · от $3000/год</div>
+</div>
+<div class="place">
+<div class="place-name">Русские детские сады</div>
+<div class="place-desc">Есть небольшие группы — ищи в чате «Бали Мамы». От 2M/мес.</div>
+</div>
+
+<h2>📸 Фото-локации</h2>
+<p>• Tegallalang — каскадные рисовые террасы<br>
+• Campuhan Ridge Walk — тропа на рассвете<br>
+• Monkey Forest — мартышки в джунглях<br>
+• Tirta Empul — омовение в источнике<br>
+• Pura Gunung Kawi — храмы в скале<br>
+• Любое кафе с видом на рисовые поля<br>
+• Ворота Handara (по дороге в Бедугул)</p>
+
+<h2>🏠 Жильё</h2>
+
+<table>
+<tr><th>Тип</th><th>Цена/мес</th><th>Где искать</th></tr>
+<tr><td>Гестхаус / комната</td><td>$200-400</td><td>Booking, на месте</td></tr>
+<tr><td>Студия / 1BR</td><td>$400-700</td><td>Facebook groups, Flokq</td></tr>
+<tr><td>Вилла с бассейном</td><td>$700-1200</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Luxury вилла в джунглях</td><td>$1500-4000</td><td>Прямые контакты, агенты</td></tr>
+</table>
+<p><strong>Лучшие районы:</strong> Penestanan (тихо, виллы в рисовых полях), Nyuh Kuning (у Monkey Forest), Sanggingan (виды). Убуд дешевле Чангу на 20-30%.</p>
+
+<h2>🛵 Транспорт</h2>
+<p>• <strong>Скутер:</strong> 600K-900K/мес (осторожно — узкие горные дороги!)<br>
+• <strong>Grab/Gojek:</strong> работают, но водителей меньше чем в Чангу. от 10K<br>
+• <strong>До аэропорта:</strong> 1.5-2 часа, 300-400K<br>
+• <strong>До Чангу:</strong> 1-1.5 часа<br>
+• <strong>До Санура:</strong> 45-60 мин</p>
+
+<div class="divider"></div>
+
+<div class="secret">
+<div class="secret-title">🤫 Секрет района</div>
+<div class="secret-text">Penestanan — тихий район на холме над Убудом. Виллы среди рисовых полей, ни одного туриста. Цены в 2 раза ниже центра. Лучший spot для long-stay.</div>
+</div>
+
+<div class="warn">
+<div class="warn-title">⚠️ Минусы</div>
+<div class="warn-text">Влажность 85-95% — вещи плесневеют. Много мартышек (воруют очки, телефоны). Нет пляжа. Далеко от аэропорта. Мало ночной жизни. Москиты в сезон дождей. Узкие дороги с обезьянами.</div>
+</div>
+
+<div class="divider"></div>
+
+<h2>💰 Бюджет на месяц</h2>
+
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Минимум</div>
+<div class="budget-price">$500</div>
+<div class="budget-unit">в месяц</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Комфортно</div>
+<div class="budget-price">$1100</div>
+<div class="budget-unit">в месяц</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$3000</div>
+<div class="budget-unit">в месяц</div>
+</div>
+</div>
+
+<div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
+
+</body>
+</html>

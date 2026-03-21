@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+
+<h1><em>Семиньяк</em></h1>
+<p class="sub">Полный гайд по району · @balidreamphoto</p>
+
+<div class="tag">🎉 Клубы</div>
+<div class="tag">🛍 Шоппинг</div>
+<div class="tag">🍜 Рестораны</div>
+<div class="tag">🌅 Закаты</div>
+<div class="tag">🏖 Пляжи</div>
+<div class="tag">💆 Спа</div>
+<div class="tag">🏄 Сёрфинг</div>
+
+<div class="vibe">«Бранч в дизайнерском кафе, шоппинг по бутикам, закат в бич-клабе с коктейлем. Бали для тех, кто любит красивую жизнь.»</div>
+
+<p>Семиньяк — самый гламурный район Бали. Лучшие рестораны, бутики, бич-клабы и ночная жизнь. Тут живут экспаты с бюджетом, модели, фуд-блогеры и предприниматели. Ближе к аэропорту, чем Чангу. Средний возраст 28-40.</p>
+
+<h2>☕ Кофейни</h2>
+
+<div class="place">
+<div class="place-name">Revolver Espresso</div>
+<div class="place-desc">Культовая кофейня в переулке. Лучший эспрессо в Семиньяке. Очередь — знак качества.</div>
+<div class="place-meta">📍 Jl. Kayu Aya Gang 51 · Кофе 40-60K · WiFi ⭐⭐⭐</div>
+</div>
+
+<div class="place">
+<div class="place-name">Cafe Organic</div>
+<div class="place-desc">ЗОЖ-кафе + specialty кофе. Смузи-боулы, тосты с авокадо. Инстаграмный интерьер.</div>
+<div class="place-meta">📍 Jl. Petitenget · Кофе 45-65K · WiFi ⭐⭐⭐⭐</div>
+</div>
+
+<div class="place">
+<div class="place-name">Sea Circus</div>
+<div class="place-desc">Яркий мексиканский вайб. Хороший кофе + завтраки. Весёлая атмосфера.</div>
+<div class="place-meta">📍 Jl. Kayu Aya · Кофе 40-55K · WiFi ⭐⭐⭐</div>
+</div>
+
+<div class="place">
+<div class="place-name">Anomali Coffee</div>
+<div class="place-desc">Индонезийский specialty бренд. Зёрна со всего архипелага, тихая терраса.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak · Кофе 35-55K · WiFi ⭐⭐⭐⭐</div>
+</div>
+
+<h2>💻 Коворкинги</h2>
+
+<div class="place">
+<div class="place-name">Kumpul Coworking</div>
+<div class="place-desc">Профессиональный коворкинг. Кондей, переговорки, принтер.</div>
+<div class="place-meta">📍 Jl. Sunset Road · 200K/день · 2.5M/мес · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Cafe-коворкинги</div>
+<div class="place-desc">В Семиньяке работают из кафе: Cafe Organic, Revolver, Shelter Cafe — WiFi везде.</div>
+</div>
+<p>Выделенных коворкингов меньше, чем в Чангу. Большинство работает из кафе или из дома.</p>
+
+<h2>🍜 Рестораны</h2>
+
+<h3>Бюджетно (30-60K)</h3>
+<div class="place">
+<div class="place-name">Warung Made</div>
+<div class="place-desc">Легенда Семиньяка с 1969 года. Индонезийская кухня, огромные порции.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak · 30-60K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Murah</div>
+<div class="place-desc">Местная еда: наси горенг, ми горенг, сото аям. Дёшево и вкусно.</div>
+<div class="place-meta">📍 Jl. Nakula · 20-40K</div>
+</div>
+
+<h3>Средне (100-250K)</h3>
+<div class="place">
+<div class="place-name">Mama San</div>
+<div class="place-desc">Азиатский фьюжн в колониальном складе. Dim sum, карри, коктейли. Бронируй!</div>
+<div class="place-meta">📍 Jl. Raya Kerobokan · 120-250K</div>
+</div>
+<div class="place">
+<div class="place-name">Barbacoa</div>
+<div class="place-desc">Южноамериканский гриль. Стейки на огне, севиче, тако. Атмосферный интерьер.</div>
+<div class="place-meta">📍 Jl. Petitenget · 150-300K</div>
+</div>
+<div class="place">
+<div class="place-name">Sisterfields</div>
+<div class="place-desc">Австралийский бранч: яйца бенедикт, бёрджер, flat white. Топ завтрак.</div>
+<div class="place-meta">📍 Jl. Kayu Cendana · 100-200K</div>
+</div>
+
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Sarong</div>
+<div class="place-desc">Один из лучших ресторанов Бали. Южноазиатская кухня, 11-course tasting menu.</div>
+<div class="place-meta">📍 Jl. Petitenget · Сет от 800K</div>
+</div>
+<div class="place">
+<div class="place-name">Merah Putih</div>
+<div class="place-desc">Индонезийский fine dining в впечатляющем бамбуковом здании. Ренданг высокой кухни.</div>
+<div class="place-meta">📍 Jl. Petitenget · 250-500K</div>
+</div>
+
+<h2>🥗 Вегетарианские заведения</h2>
+
+<div class="place">
+<div class="place-name">Cafe Organic</div>
+<div class="place-desc">80% меню — вегетарианское. Боулы, салаты, смузи. Красивая подача.</div>
+<div class="place-meta">📍 Jl. Petitenget · 70-140K</div>
+</div>
+<div class="place">
+<div class="place-name">Earth Cafe & Market</div>
+<div class="place-desc">Вегетарианское кафе + магазин органических продуктов. Карри, боулы, соки.</div>
+<div class="place-meta">📍 Jl. Kayu Aya · 60-120K</div>
+</div>
+
+<h2>🌱 Веганские заведения</h2>
+
+<div class="place">
+<div class="place-name">Kynd Community</div>
+<div class="place-desc">Полностью веганское, инстаграмное до невозможности. Розовые смузи-боулы, бёргеры.</div>
+<div class="place-meta">📍 Jl. Petitenget · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Shelter Cafe</div>
+<div class="place-desc">Plant-based кафе с уютной атмосферой. Веганские панкейки, боулы, десерты.</div>
+<div class="place-meta">📍 Jl. Drupadi · 55-110K</div>
+</div>
+
+<h2>🏄 Сёрфинг</h2>
+
+<table>
+<tr><th>Спот</th><th>Уровень</th><th>Фишка</th></tr>
+<tr><td><strong>Seminyak Beach</strong></td><td>Начинающие</td><td>Широкий пляж, пологие волны, школы</td></tr>
+<tr><td><strong>Double Six</strong></td><td>Начинающие</td><td>Мягкий бичбрейк, хорошо для обучения</td></tr>
+<tr><td><strong>Petitenget</strong></td><td>Средний</td><td>Чуть мощнее волны, меньше людей</td></tr>
+</table>
+<p><strong>Школы:</strong> Rip Curl School of Surf, Pro Surf School. 400-600K за урок. Волны мягче чем в Чангу — хорошо для первого раза.</p>
+
+<h2>🤿 Дайвинг</h2>
+<p>В Семиньяке нет дайв-сайтов. Ближайший: <strong>Nusa Penida</strong> (2 часа, манты), <strong>Tulamben</strong> (3 часа, USS Liberty). Дайв-шопы организуют дей-трипы с пикапом.</p>
+
+<h2>🫁 Фридайвинг</h2>
+<p>В Семиньяке нет — ближайший: <strong>Амед</strong> (3 часа), <strong>Nusa Penida</strong>. Школы из Чангу организуют трипы.</p>
+
+<h2>🐠 Снорклинг</h2>
+<p>В Семиньяке нет — мутная вода, волны. Ближайший: <strong>Sanur</strong> (30 мин), <strong>Nusa Penida</strong> (дей-трип).</p>
+
+<h2>🏖 Пляжи без волн</h2>
+<p>Все пляжи Семиньяка — с волнами. Для спокойного купания: <strong>Sanur</strong> (30 мин) или <strong>Nusa Dua</strong> (45 мин).</p>
+
+<h2>🧘 Йога и велнес</h2>
+
+<div class="place">
+<div class="place-name">Bodyworks Bali</div>
+<div class="place-desc">Спа + йога-студия. Балийский массаж, рефлексология, йога-классы.</div>
+<div class="place-meta">📍 Jl. Kayu Jati · Массаж от 150K · Йога 130K</div>
+</div>
+<div class="place">
+<div class="place-name">Prana Spa</div>
+<div class="place-desc">Роскошный спа в марокканском стиле. Массаж, хаммам, ayurvedic-процедуры.</div>
+<div class="place-meta">📍 Jl. Kunti · Массаж от 300K</div>
+</div>
+<div class="place">
+<div class="place-name">Jiwa Bikram Yoga</div>
+<div class="place-desc">Горячая йога (Bikram). Кондиционированный зал, 40°C. Потеешь литрами.</div>
+<div class="place-meta">📍 Jl. Raya Basangkasa · 150K/занятие</div>
+</div>
+
+<h2>🏋️ Спортзалы</h2>
+
+<div class="place">
+<div class="place-name">Motion Fitness</div>
+<div class="place-desc">Современный зал: кардио, силовые, функциональный тренинг.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak · 100K/день · от 900K/мес</div>
+</div>
+<div class="place">
+<div class="place-name">S2 Fitness</div>
+<div class="place-desc">Компактный зал с хорошим оборудованием. Персональные тренеры.</div>
+<div class="place-meta">📍 Jl. Nakula · 80K/день · от 800K/мес</div>
+</div>
+
+<h2>🌅 Закаты / Восходы</h2>
+
+<table>
+<tr><th>Место</th><th>Тип</th><th>Вайб</th></tr>
+<tr><td><strong>Potato Head</strong></td><td>🌅 Закат</td><td>Лучший бич-клаб, дизайн, бассейн</td></tr>
+<tr><td><strong>Ku De Ta</strong></td><td>🌅 Закат</td><td>Классика Семиньяка, коктейли, DJ</td></tr>
+<tr><td><strong>Double Six Beach</strong></td><td>🌅 Закат</td><td>Бин-бэги на песке, демократично</td></tr>
+<tr><td><strong>W Bali</strong></td><td>🌅 Закат</td><td>Luxury бар на крыше, панорама</td></tr>
+</table>
+
+<h2>🌋 Вулканы и горы рядом</h2>
+<div class="place">
+<div class="place-name">Гунунг Батур</div>
+<div class="place-desc">Восхождение на рассвете. 2.5 часа от Семиньяка.</div>
+<div class="place-meta">📍 Кинтамани · от 400K с гидом</div>
+</div>
+<div class="place">
+<div class="place-name">Гунунг Агунг</div>
+<div class="place-desc">Главный вулкан (3142м). 3.5 часа от Семиньяка.</div>
+<div class="place-meta">📍 Карангасем · от 800K</div>
+</div>
+
+<h2>🌾 Рисовые террасы рядом</h2>
+<div class="place">
+<div class="place-name">Tegallalang</div>
+<div class="place-desc">Знаменитые террасы. 1.5-2 часа от Семиньяка.</div>
+<div class="place-meta">📍 Убуд · Вход 25K</div>
+</div>
+<div class="place">
+<div class="place-name">Рисовые поля Чангу</div>
+<div class="place-desc">Ближайшие рисовые поля — 15 мин на скутере (Pererenan).</div>
+</div>
+
+<h2>⛳ Гольф</h2>
+<div class="place">
+<div class="place-name">Bali Beach Golf Course</div>
+<div class="place-desc">Ближайшее поле. 9 лунок у океана в Сануре.</div>
+<div class="place-meta">📍 Sanur · 30 мин от Семиньяка · от 700K/раунд</div>
+</div>
+
+<h2>🍓 Фермы</h2>
+<p>В Семиньяке нет ферм — это городской район. Ближайшие: <strong>Bali Pulina</strong> (Убуд, 1.5 часа) — кофе, <strong>Strawberry Farm</strong> (Бедугул, 2 часа) — клубника.</p>
+
+<h2>🍉 Фруктовые рынки</h2>
+<div class="place">
+<div class="place-name">Pasar Kreneng</div>
+<div class="place-desc">Большой рынок в Денпасаре. Фрукты, овощи, специи. 20 мин от Семиньяка.</div>
+<div class="place-meta">📍 Денпасар · 5-12 дня</div>
+</div>
+<div class="place">
+<div class="place-name">Фруктовые лавки на дороге</div>
+<div class="place-desc">По Jl. Sunset Road — лотки с манго, папайей, рамбутаном. Дешевле супермаркета в 3 раза.</div>
+</div>
+
+<h2>🛍 Шоппинг</h2>
+
+<div class="place">
+<div class="place-name">Jl. Kayu Aya (Eat Street)</div>
+<div class="place-desc">Главная улица: дизайнерские бутики, галереи, ювелирные. Balinese Melrose Ave.</div>
+</div>
+<div class="place">
+<div class="place-name">Seminyak Village</div>
+<div class="place-desc">Торговый центр с международными и локальными брендами. Кондей!</div>
+<div class="place-meta">📍 Jl. Kayu Jati</div>
+</div>
+<div class="place">
+<div class="place-name">Kendra Gallery</div>
+<div class="place-desc">Балийское искусство и дизайн. Уникальные предметы интерьера.</div>
+</div>
+
+<h2>🛒 Продуктовые магазины</h2>
+
+<div class="place">
+<div class="place-name">Pepito Market</div>
+<div class="place-desc">Импортные продукты: европейские сыры, вино, снеки. Несколько точек.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak</div>
+</div>
+<div class="place">
+<div class="place-name">Coco Supermarket</div>
+<div class="place-desc">Большой супермаркет с широким импортом. Дешевле Pepito.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak</div>
+</div>
+
+<h2>👕 Прачечные</h2>
+
+<div class="place">
+<div class="place-name">Seminyak Laundry</div>
+<div class="place-desc">Стирка + глажка. Экспресс за 6 часов. Пикап и доставка.</div>
+<div class="place-meta">📍 Jl. Nakula · от 8K/кг</div>
+</div>
+<div class="place">
+<div class="place-name">Premium Laundry</div>
+<div class="place-desc">Деликатные вещи, химчистка, вечерние платья. Quality service.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak · от 15K/кг</div>
+</div>
+
+<h2>🎉 Клубы и ночная жизнь</h2>
+
+<div class="place">
+<div class="place-name">Potato Head Beach Club</div>
+<div class="place-desc">Иконический бич-клаб. Дизайн, бассейн, DJ, коктейли. Место, которое надо увидеть.</div>
+<div class="place-meta">📍 Jl. Petitenget · Вход бесплатно, коктейли 150-250K</div>
+</div>
+<div class="place">
+<div class="place-name">Ku De Ta</div>
+<div class="place-desc">Один из первых бич-клабов Бали. Закаты, fine dining, клубные вечера.</div>
+<div class="place-meta">📍 Jl. Kayu Aya · Коктейли 150-200K</div>
+</div>
+<div class="place">
+<div class="place-name">Motel Mexicola</div>
+<div class="place-desc">Мексиканский бар: тако, маргариты, неон, музыка. Тусовка каждый вечер.</div>
+<div class="place-meta">📍 Jl. Kayu Jati · Коктейли 100-150K</div>
+</div>
+<div class="place">
+<div class="place-name">Mirror Bali</div>
+<div class="place-desc">Ночной клуб в здании собора. Готический интерьер, электроника, fire show.</div>
+<div class="place-meta">📍 Jl. Petitenget · Вход от 150K</div>
+</div>
+
+<h2>🏥 Клиники и аптеки</h2>
+
+<div class="place">
+<div class="place-name">BaliMéd Hospital</div>
+<div class="place-desc">Полноценная больница с ER. Англоговорящий персонал. Приём от 300K.</div>
+<div class="place-meta">📍 Jl. Sunset Road</div>
+</div>
+<div class="place">
+<div class="place-name">Seminyak Clinic</div>
+<div class="place-desc">Частная клиника: терапевт, дерматолог, стоматология. Приём от 250K.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak</div>
+</div>
+<div class="place">
+<div class="place-name">Guardian / Kimia Farma</div>
+<div class="place-desc">Аптеки по всему району. Базовые лекарства, солнцезащита, средства от москитов.</div>
+</div>
+
+<h2>🛕 Храмы</h2>
+
+<div class="place">
+<div class="place-name">Pura Petitenget</div>
+<div class="place-desc">Важный индуистский храм на пляже. Церемонии, подношения. Бесплатно.</div>
+<div class="place-meta">📍 Jl. Petitenget</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Masceti</div>
+<div class="place-desc">Пляжный храм с регулярными церемониями. Красивый на закате.</div>
+<div class="place-meta">📍 Seminyak Beach</div>
+</div>
+<p>Мечети, церкви — в Денпасаре (15-20 мин). Буддийский храм — Vihara Dharmayana (Kuta, 10 мин).</p>
+
+<h2>🇷🇺 Русское комьюнити</h2>
+
+<div class="place">
+<div class="place-name">Телеграм-чаты</div>
+<div class="place-desc">«Семиньяк Русские», «Бали Чат» — аренда, рестораны, тусовки.</div>
+</div>
+<div class="place">
+<div class="place-name">Русские рестораны</div>
+<div class="place-desc">Меньше чем в Чангу, но есть. «Кафе Москва» — русская кухня, домашняя атмосфера.</div>
+</div>
+<p>Русских в Семиньяке меньше чем в Чангу — тут больше австралийцев и европейцев. Но комьюнити есть.</p>
+
+<h2>🎒 Детские сады и школы</h2>
+
+<div class="place">
+<div class="place-name">Bali Island School</div>
+<div class="place-desc">Международная школа Cambridge. 3-18 лет. Высокий уровень.</div>
+<div class="place-meta">📍 Jl. Kunti · от $6000/год</div>
+</div>
+<div class="place">
+<div class="place-name">Детские сады</div>
+<div class="place-desc">Международные сады Montessori, Reggio Emilia. Русские группы — ищи в «Бали Мамы».</div>
+</div>
+
+<h2>📸 Фото-локации</h2>
+<p>• Potato Head — архитектура и бассейн<br>
+• Double Six Beach — закат, силуэты<br>
+• Pura Petitenget — храм на пляже<br>
+• Eat Street бутики — яркие фасады<br>
+• Motel Mexicola — неоновые вывески<br>
+• Ku De Ta — закат и коктейли</p>
+
+<h2>🏠 Жильё</h2>
+
+<table>
+<tr><th>Тип</th><th>Цена/мес</th><th>Где искать</th></tr>
+<tr><td>Комната / гестхаус</td><td>$350-550</td><td>Booking, на месте</td></tr>
+<tr><td>Студия / 1BR</td><td>$600-1000</td><td>Facebook groups, Flokq</td></tr>
+<tr><td>Вилла 1BR с бассейном</td><td>$1000-2000</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Luxury вилла</td><td>$2500-6000</td><td>Прямые контакты, агенты</td></tr>
+</table>
+<p>Семиньяк дороже Чангу на 20-30%. Лучше для тех, кому важна инфраструктура и близость к аэропорту.</p>
+
+<h2>🛵 Транспорт</h2>
+<p>• <strong>Скутер:</strong> 700K-1M/мес<br>
+• <strong>Grab/Gojek:</strong> от 12K (много водителей, быстро)<br>
+• <strong>До аэропорта:</strong> 20-30 мин, 80-150K<br>
+• <strong>До Чангу:</strong> 15-20 мин<br>
+• <strong>До Убуда:</strong> 1.5 часа</p>
+
+<div class="divider"></div>
+
+<div class="secret">
+<div class="secret-title">🤫 Секрет района</div>
+<div class="secret-text">Jl. Drupadi и Jl. Nakula — тихие улочки в центре Семиньяка с локальными варунгами и маленькими виллами по ценам в 2 раза ниже основных улиц. Весь лакшери — в 5 минутах пешком.</div>
+</div>
+
+<div class="warn">
+<div class="warn-title">⚠️ Минусы</div>
+<div class="warn-text">Дорого. Пробки постоянные (особенно Jl. Raya Seminyak). Тротуаров нет — пешком опасно. Пляжи для сёрфа, не для купания. Шумно. Парковка — проблема. Цены в ресторанах — как в Европе.</div>
+</div>
+
+<div class="divider"></div>
+
+<h2>💰 Бюджет на месяц</h2>
+
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Минимум</div>
+<div class="budget-price">$800</div>
+<div class="budget-unit">в месяц</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Комфортно</div>
+<div class="budget-price">$1800</div>
+<div class="budget-unit">в месяц</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$4500</div>
+<div class="budget-unit">в месяц</div>
+</div>
+</div>
+
+<div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
+
+</body>
+</html>
