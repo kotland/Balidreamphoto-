@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Где свои на Бали</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden}
+.grad1{position:fixed;top:-20%;right:-15%;width:55%;height:55%;background:radial-gradient(ellipse,rgba(100,180,160,0.25) 0%,transparent 70%);filter:blur(60px);pointer-events:none;z-index:0;animation:d1 16s ease-in-out infinite}
+.grad2{position:fixed;bottom:-15%;left:-10%;width:50%;height:50%;background:radial-gradient(ellipse,rgba(180,160,120,0.2) 0%,transparent 70%);filter:blur(55px);pointer-events:none;z-index:0;animation:d2 14s ease-in-out infinite}
+.grad3{position:fixed;top:40%;left:15%;width:35%;height:35%;background:radial-gradient(ellipse,rgba(120,170,200,0.15) 0%,transparent 60%);filter:blur(45px);pointer-events:none;z-index:0;animation:d3 18s ease-in-out infinite}
+@keyframes d1{0%,100%{transform:translate(0,0)}50%{transform:translate(-15px,20px)}}
+@keyframes d2{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-15px)}}
+@keyframes d3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(10px,-10px) scale(1.05)}}
+.app{max-width:480px;margin:0 auto;padding:24px 20px;min-height:100vh;display:flex;flex-direction:column;position:relative;z-index:1}
+.screen{display:none;flex:1;flex-direction:column;animation:fadeIn 0.5s ease}
+.screen.active{display:flex}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+
+
+
+
+
+
+
+
+.bali-map{width:100%;max-width:360px;height:auto}
+.bali-map text{cursor:pointer;transition:fill 0.2s}
+.bali-map text:hover{fill:rgba(42,107,90,0.8) !important}
+.bali-map .dot{cursor:pointer}
+.title{font-size:28px;font-weight:700;text-align:center;line-height:1.25;margin-bottom:12px;color:#2a2a28}
+.title em{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:#2a6b5a;font-size:1.15em}
+.subtitle{font-size:14px;color:rgba(42,42,40,0.45);text-align:center;line-height:1.6;margin-bottom:32px;padding:0 10px}
+.steps{display:flex;justify-content:center;gap:8px;margin-bottom:28px}
+.step-dot{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,0.08);transition:all 0.3s}
+.step-dot.active{background:#2a6b5a;width:24px;border-radius:4px}
+.step-dot.done{background:rgba(42,107,90,0.3)}
+.section-title{font-size:13px;font-weight:600;color:rgba(42,107,90,0.7);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{padding:10px 18px;border-radius:50px;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.3s;border:1.5px solid rgba(0,0,0,0.06);background:rgba(255,255,255,0.6);color:rgba(42,42,40,0.7);backdrop-filter:blur(8px);user-select:none}
+.chip:hover{background:rgba(255,255,255,0.85);border-color:rgba(42,107,90,0.15)}
+.chip.selected{background:rgba(42,107,90,0.1);border-color:rgba(42,107,90,0.3);color:#2a6b5a}
+.btn{display:flex;width:100%;padding:16px 24px;border:none;border-radius:50px;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.3s;text-decoration:none;font-family:'Inter',sans-serif;align-items:center;justify-content:center;gap:10px}
+.btn-primary{background:rgba(255,255,255,0.7);color:#2a2a28;border:1px solid rgba(0,0,0,0.06);backdrop-filter:blur(12px);box-shadow:0 2px 16px rgba(0,0,0,0.04);margin-top:auto}
+.btn-primary:hover{background:rgba(255,255,255,0.9)}
+.btn-primary:disabled{opacity:0.4;cursor:not-allowed}
+.btn svg{width:16px;height:16px;transition:transform 0.3s}
+.btn:hover svg{transform:translate(2px,-2px)}
+.result-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:20px;padding:24px 20px;margin-bottom:12px;backdrop-filter:blur(16px)}
+.result-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#2a6b5a;margin-bottom:4px}
+.result-name{font-size:20px;font-weight:700;margin-bottom:6px}
+.result-match{font-size:13px;color:rgba(42,107,90,0.6);margin-bottom:12px;font-weight:500}
+.result-bar{height:4px;background:rgba(0,0,0,0.04);border-radius:2px;margin-bottom:12px;overflow:hidden}
+.result-bar-fill{height:100%;background:linear-gradient(90deg,#2a6b5a,#4a9b8a);border-radius:2px;transition:width 1.2s ease}
+.result-who{font-size:13px;color:rgba(42,42,40,0.5);margin-bottom:8px;font-weight:500}
+.result-desc{font-size:13px;color:rgba(42,42,40,0.55);line-height:1.6}
+.result-places{margin-top:12px}
+.result-place{font-size:13px;color:rgba(42,42,40,0.7);padding:6px 0;border-bottom:1px solid rgba(0,0,0,0.03)}
+.result-place:last-child{border:none}
+.share-text{font-size:12px;color:rgba(42,42,40,0.3);text-align:center;margin-top:16px;margin-bottom:12px}
+/* Map popup */
+.map-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.15);backdrop-filter:blur(3px);z-index:99}
+.map-overlay.show{display:block}
+.map-popup{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100}
+.map-popup.show{display:block;animation:slideUp 0.3s ease}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.map-popup-card{max-width:480px;margin:0 auto;background:#f8f6f2;border-radius:20px 20px 0 0;padding:24px 20px 32px;box-shadow:0 -4px 32px rgba(0,0,0,0.08)}
+.map-popup-handle{width:36px;height:4px;background:rgba(0,0,0,0.1);border-radius:2px;margin:0 auto 16px}
+.map-popup-name{font-family:'Playfair Display',serif;font-style:italic;font-size:24px;color:#2a6b5a;margin-bottom:8px}
+.map-popup-who{font-size:12px;color:rgba(42,42,40,0.45);margin-bottom:10px}
+.map-popup-desc{font-size:14px;color:rgba(42,42,40,0.65);line-height:1.6;margin-bottom:16px}
+.map-popup-tags{display:flex;flex-wrap:wrap;gap:6px}
+.map-popup-tag{font-size:11px;padding:5px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1)}
+.footer{text-align:center;padding:20px 0;font-size:10px;color:rgba(42,42,40,0.2);letter-spacing:1px;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
+<div class="app">
+<div class="screen active" id="startScreen">
+<div style="font-size:48px;text-align:center;margin:30px 0 20px">🌴</div>
+<div class="title">Найди <em>свой район</em> на Бали</div>
+<div class="subtitle">Выбери кто ты и что тебе важно — покажем район где живут такие же как ты. Найди своих.</div>
+<div class="bali-map-wrap">
+<div class="bali-map-img-wrap">
+
+<div class="map-dot" style="top:10%;left:52%" onclick="mapClick('lovina')"></div>
+<div class="map-dot" style="top:27%;left:93%" onclick="mapClick('amed')"></div>
+<div class="map-dot" style="top:43%;left:55%" onclick="mapClick('ubud')"></div>
+<div class="map-dot" style="top:38%;left:34%" onclick="mapClick('canggu')"></div>
+<div class="map-dot" style="top:63%;left:52%" onclick="mapClick('seminyak')"></div>
+<div class="map-dot" style="top:65%;left:66%" onclick="mapClick('sanur')"></div>
+<div class="map-dot" style="top:67%;left:45%" onclick="mapClick('uluwatu')"></div>
+<div class="map-dot" style="top:78%;left:87%" onclick="mapClick('nusadua')"></div>
+<div class="map-dot" style="top:17%;left:72%" onclick="mapClick('penida')"></div>
+
+</div>
+</div>
+<button class="btn btn-primary" onclick="goStep(1)">Подобрать район <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
+</div>
+<div class="screen" id="step1">
+<div class="steps"><div class="step-dot active"></div><div class="step-dot"></div></div>
+<div class="section-title">Кто ты?</div>
+<div class="title" style="font-size:22px;text-align:left;margin-bottom:20px">Выбери что <em>ближе</em></div>
+<div class="chips" id="whoChips"></div>
+<button class="btn btn-primary" id="btn1" disabled onclick="goStep(2)">Далее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
+</div>
+<div class="screen" id="step2">
+<div class="steps"><div class="step-dot done"></div><div class="step-dot active"></div></div>
+<div class="section-title">Что важно?</div>
+<div class="title" style="font-size:22px;text-align:left;margin-bottom:20px">Отметь всё что <em>откликается</em></div>
+<div class="chips" id="whatChips"></div>
+<button class="btn btn-primary" id="btn2" disabled onclick="showResults()">Показать мой район <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
+</div>
+<div class="screen" id="resultScreen">
+<div class="title" style="margin-top:20px">Твои <em>места</em> на Бали</div>
+<div class="subtitle" style="margin-bottom:20px">Топ районов по совпадению</div>
+<div id="resultsContainer"></div>
+<button class="btn btn-primary" onclick="window.open('https://kotland.github.io/bali-guide/canggu.html','_blank')" style="margin-bottom:10px;background:rgba(42,107,90,0.1);color:#2a6b5a;border:1px solid rgba(42,107,90,0.15)">Посмотреть гайд по району <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
+<div class="share-text">Поделись с друзьями кто собирается на Бали</div>
+<button class="btn btn-primary" onclick="shareRes()" style="margin-top:0;margin-bottom:10px">Поделиться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
+</div>
+<div class="footer">@balidreamphoto</div>
+</div>
+<div class="map-overlay" id="mapOverlay" onclick="hidePopup()"></div>
+<div class="map-popup" id="mapPopup"><div class="map-popup-card" onclick="event.stopPropagation()"><div class="map-popup-handle"></div><div class="map-popup-name" id="popName"></div><div class="map-popup-who" id="popWho"></div><div class="map-popup-desc" id="popDesc"></div><div class="map-popup-tags" id="popTags"></div></div></div>
+<script>
+var MAP_DATA={
+canggu:{name:'Чангу',who:'Digital nomads, сёрферы, контент-креаторы',desc:'Эпицентр digital-жизни Бали. Рисовые поля, сёрф-споты и сотни кафе где все работают за ноутбуками.',tags:['Сёрфинг','Кафе','WiFi','Закаты']},
+seminyak:{name:'Семиньяк',who:'Предприниматели, шопоголики, тусовщики',desc:'Бали для тех кто любит красивую жизнь. Бутики, рестораны, бич-клабы и ночная жизнь.',tags:['Шоппинг','Рестораны','Ночная жизнь','Пляж']},
+ubud:{name:'Убуд',who:'Йоги, художники, писатели, искатели',desc:'Духовное сердце Бали. Рисовые террасы, храмы, галереи и ретриты. Здесь замедляешься.',tags:['Йога','Культура','Природа','Тишина']},
+sanur:{name:'Санур',who:'Семьи с детьми, йоги, спокойные',desc:'Восходы вместо закатов. Спокойный, семейный, настоящий Бали каким он был 20 лет назад.',tags:['Семья','Тишина','Восходы','Велосипеды']},
+uluwatu:{name:'Улувату',who:'Сёрферы, фотографы, искатели тишины',desc:'Скалы, дикий океан и лучшие сёрф-споты. Для тех кто хочет настоящий Бали без толп.',tags:['Сёрфинг','Скалы','Закаты','Luxury']},
+nusadua:{name:'Нуса Дуа',who:'Luxury-отдых, семьи, корпоративы',desc:'Курортная зона. Чистые пляжи, гольф, 5-звёздочные отели. Бали в формате всё включено.',tags:['Luxury','Пляж','Курорт','Семья']},
+amed:{name:'Амед',who:'Дайверы, йоги, минималисты',desc:'Чёрный вулканический песок, коралловые рифы, вулкан Агунг на горизонте. Бали без туристов.',tags:['Дайвинг','Тишина','Бюджетно','Вулкан']},
+lovina:{name:'Ловина',who:'Искатели тишины, семьи, бюджетные',desc:'Север Бали. Дельфины на рассвете, горячие источники, нулевые цены. Тут нет туристов.',tags:['Дельфины','Бюджетно','Тишина','Природа']},
+penida:{name:'Нуса Пенида',who:'Фотографы, авантюристы',desc:'Остров рядом с Бали. 100-метровые скалы, бирюзовая вода, манты. Самые мощные виды.',tags:['Скалы','Снорклинг','Фото','Приключения']}
+};
+function mapClick(id){var d=MAP_DATA[id];if(!d)return;
+document.getElementById('popName').textContent=d.name;
+document.getElementById('popWho').textContent=d.who;
+document.getElementById('popDesc').textContent=d.desc;
+document.getElementById('popTags').innerHTML=d.tags.map(function(t){return'<span class="map-popup-tag">'+t+'</span>'}).join('');
+document.getElementById('mapOverlay').classList.add('show');
+document.getElementById('mapPopup').classList.add('show');
+if(window.Telegram&&Telegram.WebApp){try{Telegram.WebApp.HapticFeedback.impactOccurred('light')}catch(e){}}
+}
+function hidePopup(){document.getElementById('mapOverlay').classList.remove('show');document.getElementById('mapPopup').classList.remove('show')}
+var WHO=[{id:'nomad',emoji:'💻',label:'Digital nomad'},{id:'photo',emoji:'📸',label:'Фотограф / контент-креатор'},{id:'yoga',emoji:'🧘',label:'Йога / духовные практики'},{id:'surfer',emoji:'🏄',label:'Сёрфер'},{id:'family',emoji:'👨‍👩‍👧',label:'Семья с детьми'},{id:'business',emoji:'💼',label:'Предприниматель'},{id:'artist',emoji:'🎨',label:'Художник / музыкант'},{id:'tourist',emoji:'🌴',label:'Просто отдыхаю'}];
+var WHAT=[{id:'ocean',emoji:'🌊',label:'Рядом океан'},{id:'budget',emoji:'💰',label:'Бюджетно'},{id:'food',emoji:'🍜',label:'Вкусная еда'},{id:'yoga_sp',emoji:'🧘',label:'Йога и спорт'},{id:'party',emoji:'🎉',label:'Тусовка'},{id:'quiet',emoji:'🌿',label:'Тишина и природа'},{id:'wifi',emoji:'💻',label:'WiFi и коворкинги'},{id:'surf',emoji:'🏄',label:'Сёрфинг'},{id:'sunset',emoji:'🌅',label:'Красивые закаты'},{id:'culture',emoji:'🛕',label:'Храмы и культура'},{id:'shop',emoji:'🛍',label:'Шоппинг'},{id:'dive',emoji:'🤿',label:'Дайвинг'},{id:'luxury',emoji:'💎',label:'Luxury'},{id:'photo_sp',emoji:'📸',label:'Фото-локации'}];
+var AREAS=[
+{name:'Чангу',who:['nomad','photo','surfer','artist','business'],what:['ocean','food','wifi','surf','sunset','party','photo_sp'],who_text:'Digital nomads, сёрферы, креаторы',desc:'Эпицентр digital-жизни Бали.',places:['☕ Crate Cafe — коворкинг','🏄 Batu Bolong — сёрф-пляж','🌅 La Brisa — закат','💻 Dojo Bali — коворкинг 24/7','🍜 Warung Bu Mi — локальная еда']},
+{name:'Убуд',who:['yoga','artist','tourist','photo'],what:['culture','quiet','yoga_sp','budget','food','photo_sp'],who_text:'Йоги, художники, искатели',desc:'Духовное сердце Бали.',places:['🧘 Yoga Barn','🐒 Monkey Forest','🌾 Tegallalang','🎨 Neka Art Museum','☕ Seniman Coffee']},
+{name:'Семиньяк',who:['business','tourist','photo'],what:['shop','food','party','luxury','sunset','ocean'],who_text:'Предприниматели, тусовщики',desc:'Красивая жизнь, бутики, бич-клабы.',places:['🍽 Mama San','🛍 Seminyak Village','🌅 Potato Head','💎 W Bali','🏖 Double Six']},
+{name:'Улувату',who:['surfer','photo','yoga','artist'],what:['surf','ocean','sunset','quiet','luxury','photo_sp'],who_text:'Сёрферы, фотографы',desc:'Скалы, дикий океан, тишина.',places:['🏄 Padang Padang','🛕 Uluwatu Temple','🌅 Single Fin','💎 The Edge','🏄 Suluban']},
+{name:'Санур',who:['family','tourist','yoga'],what:['ocean','quiet','budget','food','culture'],who_text:'Семьи, спокойные',desc:'Восходы, велосипеды, тишина.',places:['🌅 Восход на пляже','🚲 Велодорожка','🍜 Warung Mak Beng','🛕 Museum Le Mayeur','⛴ Порт на Пениду']},
+{name:'Нуса Дуа',who:['family','tourist','business'],what:['ocean','luxury','quiet'],who_text:'Luxury, семьи',desc:'5 звёзд, чистые пляжи, гольф.',places:['🏖 Пляж Нуса Дуа','💎 The Mulia','⛳ Golf Club','🛍 Bali Collection','🌊 Water Blow']},
+{name:'Амед',who:['yoga','artist','surfer'],what:['dive','quiet','budget','ocean','culture'],who_text:'Дайверы, минималисты',desc:'Вулкан, рифы, тишина.',places:['🤿 Japanese Shipwreck','🌋 Вид на Агунг','🧘 Amed Yoga','🍜 Warung Enak','🐠 Снорклинг с берега']},
+{name:'Ловина',who:['family','tourist','yoga'],what:['quiet','budget','culture','ocean'],who_text:'Искатели тишины',desc:'Дельфины, горячие источники, ноль туристов.',places:['🐬 Дельфины на рассвете','♨️ Banjar Hot Springs','🛕 Brahma Vihara','🍜 Еда от 15K','🌊 Спокойное море']}
+];
+var selWho=[],selWhat=[];
+function renderChips(items,cId,arr,bId){var c=document.getElementById(cId);c.innerHTML='';items.forEach(function(item){var d=document.createElement('div');d.className='chip';d.innerHTML='<span>'+item.emoji+'</span> '+item.label;d.onclick=function(){var i=arr.indexOf(item.id);if(i>=0){arr.splice(i,1);d.classList.remove('selected')}else{arr.push(item.id);d.classList.add('selected')}document.getElementById(bId).disabled=arr.length===0};c.appendChild(d)})}
+function goStep(n){document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});document.getElementById(n===1?'step1':'step2').classList.add('active');if(n===1)renderChips(WHO,'whoChips',selWho,'btn1');if(n===2)renderChips(WHAT,'whatChips',selWhat,'btn2')}
+function showResults(){document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});document.getElementById('resultScreen').classList.add('active');
+var scored=AREAS.map(function(a){var score=0;selWho.forEach(function(w){if(a.who.indexOf(w)>=0)score+=2});selWhat.forEach(function(w){if(a.what.indexOf(w)>=0)score+=1});var max=selWho.length*2+selWhat.length;return{name:a.name,score:score,pct:Math.round(score/max*100),who_text:a.who_text,desc:a.desc,places:a.places}}).sort(function(a,b){return b.score-a.score}).slice(0,3);
+var c=document.getElementById('resultsContainer');c.innerHTML='';scored.forEach(function(a,i){c.innerHTML+='<div class="result-card"><div class="result-num">#'+(i+1)+'</div><div class="result-name">'+a.name+'</div><div class="result-match">'+a.pct+'% совпадение</div><div class="result-bar"><div class="result-bar-fill" style="width:0%" data-w="'+a.pct+'%"></div></div><div class="result-who">'+a.who_text+'</div><div class="result-desc">'+a.desc+'</div><div class="result-places">'+a.places.map(function(p){return'<div class="result-place">'+p+'</div>'}).join('')+'</div></div>'});
+setTimeout(function(){document.querySelectorAll('.result-bar-fill').forEach(function(b){b.style.width=b.dataset.w})},100);
+if(window.Telegram&&Telegram.WebApp){try{Telegram.WebApp.HapticFeedback.notificationOccurred('success')}catch(e){}}}
+function shareRes(){var t='🌴 Нашёл свой район на Бали!\n\nПопробуй: https://kotland.github.io/bali-guide/';if(navigator.share){navigator.share({text:t}).catch(function(){})}else{navigator.clipboard.writeText(t).then(function(){event.target.closest('.btn').innerHTML='✓ Скопировано';setTimeout(function(){event.target.closest('.btn').innerHTML='Поделиться'},2000)})}}
+if(window.Telegram&&Telegram.WebApp){Telegram.WebApp.ready();Telegram.WebApp.expand()}
+</script>
+</body>
+</html>
