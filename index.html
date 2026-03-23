@@ -186,7 +186,7 @@ td strong{color:#2a2a28}
 <button class="btn btn-primary" onclick="shareRes()" style="margin-top:0;margin-bottom:10px">Поделиться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
 </div>
 <div class="screen" id="guide-ubud" style="overflow-y:auto;max-height:100vh;padding-bottom:80px">
-<button class="btn btn-primary" onclick="hideGuide()" style="position:sticky;top:0;z-index:10;margin-bottom:16px;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px)">← Назад к результатам</button>
+<button class="btn btn-primary" onclick="hideGuide()" style="position:fixed;bottom:0;left:0;right:0;z-index:100;margin:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:0">← Назад к результатам</button>
 <h1><em>Убуд</em></h1>
 <p class="sub">Полный гайд по району · @balidreamphoto</p>
 <div class="tag">🧘 Йога</div>
@@ -221,6 +221,10 @@ td strong{color:#2a2a28}
 <div class="place-desc">Колониальный стиль, балкон с видом на улицу. Яванский и балийский кофе.</div>
 <div class="place-meta">📍 Jl. Goutama · Кофе 30-45K · WiFi ⭐⭐⭐</div>
 </div>
+<div class="place"><div class="place-name">Seniman Coffee Studio</div><div class="place-desc">Пионер specialty coffee в Убуде. Single-origin индонезийские зёрна, ручные методы заварки.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Seniman+Coffee+Studio+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · от 25K</div></div>
+<div class="place"><div class="place-name">Ubud Coffee Roastery</div><div class="place-desc">Маленький, но отличный — 100% индонезийская арабика, обжарка на месте.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Ubud+Coffee+Roastery" target="_blank" style="color:#3a9b7a">Maps</a> · от 20K</div></div>
+<div class="place"><div class="place-name">Monsieur Spoon</div><div class="place-desc">Французская пекарня-кафе, потрясающая выпечка и кофе.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Monsieur+Spoon+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · 30-55K</div></div>
+<div class="place"><div class="place-name">Daily Baguette</div><div class="place-desc">Кафе во французском стиле с хорошим кофе и выпечкой.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Daily+Baguette+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · 25-50K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">💻 Кафе с Wi-Fi <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -561,20 +565,21 @@ td strong{color:#2a2a28}
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛍 Шоппинг <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
-<div class="place">
-<div class="place-name">Pasar Ubud (дневной)</div>
-<div class="place-desc">После 10 утра — сувенирный рынок. Саронги, статуэтки, корзины. Торгуйся на 50%!</div>
-<div class="place-meta">📍 Центр Убуда</div>
-</div>
-<div class="place">
-<div class="place-name">Jl. Hanoman Boutiques</div>
-<div class="place-desc">Дизайнерские бутики: одежда из натуральных тканей, ювелирка, керамика.</div>
-</div>
-<div class="place">
-<div class="place-name">Threads of Life</div>
-<div class="place-desc">Галерея текстиля: традиционные ткани ручной работы от деревенских мастеров.</div>
-<div class="place-meta">📍 Jl. Kajeng</div>
-</div>
+<div class="place"><div class="place-name">Ubud Market</div><div class="place-desc">Сувениры, ткани, резьба. Торгуйся!</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Ubud+Art+Market" target="_blank" style="color:#3a9b7a">Maps</a> · от 10K</div></div>
+<div class="place"><div class="place-name">Tegallalang Shops</div><div class="place-desc">Скульптуры, сумочки, люстры — всё!</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Tegallalang+Shopping" target="_blank" style="color:#3a9b7a">Maps</a> · от 20K</div></div>
+<div class="place"><div class="place-name">Curating Studio Shop</div><div class="place-desc">620+ отзывов! Супер место с красивыми вещами ручной работы <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Curating+Studio+Shop+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Ubud Art Market</div><div class="place-desc">Шёлковые шарфы, маски, батик, ротанг. Утром — лучшие цены <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Ubud+Art+Market" target="_blank" style="color:#3a9b7a">Maps</a> · $</div></div>
+<div class="place"><div class="place-name">Amethysta Ubud</div><div class="place-desc">Кристаллы, целительные камни, метафизические украшения <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">благовония</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Amethysta+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">John Hardy</div><div class="place-desc">Легендарный балийский бренд. Серебро ручной работы + мастерская <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">люкс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/John+Hardy+Boutique+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Indigo Luna</div><div class="place-desc">138 отзывов. Йога-одежда, потрясающий магазинчик! <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">спорт</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Indigo+Luna+Store+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Bintara Art Gallery</div><div class="place-desc">1100+ отзывов. Handmade сувениры, скидка новым клиентам <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Bintara+Art+Gallery+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Smile Shop Nyuh Kuning</div><div class="place-desc">128 отзывов. Секонд-хенд для благотворительности! <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">секонд</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Smile+Shop+Nyuh+Kuning+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $</div></div>
+<div class="place"><div class="place-name">Nudes Concept</div><div class="place-desc">85 отзывов. Стильный бутик с местными модными брендами <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Nudes+Concept+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Bamboo Blonde Ubud</div><div class="place-desc">80 отзывов. Качественные вещи, тропический минимализм <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Bamboo+Blonde+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Threads of Life</div><div class="place-desc">Традиционные текстили всей Индонезии, fair trade, музейный уровень <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">для дома</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Threads+of+Life+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Celuk Silver Centre</div><div class="place-desc">Серебро ручной работы. Десятки мастерских, можно заказать свой дизайн <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Celuk+Silver+Craft+Centre" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Toko Dupa KM</div><div class="place-desc">Магазин благовоний! Ароматы на любой вкус <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">благовония</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Toko+Dupa+KM+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $</div></div>
+<div class="place"><div class="place-name">Wayan's Shop</div><div class="place-desc">162 отзыва. Купила себе и в подарок — отличные сувениры <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Wayans+Shop+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛒 Продуктовые магазины <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -607,6 +612,9 @@ td strong{color:#2a2a28}
 <div class="place-meta">📍 Jl. Monkey Forest · от 10K/кг</div>
 </div>
 <p>Self-service мало. Большинство — drop-off: сдал утром, забрал вечером или на следующий день.</p>
+<div class="place"><div class="place-name">Swastee Eco Laundry Ubud</div><div class="place-desc">Эко-стирка как в Чангу. Self-service, drop-off или пикап с доставкой.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Swastee+Eco+Laundry+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · от 30K/кг</div></div>
+<div class="place"><div class="place-name">Premium Laundry Bali</div><div class="place-desc">Профессиональный сервис уровня отеля. Химчистка есть.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Premium+Laundry+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · от 35K/кг</div></div>
+<div class="place"><div class="place-name">Bali Laundry Service</div><div class="place-desc">Бесплатный пикап и доставка в отель. Экспресс 7ч — 50K, супер-экспресс 3ч — 80K.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Bali+Laundry+Service" target="_blank" style="color:#3a9b7a">Maps</a> · от 35K/кг</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🎉 Клубы и ночная жизнь <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -704,6 +712,11 @@ td strong{color:#2a2a28}
 <div class="place-desc">Храм на пруду с лотосами в центре Убуда. Бесплатно. Вечерние танцы легонг.</div>
 <div class="place-meta">📍 Jl. Raya Ubud · Бесплатно</div>
 </div>
+<div class="place"><div class="place-name">Pura Taman Saraswati</div><div class="place-desc">Храм богини знаний в центре Убуда. Пруды с розовыми лотосами, 2 мин от рынка. Бесплатно.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/saraswatiubud" target="_blank" style="color:#3a9b7a">Maps</a> · Вход Бесплатно</div></div>
+<div class="place"><div class="place-name">Goa Gajah (Слоновья пещера)</div><div class="place-desc">Древний храм IX века. Резные пещеры, купальни, фонтаны. 5 мин от парковки.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/goagajah" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 50K</div></div>
+<div class="place"><div class="place-name">Batuan Temple</div><div class="place-desc">Храм 944 года! Невероятно детальная резьба по камню. Менее туристический, аутентичный опыт.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/batuan" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 25-50K</div></div>
+<div class="place"><div class="place-name">Pura Kehen</div><div class="place-desc">Храмовый комплекс XI века на холме. Терраcный дизайн, огромный баньян. Вне туристических маршрутов.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/purakehen" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 30-50K</div></div>
+<div class="place"><div class="place-name">Besakih Temple (Храм-Мать)</div><div class="place-desc">Крупнейший храм Бали! 80+ храмов на склоне вулкана Агунг. Духовный центр балийского индуизма с 1007 года.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/RsJ5uNiq2Q62" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 60-150K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🇷🇺 Русское комьюнити <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -719,6 +732,16 @@ td strong{color:#2a2a28}
 <div class="place-name">Русскоговорящие специалисты</div>
 <div class="place-desc">Ищи в чатах: натуропаты, аюрведа-консультанты, гиды — всё есть.</div>
 </div>
+<div class="place"><div class="place-name">БалиФорум — Общий чат</div><div class="place-desc">30,000+ подписчиков. Главный русскоязычный чат о Бали. Все вопросы, помощь, общение.</div><div class="place-meta">💬 <a href="https://t.me/balichat" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">БалиЧатик</div><div class="place-desc">15,000+ подписчиков. Единый большой чат, все темы.</div><div class="place-meta">💬 <a href="https://t.me/balichatik" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Список всех чатов Бали</div><div class="place-desc">Каталог всех групп и каналов Бали.</div><div class="place-meta">💬 <a href="https://t.me/baliallgroup" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Убуд чат</div><div class="place-desc">Чат района Убуд. Аренда, рекомендации, мероприятия.</div><div class="place-meta">💬 <a href="https://t.me/balichat_ubud" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Визы и перелеты</div><div class="place-desc">Визовые вопросы, авиабилеты.</div><div class="place-meta">💬 <a href="https://t.me/balichatvisa" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Аренда жилья</div><div class="place-desc">Аренда вилл, домов, квартир.</div><div class="place-meta">💬 <a href="https://t.me/balichatarenda" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Работа на Бали</div><div class="place-desc">Вакансии и резюме.</div><div class="place-meta">💬 <a href="https://t.me/rabota_na_bali" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Здоровье</div><div class="place-desc">Медицина, врачи, клиники.</div><div class="place-meta">💬 <a href="https://t.me/balichathealth" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Тусовки</div><div class="place-desc">Анонсы вечеринок.</div><div class="place-meta">💬 <a href="https://t.me/bali_party" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Полицейские облавы</div><div class="place-desc">Предупреждения о рейдах.</div><div class="place-meta">💬 <a href="https://t.me/balistop" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">📸 Фото-локации <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -729,6 +752,15 @@ td strong{color:#2a2a28}
 • Pura Gunung Kawi — храмы в скале<br>
 • Любое кафе с видом на рисовые поля<br>
 </p>
+<div class="place"><div class="place-name">Tegallalang Ceking Viewpoint</div><div class="place-desc">Самые знаменитые рисовые террасы Бали (UNESCO). Лучший вид — с Ceking terrace (северный конец). Кафе вдоль хребта.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/Z6iHB7tjsP1XBFSQ8" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Campuhan Ridge Walk</div><div class="place-desc">Живописная тропа на холме между двух речных долин. Лучше на рассвете — золотой свет, туман над джунглями. Бесплатно.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/campuhanridgewalk" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Taman Dedari</div><div class="place-desc">Сад с 10-метровыми статуями ангелов, качелями и видом на террасы. Спокойнее чем Alas Harum.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/tamandedari" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Bali Swing</div><div class="place-desc">Оригинальные качели над джунглями! Наденьте развевающееся платье (или возьмите напрокат на месте).</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/2hkKMzoU9yVbXCVN9" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Alas Harum</div><div class="place-desc">Парк развлечений: качели, зиплайн, sky bike над террасами + инфинити-бассейн Cretya (18+). На весь день!</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/alasharum" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Tukad Cepung Waterfall</div><div class="place-desc">Водопад внутри пещерного каньона! Солнечные лучи пробиваются сквозь расщелину — волшебный свет с 9 до 11 утра.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/tukadcepung" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Tegenungan Waterfall</div><div class="place-desc">Мощный 25-метровый водопад в джунглях, близко к Убуду. Можно плавать у подножия. Вход ~20K.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/F77PcJEAcAwgj1nf9" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Sari Organik Cafe</div><div class="place-desc">Пионер органической кухни среди рисовых полей. До кафе — прогулка через поля, сама дорога — фото-спот!</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/sariorganik" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Karsa Cafe</div><div class="place-desc">Уютное кафе над террасными рисовыми полями + йога и спа. Тихое место для фото вдали от толп.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/karsacafe" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🏠 Жильё <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -961,7 +993,7 @@ td strong{color:#2a2a28}
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="hideGuide()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
 <div class="screen" id="guide-nusadua" style="overflow-y:auto;max-height:100vh;padding-bottom:80px">
-<button class="btn btn-primary" onclick="hideGuide()" style="position:sticky;top:0;z-index:10;margin-bottom:16px;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px)">← Назад к результатам</button>
+<button class="btn btn-primary" onclick="hideGuide()" style="position:fixed;bottom:0;left:0;right:0;z-index:100;margin:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:0">← Назад к результатам</button>
 <h1><em>Нуса Дуа</em></h1>
 <p class="sub">Полный гайд по району · @balidreamphoto</p>
 <div class="tag">🏖 Спокойный пляж</div>
@@ -1148,11 +1180,7 @@ td strong{color:#2a2a28}
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛍 Шоппинг <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
-<div class="place">
-<div class="place-name">Bali Collection</div>
-<div class="place-desc">Торговый центр в BTDC: бутики, рестораны, сувенирные. Кондей!</div>
-<div class="place-meta">📍 BTDC Area</div>
-</div>
+<div class="place"><div class="place-name">Bali Collection</div><div class="place-desc">ТЦ Нуса Дуа</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Bali+Collection+Nusa+Dua" target="_blank" style="color:#3a9b7a">Maps</a> · от 100K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛒 Продуктовые магазины <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -1174,6 +1202,8 @@ td strong{color:#2a2a28}
 <div class="place-desc">Прачечные за пределами BTDC. Дешевле резортных.</div>
 <div class="place-meta">📍 Bualu · от 8K/кг</div>
 </div>
+<div class="place"><div class="place-name">DE Laundry</div><div class="place-desc">Speed Queen машины, антибактериальная обработка, бесплатный шаттл по Нуса Дуа.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/DE+Laundry+Benoa" target="_blank" style="color:#3a9b7a">Maps</a> · от 35K/кг (мин 6кг)</div></div>
+<div class="place"><div class="place-name">Good Laundry</div><div class="place-desc">Экспресс 3ч, обычная. Нуса Дуа, Джимбаран, Куба Аньяр.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Good+Laundry+Nusa+Dua" target="_blank" style="color:#3a9b7a">Maps</a> · от 15K/кг</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🎉 Клубы и ночная жизнь <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -1191,10 +1221,21 @@ td strong{color:#2a2a28}
 <div class="place-desc">Не храм, но must see — волны разбиваются о скалу фонтаном на 10м.</div>
 <div class="place-meta">📍 BTDC · Бесплатно</div>
 </div>
+<div class="place"><div class="place-name">Besakih Temple (Храм-Мать)</div><div class="place-desc">Крупнейший и святейший храм Бали — 80+ храмов на склоне Агунг. Гид обязателен.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/RsJ5uNiq2Q62" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 60-150K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🇷🇺 Русское комьюнити <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
 <p>Русских в Нуса Дуа очень мало — район для отпускников, не для long-stay. Русскоговорящие гиды есть через отели. Комьюнити нет.</p>
+<div class="place"><div class="place-name">БалиФорум — Общий чат</div><div class="place-desc">30,000+ подписчиков. Главный русскоязычный чат о Бали. Все вопросы, помощь, общение.</div><div class="place-meta">💬 <a href="https://t.me/balichat" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">БалиЧатик</div><div class="place-desc">15,000+ подписчиков. Единый большой чат, все темы.</div><div class="place-meta">💬 <a href="https://t.me/balichatik" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Список всех чатов Бали</div><div class="place-desc">Каталог всех групп и каналов Бали.</div><div class="place-meta">💬 <a href="https://t.me/baliallgroup" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Букит чат</div><div class="place-desc">Чат района Букит (Нуса Дуа, Джимбаран, Улувату).</div><div class="place-meta">💬 <a href="https://t.me/balichat_bukit" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Визы и перелеты</div><div class="place-desc">Визовые вопросы, авиабилеты.</div><div class="place-meta">💬 <a href="https://t.me/balichatvisa" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Аренда жилья</div><div class="place-desc">Аренда вилл, домов, квартир.</div><div class="place-meta">💬 <a href="https://t.me/balichatarenda" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Работа на Бали</div><div class="place-desc">Вакансии и резюме.</div><div class="place-meta">💬 <a href="https://t.me/rabota_na_bali" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Здоровье</div><div class="place-desc">Медицина, врачи, клиники.</div><div class="place-meta">💬 <a href="https://t.me/balichathealth" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Тусовки</div><div class="place-desc">Анонсы вечеринок.</div><div class="place-meta">💬 <a href="https://t.me/bali_party" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Полицейские облавы</div><div class="place-desc">Предупреждения о рейдах.</div><div class="place-meta">💬 <a href="https://t.me/balistop" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">📸 Фото-локации <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -1323,7 +1364,7 @@ td strong{color:#2a2a28}
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="hideGuide()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
 <div class="screen" id="guide-amed" style="overflow-y:auto;max-height:100vh;padding-bottom:80px">
-<button class="btn btn-primary" onclick="hideGuide()" style="position:sticky;top:0;z-index:10;margin-bottom:16px;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px)">← Назад к результатам</button>
+<button class="btn btn-primary" onclick="hideGuide()" style="position:fixed;bottom:0;left:0;right:0;z-index:100;margin:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:0">← Назад к результатам</button>
 <h1><em>Амед</em></h1>
 <p class="sub">Полный гайд по району · @balidreamphoto</p>
 <div class="tag">🤿 Под водой</div>
@@ -1785,7 +1826,7 @@ td strong{color:#2a2a28}
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="hideGuide()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
 <div class="screen" id="guide-lovina" style="overflow-y:auto;max-height:100vh;padding-bottom:80px">
-<button class="btn btn-primary" onclick="hideGuide()" style="position:sticky;top:0;z-index:10;margin-bottom:16px;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px)">← Назад к результатам</button>
+<button class="btn btn-primary" onclick="hideGuide()" style="position:fixed;bottom:0;left:0;right:0;z-index:100;margin:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:0">← Назад к результатам</button>
 <h1><em>Ловина</em></h1>
 <p class="sub">Полный гайд по району · @balidreamphoto</p>
 <div class="tag">🐬 Дельфины</div>
@@ -2020,10 +2061,22 @@ td strong{color:#2a2a28}
 <div class="place-desc">Индуистский храм с уникальной резьбой по камню. Северный балийский стиль.</div>
 <div class="place-meta">📍 Sangsit · 20 мин · Бесплатно</div>
 </div>
+<div class="place"><div class="place-name">Ulun Danu Beratan</div><div class="place-desc">Иконический «плавающий» храм на озере Братан в горах. С купюры 50K! Один из самых фотографируемых.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/ulundanuberatan" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 75K</div></div>
+<div class="place"><div class="place-name">Lempuyang Temple (Врата Рая)</div><div class="place-desc">Храмовый комплекс XI века с иконическими воротами и видом на Агунг. 1700 ступеней наверх. «Зеркальные» фото — постановка!</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/ipKQZHYmyuQym7aD6" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 100-150K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🇷🇺 Русское комьюнити <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
 <p>Русских в Ловине практически нет. Отдельного комьюнити нет. Для русского общения: <strong>Чангу</strong> или <strong>Убуд</strong>.</p>
+<div class="place"><div class="place-name">БалиФорум — Общий чат</div><div class="place-desc">30,000+ подписчиков. Главный русскоязычный чат о Бали. Все вопросы, помощь, общение.</div><div class="place-meta">💬 <a href="https://t.me/balichat" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">БалиЧатик</div><div class="place-desc">15,000+ подписчиков. Единый большой чат, все темы.</div><div class="place-meta">💬 <a href="https://t.me/balichatik" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Список всех чатов Бали</div><div class="place-desc">Каталог всех групп и каналов Бали.</div><div class="place-meta">💬 <a href="https://t.me/baliallgroup" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Амед, Ловина, Чандидаса</div><div class="place-desc">Чат Восточного Бали.</div><div class="place-meta">💬 <a href="https://t.me/balichat_amedlovina" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Визы и перелеты</div><div class="place-desc">Визовые вопросы, авиабилеты.</div><div class="place-meta">💬 <a href="https://t.me/balichatvisa" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Аренда жилья</div><div class="place-desc">Аренда вилл, домов, квартир.</div><div class="place-meta">💬 <a href="https://t.me/balichatarenda" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Работа на Бали</div><div class="place-desc">Вакансии и резюме.</div><div class="place-meta">💬 <a href="https://t.me/rabota_na_bali" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Здоровье</div><div class="place-desc">Медицина, врачи, клиники.</div><div class="place-meta">💬 <a href="https://t.me/balichathealth" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Тусовки</div><div class="place-desc">Анонсы вечеринок.</div><div class="place-meta">💬 <a href="https://t.me/bali_party" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Полицейские облавы</div><div class="place-desc">Предупреждения о рейдах.</div><div class="place-meta">💬 <a href="https://t.me/balistop" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">📸 Фото-локации <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -2034,6 +2087,9 @@ td strong{color:#2a2a28}
 • Munduk Waterfall — водопад в джунглях<br>
 • Рыбацкие лодки на чёрном песке<br>
 • Pura Ulun Danu Bratan — храм на озере</p>
+<div class="place"><div class="place-name">Handara Gate</div><div class="place-desc">Знаменитые балийские ворота с туманными горами на фоне. Один из самых иконических инстаграм-кадров Бали.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/handaragate" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Lempuyang Gate (Врата Рая)</div><div class="place-desc">Иконические ворота с видом на вулкан Агунг. Приезжайте на рассвете для чистого вида. «Зеркальные» фото — постановка!</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/ipKQZHYmyuQym7aD6" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Twin Lakes (Danau Buyan & Tamblingan)</div><div class="place-desc">Два озера-близнеца в горах. Туманные виды, мало туристов. Другой Бали — прохладный, зелёный.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Twin+Lakes+Buyan+Tamblingan" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🏠 Жильё <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -2179,7 +2235,7 @@ td strong{color:#2a2a28}
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="hideGuide()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
 <div class="screen" id="guide-sanur" style="overflow-y:auto;max-height:100vh;padding-bottom:80px">
-<button class="btn btn-primary" onclick="hideGuide()" style="position:sticky;top:0;z-index:10;margin-bottom:16px;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px)">← Назад к результатам</button>
+<button class="btn btn-primary" onclick="hideGuide()" style="position:fixed;bottom:0;left:0;right:0;z-index:100;margin:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:0">← Назад к результатам</button>
 <h1><em>Санур</em></h1>
 <p class="sub">Полный гайд по району · @balidreamphoto</p>
 <div class="tag">🏖 Спокойный пляж</div>
@@ -2496,6 +2552,16 @@ td strong{color:#2a2a28}
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🇷🇺 Русское комьюнити <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
 <p>Русских в Сануре мало — район больше для австралийцев и пенсионеров. Русскоговорящие есть, но отдельного комьюнити нет. Чаты: «Бали Чат», «Бали Русские» — общие.</p>
+<div class="place"><div class="place-name">БалиФорум — Общий чат</div><div class="place-desc">30,000+ подписчиков. Главный русскоязычный чат о Бали. Все вопросы, помощь, общение.</div><div class="place-meta">💬 <a href="https://t.me/balichat" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">БалиЧатик</div><div class="place-desc">15,000+ подписчиков. Единый большой чат, все темы.</div><div class="place-meta">💬 <a href="https://t.me/balichatik" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Список всех чатов Бали</div><div class="place-desc">Каталог всех групп и каналов Бали.</div><div class="place-meta">💬 <a href="https://t.me/baliallgroup" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Санур чат</div><div class="place-desc">Чат района Санур.</div><div class="place-meta">💬 <a href="https://t.me/balichatsanur" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Визы и перелеты</div><div class="place-desc">Визовые вопросы, авиабилеты.</div><div class="place-meta">💬 <a href="https://t.me/balichatvisa" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Аренда жилья</div><div class="place-desc">Аренда вилл, домов, квартир.</div><div class="place-meta">💬 <a href="https://t.me/balichatarenda" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Работа на Бали</div><div class="place-desc">Вакансии и резюме.</div><div class="place-meta">💬 <a href="https://t.me/rabota_na_bali" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Здоровье</div><div class="place-desc">Медицина, врачи, клиники.</div><div class="place-meta">💬 <a href="https://t.me/balichathealth" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Тусовки</div><div class="place-desc">Анонсы вечеринок.</div><div class="place-meta">💬 <a href="https://t.me/bali_party" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Полицейские облавы</div><div class="place-desc">Предупреждения о рейдах.</div><div class="place-meta">💬 <a href="https://t.me/balistop" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">📸 Фото-локации <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -2574,7 +2640,7 @@ td strong{color:#2a2a28}
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="hideGuide()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
 <div class="screen" id="guide-seminyak" style="overflow-y:auto;max-height:100vh;padding-bottom:80px">
-<button class="btn btn-primary" onclick="hideGuide()" style="position:sticky;top:0;z-index:10;margin-bottom:16px;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px)">← Назад к результатам</button>
+<button class="btn btn-primary" onclick="hideGuide()" style="position:fixed;bottom:0;left:0;right:0;z-index:100;margin:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:0">← Назад к результатам</button>
 <h1><em>Семиньяк</em></h1>
 <p class="sub">Полный гайд по району · @balidreamphoto</p>
 <div class="tag">🎉 Клубы</div>
@@ -2608,6 +2674,9 @@ td strong{color:#2a2a28}
 <div class="place-desc">Индонезийский specialty бренд. Зёрна со всего архипелага, тихая терраса.</div>
 <div class="place-meta">📍 Jl. Raya Seminyak · Кофе 35-55K · WiFi ⭐⭐⭐⭐</div>
 </div>
+<div class="place"><div class="place-name">Revolver Espresso</div><div class="place-desc">Скрытый в переулке gem, культовое место с ранних дней кофейной сцены Бали.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Revolver+Espresso+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · латте ~35K</div></div>
+<div class="place"><div class="place-name">Expat Roasters</div><div class="place-desc">Серьёзный specialty coffee, культовый. Из Семиньяка теперь и в аэропорту.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Expat+Roasters+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · от 30K</div></div>
+<div class="place"><div class="place-name">Sisterfields</div><div class="place-desc">Мельбурнский стиль, отличный кофе и бранч.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Sisterfields+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · 35-70K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">💻 Кафе с Wi-Fi <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -2835,19 +2904,13 @@ td strong{color:#2a2a28}
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛍 Шоппинг <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
-<div class="place">
-<div class="place-name">Jl. Kayu Aya (Eat Street)</div>
-<div class="place-desc">Главная улица: дизайнерские бутики, галереи, ювелирные. Balinese Melrose Ave.</div>
-</div>
-<div class="place">
-<div class="place-name">Seminyak Village</div>
-<div class="place-desc">Торговый центр с международными и локальными брендами. Кондей!</div>
-<div class="place-meta">📍 Jl. Kayu Jati</div>
-</div>
-<div class="place">
-<div class="place-name">Kendra Gallery</div>
-<div class="place-desc">Балийское искусство и дизайн. Уникальные предметы интерьера.</div>
-</div>
+<div class="place"><div class="place-name">Seminyak Village</div><div class="place-desc">Бутики, дизайнерские бренды</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Seminyak+Village+Shopping" target="_blank" style="color:#3a9b7a">Maps</a> · от 100K</div></div>
+<div class="place"><div class="place-name">Bali Boat Shed</div><div class="place-desc">500+ отзывов. Пляжная одежда, легендарный фасад — фото-спот <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">купальники</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Bali+Boat+Shed+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Magali Pascal</div><div class="place-desc">Парижский дизайнер на Бали. Шёлк, кружево, органические ткани <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">люкс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Magali+Pascal+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Bamboo Blonde</div><div class="place-desc">С 2007 года. Тропический минимализм, ручная печать. Флагман <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">купальники</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Bamboo+Blonde+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Gooseberry Intimates</div><div class="place-desc">Нижнее бельё и купальники ручной работы. Кружево Улувату! <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">купальники</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Gooseberry+Intimates+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Jemme Jewellery</div><div class="place-desc">Драгоценные камни в золоте и серебре + ресторан с видом <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">люкс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Jemme+Jewellery+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">CARGA</div><div class="place-desc">Хоумвеар, керамика Kevala, мебель. Инстаграмный интерьер <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">для дома</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/CARGA+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛒 Продуктовые магазины <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -2874,6 +2937,8 @@ td strong{color:#2a2a28}
 <div class="place-desc">Деликатные вещи, химчистка, вечерние платья. Quality service.</div>
 <div class="place-meta">📍 Jl. Raya Seminyak · от 15K/кг</div>
 </div>
+<div class="place"><div class="place-name">Hubit Laundry</div><div class="place-desc">Без минимального веса, бесплатный пикап, 24/7 доступ, эко-средства. Экспресс same-day.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Hubit+Laundry+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · от 20K/кг</div></div>
+<div class="place"><div class="place-name">Laundrybali.com</div><div class="place-desc">У пляжа Семиньяк, Sunset Road. Same-day доступен.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Laundrybali+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · от 40K/кг</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🎉 Клубы и ночная жизнь <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -2897,6 +2962,11 @@ td strong{color:#2a2a28}
 <div class="place-desc">Ночной клуб в здании собора. Готический интерьер, электроника, fire show.</div>
 <div class="place-meta">📍 Jl. Petitenget · Вход от 150K</div>
 </div>
+<div class="place"><div class="place-name">Ku De Ta</div><div class="place-desc">Оригинальный бич-клаб Бали! Кулинарные кино-вечера, коктейли на закат.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/kudetabali" target="_blank" style="color:#3a9b7a">Maps</a> · от 150K</div></div>
+<div class="place"><div class="place-name">Potato Head</div><div class="place-desc">Легендарный бич-клаб, дизайн, музыка, бассейн.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Potato+Head+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · от 180K</div></div>
+<div class="place"><div class="place-name">La Favela</div><div class="place-desc">Ночной клуб. ТОЛЬКО НОЧЬЮ — самая горячая танцплощадка!</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/La+Favela+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · от 150K</div></div>
+<div class="place"><div class="place-name">Le Petit Chef</div><div class="place-desc">Иммерсивный ужин — 3D-проекции на тарелку! Самый маленький шеф в мире готовит прямо перед вами.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Le+Petit+Chef+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · от 1299K</div></div>
+<div class="place"><div class="place-name">Sky Garden (Кута)</div><div class="place-desc">Самый большой клуб Бали — несколько этажей, разная музыка. Каждый день 21:00–04:00.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Sky+Garden+Kuta" target="_blank" style="color:#3a9b7a">Maps</a> · от 100K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛕 Храмы <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -2911,6 +2981,7 @@ td strong{color:#2a2a28}
 <div class="place-meta">📍 Seminyak Beach</div>
 </div>
 <p>Мечети, церкви — в Денпасаре (15-20 мин). Буддийский храм — Vihara Dharmayana (Kuta, 10 мин).</p>
+<div class="place"><div class="place-name">Petitenget Temple</div><div class="place-desc">Древний храм на берегу океана. Важное духовное место, церемонии на пляже на закате.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Petitenget+Temple+Seminyak" target="_blank" style="color:#3a9b7a">Maps</a> · Вход Бесплатно</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🇷🇺 Русское комьюнити <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -2923,6 +2994,15 @@ td strong{color:#2a2a28}
 <div class="place-desc">Меньше чем в Чангу, но есть. «Кафе Москва» — русская кухня, домашняя атмосфера.</div>
 </div>
 <p>Русских в Семиньяке меньше чем в Чангу — тут больше австралийцев и европейцев. Но комьюнити есть.</p>
+<div class="place"><div class="place-name">БалиФорум — Общий чат</div><div class="place-desc">30,000+ подписчиков. Главный русскоязычный чат о Бали. Все вопросы, помощь, общение.</div><div class="place-meta">💬 <a href="https://t.me/balichat" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">БалиЧатик</div><div class="place-desc">15,000+ подписчиков. Единый большой чат, все темы.</div><div class="place-meta">💬 <a href="https://t.me/balichatik" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Список всех чатов Бали</div><div class="place-desc">Каталог всех групп и каналов Бали.</div><div class="place-meta">💬 <a href="https://t.me/baliallgroup" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Визы и перелеты</div><div class="place-desc">Визовые вопросы, авиабилеты.</div><div class="place-meta">💬 <a href="https://t.me/balichatvisa" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Аренда жилья</div><div class="place-desc">Аренда вилл, домов, квартир.</div><div class="place-meta">💬 <a href="https://t.me/balichatarenda" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Работа на Бали</div><div class="place-desc">Вакансии и резюме.</div><div class="place-meta">💬 <a href="https://t.me/rabota_na_bali" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Здоровье</div><div class="place-desc">Медицина, врачи, клиники.</div><div class="place-meta">💬 <a href="https://t.me/balichathealth" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Тусовки</div><div class="place-desc">Анонсы вечеринок.</div><div class="place-meta">💬 <a href="https://t.me/bali_party" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Полицейские облавы</div><div class="place-desc">Предупреждения о рейдах.</div><div class="place-meta">💬 <a href="https://t.me/balistop" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">📸 Фото-локации <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -3004,7 +3084,7 @@ td strong{color:#2a2a28}
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="hideGuide()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
 <div class="screen" id="guide-nusapenida" style="overflow-y:auto;max-height:100vh;padding-bottom:80px">
-<button class="btn btn-primary" onclick="hideGuide()" style="position:sticky;top:0;z-index:10;margin-bottom:16px;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px)">← Назад к результатам</button>
+<button class="btn btn-primary" onclick="hideGuide()" style="position:fixed;bottom:0;left:0;right:0;z-index:100;margin:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:0">← Назад к результатам</button>
 <h1><em>Нуса Пенида</em></h1>
 <p class="sub">Полный гайд по району · @balidreamphoto</p>
 <div class="tag">📸 Фото-локации</div>
@@ -3351,7 +3431,7 @@ td strong{color:#2a2a28}
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="hideGuide()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
 <div class="screen" id="guide-uluwatu" style="overflow-y:auto;max-height:100vh;padding-bottom:80px">
-<button class="btn btn-primary" onclick="hideGuide()" style="position:sticky;top:0;z-index:10;margin-bottom:16px;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px)">← Назад к результатам</button>
+<button class="btn btn-primary" onclick="hideGuide()" style="position:fixed;bottom:0;left:0;right:0;z-index:100;margin:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:0">← Назад к результатам</button>
 <h1><em>Улувату</em></h1>
 <p class="sub">Полный гайд по району · @balidreamphoto</p>
 <div class="tag">🏄 Сёрфинг</div>
@@ -3380,6 +3460,9 @@ td strong{color:#2a2a28}
 <div class="place-desc">Сёрф-кафе с хорошим кофе, бранчем и видом. Расслабленная атмосфера.</div>
 <div class="place-meta">📍 Jl. Pantai Suluban · Кофе 40-55K · WiFi ⭐⭐⭐</div>
 </div>
+<div class="place"><div class="place-name">% Arabica Bali</div><div class="place-desc">Японская минималистичная сеть с потрясающим видом на океан. Эспрессо в кокосе!</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Arabica+Uluwatu+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · латте 45-60K</div></div>
+<div class="place"><div class="place-name">BGS Coffee Uluwatu</div><div class="place-desc">Сёрф-ветка из Чангу. Сёрф-вайбы + отличный кофе.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/BGS+Coffee+Uluwatu" target="_blank" style="color:#3a9b7a">Maps</a> · от 25K</div></div>
+<div class="place"><div class="place-name">Drifter Surf Shop & Cafe</div><div class="place-desc">Сёрф-культурное кафе с качественным кофе.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Drifter+Surf+Shop+Uluwatu" target="_blank" style="color:#3a9b7a">Maps</a> · 25-45K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">💻 Кафе с Wi-Fi <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -3608,6 +3691,9 @@ td strong{color:#2a2a28}
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛍 Шоппинг <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
 <p>Шоппинг в Улувату минимальный. Сёрф-шопы (Drifter, Rhythm) + маленькие бутики. Для серьёзного шоппинга: <strong>Семиньяк</strong> (40 мин).</p>
+<div class="place"><div class="place-name">Krisna Oleh Oleh Bypass</div><div class="place-desc">3 этажа! 16K+ отзывов. Главный сувенирный магазин Бали <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Krisna+Oleh+Oleh+Bali+Bypass" target="_blank" style="color:#3a9b7a">Maps</a> · $</div></div>
+<div class="place"><div class="place-name">Krisna Toko Oleh-Oleh Khas</div><div class="place-desc">33K отзывов! Качественнее других Krisna. Текстиль, еда, сувениры <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Krisna+Toko+Oleh+Oleh+Khas+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $</div></div>
+<div class="place"><div class="place-name">Beachwalk Shopping Center</div><div class="place-desc">Zara, H&M, Uniqlo. 3 этажа, open-air, вид на океан <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">унисекс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Beachwalk+Shopping+Center+Kuta" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛒 Продуктовые магазины <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -3630,6 +3716,9 @@ td strong{color:#2a2a28}
 <div class="place-meta">📍 Jl. Labuan Sait · от 8K/кг</div>
 </div>
 <p>Прачечных мало — большинство вилл имеют стиральную машину или сервис.</p>
+<div class="place"><div class="place-name">DE Laundry</div><div class="place-desc">Speed Queen машины, антибактериальная обработка, шаттл по Нуса Дуа. Лояльность.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/DE+Laundry+Benoa" target="_blank" style="color:#3a9b7a">Maps</a> · от 35K/кг (мин 6кг)</div></div>
+<div class="place"><div class="place-name">Good Laundry</div><div class="place-desc">Экспресс 3ч, 1 день, обычная. Без мин. веса. WhatsApp. Джимбаран, Нуса Дуа.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Good+Laundry+Jimbaran" target="_blank" style="color:#3a9b7a">Maps</a> · от 15K/кг</div></div>
+<div class="place"><div class="place-name">Ferdy Laundry</div><div class="place-desc">Джимбаран, доступно и надёжно.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Ferdy+Laundry+Jimbaran" target="_blank" style="color:#3a9b7a">Maps</a> · от 15K/кг</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🎉 Клубы и ночная жизнь <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -3689,6 +3778,10 @@ td strong{color:#2a2a28}
 <div class="place-desc">Православная церковь на Бали! В Унгасане.</div>
 <div class="place-meta">📍 Унгасан</div>
 </div>
+<div class="place"><div class="place-name">Savaya</div><div class="place-desc">Топ-10 клубов МИРА! На скалах над океаном.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Savaya+Uluwatu" target="_blank" style="color:#3a9b7a">Maps</a> · от 225K</div></div>
+<div class="place"><div class="place-name">Single Fin</div><div class="place-desc">Бар на скале с видом на сёрферов. Воскресные вечеринки — легенда!</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Single+Fin+Uluwatu" target="_blank" style="color:#3a9b7a">Maps</a> · от 100K</div></div>
+<div class="place"><div class="place-name">Sundays Beach Club</div><div class="place-desc">Приватный пляж, кино под звёздами ("Movies by the Beach"), каякинг.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Sundays+Beach+Club+Uluwatu" target="_blank" style="color:#3a9b7a">Maps</a> · от 200K</div></div>
+<div class="place"><div class="place-name">Oneeighty</div><div class="place-desc">Инфинити-бассейн на краю обрыва! Только для смелых.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Oneeighty+Uluwatu" target="_blank" style="color:#3a9b7a">Maps</a> · 600K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛕 Храмы <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -3702,6 +3795,7 @@ td strong{color:#2a2a28}
 <div class="place-desc">Тихий храм на скале. Мало туристов, потрясающий вид на океан.</div>
 <div class="place-meta">📍 Kutuh · Бесплатно</div>
 </div>
+<div class="place"><div class="place-name">Uluwatu Temple</div><div class="place-desc">Храм на 70-метровой скале над океаном. Танец Кечак на закате в 18:00 — must see!</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/4exDcocaRfEhzMpE9" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 30K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🇷🇺 Русское комьюнити <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -3710,6 +3804,16 @@ td strong{color:#2a2a28}
 <div class="place-desc">«Букит/Улувату Русские», «Бали Юг» — аренда, рекомендации.</div>
 </div>
 <p>Русских в Улувату всё больше — район растёт. Русскоговорящие сёрф-инструкторы, риелторы есть. Комьюнити меньше чем в Чангу.</p>
+<div class="place"><div class="place-name">БалиФорум — Общий чат</div><div class="place-desc">30,000+ подписчиков. Главный русскоязычный чат о Бали. Все вопросы, помощь, общение.</div><div class="place-meta">💬 <a href="https://t.me/balichat" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">БалиЧатик</div><div class="place-desc">15,000+ подписчиков. Единый большой чат, все темы.</div><div class="place-meta">💬 <a href="https://t.me/balichatik" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Список всех чатов Бали</div><div class="place-desc">Каталог всех групп и каналов Бали.</div><div class="place-meta">💬 <a href="https://t.me/baliallgroup" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Букит чат</div><div class="place-desc">Чат района Букит (Улувату, Джимбаран, Нуса Дуа).</div><div class="place-meta">💬 <a href="https://t.me/balichat_bukit" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Визы и перелеты</div><div class="place-desc">Визовые вопросы, авиабилеты.</div><div class="place-meta">💬 <a href="https://t.me/balichatvisa" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Аренда жилья</div><div class="place-desc">Аренда вилл, домов, квартир.</div><div class="place-meta">💬 <a href="https://t.me/balichatarenda" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Работа на Бали</div><div class="place-desc">Вакансии и резюме.</div><div class="place-meta">💬 <a href="https://t.me/rabota_na_bali" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Здоровье</div><div class="place-desc">Медицина, врачи, клиники.</div><div class="place-meta">💬 <a href="https://t.me/balichathealth" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Тусовки</div><div class="place-desc">Анонсы вечеринок.</div><div class="place-meta">💬 <a href="https://t.me/bali_party" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Полицейские облавы</div><div class="place-desc">Предупреждения о рейдах.</div><div class="place-meta">💬 <a href="https://t.me/balistop" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">📸 Фото-локации <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -3720,6 +3824,9 @@ td strong{color:#2a2a28}
 • Single Fin — вид со скалы на сёрферов<br>
 • Nyang Nyang Beach — дикий пустой пляж<br>
 • Green Bowl Beach — пещеры</p>
+<div class="place"><div class="place-name">Karang Boma Cliff</div><div class="place-desc">70-метровый обрыв над Индийским океаном рядом с храмом Улувату. Одна из лучших закатных точек Бали. Драматичные фото на краю!</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/karangboma" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Kelingking Beach Viewpoint</div><div class="place-desc">T-Rex скала! Самое инстаграмное фото Бали. Вид сверху — это и есть фото-спот (спуск к пляжу очень крутой).</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/kZXV8BsLQPsaJRMM8" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Diamond Beach</div><div class="place-desc">Белоснежный пляж с алмазной скалой и бирюзовой водой. Спуск по вырезанной в скале лестнице. Потрясающие фото сверху или на пляже.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/diamondbeach" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🏠 Жильё <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -3833,7 +3940,7 @@ td strong{color:#2a2a28}
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="hideGuide()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
 <div class="screen" id="guide-canggu" style="overflow-y:auto;max-height:100vh;padding-bottom:80px">
-<button class="btn btn-primary" onclick="hideGuide()" style="position:sticky;top:0;z-index:10;margin-bottom:16px;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px)">← Назад к результатам</button>
+<button class="btn btn-primary" onclick="hideGuide()" style="position:fixed;bottom:0;left:0;right:0;z-index:100;margin:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,0.06);padding:12px 20px;border-radius:0">← Назад к результатам</button>
 <h1><em>Чангу</em></h1>
 <p class="sub">Полный гайд по району · @balidreamphoto</p>
 <div class="tag">🏄 Сёрфинг</div>
@@ -3873,6 +3980,12 @@ td strong{color:#2a2a28}
 <div class="place-desc">Балийские зёрна, тихая атмосфера, холодный brew — спасение в жару.</div>
 <div class="place-meta">📍 Jl. Pantai Batu Bolong · Кофе 40-60K · WiFi ⭐⭐⭐⭐</div>
 </div>
+<div class="place"><div class="place-name">Hungry Bird Coffee</div><div class="place-desc">Обжарка на месте, single-origin specialty. Legendary Monster Breakfast!</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Hungry+Bird+Coffee+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · от 25K</div></div>
+<div class="place"><div class="place-name">Revolver Espresso</div><div class="place-desc">Культовая обжарка, коктейли, бранч. Industrial-rustic интерьер.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Revolver+Espresso+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · латте ~35-45K</div></div>
+<div class="place"><div class="place-name">Crate Cafe</div><div class="place-desc">Завтраки целый день, oat latte, безглютеновое. Industrial-минимализм.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Crate+Cafe+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · 30-50K</div></div>
+<div class="place"><div class="place-name">Jelajah Coffee</div><div class="place-desc">Specialty coffee из Ломбока, отличные пуроверы.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Jelajah+Coffee+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · от 25K</div></div>
+<div class="place"><div class="place-name">Fold Cafe</div><div class="place-desc">Потрясающая выпечка + бутиковый кофе. Свежее каждый день.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Fold+Cafe+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · 30-50K</div></div>
+<div class="place"><div class="place-name">Milk & Madu</div><div class="place-desc">Open-air, pet-friendly, фирменный Madu Smash Burger. Отличный кофе.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Milk+Madu+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · 35-80K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">💻 Кафе с Wi-Fi <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -4184,19 +4297,33 @@ td strong{color:#2a2a28}
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛍 Шоппинг <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
-<div class="place">
-<div class="place-name">Love Anchor Market</div>
-<div class="place-desc">Блошиный рынок по выходным. Одежда, украшения, сувениры. Торгуйся!</div>
-<div class="place-meta">📍 Jl. Pantai Batu Bolong · Сб-Вс</div>
-</div>
-<div class="place">
-<div class="place-name">Batu Bolong Street</div>
-<div class="place-desc">Вся улица — бутики, сёрф-шопы, дизайнерские магазины. Балийский Melrose Ave.</div>
-</div>
-<div class="place">
-<div class="place-name">Berawa Boutiques</div>
-<div class="place-desc">Новая волна дизайнерских бутиков. Одежда, декор, ювелирка ручной работы.</div>
-</div>
+<div class="place"><div class="place-name">Love Anchor</div><div class="place-desc">Блошиный рынок по выходным</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Love+Anchor+Market+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · от 30K</div></div>
+<div class="place"><div class="place-name">Sunday Market</div><div class="place-desc">Фермерский рынок по воскресеньям</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Sunday+Market+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · от 20K</div></div>
+<div class="place"><div class="place-name">BGS (Bali General Store)</div><div class="place-desc">Культовый сёрф-лайфстайл магазин + кафе. Центр сёрф-сообщества Бали <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">унисекс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сёрф</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Bali+General+Store+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Hedonist Store</div><div class="place-desc">Мультибренд: 170+ брендов! Одежда, обувь, украшения, декор. Стилист-сервис <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">мужское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Hedonist+Store+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Now or Never Bali</div><div class="place-desc">Главный preloved магазин Бали! 700+ отзывов. Всё отобрано с любовью <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">секонд</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Now+or+Never+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">AANOUKIS Swimwear</div><div class="place-desc">430+ отзывов! Купальники мечты — купила сразу 5 моделей <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">купальники</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/AANOUKIS+Swimwear+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Bonhomia Bali</div><div class="place-desc">570+ отзывов. Одежда и купальники — очень хорошее место <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">купальники</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Bonhomia+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Deus Ex Machina</div><div class="place-desc">Дух свободы, запах кожи и моторного масла. Мото + сёрф культура <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">мужское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сёрф</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Deus+Ex+Machina+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Drifter Surf Shop</div><div class="place-desc">Сёрфборды на заказ, фины, одежда, арт. В здании-joglo + кафе <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">унисекс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сёрф</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Drifter+Surf+Shop+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">The Find</div><div class="place-desc">Курируемый секонд-хенд с отличным выбором <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">секонд</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/The+Find+Canggu+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">OLDMANSTUFF</div><div class="place-desc">Мужской стритвир и аксессуары с характером <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">мужское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/OLDMANSTUFF+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Manoja</div><div class="place-desc">Стильная женская одежда, уникальные принты <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Manoja+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Above the Clouds</div><div class="place-desc">260+ отзывов. Натуральные ткани, хороший выбор мужских вещей <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">унисекс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Above+the+Clouds+Natural+Wear+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Country Textile Canggu</div><div class="place-desc">160+ отзывов. Всё в одном размере, но каждая вещь сидит идеально! <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">унисекс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Country+Textile+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Erika Peña Boutique</div><div class="place-desc">100+ отзывов. Дизайнерская одежда + ювелирка, бохо-шик <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Erika+Pena+Boutique+Berawa" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Not a must Pererenan</div><div class="place-desc">87 отзывов. Утончённые и элегантные дизайны <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Not+a+must+Pererenan" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">PERSIJE Clothing</div><div class="place-desc">81 отзыв. Красивые вещи, идеальный крой, всё выглядит дорого <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/PERSIJE+Clothing+Jewelry+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Loya Club</div><div class="place-desc">158 отзывов. Одежда, купальники и бижутерия <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">купальники</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Loya+Club+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Sport Point Bali</div><div class="place-desc">174 отзыва. Спортивная одежда, купальники <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">унисекс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">спорт</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">купальники</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Sport+Point+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Maison Sauvage</div><div class="place-desc">152 отзыва. Потрясающий шоу-рум. Стильный лук <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">люкс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Maison+Sauvage+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">JOY SUN Concept Store</div><div class="place-desc">123 отзыва. Купила платье о котором давно мечтала <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/JOY+SUN+Concept+Store+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">OVERZ Menswear</div><div class="place-desc">106 отзывов. Мужская одежда, могут быстро отшить твой размер <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">мужское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/OVERZ+Menswear+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Born To Be</div><div class="place-desc">157 отзывов. Унисекс одежда, с удовольствием ношу <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">унисекс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Born+To+Be+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">FAVE</div><div class="place-desc">60 отзывов. Ушла с супер настроением и полными пакетами <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/FAVE+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Luna & Rose</div><div class="place-desc">Экологичные украшения, zero waste, поддержка локальных мастеров <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Luna+Rose+Echo+Beach" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Buro Concept Store</div><div class="place-desc">4 бренда: деним/кожа, обувь, серебро, парфюмерия. Стильный минимализм <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">унисекс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Buro+Concept+Store+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Upgrade Concept Store</div><div class="place-desc">29 отзывов. Зашла на минутку, залипла на полчаса, купила 5 вещей! <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Upgrade+Concept+Store+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛒 Продуктовые магазины <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -4229,6 +4356,10 @@ td strong{color:#2a2a28}
 <div class="place-meta">📍 Jl. Pantai Berawa · от 12K/кг</div>
 </div>
 <p>Self-service стиральных мало — почти все прачечные drop-off. Средняя цена: 7-12K за кг, готово за 24 часа.</p>
+<div class="place"><div class="place-name">Heavenly Laundry</div><div class="place-desc">Премиум: фильтрованная вода, эко-средства, hang-dry. 5ч/1день/2дня. Фирменный аромат «Sea Breeze».</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Heavenly+Laundry+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · от 35K/кг</div></div>
+<div class="place"><div class="place-name">Easy Day Laundry</div><div class="place-desc">Эко-стирка, пикап и доставка по Чангу/Переренан/Семиньяк. 24ч оборот.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Easy+Day+Laundry+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · от 25K/кг</div></div>
+<div class="place"><div class="place-name">Swastee Eco Laundry</div><div class="place-desc">Современный: бесплатный WiFi, зарядки, напитки. Self-service и drop-off. Без химии.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Swastee+Eco+Laundry+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · от 30K/кг</div></div>
+<div class="place"><div class="place-name">Tropical Laundry</div><div class="place-desc">Self-service (стирка 35 мин) + обычный вариант. Рядом с Batu Bolong.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Tropical+Laundry+Canggu" target="_blank" style="color:#3a9b7a">Maps</a> · 25K self-service / 65K/кг обычная</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🎉 Клубы и ночная жизнь <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -4307,6 +4438,11 @@ td strong{color:#2a2a28}
 <div class="warn-text">Пробки в час пик (16-19). Океан опасен для купания (сильные течения). Цены растут каждый год. Много строек и шума. В сезон дождей (ноябрь-март) дороги заливает. Иногда мусор на пляжах.</div>
 </div>
 <div class="divider"></div>
+<div class="place"><div class="place-name">Finns Beach Club</div><div class="place-desc">3 бассейна, 9 баров, 7 кухонь. Огромные вечеринки, топ-диджеи.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/finnsbeachclub" target="_blank" style="color:#3a9b7a">Maps</a> · от 100K</div></div>
+<div class="place"><div class="place-name">Old Man's</div><div class="place-desc">Легендарный сёрфер-бар! Живая музыка, дешёвое пиво, центр тусовки.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/oldmanscanggu" target="_blank" style="color:#3a9b7a">Maps</a> · от 50K</div></div>
+<div class="place"><div class="place-name">La Brisa</div><div class="place-desc">Бохо бич-бар из рыбацких лодок. Закатные вайбы. ВС — ярмарка!</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/labrisabali" target="_blank" style="color:#3a9b7a">Maps</a> · от 100K</div></div>
+<div class="place"><div class="place-name">Desa Kitsuné</div><div class="place-desc">Стильное кафе/бар от Maison Kitsuné. Балийский дизайн, крутая толпа.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/desakitsune" target="_blank" style="color:#3a9b7a">Maps</a> · от 200K</div></div>
+<div class="place"><div class="place-name">Cafe Del Mar</div><div class="place-desc">Бич-клаб из Ибицы! Бассейн, вид на океан, DJ-сессии.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/cafedelmarbali" target="_blank" style="color:#3a9b7a">Maps</a> · от 150K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛕 Храмы <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -4326,6 +4462,8 @@ td strong{color:#2a2a28}
 <div class="place-meta">📍 Jl. Petitenget · 15 мин от Чангу</div>
 </div>
 <p>Мечети, церкви — в Денпасаре (30-40 мин). Буддийский монастырь Brahma Vihara Arama — в Ловине (3 часа).</p>
+<div class="place"><div class="place-name">Tanah Lot</div><div class="place-desc">Храм №1 Бали — «Земля в Море» на скале в океане. Лучше утром (07-09) или на закат. Рынки и кафе вокруг.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/JNyV5o36zAk" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 75K</div></div>
+<div class="place"><div class="place-name">Taman Ayun (Королевский храм)</div><div class="place-desc">Королевский храм 1634 года, окружённый рвом и садами. UNESCO. Многоярусные меру, ухоженные сады.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/tamanayun" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 50K</div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🇷🇺 Русское комьюнити <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -4342,6 +4480,16 @@ td strong{color:#2a2a28}
 <div class="place-desc">Ищи в чатах «Бали Медицина» — терапевты, стоматологи, педиатры с русским.</div>
 </div>
 <p>Русское комьюнити в Чангу — одно из самых больших на Бали. Легко найти няню, юриста, риелтора с русским языком.</p>
+<div class="place"><div class="place-name">БалиФорум — Общий чат</div><div class="place-desc">30,000+ подписчиков. Главный русскоязычный чат о Бали. Все вопросы, помощь, общение.</div><div class="place-meta">💬 <a href="https://t.me/balichat" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">БалиЧатик</div><div class="place-desc">15,000+ подписчиков. Единый большой чат, все темы.</div><div class="place-meta">💬 <a href="https://t.me/balichatik" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Список всех чатов Бали</div><div class="place-desc">Каталог всех групп и каналов Бали.</div><div class="place-meta">💬 <a href="https://t.me/baliallgroup" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Чангу чат</div><div class="place-desc">Чат района Чангу. Вопросы по району.</div><div class="place-meta">💬 <a href="https://t.me/balichat_canggu" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Визы и перелеты</div><div class="place-desc">Визовые вопросы, авиабилеты.</div><div class="place-meta">💬 <a href="https://t.me/balichatvisa" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Аренда жилья</div><div class="place-desc">Аренда вилл, домов, квартир.</div><div class="place-meta">💬 <a href="https://t.me/balichatarenda" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Работа на Бали</div><div class="place-desc">Вакансии и резюме.</div><div class="place-meta">💬 <a href="https://t.me/rabota_na_bali" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Здоровье</div><div class="place-desc">Медицина, врачи, клиники.</div><div class="place-meta">💬 <a href="https://t.me/balichathealth" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Тусовки</div><div class="place-desc">Анонсы вечеринок.</div><div class="place-meta">💬 <a href="https://t.me/bali_party" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Полицейские облавы</div><div class="place-desc">Предупреждения о рейдах.</div><div class="place-meta">💬 <a href="https://t.me/balistop" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">📸 Фото-локации <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
@@ -4352,6 +4500,9 @@ td strong{color:#2a2a28}
 • Кафе с видом на рисовые поля<br>
 • Love Anchor Market — яркие цвета<br>
 • La Brisa — бохо-интерьер</p>
+<div class="place"><div class="place-name">Tanah Lot</div><div class="place-desc">Храм в океане — визитка Бали! Лучше утром (07-09, мало людей) или на закат. Рядом кафе.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/JNyV5o36zAk" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Milu by Nook</div><div class="place-desc">Кафе посреди рисовых полей Чангу. Деревянная мебель, ротанг, панорамный вид на рисовые поля. Идеально на закат.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/milubynoook" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">The Avocado Factory</div><div class="place-desc">Первый Avocado Bar в Юго-Восточной Азии! В рисовых полях Чангу. Инстаграмное место + здоровая еда.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/avocadofactory" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
 </div>
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🏠 Жильё <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
