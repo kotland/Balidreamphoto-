@@ -8238,17 +8238,38 @@ c.innerHTML+='<div class="subtitle" style="margin-bottom:16px">'+days+' дней
 var transfers={'3-2':'🚗 40мин до Чангу','3-1':'🚗 1.5ч до Убуда. Выезжай до 14:00!','2-1':'🚗 1ч до Убуда. По пути: фрукты дешевле в 3 раза!','1-6':'🚗 2-3ч на север. По пути: клубника, кукуруза!','1-4':'🚗 2.5ч до Амеда. Серпантин! По пути: Tirta Gangga','6-4':'🚗 3-4ч. Горные дороги','4-8':'🚗 2ч до Санура','8-5':'🛥 Лодка 30-45мин на Пениду','5-8':'🛥 Лодка обратно 30-45мин','2-3':'🚗 40мин до Букита','1-2':'🚗 1ч до Чангу','8-3':'🚗 30мин до Букита','6-1':'🚗 2ч до Убуда. По пути: храм на воде + ботсад'};
 
 document.getElementById('shopBlock').innerHTML='';
-// Shopping block before routes
+// Shopping block with full cards
 if(selTourInterests.indexOf('shop')>=0||selTourInterests.indexOf('shopping')>=0){
-var shopHtml='<div style="margin-bottom:16px;padding:16px;background:rgba(156,39,176,0.04);border-radius:16px;border:1px solid rgba(156,39,176,0.08)">';
-shopHtml+='<div style="font-size:15px;font-weight:700;color:#9C27B0;margin-bottom:10px">🛍 Шоппинг по районам</div>';
-var allShopZones=[3,2,1,6,4,5,8];
-var zoneNames={3:'Букит',2:'Чангу',1:'Убуд',6:'Север',8:'Санур'};
-allShopZones.forEach(function(z){
-var zs=ZONE_SHOPS[z];
-if(zs&&zoneNames[z]){
-shopHtml+='<div style="margin-bottom:8px"><span style="font-size:12px;font-weight:600;color:#9C27B0">'+zoneNames[z]+':</span> <span style="font-size:11px;color:rgba(42,42,40,0.5)">'+zs+'</span></div>';
-}});
+var TAG_COLORS2={'женское':['rgba(233,30,99,0.1)','#E91E63'],'мужское':['rgba(33,150,243,0.1)','#2196F3'],'унисекс':['rgba(158,158,158,0.1)','#9E9E9E'],'купальники':['rgba(0,188,212,0.1)','#00BCD4'],'спорт':['rgba(76,175,80,0.1)','#4CAF50'],'сёрф':['rgba(0,150,136,0.1)','#009688'],'одежда':['rgba(121,85,72,0.1)','#795548'],'сувениры':['rgba(255,152,0,0.1)','#FF9800'],'ювелирка':['rgba(255,193,7,0.1)','#FFC107'],'люкс':['rgba(156,39,176,0.1)','#9C27B0'],'секонд':['rgba(96,125,139,0.1)','#607D8B'],'для дома':['rgba(139,195,74,0.1)','#8BC34A'],'благовония':['rgba(255,87,34,0.1)','#FF5722'],'$':['rgba(76,175,80,0.1)','#4CAF50'],'51':['rgba(255,152,0,0.1)','#FF9800'],'51$':['rgba(244,67,54,0.1)','#F44336']};
+var shopPlaces=PLACES.filter(function(p){return p.category==='шоппинг'});
+var shopByZone={};
+var districtToZone={'Чангу':2,'Убуд':1,'Букит':3,'Семиньяк':2,'Кута':3,'Переренан':2,'Умалас':2,'Керобокан':2,'Санур':8,'Нуса Дуа':3,'Гианьяр':1,'Бадунг':2,'Денпасар':3,'Булеленг':6};
+shopPlaces.forEach(function(p){
+var z=districtToZone[p.district]||0;
+if(!shopByZone[z])shopByZone[z]=[];
+shopByZone[z].push(p);
+});
+var shopHtml='<div style="margin-bottom:16px">';
+shopHtml+='<div style="font-size:15px;font-weight:700;color:#9C27B0;margin-bottom:12px">🛍 Шоппинг по районам</div>';
+var zNames={3:'Букит / Кута',2:'Чангу / Семиньяк',1:'Убуд',6:'Север',8:'Санур'};
+[2,1,3,8,6].forEach(function(z){
+var shops=shopByZone[z];
+if(!shops||!shops.length)return;
+shopHtml+='<div style="font-size:13px;font-weight:600;color:#9C27B0;margin:12px 0 6px">'+(zNames[z]||'')+'</div>';
+shops.forEach(function(s){
+shopHtml+='<div style="padding:8px 12px;margin-bottom:6px;background:rgba(255,255,255,0.5);border-radius:12px;border:1px solid rgba(0,0,0,0.04)">';
+shopHtml+='<div style="font-size:13px;font-weight:600">'+s.name+'</div>';
+if(s.tags&&s.tags.length){
+shopHtml+='<div style="margin-top:4px">';
+s.tags.forEach(function(t){
+var col=TAG_COLORS2[t]||['rgba(158,158,158,0.1)','#9E9E9E'];
+shopHtml+='<span style="display:inline-block;padding:2px 8px;border-radius:20px;font-size:9px;margin:1px;background:'+col[0]+';color:'+col[1]+'">'+t+'</span>';
+});
+shopHtml+='</div>';}
+if(s.maps)shopHtml+='<a href="'+s.maps+'" target="_blank" style="font-size:10px;color:#2a6b5a;text-decoration:none">📍 Карта</a>';
+shopHtml+='</div>';
+});
+});
 shopHtml+='</div>';
 document.getElementById('shopBlock').innerHTML=shopHtml;
 }
@@ -8292,7 +8313,7 @@ c.innerHTML+=dayHtml;
 if(d<daySlots.length-1&&daySlots[d+1].zone!==day.zone){
 var key=day.zone+'-'+daySlots[d+1].zone;
 var transfer=transfers[key]||'🚗 Переезд';
-c.innerHTML+='<div style="margin:8px 0;padding:12px 16px;background:rgba(42,107,90,0.06);border-radius:12px;border-left:3px solid #2a6b5a"><div style="font-size:12px;font-weight:600;color:#2a6b5a">Переезд → '+daySlots[d+1].name+'</div><div style="font-size:11px;color:rgba(42,42,40,0.5);margin-top:4px">'+transfer+'</div></div>';
+c.innerHTML+='<div style="margin:8px 0;padding:12px 16px;background:rgba(42,107,90,0.06);border-radius:12px;border-left:3px solid #2a6b5a"><div style="font-size:12px;font-weight:600;color:#2a6b5a">Переезд → '+daySlots[d+1].name+'</div><div style="font-size:11px;color:rgba(42,42,40,0.5);margin-top:4px">⏰ Выезд в 09:00 · '+transfer+'</div></div>';
 }
 });
 }
