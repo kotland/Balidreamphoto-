@@ -73,7 +73,7 @@ async def start(update: Update, context):
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text(
-        "Hi! Choose your language:\nОберіть мову · Тілді таңдаңыз",
+        "Choose your language:",
         reply_markup=reply_markup
     )
 
