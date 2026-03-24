@@ -19,7 +19,7 @@ GREETINGS = {
 
 ⚠️ Если вы из России — для открытия нужен VPN
 
-Нажми кнопку меню ниже чтобы открыть гайд 👇""",
+Нажми кнопку меню ниже чтобы открыть гайд\n\n👇""",
 
     'en': """Hey there! 👋
 
@@ -33,7 +33,7 @@ What's inside:
 
 12 areas: Canggu · Ubud · Seminyak · Uluwatu · Sanur · Amed · North · Lovina · Nusa Penida · Gili · Lombok · Java
 
-Tap the menu button below to open the guide 👇""",
+Tap the menu button below to open the guide\n\n👇""",
 
     'ua': """Привіт! 👋
 
@@ -47,7 +47,7 @@ Tap the menu button below to open the guide 👇""",
 
 12 районів: Чангу · Убуд · Семіньяк · Улувату · Санур · Амед · Північ · Ловіна · Нуса Пеніда · Гілі · Ломбок · Ява
 
-Натисни кнопку меню нижче щоб відкрити гід 👇""",
+Натисни кнопку меню нижче щоб відкрити гід\n\n👇""",
 
     'kz': """Сәлем! 👋
 
@@ -61,7 +61,7 @@ Tap the menu button below to open the guide 👇""",
 
 12 аудан: Чангу · Убуд · Семіньяк · Улувату · Санур · Амед · Солтүстік · Ловина · Нуса Пенида · Гили · Ломбок · Ява
 
-Гидті ашу үшін төмендегі мәзір батырмасын бас 👇"""
+Гидті ашу үшін төмендегі мәзір батырмасын бас\n\n👇"""
 }
 
 async def start(update: Update, context):
