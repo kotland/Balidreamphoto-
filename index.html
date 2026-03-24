@@ -107,6 +107,20 @@ td strong{color:#2a2a28}
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
 <div class="app">
+<!-- PASSWORD SCREEN -->
+<div class="screen" id="passwordScreen" style="display:none">
+<div style="text-align:center;padding:60px 20px">
+<div style="font-size:48px;margin-bottom:20px">🔒</div>
+<h1 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px">Закрытый доступ</h1>
+<p style="color:rgba(42,42,40,0.5);margin-bottom:30px">Введите код для входа</p>
+<input type="text" id="accessCode" placeholder="Код доступа" style="width:200px;padding:14px 20px;border:2px solid rgba(42,107,90,0.2);border-radius:14px;font-size:18px;text-align:center;outline:none;font-family:Inter,sans-serif" onkeyup="if(event.key==='Enter')checkCode()">
+<div style="margin-top:16px">
+<button class="btn btn-primary" onclick="checkCode()" style="padding:14px 40px;border-radius:14px;font-size:16px">Войти</button>
+</div>
+<div id="codeError" style="color:#e74c3c;margin-top:12px;font-size:14px;display:none">Неверный код</div>
+</div>
+</div>
+
 <!-- CHOICE SCREEN -->
 <div class="screen active" id="choiceScreen">
 <div style="font-size:48px;text-align:center;margin:60px 0 16px">🌴</div>
@@ -11621,6 +11635,15 @@ else{b.style.display='none';a.style.transform='rotate(0)'}
 }
 /* ========== INIT ========== */
 document.addEventListener('DOMContentLoaded',function(){
+/* PASSWORD CHECK */
+if(localStorage.getItem('bali_access')==='granted'){
+  document.getElementById('passwordScreen').style.display='none';
+} else {
+  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});
+  document.getElementById('passwordScreen').style.display='block';
+  document.getElementById('passwordScreen').classList.add('active');
+}
+
 /* Subtitle rotation */
 var CHOICE_PHRASES=['Выбери, что нужно именно тебе','С чего начнём?','Что ищешь на Бали?'];
 var cSub=document.getElementById('choiceSubtitle');
@@ -11687,6 +11710,23 @@ function hideRouteOverlay(){
   document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});
   document.getElementById('tourResultScreen').classList.add('active');
   window.scrollTo(0,0);
+}
+
+function checkCode(){
+  var code=document.getElementById('accessCode').value.trim();
+  if(code==='111'){
+    localStorage.setItem('bali_access','granted');
+    document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});
+    document.getElementById('passwordScreen').style.display='none';
+    document.getElementById('choiceScreen').classList.add('active');
+  } else {
+    document.getElementById('codeError').style.display='block';
+    document.getElementById('accessCode').style.borderColor='#e74c3c';
+    setTimeout(function(){
+      document.getElementById('codeError').style.display='none';
+      document.getElementById('accessCode').style.borderColor='rgba(42,107,90,0.2)';
+    },2000);
+  }
 }
 </script>
 </div>
