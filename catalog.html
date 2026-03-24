@@ -461,7 +461,13 @@ function showResults(){
     return true;
   });
   
-  var html='<div style="color:rgba(42,42,40,0.4);font-size:13px;margin-bottom:12px">'+filtered.length+' мест</div>';
+  var n=filtered.length;
+  var word='мест';
+  var last=n%10;var last2=n%100;
+  if(last2>=11&&last2<=19){word='мест'}
+  else if(last===1){word='место'}
+  else if(last>=2&&last<=4){word='места'}
+  var html='<div style="color:rgba(42,42,40,0.4);font-size:13px;margin-bottom:12px">'+n+' '+word+'</div>';
   filtered.forEach(function(p){
     html+='<div class="place">';
     html+='<div class="place-name">'+p.name+'</div>';
