@@ -6,6 +6,10 @@
 <title>Где свои на Бали — Гайды</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <link rel="stylesheet" href="style.css">
+<style>
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+@keyframes loadBar{0%{width:0%}50%{width:70%}100%{width:100%}}
+</style>
 </head>
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
@@ -59,6 +63,17 @@
 <div class="title" style="font-size:22px;text-align:left;margin-bottom:20px">Отметь всё что <em>откликается</em></div>
 <div class="chips" id="whatChips"></div>
 <button class="btn btn-primary" id="btn2" disabled onclick="showResults()">Показать мой район <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
+</div>
+<!-- LOADING SCREEN -->
+<div class="screen" id="loadingScreen">
+<div style="text-align:center;padding:80px 20px">
+<div style="font-size:48px;margin-bottom:20px;animation:pulse 1.5s ease-in-out infinite">🌴</div>
+<h2 style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:12px">Подбираем <em style="color:#2a6b5a">район</em></h2>
+<p style="color:rgba(42,42,40,0.5);font-size:14px">Анализируем ваши предпочтения...</p>
+<div style="margin-top:30px;width:200px;height:4px;background:rgba(42,107,90,0.1);border-radius:4px;margin-left:auto;margin-right:auto;overflow:hidden">
+<div style="width:0%;height:100%;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);border-radius:4px;animation:loadBar 2s ease-out forwards"></div>
+</div>
+</div>
 </div>
 <!-- RESULT SCREEN -->
 <div class="screen" id="resultScreen">
@@ -162,10 +177,10 @@ var AREAS=[
 {name:'Амед',guide:'amed',who:['yoga','artist','surfer'],what:['dive','quiet','budget','ocean','culture','yoga_sp','volcano','photo_sp','swim','retreat'],who_text:'Дайверы, минималисты',desc:'Вулкан, рифы, тишина.',places:['🤿 Japanese Shipwreck','🌋 Вид на Агунг','🧘 Amed Yoga','🍜 Warung Enak','🐠 Снорклинг с берега']},
 {name:'Ловина',guide:'lovina',who:['family','tourist','yoga'],what:['quiet','budget','culture','ocean','swim','farm','volcano','banya','dive'],who_text:'Искатели тишины',desc:'Дельфины, горячие источники, ноль туристов.',places:['🐬 Дельфины на рассвете','♨️ Banjar Hot Springs','🛕 Brahma Vihara','🍜 Еда от 15K','🌊 Спокойное море']},
 {name:'Север Бали',guide:'north',who:['photo','tourist','yoga','family'],what:['volcano','quiet','budget','culture','photo_sp','farm','retreat','golf'],who_text:'Искатели гор и водопадов',desc:'Горы, озёра, водопады, глэмпинги — другой Бали.',places:['🌋 Вулкан Батур','💧 Sekumpul Waterfall','🏕 Black Lava Camp','⛳ Handara Golf','🍓 La Fresa Farm']},
-{name:'Нуса Пенида',guide:'nusapenida',who:['photo','surfer','tourist'],what:['ocean','dive','photo_sp','quiet','swim','budget','volcano'],who_text:'Фотографы, авантюристы',desc:'Скалы, манты, бирюзовая вода.',places:['📸 Kelingking Beach','🤿 Манта Рэй','🏖 Diamond Beach','🌊 Broken Beach','🌴 Treehouse']},
-{name:'Острова Гили',guide:'gili',who:['tourist','photo','surfer','yoga'],what:['ocean','dive','photo_sp','quiet','swim','party','budget'],who_text:'Снорклеры, тусовщики, романтики',desc:'Бирюзовая вода, черепахи, без машин.',places:['🐢 Turtle Point','🗿 Underwater Statues','🏖 Sunset Point Gili T','🤿 Снорклинг-тур 3 острова','🎉 Mad Monkey Bar']},
-{name:'Ломбок и Сумбава',guide:'lombok',who:['surfer','photo','tourist','yoga'],what:['surf','ocean','dive','quiet','volcano','budget','photo_sp'],who_text:'Сёрферы, треккеры, авантюристы',desc:'Ринджани, розовые пляжи, китовые акулы.',places:['🌋 Вулкан Ринджани','🏖 Pink Beach','🏄 Desert Point','🐋 Китовые акулы','🏖 Tanjung Aan']},
-{name:'Ява',guide:'java',who:['tourist','photo','yoga'],what:['volcano','culture','photo_sp','budget','quiet'],who_text:'Исследователи, культурные путешественники',desc:'Бромо, Иджен, Боробудур — другая планета.',places:['🌋 Вулкан Бромо','🔥 Голубое пламя Иджен','💧 Тумпак Севу','🏛 Боробудур','🏛 Прамбанан']}
+{name:'Нуса Пенида',guide:'nusapenida',island:true,who:['photo','surfer','tourist'],what:['ocean','dive','photo_sp','quiet','swim','budget','volcano'],who_text:'Фотографы, авантюристы',desc:'Скалы, манты, бирюзовая вода.',places:['📸 Kelingking Beach','🤿 Манта Рэй','🏖 Diamond Beach','🌊 Broken Beach','🌴 Treehouse']},
+{name:'Острова Гили',guide:'gili',island:true,who:['tourist','photo','surfer','yoga'],what:['ocean','dive','photo_sp','quiet','swim','party','budget'],who_text:'Снорклеры, тусовщики, романтики',desc:'Бирюзовая вода, черепахи, без машин.',places:['🐢 Turtle Point','🗿 Underwater Statues','🏖 Sunset Point Gili T','🤿 Снорклинг-тур 3 острова','🎉 Mad Monkey Bar']},
+{name:'Ломбок и Сумбава',guide:'lombok',island:true,who:['surfer','photo','tourist','yoga'],what:['surf','ocean','dive','quiet','volcano','budget','photo_sp'],who_text:'Сёрферы, треккеры, авантюристы',desc:'Ринджани, розовые пляжи, китовые акулы.',places:['🌋 Вулкан Ринджани','🏖 Pink Beach','🏄 Desert Point','🐋 Китовые акулы','🏖 Tanjung Aan']},
+{name:'Ява',guide:'java',island:true,who:['tourist','photo','yoga'],what:['volcano','culture','photo_sp','budget','quiet'],who_text:'Исследователи, культурные путешественники',desc:'Бромо, Иджен, Боробудур — другая планета.',places:['🌋 Вулкан Бромо','🔥 Голубое пламя Иджен','💧 Тумпак Севу','🏛 Боробудур','🏛 Прамбанан']}
 ];
 var TRIPS=[
 {name:'Ловина',guide:'lovina',what:['quiet','budget','culture','ocean','swim','farm','volcano','banya','dive'],desc:'Дельфины на рассвете, горячие источники, ноль туристов. 1-2 дня.',places:['🐬 Дельфины','♨️ Banjar Hot Springs','🛕 Brahma Vihara']},
@@ -204,14 +219,16 @@ if(n===1)renderChips(WHO,'whoChips',selWho,'btn1');
 if(n===2)renderChips(WHAT,'whatChips',selWhat,'btn2');
 }
 function showResults(){
-switchScreen('resultScreen');
+switchScreen('loadingScreen');
+setTimeout(function(){
 var scored=AREAS.map(function(a){
 var score=0;
 selWho.forEach(function(w){if(a.who.indexOf(w)>=0)score+=2});
 selWhat.forEach(function(w){if(a.what.indexOf(w)>=0)score+=1});
 var max=selWho.length*2+selWhat.length;
-return{name:a.name,score:score,pct:Math.round(score/max*100),who_text:a.who_text,desc:a.desc,places:a.places,guide:a.guide};
-}).sort(function(a,b){return b.score-a.score}).slice(0,3);
+return{name:a.name,score:score,pct:Math.round(score/max*100),who_text:a.who_text,desc:a.desc,places:a.places,guide:a.guide,island:a.island||false};
+}).sort(function(a,b){if(b.pct!==a.pct)return b.pct-a.pct;if(a.island!==b.island)return a.island?1:-1;return 0}).slice(0,3);
+switchScreen('resultScreen');
 TRACK_DATA.whoSelected=selWho.join(',');
 TRACK_DATA.whatSelected=selWhat.join(',');
 TRACK_DATA.result1=scored[0]?scored[0].name:'';
@@ -238,6 +255,7 @@ c.insertAdjacentHTML('afterend',tripsHtml);
 /* Share button */
 c.innerHTML+='<div style="text-align:center;margin:30px 0 20px;padding:0 20px"><button class="btn" onclick="shareResults()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,107,90,0.08);color:#2a6b5a;border:1.5px solid rgba(42,107,90,0.15);font-size:14px;font-weight:600;cursor:pointer">📤 Поделиться с друзьями</button></div>';
 if(window.Telegram&&Telegram.WebApp){try{Telegram.WebApp.HapticFeedback.notificationOccurred('success')}catch(e){}}
+},2000);
 }
 /* ========== OPEN GUIDE → REDIRECT ========== */
 function openGuide(guide){
