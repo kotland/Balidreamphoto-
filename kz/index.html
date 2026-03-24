@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Балиға гидің</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
+<div class="app">
+
+<div class="screen active" id="choiceScreen">
+<div style="font-size:48px;text-align:center;margin:60px 0 16px">🌴</div>
+<div class="title">Балиға <em>гидің</em></div>
+<div class="subtitle" style="margin-bottom:32px" id="choiceSubtitle">Саған не қажет — соны таңда</div>
+<button class="btn btn-primary" onclick="startLiving()" style="margin-bottom:12px;padding:20px 24px">
+<div style="text-align:left;width:100%">
+<div style="font-size:16px;font-weight:700">Балиде қайда тұру керек</div>
+<div style="font-size:12px;color:rgba(42,42,40,0.5);margin-top:4px">Демалыс · 90+ бағыт</div>
+</div>
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+</button>
+
+<button class="btn btn-primary" onclick="openCatalog()" style="padding:20px 24px;margin-bottom:12px">
+<div style="text-align:left;width:100%">
+<div style="font-size:16px;font-weight:700">📍 Орындар каталогы</div>
+<div style="font-size:12px;color:rgba(42,42,40,0.5);margin-top:4px">200+ орын, аудандар мен санаттар бойынша</div>
+</div>
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+</button>
+<button class="btn btn-primary" onclick="openBase()" style="padding:20px 24px;background:rgba(42,107,90,0.06);border:1px solid rgba(42,107,90,0.1)">
+<div style="text-align:left;width:100%">
+<div style="font-size:16px;font-weight:700;color:#2a6b5a">📋 Бали Базасы</div>
+<div style="font-size:12px;color:rgba(42,42,40,0.5);margin-top:4px">Қауіптер · Мотобайк · Дәріхана · Ақша · Мәдениет</div>
+</div>
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#2a6b5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+</button>
+
+<div style="text-align:center;margin-top:24px">
+<button onclick="changeLang()" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(42,107,90,0.15);background:rgba(42,107,90,0.04);font-size:13px;cursor:pointer;font-family:Inter,sans-serif;color:rgba(42,42,40,0.5)">🌍 Тілді ауыстыру</button>
+</div>
+</div>
+</div>
+<script>
+function startLiving(){ window.location.href='guides.html'; }
+function openBase(){ window.location.href='base.html'; }
+function openCatalog(){ window.location.href='../catalog.html'; }
+function changeLang(){ localStorage.removeItem('bali_lang'); window.location.href='../index.html'; }
+
+var CHOICE_PHRASES=['Саған не қажет — соны таңда','Неден бастаймыз?','Балиден не іздейсің?'];
+var cSub=document.getElementById('choiceSubtitle');
+if(cSub){cSub.textContent=CHOICE_PHRASES[Math.floor(Math.random()*CHOICE_PHRASES.length)];}
+
+if(window.Telegram&&Telegram.WebApp){
+  Telegram.WebApp.ready();
+  Telegram.WebApp.expand();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["python3"]
+
+[phases.install]
+cmds = ["pip install python-telegram-bot>=21.0"]
+
+[start]
+cmd = "python3 bot.py"
