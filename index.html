@@ -5753,13 +5753,12 @@ else if(d.includes('десерт')||d.includes('пончик')||d.includes('то
 else if(d.includes('балий')||d.includes('варунг')||d.includes('индонез')||d.includes('наси')) p.cuisine='местная';
 else p.cuisine='все';
 });
-function openCatalog(){console.log('openCatalog called');
-switchScreen('catalogScreen');
-catDistrict='';catCategory='';catBudget='все';
-document.getElementById('catalogCategoryPicker').style.display='none';
-document.getElementById('catalogBudgetPicker').style.display='none';
-document.getElementById('catalogResults').innerHTML='';
-document.querySelectorAll('#districtChips .chip').forEach(function(c){c.classList.remove('selected')});
+function openCatalog(){
+  document.querySelectorAll('.screen').forEach(function(s){s.style.display='none';s.classList.remove('active')});
+  var cs=document.getElementById('catalogScreen');
+  if(cs){cs.style.display='block';cs.classList.add('active');}
+  catDistrict='';catCategory='';catBudget='все';
+  window.scrollTo(0,0);
 }
 function filterDistrict(d,el){
 document.querySelectorAll('#districtChips .chip').forEach(function(c){c.classList.remove('selected')});
@@ -5893,8 +5892,20 @@ window.scrollTo(0,0);
 /* ========== NAVIGATION ========== */
 function startLiving(){switchScreen('startScreen')}
 function startTour(){switchScreen('tourStep1')}
-function openBase(){console.log('openBase called');switchScreen('baliBaseScreen');console.log('switched to baliBaseScreen');var acc=document.getElementById('baseAccordion');console.log('baseAccordion:',acc);if(acc&&!acc.innerHTML)renderBase();}
-function backToChoice(){switchScreen('choiceScreen')}
+function openBase(){
+  document.querySelectorAll('.screen').forEach(function(s){s.style.display='none';s.classList.remove('active')});
+  var bs=document.getElementById('baliBaseScreen');
+  if(bs){bs.style.display='block';bs.classList.add('active');}
+  var acc=document.getElementById('baseAccordion');
+  if(acc&&!acc.innerHTML)renderBase();
+  window.scrollTo(0,0);
+}
+function backToChoice(){
+  document.querySelectorAll('.screen').forEach(function(s){s.style.display='none';s.classList.remove('active')});
+  document.getElementById('choiceScreen').style.display='block';
+  document.getElementById('choiceScreen').classList.add('active');
+  window.scrollTo(0,0);
+}
 /* ========== TOUR FLOW ========== */
 var TOUR_INTERESTS=[
 {id:'spiritual',emoji:'🔮',label:'Духовные практики'},
