@@ -5753,7 +5753,7 @@ else if(d.includes('десерт')||d.includes('пончик')||d.includes('то
 else if(d.includes('балий')||d.includes('варунг')||d.includes('индонез')||d.includes('наси')) p.cuisine='местная';
 else p.cuisine='все';
 });
-function openCatalog(){
+function openCatalog(){console.log('openCatalog called');
 switchScreen('catalogScreen');
 catDistrict='';catCategory='';catBudget='все';
 document.getElementById('catalogCategoryPicker').style.display='none';
@@ -5893,7 +5893,7 @@ window.scrollTo(0,0);
 /* ========== NAVIGATION ========== */
 function startLiving(){switchScreen('startScreen')}
 function startTour(){switchScreen('tourStep1')}
-function openBase(){switchScreen('baliBaseScreen')}
+function openBase(){console.log('openBase called');switchScreen('baliBaseScreen');console.log('switched to baliBaseScreen');var acc=document.getElementById('baseAccordion');console.log('baseAccordion:',acc);if(acc&&!acc.innerHTML)renderBase();}
 function backToChoice(){switchScreen('choiceScreen')}
 /* ========== TOUR FLOW ========== */
 var TOUR_INTERESTS=[
