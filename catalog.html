@@ -27,6 +27,7 @@ body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:
 <div id="districtChips">
 <div class="chip" onclick="filterDistrict('Чангу',this)">🏄 Чангу</div>
 <div class="chip" onclick="filterDistrict('Убуд',this)">🏯 Убуд</div>
+<div class="chip" onclick="filterDistrict('Семиньяк',this)">🌴 Семиньяк</div>
 <div class="chip" onclick="filterDistrict('Букит',this)">🏖 Улувату</div>
 <div class="chip" onclick="filterDistrict('Санур',this)">🚴 Санур</div>
 <div class="chip" onclick="filterDistrict('Амед',this)">🤿 Амед и Восток</div>
@@ -38,13 +39,25 @@ body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:
 <div id="catalogCategoryPicker" style="margin-top:16px;display:none">
 <div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px">КАТЕГОРИЯ</div>
 <div>
-<div class="chip" onclick="filterCategory('еда',this)">🍽 Поесть</div>
+<div class="chip" onclick="filterCategory('еда',this)">🍜 Поесть</div>
+<div class="chip" onclick="filterCategory('кофейни',this)">☕ Кофейни</div>
+<div class="chip" onclick="filterCategory('веган',this)">🥗 Веган</div>
 <div class="chip" onclick="filterCategory('пляж',this)">🏖 Пляжи</div>
+<div class="chip" onclick="filterCategory('beach_club',this)">🏖 Beach Clubs</div>
 <div class="chip" onclick="filterCategory('закат',this)">🌅 Закаты</div>
-<div class="chip" onclick="filterCategory('велнес',this)">💆 Велнес</div>
+<div class="chip" onclick="filterCategory('йога',this)">🧘 Йога</div>
+<div class="chip" onclick="filterCategory('спа',this)">💆 Спа и массаж</div>
+<div class="chip" onclick="filterCategory('велнес',this)">🔮 Велнес</div>
+<div class="chip" onclick="filterCategory('салон',this)">💅 Салоны красоты</div>
+<div class="chip" onclick="filterCategory('спорт',this)">🏋️ Спортзалы</div>
 <div class="chip" onclick="filterCategory('развлечения',this)">🎉 Развлечения</div>
-<div class="chip" onclick="filterCategory('культура',this)">🛕 Культура</div>
+<div class="chip" onclick="filterCategory('культура',this)">🛕 Храмы</div>
 <div class="chip" onclick="filterCategory('шоппинг',this)">🛍 Шоппинг</div>
+<div class="chip" onclick="filterCategory('фото',this)">📸 Фото-локации</div>
+<div class="chip" onclick="filterCategory('водопад',this)">💧 Водопады</div>
+<div class="chip" onclick="filterCategory('глэмпинг',this)">🏕 Глэмпинги</div>
+<div class="chip" onclick="filterCategory('галерея',this)">🖼 Галереи</div>
+<div class="chip" onclick="filterCategory('вау',this)">✨ ВАУ-места</div>
 </div>
 </div>
 
@@ -53,10 +66,25 @@ body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:
 <div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px">БЮДЖЕТ</div>
 <div>
 <div class="chip" onclick="filterBudget('все',this)">✨ Все</div>
-<div class="chip" onclick="filterBudget('💚',this)">💚 до 50K</div>
-<div class="chip" onclick="filterBudget('💛',this)">💛 50-100K</div>
-<div class="chip" onclick="filterBudget('🧡',this)">🧡 100-200K</div>
-<div class="chip" onclick="filterBudget('❤️',this)">❤️ 200K+</div>
+<div class="chip" onclick="filterBudget('💚',this)">💚 до $5 (75K)</div>
+<div class="chip" onclick="filterBudget('💛',this)">💛 $5-10 (75-150K)</div>
+<div class="chip" onclick="filterBudget('🧡',this)">🧡 $10-20 (150-300K)</div>
+<div class="chip" onclick="filterBudget('❤️',this)">❤️ $20+ (300K+)</div>
+</div>
+</div>
+<div id="catalogShopFilter" style="margin-top:16px;display:none">
+<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px">ТИП</div>
+<div>
+<div class="chip" onclick="filterShopType('все',this)">✨ Все</div>
+<div class="chip" onclick="filterShopType('женское',this)">👗 Женское</div>
+<div class="chip" onclick="filterShopType('мужское',this)">👔 Мужское</div>
+<div class="chip" onclick="filterShopType('купальники',this)">🏊 Купальники</div>
+<div class="chip" onclick="filterShopType('спорт',this)">🏃 Спорт</div>
+<div class="chip" onclick="filterShopType('ювелирка',this)">💍 Ювелирка</div>
+<div class="chip" onclick="filterShopType('для дома',this)">🏠 Декор</div>
+<div class="chip" onclick="filterShopType('сувениры',this)">🎁 Сувениры</div>
+<div class="chip" onclick="filterShopType('секонд',this)">♻️ Секонд</div>
+<div class="chip" onclick="filterShopType('унисекс',this)">👫 Унисекс</div>
 </div>
 </div>
 <div id="catalogResults" style="margin-top:20px"></div>
@@ -447,14 +475,39 @@ var PLACES=[
 var catDistrict='';
 var catCategory='';
 var catBudget='';
+var catShopType='';
+
+var DISTRICT_SUBS={
+  'Букит':['Букит','Улувату','Кута'],
+  'Амед':['Амед','Карангасем'],
+  'Чангу':['Чангу','Перенан','Переренан','Умалас','Сесех']
+};
+
+function matchDistrict(pDistrict,filterD){
+  if(!filterD) return true;
+  var subs=DISTRICT_SUBS[filterD];
+  if(subs){
+    for(var i=0;i<subs.length;i++){
+      if(pDistrict===subs[i]) return true;
+    }
+    return false;
+  }
+  return pDistrict===filterD;
+}
 
 function filterDistrict(d,el){
   document.querySelectorAll('#districtChips .chip').forEach(function(c){c.classList.remove('selected')});
   el.classList.add('selected');
   catDistrict=d;
   catCategory='';
+  catBudget='';
+  catShopType='';
   document.getElementById('catalogCategoryPicker').style.display='block';
+  document.getElementById('catalogBudgetPicker').style.display='none';
+  document.getElementById('catalogShopFilter').style.display='none';
   document.querySelectorAll('#catalogCategoryPicker .chip').forEach(function(c){c.classList.remove('selected')});
+  document.querySelectorAll('#catalogBudgetPicker .chip').forEach(function(c){c.classList.remove('selected')});
+  document.querySelectorAll('#catalogShopFilter .chip').forEach(function(c){c.classList.remove('selected')});
   showResults();
 }
 
@@ -462,9 +515,17 @@ function filterCategory(cat,el){
   document.querySelectorAll('#catalogCategoryPicker .chip').forEach(function(c){c.classList.remove('selected')});
   el.classList.add('selected');
   catCategory=cat;
-  document.getElementById('catalogBudgetPicker').style.display='block';
   catBudget='';
+  catShopType='';
+  if(cat==='шоппинг'){
+    document.getElementById('catalogBudgetPicker').style.display='none';
+    document.getElementById('catalogShopFilter').style.display='block';
+  } else {
+    document.getElementById('catalogBudgetPicker').style.display='block';
+    document.getElementById('catalogShopFilter').style.display='none';
+  }
   document.querySelectorAll('#catalogBudgetPicker .chip').forEach(function(c){c.classList.remove('selected')});
+  document.querySelectorAll('#catalogShopFilter .chip').forEach(function(c){c.classList.remove('selected')});
   showResults();
 }
 
@@ -474,12 +535,29 @@ function filterBudget(b,el){
   catBudget=b==='все'?'':b;
   showResults();
 }
+
+function filterShopType(t,el){
+  document.querySelectorAll('#catalogShopFilter .chip').forEach(function(c){c.classList.remove('selected')});
+  el.classList.add('selected');
+  catShopType=t==='все'?'':t;
+  showResults();
+}
+
 function showResults(){
   var results=document.getElementById('catalogResults');
   var filtered=PLACES.filter(function(p){
-    if(catDistrict && p.district!==catDistrict) return false;
+    if(catDistrict && !matchDistrict(p.district,catDistrict)) return false;
     if(catCategory && p.category!==catCategory) return false;
     if(catBudget && p.budget!==catBudget) return false;
+    if(catShopType && p.tags){
+      var found=false;
+      for(var i=0;i<p.tags.length;i++){
+        if(p.tags[i]===catShopType){found=true;break;}
+      }
+      if(!found) return false;
+    } else if(catShopType && !p.tags){
+      return false;
+    }
     return true;
   });
   
