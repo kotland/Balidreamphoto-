@@ -35,6 +35,7 @@
 <button onclick="setLang('en')" style="padding:16px 24px;border-radius:14px;border:2px solid rgba(42,107,90,0.2);background:white;font-size:16px;cursor:pointer;font-family:Inter,sans-serif">🇬🇧 English</button>
 <button onclick="setLang('ua')" style="padding:16px 24px;border-radius:14px;border:2px solid rgba(42,107,90,0.2);background:white;font-size:16px;cursor:pointer;font-family:Inter,sans-serif">🇺🇦 Українська</button>
 <button onclick="setLang('kz')" style="padding:16px 24px;border-radius:14px;border:2px solid rgba(42,107,90,0.2);background:white;font-size:16px;cursor:pointer;font-family:Inter,sans-serif">🇰🇿 Қазақша</button>
+<button onclick="setLang('ar')" style="padding:16px 24px;border-radius:14px;border:2px solid rgba(42,107,90,0.2);background:white;font-size:16px;cursor:pointer;font-family:Inter,sans-serif">🇦🇪 العربية</button>
 </div>
 </div>
 </div>
@@ -81,6 +82,7 @@ function setLang(lang) {
   if (lang === 'en') { window.location.href = 'en/index.html'; return; }
   if (lang === 'ua') { window.location.href = 'ua/index.html'; return; }
   if (lang === 'kz') { window.location.href = 'kz/index.html'; return; }
+  if (lang === 'ar') { window.location.href = 'ar/index.html'; return; }
   // ru — stay on current page
 }
 function showLangOverlay() {
@@ -90,6 +92,7 @@ function showLangOverlay() {
     if (lang === 'en') { window.location.href = 'en/index.html'; return; }
     if (lang === 'ua') { window.location.href = 'ua/index.html'; return; }
     if (lang === 'kz') { window.location.href = 'kz/index.html'; return; }
+    if (lang === 'ar') { window.location.href = 'ar/index.html'; return; }
     return; // ru — stay
   }
   document.getElementById('langOverlay').style.display = 'flex';
