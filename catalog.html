@@ -21,10 +21,7 @@ h1{font-family:'Playfair Display',serif;text-align:center;margin:20px 0}
 </head>
 <body>
 <button class="btn" onclick="window.location.href='index.html?v=104'">← Назад</button>
-<h1>📍 Каталог <em style="color:#2a6b5a">мест</em></h1>
-<p style="text-align:center;color:rgba(42,42,40,0.5);margin-bottom:20px">200+ мест по районам и категориям</p>
-<div  >
-<button class="btn btn-primary" onclick="backToChoice()" style="font-size:13px;padding:8px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-bottom:16px">← Назад</button>
+
 <div class="title" style="margin-top:8px">Каталог <em>мест</em></div>
 <div class="subtitle" style="margin-bottom:16px">200+ проверенных мест</div>
 <div id="catalogDistrictPicker" style="margin-bottom:16px">
@@ -39,7 +36,7 @@ h1{font-family:'Playfair Display',serif;text-align:center;margin:20px 0}
 <div class="chip" onclick="filterDistrict('Амед',this)">🤿 Амед</div>
 <div class="chip" onclick="filterDistrict('Кинтамани',this)">🌋 Кинтамани</div>
 <div class="chip" onclick="filterDistrict('Нуса Пенида',this)">🏝 Нуса Пенида</div>
-<div class="chip" onclick="filterDistrict('Нуану',this)">🗿 Нуану</div>
+
 <div class="chip" onclick="filterDistrict('Ловина',this)">🐬 Ловина</div>
 </div>
 </div>
@@ -557,7 +554,7 @@ var PLACES=[
 ];
 var catDistrict='';var catCategory='';var catBudget='все';
 
-function filterDistrict(d,el){
+function filterDistrict(d,el){if(d==='Амед и Восток')d='Амед';if(d==='Север Бали')d='Кинтамани';
 document.querySelectorAll('#districtChips .chip').forEach(function(c){c.classList.remove('selected')});
 el.classList.add('selected');
 catDistrict=d;
