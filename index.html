@@ -5812,7 +5812,7 @@ else if(d.includes('десерт')||d.includes('пончик')||d.includes('то
 else if(d.includes('балий')||d.includes('варунг')||d.includes('индонез')||d.includes('наси')) p.cuisine='местная';
 else p.cuisine='все';
 });
-function openCatalog(){window.location.href='catalog.html';}
+function openCatalog(){window.location.href='catalog.html';return;window.location.href='catalog.html';}
 function filterDistrict(d,el){
 document.querySelectorAll('#districtChips .chip').forEach(function(c){c.classList.remove('selected')});
 el.classList.add('selected');
@@ -5949,7 +5949,7 @@ window.scrollTo(0,0);
 /* ========== NAVIGATION ========== */
 function startLiving(){switchScreen('startScreen')}
 function startTour(){switchScreen('tourStep1')}
-function openBase(){window.location.href='base.html';}
+function openBase(){window.location.href='base.html';return;window.location.href='base.html';}
 function backToChoice(){
   document.querySelectorAll('.screen').forEach(function(s){s.className='screen';s.style.cssText='display:none'});
   document.querySelectorAll('[id^="guide-"]').forEach(function(g){g.className='screen';g.style.cssText='display:none'});
