@@ -49,6 +49,15 @@ Tap the menu button below to open the guide\n\n👇""",
 
 Натисни кнопку меню нижче щоб відкрити гід\n\n👇""",
 
+    'ar': """مرحباً! 👋
+
+أنا دليلك في بالي والجزر 🌴
+
+قريباً... النسخة العربية قيد الإعداد
+Coming soon — Arabic version is under development
+
+🇦🇪""",
+
     'kz': """Сәлем! 👋
 
 Мен — сенің Бали мен аралдар бойынша гидің 🌴
@@ -69,7 +78,8 @@ async def start(update: Update, context):
         [InlineKeyboardButton("🇷🇺 Русский", callback_data="lang_ru")],
         [InlineKeyboardButton("🇬🇧 English", callback_data="lang_en")],
         [InlineKeyboardButton("🇺🇦 Українська", callback_data="lang_ua")],
-        [InlineKeyboardButton("🇰🇿 Қазақша", callback_data="lang_kz")]
+        [InlineKeyboardButton("🇰🇿 Қазақша", callback_data="lang_kz")],
+        [InlineKeyboardButton("🇦🇪 العربية", callback_data="lang_ar")]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text(
@@ -84,7 +94,7 @@ async def lang_callback(update: Update, context):
     greeting = GREETINGS.get(lang, GREETINGS["en"])
     # Edit the original message to remove buttons
     await query.message.edit_text(
-        "✅ " + {"ru":"Русский","en":"English","ua":"Українська","kz":"Қазақша"}.get(lang, lang)
+        "✅ " + {"ru":"Русский","en":"English","ua":"Українська","kz":"Қазақша","ar":"العربية"}.get(lang, lang)
     )
     # Send greeting as new message
     await query.message.reply_text(greeting)
