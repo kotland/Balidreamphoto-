@@ -4,22 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Каталог мест</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:100vh;padding:20px;padding-bottom:80px}
-.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:14px;padding:14px;margin-bottom:8px}
-.place-name{font-size:14px;font-weight:600;margin-bottom:4px}
-.place-desc{font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5}
-.place-meta{font-size:12px;color:#3a9b7a;margin-top:6px}
-.place-meta a{color:#3a9b7a;text-decoration:none}
-.chip{display:inline-block;padding:8px 16px;border-radius:20px;background:rgba(255,255,255,0.6);border:1.5px solid rgba(0,0,0,0.06);font-size:13px;margin:4px;cursor:pointer;user-select:none}
-.chip.selected{background:rgba(42,107,90,0.1);border-color:rgba(42,107,90,0.3);color:#2a6b5a}
-.btn{display:block;width:100%;padding:14px 24px;border-radius:14px;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;font-size:14px;text-align:center;margin-bottom:16px}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-<button class="btn" onclick="window.location.href='index.html?v=108'">← Назад</button>
+<body class="catalog-page">
+<button class="btn-green" onclick="window.location.href='index.html?v=108'">← Назад</button>
 <h1 style="font-family:'Playfair Display',serif;text-align:center;margin:20px 0;font-size:24px">Каталог <em style="color:#2a6b5a">мест</em></h1>
 <p style="text-align:center;color:rgba(42,42,40,0.5);margin-bottom:24px">200+ проверенных мест</p>
 
@@ -128,7 +116,7 @@ body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:
 </div>
 <div id="catalogResults" style="margin-top:20px"></div>
 
-<button class="btn" onclick="window.location.href='index.html?v=108'" style="margin-top:20px">← Назад</button>
+<button class="btn-green" onclick="window.location.href='index.html?v=108'" style="margin-top:20px">← Назад</button>
 
 <script>
 var PLACES=[
