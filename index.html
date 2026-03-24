@@ -25,6 +25,20 @@
 
 
 
+<!-- LANGUAGE SELECTION -->
+<div id="langOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#f8f6f2;z-index:99998;display:flex;align-items:center;justify-content:center;display:none">
+<div style="text-align:center;padding:20px">
+<div style="font-size:48px;margin-bottom:20px">🌍</div>
+<h2 style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:24px">Choose language</h2>
+<div style="display:flex;flex-direction:column;gap:12px;max-width:280px;margin:0 auto">
+<button onclick="setLang('ru')" style="padding:16px 24px;border-radius:14px;border:2px solid rgba(42,107,90,0.2);background:white;font-size:16px;cursor:pointer;font-family:Inter,sans-serif">🇷🇺 Русский</button>
+<button onclick="setLang('en')" style="padding:16px 24px;border-radius:14px;border:2px solid rgba(42,107,90,0.2);background:white;font-size:16px;cursor:pointer;font-family:Inter,sans-serif">🇬🇧 English</button>
+<button onclick="setLang('ua')" style="padding:16px 24px;border-radius:14px;border:2px solid rgba(42,107,90,0.2);background:white;font-size:16px;cursor:pointer;font-family:Inter,sans-serif">🇺🇦 Українська</button>
+<button onclick="setLang('kz')" style="padding:16px 24px;border-radius:14px;border:2px solid rgba(42,107,90,0.2);background:white;font-size:16px;cursor:pointer;font-family:Inter,sans-serif">🇰🇿 Қазақша</button>
+</div>
+</div>
+</div>
+
 <!-- CHOICE SCREEN -->
 
 <div class="screen active" id="choiceScreen">
@@ -53,15 +67,39 @@
 </div>
 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#2a6b5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
 </button>
+
+<div style="text-align:center;margin-top:24px">
+<button onclick="localStorage.removeItem('bali_lang');showLangOverlay()" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(42,107,90,0.15);background:rgba(42,107,90,0.04);font-size:13px;cursor:pointer;font-family:Inter,sans-serif;color:rgba(42,42,40,0.5)">🌍 Сменить язык</button>
+</div>
 </div>
 <!-- START SCREEN (District filter intro) -->
 </div>
 <script>
+function setLang(lang) {
+  localStorage.setItem('bali_lang', lang);
+  document.getElementById('langOverlay').style.display = 'none';
+  if (lang === 'en') { window.location.href = 'en/index.html'; return; }
+  if (lang === 'ua') { window.location.href = 'ua/index.html'; return; }
+  if (lang === 'kz') { window.location.href = 'kz/index.html'; return; }
+  // ru — stay on current page
+}
+function showLangOverlay() {
+  if (localStorage.getItem('bali_lang')) {
+    // Language already chosen — redirect if needed
+    var lang = localStorage.getItem('bali_lang');
+    if (lang === 'en') { window.location.href = 'en/index.html'; return; }
+    if (lang === 'ua') { window.location.href = 'ua/index.html'; return; }
+    if (lang === 'kz') { window.location.href = 'kz/index.html'; return; }
+    return; // ru — stay
+  }
+  document.getElementById('langOverlay').style.display = 'flex';
+}
 function checkAccess(){
   var code=document.getElementById('accessCode').value.trim();
   if(code==='111'){
     localStorage.setItem('bali_access','granted');
     document.getElementById('passwordOverlay').style.display='none';
+    showLangOverlay();
   } else {
     document.getElementById('codeError').style.display='block';
     setTimeout(function(){document.getElementById('codeError').style.display='none'},2000);
@@ -70,6 +108,7 @@ function checkAccess(){
 if(localStorage.getItem('bali_access')==='granted'){
   var po=document.getElementById('passwordOverlay');
   if(po)po.style.display='none';
+  showLangOverlay();
 }
 function startLiving(){ window.location.href='guides.html'; }
 function openBase(){ window.location.href='base.html'; }
