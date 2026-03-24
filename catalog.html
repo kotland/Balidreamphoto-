@@ -34,6 +34,9 @@ body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:
 <div class="chip" onclick="filterDistrict('Нуса Пенида',this)">🏝 Нуса Пенида</div>
 <div class="chip" onclick="filterDistrict('Ловина',this)">🐬 Ловина</div>
 <div class="chip" onclick="filterDistrict('Север',this)">🏔 Север Бали</div>
+<div class="chip" onclick="filterDistrict('Гили',this)">🏝 Гили</div>
+<div class="chip" onclick="filterDistrict('Ломбок',this)">🌋 Ломбок</div>
+<div class="chip" onclick="filterDistrict('Ява',this)">🏛 Ява</div>
 </div>
 
 <div id="catalogCategoryPicker" style="margin-top:16px;display:none">
@@ -41,7 +44,6 @@ body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:
 <div>
 <div class="chip" onclick="filterCategory('еда',this)">🍜 Поесть</div>
 <div class="chip" onclick="filterCategory('кофейни',this)">☕ Кофейни</div>
-<div class="chip" onclick="filterCategory('веган',this)">🥗 Веган</div>
 <div class="chip" onclick="filterCategory('пляж',this)">🏖 Пляжи</div>
 <div class="chip" onclick="filterCategory('beach_club',this)">🏖 Beach Clubs</div>
 <div class="chip" onclick="filterCategory('закат',this)">🌅 Закаты</div>
@@ -85,6 +87,43 @@ body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:
 <div class="chip" onclick="filterShopType('сувениры',this)">🎁 Сувениры</div>
 <div class="chip" onclick="filterShopType('секонд',this)">♻️ Секонд</div>
 <div class="chip" onclick="filterShopType('унисекс',this)">👫 Унисекс</div>
+</div>
+</div>
+<div id="catalogCuisineFilter" style="margin-top:16px;display:none">
+<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px">КУХНЯ</div>
+<div>
+<div class="chip" onclick="filterCuisine('все',this)">✨ Все</div>
+<div class="chip" onclick="filterCuisine('вегетарианское',this)">🌿 Веган</div>
+<div class="chip" onclick="filterCuisine('местная',this)">🇮🇩 Местная</div>
+<div class="chip" onclick="filterCuisine('итальянская',this)">🇮🇹 Итальянская</div>
+<div class="chip" onclick="filterCuisine('японская',this)">🇯🇵 Японская</div>
+<div class="chip" onclick="filterCuisine('мексиканская',this)">🇲🇽 Мексиканская</div>
+<div class="chip" onclick="filterCuisine('тайская',this)">🇹🇭 Тайская</div>
+<div class="chip" onclick="filterCuisine('грузинская',this)">🇬🇪 Грузинская</div>
+<div class="chip" onclick="filterCuisine('русская',this)">🇷🇺 Славянская</div>
+<div class="chip" onclick="filterCuisine('французская',this)">🇫🇷 Французская</div>
+<div class="chip" onclick="filterCuisine('морепродукты',this)">🦪 Морепродукты</div>
+<div class="chip" onclick="filterCuisine('завтраки',this)">☀️ Завтраки</div>
+<div class="chip" onclick="filterCuisine('кофе',this)">☕ Кофе</div>
+<div class="chip" onclick="filterCuisine('десерты',this)">🍩 Десерты</div>
+</div>
+</div>
+<div id="catalogGalleryFilter" style="margin-top:16px;display:none">
+<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px">ТИП</div>
+<div>
+<div class="chip" onclick="filterGalleryType('все',this)">✨ Все</div>
+<div class="chip" onclick="filterGalleryType('галерея',this)">🖼 Галереи</div>
+<div class="chip" onclick="filterGalleryType('музей',this)">🏛 Музеи</div>
+</div>
+</div>
+<div id="catalogWowFilter" style="margin-top:16px;display:none">
+<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px">ТИП</div>
+<div>
+<div class="chip" onclick="filterWowType('все',this)">✨ Все</div>
+<div class="chip" onclick="filterWowType('ресторан',this)">🍽 ВАУ-рестораны</div>
+<div class="chip" onclick="filterWowType('отель',this)">🏨 ВАУ-отели</div>
+<div class="chip" onclick="filterWowType('фото',this)">📸 ВАУ-фото</div>
+<div class="chip" onclick="filterWowType('уникальное',this)">🌟 Уникальное</div>
 </div>
 </div>
 <div id="catalogResults" style="margin-top:20px"></div>
@@ -476,11 +515,17 @@ var catDistrict='';
 var catCategory='';
 var catBudget='';
 var catShopType='';
+var catCuisine='';
+var catGalleryType='';
+var catWowType='';
 
 var DISTRICT_SUBS={
   'Букит':['Букит','Улувату','Кута'],
   'Амед':['Амед','Карангасем'],
-  'Чангу':['Чангу','Перенан','Переренан','Умалас','Сесех']
+  'Чангу':['Чангу','Перенан','Переренан','Умалас','Сесех'],
+  'Гили':['Гили','Гили Траванган','Гили Мено','Гили Эйр'],
+  'Ломбок':['Ломбок'],
+  'Ява':['Ява']
 };
 
 function matchDistrict(pDistrict,filterD){
@@ -502,12 +547,21 @@ function filterDistrict(d,el){
   catCategory='';
   catBudget='';
   catShopType='';
+  catCuisine='';
+  catGalleryType='';
+  catWowType='';
   document.getElementById('catalogCategoryPicker').style.display='block';
   document.getElementById('catalogBudgetPicker').style.display='none';
   document.getElementById('catalogShopFilter').style.display='none';
+  document.getElementById('catalogCuisineFilter').style.display='none';
+  document.getElementById('catalogGalleryFilter').style.display='none';
+  document.getElementById('catalogWowFilter').style.display='none';
   document.querySelectorAll('#catalogCategoryPicker .chip').forEach(function(c){c.classList.remove('selected')});
   document.querySelectorAll('#catalogBudgetPicker .chip').forEach(function(c){c.classList.remove('selected')});
   document.querySelectorAll('#catalogShopFilter .chip').forEach(function(c){c.classList.remove('selected')});
+  document.querySelectorAll('#catalogCuisineFilter .chip').forEach(function(c){c.classList.remove('selected')});
+  document.querySelectorAll('#catalogGalleryFilter .chip').forEach(function(c){c.classList.remove('selected')});
+  document.querySelectorAll('#catalogWowFilter .chip').forEach(function(c){c.classList.remove('selected')});
   showResults();
 }
 
@@ -517,15 +571,34 @@ function filterCategory(cat,el){
   catCategory=cat;
   catBudget='';
   catShopType='';
-  if(cat==='шоппинг'){
-    document.getElementById('catalogBudgetPicker').style.display='none';
-    document.getElementById('catalogShopFilter').style.display='block';
-  } else {
-    document.getElementById('catalogBudgetPicker').style.display='block';
-    document.getElementById('catalogShopFilter').style.display='none';
-  }
+  catCuisine='';
+  catGalleryType='';
+  catWowType='';
+  // Hide all special filters first
+  document.getElementById('catalogBudgetPicker').style.display='none';
+  document.getElementById('catalogShopFilter').style.display='none';
+  document.getElementById('catalogCuisineFilter').style.display='none';
+  document.getElementById('catalogGalleryFilter').style.display='none';
+  document.getElementById('catalogWowFilter').style.display='none';
+  // Reset all chips
   document.querySelectorAll('#catalogBudgetPicker .chip').forEach(function(c){c.classList.remove('selected')});
   document.querySelectorAll('#catalogShopFilter .chip').forEach(function(c){c.classList.remove('selected')});
+  document.querySelectorAll('#catalogCuisineFilter .chip').forEach(function(c){c.classList.remove('selected')});
+  document.querySelectorAll('#catalogGalleryFilter .chip').forEach(function(c){c.classList.remove('selected')});
+  document.querySelectorAll('#catalogWowFilter .chip').forEach(function(c){c.classList.remove('selected')});
+  // Show smart filters per category
+  if(cat==='еда'){
+    document.getElementById('catalogCuisineFilter').style.display='block';
+    document.getElementById('catalogBudgetPicker').style.display='block';
+  } else if(cat==='шоппинг'){
+    document.getElementById('catalogShopFilter').style.display='block';
+  } else if(cat==='галерея'){
+    document.getElementById('catalogGalleryFilter').style.display='block';
+  } else if(cat==='вау'){
+    document.getElementById('catalogWowFilter').style.display='block';
+  } else {
+    document.getElementById('catalogBudgetPicker').style.display='block';
+  }
   showResults();
 }
 
@@ -543,6 +616,27 @@ function filterShopType(t,el){
   showResults();
 }
 
+function filterCuisine(c,el){
+  document.querySelectorAll('#catalogCuisineFilter .chip').forEach(function(ch){ch.classList.remove('selected')});
+  el.classList.add('selected');
+  catCuisine=c==='все'?'':c;
+  showResults();
+}
+
+function filterGalleryType(t,el){
+  document.querySelectorAll('#catalogGalleryFilter .chip').forEach(function(ch){ch.classList.remove('selected')});
+  el.classList.add('selected');
+  catGalleryType=t==='все'?'':t;
+  showResults();
+}
+
+function filterWowType(t,el){
+  document.querySelectorAll('#catalogWowFilter .chip').forEach(function(ch){ch.classList.remove('selected')});
+  el.classList.add('selected');
+  catWowType=t==='все'?'':t;
+  showResults();
+}
+
 function showResults(){
   var results=document.getElementById('catalogResults');
   var filtered=PLACES.filter(function(p){
@@ -557,6 +651,56 @@ function showResults(){
       if(!found) return false;
     } else if(catShopType && !p.tags){
       return false;
+    }
+    if(catCuisine){
+      if(catCuisine==='вегетарианское'){if(!p.vegan) return false;}
+      else {
+        var d=(p.desc||'').toLowerCase();var n=(p.name||'').toLowerCase();var cv=catCuisine.toLowerCase();
+        var cuisineMap={
+          'местная':['варунг','warung','балийск','индонез','nasi','sate','bebek','babi','local'],
+          'итальянская':['итальян','пицц','паста','ригатони','буррат','pizza','pasta','italian','bacaro','quattro'],
+          'японская':['японск','суши','sushi','рамен','ramen','japanese','sashimi','tempura'],
+          'мексиканская':['мексикан','тако','taco','буррито','burrito','mexican','cantina','guero','jalapeno'],
+          'тайская':['тайск','thai','том ям','pad thai','khao'],
+          'грузинская':['грузинск','хинкали','хачапури','georgian','chito','tiflis','tarragon'],
+          'русская':['русск','славян','сырник','пельмен','оливье','борщ','draniki','белорус','usha','two moods','snowcat','ussr','porch coffee','made\'s bakery','easy cafe','aquamarine'],
+          'французская':['француз','french','круассан','croissant','bistro','lulu','baked'],
+          'морепродукты':['морепродукт','seafood','рыб','fish','устриц','oyster','лосось','salmon','тунец','tuna','краб','crab','креветк','shrimp','moana'],
+          'завтраки':['завтрак','breakfast','скрэмбл','тост','toast','вафл','waffle','breaky','bagel','egg','сырник','copenhagen','margaret','artisan','eggstra','nüde','nude'],
+          'кофе':['кофе','coffee','espresso','латте','latte','матча','matcha','капучино','arabica','porch'],
+          'десерты':['десерт','dessert','пончик','doughnut','торт','cake','шоколад','chocolate','мороженое','ice cream','наполеон','клубник','синнабон','cinnamon','chocberry','cinnamor','dolcemisu']
+        };
+        var keywords=cuisineMap[cv];
+        if(keywords){
+          var match=false;
+          for(var i=0;i<keywords.length;i++){
+            if(d.indexOf(keywords[i])!==-1||n.indexOf(keywords[i])!==-1){match=true;break;}
+          }
+          if(!match) return false;
+        }
+      }
+    }
+    if(catGalleryType){
+      var dl=(p.desc||'').toLowerCase();var nl=(p.name||'').toLowerCase();
+      if(catGalleryType==='галерея'){if(dl.indexOf('музей')===-1&&nl.indexOf('музей')===-1&&dl.indexOf('museum')===-1){/* ok, gallery */}else{return false;}}
+      if(catGalleryType==='музей'){if(dl.indexOf('музей')===-1&&nl.indexOf('музей')===-1&&dl.indexOf('museum')===-1) return false;}
+    }
+    if(catWowType){
+      var dw=(p.desc||'').toLowerCase();var nw=(p.name||'').toLowerCase();
+      var wowMap={
+        'ресторан':['ресторан','restaurant','fine dining','кухня','ужин','dinner','chef','шеф'],
+        'отель':['отель','hotel','resort','виллa','villa','glamping','глэмпинг','stay','ночь'],
+        'фото':['фото','photo','инста','insta','instagram','фотосесс'],
+        'уникальное':['уникальн','единственн','первый','#1','топ-1','мирового','подводн','vr','проекци','стеклянн']
+      };
+      var wkeys=wowMap[catWowType];
+      if(wkeys){
+        var wm=false;
+        for(var i=0;i<wkeys.length;i++){
+          if(dw.indexOf(wkeys[i])!==-1||nw.indexOf(wkeys[i])!==-1){wm=true;break;}
+        }
+        if(!wm) return false;
+      }
     }
     return true;
   });
