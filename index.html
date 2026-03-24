@@ -107,6 +107,20 @@ td strong{color:#2a2a28}
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
 <div class="app">
+<!-- PASSWORD -->
+<div id="passwordOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#f8f6f2;z-index:99999;display:flex;align-items:center;justify-content:center">
+<div style="text-align:center;padding:20px">
+<div style="font-size:48px;margin-bottom:20px">🔒</div>
+<h1 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px">Закрытый доступ</h1>
+<p style="color:rgba(42,42,40,0.5);margin-bottom:30px">Введите код для входа</p>
+<input type="text" id="accessCode" placeholder="Код" style="width:150px;padding:14px 20px;border:2px solid rgba(42,107,90,0.2);border-radius:14px;font-size:18px;text-align:center;outline:none;font-family:Inter,sans-serif" onkeyup="if(event.key==='Enter')checkAccess()">
+<div style="margin-top:16px">
+<button onclick="checkAccess()" style="padding:14px 40px;border-radius:14px;font-size:16px;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600">Войти</button>
+</div>
+<div id="codeError" style="color:#e74c3c;margin-top:12px;font-size:14px;display:none">Неверный код</div>
+</div>
+</div>
+
 
 
 <!-- CHOICE SCREEN -->
@@ -11742,6 +11756,22 @@ function shareResults(){
   } else {
     navigator.clipboard.writeText(text).then(function(){alert('Скопировано!')});
   }
+}
+
+function checkAccess(){
+  var code=document.getElementById('accessCode').value.trim();
+  if(code==='111'){
+    localStorage.setItem('bali_access','granted');
+    document.getElementById('passwordOverlay').style.display='none';
+  } else {
+    document.getElementById('codeError').style.display='block';
+    setTimeout(function(){document.getElementById('codeError').style.display='none'},2000);
+  }
+}
+// Auto-hide if already accessed
+if(localStorage.getItem('bali_access')==='granted'){
+  var po=document.getElementById('passwordOverlay');
+  if(po)po.style.display='none';
 }
 </script>
 </div>
