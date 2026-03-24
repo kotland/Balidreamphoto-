@@ -124,7 +124,7 @@ td strong{color:#2a2a28}
 </div>
 </div>
 
-<div class="screen active" id="startScreen">
+<div class="screen active" id="startScreen"><div id="loadingIndicator" style="text-align:center;padding:40px;color:rgba(42,42,40,0.5)">Загрузка...</div>
 <div style="font-size:48px;text-align:center;margin:60px 0 16px">🌴</div>
 <div class="title">Найди <em>свой район</em> на Бали</div>
 <div class="subtitle">Выбери кто ты и что тебе важно — покажем район где живут такие же как ты. Найди своих.</div>
@@ -5669,9 +5669,9 @@ td strong{color:#2a2a28}
 <div style="font-size:11px;color:rgba(42,42,40,0.25);margin-bottom:8px">Цены в индонезийских рупиях (IDR). 100K IDR ≈ $6.5 ≈ 600₽</div><div id="catalogResults"></div>
 </div>
 </div>
-<script src="places.js"></script>
-<script src="tourplaces.js"></script>
-<script src="routes.js"></script>
+<script src="places.js" defer></script>
+<script src="tourplaces.js" defer></script>
+<script src="routes.js" defer></script>
 <script>
 /* ========== MAP DATA ========== */
 var MAP_DATA={
@@ -6449,5 +6449,6 @@ if(localStorage.getItem('bali_access')==='granted'){
   if(po)po.style.display='none';
 }
 </script>
+<script>document.addEventListener("DOMContentLoaded",function(){var l=document.getElementById("loadingIndicator");if(l)l.style.display="none"});</script>
 </body>
 </html>
