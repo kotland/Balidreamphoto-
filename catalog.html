@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Каталог мест</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:100vh;padding:20px}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:14px;padding:14px;margin-bottom:8px}
+.place-name{font-size:14px;font-weight:600;margin-bottom:4px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5}
+.place-meta{font-size:12px;color:#3a9b7a;margin-top:6px}
+.place-meta a{color:#3a9b7a;text-decoration:none}
+.chip{display:inline-block;padding:8px 16px;border-radius:20px;background:rgba(255,255,255,0.6);border:1.5px solid rgba(0,0,0,0.06);font-size:13px;margin:4px;cursor:pointer}
+.chip.selected{background:rgba(42,107,90,0.1);border-color:rgba(42,107,90,0.3);color:#2a6b5a}
+h1{font-family:'Playfair Display',serif;text-align:center;margin:20px 0}
+.btn{padding:12px 24px;border-radius:14px;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;width:100%;font-size:14px;margin-bottom:16px}
+</style>
+</head>
+<body>
+<button class="btn" onclick="window.history.back()">← Назад</button>
+<h1>📍 Каталог мест</h1>
+<p style="text-align:center;color:rgba(42,42,40,0.5);margin-bottom:20px">200+ мест по районам и категориям</p>
+<div  >
+<button class="btn btn-primary" onclick="backToChoice()" style="font-size:13px;padding:8px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-bottom:16px">← Назад</button>
+<div class="title" style="margin-top:8px">Каталог <em>мест</em></div>
+<div class="subtitle" style="margin-bottom:16px">200+ проверенных мест</div>
+<div id="catalogDistrictPicker" style="margin-bottom:16px">
+<div style="font-size:13px;font-weight:600;color:rgba(42,107,90,0.7);letter-spacing:2px;margin-bottom:10px">РАЙОН</div>
+<div class="chips" id="districtChips">
+<div class="chip" onclick="filterDistrict('Чангу',this)">🏄 Чангу</div>
+<div class="chip" onclick="filterDistrict('Убуд',this)">🏯 Убуд</div>
+<div class="chip" onclick="filterDistrict('Букит',this)">🏖 Букит</div>
+<div class="chip" onclick="filterDistrict('Семиньяк',this)">🛍 Семиньяк</div>
+<div class="chip" onclick="filterDistrict('Санур',this)">🚴 Санур</div>
+<div class="chip" onclick="filterDistrict('Нуса Дуа',this)">💎 Нуса Дуа</div>
+<div class="chip" onclick="filterDistrict('Амед',this)">🤿 Амед</div>
+<div class="chip" onclick="filterDistrict('Кинтамани',this)">🌋 Кинтамани</div>
+<div class="chip" onclick="filterDistrict('Нуса Пенида',this)">🏝 Нуса Пенида</div>
+<div class="chip" onclick="filterDistrict('Нуану',this)">🗿 Нуану</div>
+<div class="chip" onclick="filterDistrict('Ловина',this)">🐬 Ловина</div>
+</div>
+</div>
+<div id="catalogCategoryPicker" style="display:none;margin-bottom:16px">
+<div style="font-size:13px;font-weight:600;color:rgba(42,107,90,0.7);letter-spacing:2px;margin-bottom:10px">КАТЕГОРИЯ</div>
+<div class="chips" id="categoryChips">
+<div class="chip" onclick="filterCategory('еда',this)">🍽 Поесть</div>
+<div class="chip" onclick="filterCategory('пляж',this)">🏖 Пляжи</div>
+<div class="chip" onclick="filterCategory('закат',this)">🌅 Закаты</div>
+<div class="chip" onclick="filterCategory('велнес',this)">💆 Велнес</div>
+<div class="chip" onclick="filterCategory('развлечения',this)">🎉 Развлечения</div>
+<div class="chip" onclick="filterCategory('культура',this)">🛕 Культура</div>
+<div class="chip" onclick="filterCategory('шоппинг',this)">🛍 Шоппинг</div>
+<div class="chip" onclick="filterCategory('все',this)">✨ Все</div>
+</div>
+</div>
+<div id="catalogCuisinePicker" style="display:none;margin-bottom:16px">
+<div style="font-size:13px;font-weight:600;color:rgba(42,107,90,0.7);letter-spacing:2px;margin-bottom:10px">КУХНЯ</div>
+<div class="chips" id="cuisineChips">
+<div class="chip" onclick="filterCuisine('все',this)">✨ Все</div>
+<div class="chip" onclick="filterCuisine('местная',this)">🇮🇩 Местная</div>
+<div class="chip" onclick="filterCuisine('мексиканская',this)">🇲🇽 Мексиканская</div>
+<div class="chip" onclick="filterCuisine('итальянская',this)">🇮🇹 Итальянская</div>
+<div class="chip" onclick="filterCuisine('японская',this)">🇯🇵 Суши</div>
+<div class="chip" onclick="filterCuisine('китайская',this)">🇨🇳 Китайская</div>
+<div class="chip" onclick="filterCuisine('тайская',this)">🇹🇭 Тайская</div>
+<div class="chip" onclick="filterCuisine('грузинская',this)">🇬🇪 Грузинская</div>
+<div class="chip" onclick="filterCuisine('славянская',this)">🇷🇺 Славянская</div>
+<div class="chip" onclick="filterCuisine('французская',this)">🇫🇷 Французская</div>
+<div class="chip" onclick="filterCuisine('веган',this)">🌿 Веган</div>
+<div class="chip" onclick="filterCuisine('healthy',this)">🥗 Healthy</div>
+<div class="chip" onclick="filterCuisine('морепродукты',this)">🦪 Морепродукты</div>
+<div class="chip" onclick="filterCuisine('завтраки',this)">☀️ Завтраки</div>
+<div class="chip" onclick="filterCuisine('стейки',this)">🥩 Стейки</div>
+<div class="chip" onclick="filterCuisine('кофе',this)">☕ Кофе</div>
+<div class="chip" onclick="filterCuisine('десерты',this)">🍩 Десерты</div>
+</div>
+</div>
+<div id="catalogBudgetPicker" style="display:none;margin-bottom:16px">
+<div style="font-size:13px;font-weight:600;color:rgba(42,107,90,0.7);letter-spacing:2px;margin-bottom:10px">БЮДЖЕТ</div>
+<div class="chips" id="budgetChips">
+<div class="chip" onclick="filterBudgetCat('все',this)">✨ Все</div>
+<div class="chip" onclick="filterBudgetCat('💚',this)">💚 до 50K IDR</div>
+<div class="chip" onclick="filterBudgetCat('💛',this)">💛 50-100K IDR</div>
+<div class="chip" onclick="filterBudgetCat('🧡',this)">🧡 100-200K IDR</div>
+<div class="chip" onclick="filterBudgetCat('❤️',this)">❤️ 200-500K IDR</div>
+<div class="chip" onclick="filterBudgetCat('💎',this)">💎 500K+ IDR</div>
+</div>
+</div>
+<div style="font-size:11px;color:rgba(42,42,40,0.25);margin-bottom:8px">Цены в индонезийских рупиях (IDR). 100K IDR ≈ $6.5 ≈ 600₽</div><div id="catalogResults"></div>
+</div>
+<script>
+/* ========== MAP DATA ========== */
+var MAP_DATA={
+canggu:{name:'Чангу',who:'Digital nomads, сёрферы, контент-креаторы',desc:'Эпицентр digital-жизни Бали. Рисовые поля, сёрф-споты и сотни кафе где все работают за ноутбуками.',tags:['Сёрфинг','Кафе','WiFi','Закаты']},
+seminyak:{name:'Семиньяк',who:'Предприниматели, шопоголики, тусовщики',desc:'Бали для тех кто любит красивую жизнь. Бутики, рестораны, бич-клабы и ночная жизнь.',tags:['Шоппинг','Рестораны','Ночная жизнь','Пляж']},
+ubud:{name:'Убуд',who:'Йоги, художники, писатели, искатели',desc:'Духовное сердце Бали. Рисовые террасы, храмы, галереи и ретриты. Здесь замедляешься.',tags:['Йога','Культура','Природа','Тишина']},
+sanur:{name:'Санур',who:'Семьи с детьми, йоги, спокойные',desc:'Восходы вместо закатов. Спокойный, семейный, настоящий Бали каким он был 20 лет назад.',tags:['Семья','Тишина','Восходы','Велосипеды']},
+uluwatu:{name:'Улувату',who:'Сёрферы, фотографы, искатели тишины',desc:'Скалы, дикий океан и лучшие сёрф-споты. Для тех кто хочет настоящий Бали без толп.',tags:['Сёрфинг','Скалы','Закаты','Luxury']},
+amed:{name:'Амед',who:'Дайверы, фридайверы, минималисты',desc:'Восточный Бали. Вулкан Агунг, коралловые рифы, тишина. Бали без туристов.',tags:['Дайвинг','Вулкан','Тишина','Снорклинг']},
+lovina:{name:'Ловина',who:'Искатели тишины, бюджетные путешественники',desc:'Север Бали. Дельфины, горячие источники, чёрный песок. Ноль туристов.',tags:['Дельфины','Тишина','Горячие источники','Бюджет']},
+penida:{name:'Нуса Пенида',who:'Фотографы, дайверы, авантюристы',desc:'Остров рядом с Бали. 100-метровые скалы, манты, бирюзовая вода.',tags:['Скалы','Дайвинг','Фото','Пляжи']}
+};
+/* ========== MAP FUNCTIONS ========== */
+function mapClick(id){
+var d=MAP_DATA[id];if(!d)return;
+document.getElementById('popName').textContent=d.name;
+document.getElementById('popWho').textContent=d.who;
+document.getElementById('popDesc').textContent=d.desc;
+document.getElementById('popTags').innerHTML=d.tags.map(function(t){return'<span class="map-popup-tag">'+t+'</span>'}).join('');
+document.getElementById('mapOverlay').classList.add('show');
+document.getElementById('mapPopup').classList.add('show');
+if(window.Telegram&&Telegram.WebApp){try{Telegram.WebApp.HapticFeedback.impactOccurred('light')}catch(e){}}
+}
+function hidePopup(){
+document.getElementById('mapOverlay').classList.remove('show');
+document.getElementById('mapPopup').classList.remove('show');
+}
+/* ========== ANALYTICS ========== */
+var ANALYTICS_URL='https://script.google.com/macros/s/AKfycbyoFPHfGzhyIcQzMiu165zF9ou05OeYZEMPLWrlXSLk1Rh4wAdrggCVGSlQgDeWOg9m_w/exec';
+var USER_ID='u_'+Math.random().toString(36).substr(2,9);
+var TRACK_DATA={userId:USER_ID,step:'',whoSelected:'',whatSelected:'',result1:'',result1pct:'',result2:'',result3:'',guideOpened:'',purchased:''};
+function track(data){Object.keys(data).forEach(function(k){TRACK_DATA[k]=data[k]})}
+function sendTrack(){try{fetch(ANALYTICS_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(TRACK_DATA)})}catch(e){}}
+/* ========== DISTRICT FILTER DATA ========== */
+var WHO=[
+{id:'nomad',emoji:'💻',label:'Digital nomad'},
+{id:'photo',emoji:'📸',label:'Фотограф / контент-креатор'},
+{id:'yoga',emoji:'🧘',label:'Йога / духовные практики'},
+{id:'surfer',emoji:'🏄',label:'Сёрфер'},
+{id:'family',emoji:'👨‍👩‍👧',label:'Семья с детьми'},
+{id:'business',emoji:'💼',label:'Предприниматель'},
+{id:'artist',emoji:'🎨',label:'Художник / музыкант'},
+{id:'tourist',emoji:'🌴',label:'Просто отдыхаю'}
+];
+var WHAT=[
+{id:'ocean',emoji:'🌊',label:'Рядом океан'},
+{id:'swim',emoji:'🏊',label:'Пляж без волн'},
+{id:'budget',emoji:'💰',label:'Бюджетно'},
+{id:'food',emoji:'🍜',label:'Вкусная еда'},
+{id:'vegan',emoji:'🥗',label:'Веган / вегетарианское'},
+{id:'coffee',emoji:'☕',label:'Кофейни'},
+{id:'yoga_sp',emoji:'🧘',label:'Йога и спорт'},
+{id:'retreat',emoji:'🔮',label:'Духовные практики / ретриты'},
+{id:'party',emoji:'🎉',label:'Тусовка и ночная жизнь'},
+{id:'quiet',emoji:'🌿',label:'Тишина и природа'},
+{id:'wifi',emoji:'💻',label:'Кафе с Wi-Fi'},
+{id:'surf',emoji:'🏄',label:'Сёрфинг'},
+{id:'dive',emoji:'🤿',label:'Под водой'},
+{id:'sunset',emoji:'🌅',label:'Красивые закаты'},
+{id:'culture',emoji:'🛕',label:'Храмы и культура'},
+{id:'gallery',emoji:'🖼',label:'Галереи и музеи'},
+{id:'masterclass',emoji:'🎓',label:'Мастер-классы'},
+{id:'volcano',emoji:'🌋',label:'Вулканы и горы'},
+{id:'rice',emoji:'🌾',label:'Рисовые террасы'},
+{id:'golf',emoji:'⛳',label:'Гольф'},
+{id:'padel',emoji:'🎾',label:'Падел / теннис'},
+{id:'spa',emoji:'💆',label:'Спа и массаж'},
+{id:'beauty',emoji:'💅',label:'Салоны красоты'},
+{id:'banya',emoji:'🧖',label:'Бани / сауна'},
+{id:'gym',emoji:'🏋️',label:'Спортзалы'},
+{id:'farm',emoji:'🍓',label:'Фермы и фрукты'},
+{id:'shop',emoji:'🛍',label:'Шоппинг'},
+{id:'clothes',emoji:'👗',label:'Рынки одежды'},
+{id:'souvenir',emoji:'🎁',label:'Сувениры'},
+{id:'luxury',emoji:'💎',label:'Luxury'},
+{id:'photo_sp',emoji:'📸',label:'Фото-локации'},
+{id:'russian',emoji:'🇷🇺',label:'Русское комьюнити'},
+{id:'bank',emoji:'🏦',label:'Банки / визовые центры'},
+{id:'laundry',emoji:'👕',label:'Прачечные'}
+];
+var AREAS=[
+{name:'Чангу',guide:'canggu',who:['nomad','photo','surfer','artist','business'],what:['ocean','food','wifi','surf','sunset','party','photo_sp','cof
+<button class="btn" onclick="window.history.back()" style="margin-top:20px">← Назад</button>
+</body></html>
