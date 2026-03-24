@@ -11661,6 +11661,8 @@ renderBase();
 /* PASSWORD CHECK */
 if(localStorage.getItem('bali_access')==='granted'){
   document.getElementById('passwordScreen').style.display='none';
+  document.getElementById('choiceScreen').style.display='block';
+  document.getElementById('choiceScreen').classList.add('active');
 } else {
   document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});
   document.getElementById('passwordScreen').style.display='block';
