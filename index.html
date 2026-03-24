@@ -5813,10 +5813,10 @@ else if(d.includes('балий')||d.includes('варунг')||d.includes('инд
 else p.cuisine='все';
 });
 function openCatalog(){
-  document.querySelectorAll('.screen').forEach(function(s){s.style.display='none';s.classList.remove('active')});
-  document.querySelectorAll('[id^="guide-"]').forEach(function(g){g.style.display='none'});
+  document.querySelectorAll('.screen').forEach(function(s){s.className='screen';s.style.cssText='display:none'});
+  document.querySelectorAll('[id^="guide-"]').forEach(function(g){g.className='screen';g.style.cssText='display:none'});
   var cs=document.getElementById('catalogScreen');
-  if(cs){cs.style.display='block';cs.classList.add('active');}
+  if(cs){cs.className='screen active';cs.style.cssText='display:block;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:80px';}
   catDistrict='';catCategory='';catBudget='все';
   window.scrollTo(0,0);
 }
@@ -5957,17 +5957,17 @@ window.scrollTo(0,0);
 function startLiving(){switchScreen('startScreen')}
 function startTour(){switchScreen('tourStep1')}
 function openBase(){
-  document.querySelectorAll('.screen').forEach(function(s){s.style.display='none';s.classList.remove('active')});
-  document.querySelectorAll('[id^="guide-"]').forEach(function(g){g.style.display='none'});
+  document.querySelectorAll('.screen').forEach(function(s){s.className='screen';s.style.cssText='display:none'});
+  document.querySelectorAll('[id^="guide-"]').forEach(function(g){g.className='screen';g.style.cssText='display:none'});
   var bs=document.getElementById('baliBaseScreen');
-  if(bs){bs.style.display='block';bs.classList.add('active');}
+  if(bs){bs.className='screen active';bs.style.cssText='display:block;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:80px';}
   window.scrollTo(0,0);
 }
 function backToChoice(){
-  document.querySelectorAll('.screen').forEach(function(s){s.style.display='none';s.classList.remove('active')});
-  document.querySelectorAll('[id^="guide-"]').forEach(function(g){g.style.display='none'});
+  document.querySelectorAll('.screen').forEach(function(s){s.className='screen';s.style.cssText='display:none'});
+  document.querySelectorAll('[id^="guide-"]').forEach(function(g){g.className='screen';g.style.cssText='display:none'});
   var cs=document.getElementById('choiceScreen');
-  if(cs){cs.style.display='block';cs.classList.add('active');}
+  if(cs){cs.className='screen active';cs.style.cssText='display:block';}
   window.scrollTo(0,0);
 }
 /* ========== TOUR FLOW ========== */
