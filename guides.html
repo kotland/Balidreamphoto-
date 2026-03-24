@@ -18,35 +18,13 @@
 
 <!-- Map overlay/popup (referenced by JS) -->
 <div id="mapOverlay" class="map-overlay" onclick="hidePopup()"></div>
-<div id="mapPopup" class="map-popup" onclick="hidePopup()">
-<div class="map-popup-card" onclick="event.stopPropagation()">
-<div class="map-popup-handle"></div>
-<div class="map-popup-name" id="popName"></div>
-<div class="map-popup-who" id="popWho"></div>
-<div class="map-popup-desc" id="popDesc"></div>
-<div class="map-popup-tags" id="popTags"></div>
-</div>
-</div>
+
 
 <div class="screen active" id="startScreen"><div id="loadingIndicator" style="text-align:center;padding:40px;color:rgba(42,42,40,0.5)">Загрузка...</div>
 <div style="font-size:48px;text-align:center;margin:60px 0 16px">🌴</div>
 <div class="title">Найди <em>свой район</em> на Бали</div>
 <div class="subtitle">Выбери кто ты и что тебе важно — покажем район где живут такие же как ты. Найди своих.</div>
-<div class="bali-map-wrap">
-<div class="bali-map-img-wrap">
-<div class="map-dot" style="top:10%;left:52%" onclick="mapClick('lovina')"></div>
-<div class="map-dot" style="top:25%;left:55%" onclick="mapClick('north')"></div>
-<div class="map-dot" style="top:27%;left:93%" onclick="mapClick('amed')"></div>
-<div class="map-dot" style="top:43%;left:55%" onclick="mapClick('ubud')"></div>
-<div class="map-dot" style="top:38%;left:34%" onclick="mapClick('canggu')"></div>
-<div class="map-dot" style="top:63%;left:52%" onclick="mapClick('seminyak')"></div>
-<div class="map-dot" style="top:65%;left:66%" onclick="mapClick('sanur')"></div>
-<div class="map-dot" style="top:67%;left:45%" onclick="mapClick('uluwatu')"></div>
 
-
-<div class="map-dot" style="top:17%;left:72%" onclick="mapClick('penida')"></div>
-</div>
-</div>
 <button class="btn btn-primary" onclick="goStep(1)">Подобрать район <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
 </div>
 <!-- STEP 1: Who are you -->
@@ -111,30 +89,9 @@
 <script src="places.js" defer></script>
 <script>
 /* ========== MAP DATA ========== */
-var MAP_DATA={
-canggu:{name:'Чангу',who:'Digital nomads, сёрферы, контент-креаторы',desc:'Эпицентр digital-жизни Бали. Рисовые поля, сёрф-споты и сотни кафе где все работают за ноутбуками.',tags:['Сёрфинг','Кафе','WiFi','Закаты']},
-seminyak:{name:'Семиньяк',who:'Предприниматели, шопоголики, тусовщики',desc:'Бали для тех кто любит красивую жизнь. Бутики, рестораны, бич-клабы и ночная жизнь.',tags:['Шоппинг','Рестораны','Ночная жизнь','Пляж']},
-ubud:{name:'Убуд',who:'Йоги, художники, писатели, искатели',desc:'Духовное сердце Бали. Рисовые террасы, храмы, галереи и ретриты. Здесь замедляешься.',tags:['Йога','Культура','Природа','Тишина']},
-sanur:{name:'Санур',who:'Семьи с детьми, йоги, спокойные',desc:'Восходы вместо закатов. Спокойный, семейный, настоящий Бали каким он был 20 лет назад.',tags:['Семья','Тишина','Восходы','Велосипеды']},
-uluwatu:{name:'Улувату',who:'Сёрферы, фотографы, искатели тишины',desc:'Скалы, дикий океан и лучшие сёрф-споты. Для тех кто хочет настоящий Бали без толп.',tags:['Сёрфинг','Скалы','Закаты','Luxury']},
-amed:{name:'Амед',who:'Дайверы, фридайверы, минималисты',desc:'Восточный Бали. Вулкан Агунг, коралловые рифы, тишина. Бали без туристов.',tags:['Дайвинг','Вулкан','Тишина','Снорклинг']},
-lovina:{name:'Ловина',island:true,who:'Искатели тишины, бюджетные путешественники',desc:'Север Бали. Дельфины, горячие источники, чёрный песок. Ноль туристов.',tags:['Дельфины','Тишина','Горячие источники','Бюджет']},
-penida:{name:'Нуса Пенида',who:'Фотографы, дайверы, авантюристы',desc:'Остров рядом с Бали. 100-метровые скалы, манты, бирюзовая вода.',tags:['Скалы','Дайвинг','Фото','Пляжи']}
-};
-function mapClick(id){
-var d=MAP_DATA[id];if(!d)return;
-document.getElementById('popName').textContent=d.name;
-document.getElementById('popWho').textContent=d.who;
-document.getElementById('popDesc').textContent=d.desc;
-document.getElementById('popTags').innerHTML=d.tags.map(function(t){return'<span class="map-popup-tag">'+t+'</span>'}).join('');
-document.getElementById('mapOverlay').classList.add('show');
-document.getElementById('mapPopup').classList.add('show');
-if(window.Telegram&&Telegram.WebApp){try{Telegram.WebApp.HapticFeedback.impactOccurred('light')}catch(e){}}
-}
-function hidePopup(){
-document.getElementById('mapOverlay').classList.remove('show');
-document.getElementById('mapPopup').classList.remove('show');
-}
+
+
+
 /* ========== ANALYTICS ========== */
 var ANALYTICS_URL='https://script.google.com/macros/s/AKfycbyoFPHfGzhyIcQzMiu165zF9ou05OeYZEMPLWrlXSLk1Rh4wAdrggCVGSlQgDeWOg9m_w/exec';
 var USER_ID='u_'+Math.random().toString(36).substr(2,9);
