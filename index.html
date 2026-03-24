@@ -190,7 +190,11 @@ td strong{color:#2a2a28}
 <div class="screen" id="resultScreen">
 <div class="title" style="margin-top:20px">Твои <em>места</em> на Бали</div>
 <div class="subtitle" style="margin-bottom:20px">Топ районов по совпадению</div>
-<div id="resultsContainer"></div>
+<div id="resultsContainer">
+<div style="text-align:center;margin:30px 0 20px;padding:0 20px">
+<button class="btn" onclick="if(navigator.share){navigator.share({text:'🌴 Гайд по районам Бали от @balidreamphoto — найди свой район!',url:'https://t.me/balidreamphoto_bot'}).catch(function(){})}else{navigator.clipboard.writeText('https://t.me/balidreamphoto_bot').then(function(){alert('Ссылка скопирована!')})}" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,107,90,0.08);color:#2a6b5a;border:1.5px solid rgba(42,107,90,0.15);font-size:14px;font-weight:600;cursor:pointer">📤 Поделиться с друзьями</button>
+</div>
+</div>
 
 <div class="screen" id="guide-ubud" style="overflow-y:auto;max-height:100vh;padding-bottom:80px">
 
