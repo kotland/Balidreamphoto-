@@ -48,6 +48,17 @@ body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:
 </div>
 </div>
 
+
+<div id="catalogBudgetPicker" style="margin-top:16px;display:none">
+<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px">БЮДЖЕТ</div>
+<div>
+<div class="chip" onclick="filterBudget('все',this)">✨ Все</div>
+<div class="chip" onclick="filterBudget('💚',this)">💚 до 50K</div>
+<div class="chip" onclick="filterBudget('💛',this)">💛 50-100K</div>
+<div class="chip" onclick="filterBudget('🧡',this)">🧡 100-200K</div>
+<div class="chip" onclick="filterBudget('❤️',this)">❤️ 200K+</div>
+</div>
+</div>
 <div id="catalogResults" style="margin-top:20px"></div>
 
 <button class="btn" onclick="window.location.href='index.html?v=108'" style="margin-top:20px">← Назад</button>
@@ -435,6 +446,7 @@ var PLACES=[
 
 var catDistrict='';
 var catCategory='';
+var catBudget='';
 
 function filterDistrict(d,el){
   document.querySelectorAll('#districtChips .chip').forEach(function(c){c.classList.remove('selected')});
@@ -450,14 +462,24 @@ function filterCategory(cat,el){
   document.querySelectorAll('#catalogCategoryPicker .chip').forEach(function(c){c.classList.remove('selected')});
   el.classList.add('selected');
   catCategory=cat;
+  document.getElementById('catalogBudgetPicker').style.display='block';
+  catBudget='';
+  document.querySelectorAll('#catalogBudgetPicker .chip').forEach(function(c){c.classList.remove('selected')});
   showResults();
 }
 
+function filterBudget(b,el){
+  document.querySelectorAll('#catalogBudgetPicker .chip').forEach(function(c){c.classList.remove('selected')});
+  el.classList.add('selected');
+  catBudget=b==='все'?'':b;
+  showResults();
+}
 function showResults(){
   var results=document.getElementById('catalogResults');
   var filtered=PLACES.filter(function(p){
     if(catDistrict && p.district!==catDistrict) return false;
     if(catCategory && p.category!==catCategory) return false;
+    if(catBudget && p.budget!==catBudget) return false;
     return true;
   });
   
