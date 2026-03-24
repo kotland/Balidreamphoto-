@@ -1,6 +1,5 @@
 import os
-import asyncio
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler
 
 TOKEN = os.environ.get('BOT_TOKEN', '')
@@ -20,7 +19,7 @@ GREETINGS = {
 
 ⚠️ Если вы из России — для открытия нужен VPN
 
-Нажми кнопку ниже 👇""",
+Нажми кнопку меню ниже чтобы открыть гайд 👇""",
 
     'en': """Hey there! 👋
 
@@ -34,7 +33,7 @@ What's inside:
 
 12 areas: Canggu · Ubud · Seminyak · Uluwatu · Sanur · Amed · North · Lovina · Nusa Penida · Gili · Lombok · Java
 
-Tap the button below 👇""",
+Tap the menu button below to open the guide 👇""",
 
     'ua': """Привіт! 👋
 
@@ -48,7 +47,7 @@ Tap the button below 👇""",
 
 12 районів: Чангу · Убуд · Семіньяк · Улувату · Санур · Амед · Північ · Ловіна · Нуса Пеніда · Гілі · Ломбок · Ява
 
-Натисни кнопку нижче 👇""",
+Натисни кнопку меню нижче щоб відкрити гід 👇""",
 
     'kz': """Сәлем! 👋
 
@@ -62,7 +61,7 @@ Tap the button below 👇""",
 
 12 аудан: Чангу · Убуд · Семіньяк · Улувату · Санур · Амед · Солтүстік · Ловина · Нуса Пенида · Гили · Ломбок · Ява
 
-Төмендегі батырманы бас 👇"""
+Гидті ашу үшін төмендегі мәзір батырмасын бас 👇"""
 }
 
 async def start(update: Update, context):
@@ -73,13 +72,21 @@ async def start(update: Update, context):
         [InlineKeyboardButton("🇰🇿 Қазақша", callback_data="lang_kz")]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    await update.message.reply_text("Hi! Choose your language:\nПривіт! Оберіть мову:\nСәлем! Тілді таңдаңыз:", reply_markup=reply_markup)
+    await update.message.reply_text(
+        "Hi! Choose your language:\nОберіть мову · Тілді таңдаңыз",
+        reply_markup=reply_markup
+    )
 
 async def lang_callback(update: Update, context):
     query = update.callback_query
     await query.answer()
-    lang = query.data.replace('lang_', '')
-    greeting = GREETINGS.get(lang, GREETINGS['en'])
+    lang = query.data.replace("lang_", "")
+    greeting = GREETINGS.get(lang, GREETINGS["en"])
+    # Edit the original message to remove buttons
+    await query.message.edit_text(
+        "✅ " + {"ru":"Русский","en":"English","ua":"Українська","kz":"Қазақша"}.get(lang, lang)
+    )
+    # Send greeting as new message
     await query.message.reply_text(greeting)
 
 def main():
@@ -89,5 +96,5 @@ def main():
     print("Bot started!")
     app.run_polling()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
