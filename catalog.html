@@ -1357,11 +1357,14 @@ function showResults(){
   else if(last===1){word='место'}
   else if(last>=2&&last<=4){word='места'}
   var html='<div style="color:rgba(42,42,40,0.4);font-size:13px;margin-bottom:12px">'+n+' '+word+'</div>';
+  function escapeHtml(str){if(!str)return'';return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
   filtered.forEach(function(p){
     html+='<div class="place">';
-    html+='<div class="place-name">'+p.name+'</div>';
-    html+='<div class="place-desc">'+p.desc+(p.price?' · '+p.price:'')+'</div>';
-    if(p.maps){html+='<div class="place-meta">📍 <a href="'+p.maps+'" target="_blank">Maps</a></div>';}
+    if(p.isTopChoice){html+='<div style="display:inline-block;background:#fff9e6;color:#b38a00;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;margin-bottom:8px;border:1px solid rgba(179,138,0,0.2)">⭐️ Выбор большинства</div>';}
+    html+='<div class="place-name">'+escapeHtml(p.name)+'</div>';
+    html+='<div class="place-desc">'+escapeHtml(p.desc)+(p.price?' · '+escapeHtml(p.price):'')+'</div>';
+    if(p.signatureDish){html+='<div style="margin-top:12px;padding-top:12px;border-top:1px dashed rgba(0,0,0,0.1);font-size:13px;color:rgba(42,42,40,0.8)"><span style="font-weight:600">🍽 Стоит попробовать:</span> '+escapeHtml(p.signatureDish)+'</div>';}
+    if(p.maps){html+='<div class="place-meta">📍 <a href="'+escapeHtml(p.maps)+'" target="_blank">Maps</a></div>';}
     html+='</div>';
   });
   results.innerHTML=html;
