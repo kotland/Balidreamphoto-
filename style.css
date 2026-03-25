@@ -21,7 +21,7 @@ body{background:#f8f6f2;color:#2a2a28;font-family:'Inter',sans-serif;min-height:
 .step-dot.done{background:rgba(42,107,90,0.3)}
 .section-title{font-size:13px;font-weight:600;color:rgba(42,107,90,0.7);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.chip{display:inline-block;white-space:nowrap;padding:10px 18px;border-radius:50px;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.3s;border:1.5px solid rgba(0,0,0,0.06);background:rgba(255,255,255,0.6);color:rgba(42,42,40,0.7);backdrop-filter:blur(8px);user-select:none}
+.chip{display:inline-block;padding:10px 18px;border-radius:50px;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.3s;border:1.5px solid rgba(0,0,0,0.06);background:rgba(255,255,255,0.6);color:rgba(42,42,40,0.7);backdrop-filter:blur(8px);user-select:none}
 .chip:hover{background:rgba(255,255,255,0.85);border-color:rgba(42,107,90,0.15)}
 .chip.selected{background:rgba(42,107,90,0.1);border-color:rgba(42,107,90,0.3);color:#2a6b5a}
 .btn{display:flex;width:100%;padding:16px 24px;border:none;border-radius:50px;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.3s;text-decoration:none;font-family:'Inter',sans-serif;align-items:center;justify-content:center;gap:10px}
@@ -122,16 +122,13 @@ td strong{color:#2a2a28}
 
 .scroll-chips {
   display: flex;
-  overflow-x: auto;
+  flex-wrap: wrap; /* WRAP THEM TO NEXT LINE! */
   gap: 8px;
   padding: 4px 16px;
   margin-bottom: 16px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
 }
-.scroll-chips::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
-}
-#districtChips .chip {
+.scroll-chips .chip {
   flex: 0 0 auto;
 }
+
+
