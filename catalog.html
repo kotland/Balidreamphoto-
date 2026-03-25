@@ -1159,44 +1159,23 @@ var catCuisine='';
 var catGalleryType='';
 var catWowType='';
 
-var DISTRICT_SUBS={
-  'Букит':['Букит','Улувату','Кута'],
-  'Амед':['Амед','Карангасем'],
-  'Чангу':['Чангу','Перенан','Переренан','Умалас','Сесех'],
-  'Гили':['Гили','Гили Траванган','Гили Мено','Гили Эйр'],
-  'Ломбок':['Ломбок'],
-  'Ява':['Ява']
-};
-
-
-
-const DISTRICT_SUBS = {
-  'Убуд':['Убуд'],
-  'Чангу':['Чангу'],
-  'Семиньяк':['Семиньяк'],
-  'Улувату':['Улувату'],
-  'Букит и Нуса-Дуа':['Букит и Нуса-Дуа'],
-  'Санур':['Санур'],
-  'Нуса Пенида':['Нуса Пенида'],
-  'Амед и Восток':['Амед и Восток', 'Амед', 'Север'],
-  'Ловина':['Ловина', 'Север Бали', 'Север'],
-  'Гили':['Гили'],
-  'Ломбок и Сумбава':['Ломбок и Сумбава', 'Ломбок', 'Сумбава'],
-  'Ява':['Ява']
-};
-
-
-function matchDistrict(pDistrict,filterD){
-  if(!filterD) return true;
-  var subs=DISTRICT_SUBS[filterD];
-  if(subs){
-    for(var i=0;i<subs.length;i++){
-      if(pDistrict===subs[i]) return true;
-    }
-    return false;
+window.onload = function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const districtParam = urlParams.get('d');
+  
+  if (districtParam) {
+    catDistrict = districtParam;
+    // Find the chip and highlight it
+    document.querySelectorAll('#districtChips .chip').forEach(function(c) {
+      if (c.innerText.includes(districtParam)) {
+        c.classList.add('selected');
+        // Scroll to chip
+        c.scrollIntoView({behavior: "smooth", inline: "center"});
+      }
+    });
   }
-  return pDistrict===filterD;
-}
+  showResults();
+};
 
 function filterDistrict(d,el){
   document.querySelectorAll('#districtChips .chip').forEach(function(c){c.classList.remove('selected')});
