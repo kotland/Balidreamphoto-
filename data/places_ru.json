@@ -12,7 +12,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Pour-over из зёрен Флорес"
+  "signatureDish": "Pour-over из зёрен Flores и cold brew nitro"
  },
  {
   "name": "Anomali Coffee",
@@ -37,7 +37,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Raw чизкейк + cold brew"
+  "signatureDish": "Raw Cheesecake и Cold Brew на кокосовом молоке"
  },
  {
   "name": "Kopi Toko Djawa",
@@ -49,7 +49,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Балийский кофе на балконе"
+  "signatureDish": "Kopi Bali Kintamani на колониальном балконе"
  },
  {
   "name": "Ubud Coffee Roastery",
@@ -62,7 +62,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Арабика single origin"
+  "signatureDish": "Single Origin Arabica pour-over из зёрен Kintamani"
  },
  {
   "name": "Monsieur Spoon",
@@ -76,7 +76,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Круассан с миндалём + латте"
+  "signatureDish": "Almond Croissant и Pain au Chocolat + латте"
  },
  {
   "name": "Daily Baguette",
@@ -90,7 +90,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Багет с маслом + американо"
+  "signatureDish": "Baguette Tradition с маслом и американо"
  },
  {
   "name": "Outpost Ubud",
@@ -103,7 +103,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Flat White и работа из бамбукового здания в джунглях"
  },
  {
   "name": "Hubud (ныне Livit Hub)",
@@ -116,7 +116,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Specialty Latte и комьюнити-ивенты по пятницам"
  },
  {
   "name": "Genius Cafe",
@@ -141,7 +141,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси чампур балийский"
+  "signatureDish": "Nasi Campur Bali и Soto Ayam — домашняя еда"
  },
  {
   "name": "Warung Igelanca",
@@ -154,7 +154,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Babi guling (жареный поросёнок)"
+  "signatureDish": "Babi Guling (жареный поросёнок) — лучший в Убуде"
  },
  {
   "name": "Pasar Ubud (рынок)",
@@ -167,7 +167,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Баксо и мартабак с утра"
+  "signatureDish": "Bakso (суп с фрикадельками) и Martabak с утра"
  },
  {
   "name": "Locavore To Go",
@@ -180,7 +180,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Фермерский боул дня"
+  "signatureDish": "Фермерский сэндвич дня и specialty coffee"
  },
  {
   "name": "Clear Cafe",
@@ -193,7 +193,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Азия-фьюжн боул + fresh juice"
+  "signatureDish": "Dragon Bowl (acai, pitaya, гранола) и Nasi Campur"
  },
  {
   "name": "Warung Pulau Kelapa",
@@ -206,7 +206,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Ренданг и пепес икан"
+  "signatureDish": "Rendang Sapi и Pepes Ikan в банановом листе"
  },
  {
   "name": "Locavore",
@@ -220,7 +220,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Дегустационный сет 12 подач"
+  "signatureDish": "Дегустационный сет Nature's Compass (6 или 9 подач) — бронь за месяц!"
  },
  {
   "name": "Mozaic",
@@ -234,7 +234,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Французско-индонезийский дегустационный сет"
+  "signatureDish": "Chef's Tasting Menu 6 подач — сезонные ингредиенты, фуа-гра, трюфели"
  },
  {
   "name": "Warung Garasi",
@@ -247,7 +247,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси горенг за 20K"
+  "signatureDish": "Nasi Goreng Spesial за 20K — сидя на скутере"
  },
  {
   "name": "Warung Ijo",
@@ -260,7 +260,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси чампур с видом на террасы"
+  "signatureDish": "Nasi Campur на террасе с видом на рисовые поля"
  },
  {
   "name": "Merlin's",
@@ -283,7 +283,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Стейк на гриле"
+  "signatureDish": "Ribeye на гриле и мексиканские тако"
  },
  {
   "name": "MAMU Garden Cafe",
@@ -295,7 +295,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Хинкали и хачапури"
+  "signatureDish": "Хинкали с мясом (40K/шт) и хачапури по-аджарски"
  },
  {
   "name": "Blend Cafe",
@@ -306,7 +306,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Авокадо тост + кофе"
+  "signatureDish": "Avocado Toast с poached egg и flat white"
  },
  {
   "name": "Lova Cafe",
@@ -318,7 +318,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Круассан + матча латте"
+  "signatureDish": "Almond Croissant и Matcha Latte на овсяном молоке"
  },
  {
   "name": "Batu Karu Kopi",
@@ -330,7 +330,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Sourdough Pancakes 50K"
+  "signatureDish": "Sourdough Pancakes (50K) и Jamu Turmeric Latte (35K)"
  },
  {
   "name": "Brie",
@@ -344,7 +344,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "XXL сырник + куриный паштет"
+  "signatureDish": "Домашняя бурата и XXL сырник с ягодами"
  },
  {
   "name": "Donna Ubud",
@@ -357,7 +357,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Домашняя паста"
+  "signatureDish": "Cacio e Pepe и домашняя Focaccia"
  },
  {
   "name": "Arcadia",
@@ -370,7 +370,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Растительный бургер"
+  "signatureDish": "Beyond Burger (растительный) и Mushroom Risotto"
  },
  {
   "name": "Yellow Flower Café",
@@ -382,7 +382,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Смузи-боул"
+  "signatureDish": "Tropical Smoothie Bowl с гранолой"
  },
  {
   "name": "Alchemy",
@@ -396,7 +396,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Raw chocolate cake + cold-pressed сок"
+  "signatureDish": "Raw chocolate cake и cold-pressed green juice с имбирём"
  },
  {
   "name": "Sala Bistro",
@@ -408,7 +408,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Всё меню (просто иди)"
+  "signatureDish": "Tasting menu — просто закажи и доверься шефу"
  },
  {
   "name": "Casa Curandera",
@@ -420,7 +420,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Какао-церемония"
+  "signatureDish": "Церемониальное какао и Raw Cacao Elixir"
  },
  {
   "name": "Pyramids of Chi",
@@ -445,7 +445,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Органический вегетарианский сет"
+  "signatureDish": "Органический тофу-стейк и seasonal harvest bowl"
  },
  {
   "name": "Moksa",
@@ -458,7 +458,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Farm-to-table боул + кулинарный класс"
+  "signatureDish": "Farm-to-table Raw Lasagna и кулинарный класс"
  },
  {
   "name": "Earth Cafe",
@@ -471,7 +471,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Raw pad thai"
+  "signatureDish": "Raw Pad Thai и Superfood Smoothie Bowl"
  },
  {
   "name": "Sayuri Healing Food",
@@ -484,7 +484,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Raw суши + живые десерты"
+  "signatureDish": "Raw Sushi Set и живой шоколадный мусс"
  },
  {
   "name": "Seeds of Life",
@@ -497,7 +497,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Сыроедческий чизкейк"
+  "signatureDish": "Raw cheesecake с маракуйей и chia pudding"
  },
  {
   "name": "The Yoga Barn",
@@ -610,7 +610,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Кокосовый коктейль у бассейна"
+  "signatureDish": "Кокосовый коктейль и Tuna Tataki у инфинити-пула"
  },
  {
   "name": "The Jungle Fish",
@@ -623,7 +623,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Смузи-боул с видом на джунгли"
+  "signatureDish": "Acai Bowl и свежий кокос с видом на джунгли"
  },
  {
   "name": "Omma Day Club",
@@ -635,7 +635,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Кокос + фруктовая тарелка"
+  "signatureDish": "Young Coconut и Tropical Fruit Platter у пула"
  },
  {
   "name": "Kabana",
@@ -646,8 +646,7 @@
   "maps": "https://maps.google.com/?q=Kabana+Ubud",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Коктейль у бассейна"
+  "booking": false
  },
  {
   "name": "Folk Pool & Gardens",
@@ -659,7 +658,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Aperol Spritz у бассейна"
+  "signatureDish": "Aperol Spritz и Tuna Poke Bowl у бассейна"
  },
  {
   "name": "Tis Café",
@@ -670,8 +669,7 @@
   "maps": "https://maps.google.com/?q=Tis+Cafe+Ubud",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Коктейль у бассейна"
+  "booking": false
  },
  {
   "name": "Kaveri Spa (The Udaya)",
@@ -1939,7 +1937,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Flat White и Acai Bowl — работай из пула с видом на рисовые поля"
  },
  {
   "name": "Outpost Canggu",
@@ -1951,7 +1949,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Flat White и Acai Bowl в коворкинге"
  },
  {
   "name": "Tribal Bali",
@@ -1963,7 +1961,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Specialty Latte и Banana Bread в коворкинге"
  },
  {
   "name": "Biliq Bali",
@@ -1975,7 +1973,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "V60 Pour-Over и Cinnamon Roll"
  },
  {
   "name": "Warung Bu Mi",
@@ -1988,7 +1986,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси чампур 30K"
+  "signatureDish": "Nasi Campur Bu Mi за 30K — лучший бюджетный обед"
  },
  {
   "name": "Warung Local",
@@ -2000,8 +1998,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Night Market Berawa",
@@ -2014,7 +2011,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "signatureDish": "Nasi Goreng, Satay и Bakso — от 15K"
  },
  {
   "name": "Milk & Madu",
@@ -2027,7 +2024,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Avo toast + eggs benedict"
+  "signatureDish": "Madu Pancakes, Smashed Avo с feta и Garlic Prawn Pizza"
  },
  {
   "name": "BGS Bali",
@@ -2039,7 +2036,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Acai bowl"
+  "signatureDish": "Acai Bowl с гранолой и flat white"
  },
  {
   "name": "Betelnut Cafe",
@@ -2052,7 +2049,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Nasi Goreng Bowl и Iced Coconut Latte"
  },
  {
   "name": "La Brisa",
@@ -2067,7 +2064,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Закат + севиче"
+  "signatureDish": "Grilled Octopus, Tiger Prawns на гриле и Ceviche с закатом"
  },
  {
   "name": "Ji Terrace by the Sea",
@@ -2090,7 +2087,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Борщ"
+  "signatureDish": "Борщ, сырники со сгущёнкой и оливье"
  },
  {
   "name": "Honey Murena",
@@ -2112,7 +2109,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Сет из роллов"
+  "signatureDish": "Dan Dan Noodles и Pork Gyoza"
  },
  {
   "name": "Red Gunpowder",
@@ -2124,7 +2121,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Фалафель"
+  "signatureDish": "Butter Chicken и Garlic Naan"
  },
  {
   "name": "Sa'Mesa",
@@ -2167,7 +2164,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "signatureDish": "Babi Guling Campur (жареный поросёнок) — от 40K"
  },
  {
   "name": "Warung Varuna",
@@ -2180,7 +2177,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси горенг специальный"
+  "signatureDish": "Nasi Goreng Spesial с яйцом и самбалом"
  },
  {
   "name": "Warung Jawa Bu Sri",
@@ -2192,8 +2189,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Nude Bali",
@@ -2217,7 +2213,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Яйца бенедикт"
+  "signatureDish": "Truffle Scramble и Shakshuka с sourdough"
  },
  {
   "name": "Originals Bali",
@@ -2230,7 +2226,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Power Bowl и Cold Brew Coffee"
  },
  {
   "name": "Revolver",
@@ -2265,7 +2261,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Protein Bowl и Cold-Pressed Juice"
  },
  {
   "name": "Ju Bali",
@@ -2289,7 +2285,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Veggie burger + fresh juice"
+  "signatureDish": "Veggie Nasi Goreng Burger и Fresh Watermelon Juice"
  },
  {
   "name": "Peloton Supershop",
@@ -2302,7 +2298,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Протеиновый боул"
+  "signatureDish": "Protein Acai Bowl и Post-Workout Smoothie"
  },
  {
   "name": "Alive Wholefoods",
@@ -2315,7 +2311,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Organic Açai Bowl и Green Smoothie"
  },
  {
   "name": "Bali Buda",
@@ -2339,7 +2335,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Бранч тарелка + мимоза"
+  "signatureDish": "Brunch Platter (eggs, avo, bacon) и Mimosa"
  },
  {
   "name": "Samadi Bali",
@@ -2353,7 +2349,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Ayurvedic Bowl и Turmeric Golden Latte"
  },
  {
   "name": "Nusa Penida (1.5 часа)",
@@ -3872,7 +3868,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Эспрессо в переулке"
+  "signatureDish": "Double Ristretto и капучино — спрятан в переулке Gang 51"
  },
  {
   "name": "Cafe Organic",
@@ -3885,7 +3881,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Яйца бенедикт"
+  "signatureDish": "Eggs Benedict с авокадо и Acai Bowl"
  },
  {
   "name": "Sea Circus",
@@ -3898,7 +3894,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Тако"
+  "signatureDish": "Fish Tacos и Breakfast Burrito"
  },
  {
   "name": "Anomali Coffee",
@@ -3911,7 +3907,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Kopi Susu и зёрна Toraja"
+  "signatureDish": "Kopi Susu (балийские зёрна) и Toraja pour-over"
  },
  {
   "name": "Expat Roasters",
@@ -3926,7 +3922,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Specialty filter"
+  "signatureDish": "Single Origin Filter и Affogato"
  },
  {
   "name": "Sisterfields",
@@ -3940,7 +3936,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Pancakes + avo toast"
+  "signatureDish": "Ricotta Hotcakes, Smashed Avo и Acai Bowl"
  },
  {
   "name": "Kumpul Coworking",
@@ -3952,7 +3948,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Specialty Latte и работа из комьюнити-пространства"
  },
  {
   "name": "Warung Made",
@@ -3966,7 +3962,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Наси горенг специальный (с 1969!)"
+  "signatureDish": "Nasi Goreng Spesial — фирменный рецепт с 1969 года"
  },
  {
   "name": "Warung Murah",
@@ -3978,8 +3974,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Mama San",
@@ -3992,7 +3987,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Азиатские тапас + dim sum"
+  "signatureDish": "Beef & Bamboo Dumplings и Beef Vindaloo"
  },
  {
   "name": "Barbacoa",
@@ -4005,7 +4000,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Стейк medium rare"
+  "signatureDish": "Tomahawk Steak 1.2kg sharing и Bone Marrow"
  },
  {
   "name": "Sarong",
@@ -4018,7 +4013,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Peking duck sharing"
+  "signatureDish": "Peking Duck Sharing и Lamb Rogan Josh"
  },
  {
   "name": "Merah Putih",
@@ -4031,7 +4026,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "signatureDish": "Rijsttafel (индонезийский сет из 8+ блюд)"
  },
  {
   "name": "The Avocado Factory",
@@ -4044,7 +4039,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Фирменный десерт"
+  "signatureDish": "Avo Steak & Egg, Truffle Benedict и Avo Tuna Tartar"
  },
  {
   "name": "Te'Amo",
@@ -4055,7 +4050,8 @@
   "desc": "Итальянский, лучший тартар! Beef Tartare 90K, Pepperoni Pizza 150K.",
   "vegan": false,
   "insta": false,
-  "booking": false
+  "booking": false,
+  "signatureDish": "Beef Tartare и Seafood Pasta — европейский гастро-бистро"
  },
  {
   "name": "Hyde Hotel",
@@ -4077,8 +4073,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Massai",
@@ -4102,7 +4097,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Handmade Tagliatelle и Tiramisu Classico"
  },
  {
   "name": "Happy Chappy",
@@ -4115,7 +4110,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Фалафель"
+  "signatureDish": "Falafel Wrap и Hummus Plate"
  },
  {
   "name": "Earth Cafe & Market",
@@ -4128,7 +4123,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Raw боул"
+  "signatureDish": "Raw Vegan Pad Thai и Green Smoothie"
  },
  {
   "name": "Kynd Community",
@@ -4141,7 +4136,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Raw боул"
+  "signatureDish": "Pink Pitaya Bowl и Raw Snickers Bar"
  },
  {
   "name": "Shelter Cafe",
@@ -4608,7 +4603,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Flat white + сёрф-вайб"
+  "signatureDish": "Flat White и Avo Toast — сёрф-вайб"
  },
  {
   "name": "Suka Espresso",
@@ -4620,7 +4615,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Pour-over из зёрен Флорес"
+  "signatureDish": "V60 Pour-Over из Flores и Cold Brew"
  },
  {
   "name": "BGS Uluwatu",
@@ -4632,7 +4627,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Flat White и Acai Bowl"
  },
  {
   "name": "% Arabica Bali",
@@ -4645,7 +4640,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Espresso Latte — японский минимализм"
  },
  {
   "name": "BGS Coffee Uluwatu",
@@ -4658,7 +4653,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Single Origin Drip и Banana Bread"
  },
  {
   "name": "Outpost Uluwatu",
@@ -4670,7 +4665,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Flat White и работа с видом на Улувату"
  },
  {
   "name": "Warung Bule",
@@ -4683,7 +4678,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси горенг 25K"
+  "signatureDish": "Nasi Goreng за 25K и Mie Goreng — locals' secret"
  },
  {
   "name": "Warung Local Uluwatu",
@@ -4695,8 +4690,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Bukit Cafe",
@@ -4708,7 +4702,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Smoothie bowl"
+  "signatureDish": "Tropical Smoothie Bowl и Granola Parfait"
  },
  {
   "name": "Mango Tree Cafe",
@@ -4733,7 +4727,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Bintang + закат со скалы"
+  "signatureDish": "Margarita Pizza и Falafel Salad с закатом над сёрф-спотом"
  },
  {
   "name": "El Kabron",
@@ -4747,7 +4741,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паэлья + вино на скале"
+  "signatureDish": "Seafood Paella с лобстером и Croquetas с видом на океан"
  },
  {
   "name": "Ulu Cliffhouse",
@@ -4760,7 +4754,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Tuna tartare на клифе"
+  "signatureDish": "Tuna Tartare и коктейль на клифе над океаном"
  },
  {
   "name": "Samudra Ganesha",
@@ -4773,7 +4767,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Фалафель"
+  "signatureDish": "Falafel Plate и Hummus с питой"
  },
  {
   "name": "The Room Bar",
@@ -4808,7 +4802,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Кокосовое мороженое"
+  "signatureDish": "Coconut Ice Cream и Vegan Wrap"
  },
  {
   "name": "Il Salotto",
@@ -4821,7 +4815,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Rigatoni al Ragù и Tiramisu"
  },
  {
   "name": "Bartolo",
@@ -4834,7 +4828,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Spaghetti Vongole и Bruschetta"
  },
  {
   "name": "La Baracca",
@@ -4847,7 +4841,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Burrata Pizza и Gnocchi Funghi — бронируй заранее"
  },
  {
   "name": "Amino Resto",
@@ -4871,7 +4865,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Вегетарианский бургер"
+  "signatureDish": "Cashew Veggie Burger и Smoothie Bowl"
  },
  {
   "name": "The Loft Uluwatu",
@@ -4884,7 +4878,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Acai Bowl и Avocado Toast с poached egg"
  },
  {
   "name": "Nalu Bowls",
@@ -4897,7 +4891,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Raw боул"
+  "signatureDish": "Dragon Fruit Acai Bowl и Mango Smoothie Bowl"
  },
  {
   "name": "Nusa Penida (30 мин на лодке)",
@@ -5138,7 +5132,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Коктейль у бассейна"
+  "signatureDish": "Grilled Fish of the Day и Coconut Margarita на пляже"
  },
  {
   "name": "Savaya Bali",
@@ -5151,7 +5145,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Коктейль у бассейна"
+  "signatureDish": "Signature Cocktail и Sashimi Platter у пула"
  },
  {
   "name": "Savaya",
@@ -5403,7 +5397,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Матча латте + пирожное"
+  "signatureDish": "Matcha Latte и чизкейк"
  },
  {
   "name": "Dusk Blue Cafe",
@@ -5414,8 +5408,7 @@
   "desc": "Стильная кофейня с авторскими напитками. Pour-over, cold brew",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Sanur Brewing Company",
@@ -5426,8 +5419,7 @@
   "desc": "Кофейня + мини-пивоварня. Завтраки, бранч, хороший эспрессо",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Warung Mak Beng",
@@ -5440,7 +5432,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Жареная рыба с рисом (легенда!)"
+  "signatureDish": "Goreng Ikan с рисом и самбалом — культовое место с 1941!"
  },
  {
   "name": "Warung Baby Monkeys",
@@ -5452,8 +5444,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Three Monkeys Sanur",
@@ -5478,7 +5469,7 @@
   "insta": false,
   "booking": false,
   "isTopChoice": true,
-  "signatureDish": "Домашняя паста и тирамису"
+  "signatureDish": "Pasta Fresca del Giorno и Tiramisu — легенда Санура"
  },
  {
   "name": "Kayumanis Sanur",
@@ -5501,8 +5492,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Sindhu Night Market",
@@ -5516,7 +5506,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "signatureDish": "Nasi Goreng, Satay и Martabak — от 10K"
  },
  {
   "name": "Cafe Batujimbar",
@@ -5602,8 +5592,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Massimo Italian Restaurant",
@@ -5617,7 +5606,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Homemade Ravioli и Osso Buco"
  },
  {
   "name": "Soul on the Beach",
@@ -5630,7 +5619,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Poké Bowl и Sunset Cocktail на пляже"
  },
  {
   "name": "Organik Sanur",
@@ -5643,7 +5632,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Organic Acai Bowl и Kombucha"
  },
  {
   "name": "Nourish Sanur",
@@ -5656,7 +5645,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Nourish Bowl (quinoa, avocado, halloumi)"
  },
  {
   "name": "The Greenhouse",
@@ -5977,7 +5966,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Коктейль у бассейна"
+  "signatureDish": "Signature Cocktail и Tuna Sashimi на закате"
  },
  {
   "name": "Potato Head Beach Club",
@@ -5990,7 +5979,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Коктейль у бассейна"
+  "signatureDish": "Impossible Burger и коктейль у пула"
  },
  {
   "name": "Wawa Wewe II Cafe",
@@ -6001,8 +5990,7 @@
   "desc": "Кафе с видом на бухту и Агунг. Балийский кофе, простой завтрак. Атмосфера!",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Gusto Cafe",
@@ -6013,8 +6001,7 @@
   "desc": "Лучший кофе в Амеде. Итальянский эспрессо, свежая выпечка, тихий сад",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Blue Earth Village Cafe",
@@ -6026,7 +6013,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Specialty V60 и домашний банановый хлеб"
  },
  {
   "name": "Warung Enak",
@@ -6039,7 +6026,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Ми горенг с видом на Агунг"
+  "signatureDish": "Mie Goreng с яйцом и вид на вулкан Агунг"
  },
  {
   "name": "Warung Ombak",
@@ -6051,8 +6038,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Galanga Restaurant",
@@ -6065,7 +6051,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Пад тай"
+  "signatureDish": "Pad Thai с креветками и Tom Kha Gai"
  },
  {
   "name": "The Grill Amed",
@@ -6078,7 +6064,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Grilled seafood"
+  "signatureDish": "Grilled Red Snapper и Lobster на гриле"
  },
  {
   "name": "Blue Earth Village Restaurant",
@@ -6116,7 +6102,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Пад тай"
+  "signatureDish": "Green Curry и Mango Sticky Rice"
  },
  {
   "name": "Green Leaf Café",
@@ -6760,8 +6746,7 @@
   "desc": "Балийский и яванский кофе. Простая обстановка, настоящий вкус",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Spice Beach Club",
@@ -6772,8 +6757,7 @@
   "desc": "Пляжный бар с хорошим кофе и видом. Один из немногих «модных» мест",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Global Village Kafe",
@@ -6784,8 +6768,7 @@
   "desc": "Кафе с западной и балийской едой. Хороший кофе, книжный уголок",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Warung Music",
@@ -6797,8 +6780,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Warung Dolphin",
@@ -6810,8 +6792,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Jasmine Kitchen",
@@ -6824,7 +6805,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Пад тай"
+  "signatureDish": "Pad Thai и Spring Rolls — тайская классика"
  },
  {
   "name": "Sea Breeze Cafe",
@@ -6872,8 +6853,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "La Madre",
@@ -6887,7 +6867,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Homemade Tagliatelle и Tiramisu"
  },
  {
   "name": "Global Village Foundation Kafe",
@@ -6913,7 +6893,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Raw боул"
+  "signatureDish": "Raw Açai Bowl и Turmeric Latte"
  },
  {
   "name": "Jasmine Kitchen (Bakery)",
@@ -6926,8 +6906,7 @@
   "cuisine": "тайская",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Пад тай"
+  "booking": false
  },
  {
   "name": "Warung Bambu",
@@ -6939,8 +6918,7 @@
   "cuisine": "местная",
   "vegan": true,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Lovina Reef",
@@ -7075,7 +7053,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Коктейль у бассейна"
+  "signatureDish": "Frozen Daiquiri и Grilled Fish у пула"
  },
  {
   "name": "Bioluminescent Plankton Tour 🔥",
@@ -7846,8 +7824,7 @@
   "maps": "https://www.google.com/maps/search/Montana+Del+Cafe+Kintamani",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Paperhills Cafe",
@@ -7859,8 +7836,7 @@
   "maps": "https://maps.app.goo.gl/vyMoP3QbeaHtjqSA7",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "AKASA Specialty Coffee",
@@ -7872,8 +7848,7 @@
   "maps": "https://www.google.com/maps/search/AKASA+Specialty+Coffee+Kintamani",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Ritatkala Cafe",
@@ -7885,8 +7860,7 @@
   "maps": "https://www.google.com/maps/search/Ritatkala+Cafe+Kintamani",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "El Lago Cafe",
@@ -7898,8 +7872,7 @@
   "maps": "https://www.google.com/maps/search/El+Lago+Cafe+Kintamani",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Munduk Escape (vegan-friendly)",
@@ -8176,8 +8149,7 @@
   "desc": "Кафе с видом на скалы. Кофе, смузи, закаты",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Full Circle Cafe",
@@ -8189,7 +8161,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Smoothie Bowl и Sourdough Toast"
  },
  {
   "name": "Warung Made Penida",
@@ -8201,8 +8173,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Warung Pondok",
@@ -8525,7 +8496,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "signatureDish": "Grilled Fish BBQ и Nasi Goreng — от 20K"
  },
  {
   "name": "Kayu Cafe",
@@ -8563,7 +8534,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Яйца бенедикт"
+  "signatureDish": "Eggs Florentine и Tropical Smoothie Bowl"
  },
  {
   "name": "Gili Coffee Roasters",
@@ -9009,8 +8980,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Mount Bromo Sunrise (Penanjakan viewpoint)",
@@ -9225,8 +9195,7 @@
   "maps": "https://maps.google.com/maps/search/Klinik+Kopi+Yogyakarta",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Epic Coffee Yogyakarta",
@@ -9238,8 +9207,7 @@
   "maps": "https://maps.google.com/maps/search/Epic+Coffee+Yogyakarta",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Gudeg Yu Djum",
@@ -9287,8 +9255,7 @@
   "maps": "https://maps.google.com/maps/search/Tempo+Gelato+Malang",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Rawon Nguling (Surabaya)",
@@ -9336,7 +9303,8 @@
   "maps": "https://maps.google.com/maps/search/Ashtari+Lombok",
   "vegan": true,
   "insta": false,
-  "booking": false
+  "booking": false,
+  "signatureDish": "Healthy Bowl и свежий сок с видом на бухту"
  },
  {
   "name": "El Bazar Cafe & Restaurant",
@@ -9360,8 +9328,7 @@
   "maps": "https://maps.google.com/maps/search/Munchies+Kuta+Lombok",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Milk Espresso Kuta",
@@ -9373,8 +9340,7 @@
   "maps": "https://maps.google.com/maps/search/Milk+Espresso+Kuta+Lombok",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Knalpot Restaurant & Bar",
@@ -9412,7 +9378,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Pizza Margherita из дровяной печи и домашняя Burrata"
  },
  {
   "name": "Warung Sulawesi",
@@ -9425,8 +9391,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Tanjung Aan Beach",
@@ -9534,8 +9499,7 @@
   "maps": "https://maps.google.com/maps/search/Kenza+Cafe+Kuta+Lombok",
   "vegan": true,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Night Market Gili Trawangan",
@@ -9549,7 +9513,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "signatureDish": "Lobster BBQ и Satay — ночной рынок на пляже"
  },
  {
   "name": "Wajan Sister Cafe",
@@ -9585,8 +9549,7 @@
   "maps": "https://maps.google.com/maps/search/Coffee+and+Thyme+Gili+Trawangan",
   "vegan": true,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Gili Bliss Cafe",
@@ -9598,8 +9561,7 @@
   "maps": "https://maps.google.com/maps/search/Gili+Bliss+Cafe+Gili+Air",
   "vegan": true,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Casa Vintage Beach",
@@ -9661,7 +9623,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Grilled seafood"
+  "signatureDish": "Grilled Marlin Steak и Jimbaran Seafood Platter"
  },
  {
   "name": "Yoga & Freediving Gili Air",
@@ -9685,8 +9647,7 @@
   "maps": "https://maps.google.com/maps/search/Coco+Cafe+Gili+Trawangan",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Specialty coffee"
+  "booking": false
  },
  {
   "name": "Acropora Bar & Restaurant",
@@ -9759,7 +9720,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty coffee"
+  "signatureDish": "Flat White и кокосовый айс-латте"
  },
  {
   "name": "Penida Colada Beach Bar",
@@ -9785,7 +9746,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Сет из роллов"
+  "signatureDish": "Salmon Set и Spicy Tuna Roll"
  },
  {
   "name": "Banah Cliff Point",
@@ -10125,7 +10086,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Сет из роллов"
+  "signatureDish": "Omakase Set и Spicy Tuna Roll"
  },
  {
   "name": "Satoshi Izakaya",
@@ -10139,7 +10100,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Сет из роллов"
+  "signatureDish": "Wagyu Gyudon и Edamame Truffle"
  },
  {
   "name": "Sushimi Bali",
@@ -10153,7 +10114,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Сет из роллов"
+  "signatureDish": "Salmon Sashimi Set и Dragon Roll"
  },
  {
   "name": "Moana Fish Eatery",
@@ -10167,7 +10128,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Fish & chips"
+  "signatureDish": "Fish & Chips с tartare соусом и Grilled Barramundi"
  },
  {
   "name": "Yuki Japanese Restaurant",
@@ -10180,8 +10141,7 @@
   "cuisine": "японская",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Сет из роллов"
+  "booking": false
  },
  {
   "name": "Taco Casa",
@@ -10195,7 +10155,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Тако"
+  "signatureDish": "Fish Tacos и Guacamole с чипсами"
  },
  {
   "name": "Warung Oishi",
@@ -10209,7 +10169,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Сет из роллов"
+  "signatureDish": "Salmon Teriyaki Don и Spicy Tuna Roll"
  },
  {
   "name": "Rayjin Teppanyaki",
@@ -10223,7 +10183,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Сет из роллов"
+  "signatureDish": "Wagyu Teppanyaki Set и Lobster Roll"
  },
  {
   "name": "Niku Bali",
@@ -10237,7 +10197,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Сет из роллов"
+  "signatureDish": "Wagyu Don и Salmon Tataki"
  },
  {
   "name": "Wok Me Up",
@@ -10251,7 +10211,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Сет из роллов"
+  "signatureDish": "Pad Thai с креветками и Chicken Teriyaki Wok"
  },
  {
   "name": "Thai Express Bali",
@@ -10265,7 +10225,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Пад тай"
+  "signatureDish": "Pad Thai и Green Curry с рисом"
  },
  {
   "name": "Fu Shou Noodle",
@@ -10279,7 +10239,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Сет из роллов"
+  "signatureDish": "Жирная китайская лапша с чили — лучшая на острове, от 30K"
  },
  {
   "name": "Chito",
@@ -10293,7 +10253,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Хинкали"
+  "signatureDish": "Хинкали (40K/шт) — идеальные, как в Тбилиси"
  },
  {
   "name": "Pepito Supermarket",
@@ -10967,8 +10927,7 @@
   "cuisine": "морепродукты",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Grilled seafood"
+  "booking": false
  },
  {
   "name": "Funky Place Lovina",
@@ -11113,7 +11072,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Carbonara и Margherita из дровяной печи"
  },
  {
   "name": "Lola's Cantina",
@@ -11127,7 +11086,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Тако"
+  "signatureDish": "Carne Asada Tacos и Churros с шоколадом"
  },
  {
   "name": "Guero",
@@ -11141,7 +11100,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Тако"
+  "signatureDish": "Birria Tacos и Margarita — мексиканская классика"
  },
  {
   "name": "Usha",
@@ -11155,7 +11114,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Борщ"
+  "signatureDish": "Борщ, вареники с картошкой и домашний лимонад"
  },
  {
   "name": "Draniki",
@@ -11169,7 +11128,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Борщ"
+  "signatureDish": "Драники со сметаной и борщ — как дома"
  },
  {
   "name": "LULU Bistro",
@@ -11183,7 +11142,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Круассан"
+  "signatureDish": "Bouillabaisse, Coq au Vin и Heirloom Tomato Salad"
  },
  {
   "name": "Bukhara",
@@ -11197,7 +11156,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Фалафель"
+  "signatureDish": "Плов узбекский, манты и чай с чабрецом"
  },
  {
   "name": "MyWarung",
@@ -11211,7 +11170,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Борщ"
+  "signatureDish": "Борщ и блины с творогом"
  },
  {
   "name": "Snowcat",
@@ -11225,7 +11184,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Борщ"
+  "signatureDish": "Борщ и пельмени — русская кухня на Бали"
  },
  {
   "name": "Aquamarine",
@@ -11239,7 +11198,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Борщ"
+  "signatureDish": "Борщ и пельмени — русская кухня на пляже"
  },
  {
   "name": "AVA Bistro",
@@ -11253,7 +11212,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty flat white"
+  "signatureDish": "Flat White и Avocado Sourdough Toast"
  },
  {
   "name": "Mertasari Beach",
@@ -11351,7 +11310,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Яйца бенедикт"
+  "signatureDish": "Classic Eggs Benedict и Avocado Toast"
  },
  {
   "name": "Manakitchen",
@@ -11364,8 +11323,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Honey Kitchen Ubud",
@@ -11379,7 +11337,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Яйца бенедикт"
+  "signatureDish": "Eggs Benedict с лососем и Acai Bowl"
  },
  {
   "name": "NomNom Ubud",
@@ -11392,8 +11350,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Feel Food Ubud",
@@ -11407,7 +11364,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Protein Bowl и Cold-Pressed Green Juice"
  },
  {
   "name": "OpenHouse Ubud",
@@ -11421,7 +11378,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Яйца бенедикт"
+  "signatureDish": "Eggs Royale (с лососем) и Banana Pancakes"
  },
  {
   "name": "Shaffa Ubud",
@@ -11435,7 +11392,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Фалафель"
+  "signatureDish": "Shawarma Plate и Hummus с тёплой питой"
  },
  {
   "name": "Twelve Ubud",
@@ -11449,7 +11406,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Круассан"
+  "signatureDish": "Artisan Sourdough Toast и Flat White"
  },
  {
   "name": "Green Rabbit Ubud",
@@ -11463,7 +11420,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Вегетарианский боул"
+  "signatureDish": "Green Power Bowl и свежий сок с имбирём"
  },
  {
   "name": "Satu Ubud",
@@ -11476,8 +11433,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Avocutseatery",
@@ -11491,7 +11447,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Avo Steak & Egg, Truffle Benedict и Avo Royale Croissant"
  },
  {
   "name": "Mavammy Canggu",
@@ -11505,7 +11461,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Яйца бенедикт"
+  "signatureDish": "Red Velvet Cake и Chocolate Caramel Banana десерт"
  },
  {
   "name": "Easy Cafe Canggu",
@@ -11519,7 +11475,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "signatureDish": "Nasi Goreng Ayam и Es Teh Manis (30K)"
  },
  {
   "name": "Powerbank Cafe",
@@ -11533,7 +11489,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty flat white"
+  "signatureDish": "Double Shot Flat White и Protein Ball"
  },
  {
   "name": "BaliBabe Bowls",
@@ -11547,7 +11503,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Dragon Fruit Bowl с кокосом и гранолой"
  },
  {
   "name": "Crate Cafe",
@@ -11561,7 +11517,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Avo smash + flat white"
+  "signatureDish": "French Toast с клубникой и The Mafia Wrap + flat white"
  },
  {
   "name": "Hungry Bird Coffee",
@@ -11575,7 +11531,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Flat white из зёрен Java"
+  "signatureDish": "Flat White из зёрен Java и Banana Bread"
  },
  {
   "name": "Penny Lane Canggu",
@@ -11589,7 +11545,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Яйца бенедикт"
+  "signatureDish": "Classic Eggs Benedict и French Toast"
  },
  {
   "name": "Masa Canggu",
@@ -11603,7 +11559,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Тако"
+  "signatureDish": "Al Pastor Tacos и Mezcal Margarita"
  },
  {
   "name": "Dumbo",
@@ -11617,7 +11573,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Truffle Mushroom Pasta и Burrata с томатами"
  },
  {
   "name": "I Am Vegan Babe",
@@ -11631,7 +11587,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Вегетарианский боул"
+  "signatureDish": "Vegan Nasi Campur и Raw Brownie"
  },
  {
   "name": "Neon Palms",
@@ -11645,7 +11601,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Пад тай"
+  "signatureDish": "Pad Thai с креветками и Coconut Mojito"
  },
  {
   "name": "Da Maria Bali",
@@ -11659,7 +11615,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Tonnarelli Cacio e Pepe и Pesto Pizza с ricotta"
  },
  {
   "name": "Kelly's Warung",
@@ -11672,8 +11628,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Gusto Gelato Amed",
@@ -11687,7 +11642,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Фирменный десерт"
+  "signatureDish": "Gelato Coconut и Mango Sorbet"
  },
  {
   "name": "Sidemen Valley Viewpoint",
@@ -11713,7 +11668,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "signatureDish": "Nasi Campur Bali и Bebek Betutu (утка)"
  },
  {
   "name": "Sage Ubud",
@@ -11727,7 +11682,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Harvest Bowl и органический комбуча"
  },
  {
   "name": "Warung Biah Biah Ubud",
@@ -11740,8 +11695,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Lazy Cat Cafe",
@@ -11755,7 +11709,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty flat white"
+  "signatureDish": "Flat White из зёрен Kintamani и банановый хлеб"
  },
  {
   "name": "Atman Kafe",
@@ -11769,7 +11723,7 @@
   "vegan": true,
   "insta": false,
   "booking": false,
-  "signatureDish": "Вегетарианский боул"
+  "signatureDish": "Buddha Bowl и Turmeric Latte"
  },
  {
   "name": "Wahana Resort Cafe",
@@ -11782,8 +11736,7 @@
   "cuisine": "завтраки",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Яйца бенедикт"
+  "booking": false
  },
  {
   "name": "Lacalita Canggu",
@@ -11797,7 +11750,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Тако"
+  "signatureDish": "Fish Tacos и Frozen Margarita"
  },
  {
   "name": "Paletas Wey Canggu",
@@ -11811,7 +11764,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Фирменный десерт"
+  "signatureDish": "Палета Mango-Chili и Coconut-Chocolate (мексиканское мороженое)"
  },
  {
   "name": "Two Trees Eatery",
@@ -11825,7 +11778,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Яйца бенедикт"
+  "signatureDish": "Eggs Benedict с голландским соусом и Granola Bowl"
  },
  {
   "name": "Bikini Restaurant",
@@ -11839,7 +11792,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Grilled seafood"
+  "signatureDish": "Grilled Lobster и Seafood Platter на пляже"
  },
  {
   "name": "Ulu Garden",
@@ -11853,7 +11806,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Green Bowl и свежий сок"
  },
  {
   "name": "Jasmine Kitchen Amed",
@@ -11866,8 +11819,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Smiling Buddha Restaurant",
@@ -11880,8 +11832,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Wawa Wewe II",
@@ -11895,7 +11846,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Grilled seafood"
+  "signatureDish": "Grilled Jimbaran Seafood Platter и Fresh Fish BBQ"
  },
  {
   "name": "Massimo Italian Sanur",
@@ -11909,7 +11860,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Linguine alle Vongole и Panna Cotta"
  },
  {
   "name": "Pirate Bay Nusa Dua",
@@ -11922,8 +11873,7 @@
   "cuisine": "морепродукты",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Grilled seafood"
+  "booking": false
  },
  {
   "name": "Seabreeze Warung Lovina",
@@ -11936,8 +11886,7 @@
   "cuisine": "морепродукты",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Grilled seafood"
+  "booking": false
  },
  {
   "name": "Jasmine Kitchen Lovina",
@@ -11950,8 +11899,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "The Elephant Ubud",
@@ -11964,8 +11912,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Kafe Batan Waru",
@@ -11978,8 +11925,7 @@
   "cuisine": "местная",
   "vegan": false,
   "insta": false,
-  "booking": false,
-  "signatureDish": "Наси горенг или наси чампур"
+  "booking": false
  },
  {
   "name": "Ji Restaurant Ubud",
@@ -11993,7 +11939,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Круассан"
+  "signatureDish": "Butter Croissant и капучино"
  },
  {
   "name": "Watercress Cafe Ubud",
@@ -12007,7 +11953,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Healthy боул"
+  "signatureDish": "Superfood Salad и свежий сок с куркумой"
  },
  {
   "name": "Espresso Mafia Canggu",
@@ -12021,7 +11967,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Specialty flat white"
+  "signatureDish": "Double Shot Flat White и банановый хлеб"
  },
  {
   "name": "Tropicola Beach Club",
@@ -12035,7 +11981,7 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Паста дня"
+  "signatureDish": "Margherita Pizza и Aperol Spritz у пула"
  },
  {
   "name": "Parachute Bali",
@@ -12049,6 +11995,6 @@
   "vegan": false,
   "insta": false,
   "booking": false,
-  "signatureDish": "Фалафель"
+  "signatureDish": "Falafel Bowl и Cauliflower Shawarma"
  }
 ]
