@@ -1227,7 +1227,7 @@ function applyFilters() {
     if (state.shopType && (!p.tags || !p.tags.includes(state.shopType))) return false;
 
     if (state.cuisine) {
-      const cuisineStr = (p.cuisine || p.desc || '').toLowerCase();
+      const cuisineStr = ((p.cuisine || '') + ' ' + (p.desc || '')).toLowerCase();
       if (state.cuisine === 'пп' && !cuisineStr.includes('пп') && !cuisineStr.includes('healthy') && !cuisineStr.includes('organic') && !cuisineStr.includes('зож')) return false;
       if (state.cuisine === 'славянская' && !cuisineStr.includes('русская') && !cuisineStr.includes('славянская') && !cuisineStr.includes('белорусская')) return false;
       if (state.cuisine !== 'пп' && state.cuisine !== 'славянская' && !cuisineStr.includes(state.cuisine)) return false;
