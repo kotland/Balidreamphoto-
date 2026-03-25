@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Каталог мест</title>
+<link rel="stylesheet" href="style.css">
 <script>
-window.onerror = function(msg, url, line, col, error) {
+window.onerror = function(msg, url, line) {
    var errDiv = document.createElement('div');
    errDiv.style.background = 'red';
    errDiv.style.color = 'white';
@@ -13,141 +16,112 @@ window.onerror = function(msg, url, line, col, error) {
    errDiv.style.left = '0';
    errDiv.style.width = '100%';
    errDiv.style.zIndex = '9999';
-   errDiv.innerHTML = "КРИТИЧЕСКАЯ ОШИБКА КОДА:<br>" + msg + "<br>Строка: " + line;
+   errDiv.innerHTML = "CRITICAL ERROR:<br>" + msg + "<br>Line: " + line;
    document.body.appendChild(errDiv);
    return false;
 };
 </script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Каталог мест</title>
-<link rel="stylesheet" href="style.css">
 </head>
 <body class="catalog-page">
+
 <button class="btn-green" onclick="window.location.href='index.html?v=108'">← Назад</button>
 <h1 style="font-family:'Playfair Display',serif;text-align:center;margin:20px 0;font-size:24px">Каталог <em style="color:#2a6b5a">мест</em></h1>
 <p style="text-align:center;color:rgba(42,42,40,0.5);margin-bottom:24px"><span id="countBadge">1005</span> мест</p>
 
 <div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">РАЙОН</div>
-<div id="districtChips" class="scroll-chips">
-<div class="chip" onclick="updateFilter('district', 'Убуд', this)">🌿 Убуд</div>
-<div class="chip" onclick="updateFilter('district', 'Чангу', this)">🏄 Чангу</div>
-<div class="chip" onclick="updateFilter('district', 'Семиньяк', this)">🍸 Семиньяк</div>
-<div class="chip" onclick="updateFilter('district', 'Улувату', this)">🌊 Улувату</div>
-<div class="chip" onclick="updateFilter('district', 'Букит и Нуса-Дуа', this)">🏝️ Букит и Нуса-Дуа</div>
-<div class="chip" onclick="updateFilter('district', 'Санур', this)">🌅 Санур</div>
-<div class="chip" onclick="updateFilter('district', 'Амед и Восток', this)">🌋 Амед и Восток</div>
-<div class="chip" onclick="updateFilter('district', 'Север Бали', this)">⛰️ Север Бали</div>
-<div class="chip" onclick="updateFilter('district', 'Нуса Пенида', this)">🐢 Нуса Пенида</div>
-<div class="chip" onclick="updateFilter('district', 'Гили', this)">🚲 Острова Гили</div>
-<div class="chip" onclick="updateFilter('district', 'Ломбок и Сумбава', this)">🐚 Ломбок и Сумбава</div>
-<div class="chip" onclick="updateFilter('district', 'Ява', this)">🌋 Ява</div>
+<div id="districtChips" class="wrap-chips">
+  <div class="chip" onclick="updateFilter('district', 'Убуд', this)">🌿 Убуд</div>
+  <div class="chip" onclick="updateFilter('district', 'Чангу', this)">🏄 Чангу</div>
+  <div class="chip" onclick="updateFilter('district', 'Семиньяк', this)">🍸 Семиньяк</div>
+  <div class="chip" onclick="updateFilter('district', 'Улувату', this)">🌊 Улувату</div>
+  <div class="chip" onclick="updateFilter('district', 'Букит и Нуса-Дуа', this)">🏝️ Букит и Нуса-Дуа</div>
+  <div class="chip" onclick="updateFilter('district', 'Санур', this)">🌅 Санур</div>
+  <div class="chip" onclick="updateFilter('district', 'Амед и Восток', this)">🌋 Амед и Восток</div>
+  <div class="chip" onclick="updateFilter('district', 'Север Бали', this)">⛰️ Север Бали</div>
+  <div class="chip" onclick="updateFilter('district', 'Нуса Пенида', this)">🐢 Нуса Пенида</div>
+  <div class="chip" onclick="updateFilter('district', 'Гили', this)">🚲 Острова Гили</div>
+  <div class="chip" onclick="updateFilter('district', 'Ломбок и Сумбава', this)">🐚 Ломбок и Сумбава</div>
+  <div class="chip" onclick="updateFilter('district', 'Ява', this)">🌋 Ява</div>
 </div>
 
 <div id="catalogCategoryPicker" style="margin-top:16px;display:none">
-<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">КАТЕГОРИЯ</div>
-<div class="wrap-chips">
-<div class="chip" onclick="updateFilter('category', 'еда', this)">🍜 Поесть</div>
-<div class="chip" onclick="updateFilter('category', 'кофейни', this)">☕ Кофейни</div>
-<div class="chip" onclick="updateFilter('category', 'пляж', this)">🏖 Пляжи</div>
-<div class="chip" onclick="updateFilter('category', 'beach_club', this)">🏖 Beach Clubs</div>
-<div class="chip" onclick="updateFilter('category', 'закат', this)">🌅 Закаты</div>
-<div class="chip" onclick="updateFilter('category', 'йога', this)">🧘 Йога</div>
-<div class="chip" onclick="updateFilter('category', 'спа', this)">💆 Спа и массаж</div>
-<div class="chip" onclick="updateFilter('category', 'велнес', this)">🔮 Велнес</div>
-<div class="chip" onclick="updateFilter('category', 'салон', this)">💅 Салоны красоты</div>
-<div class="chip" onclick="updateFilter('category', 'спорт', this)">🏋️ Спортзалы</div>
-<div class="chip" onclick="updateFilter('category', 'развлечения', this)">🎉 Развлечения</div>
-<div class="chip" onclick="updateFilter('category', 'культура', this)">🛕 Храмы</div>
-<div class="chip" onclick="updateFilter('category', 'шоппинг', this)">🛍 Шоппинг</div>
-<div class="chip" onclick="updateFilter('category', 'продукты', this)">🛒 Продуктовые</div>
-<div class="chip" onclick="updateFilter('category', 'жильё', this)">🏠 Жильё</div>
-<div class="chip" onclick="updateFilter('category', 'фото', this)">📸 Фото-локации</div>
-<div class="chip" onclick="updateFilter('category', 'водопад', this)">💧 Водопады</div>
-<div class="chip" onclick="updateFilter('category', 'глэмпинг', this)">🏕 Глэмпинги</div>
-<div class="chip" onclick="updateFilter('category', 'галерея', this)">🖼 Галереи</div>
-<div class="chip" onclick="updateFilter('category', 'вау', this)">✨ ВАУ-места</div>
+  <div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">КАТЕГОРИЯ</div>
+  <div class="wrap-chips">
+    <div class="chip" onclick="updateFilter('category', 'еда', this)">🍜 Поесть</div>
+    <div class="chip" onclick="updateFilter('category', 'кофейни', this)">☕ Кофейни</div>
+    <div class="chip" onclick="updateFilter('category', 'пляж', this)">🏖 Пляжи</div>
+    <div class="chip" onclick="updateFilter('category', 'beach_club', this)">🏖 Beach Clubs</div>
+    <div class="chip" onclick="updateFilter('category', 'закат', this)">🌅 Закаты</div>
+    <div class="chip" onclick="updateFilter('category', 'йога', this)">🧘 Йога</div>
+    <div class="chip" onclick="updateFilter('category', 'спа', this)">💆 Спа и массаж</div>
+    <div class="chip" onclick="updateFilter('category', 'велнес', this)">🔮 Велнес</div>
+    <div class="chip" onclick="updateFilter('category', 'салон', this)">💅 Салоны красоты</div>
+    <div class="chip" onclick="updateFilter('category', 'спорт', this)">🏋️ Спортзалы</div>
+    <div class="chip" onclick="updateFilter('category', 'развлечения', this)">🎉 Развлечения</div>
+    <div class="chip" onclick="updateFilter('category', 'культура', this)">🛕 Храмы</div>
+    <div class="chip" onclick="updateFilter('category', 'шоппинг', this)">🛍 Шоппинг</div>
+    <div class="chip" onclick="updateFilter('category', 'продукты', this)">🛒 Продуктовые</div>
+    <div class="chip" onclick="updateFilter('category', 'жильё', this)">🏠 Жильё</div>
+    <div class="chip" onclick="updateFilter('category', 'фото', this)">📸 Фото-локации</div>
+    <div class="chip" onclick="updateFilter('category', 'водопад', this)">💧 Водопады</div>
+    <div class="chip" onclick="updateFilter('category', 'глэмпинг', this)">🏕 Глэмпинги</div>
+    <div class="chip" onclick="updateFilter('category', 'галерея', this)">🖼 Галереи</div>
+  </div>
 </div>
-</div>
-
 
 <div id="catalogBudgetPicker" style="margin-top:16px;display:none">
-<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">БЮДЖЕТ</div>
-<div class="wrap-chips">
-<div class="chip" onclick="updateFilter('budget', 'все', this)">✨ Все</div>
-<div class="chip" onclick="updateFilter('budget', '💚', this)">💚 до $5 (75K)</div>
-<div class="chip" onclick="updateFilter('budget', '💛', this)">💛 $5-10 (75-150K)</div>
-<div class="chip" onclick="updateFilter('budget', '🧡', this)">🧡 $10-20 (150-300K)</div>
-<div class="chip" onclick="updateFilter('budget', '❤️', this)">❤️ $20+ (300K+)</div>
+  <div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">БЮДЖЕТ</div>
+  <div class="wrap-chips">
+    <div class="chip" onclick="updateFilter('budget', '', this)">Все</div>
+    <div class="chip" onclick="updateFilter('budget', '💚', this)">💚 (дёшево)</div>
+    <div class="chip" onclick="updateFilter('budget', '💛', this)">💛 (средне)</div>
+    <div class="chip" onclick="updateFilter('budget', '🧡', this)">🧡 (дорого)</div>
+    <div class="chip" onclick="updateFilter('budget', '❤️', this)">❤️ (fine dining/люкс)</div>
+  </div>
 </div>
-</div>
-<div id="catalogShopFilter" class="wrap-chips" style="margin-top:16px;display:none">
-<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px">ТИП</div>
-<div>
-<div class="chip" onclick="updateFilter('shopType', 'все', this)">✨ Все</div>
-<div class="chip" onclick="updateFilter('shopType', 'женское', this)">👗 Женское</div>
-<div class="chip" onclick="updateFilter('shopType', 'мужское', this)">👔 Мужское</div>
-<div class="chip" onclick="updateFilter('shopType', 'купальники', this)">🏊 Купальники</div>
-<div class="chip" onclick="updateFilter('shopType', 'спорт', this)">🏃 Спорт</div>
-<div class="chip" onclick="updateFilter('shopType', 'ювелирка', this)">💍 Ювелирка</div>
-<div class="chip" onclick="updateFilter('shopType', 'для дома', this)">🏠 Декор</div>
-<div class="chip" onclick="updateFilter('shopType', 'сувениры', this)">🎁 Сувениры</div>
-<div class="chip" onclick="updateFilter('shopType', 'секонд', this)">♻️ Секонд</div>
-<div class="chip" onclick="updateFilter('shopType', 'унисекс', this)">👫 Унисекс</div>
-</div>
-</div>
-<div id="catalogCuisineFilter" style="margin-top:16px;display:none">
-<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">КУХНЯ</div>
-<div class="wrap-chips">
-<div class="chip" onclick="updateFilter('cuisine', 'все', this)">✨ Все</div>
-<div class="chip" onclick="updateFilter('cuisine', 'вегетарианское', this)">🌿 Веган</div>
-<div class="chip" onclick="updateFilter('cuisine', 'местная', this)">🇮🇩 Местная</div>
-<div class="chip" onclick="updateFilter('cuisine', 'итальянская', this)">🇮🇹 Итальянская</div>
-<div class="chip" onclick="updateFilter('cuisine', 'японская', this)">🇯🇵 Японская</div>
-<div class="chip" onclick="updateFilter('cuisine', 'мексиканская', this)">🇲🇽 Мексиканская</div>
-<div class="chip" onclick="updateFilter('cuisine', 'тайская', this)">🇹🇭 Тайская</div>
-<div class="chip" onclick="updateFilter('cuisine', 'грузинская', this)">🇬🇪 Грузинская</div>
-<div class="chip" onclick="updateFilter('cuisine', 'русская', this)">🇷🇺 Славянская</div>
-<div class="chip" onclick="updateFilter('cuisine', 'французская', this)">🇫🇷 Французская</div>
-<div class="chip" onclick="updateFilter('cuisine', 'морепродукты', this)">🦪 Морепродукты</div>
-<div class="chip" onclick="updateFilter('cuisine', 'завтраки', this)">☀️ Завтраки</div>
-<div class="chip" onclick="updateFilter('cuisine', 'кофе', this)">☕ Кофе</div>
-<div class="chip" onclick="updateFilter('cuisine', 'десерты', this)">🍩 Десерты</div>
-<div class="chip" onclick="updateFilter('cuisine', 'пп', this)">🥗 ПП</div>
-<div class="chip" onclick="updateFilter('cuisine', 'восточная', this)">🥘 Восточная</div>
-</div>
-</div>
-<div id="catalogGalleryFilter" style="margin-top:16px;display:none">
-<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px">ТИП</div>
-<div>
-<div class="chip" onclick="updateFilter('galleryType', 'все', this)">✨ Все</div>
-<div class="chip" onclick="updateFilter('galleryType', 'галерея', this)">🖼 Галереи</div>
-<div class="chip" onclick="updateFilter('galleryType', 'музей', this)">🏛 Музеи</div>
-</div>
-</div>
-<div id="catalogWowFilter" style="margin-top:16px;display:none">
-<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px">ТИП</div>
-<div>
-<div class="chip" onclick="updateFilter('wowType', 'все', this)">✨ Все</div>
-<div class="chip" onclick="updateFilter('wowType', 'ресторан', this)">🍽 ВАУ-рестораны</div>
-<div class="chip" onclick="updateFilter('wowType', 'отель', this)">🏨 ВАУ-отели</div>
-<div class="chip" onclick="updateFilter('wowType', 'фото', this)">📸 ВАУ-фото</div>
-<div class="chip" onclick="updateFilter('wowType', 'уникальное', this)">🌟 Уникальное</div>
-</div>
-</div>
-<div id="catalogResults" style="margin-top:20px"></div>
 
-<button class="btn-green" onclick="window.location.href='index.html?v=108'" style="margin-top:20px">← Назад</button>
+<div id="catalogCuisineFilter" style="margin-top:16px;display:none">
+  <div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">КУХНЯ</div>
+  <div class="wrap-chips">
+    <div class="chip" onclick="updateFilter('cuisine', '', this)">Все</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'вегетарианское', this)">🥬 Вегетарианское</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'местная', this)">🍚 Местная</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'итальянская', this)">🍕 Итальянская</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'японская', this)">🍣 Японская</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'мексиканская', this)">🌮 Мексиканская</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'тайская', this)">🍛 Тайская</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'грузинская', this)">🥟 Грузинская</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'славянская', this)">🥞 Русская / СНГ</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'французская', this)">🥐 Французская</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'морепродукты', this)">🦞 Морепродукты</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'завтраки', this)">🍳 Завтраки</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'кофе', this)">☕ Specialty Кофе</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'десерты', this)">🍰 Десерты</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'пп', this)">🥑 ПП / Organic</div>
+    <div class="chip" onclick="updateFilter('cuisine', 'восточная', this)">🥙 Ближневосточная</div>
+  </div>
+</div>
+
+<div id="catalogShopFilter" style="margin-top:16px;display:none">
+  <div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">ЧТО ИЩЕМ?</div>
+  <div class="wrap-chips">
+    <div class="chip" onclick="updateFilter('shopType', '', this)">Все</div>
+    <div class="chip" onclick="updateFilter('shopType', 'женское', this)">Женское</div>
+    <div class="chip" onclick="updateFilter('shopType', 'мужское', this)">Мужское</div>
+    <div class="chip" onclick="updateFilter('shopType', 'купальники', this)">Купальники</div>
+    <div class="chip" onclick="updateFilter('shopType', 'спорт', this)">Спорт</div>
+    <div class="chip" onclick="updateFilter('shopType', 'ювелирка', this)">Ювелирка</div>
+    <div class="chip" onclick="updateFilter('shopType', 'для дома', this)">Для дома</div>
+    <div class="chip" onclick="updateFilter('shopType', 'сувениры', this)">Сувениры</div>
+    <div class="chip" onclick="updateFilter('shopType', 'секонд', this)">Секонд-хенд</div>
+    <div class="chip" onclick="updateFilter('shopType', 'унисекс', this)">Унисекс</div>
+  </div>
+</div>
+
+<div id="catalogResults" style="margin-top:20px; padding-bottom: 60px;"></div>
+<div id="scrollTrigger" style="height: 50px;"></div>
 
 <script>
-
-window.onerror = function(msg, url, line, col, error) {
-   alert("GLOBAL ERROR: " + msg + "\nLine: " + line);
-   return false;
-};
-
-
 var PLACES=[
 {name:'Seniman Coffee Studio',district:'Убуд',category:'кофейни',budget:'💛',price:'35-60K',desc:' · Лучший specialty coffee в Убуде. Свои зёрна, обжарка на месте, pour-over, cold brew.google.com/maps/search/Seniman+Coffee+Studio+Ubud',cuisine:'кофе',vegan:false',insta:false,booking:false,isTopChoice:true,signatureDish:'Pour-over из зёрен Флорес',maps:'https://maps'},
 {name:'Anomali Coffee',district:'Убуд',category:'кофейни',budget:'💛',price:'35-55K',desc:'Индонезийский specialty бренд. Зёрна со всего архипелага. Уютная терраса.',cuisine:'кофе',vegan:false,insta:false,booking:false,signatureDish:'Kopi Susu и зёрна Toraja'},
@@ -1175,9 +1149,7 @@ const state = {
   category: '',
   budget: '',
   cuisine: '',
-  shopType: '',
-  galleryType: '',
-  wowType: ''
+  shopType: ''
 };
 
 const DISTRICT_SUBS = {
@@ -1199,149 +1171,6 @@ let filteredPlaces = [];
 let currentIndex = 0;
 const ITEMS_PER_PAGE = 20;
 
-function matchDistrict(pDistrict, filterD) {
-  if (!filterD) return true;
-  var subs = DISTRICT_SUBS[filterD];
-  if (subs) {
-    return subs.includes(pDistrict);
-  }
-  return pDistrict === filterD;
-}
-
-function updateFilter(key, value, el) {
-  // Highlight chip
-  if (el) {
-    el.parentNode.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
-    if (value !== '') {
-        el.classList.add('selected');
-    }
-  }
-
-  // Update state
-  state[key] = value;
-
-  // Reset dependent filters if district or category changes
-  if (key === 'district') {
-    state.category = '';
-    state.budget = '';
-    state.cuisine = '';
-    state.shopType = '';
-    state.galleryType = '';
-    state.wowType = '';
-    document.querySelectorAll('#catalogCategoryPicker .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogGalleryFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogWowFilter .chip').forEach(c => c.classList.remove('selected'));
-  }
-  
-  if (key === 'category') {
-    state.budget = '';
-    state.cuisine = '';
-    state.shopType = '';
-    state.galleryType = '';
-    state.wowType = '';
-    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogGalleryFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogWowFilter .chip').forEach(c => c.classList.remove('selected'));
-  }
-
-  // Show/hide sub-filters based on category
-  document.getElementById('catalogCategoryPicker').style.display = state.district ? 'block' : 'none';
-  document.getElementById('catalogBudgetPicker').style.display = ['еда', 'кофейни', 'beach_club', 'спа', 'жильё'].includes(state.category) ? 'block' : 'none';
-  document.getElementById('catalogCuisineFilter').style.display = ['еда', 'кофейни'].includes(state.category) ? 'block' : 'none';
-  document.getElementById('catalogShopFilter').style.display = state.category === 'шоппинг' ? 'block' : 'none';
-  document.getElementById('catalogGalleryFilter').style.display = state.category === 'галерея' ? 'block' : 'none';
-  document.getElementById('catalogWowFilter').style.display = state.category === 'развлечения' ? 'block' : 'none';
-
-  // Apply filters
-  applyFilters();
-}
-
-function applyFilters() {
-  try {
-    filteredPlaces = PLACES.filter(p => {
-      if (state.district && !matchDistrict(p.district, state.district)) return false;
-      if (state.category && p.category !== state.category) return false;
-      if (state.budget && p.budget !== state.budget) return false;
-      if (state.galleryType && (!p.tags || !p.tags.includes(state.galleryType))) return false;
-      if (state.wowType && (!p.tags || !p.tags.includes(state.wowType))) return false;
-      if (state.shopType && (!p.tags || !p.tags.includes(state.shopType))) return false;
-
-      if (state.cuisine) {
-        const cuisineStr = (p.cuisine || p.desc || '').toLowerCase();
-        if (state.cuisine === 'пп' && !cuisineStr.includes('пп') && !cuisineStr.includes('healthy') && !cuisineStr.includes('organic') && !cuisineStr.includes('зож')) return false;
-        if (state.cuisine === 'славянская' && !cuisineStr.includes('русская') && !cuisineStr.includes('славянская') && !cuisineStr.includes('белорусская')) return false;
-        if (state.cuisine !== 'пп' && state.cuisine !== 'славянская' && !cuisineStr.includes(state.cuisine)) return false;
-      }
-      return true;
-    });
-
-    currentIndex = 0;
-    document.getElementById('catalogResults').innerHTML = '';
-    document.getElementById('countBadge').innerText = filteredPlaces.length;
-    
-    loadMoreCards();
-  } catch(e) {
-    document.getElementById('catalogResults').innerHTML = '<div style="color:red;padding:20px;">КРИТИЧЕСКАЯ ОШИБКА APPLY FILTERS: ' + e.message + '<br>' + e.stack + '</div>';
-    console.error(e);
-  }
-}
-
-function loadMoreCards() {
-  try {
-    const container = document.getElementById('catalogResults');
-    const fragment = document.createDocumentFragment();
-    const end = Math.min(currentIndex + ITEMS_PER_PAGE, filteredPlaces.length);
-
-    for (let i = currentIndex; i < end; i++) {
-      const p = filteredPlaces[i];
-      const el = document.createElement('div');
-      el.className = 'place';
-      
-      let html = '';
-      if (p.isTopChoice) {
-        html += '<div style="display:inline-block;background:#fff9e6;color:#b38a00;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;margin-bottom:8px;border:1px solid rgba(179,138,0,0.2)">⭐️ Выбор большинства</div>';
-      }
-      
-      html += '<div class="place-name">' + escapeHtml(p.name) + '</div>';
-      
-      let meta = [];
-      if (p.district) meta.push(escapeHtml(p.district));
-      if (p.category) meta.push(escapeHtml(p.category));
-      if (p.budget) meta.push(escapeHtml(p.budget));
-      
-      html += '<div class="place-meta">' + meta.join(' · ') + '</div>';
-      html += '<div class="place-desc">' + escapeHtml(p.desc) + (p.price ? ' · ' + escapeHtml(p.price) : '') + '</div>';
-      
-      if (p.signatureDish) {
-        html += '<div style="margin-top:12px;padding-top:12px;border-top:1px dashed rgba(0,0,0,0.1);font-size:13px;color:rgba(42,42,40,0.8)"><span style="font-weight:600">🍽 Стоит попробовать:</span> ' + escapeHtml(p.signatureDish) + '</div>';
-      }
-      
-      if (p.maps) {
-        html += '<div class="place-meta" style="margin-top:12px">📍 <a href="' + escapeHtml(p.maps) + '" target="_blank" style="color:#2a6b5a;text-decoration:none;font-weight:500;">Открыть на карте</a></div>';
-      }
-      
-      el.innerHTML = html;
-      fragment.appendChild(el);
-    }
-
-    container.appendChild(fragment);
-    currentIndex = end;
-
-    const observerTarget = document.getElementById('scrollTrigger');
-    if (observerTarget) {
-        observerTarget.style.display = (currentIndex < filteredPlaces.length) ? 'block' : 'none';
-    }
-  } catch(e) {
-    document.getElementById('catalogResults').innerHTML += '<div style="color:red;padding:20px;">КРИТИЧЕСКАЯ ОШИБКА LOAD MORE: ' + e.message + '<br>' + e.stack + '</div>';
-    console.error(e);
-  }
-}
-
 function escapeHtml(text) {
   if(!text) return '';
   return text.toString()
@@ -1350,6 +1179,67 @@ function escapeHtml(text) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
+
+function matchDistrict(pDistrict, filterD) {
+  if (!filterD) return true;
+  var subs = DISTRICT_SUBS[filterD];
+  if (subs) return subs.includes(pDistrict);
+  return pDistrict === filterD;
+}
+
+function updateFilter(key, value, el) {
+  if (el) {
+    el.parentNode.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+    if (value !== '') el.classList.add('selected');
+  }
+
+  state[key] = value;
+
+  if (key === 'district') {
+    state.category = ''; state.budget = ''; state.cuisine = ''; state.shopType = '';
+    document.querySelectorAll('#catalogCategoryPicker .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
+  }
+  
+  if (key === 'category') {
+    state.budget = ''; state.cuisine = ''; state.shopType = '';
+    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
+  }
+
+  document.getElementById('catalogCategoryPicker').style.display = state.district ? 'block' : 'none';
+  document.getElementById('catalogBudgetPicker').style.display = ['еда', 'кофейни', 'beach_club', 'спа', 'жильё'].includes(state.category) ? 'block' : 'none';
+  document.getElementById('catalogCuisineFilter').style.display = ['еда', 'кофейни'].includes(state.category) ? 'block' : 'none';
+  document.getElementById('catalogShopFilter').style.display = state.category === 'шоппинг' ? 'block' : 'none';
+
+  applyFilters();
+}
+
+function applyFilters() {
+  filteredPlaces = PLACES.filter(p => {
+    if (state.district && !matchDistrict(p.district, state.district)) return false;
+    if (state.category && p.category !== state.category) return false;
+    if (state.budget && p.budget !== state.budget) return false;
+    if (state.shopType && (!p.tags || !p.tags.includes(state.shopType))) return false;
+
+    if (state.cuisine) {
+      const cuisineStr = (p.cuisine || p.desc || '').toLowerCase();
+      if (state.cuisine === 'пп' && !cuisineStr.includes('пп') && !cuisineStr.includes('healthy') && !cuisineStr.includes('organic') && !cuisineStr.includes('зож')) return false;
+      if (state.cuisine === 'славянская' && !cuisineStr.includes('русская') && !cuisineStr.includes('славянская') && !cuisineStr.includes('белорусская')) return false;
+      if (state.cuisine !== 'пп' && state.cuisine !== 'славянская' && !cuisineStr.includes(state.cuisine)) return false;
+    }
+    return true;
+  });
+
+  currentIndex = 0;
+  document.getElementById('catalogResults').innerHTML = '';
+  document.getElementById('countBadge').innerText = filteredPlaces.length;
+  
+  loadMoreCards();
 }
 
 function loadMoreCards() {
@@ -1392,45 +1282,33 @@ function loadMoreCards() {
   container.appendChild(fragment);
   currentIndex = end;
 
-  const observerTarget = document.getElementById('scrollTrigger');
-  if (observerTarget) {
-      if (currentIndex < filteredPlaces.length) {
-        if(observerTarget) observerTarget.style.display = 'block';
-      } else {
-        if(observerTarget) observerTarget.style.display = 'none';
-      }
+  const trigger = document.getElementById('scrollTrigger');
+  if (trigger) {
+    trigger.style.display = (currentIndex < filteredPlaces.length) ? 'block' : 'none';
   }
 }
 
-// Initialize Intersection Observer for Infinite Scroll
 let observer = null;
 try {
-observer = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) {
-    loadMoreCards();
-  }
-}, { rootMargin: '200px' });
-} catch(e) { console.log('IntersectionObserver not supported'); }
+  observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      loadMoreCards();
+    }
+  }, { rootMargin: '200px' });
+} catch(e) {
+  console.log("IntersectionObserver not supported");
+}
 
 window.onload = function() {
-  try {
-    if (!document.getElementById('scrollTrigger')) {
-      const trigger = document.createElement('div');
-      trigger.id = 'scrollTrigger';
-      trigger.style.height = '50px';
-      const results = document.getElementById('catalogResults');
-      if(results && results.parentNode) {
-        results.parentNode.insertBefore(trigger, results.nextSibling);
-      }
-      observer.observe(trigger);
-    }
-  } catch(e) { console.error('Error adding trigger:', e); }
+  const trigger = document.getElementById('scrollTrigger');
+  if (observer && trigger) {
+    observer.observe(trigger);
+  }
 
   const urlParams = new URLSearchParams(window.location.search);
   const districtParam = urlParams.get('d');
   
   if (districtParam) {
-    // Find the chip and highlight it
     document.querySelectorAll('#districtChips .chip').forEach(function(c) {
       if (c.innerText.includes(districtParam) || districtParam.includes(c.innerText.replace(/[^\wа-яА-ЯёЁ\s]/g,'').trim())) {
         updateFilter('district', districtParam, c);
@@ -1441,8 +1319,6 @@ window.onload = function() {
     applyFilters();
   }
 };
-
-
 </script>
 </body>
 </html>
