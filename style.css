@@ -118,3 +118,20 @@ td strong{color:#2a2a28}
 
 /* Green gradient button (base, catalog) */
 .btn-green{display:block;width:100%;padding:14px 24px;border-radius:14px;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;font-size:14px;text-align:center;margin-bottom:16px}
+
+
+.scroll-chips {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  padding: 4px 16px;
+  margin-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+.scroll-chips::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+#districtChips .chip {
+  flex: 0 0 auto;
+}
