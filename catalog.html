@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
+<script>
+window.onerror = function(msg, url, line, col, error) {
+   var errDiv = document.createElement('div');
+   errDiv.style.background = 'red';
+   errDiv.style.color = 'white';
+   errDiv.style.padding = '20px';
+   errDiv.style.position = 'fixed';
+   errDiv.style.top = '0';
+   errDiv.style.left = '0';
+   errDiv.style.width = '100%';
+   errDiv.style.zIndex = '9999';
+   errDiv.innerHTML = "КРИТИЧЕСКАЯ ОШИБКА КОДА:<br>" + msg + "<br>Строка: " + line;
+   document.body.appendChild(errDiv);
+   return false;
+};
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Каталог мест</title>
@@ -1377,19 +1395,22 @@ function loadMoreCards() {
   const observerTarget = document.getElementById('scrollTrigger');
   if (observerTarget) {
       if (currentIndex < filteredPlaces.length) {
-        observerTarget.style.display = 'block';
+        if(observerTarget) observerTarget.style.display = 'block';
       } else {
-        observerTarget.style.display = 'none';
+        if(observerTarget) observerTarget.style.display = 'none';
       }
   }
 }
 
 // Initialize Intersection Observer for Infinite Scroll
-const observer = new IntersectionObserver((entries) => {
+let observer = null;
+try {
+observer = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting) {
     loadMoreCards();
   }
 }, { rootMargin: '200px' });
+} catch(e) { console.log('IntersectionObserver not supported'); }
 
 window.onload = function() {
   try {
