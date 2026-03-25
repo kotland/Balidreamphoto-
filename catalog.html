@@ -124,6 +124,12 @@
 
 <script>
 
+window.onerror = function(msg, url, line, col, error) {
+   alert("GLOBAL ERROR: " + msg + "\nLine: " + line);
+   return false;
+};
+
+
 var PLACES=[
 {name:'Seniman Coffee Studio',district:'Убуд',category:'кофейни',budget:'💛',price:'35-60K',desc:' · Лучший specialty coffee в Убуде. Свои зёрна, обжарка на месте, pour-over, cold brew.google.com/maps/search/Seniman+Coffee+Studio+Ubud',cuisine:'кофе',vegan:false,insta:false,booking:false,isTopChoice:true,signatureDish:'Pour-over из зёрен Флорес',maps:'https://maps'},
 {name:'Anomali Coffee',district:'Убуд',category:'кофейни',budget:'💛',price:'35-55K',desc:'Индонезийский specialty бренд. Зёрна со всего архипелага. Уютная терраса. ,cuisine:'кофе',vegan:false,insta:false,booking:false,signatureDish:'Kopi Susu и зёрна Toraja'},
