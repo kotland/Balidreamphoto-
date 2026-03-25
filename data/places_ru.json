@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Gedhe Leather Bali",
+    "district": "Чангу",
+    "category": "шоппинг",
+    "budget": "💛",
+    "price": "от 1M",
+    "desc": "Казаки, ремни и обувь из натуральной кожи. Отшивают по вашим меркам прямо на Бали. Очень стильно и качественно.",
+    "maps": "https://maps.google.com/maps/search/Gedhe+Leather+Bali",
+    "vegan": false,
+    "insta": false,
+    "booking": false,
+    "tags": [
+      "одежда",
+      "обувь",
+      "$$"
+    ]
+  },
+  {
+    "name": "BURO Bali",
+    "district": "Чангу",
+    "category": "шоппинг",
+    "budget": "💛",
+    "price": "от 500K",
+    "desc": "Стильные юбки, одежда и аксессуары. Концепт-стор с отличной селекцией балийских и международных дизайнеров.",
+    "maps": "https://maps.google.com/maps/search/BURO+Bali",
+    "vegan": false,
+    "insta": false,
+    "booking": false,
+    "tags": [
+      "одежда",
+      "женское",
+      "$$"
+    ]
+  },
+  {
+    "name": "Kevala Home Uluwatu (соседний магазин)",
+    "district": "Улувату",
+    "category": "шоппинг",
+    "budget": "💛",
+    "price": "от 300K",
+    "desc": "Магазин рядом с Kevala Home в Улувату. Отличные купальники, джинсовки и пляжная одежда.",
+    "maps": "https://maps.google.com/maps/search/Kevala+Home+Uluwatu",
+    "vegan": false,
+    "insta": false,
+    "booking": false,
+    "tags": [
+      "одежда",
+      "купальники",
+      "женское",
+      "$$"
+    ]
+  },
+  {
+    "name": "Balm Wears",
+    "district": "Семиньяк",
+    "category": "шоппинг",
+    "budget": "💛",
+    "desc": "Минималистичные блузы, платья и качественная базовая одежда из натуральных тканей. Идеально для балийской жары.",
+    "maps": "https://maps.google.com/maps/search/Balm+Wears+Bali",
+    "vegan": false,
+    "insta": false,
+    "booking": false,
+    "tags": [
+      "одежда",
+      "женское",
+      "$$"
+    ]
+  },
+  {
+    "name": "Cordero Gallery",
+    "district": "Чангу",
+    "category": "шоппинг",
+    "budget": "💛",
+    "desc": "Концепт-стор и галерея. Уникальные юбки, дизайнерские вещи и арт-объекты.",
+    "maps": "https://maps.google.com/maps/search/Cordero+Gallery+Bali",
+    "vegan": false,
+    "insta": false,
+    "booking": false,
+    "tags": [
+      "одежда",
+      "женское",
+      "$$"
+    ]
+  }
+]
