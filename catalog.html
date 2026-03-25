@@ -1238,29 +1238,88 @@ function updateFilter(key, value, el) {
 }
 
 function applyFilters() {
-  filteredPlaces = PLACES.filter(p => {
-    if (state.district && !matchDistrict(p.district, state.district)) return false;
-    if (state.category && p.category !== state.category) return false;
-    if (state.budget && p.budget !== state.budget) return false;
-    if (state.galleryType && (!p.tags || !p.tags.includes(state.galleryType))) return false;
-    if (state.wowType && (!p.tags || !p.tags.includes(state.wowType))) return false;
-    if (state.shopType && (!p.tags || !p.tags.includes(state.shopType))) return false;
+  try {
+    filteredPlaces = PLACES.filter(p => {
+      if (state.district && !matchDistrict(p.district, state.district)) return false;
+      if (state.category && p.category !== state.category) return false;
+      if (state.budget && p.budget !== state.budget) return false;
+      if (state.galleryType && (!p.tags || !p.tags.includes(state.galleryType))) return false;
+      if (state.wowType && (!p.tags || !p.tags.includes(state.wowType))) return false;
+      if (state.shopType && (!p.tags || !p.tags.includes(state.shopType))) return false;
 
-    if (state.cuisine) {
-      const cuisineStr = (p.cuisine || p.desc || '').toLowerCase();
-      if (state.cuisine === 'пп' && !cuisineStr.includes('пп') && !cuisineStr.includes('healthy') && !cuisineStr.includes('organic') && !cuisineStr.includes('зож')) return false;
-      if (state.cuisine === 'славянская' && !cuisineStr.includes('русская') && !cuisineStr.includes('славянская') && !cuisineStr.includes('белорусская')) return false;
-      if (state.cuisine !== 'пп' && state.cuisine !== 'славянская' && !cuisineStr.includes(state.cuisine)) return false;
+      if (state.cuisine) {
+        const cuisineStr = (p.cuisine || p.desc || '').toLowerCase();
+        if (state.cuisine === 'пп' && !cuisineStr.includes('пп') && !cuisineStr.includes('healthy') && !cuisineStr.includes('organic') && !cuisineStr.includes('зож')) return false;
+        if (state.cuisine === 'славянская' && !cuisineStr.includes('русская') && !cuisineStr.includes('славянская') && !cuisineStr.includes('белорусская')) return false;
+        if (state.cuisine !== 'пп' && state.cuisine !== 'славянская' && !cuisineStr.includes(state.cuisine)) return false;
+      }
+      return true;
+    });
+
+    currentIndex = 0;
+    document.getElementById('catalogResults').innerHTML = '';
+    document.getElementById('countBadge').innerText = filteredPlaces.length;
+    
+    loadMoreCards();
+  } catch(e) {
+    document.getElementById('catalogResults').innerHTML = '<div style="color:red;padding:20px;">КРИТИЧЕСКАЯ ОШИБКА APPLY FILTERS: ' + e.message + '<br>' + e.stack + '</div>';
+    console.error(e);
+  }
+}
+
+function loadMoreCards() {
+  try {
+    const container = document.getElementById('catalogResults');
+    const fragment = document.createDocumentFragment();
+    const end = Math.min(currentIndex + ITEMS_PER_PAGE, filteredPlaces.length);
+
+    for (let i = currentIndex; i < end; i++) {
+      const p = filteredPlaces[i];
+      const el = document.createElement('div');
+      el.className = 'place';
+      
+      let html = '';
+      if (p.isTopChoice) {
+        html += '<div style="display:inline-block;background:#fff9e6;color:#b38a00;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;margin-bottom:8px;border:1px solid rgba(179,138,0,0.2)">⭐️ Выбор большинства</div>';
+      }
+      
+      html += '<div class="place-name">' + escapeHtml(p.name) + '</div>';
+      
+      let meta = [];
+      if (p.district) meta.push(escapeHtml(p.district));
+      if (p.category) meta.push(escapeHtml(p.category));
+      if (p.budget) meta.push(escapeHtml(p.budget));
+      
+      html += '<div class="place-meta">' + meta.join(' · ') + '</div>';
+      html += '<div class="place-desc">' + escapeHtml(p.desc) + (p.price ? ' · ' + escapeHtml(p.price) : '') + '</div>';
+      
+      if (p.signatureDish) {
+        html += '<div style="margin-top:12px;padding-top:12px;border-top:1px dashed rgba(0,0,0,0.1);font-size:13px;color:rgba(42,42,40,0.8)"><span style="font-weight:600">🍽 Стоит попробовать:</span> ' + escapeHtml(p.signatureDish) + '</div>';
+      }
+      
+      if (p.maps) {
+        html += '<div class="place-meta" style="margin-top:12px">📍 <a href="' + escapeHtml(p.maps) + '" target="_blank" style="color:#2a6b5a;text-decoration:none;font-weight:500;">Открыть на карте</a></div>';
+      }
+      
+      el.innerHTML = html;
+      fragment.appendChild(el);
     }
-    return true;
-  });
 
-  // Reset pagination and DOM
-  currentIndex = 0;
-  document.getElementById('catalogResults').innerHTML = '';
-  document.getElementById('countBadge').innerText = filteredPlaces.length;
-  
-  loadMoreCards();
+    container.appendChild(fragment);
+    currentIndex = end;
+
+    const observerTarget = document.getElementById('scrollTrigger');
+    if (observerTarget) {
+        if (currentIndex < filteredPlaces.length) {
+          observerTarget.style.display = 'block';
+        } else {
+          observerTarget.style.display = 'none';
+        }
+    }
+  } catch(e) {
+    document.getElementById('catalogResults').innerHTML += '<div style="color:red;padding:20px;">КРИТИЧЕСКАЯ ОШИБКА LOAD MORE: ' + e.message + '<br>' + e.stack + '</div>';
+    console.error(e);
+  }
 }
 
 function escapeHtml(text) {
