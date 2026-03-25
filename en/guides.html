@@ -213,9 +213,18 @@ function openGuide(guide){
   var cards = document.querySelectorAll('.result-card');
   var results = [];
   cards.forEach(function(card) {
-    var name = card.querySelector('.result-name');
+    var name = card.querySelector('.result-name') || card.querySelector('div[style*="font-size:16px"]');
     var pct = card.querySelector('.result-match');
-    if (name && pct) results.push({name: name.textContent, pct: pct.textContent});
+    if (name) results.push({name: name.textContent, pct: pct ? pct.textContent : ''});
+  });
+  localStorage.setItem('quizResults', JSON.stringify({
+    districts: results,
+    selWho: selWho,
+    selWhat: selWhat,
+    resultsHTML: document.getElementById('resultsContainer').parentElement.innerHTML
+  }));
+  window.location.href='guide-'+guide+'.html';
+});
   });
   localStorage.setItem('quizResults', JSON.stringify({
     districts: results,
