@@ -4,7 +4,17 @@
 
 <script>
 window.onerror = function(msg, url, line, col, error) {
-   alert("КРИТИЧЕСКАЯ ОШИБКА КОДА:\n" + msg + "\nФайл: " + url + "\nСтрока: " + line);
+   var errDiv = document.createElement('div');
+   errDiv.style.background = 'red';
+   errDiv.style.color = 'white';
+   errDiv.style.padding = '20px';
+   errDiv.style.position = 'fixed';
+   errDiv.style.top = '0';
+   errDiv.style.left = '0';
+   errDiv.style.width = '100%';
+   errDiv.style.zIndex = '9999';
+   errDiv.innerHTML = "КРИТИЧЕСКАЯ ОШИБКА КОДА:<br>" + msg + "<br>Строка: " + line;
+   document.body.appendChild(errDiv);
    return false;
 };
 </script>
@@ -132,285 +142,20 @@ window.onerror = function(msg, url, line, col, error) {
 
 <script src="places.js"></script>
 <script>
-
 window.onerror = function(msg, url, line, col, error) {
-   alert("GLOBAL ERROR: " + msg + "\nLine: " + line);
+   var errDiv = document.createElement('div');
+   errDiv.style.background = 'red';
+   errDiv.style.color = 'white';
+   errDiv.style.padding = '20px';
+   errDiv.style.position = 'fixed';
+   errDiv.style.top = '0';
+   errDiv.style.left = '0';
+   errDiv.style.width = '100%';
+   errDiv.style.zIndex = '9999';
+   errDiv.innerHTML = "КРИТИЧЕСКАЯ ОШИБКА КОДА:<br>" + msg + "<br>Строка: " + line;
+   document.body.appendChild(errDiv);
    return false;
 };
-
-
-
-
-const state = {
-  district: '',
-  category: '',
-  budget: '',
-  cuisine: '',
-  shopType: '',
-  galleryType: '',
-  wowType: ''
-};
-
-const DISTRICT_SUBS = {
-  'Убуд':['Убуд'],
-  'Чангу':['Чангу'],
-  'Семиньяк':['Семиньяк'],
-  'Улувату':['Улувату'],
-  'Букит и Нуса-Дуа':['Букит и Нуса-Дуа'],
-  'Санур':['Санур'],
-  'Амед и Восток':['Амед и Восток', 'Амед'],
-  'Север Бали':['Север Бали', 'Север', 'Ловина'],
-  'Нуса Пенида':['Нуса Пенида'],
-  'Гили':['Гили'],
-  'Ломбок и Сумбава':['Ломбок и Сумбава', 'Ломбок', 'Сумбава'],
-  'Ява':['Ява']
-};
-
-let filteredPlaces = [];
-let currentIndex = 0;
-const ITEMS_PER_PAGE = 20;
-
-function matchDistrict(pDistrict, filterD) {
-  if (!filterD) return true;
-  var subs = DISTRICT_SUBS[filterD];
-  if (subs) {
-    return subs.includes(pDistrict);
-  }
-  return pDistrict === filterD;
-}
-
-function updateFilter(key, value, el) {
-  // Highlight chip
-  if (el) {
-    el.parentNode.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
-    if (value !== '') {
-        el.classList.add('selected');
-    }
-  }
-
-  // Update state
-  state[key] = value;
-
-  // Reset dependent filters if district or category changes
-  if (key === 'district') {
-    state.category = '';
-    state.budget = '';
-    state.cuisine = '';
-    state.shopType = '';
-    state.galleryType = '';
-    state.wowType = '';
-    document.querySelectorAll('#catalogCategoryPicker .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogGalleryFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogWowFilter .chip').forEach(c => c.classList.remove('selected'));
-  }
-  
-  if (key === 'category') {
-    state.budget = '';
-    state.cuisine = '';
-    state.shopType = '';
-    state.galleryType = '';
-    state.wowType = '';
-    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogGalleryFilter .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogWowFilter .chip').forEach(c => c.classList.remove('selected'));
-  }
-
-  // Show/hide sub-filters based on category
-  document.getElementById('catalogCategoryPicker').style.display = state.district ? 'block' : 'none';
-  document.getElementById('catalogBudgetPicker').style.display = ['еда', 'кофейни', 'beach_club', 'спа', 'жильё'].includes(state.category) ? 'block' : 'none';
-  document.getElementById('catalogCuisineFilter').style.display = ['еда', 'кофейни'].includes(state.category) ? 'block' : 'none';
-  document.getElementById('catalogShopFilter').style.display = state.category === 'шоппинг' ? 'block' : 'none';
-  document.getElementById('catalogGalleryFilter').style.display = state.category === 'галерея' ? 'block' : 'none';
-  document.getElementById('catalogWowFilter').style.display = state.category === 'развлечения' ? 'block' : 'none';
-
-  // Apply filters
-  applyFilters();
-}
-
-function applyFilters() {
-  try {
-    filteredPlaces = PLACES.filter(p => {
-      if (state.district && !matchDistrict(p.district, state.district)) return false;
-      if (state.category && p.category !== state.category) return false;
-      if (state.budget && p.budget !== state.budget) return false;
-      if (state.galleryType && (!p.tags || !p.tags.includes(state.galleryType))) return false;
-      if (state.wowType && (!p.tags || !p.tags.includes(state.wowType))) return false;
-      if (state.shopType && (!p.tags || !p.tags.includes(state.shopType))) return false;
-
-      if (state.cuisine) {
-        const cuisineStr = (p.cuisine || p.desc || '').toLowerCase();
-        if (state.cuisine === 'пп' && !cuisineStr.includes('пп') && !cuisineStr.includes('healthy') && !cuisineStr.includes('organic') && !cuisineStr.includes('зож')) return false;
-        if (state.cuisine === 'славянская' && !cuisineStr.includes('русская') && !cuisineStr.includes('славянская') && !cuisineStr.includes('белорусская')) return false;
-        if (state.cuisine !== 'пп' && state.cuisine !== 'славянская' && !cuisineStr.includes(state.cuisine)) return false;
-      }
-      return true;
-    });
-
-    currentIndex = 0;
-    document.getElementById('catalogResults').innerHTML = '';
-    document.getElementById('countBadge').innerText = filteredPlaces.length;
-    
-    loadMoreCards();
-  } catch(e) {
-    document.getElementById('catalogResults').innerHTML = '<div style="color:red;padding:20px;">КРИТИЧЕСКАЯ ОШИБКА APPLY FILTERS: ' + e.message + '<br>' + e.stack + '</div>';
-    console.error(e);
-  }
-}
-
-function loadMoreCards() {
-  try {
-    const container = document.getElementById('catalogResults');
-    const fragment = document.createDocumentFragment();
-    const end = Math.min(currentIndex + ITEMS_PER_PAGE, filteredPlaces.length);
-
-    for (let i = currentIndex; i < end; i++) {
-      const p = filteredPlaces[i];
-      const el = document.createElement('div');
-      el.className = 'place';
-      
-      let html = '';
-      if (p.isTopChoice) {
-        html += '<div style="display:inline-block;background:#fff9e6;color:#b38a00;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;margin-bottom:8px;border:1px solid rgba(179,138,0,0.2)">⭐️ Выбор большинства</div>';
-      }
-      
-      html += '<div class="place-name">' + escapeHtml(p.name) + '</div>';
-      
-      let meta = [];
-      if (p.district) meta.push(escapeHtml(p.district));
-      if (p.category) meta.push(escapeHtml(p.category));
-      if (p.budget) meta.push(escapeHtml(p.budget));
-      
-      html += '<div class="place-meta">' + meta.join(' · ') + '</div>';
-      html += '<div class="place-desc">' + escapeHtml(p.desc) + (p.price ? ' · ' + escapeHtml(p.price) : '') + '</div>';
-      
-      if (p.signatureDish) {
-        html += '<div style="margin-top:12px;padding-top:12px;border-top:1px dashed rgba(0,0,0,0.1);font-size:13px;color:rgba(42,42,40,0.8)"><span style="font-weight:600">🍽 Стоит попробовать:</span> ' + escapeHtml(p.signatureDish) + '</div>';
-      }
-      
-      if (p.maps) {
-        html += '<div class="place-meta" style="margin-top:12px">📍 <a href="' + escapeHtml(p.maps) + '" target="_blank" style="color:#2a6b5a;text-decoration:none;font-weight:500;">Открыть на карте</a></div>';
-      }
-      
-      el.innerHTML = html;
-      fragment.appendChild(el);
-    }
-
-    container.appendChild(fragment);
-    currentIndex = end;
-
-    const observerTarget = document.getElementById('scrollTrigger');
-    if (observerTarget) {
-        observerTarget.style.display = (currentIndex < filteredPlaces.length) ? 'block' : 'none';
-    }
-  } catch(e) {
-    document.getElementById('catalogResults').innerHTML += '<div style="color:red;padding:20px;">КРИТИЧЕСКАЯ ОШИБКА LOAD MORE: ' + e.message + '<br>' + e.stack + '</div>';
-    console.error(e);
-  }
-}
-
-function escapeHtml(text) {
-  if(!text) return '';
-  return text.toString()
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-
-function loadMoreCards() {
-  const container = document.getElementById('catalogResults');
-  const fragment = document.createDocumentFragment();
-  const end = Math.min(currentIndex + ITEMS_PER_PAGE, filteredPlaces.length);
-
-  for (let i = currentIndex; i < end; i++) {
-    const p = filteredPlaces[i];
-    const el = document.createElement('div');
-    el.className = 'place';
-    
-    let html = '';
-    if (p.isTopChoice) {
-      html += '<div style="display:inline-block;background:#fff9e6;color:#b38a00;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;margin-bottom:8px;border:1px solid rgba(179,138,0,0.2)">⭐️ Выбор большинства</div>';
-    }
-    
-    html += '<div class="place-name">' + escapeHtml(p.name) + '</div>';
-    
-    let meta = [];
-    if (p.district) meta.push(escapeHtml(p.district));
-    if (p.category) meta.push(escapeHtml(p.category));
-    if (p.budget) meta.push(escapeHtml(p.budget));
-    
-    html += '<div class="place-meta">' + meta.join(' · ') + '</div>';
-    html += '<div class="place-desc">' + escapeHtml(p.desc) + (p.price ? ' · ' + escapeHtml(p.price) : '') + '</div>';
-    
-    if (p.signatureDish) {
-      html += '<div style="margin-top:12px;padding-top:12px;border-top:1px dashed rgba(0,0,0,0.1);font-size:13px;color:rgba(42,42,40,0.8)"><span style="font-weight:600">🍽 Стоит попробовать:</span> ' + escapeHtml(p.signatureDish) + '</div>';
-    }
-    
-    if (p.maps) {
-      html += '<div class="place-meta" style="margin-top:12px">📍 <a href="' + escapeHtml(p.maps) + '" target="_blank" style="color:#2a6b5a;text-decoration:none;font-weight:500;">Открыть на карте</a></div>';
-    }
-    
-    el.innerHTML = html;
-    fragment.appendChild(el);
-  }
-
-  container.appendChild(fragment);
-  currentIndex = end;
-
-  const observerTarget = document.getElementById('scrollTrigger');
-  if (observerTarget) {
-      if (currentIndex < filteredPlaces.length) {
-        observerTarget.style.display = 'block';
-      } else {
-        observerTarget.style.display = 'none';
-      }
-  }
-}
-
-// Initialize Intersection Observer for Infinite Scroll
-const observer = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) {
-    loadMoreCards();
-  }
-}, { rootMargin: '200px' });
-
-window.onload = function() {
-  try {
-    if (!document.getElementById('scrollTrigger')) {
-      const trigger = document.createElement('div');
-      trigger.id = 'scrollTrigger';
-      trigger.style.height = '50px';
-      const results = document.getElementById('catalogResults');
-      if(results && results.parentNode) {
-        results.parentNode.insertBefore(trigger, results.nextSibling);
-      }
-      observer.observe(trigger);
-    }
-  } catch(e) { console.error('Error adding trigger:', e); }
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const districtParam = urlParams.get('d');
-  
-  if (districtParam) {
-    // Find the chip and highlight it
-    document.querySelectorAll('#districtChips .chip').forEach(function(c) {
-      if (c.innerText.includes(districtParam) || districtParam.includes(c.innerText.replace(/[^\wа-яА-ЯёЁ\s]/g,'').trim())) {
-        updateFilter('district', districtParam, c);
-        setTimeout(() => c.scrollIntoView({behavior: "smooth", inline: "center"}), 100);
-      }
-    });
-  } else {
-    applyFilters();
-  }
-};
-
-
 </script>
 </body>
 </html>
