@@ -311,7 +311,7 @@
 <h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">💅 Салоны красоты <span class="arrow-cat">▸</span></h2>
 <div class="accordion-cat-content">
 
-<div class="place"><div class="place-name">NOKTI</div><div class="place-desc">Лучший русский маникюр + smart-педикюр на Бали. Несколько локаций. Бронируй заранее!</div>
+<div class="place"><div class="place-name">⭐️ NOKTI</div><div class="place-desc">Лучший русский маникюр + smart-педикюр на Бали. Несколько локаций. Бронируй заранее!</div>
 <div class="place-meta">📍 <a href="https://www.google.com/maps/search/NOKTI+nail+salon+Canggu+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Маникюр от 200K; Гель от 350K</div></div>
 <div class="place"><div class="place-name">Trove</div><div class="place-desc">Премиум nail art. Давно на рынке, не такой дорогой как кажется. Высокое качество.</div>
 <div class="place-meta">📍 <a href="https://www.google.com/maps/search/Trove+nail+salon+Canggu+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Маникюр от 150K; Nail art от 300K</div></div>
@@ -811,6 +811,53 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
+    [
+      {
+        time: '11:00',
+        name: 'Mavammy Canggu',
+        desc: '[чилл] Поздний, ленивый завтрак. Садимся, заказываем сырники и кофе, никуда не спешим.',
+        price: '100k IDR',
+        maps: 'https://maps.google.com/?q=Mavammy+Canggu'
+      },
+      {
+        time: '13:00',
+        name: 'AMO Spa',
+        desc: 'Идём на 2 часа полного релакса. Сауны, ледяные купели, массаж. Это то самое место для тотальной перезагрузки тела.',
+        price: '300-500k IDR',
+        maps: 'https://maps.google.com/?q=AMO+Spa+Canggu'
+      },
+      {
+        time: '16:00',
+        name: 'La Brisa',
+        desc: 'Перемещаемся в бич-клаб к закату. Берём лежак, свежий кокос и просто лежим, слушая шум океана до самого вечера.',
+        price: 'От 200k IDR',
+        maps: 'https://maps.google.com/?q=La+Brisa+Bali'
+      }
+    ],
+    [
+      {
+        time: '10:30',
+        name: 'NOVA Wellness Club',
+        desc: '[чилл] День любви к себе. Начинаем с мягкой растяжки или просто здорового смузи-боула у бассейна.',
+        price: '150k IDR',
+        maps: 'https://maps.google.com/?q=NOVA+Wellness+Club+Bali'
+      },
+      {
+        time: '13:00',
+        name: 'Batu Bolong Beach',
+        desc: 'Аренда шезлонга на пляже под зонтиком. Читаем книгу, пьём кокос, можно взять лёгкий массаж прямо на пляже.',
+        price: '50k IDR',
+        maps: 'https://maps.google.com/?q=Batu+Bolong+Beach'
+      },
+      {
+        time: '17:00',
+        name: 'The Lawn',
+        desc: 'Перемещаемся на газон с видом на океан. Коктейли, приятная музыка, мягкий закатный свет.',
+        price: 'От 200k IDR',
+        maps: 'https://maps.google.com/?q=The+Lawn+Canggu'
+      }
+    ],
+
     // --- Variant 1 ---
     [
       {
@@ -1850,6 +1897,103 @@ var MANUAL_ROUTES_ZONE = [
         price: '150-250k IDR',
         maps: 'https://maps.google.com/?q=Nuanu+Creative+City+Bali'
       }
+    ],
+    // --- Variant 21: Гастро-тур по Чангу ---
+    [
+      {
+        time: '09:00',
+        name: 'Crate Cafe',
+        desc: 'Легенда Чангу. Один из первых specialty-кафе района. Завтрак здесь — обряд посвящения в сёрф-жизнь.',
+        price: '60-130K',
+        maps: 'https://maps.google.com/maps/search/Crate+Cafe+Canggu+Bali'
+      },
+      {
+        time: '10:30',
+        name: 'Batu Bolong Beach',
+        desc: 'После завтрака — 20 минут на пляже. Посмотри на сёрферов, искупайся. Волны тут мягкие.',
+        price: 'бесплатно',
+        maps: 'https://maps.google.com/?q=Batu+Bolong+Beach+Canggu'
+      },
+      {
+        time: '12:00',
+        name: 'Avocutseatery',
+        desc: 'Кафе авокадо-маньяков. Авокадо-тосты во всех вариациях, боулы, смузи. Зелёное и фотогеничное.',
+        price: '55-120K',
+        maps: 'https://maps.google.com/maps/search/Avocutseatery+Canggu+Bali'
+      },
+      {
+        time: '14:00',
+        name: 'Hungry Bird Coffee',
+        desc: 'Specialty roasters — свои зёрна, pour-over, cold brew. Минималистичный дизайн, максимум вкуса.',
+        price: '35-80K',
+        maps: 'https://maps.google.com/maps/search/Hungry+Bird+Coffee+Canggu+Bali'
+      },
+      {
+        time: '16:00',
+        name: 'BaliBabe Bowls',
+        desc: 'Быстрый перекус — смузи-боул с асаи и питайей. Ярко, вкусно, полезно.',
+        price: '35-70K',
+        maps: 'https://maps.google.com/maps/search/BaliBabe+Bowls+Canggu+Bali'
+      },
+      {
+        time: '18:00',
+        name: 'Masa Canggu',
+        desc: 'Мексиканское бистро на ужин. Тако, начос, буррито-боулы. Крафтовые маргариты под закат.',
+        price: '50-120K',
+        maps: 'https://maps.google.com/maps/search/Masa+Canggu+Bali'
+      },
+      {
+        time: '20:00',
+        name: 'Dumbo',
+        desc: 'Финал — итальянская пиццерия. Тонкое тесто, натуральная закваска. Бокал вина, пицца, Чангу.',
+        price: '60-150K',
+        maps: 'https://maps.google.com/maps/search/Dumbo+Pizza+Canggu+Bali'
+      }
+    ],
+    // --- Variant 22: Сёрфер + здоровая еда ---
+    [
+      {
+        time: '07:00',
+        name: 'Easy Cafe Canggu',
+        desc: 'Бюджетный завтрак для сёрфера. Наси горенг, смузи-боул. Быстро, сытно, дёшево — и на волны.',
+        price: '35-80K',
+        maps: 'https://maps.google.com/maps/search/Easy+Cafe+Canggu+Bali'
+      },
+      {
+        time: '08:00',
+        name: 'Echo Beach Surf',
+        desc: 'Серфинг на Echo Beach. Волны средней мощности, идеально для промежуточного уровня.',
+        price: 'бесплатно',
+        maps: 'https://maps.google.com/?q=Echo+Beach+Canggu'
+      },
+      {
+        time: '11:00',
+        name: 'Mavammy Canggu',
+        desc: 'После сёрфа — завтрак-бранч. Панкейки, яйца Бенедикт, латте. Перезарядка.',
+        price: '50-120K',
+        maps: 'https://maps.google.com/maps/search/Mavammy+Canggu+Bali'
+      },
+      {
+        time: '14:00',
+        name: 'Powerbank Cafe',
+        desc: 'Кофейня с быстрым WiFi. Specialty кофе, матча, выпечка. Поработай пару часов.',
+        price: '40-90K',
+        maps: 'https://maps.google.com/maps/search/Powerbank+Cafe+Canggu+Bali'
+      },
+      {
+        time: '17:00',
+        name: 'Penny Lane Canggu',
+        desc: 'Ретро-кафе с Beatles на стенах. Коктейли, бёргеры, сёрф-атмосфера. Закат на веранде.',
+        price: '55-120K',
+        maps: 'https://maps.google.com/maps/search/Penny+Lane+Canggu+Bali'
+      },
+      {
+        time: '19:30',
+        name: 'I Am Vegan Babe',
+        desc: 'Полностью веганский ресторан. Бёргеры и пицца — не верится, что без мяса. Попробуй.',
+        price: '50-120K',
+        maps: 'https://maps.google.com/maps/search/I+Am+Vegan+Babe+Canggu'
+      }
     ]
   ];
 
@@ -1863,7 +2007,34 @@ function generateRandomRoute(zoneKey) {
     var route = routes[idx];
     var html = '<div style="padding:20px">';
     html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:20px">🗺 Твой маршрут на день</div>';
-    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px">Маршрут ' + (idx+1) + '/' + routes.length + ' · Нажми ещё раз для следующего</div>';
+    
+    var isHard = false;
+    var isChill = false;
+    var routeText = JSON.stringify(route).toLowerCase();
+    var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+    var hourMatch = firstTimeStr.match(/\d{2}/);
+    var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+    
+    if (hour <= 8 || route.length > 5 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+      isHard = true;
+    }
+    if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+      isChill = true;
+      isHard = false;
+    }
+    
+    var badge = '';
+    if (isChill) {
+      badge = '<span style="margin-left:8px; background:rgba(255,182,193,0.3); color:#e83e8c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🌸 Чилл</span>';
+    } else if (isHard) {
+      badge = '<span style="margin-left:8px; background:rgba(255,87,34,0.15); color:#e64a19; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🔥 Хард</span>';
+    } else {
+      badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
+    }
+
+    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px;display:flex;align-items:center;justify-content:center;">Маршрут ' + (idx+1) + '/' + routes.length + badge + '</div>';
+    html += '<div style="font-size:11px;color:rgba(42,42,40,0.4);text-align:center;margin-top:-16px;margin-bottom:24px;">Нажми ещё раз для следующего</div>';
+
     for (var i = 0; i < route.length; i++) {
       var p = route[i];
       html += '<div style="background:rgba(255,255,255,0.7);border-radius:16px;padding:16px;margin-bottom:12px">';
@@ -1873,6 +2044,31 @@ function generateRandomRoute(zoneKey) {
       if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
     }
+
+    // --- Google Maps Directions button ---
+    var mapPlaces = [];
+    for (var j = 0; j < route.length; j++) {
+      var tags = route[j].tags || [];
+      var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
+      if (!isHotel) {
+        mapPlaces.push(route[j].name);
+      }
+    }
+    if (mapPlaces.length >= 2) {
+      var origin = encodeURIComponent(mapPlaces[0] + ' Bali');
+      var destination = encodeURIComponent(mapPlaces[mapPlaces.length - 1] + ' Bali');
+      var waypoints = '';
+      if (mapPlaces.length > 2) {
+        var wp = [];
+        for (var k = 1; k < mapPlaces.length - 1; k++) {
+          wp.push(encodeURIComponent(mapPlaces[k] + ' Bali'));
+        }
+        waypoints = '&waypoints=' + wp.join('%7C');
+      }
+      var mapsUrl = 'https://www.google.com/maps/dir/?api=1&origin=' + origin + '&destination=' + destination + waypoints + '&travelmode=driving';
+      html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
+    }
+    // --- End Google Maps Directions button ---
     html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="generateRandomRoute(\'canggu\')" style="padding:12px 24px;border-radius:12px">🔄 Другой маршрут</button></div>';
     html += '<div style="text-align:center;margin-top:16px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к гайду</button></div>';
     html += '</div>';
