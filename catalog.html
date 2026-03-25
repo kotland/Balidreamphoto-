@@ -1310,11 +1310,7 @@ function loadMoreCards() {
 
     const observerTarget = document.getElementById('scrollTrigger');
     if (observerTarget) {
-        if (currentIndex < filteredPlaces.length) {
-          observerTarget.style.display = 'block';
-        } else {
-          observerTarget.style.display = 'none';
-        }
+        observerTarget.style.display = (currentIndex < filteredPlaces.length) ? 'block' : 'none';
     }
   } catch(e) {
     document.getElementById('catalogResults').innerHTML += '<div style="color:red;padding:20px;">КРИТИЧЕСКАЯ ОШИБКА LOAD MORE: ' + e.message + '<br>' + e.stack + '</div>';
@@ -1390,14 +1386,18 @@ const observer = new IntersectionObserver((entries) => {
 }, { rootMargin: '200px' });
 
 window.onload = function() {
-  // Add scroll trigger div if it doesn't exist
-  if (!document.getElementById('scrollTrigger')) {
-    const trigger = document.createElement('div');
-    trigger.id = 'scrollTrigger';
-    trigger.style.height = '50px';
-    document.getElementById('catalogResults').after(trigger);
-    observer.observe(trigger);
-  }
+  try {
+    if (!document.getElementById('scrollTrigger')) {
+      const trigger = document.createElement('div');
+      trigger.id = 'scrollTrigger';
+      trigger.style.height = '50px';
+      const results = document.getElementById('catalogResults');
+      if(results && results.parentNode) {
+        results.parentNode.insertBefore(trigger, results.nextSibling);
+      }
+      observer.observe(trigger);
+    }
+  } catch(e) { console.error('Error adding trigger:', e); }
 
   const urlParams = new URLSearchParams(window.location.search);
   const districtParam = urlParams.get('d');
