@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>دليل بالي — المناطق</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="../style.css">
+<style>
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+@keyframes loadBar{0%{width:0%}50%{width:70%}100%{width:100%}}
+</style>
+</head>
+<body>
+<div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
+<div class="app">
+<button class="btn btn-primary back-home-btn" onclick="window.location.href='index.html'" style="font-size:13px;padding:8px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1)">← الرئيسية</button>
+
+<!-- Map overlay/popup (referenced by JS) -->
+<div id="mapOverlay" class="map-overlay" onclick="hidePopup()"></div>
+
+
+<div class="screen active" id="startScreen"><div id="loadingIndicator" style="text-align:center;padding:40px;color:rgba(42,42,40,0.5)">جاري التحميل...</div>
+<div style="font-size:48px;text-align:center;margin:60px 0 16px">🌴</div>
+<div class="title">اعثر على <em>منطقتك</em> في بالي</div>
+<div class="subtitle">اختر من أنت وما يهمك — سنعرض لك المنطقة المناسبة. اعثر على مجتمعك.</div>
+
+<button class="btn btn-primary" onclick="goStep(1)">ابحث عن منطقة <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
+</div>
+<!-- STEP 1: Who are you -->
+<div class="screen" id="step1">
+<div class="steps"><div class="step-dot active"></div><div class="step-dot"></div></div>
+<div class="section-title">من أنت؟</div>
+<div class="title" style="font-size:22px;text-align:left;margin-bottom:20px">اختر ما <em>يناسبك</em></div>
+<div class="chips" id="whoChips"></div>
+<button class="btn btn-primary" id="btn1" disabled onclick="goStep(2)">التالي <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
+</div>
+<!-- STEP 2: What matters -->
+<div class="screen" id="step2">
+<div class="steps"><div class="step-dot done"></div><div class="step-dot active"></div></div>
+<div class="section-title">ما المهم؟</div>
+<div class="title" style="font-size:22px;text-align:left;margin-bottom:20px">حدد كل ما <em>يلفت انتباهك</em></div>
+<div class="chips" id="whatChips"></div>
+<button class="btn btn-primary" id="btn2" disabled onclick="showResults()">اعرض منطقتي <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
+</div>
+<!-- LOADING SCREEN -->
+<div class="screen" id="loadingScreen">
+<div style="text-align:center;padding:80px 20px">
+<div style="font-size:48px;margin-bottom:20px;animation:pulse 1.5s ease-in-out infinite">🌴</div>
+<h2 style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:12px">نبحث عن <em style="color:#2a6b5a">منطقتك</em></h2>
+<p style="color:rgba(42,42,40,0.5);font-size:14px">نحلل تفضيلاتك...</p>
+<div style="margin-top:30px;width:200px;height:4px;background:rgba(42,107,90,0.1);border-radius:4px;margin-left:auto;margin-right:auto;overflow:hidden">
+<div style="width:0%;height:100%;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);border-radius:4px;animation:loadBar 2s ease-out forwards"></div>
+</div>
+</div>
+</div>
+<!-- RESULT SCREEN -->
+<div class="screen" id="resultScreen">
+<div class="title" style="margin-top:20px"><em>أماكنك</em> في بالي</div>
+<div class="subtitle" style="margin-bottom:20px">أفضل المناطق حسب التوافق</div>
+
+
+
+<div id="resultsContainer">
+<div style="text-align:center;margin:30px 0 20px;padding:0 20px">
+<button class="btn" onclick="shareResults()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,107,90,0.08);color:#2a6b5a;border:1.5px solid rgba(42,107,90,0.15);font-size:14px;font-weight:600;cursor:pointer">📤 شارك مع الأصدقاء</button>
+</div>
+</div>
+
+</div>
+<div class="footer">@balidreamphoto · بالي 2026</div>
+</div>
+<script src="../places.js" defer></script>
+<script>
+/* ========== MAP DATA ========== */
+
+
+
+/* ========== ANALYTICS ========== */
+var ANALYTICS_URL='https://script.google.com/macros/s/AKfycbyoFPHfGzhyIcQzMiu165zF9ou05OeYZEMPLWrlXSLk1Rh4wAdrggCVGSlQgDeWOg9m_w/exec';
+var USER_ID='u_'+Math.random().toString(36).substr(2,9);
+var TRACK_DATA={userId:USER_ID,step:'',whoSelected:'',whatSelected:'',result1:'',result1pct:'',result2:'',result2pct:'',result3:'',guideOpened:'',purchased:''};
+function track(data){Object.keys(data).forEach(function(k){TRACK_DATA[k]=data[k]})}
+function sendTrack(){try{fetch(ANALYTICS_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(TRACK_DATA)})}catch(e){}}
+/* ========== DISTRICT FILTER DATA ========== */
+var WHO=[
+{id:'nomad',emoji:'💻',label:'رحّالة رقمي'},
+{id:'photo',emoji:'📸',label:'مصور / صانع محتوى'},
+{id:'yoga',emoji:'🧘',label:'يوغا / ممارسات روحانية'},
+{id:'surfer',emoji:'🏄',label:'راكب أمواج'},
+{id:'family',emoji:'👨‍👩‍👧',label:'عائلة مع أطفال'},
+{id:'business',emoji:'💼',label:'رائد أعمال'},
+{id:'artist',emoji:'🎨',label:'فنان / موسيقي'},
+{id:'tourist',emoji:'🌴',label:'أستمتع فقط'}
+];
+var WHAT=[
+{id:'ocean',emoji:'🌊',label:'قريب من المحيط'},
+{id:'swim',emoji:'🏊',label:'شاطئ هادئ'},
+{id:'budget',emoji:'💰',label:'اقتصادي'},
+{id:'food',emoji:'🍜',label:'طعام لذيذ'},
+{id:'vegan',emoji:'🥗',label:'نباتي'},
+{id:'coffee',emoji:'☕',label:'مقاهي'},
+{id:'yoga_sp',emoji:'🧘',label:'يوغا ورياضة'},
+{id:'retreat',emoji:'🔮',label:'ممارسات روحانية / خلوات'},
+{id:'party',emoji:'🎉',label:'حياة ليلية'},
+{id:'quiet',emoji:'🌿',label:'هدوء وطبيعة'},
+{id:'wifi',emoji:'💻',label:'مقاهي بها Wi-Fi'},
+{id:'surf',emoji:'🏄',label:'ركوب أمواج'},
+{id:'dive',emoji:'🤿',label:'غوص'},
+{id:'sunset',emoji:'🌅',label:'غروب جميل'},
+{id:'culture',emoji:'🛕',label:'معابد وثقافة'},
+{id:'gallery',emoji:'🖼',label:'معارض ومتاحف'},
+{id:'masterclass',emoji:'🎓',label:'ورش عمل'},
+{id:'volcano',emoji:'🌋',label:'براكين وجبال'},
+{id:'rice',emoji:'🌾',label:'مدرجات الأرز'},
+{id:'golf',emoji:'⛳',label:'غولف'},
+{id:'padel',emoji:'🎾',label:'بادل / تنس'},
+{id:'spa',emoji:'💆',label:'سبا ومساج'},
+{id:'beauty',emoji:'💅',label:'صالونات تجميل'},
+{id:'banya',emoji:'🧖',label:'ساونا / حمام'},
+{id:'gym',emoji:'🏋️',label:'صالات رياضية'},
+{id:'farm',emoji:'🍓',label:'مزارع وفواكه'},
+{id:'shop',emoji:'🛍',label:'تسوق'},
+{id:'clothes',emoji:'👗',label:'أسواق ملابس'},
+{id:'souvenir',emoji:'🎁',label:'تذكارات'},
+{id:'luxury',emoji:'💎',label:'فاخر'},
+{id:'photo_sp',emoji:'📸',label:'مواقع تصوير'},
+{id:'russian',emoji:'🇷🇺',label:'مجتمع المغتربين'},
+{id:'bank',emoji:'🏦',label:'بنوك / مراكز تأشيرات'},
+{id:'laundry',emoji:'👕',label:'مغاسل'}
+];
+var AREAS=[
+{name:'تشانغو',guide:'canggu',who:['nomad','photo','surfer','artist','business'],what:['ocean','food','wifi','surf','sunset','party','photo_sp','coffee','vegan','gym','padel','spa','beauty','shop','clothes','russian','clinic','bank','laundry','banya','farm','gallery'],who_text:'رحّالة رقميون، راكبو أمواج، صنّاع محتوى',desc:'مركز الحياة الرقمية في بالي.',places:['☕ Crate Cafe','🏄 Batu Bolong — شاطئ ركوب الأمواج','🌅 La Brisa — غروب','💻 Dojo Bali — 24/7','🍜 Warung Bu Mi — طعام محلي']},
+{name:'أوبود',guide:'ubud',who:['yoga','artist','tourist','photo'],what:['culture','gallery','masterclass','quiet','yoga_sp','budget','food','photo_sp','retreat','coffee','vegan','rice','spa','beauty','farm','russian','clinic','laundry','volcano'],who_text:'يوغيون، فنانون، باحثون',desc:'القلب الروحي لبالي.',places:['🧘 Yoga Barn','🐒 Monkey Forest','🌾 Tegallalang','🎨 Neka Art Museum','☕ Seniman Coffee']},
+{name:'سيمينياك',guide:'seminyak',who:['business','tourist','photo'],what:['shop','food','party','luxury','sunset','ocean','coffee','spa','beauty','clothes','souvenir','gym','russian','clinic','bank','laundry','swim'],who_text:'رواد أعمال، محبو السهر',desc:'حياة جميلة، بوتيكات، نوادي شاطئية.',places:['🍽 Mama San','🛍 Seminyak Village','🌅 Potato Head','💎 W Bali','🏖 Double Six']},
+{name:'أولواتو',guide:'uluwatu',who:['surfer','photo','yoga','artist'],what:['surf','ocean','sunset','quiet','luxury','photo_sp','yoga_sp','spa','coffee','gym','padel','culture'],who_text:'راكبو أمواج، مصورون',desc:'منحدرات، محيط بري، نوادي المنحدرات، غروب.',places:['🏄 Padang Padang','🛕 Uluwatu Temple','🌅 Single Fin','💎 The Edge','🏄 Suluban']},
+{name:'بوكيت ونوسا دوا',guide:'bukit_nusadua',who:['tourist','family','photo'],what:['ocean','quiet','sunset','spa','swim','luxury','photo_sp','golf','dive','culture'],who_text:'عائلات، سياح، مصورون',desc:'منتجعات، شواطئ بيضاء هادئة، مأكولات بحرية في جيمباران. إجازة فاخرة.',places:['🏖 Melasti Beach','🏖 Pandawa Beach','🍽 Jimbaran Seafood','🏨 Kempinski','🏖 Geger Beach']},
+{name:'سانور',guide:'sanur',who:['family','tourist','yoga'],what:['ocean','quiet','budget','food','culture','swim','kids','russian','clinic','bank','laundry','coffee','spa','dive'],who_text:'عائلات، محبو الهدوء',desc:'شروق، دراجات، هدوء.',places:['🌅 شروق على الشاطئ','🚲 مسار الدراجات','🍜 Warung Mak Beng','🛕 Museum Le Mayeur','⛴ ميناء إلى بينيدا']},
+{name:'أميد',guide:'amed',who:['yoga','artist','surfer'],what:['dive','quiet','budget','ocean','culture','yoga_sp','volcano','photo_sp','swim','retreat'],who_text:'غواصون، محبو البساطة',desc:'بركان، شعاب، هدوء.',places:['🤿 Japanese Shipwreck','🌋 إطلالة على أغونغ','🧘 Amed Yoga','🍜 Warung Enak','🐠 غطس من الشاطئ']},
+{name:'لوفينا',island:true,guide:'lovina',who:['family','tourist','yoga'],what:['quiet','budget','culture','ocean','swim','farm','volcano','banya','dive'],who_text:'باحثون عن الهدوء',desc:'دلافين، ينابيع حارة، صفر سياح.',places:['🐬 دلافين عند الفجر','♨️ Banjar Hot Springs','🛕 Brahma Vihara','🍜 طعام من 15K','🌊 بحر هادئ']},
+{name:'شمال بالي',guide:'north',who:['photo','tourist','yoga','family'],what:['volcano','quiet','budget','culture','photo_sp','farm','retreat','golf'],who_text:'محبو الجبال والشلالات',desc:'جبال، بحيرات، شلالات — بالي أخرى.',places:['🌋 بركان باتور','💧 Sekumpul Waterfall','🏕 Black Lava Camp','⛳ Handara Golf','🍓 La Fresa Farm']},
+{name:'نوسا بينيدا',guide:'nusapenida',island:true,who:['photo','surfer','tourist'],what:['ocean','dive','photo_sp','quiet','swim','budget','volcano'],who_text:'مصورون، مغامرون',desc:'منحدرات، أسماك مانتا، مياه فيروزية.',places:['📸 Kelingking Beach','🤿 مانتا راي','🏖 Diamond Beach','🌊 Broken Beach','🌴 Treehouse']},
+{name:'جزر غيلي',guide:'gili',island:true,who:['tourist','photo','surfer','yoga'],what:['ocean','dive','photo_sp','quiet','swim','party','budget'],who_text:'غطاسون، رومانسيون',desc:'مياه فيروزية، سلاحف، بدون سيارات.',places:['🐢 Turtle Point','🗿 Underwater Statues','🏖 Sunset Point Gili T','🤿 جولة غطس 3 جزر','🎉 Mad Monkey Bar']},
+{name:'لومبوك وسومباوا',guide:'lombok',island:true,who:['surfer','photo','tourist','yoga'],what:['surf','ocean','dive','quiet','volcano','budget','photo_sp'],who_text:'راكبو أمواج، متسلقون، مغامرون',desc:'رينجاني، شواطئ وردية، قرش الحوت.',places:['🌋 بركان رينجاني','🏖 Pink Beach','🏄 Desert Point','🐋 قرش الحوت','🏖 Tanjung Aan']},
+{name:'جاوة',guide:'java',island:true,who:['tourist','photo','yoga'],what:['volcano','culture','photo_sp','budget','quiet'],who_text:'مستكشفون، مسافرون ثقافيون',desc:'برومو، إيجين، بوروبودور — كوكب آخر.',places:['🌋 بركان برومو','🔥 اللهب الأزرق إيجين','💧 تومباك سيوو','🏛 بوروبودور','🏛 برامبانان']}
+];
+var TRIPS=[
+{name:'لوفينا',island:true,guide:'lovina',what:['quiet','budget','culture','ocean','swim','farm','volcano','banya','dive'],desc:'دلافين عند الفجر، ينابيع حارة. يوم أو يومين.',places:['🐬 دلافين','♨️ Banjar Hot Springs','🛕 Brahma Vihara']},
+{name:'شمال بالي',guide:'north',what:['volcano','quiet','budget','culture','photo_sp','farm','retreat','golf'],desc:'جبال، شلالات، فراولة. يوم أو يومين.',places:['🌋 باتور','💧 Sekumpul','🏕 تخييم فاخر']},
+{name:'أميد',guide:'amed',what:['dive','quiet','budget','ocean','culture','yoga_sp','volcano','photo_sp','swim','retreat'],desc:'غوص، بركان أغونغ، شعاب مرجانية. 1-3 أيام.',places:['🤿 Japanese Shipwreck','🌋 إطلالة على أغونغ','🐠 غطس سطحي']},
+{name:'نوسا بينيدا',guide:'nusapenida',what:['ocean','dive','photo_sp','quiet','swim','budget','volcano'],desc:'منحدرات 100م، مانتا، مياه فيروزية. 1-3 أيام.',places:['📸 Kelingking Beach','🤿 مانتا راي','🏖 Diamond Beach']},
+{name:'جزر غيلي',guide:'gili',what:['ocean','dive','photo_sp','quiet','swim','party','budget'],desc:'سلاحف، تماثيل تحت الماء. 2-4 أيام.',places:['🐢 Turtle Point','🗿 Statues','🏖 Sunset Point']},
+{name:'لومبوك',guide:'lombok',what:['surf','ocean','dive','quiet','volcano','budget','photo_sp'],desc:'رينجاني، شواطئ وردية. 3-7 أيام.',places:['🌋 رينجاني','🏖 Pink Beach','🏄 Desert Point']},
+{name:'جاوة',guide:'java',what:['volcano','culture','photo_sp','budget','quiet'],desc:'برومو، إيجين، بوروبودور. 3-5 أيام.',places:['🌋 برومو','🔥 إيجين','🏛 بوروبودور']}
+];
+/* ========== QUIZ LOGIC ========== */
+var selWho=[],selWhat=[];
+function renderChips(items,cId,arr,bId){
+var c=document.getElementById(cId);c.innerHTML='';
+items.forEach(function(item){
+var d=document.createElement('div');d.className='chip';
+d.innerHTML='<span>'+item.emoji+'</span> '+item.label;
+d.onclick=function(){
+var i=arr.indexOf(item.id);
+if(i>=0){arr.splice(i,1);d.classList.remove('selected')}
+else{arr.push(item.id);d.classList.add('selected')}
+document.getElementById(bId).disabled=arr.length===0;
+};
+c.appendChild(d);
+});
+}
+function switchScreen(toId){
+document.querySelectorAll('.screen').forEach(function(s){s.style.display='none';s.classList.remove('active')});
+var el=document.getElementById(toId);
+if(el){el.style.display='block';el.classList.add('active');}
+window.scrollTo(0,0);
+}
+function goStep(n){
+switchScreen(n===1?'step1':'step2');
+if(n===1)renderChips(WHO,'whoChips',selWho,'btn1');
+if(n===2)renderChips(WHAT,'whatChips',selWhat,'btn2');
+}
+function showResults(){
+switchScreen('loadingScreen');
+setTimeout(function(){
+var scored=AREAS.map(function(a){
+var score=0;
+selWho.forEach(function(w){if(a.who.indexOf(w)>=0)score+=2});
+selWhat.forEach(function(w){if(a.what.indexOf(w)>=0)score+=1});
+var max=selWho.length*2+selWhat.length;
+return{name:a.name,score:score,pct:Math.round(score/max*100),who_text:a.who_text,desc:a.desc,places:a.places,guide:a.guide,island:a.island||false};
+}).sort(function(a,b){if(b.pct!==a.pct)return b.pct-a.pct;if(a.island!==b.island)return a.island?1:-1;return 0}).slice(0,3);
+switchScreen('resultScreen');
+TRACK_DATA.whoSelected=selWho.join(',');
+TRACK_DATA.whatSelected=selWhat.join(',');
+TRACK_DATA.result1=scored[0]?scored[0].name:'';
+TRACK_DATA.result1pct=scored[0]?scored[0].pct+'%':'';
+TRACK_DATA.result2=scored[1]?scored[1].name:'';
+TRACK_DATA.result3=scored[2]?scored[2].name:'';
+sendTrack();
+var c=document.getElementById('resultsContainer');c.innerHTML='';
+scored.forEach(function(a,i){
+c.innerHTML+='<div class="result-card"><div class="result-num">#'+(i+1)+'</div><div class="result-name">'+a.name+'</div><div class="result-match">'+a.pct+'% توافق</div><div class="result-bar"><div class="result-bar-fill" style="width:0%" data-w="'+a.pct+'%"></div></div><div class="result-who">'+a.who_text+'</div><div class="result-desc">'+a.desc+'</div><div class="result-places">'+a.places.map(function(p){return'<div class="result-place">'+p+'</div>'}).join('')+'</div><div style="margin-top:14px"><button class="btn btn-primary" onclick="openGuide(\'' + a.guide + '\')" style="padding:12px 20px;font-size:13px;background:rgba(42,107,90,0.08);color:#2a6b5a;border:1px solid rgba(42,107,90,0.12)">Гайд по '+a.name+' <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button></div></div>';
+});
+setTimeout(function(){document.querySelectorAll('.result-bar-fill').forEach(function(b){b.style.width=b.dataset.w})},100);
+/* Trips section */
+var tripsHtml='<div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.06)"><div style="font-size:13px;font-weight:600;color:rgba(42,107,90,0.7);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">رحلات يومية (1-3 أيام)</div>';
+var tripMatches=TRIPS.map(function(t){
+var sc=0;selWhat.forEach(function(w){if(t.what.indexOf(w)>=0)sc++});
+return{name:t.name,guide:t.guide,desc:t.desc,places:t.places,score:sc};
+}).sort(function(a,b){return b.score-a.score});
+tripMatches.forEach(function(t){
+tripsHtml+='<div class="result-card" style="padding:16px"><div style="font-size:16px;font-weight:700;margin-bottom:4px">'+t.name+'</div><div style="font-size:13px;color:rgba(42,42,40,0.5);margin-bottom:10px">'+t.desc+'</div><div style="margin-bottom:10px">'+t.places.map(function(p){return'<div class="result-place">'+p+'</div>'}).join('')+'</div><button class="btn btn-primary" onclick="openGuide(\'' + t.guide + '\')" style="padding:10px 18px;font-size:13px;background:rgba(42,107,90,0.08);color:#2a6b5a;border:1px solid rgba(42,107,90,0.12)">Гайд по '+t.name+' <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button></div>';
+});
+tripsHtml+='</div>';
+c.insertAdjacentHTML('afterend',tripsHtml);
+/* Share button */
+c.innerHTML+='<div style="text-align:center;margin:30px 0 20px;padding:0 20px"><button class="btn" onclick="shareResults()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,107,90,0.08);color:#2a6b5a;border:1.5px solid rgba(42,107,90,0.15);font-size:14px;font-weight:600;cursor:pointer">📤 شارك مع الأصدقاء</button></div>';
+if(window.Telegram&&Telegram.WebApp){try{Telegram.WebApp.HapticFeedback.notificationOccurred('success')}catch(e){}}
+},2000);
+}
+/* ========== OPEN GUIDE → REDIRECT ========== */
+function openGuide(guide){
+  try {
+    var cards = document.querySelectorAll('.result-card');
+    var results = [];
+    cards.forEach(function(card) {
+      var name = card.querySelector('.result-name') || card.querySelector('div[style*="font-size:16px"]');
+      var pct = card.querySelector('.result-match');
+      if (name) results.push({name: name.textContent, pct: pct ? pct.textContent : ''});
+    });
+    localStorage.setItem('quizResults', JSON.stringify({
+      districts: results,
+      selWho: selWho,
+      selWhat: selWhat,
+      resultsHTML: document.getElementById('resultsContainer').parentElement.innerHTML
+    }));
+  } catch(e) { console.error('Error saving quiz results', e); }
+  window.location.href='guide-'+guide+'.html';
+}
+function shareResults(){
+var text='مرحبا! أفضل مناطقي في بالي:\n\nاكتشف منطقتك 👉 https://t.me/balidreamphoto_bot';
+if(navigator.share){navigator.share({text:text}).catch(function(){})}
+else{navigator.clipboard.writeText(text).then(function(){alert('تم النسخ!')})}
+}
+/* ========== INIT ========== */
+document.addEventListener('DOMContentLoaded',function(){
+var l=document.getElementById('loadingIndicator');if(l)l.style.display='none';
+/* Restore from localStorage if returning from guide */
+if(window.location.hash==='#results'){var saved=localStorage.getItem('quizResults');if(saved){try{var data=JSON.parse(saved);if(data.selWho)selWho=data.selWho;if(data.selWhat)selWhat=data.selWhat;if(selWho.length>0&&selWhat.length>0){showResults();}}catch(e){}}}
+if(window.Telegram&&Telegram.WebApp){Telegram.WebApp.ready();Telegram.WebApp.expand();}
+});
+</script>
+</body>
+</html>

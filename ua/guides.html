@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Знайди свій район на Балі</title>
+<title>Свої на Балі — Гайди</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <link rel="stylesheet" href="../style.css">
 <style>
@@ -14,9 +14,11 @@
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
 <div class="app">
-<button class="btn btn-primary back-home-btn" onclick="window.location.href='index.html'" style="font-size:13px;padding:8px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1)">← На головну</button>
+<button class="btn btn-primary back-home-btn" onclick="window.location.href='index.html'" style="font-size:13px;padding:8px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1)">← Головна</button>
 
+<!-- Map overlay/popup (referenced by JS) -->
 <div id="mapOverlay" class="map-overlay" onclick="hidePopup()"></div>
+
 
 <div class="screen active" id="startScreen"><div id="loadingIndicator" style="text-align:center;padding:40px;color:rgba(42,42,40,0.5)">Завантаження...</div>
 <div style="font-size:48px;text-align:center;margin:60px 0 16px">🌴</div>
@@ -37,7 +39,7 @@
 <div class="screen" id="step2">
 <div class="steps"><div class="step-dot done"></div><div class="step-dot active"></div></div>
 <div class="section-title">Що важливо?</div>
-<div class="title" style="font-size:22px;text-align:left;margin-bottom:20px">Позначай усе що <em>відгукується</em></div>
+<div class="title" style="font-size:22px;text-align:left;margin-bottom:20px">Познач усе, що <em>відгукується</em></div>
 <div class="chips" id="whatChips"></div>
 <button class="btn btn-primary" id="btn2" disabled onclick="showResults()">Показати мій район <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
 </div>
@@ -46,7 +48,7 @@
 <div style="text-align:center;padding:80px 20px">
 <div style="font-size:48px;margin-bottom:20px;animation:pulse 1.5s ease-in-out infinite">🌴</div>
 <h2 style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:12px">Підбираємо <em style="color:#2a6b5a">район</em></h2>
-<p style="color:rgba(42,42,40,0.5);font-size:14px">Аналізуємо твої вподобання...</p>
+<p style="color:rgba(42,42,40,0.5);font-size:14px">Аналізуємо ваші вподобання...</p>
 <div style="margin-top:30px;width:200px;height:4px;background:rgba(42,107,90,0.1);border-radius:4px;margin-left:auto;margin-right:auto;overflow:hidden">
 <div style="width:0%;height:100%;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);border-radius:4px;animation:loadBar 2s ease-out forwards"></div>
 </div>
@@ -56,6 +58,7 @@
 <div class="screen" id="resultScreen">
 <div class="title" style="margin-top:20px">Твої <em>місця</em> на Балі</div>
 <div class="subtitle" style="margin-bottom:20px">Топ районів за збігом</div>
+
 
 
 <div id="resultsContainer">
@@ -69,14 +72,19 @@
 </div>
 <script src="../places.js" defer></script>
 <script>
+/* ========== MAP DATA ========== */
+
+
+
+/* ========== ANALYTICS ========== */
 var ANALYTICS_URL='https://script.google.com/macros/s/AKfycbyoFPHfGzhyIcQzMiu165zF9ou05OeYZEMPLWrlXSLk1Rh4wAdrggCVGSlQgDeWOg9m_w/exec';
 var USER_ID='u_'+Math.random().toString(36).substr(2,9);
 var TRACK_DATA={userId:USER_ID,step:'',whoSelected:'',whatSelected:'',result1:'',result1pct:'',result2:'',result2pct:'',result3:'',guideOpened:'',purchased:''};
 function track(data){Object.keys(data).forEach(function(k){TRACK_DATA[k]=data[k]})}
 function sendTrack(){try{fetch(ANALYTICS_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(TRACK_DATA)})}catch(e){}}
-
+/* ========== DISTRICT FILTER DATA ========== */
 var WHO=[
-{id:'nomad',emoji:'💻',label:'Діджитал-номад'},
+{id:'nomad',emoji:'💻',label:'Digital nomad'},
 {id:'photo',emoji:'📸',label:'Фотограф / контент-креатор'},
 {id:'yoga',emoji:'🧘',label:'Йога / духовні практики'},
 {id:'surfer',emoji:'🏄',label:'Серфер'},
@@ -86,65 +94,66 @@ var WHO=[
 {id:'tourist',emoji:'🌴',label:'Просто відпочиваю'}
 ];
 var WHAT=[
-{id:'ocean',emoji:'🌊',label:'Біля океану'},
+{id:'ocean',emoji:'🌊',label:'Поряд океан'},
 {id:'swim',emoji:'🏊',label:'Пляж без хвиль'},
 {id:'budget',emoji:'💰',label:'Бюджетно'},
 {id:'food',emoji:'🍜',label:'Смачна їжа'},
 {id:'vegan',emoji:'🥗',label:'Веган / вегетаріанське'},
 {id:'coffee',emoji:'☕',label:'Кав\'ярні'},
-{id:'yoga_sp',emoji:'🧘',label:'Йога та спорт'},
+{id:'yoga_sp',emoji:'🧘',label:'Йога і спорт'},
 {id:'retreat',emoji:'🔮',label:'Духовні практики / ретрити'},
-{id:'party',emoji:'🎉',label:'Тусовки та нічне життя'},
-{id:'quiet',emoji:'🌿',label:'Тиша та природа'},
+{id:'party',emoji:'🎉',label:'Тусовка і нічне життя'},
+{id:'quiet',emoji:'🌿',label:'Тиша і природа'},
 {id:'wifi',emoji:'💻',label:'Кафе з Wi-Fi'},
 {id:'surf',emoji:'🏄',label:'Серфінг'},
 {id:'dive',emoji:'🤿',label:'Під водою'},
 {id:'sunset',emoji:'🌅',label:'Гарні заходи сонця'},
-{id:'culture',emoji:'🛕',label:'Храми та культура'},
+{id:'culture',emoji:'🛕',label:'Храми і культура'},
 {id:'gallery',emoji:'🖼',label:'Галереї та музеї'},
 {id:'masterclass',emoji:'🎓',label:'Майстер-класи'},
-{id:'volcano',emoji:'🌋',label:'Вулкани та гори'},
+{id:'volcano',emoji:'🌋',label:'Вулкани і гори'},
 {id:'rice',emoji:'🌾',label:'Рисові тераси'},
 {id:'golf',emoji:'⛳',label:'Гольф'},
 {id:'padel',emoji:'🎾',label:'Падел / теніс'},
-{id:'spa',emoji:'💆',label:'Спа та масаж'},
+{id:'spa',emoji:'💆',label:'Спа і масаж'},
 {id:'beauty',emoji:'💅',label:'Салони краси'},
-{id:'banya',emoji:'🧖',label:'Лазня / сауна'},
+{id:'banya',emoji:'🧖',label:'Бані / сауна'},
 {id:'gym',emoji:'🏋️',label:'Спортзали'},
-{id:'farm',emoji:'🍓',label:'Ферми та фрукти'},
+{id:'farm',emoji:'🍓',label:'Ферми і фрукти'},
 {id:'shop',emoji:'🛍',label:'Шопінг'},
 {id:'clothes',emoji:'👗',label:'Ринки одягу'},
 {id:'souvenir',emoji:'🎁',label:'Сувеніри'},
 {id:'luxury',emoji:'💎',label:'Luxury'},
 {id:'photo_sp',emoji:'📸',label:'Фото-локації'},
-{id:'russian',emoji:'🇺🇦',label:'Українська спільнота'},
+{id:'russian',emoji:'🇷🇺',label:'Спільнота'},
 {id:'bank',emoji:'🏦',label:'Банки / візові центри'},
 {id:'laundry',emoji:'👕',label:'Пральні'}
 ];
 var AREAS=[
-{name:'Чангу',guide:'canggu',who:['nomad','photo','surfer','artist','business'],what:['ocean','food','wifi','surf','sunset','party','photo_sp','coffee','vegan','gym','padel','spa','beauty','shop','clothes','russian','clinic','bank','laundry','banya','farm','gallery'],who_text:'Діджитал-номади, серфери, креатори',desc:'Епіцентр digital-життя Балі.',places:['☕ Crate Cafe','🏄 Batu Bolong — серф-пляж','🌅 La Brisa — захід сонця','💻 Dojo Bali — 24/7','🍜 Warung Bu Mi — локальна їжа']},
+{name:'Чангу',guide:'canggu',who:['nomad','photo','surfer','artist','business'],what:['ocean','food','wifi','surf','sunset','party','photo_sp','coffee','vegan','gym','padel','spa','beauty','shop','clothes','russian','clinic','bank','laundry','banya','farm','gallery'],who_text:'Digital nomads, серфери, креатори',desc:'Епіцентр digital-життя Балі.',places:['☕ Crate Cafe','🏄 Batu Bolong — серф-пляж','🌅 La Brisa — захід сонця','💻 Dojo Bali — 24/7','🍜 Warung Bu Mi — місцева їжа']},
 {name:'Убуд',guide:'ubud',who:['yoga','artist','tourist','photo'],what:['culture','gallery','masterclass','quiet','yoga_sp','budget','food','photo_sp','retreat','coffee','vegan','rice','spa','beauty','farm','russian','clinic','laundry','volcano'],who_text:'Йоги, художники, шукачі',desc:'Духовне серце Балі.',places:['🧘 Yoga Barn','🐒 Monkey Forest','🌾 Tegallalang','🎨 Neka Art Museum','☕ Seniman Coffee']},
-{name:'Семіньяк',guide:'seminyak',who:['business','tourist','photo'],what:['shop','food','party','luxury','sunset','ocean','coffee','spa','beauty','clothes','souvenir','gym','russian','clinic','bank','laundry','swim'],who_text:'Підприємці, тусовщики',desc:'Гарне життя, бутіки, біч-клаби.',places:['🍽 Mama San','🛍 Seminyak Village','🌅 Potato Head','💎 W Bali','🏖 Double Six']},
-{name:'Улувату',guide:'uluwatu',who:['surfer','photo','yoga','artist'],what:['surf','ocean','sunset','quiet','luxury','photo_sp','yoga_sp','spa','coffee','gym','padel','culture'],who_text:'Серфери, фотографи',desc:'Скелі, дикий океан, тиша.',places:['🏄 Padang Padang','🛕 Uluwatu Temple','🌅 Single Fin','💎 The Edge','🏄 Suluban']},
-{name:'Санур',guide:'sanur',who:['family','tourist','yoga'],what:['ocean','quiet','budget','food','culture','swim','kids','russian','clinic','bank','laundry','coffee','spa','dive'],who_text:'Сім\'ї, спокійні',desc:'Світанки, велосипеди, тиша.',places:['🌅 Світанок на пляжі','🚲 Велодоріжка','🍜 Warung Mak Beng','🛕 Museum Le Mayeur','⛴ Порт на Пеніду']},
+{name:'Семіньяк',guide:'seminyak',who:['business','tourist','photo'],what:['shop','food','party','luxury','sunset','ocean','coffee','spa','beauty','clothes','souvenir','gym','russian','clinic','bank','laundry','swim'],who_text:'Підприємці, тусовщики',desc:'Красиве життя, бутики, біч-клаби.',places:['🍽 Mama San','🛍 Seminyak Village','🌅 Potato Head','💎 W Bali','🏖 Double Six']},
+{name:'Улувату',guide:'uluwatu',who:['surfer','photo','yoga','artist'],what:['surf','ocean','sunset','quiet','luxury','photo_sp','yoga_sp','spa','coffee','gym','padel','culture'],who_text:'Серфери, фотографи',desc:'Скелі, дикий океан, кліфф-клаби, заходи сонця.',places:['🏄 Padang Padang','🛕 Uluwatu Temple','🌅 Single Fin','💎 The Edge','🏄 Suluban']},
+{name:'Букіт і Нуса-Дуа',guide:'bukit_nusadua',who:['tourist','family','photo'],what:['ocean','quiet','sunset','spa','swim','luxury','photo_sp','golf','dive','culture'],who_text:'Сім\'ї, туристи, фотографи',desc:'Резорти, білі пляжі без хвиль (Меласті, Пандава, Нуса-Дуа), морепродукти в Джимбарані. Спокійний лакшері відпочинок.',places:['🏖 Melasti Beach','🏖 Pandawa Beach','🍽 Jimbaran Seafood','🏨 Kempinski','🏖 Geger Beach']},
+{name:'Санур',guide:'sanur',who:['family','tourist','yoga'],what:['ocean','quiet','budget','food','culture','swim','kids','russian','clinic','bank','laundry','coffee','spa','dive'],who_text:'Сім\'ї, спокійні',desc:'Сходи сонця, велосипеди, тиша.',places:['🌅 Схід сонця на пляжі','🚲 Велодоріжка','🍜 Warung Mak Beng','🛕 Museum Le Mayeur','⛴ Порт на Пеніду']},
 {name:'Амед',guide:'amed',who:['yoga','artist','surfer'],what:['dive','quiet','budget','ocean','culture','yoga_sp','volcano','photo_sp','swim','retreat'],who_text:'Дайвери, мінімалісти',desc:'Вулкан, рифи, тиша.',places:['🤿 Japanese Shipwreck','🌋 Вид на Агунг','🧘 Amed Yoga','🍜 Warung Enak','🐠 Снорклінг з берега']},
 {name:'Ловіна',island:true,guide:'lovina',who:['family','tourist','yoga'],what:['quiet','budget','culture','ocean','swim','farm','volcano','banya','dive'],who_text:'Шукачі тиші',desc:'Дельфіни, гарячі джерела, нуль туристів.',places:['🐬 Дельфіни на світанку','♨️ Banjar Hot Springs','🛕 Brahma Vihara','🍜 Їжа від 15K','🌊 Спокійне море']},
-{name:'Північ Балі',guide:'north',who:['photo','tourist','yoga','family'],what:['volcano','quiet','budget','culture','photo_sp','farm','retreat','golf'],who_text:'Шукачі гір та водоспадів',desc:'Гори, озера, водоспади, глемпінги — інший Балі.',places:['🌋 Вулкан Батур','💧 Sekumpul Waterfall','🏕 Black Lava Camp','⛳ Handara Golf','🍓 La Fresa Farm']},
+{name:'Північ Балі',guide:'north',who:['photo','tourist','yoga','family'],what:['volcano','quiet','budget','culture','photo_sp','farm','retreat','golf'],who_text:'Шукачі гір і водоспадів',desc:'Гори, озера, водоспади, глемпінги — інший Балі.',places:['🌋 Вулкан Батур','💧 Sekumpul Waterfall','🏕 Black Lava Camp','⛳ Handara Golf','🍓 La Fresa Farm']},
 {name:'Нуса Пеніда',guide:'nusapenida',island:true,who:['photo','surfer','tourist'],what:['ocean','dive','photo_sp','quiet','swim','budget','volcano'],who_text:'Фотографи, авантюристи',desc:'Скелі, манти, бірюзова вода.',places:['📸 Kelingking Beach','🤿 Манта Рей','🏖 Diamond Beach','🌊 Broken Beach','🌴 Treehouse']},
 {name:'Острови Гілі',guide:'gili',island:true,who:['tourist','photo','surfer','yoga'],what:['ocean','dive','photo_sp','quiet','swim','party','budget'],who_text:'Снорклери, тусовщики, романтики',desc:'Бірюзова вода, черепахи, без машин.',places:['🐢 Turtle Point','🗿 Underwater Statues','🏖 Sunset Point Gili T','🤿 Снорклінг-тур 3 острови','🎉 Mad Monkey Bar']},
-{name:'Ломбок і Сумбава',guide:'lombok',island:true,who:['surfer','photo','tourist','yoga'],what:['surf','ocean','dive','quiet','volcano','budget','photo_sp'],who_text:'Серфери, трекери, авантюристи',desc:'Ріндджані, рожеві пляжі, китові акули.',places:['🌋 Вулкан Ріндджані','🏖 Pink Beach','🏄 Desert Point','🐋 Китові акули','🏖 Tanjung Aan']},
+{name:'Ломбок і Сумбава',guide:'lombok',island:true,who:['surfer','photo','tourist','yoga'],what:['surf','ocean','dive','quiet','volcano','budget','photo_sp'],who_text:'Серфери, трекери, авантюристи',desc:'Рінджані, рожеві пляжі, китові акули.',places:['🌋 Вулкан Рінджані','🏖 Pink Beach','🏄 Desert Point','🐋 Китові акули','🏖 Tanjung Aan']},
 {name:'Ява',guide:'java',island:true,who:['tourist','photo','yoga'],what:['volcano','culture','photo_sp','budget','quiet'],who_text:'Дослідники, культурні мандрівники',desc:'Бромо, Іджен, Боробудур — інша планета.',places:['🌋 Вулкан Бромо','🔥 Блакитне полум\'я Іджен','💧 Тумпак Севу','🏛 Боробудур','🏛 Прамбанан']}
 ];
 var TRIPS=[
 {name:'Ловіна',island:true,guide:'lovina',what:['quiet','budget','culture','ocean','swim','farm','volcano','banya','dive'],desc:'Дельфіни на світанку, гарячі джерела, нуль туристів. 1-2 дні.',places:['🐬 Дельфіни','♨️ Banjar Hot Springs','🛕 Brahma Vihara']},
-{name:'Північ Балі',guide:'north',what:['volcano','quiet','budget','culture','photo_sp','farm','retreat','golf'],desc:'Гори, водоспади, глемпінги, полуниця. 1-2 дні.',places:['🌋 Батур','💧 Sekumpul','🏕 Глемпінг']},
+{name:'Північ Балі',guide:'north',what:['volcano','quiet','budget','culture','photo_sp','farm','retreat','golf'],desc:'Гори, водоспади, глемпінги, полуниці. 1-2 дні.',places:['🌋 Батур','💧 Sekumpul','🏕 Глемпінг']},
 {name:'Амед',guide:'amed',what:['dive','quiet','budget','ocean','culture','yoga_sp','volcano','photo_sp','swim','retreat'],desc:'Дайвінг, вулкан Агунг, коралові рифи. 1-3 дні.',places:['🤿 Japanese Shipwreck','🌋 Вид на Агунг','🐠 Снорклінг']},
 {name:'Нуса Пеніда',guide:'nusapenida',what:['ocean','dive','photo_sp','quiet','swim','budget','volcano'],desc:'100-метрові скелі, манти, бірюзова вода. 1-3 дні.',places:['📸 Kelingking Beach','🤿 Манта Рей','🏖 Diamond Beach']},
 {name:'Острови Гілі',guide:'gili',what:['ocean','dive','photo_sp','quiet','swim','party','budget'],desc:'Черепахи, підводні статуї, гойдалки у воді. 2-4 дні.',places:['🐢 Turtle Point','🗿 Statues','🏖 Sunset Point']},
-{name:'Ломбок',guide:'lombok',what:['surf','ocean','dive','quiet','volcano','budget','photo_sp'],desc:'Ріндджані, рожеві пляжі, серф. 3-7 днів.',places:['🌋 Ріндджані','🏖 Pink Beach','🏄 Desert Point']},
+{name:'Ломбок',guide:'lombok',what:['surf','ocean','dive','quiet','volcano','budget','photo_sp'],desc:'Рінджані, рожеві пляжі, серф. 3-7 днів.',places:['🌋 Рінджані','🏖 Pink Beach','🏄 Desert Point']},
 {name:'Ява',guide:'java',what:['volcano','culture','photo_sp','budget','quiet'],desc:'Бромо, Іджен, Боробудур. 3-5 днів.',places:['🌋 Бромо','🔥 Іджен','🏛 Боробудур']}
 ];
-
+/* ========== QUIZ LOGIC ========== */
 var selWho=[],selWhat=[];
 function renderChips(items,cId,arr,bId){
 var c=document.getElementById(cId);c.innerHTML='';
@@ -194,7 +203,8 @@ scored.forEach(function(a,i){
 c.innerHTML+='<div class="result-card"><div class="result-num">#'+(i+1)+'</div><div class="result-name">'+a.name+'</div><div class="result-match">'+a.pct+'% збіг</div><div class="result-bar"><div class="result-bar-fill" style="width:0%" data-w="'+a.pct+'%"></div></div><div class="result-who">'+a.who_text+'</div><div class="result-desc">'+a.desc+'</div><div class="result-places">'+a.places.map(function(p){return'<div class="result-place">'+p+'</div>'}).join('')+'</div><div style="margin-top:14px"><button class="btn btn-primary" onclick="openGuide(\'' + a.guide + '\')" style="padding:12px 20px;font-size:13px;background:rgba(42,107,90,0.08);color:#2a6b5a;border:1px solid rgba(42,107,90,0.12)">Гайд по '+a.name+' <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button></div></div>';
 });
 setTimeout(function(){document.querySelectorAll('.result-bar-fill').forEach(function(b){b.style.width=b.dataset.w})},100);
-var tripsHtml='<div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.06)"><div style="font-size:13px;font-weight:600;color:rgba(42,107,90,0.7);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">Куди з\'їздити на 1-3 дні</div>';
+/* Trips section */
+var tripsHtml='<div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.06)"><div style="font-size:13px;font-weight:600;color:rgba(42,107,90,0.7);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">Куди поїхати на 1-3 дні</div>';
 var tripMatches=TRIPS.map(function(t){
 var sc=0;selWhat.forEach(function(w){if(t.what.indexOf(w)>=0)sc++});
 return{name:t.name,guide:t.guide,desc:t.desc,places:t.places,score:sc};
@@ -204,33 +214,39 @@ tripsHtml+='<div class="result-card" style="padding:16px"><div style="font-size:
 });
 tripsHtml+='</div>';
 c.insertAdjacentHTML('afterend',tripsHtml);
+/* Share button */
 c.innerHTML+='<div style="text-align:center;margin:30px 0 20px;padding:0 20px"><button class="btn" onclick="shareResults()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,107,90,0.08);color:#2a6b5a;border:1.5px solid rgba(42,107,90,0.15);font-size:14px;font-weight:600;cursor:pointer">📤 Поділитися з друзями</button></div>';
 if(window.Telegram&&Telegram.WebApp){try{Telegram.WebApp.HapticFeedback.notificationOccurred('success')}catch(e){}}
 },2000);
 }
+/* ========== OPEN GUIDE → REDIRECT ========== */
 function openGuide(guide){
-  var cards = document.querySelectorAll('.result-card');
-  var results = [];
-  cards.forEach(function(card) {
-    var name = card.querySelector('.result-name');
-    var pct = card.querySelector('.result-match');
-    if (name && pct) results.push({name: name.textContent, pct: pct.textContent});
-  });
-  localStorage.setItem('quizResults', JSON.stringify({
-    districts: results,
-    selWho: selWho,
-    selWhat: selWhat,
-    resultsHTML: document.getElementById('resultsContainer').parentElement.innerHTML
-  }));
-  window.location.href='../guide-'+guide+'.html';
+  try {
+    var cards = document.querySelectorAll('.result-card');
+    var results = [];
+    cards.forEach(function(card) {
+      var name = card.querySelector('.result-name') || card.querySelector('div[style*="font-size:16px"]');
+      var pct = card.querySelector('.result-match');
+      if (name) results.push({name: name.textContent, pct: pct ? pct.textContent : ''});
+    });
+    localStorage.setItem('quizResults', JSON.stringify({
+      districts: results,
+      selWho: selWho,
+      selWhat: selWhat,
+      resultsHTML: document.getElementById('resultsContainer').parentElement.innerHTML
+    }));
+  } catch(e) { console.error('Error saving quiz results', e); }
+  window.location.href='guide-'+guide+'.html';
 }
 function shareResults(){
 var text='Привіт! Ось мої топ-райони на Балі:\n\nДізнайся свій район 👉 https://t.me/balidreamphoto_bot';
 if(navigator.share){navigator.share({text:text}).catch(function(){})}
 else{navigator.clipboard.writeText(text).then(function(){alert('Скопійовано!')})}
 }
+/* ========== INIT ========== */
 document.addEventListener('DOMContentLoaded',function(){
 var l=document.getElementById('loadingIndicator');if(l)l.style.display='none';
+/* Restore from localStorage if returning from guide */
 if(window.location.hash==='#results'){var saved=localStorage.getItem('quizResults');if(saved){try{var data=JSON.parse(saved);if(data.selWho)selWho=data.selWho;if(data.selWhat)selWhat=data.selWhat;if(selWho.length>0&&selWhat.length>0){showResults();}}catch(e){}}}
 if(window.Telegram&&Telegram.WebApp){Telegram.WebApp.ready();Telegram.WebApp.expand();}
 });
