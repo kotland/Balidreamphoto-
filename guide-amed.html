@@ -1211,7 +1211,7 @@ function generateRandomRoute(zoneKey) {
     var hourMatch = firstTimeStr.match(/\d{2}/);
     var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
     
-    if (hour <= 8 || route.length > 5 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+    if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
       isHard = true;
     }
     if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
@@ -1235,7 +1235,7 @@ function generateRandomRoute(zoneKey) {
       var p = route[i];
       html += '<div style="background:rgba(255,255,255,0.7);border-radius:16px;padding:16px;margin-bottom:12px">';
       html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
-      html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc + '</div>';
+      html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
       if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
       if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
