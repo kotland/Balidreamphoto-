@@ -221,20 +221,21 @@ if(window.Telegram&&Telegram.WebApp){try{Telegram.WebApp.HapticFeedback.notifica
 }
 /* ========== OPEN GUIDE → REDIRECT ========== */
 function openGuide(guide){
-  // Save quiz results to localStorage before navigating
-  var cards = document.querySelectorAll('.result-card');
-  var results = [];
-  cards.forEach(function(card) {
-    var name = card.querySelector('.result-name');
-    var pct = card.querySelector('.result-match');
-    if (name && pct) results.push({name: name.textContent, pct: pct.textContent});
-  });
-  localStorage.setItem('quizResults', JSON.stringify({
-    districts: results,
-    selWho: selWho,
-    selWhat: selWhat,
-    resultsHTML: document.getElementById('resultsContainer').parentElement.innerHTML
-  }));
+  try {
+    var cards = document.querySelectorAll('.result-card');
+    var results = [];
+    cards.forEach(function(card) {
+      var name = card.querySelector('.result-name') || card.querySelector('div[style*="font-size:16px"]');
+      var pct = card.querySelector('.result-match');
+      if (name) results.push({name: name.textContent, pct: pct ? pct.textContent : ''});
+    });
+    localStorage.setItem('quizResults', JSON.stringify({
+      districts: results,
+      selWho: selWho,
+      selWhat: selWhat,
+      resultsHTML: document.getElementById('resultsContainer').parentElement.innerHTML
+    }));
+  } catch(e) { console.error('Error saving quiz results', e); }
   window.location.href='guide-'+guide+'.html';
 }
 function shareResults(){
