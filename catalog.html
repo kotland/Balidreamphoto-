@@ -1158,9 +1158,9 @@ const DISTRICT_SUBS = {
   'Улувату':['Улувату'],
   'Букит и Нуса-Дуа':['Букит и Нуса-Дуа'],
   'Санур':['Санур'],
-  'Нуса Пенида':['Нуса Пенида'],
   'Амед и Восток':['Амед и Восток', 'Амед'],
   'Север Бали':['Север Бали', 'Север', 'Ловина'],
+  'Нуса Пенида':['Нуса Пенида'],
   'Гили':['Гили'],
   'Ломбок и Сумбава':['Ломбок и Сумбава', 'Ломбок', 'Сумбава'],
   'Ява':['Ява']
@@ -1183,13 +1183,15 @@ function updateFilter(key, value, el) {
   // Highlight chip
   if (el) {
     el.parentNode.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
-    el.classList.add('selected');
+    if (value !== '') {
+        el.classList.add('selected');
+    }
   }
 
   // Update state
   state[key] = value;
 
-  // Reset dependent filters if district changes
+  // Reset dependent filters if district or category changes
   if (key === 'district') {
     state.category = '';
     state.budget = '';
@@ -1198,6 +1200,19 @@ function updateFilter(key, value, el) {
     state.galleryType = '';
     state.wowType = '';
     document.querySelectorAll('#catalogCategoryPicker .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogGalleryFilter .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogWowFilter .chip').forEach(c => c.classList.remove('selected'));
+  }
+  
+  if (key === 'category') {
+    state.budget = '';
+    state.cuisine = '';
+    state.shopType = '';
+    state.galleryType = '';
+    state.wowType = '';
     document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
     document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
     document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
@@ -1238,7 +1253,7 @@ function applyFilters() {
   // Reset pagination and DOM
   currentIndex = 0;
   document.getElementById('catalogResults').innerHTML = '';
-  document.getElementById('countBadge').innerText = filteredPlaces.length + ' мест';
+  document.getElementById('countBadge').innerText = filteredPlaces.length;
   
   loadMoreCards();
 }
@@ -1293,12 +1308,13 @@ function loadMoreCards() {
   container.appendChild(fragment);
   currentIndex = end;
 
-  // Show or hide "Load More" trigger
   const observerTarget = document.getElementById('scrollTrigger');
-  if (currentIndex < filteredPlaces.length) {
-    observerTarget.style.display = 'block';
-  } else {
-    observerTarget.style.display = 'none';
+  if (observerTarget) {
+      if (currentIndex < filteredPlaces.length) {
+        observerTarget.style.display = 'block';
+      } else {
+        observerTarget.style.display = 'none';
+      }
   }
 }
 
@@ -1325,15 +1341,16 @@ window.onload = function() {
   if (districtParam) {
     // Find the chip and highlight it
     document.querySelectorAll('#districtChips .chip').forEach(function(c) {
-      if (c.innerText.includes(districtParam)) {
+      if (c.innerText.includes(districtParam) || districtParam.includes(c.innerText.replace(/[^\wа-яА-ЯёЁ\s]/g,'').trim())) {
         updateFilter('district', districtParam, c);
-        c.scrollIntoView({behavior: "smooth", inline: "center"});
+        setTimeout(() => c.scrollIntoView({behavior: "smooth", inline: "center"}), 100);
       }
     });
   } else {
     applyFilters();
   }
 };
+
 </script>
 </body>
 </html>
