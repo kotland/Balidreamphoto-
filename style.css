@@ -132,3 +132,16 @@ td strong{color:#2a2a28}
 }
 
 
+
+.wrap-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 4px 16px;
+  margin-bottom: 16px;
+}
+.wrap-chips > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
