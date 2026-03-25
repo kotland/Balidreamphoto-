@@ -69,7 +69,7 @@
 <div class="place-meta">📍 Jl. Danau Tamblingan · 80-170K</div>
 </div>
 <div class="place">
-<div class="place-name">Massimo</div>
+<div class="place-name">⭐️ Massimo</div>
 <div class="place-desc">Лучшая итальянская кухня в Сануре. Паста, пицца из дровяной печи, джелато.</div>
 <div class="place-meta">📍 Jl. Danau Tamblingan · 90-200K</div>
 </div>
@@ -490,6 +490,30 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
+    [
+      {
+        time: '09:00',
+        name: 'Sanur Beach Promenade',
+        desc: '[чилл] Санур — это спокойствие. Берём велосипед в аренду и неспешно едем вдоль пляжа по ровной дорожке под деревьями.',
+        price: '50k IDR',
+        maps: 'https://maps.google.com/?q=Sanur+Beach+Promenade'
+      },
+      {
+        time: '11:00',
+        name: 'Massimo Italian',
+        desc: 'Едим настоящее итальянское джелато или садимся на раннюю пасту. Никто никуда не торопится.',
+        price: '100k IDR',
+        maps: 'https://maps.google.com/?q=Massimo+Italian+Sanur'
+      },
+      {
+        time: '14:00',
+        name: 'The Nest Beachside Spa',
+        desc: 'Лучший балийский массаж прямо на берегу моря под шум волн. Полный дзен.',
+        price: '200k IDR',
+        maps: 'https://maps.google.com/?q=The+Nest+Beachside+Spa+Sanur'
+      }
+    ],
+
     // --- Variant 1 ---
     [
       {
@@ -966,7 +990,34 @@ function generateRandomRoute(zoneKey) {
     var route = routes[idx];
     var html = '<div style="padding:20px">';
     html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:20px">🗺 Твой маршрут на день</div>';
-    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px">Маршрут ' + (idx+1) + '/' + routes.length + ' · Нажми ещё раз для следующего</div>';
+    
+    var isHard = false;
+    var isChill = false;
+    var routeText = JSON.stringify(route).toLowerCase();
+    var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+    var hourMatch = firstTimeStr.match(/\d{2}/);
+    var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+    
+    if (hour <= 8 || route.length > 5 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+      isHard = true;
+    }
+    if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+      isChill = true;
+      isHard = false;
+    }
+    
+    var badge = '';
+    if (isChill) {
+      badge = '<span style="margin-left:8px; background:rgba(255,182,193,0.3); color:#e83e8c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🌸 Чилл</span>';
+    } else if (isHard) {
+      badge = '<span style="margin-left:8px; background:rgba(255,87,34,0.15); color:#e64a19; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🔥 Хард</span>';
+    } else {
+      badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
+    }
+
+    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px;display:flex;align-items:center;justify-content:center;">Маршрут ' + (idx+1) + '/' + routes.length + badge + '</div>';
+    html += '<div style="font-size:11px;color:rgba(42,42,40,0.4);text-align:center;margin-top:-16px;margin-bottom:24px;">Нажми ещё раз для следующего</div>';
+
     for (var i = 0; i < route.length; i++) {
       var p = route[i];
       html += '<div style="background:rgba(255,255,255,0.7);border-radius:16px;padding:16px;margin-bottom:12px">';
@@ -976,6 +1027,31 @@ function generateRandomRoute(zoneKey) {
       if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
     }
+
+    // --- Google Maps Directions button ---
+    var mapPlaces = [];
+    for (var j = 0; j < route.length; j++) {
+      var tags = route[j].tags || [];
+      var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
+      if (!isHotel) {
+        mapPlaces.push(route[j].name);
+      }
+    }
+    if (mapPlaces.length >= 2) {
+      var origin = encodeURIComponent(mapPlaces[0] + ' Bali');
+      var destination = encodeURIComponent(mapPlaces[mapPlaces.length - 1] + ' Bali');
+      var waypoints = '';
+      if (mapPlaces.length > 2) {
+        var wp = [];
+        for (var k = 1; k < mapPlaces.length - 1; k++) {
+          wp.push(encodeURIComponent(mapPlaces[k] + ' Bali'));
+        }
+        waypoints = '&waypoints=' + wp.join('%7C');
+      }
+      var mapsUrl = 'https://www.google.com/maps/dir/?api=1&origin=' + origin + '&destination=' + destination + waypoints + '&travelmode=driving';
+      html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
+    }
+    // --- End Google Maps Directions button ---
     html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="generateRandomRoute(\'sanur\')" style="padding:12px 24px;border-radius:12px">🔄 Другой маршрут</button></div>';
     html += '<div style="text-align:center;margin-top:16px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к гайду</button></div>';
     html += '</div>';
