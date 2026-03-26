@@ -816,7 +816,7 @@
 </div>
 </div>
 </div>
-<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="generateRandomRoute('ubud')" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
+<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
 <div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
@@ -826,6 +826,86 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
+    [{"time": "10:30", "name": "Ubud Yoga House", "desc": "[чилл] На вершине холма, Ubud Yoga House дарит вам утреннюю безмятежность с медитацией среди густой зелени, где ваши мысли растворяются в шелесте листьев.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Ubud+Yoga+House"}, {"time": "12:00", "name": "Tjampuhan Spa", "desc": "Под звуки журчащей реки, Tjampuhan Spa перенесет вас в мир расслабления, предлагая массажи в окружении природной гармонии.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Tjampuhan+Spa"}, {"time": "14:00", "name": "Clover Spa & Fitness", "desc": "Элегантный уголок для отдыха, где ароматы эфирных масел и легкая музыка унесут вас в царство спокойствия.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Clover+Spa+%26+Fitness"}],
+    [{"time": "11:00", "name": "Taksu Spa", "desc": "[чилл] Среди древних деревьев и щебетания птиц, Taksu Spa предлагает сокровенное уединение, где каждому дню соответствует свой ритуал расслабления.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Taksu+Spa"}, {"time": "13:00", "name": "Sunset at Campuhan Ridge Walk", "desc": "Буйство красок заката на горизонте, медленная прогулка среди спокойствия холмов и ощущение гармонии в каждой клеточке тела.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Campuhan+Ridge+Walk"}],
+    [{"time": "10:00", "name": "Radiantly Alive Yoga", "desc": "[чилл] Раскрывайте внутренний свет под ведущими мастерами йоги, где мелодии природы соединяются с ритмом ваших дыханий.", "price": "180k IDR", "maps": "https://maps.google.com/?q=Radiantly+Alive+Yoga"}, {"time": "11:30", "name": "DaLa Spa", "desc": "Лепестки роз и теплые ароматы масел расскажут вам о сказке, где время течет иначе, и каждая секунда наполняет вас миром.", "price": "350k IDR", "maps": "https://maps.google.com/?q=DaLa+Spa"}, {"time": "15:00", "name": "Cekingan Terrace Café", "desc": "Присесть с чашкой свежесваренного кофе и видом на террасы, где зелень террас соединяет вас с древними традициями.", "price": "50k IDR", "maps": "https://maps.google.com/?q=Cekingan+Terrace+Café"}],
+    [{"time": "10:45", "name": "The Yoga Barn", "desc": "[чилл] Пение птиц и звук гонга станут вашими проводниками в утреннюю медитацию среди бамбуковых стен этого сакрального места.", "price": "200k IDR", "maps": "https://maps.google.com/?q=The+Yoga+Barn"}, {"time": "12:30", "name": "Karsa Spa", "desc": "Погружение в ванну из экзотических цветов в Karsa Spa - это путь к глубочайшему расслаблению и обновлению.", "price": "400k IDR", "maps": "https://maps.google.com/?q=Karsa+Spa"}, {"time": "16:00", "name": "Tegalalang Rice Terrace", "desc": "Вечерняя прогулка по террасам сладеет душу, и взгляд на уходящее солнце за горизонтом сделает ваш день незабываемым.", "price": "20k IDR", "maps": "https://maps.google.com/?q=Tegalalang+Rice+Terrace"}],
+    [{"time": "11:15", "name": "Amrtasiddhi Ayurveda", "desc": "[чилл] Погрузитесь в мир аюрведы, где древние традиции оживают в каждой процедуре, принося гармонию и баланс.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Amrtasiddhi+Ayurveda"}, {"time": "13:00", "name": "Jungle Fish Beach Club", "desc": "Скрытый от глаз, клуб открывает бассейн с видом на джунгли, где отдохнуть можно среди шёпота ветра и пения птиц.", "price": "100k IDR", "maps": "https://maps.google.com/?q=Jungle+Fish+Beach+Club"}],
+    [{"time": "10:15", "name": "Bali Botanica Day Spa", "desc": "[чилл] Каждое прикосновение здесь - это поэма, где кожа впитывает целительную силу природы и все вокруг наполняется светом.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Bali+Botanica+Day+Spa"}, {"time": "12:00", "name": "Sacred Monkey Forest Sanctuary", "desc": "Тропический лес с вековыми деревьями и игривыми обезьянами, священное место, где время замирает в тишине природы.", "price": "80k IDR", "maps": "https://maps.google.com/?q=Sacred+Monkey+Forest+Sanctuary"}, {"time": "15:00", "name": "La Brisa Bali", "desc": "Ультрамодный пляжный клуб создает атмосферу свободы под колышущееся вечернее море и золотистые лучи заходящего солнца.", "price": "150k IDR", "maps": "https://maps.google.com/?q=La+Brisa+Bali"}],
+    [{"time": "10:45", "name": "Bliss Spa", "desc": "[чилл] Нежные коконы ароматов окутывают вас в Bliss Spa, где каждая минута - эликсир расслабления.", "price": "280k IDR", "maps": "https://maps.google.com/?q=Bliss+Spa"}, {"time": "12:30", "name": "Tirta Taman Mumbul Temple", "desc": "Храм, где тишина и вода сливаются в гармонию, окружая посетителей атмосферой умиротворенности и покоя.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Tirta+Taman+Mumbul+Temple"}],
+    [{"time": "11:30", "name": "Ubud Healing House", "desc": "[чилл] Место, где свет вдохновения и мудрость земли соединяются в практике исцеления и внутренней гармонии.", "price": "320k IDR", "maps": "https://maps.google.com/?q=Ubud+Healing+House"}, {"time": "13:00", "name": "Campuhan Bridge", "desc": "Старинный мост над рекой, место для задумчивых прогулок, где каждой вдыхаемый воздух говорит тише, и спокойствие окутывает вас.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Campuhan+Bridge"}, {"time": "16:00", "name": "Pantai Bias Tugel Beach", "desc": "Уединенный пляж с белым песком и бирюзовыми водами, где звук волн гармонично сочетается с тихим шепотом ветра.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Pantai+Bias+Tugel+Beach"}],
+    [{"time": "11:00", "name": "Titi Batu Ubud Club", "desc": "[чилл] Плавная вода бассейна Titi Batu зовет вас погрузиться в сладкую негу, обнимите безмятежность здесь.", "price": "100k IDR", "maps": "https://maps.google.com/?q=Titi+Batu+Ubud+Club"}, {"time": "14:00", "name": "Petulu Heron Sanctuary", "desc": "Каждый вечер сотни цапель возвращаются домой, укрывая небо белым вуалем вдохновения.", "price": "50k IDR", "maps": "https://maps.google.com/?q=Petulu+Heron+Sanctuary"}],
+    [{"time": "10:20", "name": "Cantika Spa", "desc": "[чилл] В сердце Убуда, Cantika Spa - это ода спокойствию, точка, где энергия земли переливается через каждую клеточку вашего тела.", "price": "270k IDR", "maps": "https://maps.google.com/?q=Cantika+Spa"}, {"time": "12:30", "name": "Echo Beach", "desc": "Шелест волн и соленый воздух Echo Beach станут идеальным завершением вашего дня на песчаном берегу под крышей пальм.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Echo+Beach"}],
+    [
+      {
+        time: '10:00',
+        name: 'Alchemy',
+        desc: '[чилл] Начинаем день с очищения. Лучшие raw-десерты, свежие соки и салат-бар. Максимально спокойная атмосфера.',
+        price: '150k IDR',
+        maps: 'https://maps.google.com/?q=Alchemy+Bali'
+      },
+      {
+        time: '12:00',
+        name: 'Tjampuhan Spa',
+        desc: 'Грот, высеченный в скале! Одно из самых атмосферных спа в Убуде с тёплыми и холодными бассейнами в пещере.',
+        price: '250k IDR',
+        maps: 'https://maps.google.com/?q=Tjampuhan+Spa'
+      },
+      {
+        time: '16:00',
+        name: 'Lazy Cat Cafe',
+        desc: 'Сквозь мягкость винтажного дивана проникает аромат чая, окутывающий атмосферу уюта. Мягкие шёпоты местных котов, зевая на солнце, приглашают остановить время, а страницы книги, перелистываемые сквозь невидимую паутину счастья, шепчут о далеких мирах.',
+        price: '80k IDR',
+        maps: 'https://maps.google.com/?q=Lazy+Cat+Cafe+Ubud'
+      }
+    ],
+    [
+      {
+        time: '11:00',
+        name: 'Zest',
+        desc: '[чилл] Королевский веганский завтрак в деревянном храме на холме. Тут можно зависнуть на пару часов просто разглядывая джунгли.',
+        price: '150k IDR',
+        maps: 'https://maps.google.com/?q=Zest+Ubud'
+      },
+      {
+        time: '14:00',
+        name: 'Karsa Spa',
+        desc: 'Спа среди рисовых полей. Делаем массаж горячими камнями или цветочную ванну. Записываться нужно за неделю!',
+        price: '300k IDR',
+        maps: 'https://maps.google.com/?q=Karsa+Spa+Ubud'
+      },
+      {
+        time: '17:00',
+        name: 'Sayan House',
+        desc: 'Ужин с живописным видом на ущелье реки Аюнг окутан волшебством заката. Нежные оттенки неба сливаются с экзотическими вкусами японско-латинского фьюжна, создавая гастрономический праздник для чувств. Тишина окрестностей наполняется энергией этого уникального сочетания.',
+        price: 'От 250k IDR',
+        maps: 'https://maps.google.com/?q=Sayan+House+Ubud'
+      }
+    ],
+    [
+      {
+        time: '10:00',
+        name: 'Pyramids of Chi',
+        desc: '[чилл] Звуковая медитация (sound healing). Лежишь в пирамиде, слушаешь гонги и поющие чаши — мозг отключается полностью.',
+        price: '300k IDR',
+        maps: 'https://maps.google.com/?q=Pyramids+of+Chi+Ubud'
+      },
+      {
+        time: '13:00',
+        name: 'Cretya Ubud',
+        desc: 'Перемещаемся к рисовым террасам, но не ходить, а плавать. Берём лежак у инфинити-бассейна, заказываем кокос.',
+        price: 'От 150k IDR',
+        maps: 'https://maps.google.com/?q=Cretya+Ubud'
+      },
+      {
+        time: '17:00',
+        name: 'Casa Curandera',
+        desc: 'Тихий вечер наполнен ароматом свежезаваренного какао, а мягкий свет свечей создает атмосферу уюта и умиротворения. Здоровый ужин превращается в гастрономический ритуал, где каждая деталь играет свою роль в создании гармонии. Погружение в эту идиллию восстанавливает душевное равновесие.',
+        price: '150k IDR',
+        maps: 'https://maps.google.com/?q=Casa+Curandera'
+      }
+    ],
+
     // --- Variant 1: Культура + природа ---
     [
       {
@@ -833,7 +913,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Campuhan Ridge Walk',
         desc: 'Тропа художников — узкая дорожка по хребту между двух долин. Утром туман, пальмы, тишина. 30 минут туда, 30 обратно. Лучшее начало дня в Убуде. Пешком от центра!',
         price: 'бесплатно',
-        maps: 'https://maps.app.goo.gl/campuhan-ridge-walk',
+        maps: 'https://maps.google.com/?q=Campuhan+Ridge+Walk',
         tags: ['природа', 'прогулка', 'утро'],
         booking: false
       },
@@ -842,7 +922,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Brie Ubud',
         desc: 'Сырник XXL — размером с голову. Плюс кофе, свежий сок. Небольшое кафе с видом на рисовые поля. После прогулки — то что надо.',
         price: 'завтрак 60-100K',
-        maps: 'https://maps.app.goo.gl/brie-ubud',
+        maps: 'https://maps.google.com/?q=Brie+Ubud+Bali',
         tags: ['завтрак', 'кафе'],
         booking: false
       },
@@ -851,7 +931,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Sacred Monkey Forest',
         desc: 'Обезьяний лес — 700+ макак в древнем лесу с храмами. Реально волшебное место. НО: прячь очки, серёжки, бутылки — обезьяны воруют ВСЁ. Не улыбайся им (показ зубов = агрессия).',
         price: 'вход 100K (будни) / 120K (выходные)',
-        maps: 'https://maps.app.goo.gl/monkey-forest-ubud',
+        maps: 'https://maps.google.com/?q=Monkey+Forest+Ubud+Bali',
         tags: ['природа', 'храм', 'обезьяны'],
         booking: false
       },
@@ -860,7 +940,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Chito Ubud',
         desc: 'Грузинские хинкали на Бали за 40K! Реально вкусные. Маленькое место, хозяин грузин, всё свежее. Хачапури тоже есть. Лучший бюджетный обед в Убуде.',
         price: 'хинкали 40K, обед 60-100K',
-        maps: 'https://maps.app.goo.gl/chito-ubud',
+        maps: 'https://maps.google.com/?q=Chito+Ubud+Bali',
         tags: ['обед', 'грузинская', 'бюджет'],
         booking: false
       },
@@ -878,7 +958,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Tegallalang Rice Terrace',
         desc: 'Открыточные рисовые террасы. К 17:00 автобусы с туристами уехали — можно гулять спокойно. Свет уже мягкий, не припекает. Местные просят donation 10-20K за проход — это нормально.',
         price: 'вход 25-50K',
-        maps: 'https://maps.app.goo.gl/tegallalang-rice-terrace',
+        maps: 'https://maps.google.com/?q=Tegallalang+Rice+Terrace',
         tags: ['природа', 'фото', 'рисовые террасы'],
         booking: false
       },
@@ -887,7 +967,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Elevator Sunset Bar',
         desc: 'Коктейли с видом на рисовые поля в вечернем свете. Расслабленная атмосфера, хороший бармен. Закажи Negroni и просто сиди.',
         price: 'коктейли 80-130K, закуски 60-100K',
-        maps: 'https://maps.app.goo.gl/elevator-bar-ubud',
+        maps: 'https://maps.google.com/?q=Elevator+Bar+Ubud+Bali',
         tags: ['бар', 'закат', 'ужин'],
         booking: false
       },
@@ -896,7 +976,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Bisma Eight',
         desc: 'Бутик-отель на Bisma Road с infinity pool в джунглях. Или бюджетно — Pondok Pundi ($20, центр).',
         price: 'от $20-120/ночь',
-        maps: 'https://maps.app.goo.gl/bisma-eight-ubud',
+        maps: 'https://maps.google.com/?q=Bisma+Eight+Ubud+Bali',
         tags: ['отель'],
         booking: true
       }
@@ -908,7 +988,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Tirta Empul',
         desc: 'Храм священных источников — очищение в холодной воде из 30 фонтанов. Заходишь в саронге, проходишь каждый фонтан, молишься. Приезжай РАНО — к 10 уже толпы. Реальный духовный опыт, не аттракцион.',
         price: 'вход 75K, саронг дают',
-        maps: 'https://maps.app.goo.gl/tirta-empul-temple',
+        maps: 'https://maps.google.com/?q=Tirta+Empul+Temple',
         tags: ['храм', 'духовное', 'очищение'],
         booking: false
       },
@@ -926,7 +1006,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Sayuri Healing Food',
         desc: 'Веган-кафе — но не пугайся. Живая еда, raw cakes, смузи-боулы. Тихое место после мощного духовного утра. Всё органическое, от фермеров рядом.',
         price: 'завтрак 60-100K',
-        maps: 'https://maps.app.goo.gl/sayuri-ubud',
+        maps: 'https://maps.google.com/?q=Sayuri+Ubud+Bali',
         tags: ['завтрак', 'веган', 'здоровое'],
         booking: false
       },
@@ -935,7 +1015,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Gunung Kawi',
         desc: 'Пещерные храмы XI века — вырезаны в скале, 300 ступеней вниз к реке. Мало туристов, много энергии. Один из старейших храмов Бали. Надевай удобную обувь.',
         price: 'вход 50K',
-        maps: 'https://maps.app.goo.gl/gunung-kawi-temple',
+        maps: 'https://maps.google.com/?q=Gunung+Kawi+Temple',
         tags: ['храм', 'древний', 'история'],
         booking: false
       },
@@ -944,7 +1024,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'The Istana Experience',
         desc: 'Балийская баня — церемониальное купание, травяные компрессы, массаж. ТЕЛЕФОНЫ ЗАБИРАЮТ на входе. 3 часа без связи с миром. Ты выйдешь перезагруженным. Серьёзно, это трансформация.',
         price: 'от 500K (3 часа)',
-        maps: 'https://maps.app.goo.gl/istana-ubud',
+        maps: 'https://maps.google.com/?q=Istana+Ubud+Bali',
         tags: ['спа', 'wellness', 'церемония'],
         booking: true
       },
@@ -953,7 +1033,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Ubud Royal Palace — Balinese Dance',
         desc: 'Балийские танцы во дворце — Legong или Barong dance. Красочные костюмы, живой гамелан, древние истории. Каждый вечер разное шоу. 7K за билет — лучшая сделка на Бали.',
         price: 'билет 100K',
-        maps: 'https://maps.app.goo.gl/ubud-royal-palace',
+        maps: 'https://maps.google.com/?q=Ubud+Bali+Royal+Palace',
         tags: ['культура', 'танцы', 'вечер'],
         booking: false
       },
@@ -962,7 +1042,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Kawi Speakeasy',
         desc: 'Секретный бар — вход через неприметную дверь. Авторские коктейли, приглушённый свет, музыка. Мало кто знает. Спроси у бармена за «the journey» — не пожалеешь.',
         price: 'коктейли 90-140K',
-        maps: 'https://maps.app.goo.gl/kawi-speakeasy-ubud',
+        maps: 'https://maps.google.com/?q=Kawi+Speakeasy+Ubud+Bali',
         tags: ['бар', 'ужин', 'секретный'],
         booking: false
       },
@@ -971,7 +1051,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Komaneka at Bisma',
         desc: 'Тихий резорт в джунглях с медитативной атмосферой. Или бюджетно — Tapa Nata ($25, рисовые поля из окна).',
         price: 'от $25-150/ночь',
-        maps: 'https://maps.app.goo.gl/komaneka-bisma-ubud',
+        maps: 'https://maps.google.com/?q=Komaneka+Bisma+Ubud+Bali',
         tags: ['отель'],
         booking: true
       }
@@ -983,7 +1063,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Hidden Canyon Beji Guwang',
         desc: 'Идёшь ПО ВОДЕ в узком ущелье — стены смыкаются над тобой, свет пробивается сверху. Как в Индиане Джонсе. Глубина воды по колено-пояс. Обувь не жалко — бери сандалии.',
         price: 'вход 20K + гид 100K',
-        maps: 'https://maps.app.goo.gl/hidden-canyon-beji-guwang',
+        maps: 'https://maps.google.com/?q=Hidden+Canyon+Beji+Guwang',
         tags: ['приключения', 'природа', 'каньон'],
         booking: false
       },
@@ -992,7 +1072,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Fu Shou Noodle House',
         desc: 'Лапша за 30K — и это лучшая лапша в Убуде. Бульон варят часами, порции огромные. Маленький варунг, пластиковые стулья, идеальный вкус. Местные тут обедают.',
         price: 'лапша 30-50K',
-        maps: 'https://maps.app.goo.gl/fu-shou-noodle-ubud',
+        maps: 'https://maps.google.com/?q=Fu+Shou+Noodle+Ubud+Bali',
         tags: ['обед', 'бюджет', 'лапша'],
         booking: false
       },
@@ -1001,7 +1081,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'ATV Quad Bike Adventure',
         desc: 'Квадроциклы через рисовые поля, грязь, реки, джунгли — 2 часа адреналина. Будешь грязный с ног до головы и счастливый. БРОНИРУЙ заранее, места разбирают!',
         price: '500-700K (2 часа)',
-        maps: 'https://maps.app.goo.gl/atv-ubud',
+        maps: 'https://maps.google.com/?q=Atv+Ubud+Bali',
         tags: ['приключения', 'активность', 'квадроциклы'],
         booking: true
       },
@@ -1010,7 +1090,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Kanto Lampo Waterfall',
         desc: 'Каскадный водопад — вода стекает по ступенчатым скалам, ты стоишь внизу. Не такой мощный как Секумпул, зато можно подойти вплотную. Красивые фото и освежиться после ATV.',
         price: 'donation 20K',
-        maps: 'https://maps.app.goo.gl/kanto-lampo-waterfall',
+        maps: 'https://maps.google.com/?q=Kanto+Lampo+Waterfall',
         tags: ['водопад', 'природа', 'купание'],
         booking: false
       },
@@ -1019,7 +1099,7 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Alas Harum + Cretya',
         desc: 'Бассейн-инфинити с видом на рисовые террасы + качели над джунглями. К 17:00 свет золотой, толпы ушли. Cretya — бич-клаб в рисовых полях (серьёзно). Коктейль на закате тут — must do.',
         price: 'вход от 150K (включая напиток)',
-        maps: 'https://maps.app.goo.gl/alas-harum-cretya',
+        maps: 'https://maps.google.com/?q=Alas+Harum+Cretya',
         tags: ['бассейн', 'закат', 'бар'],
         booking: false
       },
@@ -1028,16 +1108,16 @@ var MANUAL_ROUTES_ZONE = [
         name: 'Apéritif by Viceroy',
         desc: 'Fine dining в джунглях — дегустационный сет из 7 блюд, каждое с историей. Вид на долину, живая музыка. Дорого, но это ужин, который запомнишь на годы.',
         price: 'дегустация от 800K',
-        maps: 'https://maps.app.goo.gl/aperitif-viceroy-ubud',
+        maps: 'https://maps.google.com/?q=Aperitif+Viceroy+Ubud+Bali',
         tags: ['ужин', 'fine dining'],
         booking: true
       },
       {
         time: '🏨',
         name: 'Viceroy Bali',
-        desc: 'Luxury resort с виллами над долиной. Или бюджетно — Alam Indah ($30, бассейн+рисовые поля).',
+        desc: 'Роскошный курорт с виллами, парящими над живописной долиной, погружает в атмосферу уединения и гармонии. Для искателей более бюджетного отдыха Alam Indah предлагает уютные номера у бассейна на фоне бескрайних рисовых полей. Каждый уголок наполнен поэзией природы и спокойствием.',
         price: 'от $30-300/ночь',
-        maps: 'https://maps.app.goo.gl/viceroy-bali-ubud',
+        maps: 'https://maps.google.com/?q=Viceroy+Bali+Ubud+Bali',
         tags: ['отель'],
         booking: true
       }
@@ -1176,7 +1256,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Fivelements Retreat',
-        desc: 'Эко-ретрит на реке — бамбуковые виллы, растительная кухня, spa. Или бюджетно: Tapa Nata ($25).',
+        desc: 'Эко-ретрит на реке погружает в мир гармонии: бамбуковые виллы, утопающие в зелени, и растительная кухня, возвышающая вкус. Мягкие звуки природы создают идеальную атмосферу для расслабления в спа. Для экономного отдыха подойдёт Tapa Nata — изысканный уголок с непринужденной атмосферой.',
         price: 'от $25-200/ночь',
         maps: 'https://maps.google.com/?q=Fivelements+Retreat+Ubud',
         tags: ['отель', 'retreat'],
@@ -1242,7 +1322,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '18:30',
         name: 'Elevator Sunset Bar',
-        desc: 'Коктейли с видом на рисовые поля в закатном свете. Расслабленная атмосфера, идеальный финал фото-дня.',
+        desc: 'Коктейли с видом на бескрайние рисовые поля, окутанные мягким светом заката. В расслабленной атмосфере время замирает, создавая идеальный финал сказочного дня.',
         price: 'коктейли 80-130K',
         maps: 'https://maps.google.com/?q=Elevator+Bar+Ubud',
         tags: ['бар', 'закат'],
@@ -1326,7 +1406,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Komaneka at Bisma',
-        desc: 'Арт-отель — картины в каждом номере, галерея на территории. Или бюджетно: Pondok Pundi ($20).',
+        desc: 'Арт-отель пленяет яркими полотнами в каждом номере и превращает пространство в галерею. Для искушенных путешественников подойдёт уютный Pondok Pundi за $20 — идеальное сочетание стиля и доступности.',
         price: 'от $20-150/ночь',
         maps: 'https://maps.google.com/?q=Komaneka+at+Bisma+Ubud',
         tags: ['отель'],
@@ -1401,7 +1481,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Junjungan Serenity Villas',
-        desc: 'Виллы в джунглях с видом на долину. Или бюджетно: Sri Ratih Cottages ($30).',
+        desc: 'Виллы, утопающие в зелени джунглей, открывают захватывающий вид на пышную долину. Для тех, кто предпочитает экономичный вариант, уютные Sri Ratih Cottages предлагают комфорт всего за $30.',
         price: 'от $30-120/ночь',
         maps: 'https://maps.google.com/?q=Junjungan+Serenity+Villas+Ubud',
         tags: ['отель'],
@@ -1467,7 +1547,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Viceroy Bali',
-        desc: 'Luxury виллы над долиной с частным бассейном. Романтика уровня honeymoon.',
+        desc: 'Роскошные виллы на возвышенности открывают захватывающий вид на долину, где сливаются с небом нежные оттенки заката. Частные бассейны как оазисы уединения создают идеальные условия для романтических моментов, наполняя воздух атмосферой безмятежности. Этот уголок — настоящее воплощение блаженства для влюбленных.',
         price: 'от $300/ночь',
         maps: 'https://maps.google.com/?q=Viceroy+Bali+Ubud',
         tags: ['отель', 'luxury'],
@@ -1533,7 +1613,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Padma Resort Ubud',
-        desc: 'Семейный резорт с детским клубом, бассейном, active zone. Или бюджетно: Alam Indah ($30).',
+        desc: 'Семейный курорт, где каждый уголок наполняется радостью — детский клуб, яркие пейзажи и бескрайние просторы активной зоны. Для бюджетного уединения подойдёт Alam Indah, уютное убежище всего за $30. Здесь расслабление и веселье переплетаются, создавая идеальные условия для незабываемых моментов.',
         price: 'от $30-200/ночь',
         maps: 'https://maps.google.com/?q=Padma+Resort+Ubud',
         tags: ['отель', 'семья'],
@@ -1608,7 +1688,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Alaya Resort Ubud',
-        desc: 'Стильный резорт в центре. Или бюджетно: Pondok Pundi ($20).',
+        desc: 'В самом сердце города раскинулся стильный курорт, где каждая деталь пропитана атмосферой утонченности. Для тех, кто ценит уют и экономию, найдется очаровательный Pondok Pundi — всего за $20 вы окунетесь в мир комфорта и уюта.',
         price: 'от $20-120/ночь',
         maps: 'https://maps.google.com/?q=Alaya+Resort+Ubud',
         tags: ['отель'],
@@ -1674,7 +1754,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Alam Indah',
-        desc: 'Отель с бассейном и рисовыми полями. Тихий, уютный, хороший завтрак.',
+        desc: 'Отель, утопающий в зелени рисовых полей, предлагает освежающих окунаний в кристально чистый бассейн. Тишина и уют сливаются с ароматами свежезаваренного кофе и домашней выпечки, создавая атмосферу безмятежности. Каждое утро начинается здесь с удовольствием, пробуждая чувства в гармонии с природой.',
         price: 'от $30/ночь',
         maps: 'https://maps.google.com/?q=Alam+Indah+Hotel+Ubud',
         tags: ['отель'],
@@ -1731,7 +1811,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '18:30',
         name: 'Usha',
-        desc: 'Русский ресторан — стейки, паста, десерты. Атмосферный, стильный. Русскоязычный персонал. Ужин без языкового барьера.',
+        desc: 'Русский ресторан радует изысканными стейками, нежной пастой и утонченными десертами. Дизайн пропитан атмосферой стиля и уюта, а доброжелательные русскоязычные официанты делают каждый ужин по-настоящему комфортным. Здесь язык не станет преградой для наслаждения истинным кулинарным искусством.',
         price: '120-200K',
         maps: 'https://maps.google.com/?q=Usha+Restaurant+Ubud+Bali',
         tags: ['ужин', 'русская'],
@@ -1740,7 +1820,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Bisma Eight',
-        desc: 'Стильный бутик-отель на Bisma Road. Infinity pool в джунглях.',
+        desc: 'Стильный бутик-отель на Бисма Роуд утопает в зелени джунглей, где сливаются роскошь и природа. Безкрайний бассейн с эффектом бесконечности создает иллюзию плавного перехода в тропический рай. Каждое утро здесь начинается с симфонии пения птиц и шепота листвы.',
         price: 'от $80/ночь',
         maps: 'https://maps.google.com/?q=Bisma+Eight+Ubud',
         tags: ['отель'],
@@ -1797,7 +1877,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '16:30',
         name: 'Purga Artspace',
-        desc: 'Арт-пространство с выставками, перформансами, кинопоказами. Андерграунд-сцена Убуда. Программа меняется — гляни Instagram.',
+        desc: 'Арт-пространство Убуда погружает в мир необычных выставок и захватывающих перформансов. Каждый уголок кольца звуков и образов наполняет воздух экспрессивными шедеврами. Об обновлениях следует узнавать на Instagram, где жизнь пространства меняется с каждой минутой.',
         price: 'вход свободный',
         maps: 'https://maps.google.com/?q=Purga+Artspace+Ubud',
         tags: ['арт', 'культура'],
@@ -1854,7 +1934,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '14:30',
         name: 'Lova Cafe',
-        desc: 'Кафе на рисовых полях — тихое, зелёное, с хорошим кофе. Перезарядись перед вечерними приключениями.',
+        desc: 'Кафе на рисовых полях — оазис тишины среди бескрайних зелёных просторов, где аромат свежезаваренного кофе окутывает каждую деталь. Вдали шепчут листья, и каждый глоток словно пропитанный нежностью вечернего брезента. Идеальное место для тёплого расслабления перед погружением в вечерние приключения.',
         price: '50-90K',
         maps: 'https://maps.google.com/?q=Lova+Cafe+Ubud',
         tags: ['кафе', 'отдых'],
@@ -1881,7 +1961,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Bisma Eight',
-        desc: 'Бутик-отель с infinity pool в джунглях. Или бюджетно: Pondok Pundi ($20).',
+        desc: 'Бутик-отель с бездонным бассейном, утопающим в зелени джунглей, погружает в атмосферу умиротворения и роскоши. Для искателей экономии — Pondok Pundi, где комфорт встречается с доступными ценами.',
         price: 'от $20-100/ночь',
         maps: 'https://maps.google.com/?q=Bisma+Eight+Ubud',
         tags: ['отель'],
@@ -1947,7 +2027,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '19:30',
         name: 'Nautilus Ubud',
-        desc: 'Ресторан-арт-объект — интерьер как подводная лодка Наутилус. Крафтовые коктейли, авторская кухня. Место, которое удивляет.',
+        desc: 'Ресторан-арт-объект погружает в атмосферу подводной лодки Наутилуса, где каждый элемент интерьера словно затаился в глубинах океана. Крафтовые коктейли и авторская кухня поражают смелостью и изысканностью. Это место, где каждый укус — открытие, каждый глоток — приключение.',
         price: '100-180K',
         maps: 'https://maps.google.com/?q=Nautilus+Ubud+Bali',
         tags: ['ужин', 'необычное'],
@@ -2031,7 +2111,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Komaneka at Bisma',
-        desc: 'Резорт с медитативной атмосферой — идеально после долгого дня. Или бюджетно: Shana Homestay ($20).',
+        desc: 'Резорт окутан медитативной атмосферой, идеально подходящей для расслабления после долгих дней. В Shana Homestay за $20 царит уют и простота, создающие атмосферу домашнего тепла. Каждое утро здесь начинает с теплого света и манящего аромата свежезаваренного кофе.',
         price: 'от $20-150/ночь',
         maps: 'https://maps.google.com/?q=Komaneka+at+Bisma+Ubud',
         tags: ['отель'],
@@ -2097,7 +2177,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Padma Resort Ubud',
-        desc: 'Резорт с лучшим бассейном в Убуде (88м!). Или бюджетно: Alam Indah ($30).',
+        desc: 'Роскошный курорт с величественным бассейном в Убуде, протянувшимся на 88 метров, манит своей водной гладью и экзотической атмосферой. Для более экономного отдыха доступен Alam Indah, где за 30 долларов открывается изысканный мир местной культуры и уюта.',
         price: 'от $30-200/ночь',
         maps: 'https://maps.google.com/?q=Padma+Resort+Ubud',
         tags: ['отель'],
@@ -2154,7 +2234,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '17:00',
         name: 'Omma Day Club',
-        desc: 'После экстрима — пул-клаб. Инфинити бассейн, коктейли, закат. Отмой грязь дня, расслабься.',
+        desc: 'Экстрим сменяется атмосферой расслабления в пул-клубе. Беспечный коктейль в руках, а закат окутывает золотым светом бесконечный бассейн. Грязь прошедшего дня растворяется в мгновениях покоя.',
         price: 'вход от 200K',
         maps: 'https://maps.google.com/?q=Omma+Day+Club+Ubud',
         tags: ['бассейн', 'бар'],
@@ -2172,7 +2252,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Viceroy Bali',
-        desc: 'Luxury виллы с видом на долину. Или бюджетно: Alam Indah ($30).',
+        desc: 'Роскошные виллы раскрывают панораму на бескрайние долины, погружая в атмосферу утончённого покоя. Для искателей экономичных приключений уютный Alam Indah предлагает незабываемые впечатления всего за $30.',
         price: 'от $30-300/ночь',
         maps: 'https://maps.google.com/?q=Viceroy+Bali+Ubud',
         tags: ['отель'],
@@ -2193,7 +2273,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '08:00',
         name: 'Sayuri Healing Food',
-        desc: 'Живая еда после практики — raw боулы, проростки, ферментированное. Всё органическое. Тело скажет спасибо.',
+        desc: 'После занятий открываются двери в мир живой еды: яркие боулы с сырыми овощами, хрустящие проростки и нежное ферментированное лакомство. Каждый ингредиент — органический, словно сам по себе пропитан энергией природы. Тело наполняется легкостью и благодарностью за щедрость Земли.',
         price: '60-100K',
         maps: 'https://maps.google.com/?q=Sayuri+Healing+Food+Ubud',
         tags: ['завтрак', 'веган', 'raw'],
@@ -2247,7 +2327,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '19:30',
         name: 'Earth Cafe',
-        desc: 'Вегетарианский ужин — индонезийское, мексиканское, средиземноморское. Тёплая атмосфера, живая музыка по пятницам.',
+        desc: 'Вегетарианский ужин наполняет воздух экзотическими ароматами Индонезии, яркими специями Мексики и свежими нотами Средиземноморья. Тёплая атмосфера завораживает, а звуки живой музыки по пятницам создают неповторимый вечерний настрой.',
         price: '60-110K',
         maps: 'https://maps.google.com/?q=Earth+Cafe+Ubud',
         tags: ['ужин', 'вегетарианское'],
@@ -2256,7 +2336,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '🏨',
         name: 'Fivelements Retreat',
-        desc: 'Бамбуковые виллы на реке, веган-кухня, ежедневная йога. Ретрит-опыт. Или бюджетно: Tapa Nata ($25).',
+        desc: 'Бамбуковые виллы незаметно притаились на берегу реки, окруженные тенистыми деревьями. Веганская кухня радует утончёнными вкусами, а ежедневные утренние занятия йогой наполняют воздух гармонией. Для тех, кто предпочитает экономичный отдых, Tapa Nata предлагает уединение всего за $25.',
         price: 'от $25-250/ночь',
         maps: 'https://maps.google.com/?q=Fivelements+Retreat+Ubud',
         tags: ['отель', 'retreat'],
@@ -2448,7 +2528,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '10:30',
         name: 'Green Rabbit Ubud',
-        desc: 'Полностью веганское кафе в центре Убуда. Raw-торты, смузи, боулы. Даже мясоеды в восторге.',
+        desc: 'Центр Убуда, окутанный свежими ароматами, предлагает уникальное веганское кафе, где каждый десерт — произведение искусства. Нежные raw-торты и яркие смузи умело сочетаются с восхитительными боулами, приводя в восторг даже искушенных мясоедов. Атмосфера полного единения с природой делает каждую трапезу незабываемой.',
         price: '45-100K',
         maps: 'https://maps.google.com/maps/search/Green+Rabbit+Ubud+Bali',
         tags: ['веган', 'кафе'],
@@ -2457,7 +2537,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '12:00',
         name: 'Satu Ubud',
-        desc: 'Индонезийская кухня в современной подаче. Наси чампур, сатай, свежие самбалы. Вкус настоящего Бали.',
+        desc: 'Современная интерпретация индонезийской кухни раскрашивает палитру Бали. Наси чампур, ароматный сатай и яркие самбалы создают симфонию вкусов, где каждый элемент пронизан духом островного рая. Настоящее наслаждение для гурманов, ищущих аутентичность в каждом блюде.',
         price: '50-110K',
         maps: 'https://maps.google.com/maps/search/Satu+Restaurant+Ubud+Bali',
         tags: ['обед', 'местная'],
@@ -2475,7 +2555,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '16:00',
         name: 'Shaffa Ubud',
-        desc: 'Ближневосточная кухня — хумус, фалафель, шакшука. Красивая подача, атмосфера Марракеша.',
+        desc: 'Ближневосточная кухня восхищает богатством вкусов: бархатный хумус, хрустящий фалафель и пряная шакшука. Каждое блюдо притягивает внимание утонченной подачей, погружая в магию Марракеша, где воздух напоён специями и радушием.',
         price: '100-200K',
         maps: 'https://maps.google.com/maps/search/Shaffa+Ubud+Bali',
         tags: ['ужин', 'восточная'],
@@ -2484,7 +2564,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '19:00',
         name: 'Twelve Ubud',
-        desc: 'Fine dining в джунглях. Дегустационный сет, винная карта, свечи. Идеальный финал гастро-дня.',
+        desc: 'Изысканная кухня под пологом джунглей. Дегустационный сет, изысканные вина и мягкий свет свечей создают атмосферу волшебства. Завершение гастрономического дня в раю для гурманов.',
         price: '100-250K',
         maps: 'https://maps.google.com/maps/search/Twelve+Restaurant+Ubud+Bali',
         tags: ['ужин', 'fine dining'],
@@ -2496,7 +2576,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '08:00',
         name: 'Feel Food Ubud',
-        desc: 'Plant-based завтрак. Веганские боулы, raw-десерты, супер-фуд латте. Заряд энергии на день.',
+        desc: 'Роскошный растительный завтрак угощает веганскими боулами, их текстуры стремительно сменяются свежестью сырых десертов. Супер-фуд латте наполняет ароматом и уносит в мир гармонии. Энергия на весь день проникает в каждую клеточку.',
         price: '50-110K',
         maps: 'https://maps.google.com/maps/search/Feel+Food+Ubud+Bali',
         tags: ['завтрак', 'веган'],
@@ -2514,7 +2594,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '12:00',
         name: 'Atman Kafe',
-        desc: 'Сыроедческое кафе. Живая пицца, raw-паста, суперфуд-коктейли. Детокс по-убудски.',
+        desc: 'Сыроедческое кафе погружает в мир свежести и здоровья. Живая пицца, нежная raw-паста и яркие суперфуд-коктейли создают уникальный гастрономический опыт. Детокс в Убуде — это синергия вкусов и сияющих красок природы.',
         price: '55-120K',
         maps: 'https://maps.google.com/maps/search/Atman+Kafe+Ubud+Bali',
         tags: ['обед', 'raw'],
@@ -2523,7 +2603,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '14:00',
         name: 'OpenHouse Ubud',
-        desc: 'Просторное кафе с видом на рисовые поля. Кофе и лёгкий перекус перед вечером.',
+        desc: 'Просторное кафе, утопающее в зелени рисовых полей, наполняет воздух ароматом свежезаваренного кофе. Легкие закуски, словно вдохновение, пробуждают вкусовые ощущения, создавая атмосферу уюта перед вечерними встречами.',
         price: '60-140K',
         maps: 'https://maps.google.com/maps/search/Open+House+Ubud+Bali',
         tags: ['кафе', 'отдых'],
@@ -2532,7 +2612,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '17:00',
         name: 'Honey Kitchen Ubud',
-        desc: 'Домашние панкейки с мёдом и фруктами на полдник. Расслабленная атмосфера.',
+        desc: 'Легкие, воздушные панкейки, щедро политые медом и усыпанными свежими фруктами, словно нежные облака на тарелке. Атмосфера выполнения задумок плавно окутывает, приглашающая насладиться каждым мгновением.',
         price: '50-100K',
         maps: 'https://maps.google.com/maps/search/Honey+Kitchen+Ubud+Bali',
         tags: ['полдник', 'десерт'],
@@ -2541,7 +2621,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '19:00',
         name: 'Manakitchen',
-        desc: 'Домашний ужин в маленьком кафе. Боулы, карри, свежие соки. Душевный финал дня.',
+        desc: 'Уютное кафе, где ароматы свежесваренных карри заполоняют воздух. Чаши с яркими боулами и вкусные соки словно созданы для теплого завершения дня. Это место дарит тихую гармонию и атмосферу домашнего уюта.',
         price: '55-120K',
         maps: 'https://maps.google.com/maps/search/Manakitchen+Ubud+Bali',
         tags: ['ужин', 'домашняя'],
@@ -2550,24 +2630,110 @@ var MANUAL_ROUTES_ZONE = [
     ]
   ];
 
-function generateRandomRoute(zoneKey) {
+function showRouteGallery() {
   try {
     var routes = MANUAL_ROUTES_ZONE;
     if (!routes || routes.length === 0) { alert('Маршруты для этого района пока в разработке'); return; }
-    if (!window._routeIdx) window._routeIdx = 0;
-    var idx = window._routeIdx;
-    window._routeIdx = (idx + 1) % routes.length;
+    
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
+    
+    for (var i = 0; i < routes.length; i++) {
+      var route = routes[i];
+      var isHard = false;
+      var isChill = false;
+      var routeText = JSON.stringify(route).toLowerCase();
+      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+      var hourMatch = firstTimeStr.match(/\d{2}/);
+      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+      
+      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+        isHard = true;
+      }
+      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+        isChill = true;
+        isHard = false;
+      }
+      
+      var badge = '';
+      if (isChill) {
+        badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
+      } else if (isHard) {
+        badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
+      } else {
+        badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
+      }
+      
+      var places = [];
+      for(var j = 0; j < route.length; j++) {
+        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
+        if(!isHotel && route[j].name) {
+          places.push(route[j].name);
+        }
+      }
+      var previewText = places.join(' → ');
+      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
+
+      html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
+      html += '    <div>' + badge + '</div>';
+      html += '  </div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '</div>';
+    }
+    
+    html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
+    html += '</div>';
+    
+    document.getElementById('guideContent').style.display = 'none';
+    var rs = document.getElementById('routeScreen');
+    rs.innerHTML = html;
+    rs.style.display = 'block';
+    window.scrollTo(0, 0);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function showSingleRoute(idx) {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
     var route = routes[idx];
-    var html = '<div style="padding:20px">';
-    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:20px">🗺 Твой маршрут на день</div>';
-    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px">Маршрут ' + (idx+1) + '/' + routes.length + ' · Нажми ещё раз для следующего</div>';
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    
+    var isHard = false;
+    var isChill = false;
+    var routeText = JSON.stringify(route).toLowerCase();
+    var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+    var hourMatch = firstTimeStr.match(/\d{2}/);
+    var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+    
+    if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+      isHard = true;
+    }
+    if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+      isChill = true;
+      isHard = false;
+    }
+    
+    var badge = '';
+    if (isChill) {
+      badge = '<span style="margin-left:8px; background:rgba(255,182,193,0.3); color:#e83e8c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🌸 Чилл</span>';
+    } else if (isHard) {
+      badge = '<span style="margin-left:8px; background:rgba(255,87,34,0.15); color:#e64a19; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🔥 Хард</span>';
+    } else {
+      badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
+    }
+
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px">🗺 Маршрут ' + (idx+1) + '</div>';
+    html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
+
     for (var i = 0; i < route.length; i++) {
       var p = route[i];
       html += '<div style="background:rgba(255,255,255,0.7);border-radius:16px;padding:16px;margin-bottom:12px">';
       html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
-      html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc + '</div>';
+      html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
       if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
-      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
+      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
     }
 
@@ -2576,7 +2742,7 @@ function generateRandomRoute(zoneKey) {
     for (var j = 0; j < route.length; j++) {
       var tags = route[j].tags || [];
       var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
-      if (!isHotel) {
+      if (!isHotel && route[j].name) {
         mapPlaces.push(route[j].name);
       }
     }
@@ -2595,13 +2761,12 @@ function generateRandomRoute(zoneKey) {
       html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
     }
     // --- End Google Maps Directions button ---
-    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="generateRandomRoute(\'ubud\')" style="padding:12px 24px;border-radius:12px">🔄 Другой маршрут</button></div>';
-    html += '<div style="text-align:center;margin-top:16px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к гайду</button></div>';
+    
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="padding:12px 24px;border-radius:12px">← Назад к выбору маршрутов</button></div>';
     html += '</div>';
-    document.getElementById('guideContent').style.display = 'none';
+    
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
-    rs.style.display = 'block';
     window.scrollTo(0, 0);
   } catch(e) { alert('Ошибка: ' + e.message); }
 }

@@ -143,7 +143,7 @@
 <div class="place"><div class="place-desc">🐢 Снорклинг в Nusa Dua — черепахи прямо у берега!</div></div>
 </div>
 
-<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="generateRandomRoute('bukit_nusadua')" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
+<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
 <div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
@@ -153,6 +153,63 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
+    [{"time": "10:00", "name": "Волшебная Лазурь", "desc": "[чилл] Мягкие шепоты океана ласкают слух, солнечные зайчики танцуют на воде, даря ощущение вечного лета.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Pantai+Nusa+Dua"}, {"time": "12:30", "name": "Спа Луны", "desc": "Тихие движения масел, ароматы лавандового умиротворения скользят по коже, наполняя каждую клеточку спокойствием.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Luna+Spa"}],
+    [{"time": "11:00", "name": "Кокон Блаженства", "desc": "[чилл] Воздушные подушечки приглашают во снежно-белую сеть, куда ловится каждое тревожное движение и растворяется в покое.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Cocoon+Spa+Bali"}, {"time": "14:00", "name": "Закат на Паданг-Паданг", "desc": "Закат обнимает тропики, красочные мазки неба играют с нежным шелестом волн. Закрываете глаза и растворяетесь в тепле.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Padang+Padang+Beach"}],
+    [{"time": "11:30", "name": "Мелодии Чувств", "desc": "[чилл] Созвучные ноты наполняют пространство, пробуждая душу, ведут её в танец межзвездной гармонии.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Sound+Healers+Bali"}, {"time": "15:00", "name": "Тайны Тенггангана", "desc": "Волшебство деревни и тропические краски настраивают на неторопливый лад, сливаясь с ритмами спокойной природы.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Tenganan+Village"}],
+    [{"time": "10:30", "name": "Ласкающее Море", "desc": "[чилл] Нежность песка и жгучий, но нехарчащий ветерок, шуршание листьев и глубокий выдох свободы.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Geger+Beach"}, {"time": "14:30", "name": "Расслабляющий Кельман", "desc": "Обволакивающие движения, ароматы специй и масок, что перемещают вас в мир иных, беспечных наслаждений.", "price": "400k IDR", "maps": "https://maps.google.com/?q=Kelman+Spa+Bali"}],
+    [{"time": "11:15", "name": "Лимонная Роща", "desc": "[чилл] Тонкий аромат цитруса, воздух словно наполнен искристыми пузырьками свежести, пробуждает мысли.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Lemon+Grove+Bali"}, {"time": "13:45", "name": "Нур-Сансар Лечебный Оазис", "desc": "Тёплые потоки по телу и дерзкий запах лесных трав уносят прочь в страну исцеляющих звуков.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Nur+Samsara+Healing+Center"}, {"time": "16:00", "name": "Поле Ладана и Лёгкости", "desc": "Закат окутает ваше тело тепло-красными лучами, что нежно отзываются в вас стихами покоя и уюта.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Ladang+Ladang+Field"}],
+    [{"time": "10:45", "name": "Маятник Отдыха", "desc": "[чилл] Густые лица и спокойные движения рук в сопровождении успокаивающих запахов - ваша новая реальность.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Pendulum+Relax+Spa"}, {"time": "13:00", "name": "Берег Ветра", "desc": "Легкость морского дыхания, звенящий воздух, висящий в мгновениях безвременья, окутывает медитативными звуками.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Windy+Beach+Bali"}],
+    [{"time": "11:45", "name": "Песочная Соната", "desc": "[чилл] Шелест морского бриза и пение песка обнимает вас своей незатейливой простотой и ненавязчивой магией.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Tanah+Lot+Beach"}, {"time": "14:15", "name": "Солнечная Опера", "desc": "Невероятные актеры солнечных лучей сплетают изящные узоры на горизонте вашего души в мгновения творческого вдохновения.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Sunset+Opera+Bali"}],
+    [{"time": "10:15", "name": "Исследовательские Воды", "desc": "[чилл] Подводные следы и звуки далеких далей будоражат ваше сердце и вводят в состояние грациозного полета.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Diving+Point+Nusa"}, {"time": "13:00", "name": "Берег Жемчужных Снов", "desc": "Сладко-терпкий аромат морского воздуха, манящий к себе светло-бирюзовыми красками и шепотом волн в ушах.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Pearl+Beach"}, {"time": "16:30", "name": "Свет Зажигалок", "desc": "Едва уловимый запах масла и аромат ладана привносят гармонию на ушную раковину и мягкий привкус на кончике языка.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Light+Healers+Bali"}],
+    [{"time": "11:00", "name": "Струна Сумерек", "desc": "[чилл] Малиновое зарево разворачивает свои крылья, как теплый плед, успокаивая своим глубинным звучанием.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Twilight+Strum+Bali"}, {"time": "14:00", "name": "Гармония Берега", "desc": "Отзвуки ветря, говорящие губным островам коих простаивают в одиночестве вечности. Вам остаётся наслаждаться.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Harmony+Beach"}],
+    [{"time": "10:30", "name": "Тихая Гавань", "desc": "[чилл] Здесь вы обретете внутренний покой, ведь гармония мира вложена в мягкие звуки вечности.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Quiet+Harbor+Nusa"}, {"time": "12:45", "name": "Тайны Леса Бали", "desc": "Полянки и дремучие кроны деревьев звенят шёпотом древних песен, что так приятно одурманивают сознание.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Bali+Forest+Secrets"}],
+    [
+      {
+        time: '11:00',
+        name: 'Nusa Dua Beach',
+        desc: ' Идём на самый спокойный пляж острова без волн. Купаемся в кристальной воде как в бассейне.',
+        price: 'Бесплатно',
+        maps: 'https://maps.google.com/?q=Nusa+Dua+Beach'
+      },
+      {
+        time: '13:00',
+        name: 'St. Regis Brunch',
+        desc: 'Позволяем себе лучший бранч на острове (если бюджет позволяет) или идём в Cuca на гастрономический чилл.',
+        price: 'От 300k IDR',
+        maps: 'https://maps.google.com/?q=Cuca+Bali'
+      },
+      {
+        time: '16:00',
+        name: 'Mulia Spa',
+        desc: 'Спа с ледяной комнатой и горячими гидромассажными бассейнами окутывает ощущением роскоши и умиротворения. Каждое погружение — это обновление, каждое дыхание — свежесть. Идеальное пространство для восстановления гармонии тела и духа.',
+        price: 'От 500k IDR',
+        maps: 'https://maps.google.com/?q=Mulia+Spa+Bali'
+      }
+    ],
+    [
+      {
+        time: '10:00',
+        name: 'Melasti Beach',
+        desc: 'Лежак на берегу Tropical Temptation или Palmilla дарит ощущение покоя. Лазурная вода мягко переливается на солнце, а нежные мелодии наполняют воздух, создавая атмосферу безмятежности. Обслуживание у лежака добавляет роскошь к каждому мгновенью.',
+        price: 'От 150k IDR',
+        maps: 'https://maps.google.com/?q=Melasti+Beach'
+      },
+      {
+        time: '14:00',
+        name: 'The Cave by Chef Ryan Clift',
+        desc: 'Обед в истинной пещере — это погружение в мир первозданной природы. Прохлада каменных стен обнимает, а загадочная игра теней создает неповторимую атмосферу. Каждый укус соседствует с ощущением тайны и древности.',
+        price: 'От 500k IDR',
+        maps: 'https://maps.google.com/?q=The+Cave+by+Chef+Ryan+Clift'
+      },
+      {
+        time: '17:00',
+        name: 'Rock Bar',
+        desc: 'Приезжаем к открытию на закат. Бар на скале, шум волн и коктейли. Просто сидеть и наслаждаться моментом.',
+        price: 'От 300k IDR',
+        maps: 'https://maps.google.com/?q=Rock+Bar+Bali'
+      }
+    ],
+
     // --- Variant 1: Семейный пляжный ---
     [
       {
@@ -176,7 +233,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '16:00',
         name: 'GWK Cultural Park',
-        desc: 'Гигантская статуя Гаруда Вишну — 121 метр! Дети обожают масштаб. Территория огромная.',
+        desc: 'Гигантская статуя Гаруды Вишну, высящаяся на 121 метр, завораживает своими грандиозными размерами. На просторной территории ощущается дух древних легенд, а юные исследователи с радостью преодолевают расстояния, пораженные масштабом этого чуда.',
         price: 'вход 150K',
         maps: 'https://maps.google.com/?q=GWK+Cultural+Park+Bali',
         tags: ['культура', 'дети'],
@@ -197,7 +254,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '09:00',
         name: 'Melasti Beach',
-        desc: 'Самый красивый пляж Букита утром — никого. Бирюзовая вода, белые скалы. Купайся до 11.',
+        desc: 'Утренний Букит встречает тишиной, даря мгновения уединения. Бирюзовые волны ласкают белоснежные скалы, наполняя воздух свежестью. Время купания до яркого полдня — наслаждение в каждом отблеске солнечных лучей.',
         price: 'парковка 5-10K',
         maps: 'https://maps.google.com/?q=Melasti+Beach+Bali',
         tags: ['пляж'],
@@ -206,7 +263,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '12:00',
         name: 'Koral at Kempinski',
-        desc: 'ПОДВОДНЫЙ ресторан! Обед среди рыб и кораллов. Бронируй заранее.',
+        desc: 'Подводный ресторан окутан волшебством подводного мира. Обед проходит среди красочных рыб и завораживающих коралловых рифов. Рекомендуется предварительное бронирование для погружения в эту уникальную атмосферу.',
         price: 'от 500K-1.2M/персона',
         maps: 'https://maps.google.com/?q=Koral+Restaurant+Apurva+Kempinski+Bali',
         tags: ['ресторан', 'fine dining'],
@@ -215,7 +272,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '14:30',
         name: 'Museum Pasifika',
-        desc: '200+ художников из 25 стран. Балийская живопись, индонезийский батик.',
+        desc: 'Двести художников из двадцати пяти стран создают уникальные шедевры, отражающие дух Бали. Яркие цветовые палитры балийской живописи и изысканный индонезийский батик погружают в атмосферу экзотики и искусства. Каждое полотно — это история, вышедшая за пределы времени и пространства.',
         price: 'вход 90K',
         maps: 'https://maps.google.com/?q=Museum+Pasifika+Nusa+Dua',
         tags: ['музей', 'культура'],
@@ -224,7 +281,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '16:30',
         name: 'Geger Beach',
-        desc: 'Бирюзовая лагуна, белый песок, почти нет волн. Публичный пляж рядом с резортами.',
+        desc: 'Бирюзовая лагуна нежно обнимает белоснежный песок, подобно сладкому сну в царстве покоя. Здесь редкие волны шепчут о близости тропических чудес, создавая идеальную гармонию отдыха. Публичный пляж, утопающий в зелени, освещён лучами солнца, манит к покою и уверенному уединению.',
         price: 'бесплатно',
         maps: 'https://www.google.com/maps/search/Geger+Beach+Nusa+Dua',
         tags: ['пляж', 'купание'],
@@ -233,7 +290,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '18:30',
         name: 'Jimbaran Seafood Bay',
-        desc: 'Рыба на песке, свечи, закат. Бери лобстера.',
+        desc: 'На золотистом песке, под нежными лучами заката, искрятся свечи, создавая атмосферу волшебства. Погружая вилку в безмятежный вкус лобстера, вы откроете для себя истинный рай кулинарного наслаждения.',
         price: 'сет на двоих 300-500K',
         maps: 'https://maps.google.com/?q=Jimbaran+Seafood+Bay+Bali',
         tags: ['ужин', 'морепродукты'],
@@ -245,7 +302,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '08:00',
         name: 'Снорклинг у рифа Nusa Dua',
-        desc: 'Коралловый риф с черепахами прямо у пляжа. Вода спокойная.',
+        desc: 'Нежное свечение кораллового рифа в окружении грациозно плывущих черепах создает волшебную атмосферу. Умиротворяющая гладь воды искрится на солнце, маня погрузиться в этот подводный рай.',
         price: 'тур 200-350K',
         maps: 'https://maps.google.com/?q=Nusa+Dua+Reef+Snorkeling+Bali',
         tags: ['снорклинг'],
@@ -254,7 +311,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '11:00',
         name: 'Tanjung Benoa Water Sports',
-        desc: 'Парасейлинг, банан, джет-ски, флайборд. Торгуйся!',
+        desc: 'Погрузитесь в приключение: ощутите ветерок, когда парасейлинг поднимает вас в небеса, или рассмешите друзей, катаясь на изогнутом банане, что скачет по волнам. На джет-ски вы обгоняете горизонт, вдыхая соленый океанский воздух, а флайборд позволяет вам парить над водой, словно птице. Не забудьте торговаться, ведь лучшие впечатления стоят своих усилий!',
         price: 'пакет 350-600K',
         maps: 'https://maps.google.com/?q=Tanjung+Benoa+Water+Sports+Bali',
         tags: ['водный спорт'],
@@ -263,7 +320,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '13:30',
         name: 'Balangan Beach',
-        desc: 'Отдых на золотом пляже. Варунги с видом на океан.',
+        desc: 'Золотые пески пляжа встречают нежные волны океана, завораживая своим сиянием под палящим солнцем. С каждой каплей морского бриза ощущается свобода, а вдали варунги, как стражи времени, наблюдают за танцем синий небес.',
         price: 'вход 10K',
         maps: 'https://www.google.com/maps/search/Balangan+Beach+Bali',
         tags: ['пляж', 'обед'],
@@ -272,7 +329,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '17:00',
         name: 'Roosterfish Beach Club',
-        desc: 'Пляжный клуб на Пандаве. Бассейн, шезлонги, закат над скалами.',
+        desc: 'Пляжный клуб на Пандаве пленяет атмосферой расслабления. Нежные волны ласкают песок, бассейн отражает огонь заката, а шезлонги приглашают насладиться мгновением. Скалы, окутанные золотистым светом, создают незабываемый фон для тихих вечеров.',
         price: 'минимум заказа 200-350K',
         maps: 'https://maps.google.com/?q=Roosterfish+Beach+Club+Pandawa+Bali',
         tags: ['бич-клаб', 'закат'],
@@ -281,24 +338,110 @@ var MANUAL_ROUTES_ZONE = [
     ]
 ];
 
-function generateRandomRoute(zoneKey) {
+function showRouteGallery() {
   try {
     var routes = MANUAL_ROUTES_ZONE;
     if (!routes || routes.length === 0) { alert('Маршруты для этого района пока в разработке'); return; }
-    if (!window._routeIdx) window._routeIdx = 0;
-    var idx = window._routeIdx;
-    window._routeIdx = (idx + 1) % routes.length;
+    
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
+    
+    for (var i = 0; i < routes.length; i++) {
+      var route = routes[i];
+      var isHard = false;
+      var isChill = false;
+      var routeText = JSON.stringify(route).toLowerCase();
+      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+      var hourMatch = firstTimeStr.match(/\d{2}/);
+      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+      
+      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+        isHard = true;
+      }
+      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+        isChill = true;
+        isHard = false;
+      }
+      
+      var badge = '';
+      if (isChill) {
+        badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
+      } else if (isHard) {
+        badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
+      } else {
+        badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
+      }
+      
+      var places = [];
+      for(var j = 0; j < route.length; j++) {
+        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
+        if(!isHotel && route[j].name) {
+          places.push(route[j].name);
+        }
+      }
+      var previewText = places.join(' → ');
+      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
+
+      html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
+      html += '    <div>' + badge + '</div>';
+      html += '  </div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '</div>';
+    }
+    
+    html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
+    html += '</div>';
+    
+    document.getElementById('guideContent').style.display = 'none';
+    var rs = document.getElementById('routeScreen');
+    rs.innerHTML = html;
+    rs.style.display = 'block';
+    window.scrollTo(0, 0);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function showSingleRoute(idx) {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
     var route = routes[idx];
-    var html = '<div style="padding:20px">';
-    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:20px">🗺 Твой маршрут на день</div>';
-    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px">Маршрут ' + (idx+1) + '/' + routes.length + ' · Нажми ещё раз для следующего</div>';
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    
+    var isHard = false;
+    var isChill = false;
+    var routeText = JSON.stringify(route).toLowerCase();
+    var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+    var hourMatch = firstTimeStr.match(/\d{2}/);
+    var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+    
+    if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+      isHard = true;
+    }
+    if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+      isChill = true;
+      isHard = false;
+    }
+    
+    var badge = '';
+    if (isChill) {
+      badge = '<span style="margin-left:8px; background:rgba(255,182,193,0.3); color:#e83e8c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🌸 Чилл</span>';
+    } else if (isHard) {
+      badge = '<span style="margin-left:8px; background:rgba(255,87,34,0.15); color:#e64a19; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🔥 Хард</span>';
+    } else {
+      badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
+    }
+
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px">🗺 Маршрут ' + (idx+1) + '</div>';
+    html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
+
     for (var i = 0; i < route.length; i++) {
       var p = route[i];
       html += '<div style="background:rgba(255,255,255,0.7);border-radius:16px;padding:16px;margin-bottom:12px">';
       html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
-      html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc + '</div>';
+      html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
       if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
-      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
+      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
     }
 
@@ -307,7 +450,7 @@ function generateRandomRoute(zoneKey) {
     for (var j = 0; j < route.length; j++) {
       var tags = route[j].tags || [];
       var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
-      if (!isHotel) {
+      if (!isHotel && route[j].name) {
         mapPlaces.push(route[j].name);
       }
     }
@@ -326,13 +469,12 @@ function generateRandomRoute(zoneKey) {
       html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
     }
     // --- End Google Maps Directions button ---
-    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="generateRandomRoute(\'bukit_nusadua\')" style="padding:12px 24px;border-radius:12px">🔄 Другой маршрут</button></div>';
-    html += '<div style="text-align:center;margin-top:16px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к гайду</button></div>';
+    
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="padding:12px 24px;border-radius:12px">← Назад к выбору маршрутов</button></div>';
     html += '</div>';
-    document.getElementById('guideContent').style.display = 'none';
+    
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
-    rs.style.display = 'block';
     window.scrollTo(0, 0);
   } catch(e) { alert('Ошибка: ' + e.message); }
 }
