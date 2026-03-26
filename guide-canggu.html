@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Чангу — Гайд · Где свои на Бали</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=1774488851">
 </head>
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
@@ -801,7 +801,7 @@
 </div>
 <p>Для горных глэмпингов у вулкана: смотрите раздел <strong>Север Бали</strong> — Black Lava, Toteme, Wanagiri и другие.</p>
 </div>
-<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="generateRandomRoute('canggu')" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
+<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
 <div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
@@ -811,19 +811,21 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
-    [{"time": "10:00", "name": "Samadi Bali", "desc": "[чилл] Оазис тишины и умиротворения, где звуки природы сливаются с практикой йоги и гармонией тела. Насыщенные ароматы благовоний и древесные оттенки создают атмосферу глубокого расслабления.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Samadi+Bali"}, {"time": "12:30", "name": "Echo Beach", "desc": "Тихий пляж с белым песком и меланхоличной атмосферой, подходящий для неспешных прогулок вдоль берега, наблюдения за мягкими волнами и созерцания горизонта.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Echo+Beach+Canggu"}, {"time": "17:30", "name": "La Brisa", "desc": "Стильный пляжный бар с уникальной аурой и аутентичным балийским декором из переработанных материалов. Идеальное место для встречи заката с освежающим коктейлем.", "price": "150k IDR", "maps": "https://maps.google.com/?q=La+Brisa+Canggu"}],
-    [{"time": "11:00", "name": "Amo Spa", "desc": "[чилл] Святилище красоты и здоровья, где искусные массажисты превращают каждое прикосновение в симфонию расслабления и гармонии. Нежные масла успокаивают тело и душу.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Amo+Spa+Canggu"}, {"time": "14:00", "name": "The Lost Paradise", "desc": "Тайный уголок среди зелени, где бассейн с прозрачной водой предлагает идеальное место для купания и отдыха. Звуки природы образуют симфонию спокойствия.", "price": "200k IDR", "maps": "https://maps.google.com/?q=The+Lost+Paradise+Canggu"}],
-    [{"time": "11:00", "name": "Spring Spa", "desc": "[чилл] Уютное пространство с минималистичным дизайном, погружающее в атмосферу полного расслабления и омоложения через чувственные массажи и нежные ароматы.", "price": "270k IDR", "maps": "https://maps.google.com/?q=Spring+Spa+Canggu"}, {"time": "15:00", "name": "Pererenan Beach", "desc": "Тихий пляж с суровой природной красотой и волнами, ласкающими берег. Здесь можно найти уединение и покой, наслаждаясь медитативными звуками океана.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Pererenan+Beach"}, {"time": "18:00", "name": "The Lawn Canggu", "desc": "Гламурный пляжный клуб с великолепным видом на океан, где можно любоваться закатом под музыку и наслаждаться изысканными угощениями.", "price": "200k IDR", "maps": "https://maps.google.com/?q=The+Lawn+Canggu"}],
-    [{"time": "10:30", "name": "Chillax Spa", "desc": "[чилл] Студия загара и массажа, где каждая деталь выполнена с любовью к тонким удовольствиям. Звуки релаксирующей музыки и ароматы масел окутывают теплотой.", "price": "230k IDR", "maps": "https://maps.google.com/?q=Chillax+Spa+Canggu"}, {"time": "13:00", "name": "Batu Bolong Beach", "desc": "Энергичный пляж с изогнутой песчаной полоской, где волны создают ритм для вдумчивых прогулок и наблюдения за серферами.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Batu+Bolong+Beach"}],
-    [{"time": "11:00", "name": "Desa Seni", "desc": "[чилл] Уникальная деревня-курорт, где каждый уголок насыщен культурой и традициями. Йога среди благоухающих садов и тропических пейзажей приносит умиротворение и баланс.", "price": "190k IDR", "maps": "https://maps.google.com/?q=Desa+Seni+Canggu"}, {"time": "15:00", "name": "Nyanyi Beach", "desc": "Нераскрытый алмаз балийских пляжей с чёрным песком и уединённой атмосферой, где можно насладиться тишиной и красотой заката без толп туристов.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Nyanyi+Beach"}],
-    [{"time": "10:00", "name": "Goldust Beauty Lounge", "desc": "[чилл] Трансцендентное пространство с процедурой золотого лица, предлагающее роскошный уход для кожи и душевного спокойствия. Комнаты наполнены тихой, умиротворяющей энергией.", "price": "280k IDR", "maps": "https://maps.google.com/?q=Goldust+Beauty+Lounge+Canggu"}, {"time": "13:30", "name": "Taman Segara Madu", "desc": "Бассейн под открытым небом, окружённый тропическими деревьями. Идеальное место для прохладного освежения и ощущения балийской летней свободы.", "price": "80k IDR", "maps": "https://maps.google.com/?q=Taman+Segara+Madu"}, {"time": "17:30", "name": "Finns Beach Club", "desc": "Пляжный клуб с захватывающим видом на океан, стильными интерьерами и потрясающей атмосферой, идеальной для встречи заката в расслабленном окружении.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Finns+Beach+Club"}],
-    [{"time": "11:30", "name": "Tropical Day Spa", "desc": "[чилл] Пространство, где умиротворение и комфорт важны столь же, сколь и уход за телом. Экзотические ароматы и благоприятная атмосфера помогают восстановить внутренний баланс.", "price": "220k IDR", "maps": "https://maps.google.com/?q=Tropical+Day+Spa+Canggu"}, {"time": "14:00", "name": "Berawa Beach", "desc": "Популярный пляж с воздушной энергией и просторными песчаными просторами. каждое мгновение здесь наполнено природным спокойствием и расслаблением.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Berawa+Beach+Canggu"}],
-    [{"time": "10:30", "name": "Bali Botanica Day Spa", "desc": "[чилл] Элегантный спа-салон, утопающий в зелени, с атмосферой войлочного покоя и расслабления. Лечебные процедуры помогают восстановить гармонию тела и души.", "price": "260k IDR", "maps": "https://maps.google.com/?q=Bali+Botanica+Day+Spa+Canggu"}, {"time": "13:00", "name": "Echo Beach", "desc": "Спокойный пляж с потрясающими видами, где можно насладиться тишиной и безмятежностью, погружаясь в гармонию природы и звуков океана.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Echo+Beach+Canggu"}],
+    [{"time": "10:30", "name": "Canggu Day Spa", "desc": "[чилл] Погрузитесь в безмятежность с ароматами жасмина и легким пением птиц, постепенно растворяясь в пленительных прикосновениях профессиональных массажистов.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Canggu+Day+Spa"}, {"time": "13:00", "name": "Echo Beach", "desc": "Тихий пляж, где можно слушать мягкие волны, дышать свежим морским воздухом и наслаждаться пейзажами, постепенно переставая заботиться о времени.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Echo+Beach+Canggu"}, {"time": "16:00", "name": "The Practice Yoga", "desc": "Создайте гармонию разума и тела в этой приглушенной атмосфере, плавно перетеките в восстанавливающее себя состояние с мягкими позами и глубокой релаксацией.", "price": "150k IDR", "maps": "https://maps.google.com/?q=The+Practice+Yoga+Canggu"}],
+    [{"time": "11:00", "name": "Tamiang Water Healing", "desc": "[чилл] Уйдите в себе на погружение в воды целебного бассейна, где тихое журчание воды и светлые прикосновения натуротерапевтов медленно убаюкивают провод в гармонию.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Tamiang+Water+Healing"}, {"time": "14:00", "name": "Berawa Beach", "desc": "Насладитесь спокойствием золотого песка и серого неба, где солнечные лучи мягко касаются кожи, создавая атмосферу безмятежного уединения.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Berawa+Beach"}],
+    [{"time": "10:45", "name": "Chillax Spa", "desc": "[чилл] Обнажите свои чувства в этом уютном пространстве, где теплые масла на кожу легко стекают, а ароматические диффузоры проникают в сознание.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Chillax+Spa+Canggu"}, {"time": "13:30", "name": "La Brisa Beach Club", "desc": "Расслабьте свою душу под легкой օդой у моря, где легкие коктейли и приятная музыка делают медленно исчезающим каждую тревогу до заката.", "price": "Вход бесплатный, коктейли от 80k IDR", "maps": "https://maps.google.com/?q=La+Brisa+Beach+Club"}],
+    [{"time": "11:15", "name": "Watsu Massage Bali", "desc": "[чилл] Пускайтесь в полет через хаос воды, окруженные незаурядной легкостью, когда теплые струи медленно касаются тела и завораживают образы растворяются.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Watsu+Massage+Bali"}, {"time": "14:45", "name": "Pura Batu Mejan", "desc": "Следите за звездами, будучи очарованным этой атмосферой древности, местом покоя и медитации на фоне тихого шума волн.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Pura+Batu+Mejan"}],
+    [{"time": "11:30", "name": "Samadi Bali", "desc": "[чилл] Потеряйтесь в дзен-атмосфере с йога-позами, сплетенными между ароматными лотосами и мягкими солнечными лучами, проникая в ваш разум.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Samadi+Bali"}, {"time": "14:00", "name": "Nelayan Beach", "desc": "Ласковое дуновение океанского бриза принесет незабываемые ощущения от тихого уединения и чарующего вида бесконечной линии горизонта.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Nelayan+Beach"}, {"time": "17:00", "name": "Bali Twin Spa", "desc": "Воздаяние для усталого тела и души; позвольте себе утонуть в мягкости матрацев и ароматах, а затем выйти как заново родившийся.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Bali+Twin+Spa"}],
+    [{"time": "10:30", "name": "Body Temple Spa", "desc": "[чилл] Побалуйте себя чистым и освежающим путешествием, где сочетание тёплых обёртываний и нежных прикосновений подарит вам благодать этой релаксации.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Body+Temple+Spa+Canggu"}, {"time": "13:30", "name": "Pererenan Beach", "desc": "Откройте для себя этот драгоценный камень, с удовольствием прикасаясь к сухому песку, наблюдая за играми волн и погружая себя в мечтания под ласковое журчание.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Pererenan+Beach"}],
+    [{"time": "11:00", "name": "Spring Spa", "desc": "[чилл] Погрузитесь в роскошный оазис, наполняющий вашу кожу шелковой мягкостью и восстанавливающий внутреннюю силу через искусство прикосновения.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Spring+Spa+Bali"}, {"time": "13:45", "name": "Surf & Turf Beach Club", "desc": "Обволакивающее солнце и нежный песок позволяют забыться у воды с коктейлем в руке, слушая ритмичное звучание живой музыки перед закатом.", "price": "Вход бесплатный, напитки от 75k IDR", "maps": "https://maps.google.com/?q=Surf+%26+Turf+Beach+Club"}],
+    [{"time": "11:15", "name": "Goldust Beauty Lounge", "desc": "[чилл] Подарите себе удовольствие золотого касания, здесь время останавливается, давая возможность окунуться в мир медленной роскоши.", "price": "400k IDR", "maps": "https://maps.google.com/?q=Goldust+Beauty+Lounge"}, {"time": "14:00", "name": "The Lawn", "desc": "Почувствуйте спокойствие в легкой прохладе, смещаясь в уютное пространство, освещенное мягкими палитрами заката и атмосферной музыкой.", "price": "Вход бесплатный, еда и напитки от 70k IDR", "maps": "https://maps.google.com/?q=The+Lawn+Bali"}],
+    [{"time": "10:45", "name": "Amo Spa", "desc": "[чилл] Ощутите благотворное воздействие процедур, отодвигающих на второй план время реальности, находитесь в гармонии с профессиональными мастерами.", "price": "280k IDR", "maps": "https://maps.google.com/?q=Amo+Spa"}, {"time": "13:00", "name": "Old Man's", "desc": "Погрузитесь в атмосферу, где морские ветры разливаются по всей округе в компании расслабляющей музыки и непринужденного общения.", "price": "Вход бесплатный, напитки от 60k IDR", "maps": "https://maps.google.com/?q=Old+Man%27s+Bali"}],
+    [{"time": "11:00", "name": "Desa Seni Healing", "desc": "[чилл] Исследуйте мастерскую атмосферу единства и тишины в жизнеутверждающих процедурах, где каждая клетка вашего тела примет образ волновой гармонии.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Desa+Seni+Healing"}, {"time": "14:30", "name": "Vue Beach Club", "desc": "Окунитесь в атмосферу вечеринки и релаксации у большого бассейна, наполненного легким смехом и музыкой, сопровождая это закатным коктейлем.", "price": "Вход бесплатный, напитки от 70k IDR", "maps": "https://maps.google.com/?q=Vue+Beach+Club+Bali"}],
     [
       {
         time: '11:00',
         name: 'Mavammy Canggu',
-        desc: '[чилл] Поздний, ленивый завтрак. Садимся, заказываем сырники и кофе, никуда не спешим.',
+        desc: 'Поздний завтрак наполняет утро ароматом свежезаваренного кофе и легкой сладостью сырников, уютно обжаренных до золотистой корочки. Вечный ритм города смягчается, приглашающе шепча о неспешности. Часы замирают в этом гастрономическом блаженстве.',
         price: '100k IDR',
         maps: 'https://maps.google.com/?q=Mavammy+Canggu'
       },
@@ -846,7 +848,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '10:30',
         name: 'NOVA Wellness Club',
-        desc: '[чилл] День любви к себе. Начинаем с мягкой растяжки или просто здорового смузи-боула у бассейна.',
+        desc: 'Утро начинается с нежной растяжки, когда солнечные лучи cascading на поверхность воды. Свежий смузи-боул, словно призыв к заботе о себе, наполняет атмосферу яркими ароматами фруктов и зелени. Это мгновение — праздник спокойствия и гармонии.',
         price: '150k IDR',
         maps: 'https://maps.google.com/?q=NOVA+Wellness+Club+Bali'
       },
@@ -860,7 +862,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '17:00',
         name: 'The Lawn',
-        desc: 'Открывается безмятежный газон с завораживающим видом на бескрайний океан. Коктейли нежно переливаются в руках, а мелодии приятной музыки пляшут в воздухе, окутав уютом. Закатный свет мягко наполняет пространство, превращая мгновение в волшебство.',
+        desc: 'Газон с видом на бескрайний океан манит своими ароматами свежих коктейлей и звуками лёгкой музыки. Теплые лучи заката обнимают, создавая атмосферу умиротворения и нежности. В этой идиллии время словно замирает.',
         price: 'От 200k IDR',
         maps: 'https://maps.google.com/?q=The+Lawn+Canggu'
       }
@@ -1911,49 +1913,49 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '09:00',
         name: 'Crate Cafe',
-        desc: 'Чангу, воплощающий дух серф-культуры, предлагает уникальное утреннее погружение. Завтрак в этом уютном café становится ритуалом, открывающим двери в мир волнующих волн и солнечных берегов. Каждое утро здесь наполняется ароматом свежезаваренного кофе и морского бриза.',
+        desc: 'Чангу окутан легендой, а это уникальное specialty-кафе превращает завтрак в священный ритуал. Солнечные лучи пробиваются сквозь пальмы, наполняя пространство ароматом свежезаваренного кофе и выпечки. Каждое утро здесь — новая глава в истории сёрф-культуры.',
         price: '60-130K',
         maps: 'https://maps.google.com/maps/search/Crate+Cafe+Canggu+Bali'
       },
       {
         time: '10:30',
         name: 'Batu Bolong Beach',
-        desc: 'После завтрака обворожительное утро на пляже: завораживающее зрелище сёрферов, ловящих нежные волны. Тёплая морская вода манит, словно шелк, обещая мгновения наслаждения.',
+        desc: 'После завтрака следуют двадцать минут, полных свежего морского бриза на пляже. Сёрферы искусно скользят по нежным волнам, а теплое солнце мягко касается кожи. Вода маняще искрится, готовая окутать прохладой.',
         price: 'бесплатно',
         maps: 'https://maps.google.com/?q=Batu+Bolong+Beach+Canggu'
       },
       {
         time: '12:00',
         name: 'Avocutseatery',
-        desc: 'Кафе для авокадо-маньяков, где каждый тост превращается в кулинарное искусство. Яркие боулы и насыщенные смузи погружают в мир зелёного великолепия. Каждое блюдо — идеальная находка для инстаграмных хроник.',
+        desc: 'Кафе для поклонников авокадо, где каждый тост — произведение кулинарного искусства. Зелёные боулы и изысканные смузи заполняют просторное помещение, создавая атмосферу блаженной свежести. Фотогеничные блюда привлекают внимание и вызывают желание запечатлеть этот гастрономический рай.',
         price: '55-120K',
         maps: 'https://maps.google.com/maps/search/Avocutseatery+Canggu+Bali'
       },
       {
         time: '14:00',
         name: 'Hungry Bird Coffee',
-        desc: 'Специальные обжарщики создают уникальные зёрна, превращая каждую чашку в настоящую гастрономическую симфонию. Минималистичный интерьер подчеркивает роскошь вкуса, который завораживает с первой глотка. Здесь встречаются pour-over и холодный напиток, унося в мир изысканных наслаждений.',
+        desc: 'Специальные обжарщики предлагают уникальные сорта зерен, а тонкие нюансы во вкусе раскрываются в каждом способе заваривания — от pour-over до холодной экстракции. Минималистичный интерьер подчеркивает истинное качество, создавая атмосферу, где эмоции смешиваются с изысканным кофе.',
         price: '35-80K',
         maps: 'https://maps.google.com/maps/search/Hungry+Bird+Coffee+Canggu+Bali'
       },
       {
         time: '16:00',
         name: 'BaliBabe Bowls',
-        desc: 'Смузи-боул с асаи и питайей — яркое взрывное сочетание вкусов, пробуждающее все чувства. Насыщенные цвета плодов обрамляют свежесть и здоровье в каждой ложке, создавая идеальный быстрый перекус. Энергия природы в каждом глотке.',
+        desc: 'Смузи-боул с асаи и питайей окутывает свежестью и яркостью. Насыщенные цвета и насыщенный вкус превращают каждый укус в наслаждение, делая перекус не только полезным, но и истинным праздником для чувств.',
         price: '35-70K',
         maps: 'https://maps.google.com/maps/search/BaliBabe+Bowls+Canggu+Bali'
       },
       {
         time: '18:00',
         name: 'Masa Canggu',
-        desc: 'Мексиканское бистро наполнено ароматами специй и свежих ингредиентов. Тако, начос, буррито-боулы соблазняют своей яркостью, а крафтовые маргариты под палящим закатом оживляют вечер. Звуки смеха и музыка создают атмосферу настоящего праздника.',
+        desc: 'Мексиканское бистро раскрывает двери в мир ярких вкусов: такос с нежной начинкой, хрустящие начос и буррито-боула, сочетающие свежесть и аромат пряных трав. Крафтовые маргариты, как солнечные лучи, плескаются в бокалах, отражая магию заката, придавая ужину незабываемое очарование. Ночь окутывает атмосферой праздника, погружая в искушение вкусов и звучание смеха.',
         price: '50-120K',
         maps: 'https://maps.google.com/maps/search/Masa+Canggu+Bali'
       },
       {
         time: '20:00',
         name: 'Dumbo',
-        desc: 'Финал погружает в атмосферу итальянской пиццерии. Легкое тесто, насыщенное ароматом натуральной закваски, дарит гармонию вкуса. Бокал вина в руках, а вокруг — волшебство Чангу.',
+        desc: 'Финал вечера — итальянская пиццерия, где блестящее тесто танцует на жарком камне. Нежное послевкусие натуральной закваски переплетается с ароматом изысканного вина, создавая идеальное сочетание. Пицца, словно произведение искусства, тает во рту, унося в атмосферу солнечной Италии.',
         price: '60-150K',
         maps: 'https://maps.google.com/maps/search/Dumbo+Pizza+Canggu+Bali'
       }
@@ -1963,58 +1965,117 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '07:00',
         name: 'Easy Cafe Canggu',
-        desc: 'Завтрак серфера — простое наслаждение. Тарелка насыщенного насі горенга и свежий смузи-боул дают сил для покорения волн. Быстро, сытно и незабываемо.',
+        desc: 'Завтрак для сёрфера в духе бюджетного гедонизма. Наси горенг и смузи-боул, сочетающие свежесть и пикантность, подаются быстро, чтобы не нарушить ритм волн. Сытно и недорого — идеальный старт для новых свершений.',
         price: '35-80K',
         maps: 'https://maps.google.com/maps/search/Easy+Cafe+Canggu+Bali'
       },
       {
         time: '08:00',
         name: 'Echo Beach Surf',
-        desc: 'Серфинг на Echo Beach — это погружение в мир умеренно мощных волн, окутанных призрачным туманом. Каждая волна приносит ощущение свободы и легкости, являя собой идеальное пространство для тех, кто уверенно стоит на доске. Звуки океана сливаются с волшебством заката, создавая атмосферу волнующего ожидания.',
+        desc: 'Echo Beach радует серфингистов мягкими волнами, лазурные воды нежно обнимают песчаный берег. Здесь каждый взмах доски заставляет сердце биться быстрее, а свежий бриз наполняет легкие соленым ароматом свободы. Идеальное место для тех, кто хочет насладиться игрой стихии и научиться чувствовать ее ритм.',
         price: 'бесплатно',
         maps: 'https://maps.google.com/?q=Echo+Beach+Canggu'
       },
       {
         time: '11:00',
         name: 'Mavammy Canggu',
-        desc: 'Светлое утро на берегу, где тёплые панкейки и нежные яйца Бенедикт встречают лёгкий бриз. Шелковистый латте наполняет воздух ароматом свежей обжарки, создавая идеальный ритуал перезарядки после волн.',
+        desc: 'После серфинга уходит в облако вкуса завтрак-бранч. Легкие панкейки тают на языке, а яйца Бенедикт нежно обнимают рассыпчатую булочку, дополняя картину роскошным латте. С каждым укусом происходит перезагрузка чувств.',
         price: '50-120K',
         maps: 'https://maps.google.com/maps/search/Mavammy+Canggu+Bali'
       },
       {
         time: '14:00',
         name: 'Powerbank Cafe',
-        desc: 'Кофейня, где аромат свежезаваренного кофе смешивается с нежным легким запахом выпечки. Идеальное место для творческого вдохновения — быстрый WiFi и изысканный матча создают неповторимую атмосферу. Приятные час-другой продуктивной работы непременно наберут новые оттенки в этой уютной обстановке.',
+        desc: 'Тепло светлой кофейни окутывает, приглашая в мир ароматного кофе и майского свежевыпеченного хлеба. Специальные сорта кофе и нежный матча дарят мгновения наслаждения, а быстрое WiFi создает идеальные условия для продуктивной работы. Время здесь останавливается, создавая уютный уголок для вдохновения.',
         price: '40-90K',
         maps: 'https://maps.google.com/maps/search/Powerbank+Cafe+Canggu+Bali'
       },
       {
         time: '17:00',
         name: 'Penny Lane Canggu',
-        desc: 'Ретро-кафе, украшенное портретами Beatles, погружает в ностальгическую атмосферу. Сочные бургеры и изысканные коктейли в сочетании с шумом волн создают идеальный фон для заката на веранде. Теплый вечер наполняет воздух чувством свободы и беззаботности.',
+        desc: 'Ретро-кафе, окутанное звуками Beatles, погружает в атмосферу ностальгии. Коктейли с игривой искоркой и сочные бургеры создают гармонию вкусов, а закат на веранде окрасит вечер в теплые оттенки золота.',
         price: '55-120K',
         maps: 'https://maps.google.com/maps/search/Penny+Lane+Canggu+Bali'
       },
       {
         time: '19:30',
         name: 'I Am Vegan Babe',
-        desc: 'Веганский ресторан, где нежные бёргеры и ароматная пицца становятся настоящими произведениями искусства. Каждый кусочек погружает в мир неожиданных вкусов, заставляя забыть о мясе. Открытие нового гастрономического горизонта, в котором наслаждение достигает апогея.',
+        desc: 'Совершенно веганский ресторан удивляет яркими бургерными сочетаниями и ароматной пиццей, где вкус мяса заменён глубокими растительными нотами. Каждое блюдо — это настоящее искушение, способное удивить даже самых искушённых гурманов. Погружение в мир веганской кухни, где наслаждение вкусом становится искусством.',
         price: '50-120K',
         maps: 'https://maps.google.com/maps/search/I+Am+Vegan+Babe+Canggu'
       }
     ]
   ];
 
-function generateRandomRoute(zoneKey) {
+function showRouteGallery() {
   try {
     var routes = MANUAL_ROUTES_ZONE;
     if (!routes || routes.length === 0) { alert('Маршруты для этого района пока в разработке'); return; }
-    if (!window._routeIdx) window._routeIdx = 0;
-    var idx = window._routeIdx;
-    window._routeIdx = (idx + 1) % routes.length;
+    
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
+    
+    for (var i = 0; i < routes.length; i++) {
+      var route = routes[i];
+      var isHard = false;
+      var isChill = false;
+      var routeText = JSON.stringify(route).toLowerCase();
+      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+      var hourMatch = firstTimeStr.match(/\d{2}/);
+      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+      
+      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+        isHard = true;
+      }
+      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+        isChill = true;
+        isHard = false;
+      }
+      
+      var badge = '';
+      if (isChill) {
+        badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
+      } else if (isHard) {
+        badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
+      } else {
+        badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
+      }
+      
+      var places = [];
+      for(var j = 0; j < route.length; j++) {
+        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
+        if(!isHotel && route[j].name) {
+          places.push(route[j].name);
+        }
+      }
+      var previewText = places.join(' → ');
+      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
+
+      html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
+      html += '    <div>' + badge + '</div>';
+      html += '  </div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '</div>';
+    }
+    
+    html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
+    html += '</div>';
+    
+    document.getElementById('guideContent').style.display = 'none';
+    var rs = document.getElementById('routeScreen');
+    rs.innerHTML = html;
+    rs.style.display = 'block';
+    window.scrollTo(0, 0);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function showSingleRoute(idx) {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
     var route = routes[idx];
-    var html = '<div style="padding:20px">';
-    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:20px">🗺 Твой маршрут на день</div>';
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
     
     var isHard = false;
     var isChill = false;
@@ -2040,8 +2101,8 @@ function generateRandomRoute(zoneKey) {
       badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
     }
 
-    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px;display:flex;align-items:center;justify-content:center;">Маршрут ' + (idx+1) + '/' + routes.length + badge + '</div>';
-    html += '<div style="font-size:11px;color:rgba(42,42,40,0.4);text-align:center;margin-top:-16px;margin-bottom:24px;">Нажми ещё раз для следующего</div>';
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px">🗺 Маршрут ' + (idx+1) + '</div>';
+    html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
 
     for (var i = 0; i < route.length; i++) {
       var p = route[i];
@@ -2049,7 +2110,7 @@ function generateRandomRoute(zoneKey) {
       html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
       html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
       if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
-      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
+      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
     }
 
@@ -2058,7 +2119,7 @@ function generateRandomRoute(zoneKey) {
     for (var j = 0; j < route.length; j++) {
       var tags = route[j].tags || [];
       var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
-      if (!isHotel) {
+      if (!isHotel && route[j].name) {
         mapPlaces.push(route[j].name);
       }
     }
@@ -2077,13 +2138,12 @@ function generateRandomRoute(zoneKey) {
       html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
     }
     // --- End Google Maps Directions button ---
-    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="generateRandomRoute(\'canggu\')" style="padding:12px 24px;border-radius:12px">🔄 Другой маршрут</button></div>';
-    html += '<div style="text-align:center;margin-top:16px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к гайду</button></div>';
+    
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="padding:12px 24px;border-radius:12px">← Назад к выбору маршрутов</button></div>';
     html += '</div>';
-    document.getElementById('guideContent').style.display = 'none';
+    
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
-    rs.style.display = 'block';
     window.scrollTo(0, 0);
   } catch(e) { alert('Ошибка: ' + e.message); }
 }
