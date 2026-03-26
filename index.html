@@ -79,20 +79,20 @@
 function setLang(lang) {
   localStorage.setItem('bali_lang', lang);
   document.getElementById('langOverlay').style.display = 'none';
-  if (lang === 'en') { window.location.href = 'en/index.html?v=' + Date.now() + '; return; }
-  if (lang === 'ua') { window.location.href = 'ua/index.html?v=' + Date.now() + '; return; }
-  if (lang === 'kz') { window.location.href = 'kz/index.html?v=' + Date.now() + '; return; }
-  if (lang === 'ar') { window.location.href = 'ar/index.html?v=' + Date.now() + '; return; }
+  if (lang === 'en') { window.location.href = 'en/index.html?v=' + Date.now() return; }
+  if (lang === 'ua') { window.location.href = 'ua/index.html?v=' + Date.now() return; }
+  if (lang === 'kz') { window.location.href = 'kz/index.html?v=' + Date.now() return; }
+  if (lang === 'ar') { window.location.href = 'ar/index.html?v=' + Date.now() return; }
   // ru — stay on current page
 }
 function showLangOverlay() {
   if (localStorage.getItem('bali_lang')) {
     // Language already chosen — redirect if needed
     var lang = localStorage.getItem('bali_lang');
-    if (lang === 'en') { window.location.href = 'en/index.html?v=' + Date.now() + '; return; }
-    if (lang === 'ua') { window.location.href = 'ua/index.html?v=' + Date.now() + '; return; }
-    if (lang === 'kz') { window.location.href = 'kz/index.html?v=' + Date.now() + '; return; }
-    if (lang === 'ar') { window.location.href = 'ar/index.html?v=' + Date.now() + '; return; }
+    if (lang === 'en') { window.location.href = 'en/index.html?v=' + Date.now() return; }
+    if (lang === 'ua') { window.location.href = 'ua/index.html?v=' + Date.now() return; }
+    if (lang === 'kz') { window.location.href = 'kz/index.html?v=' + Date.now() return; }
+    if (lang === 'ar') { window.location.href = 'ar/index.html?v=' + Date.now() return; }
     return; // ru — stay
   }
   document.getElementById('langOverlay').style.display = 'flex';
@@ -113,9 +113,9 @@ if(localStorage.getItem('bali_access')==='granted'){
   if(po)po.style.display='none';
   showLangOverlay();
 }
-function startLiving(){ window.location.href='guides.html?v=' + Date.now() + '; }
-function openBase(){ window.location.href='base.html?v=' + Date.now() + '; }
-function openCatalog(){ window.location.href='catalog.html?v=' + Date.now() + '; }
+function startLiving(){ window.location.href = 'guides.html?v=' + Date.now() }
+function openBase(){ window.location.href = 'base.html?v=' + Date.now() }
+function openCatalog(){ window.location.href = 'catalog.html?v=' + Date.now() }
 
 var CHOICE_PHRASES=['Выбери, что нужно именно тебе','С чего начнём?','Что ищешь на Бали?'];
 var cSub=document.getElementById('choiceSubtitle');
