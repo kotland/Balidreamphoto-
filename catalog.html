@@ -1260,6 +1260,20 @@ function updateFilter(key, value, el) {
   applyFilters();
 }
 
+
+function toggleShowFavorites() {
+    state.showFavorites = !state.showFavorites;
+    let btn = document.getElementById('btnFav');
+    if (state.showFavorites) {
+        btn.style.background = 'rgba(255, 182, 193, 0.2)';
+        btn.style.border = '1px solid #e83e8c';
+    } else {
+        btn.style.background = 'white';
+        btn.style.border = '1px solid rgba(42,107,90,0.2)';
+    }
+    applyFilters();
+}
+
 function applyFilters() {
   filteredPlaces = PLACES.filter(p => {
     if (state.district && !matchDistrict(p.district, state.district)) return false;
