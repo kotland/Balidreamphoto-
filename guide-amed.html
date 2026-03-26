@@ -4,22 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Амед — Гайд · Где свои на Бали</title>
-<script src="https://telegram.org/js/telegram-web-app.js">function generateRandomRoute() {
-  var available = [];
-  for (var i = 0; i < MANUAL_ROUTES_ZONE.length; i++) {
-    var route = MANUAL_ROUTES_ZONE[i];
-    var styleMatch = (typeof currentStyle !== 'undefined' && currentStyle !== 'all') ? (route.style === currentStyle) : true;
-    var daysMatch = (typeof currentDays !== 'undefined' && currentDays !== 'all') ? ((route.days || 1) == currentDays) : true;
-    if (styleMatch && daysMatch) available.push(i);
-  }
-  if (available.length > 0) {
-    var randomIdx = available[Math.floor(Math.random() * available.length)];
-    showSingleRoute(randomIdx);
-  } else {
-    alert('Нет маршрутов по вашим фильтрам. Измените настройки!');
-  }
-}
-</script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <link rel="stylesheet" href="style.css?v=1774488851">
 </head>
 <body>
