@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Острова Гили — Гайд · Где свои на Бали</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=1774488851">
 </head>
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
@@ -163,7 +163,7 @@
 </div>
 </div>
 
-<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="generateRandomRoute('gili')" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по Гили</div></button></div>
+<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по Гили</div></button></div>
 <div class="footer-guide">@balidreamphoto · Гайд по островам · 2026</div>
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 
@@ -178,10 +178,14 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
-    [{"time": "10:30", "name": "Спа Gili Yoga", "desc": "[чилл] Завораживающая атмосфера балийских традиций, где каждый звук журчащей воды и аромат эфирных масел наполняют пространство умиротворением. Искусные массажисты создают незабываемый опыт, возвращая тело и дух к гармонии.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Gili+Yoga+Spa"}, {"time": "14:00", "name": "Пляж Sunset Beach", "desc": "Медный песок нежно обнимает ноги, приглашая забыть суету и послушать мелодичное дыхание океана. Ветра приносят легкую прохладу, а густое небо мечтательно замирает в предвкушении заката.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sunset+Beach+Gili+Trawangan"}, {"time": "17:30", "name": "Ритуал звукового исцеления", "desc": "Кристаллы звука извлекают из пространства вибрации, обволакивают теплым покоем. Закрытые глаза рисуют маслянистые узоры, а сердце начинает биться в такт с двумя мировыми ритмами.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Sound+Healing+Gili+Trawangan"}],
-    [{"time": "11:00", "name": "Спа Lotus", "desc": "[чилл] Райский кокон сплетен из шелковистых тканей и полутонами света. В руках мастера мятежные струны тела находят свою истинную мелодию, а ароматные капли масел превращают каждый миг в чувственный танец.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Lotus+Spa+Gili+Air"}, {"time": "15:00", "name": "Сад Бамбука", "desc": "Зеленые коридоры словно созданные для философских размышлений. Бамбук неспешно шепчет тайны прошлого, а каждая тропинка обещает привести к внутреннему очищению.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Bamboo+Garden+Gili+Air"}, {"time": "18:00", "name": "Закат у Dock Bar", "desc": "Последние лучи солнца мягко приглашают остаться в их обьятьях, разноцветные коктейли отражают все оттенки вечернего неба. Музыка океана приносит мелодию покоя, смывая остатки суеты.", "price": "100k IDR", "maps": "https://maps.google.com/?q=Dock+Bar+Gili+Air"}],
-    [{"time": "11:30", "name": "Голубая лагуна на Gili Meno", "desc": "[чилл] Теплое солнце нежно ласкает поверхность кристально чистой воды, переплетая тени и свет в завораживающие узоры. Легкое дуновение приносит ароматы моря, обещая безмятежный день в стиле бохо.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Blue+Lagoon+Gili+Meno"}, {"time": "14:30", "name": "Спа Gili Meno Lodge", "desc": "Гармония природы и ремесленного искусства превращает каждый сеанс в изысканный ритуал. Живые звуки острова проникают сквозь полупрозрачные стены, создавая саундтрек чистого блаженства.", "price": "220k IDR", "maps": "https://maps.google.com/?q=Gili+Meno+Lodge+Spa"}, {"time": "17:00", "name": "Коралловый сад", "desc": "Подводные символы раскрываются перед взором, даря свои секреты игрой света и цвета. Завораживающий мир морских глубин обнимает тишиной и успокаивающей простотой подводных путешествий.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Coral+Garden+Gili+Meno"}],
-    [{"time": "12:00", "name": "Вилла Ом", "desc": "[чилл] Будда и ветра дарят настроение созерцания. Пространство наполнено мягким светом и звуками природы, приглашая прикоснуться к внутренней гармонии и ощутить земное очарование.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Villa+Om+Gili+Trawangan"}, {"time": "15:00", "name": "Пляж Turtle Beach", "desc": "Лоскуты бирюзовой воды и гладкий белоснежный песок обладают неповторимой магией расслабления. Прозрачные волны нежно касаются берега, создавая воплощение спокойствия и безмятежности.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Turtle+Beach+Gili+Trawangan"}, {"time": "17:30", "name": "Спа Ocean Soul", "desc": "Пленительная нега разворачивается в каждом движении искусных пальцев. Пенные ароматы, живое дыхание моря и приглушенный свет создают идеальные условия для полного расслабления души и тела.", "price": "270k IDR", "maps": "https://maps.google.com/?q=Ocean+Soul+Spa+Gili+Trawangan"}],
+    [{"time": "10:30", "name": "Gili Air Spa", "desc": "[чилл] На Гили Эйр день начинается с тихого созерцания в SPA-центре, где ароматы эфирных масел, гармония природы и умиротворяющие ритуалы открывают двери к снятию стресса.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Gili+Air+Spa"}, {"time": "13:00", "name": "Mahamaya Beach", "desc": "Белый гребень мягкого песка греет под солнечными лучами, спокойная мелодия волн приглашает к медитации на берегу, а легкий морской бриз раскладывает мысли по полочкам.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Mahamaya+Beach"}, {"time": "17:30", "name": "Sunset Lounge", "desc": "На горизонте растворяется огненное солнце, отдавая последние дневные лучи коктейлю в руке. Шепот прибоя и тлеющие краски заката здесь сливаются воедино.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Sunset+Lounge"}],
+    [{"time": "11:00", "name": "Bali Holistic", "desc": "[чилл] Погружение в синхронию души и тела под облаком звуков и ароматов — каждый сеанс здесь как путешествие за пределы обыденного.", "price": "400k IDR", "maps": "https://maps.google.com/?q=Bali+Holistic+Center"}, {"time": "14:00", "name": "Karma Reef", "desc": "Объятия океана и солнца сливаются в одном месте на пляже, где отдых достигает растянутых горизонтов спокойствия и воспоминания рисуются в теплом воздухе.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Karma+Reef"}, {"time": "18:00", "name": "Rock Bar", "desc": "Высоко над волнами, где ветер расправляет волосы, живые звуки и нефильтрованные впечатления предвещают наступление зенита вечера.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Rock+Bar"}],
+    [{"time": "11:30", "name": "Yoga Place Gili Meno", "desc": "[чилл] Пауза среди зелени и тишины, где можно услышать дыхание природы, а тело обретает легкость в асанах под убаюкивающий шепот тропических птиц.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Yoga+Place+Gili+Meno"}, {"time": "15:00", "name": "Little Bali Island Resort", "desc": "Средь тени пальм и буйных красок слияние земли и неба предвещает отдых, который убаюкивает сознание с первой секунды.", "price": "500k IDR", "maps": "https://maps.google.com/?q=Little+Bali+Island+Resort"}],
+    [{"time": "12:00", "name": "The Mandara Spa", "desc": "[чилл] Звуки воды, льющиеся с тихой уверенностью, успокаивают любой стресс, а искусные руки профессионалов восстанавливают гармонию.", "price": "450k IDR", "maps": "https://maps.google.com/?q=The+Mandara+Spa"}, {"time": "16:00", "name": "Beach at Vila Ombak", "desc": "Ленивый качающийся танец тени и света обволакивает в узком пространстве, откуда невозможно представить края, только безмятежность и шелест волн.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Vila+Ombak+Beach"}],
+    [{"time": "10:30", "name": "Life Spa Gili", "desc": " Рай восстанавливающих массажей и ароматерапии, где каждое прикосновение приносит гармонию и внутренний покой.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Life+Spa+Gili"}, {"time": "13:00", "name": "Gili Air Yoga", "desc": "Занятие йогой под мягкое дуновение бриза и успокаивающие звуки волн позволяет телу и духу найти гармонию.", "price": "Взнос по желанию", "maps": "https://maps.google.com/?q=Gili+Air+Yoga"}],
+    [{"time": "11:00", "name": "Ocean Spa", "desc": " Превосходное место с видом на океан, где техника восточных массажей ткет удивительную симфонию для тела.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Ocean+Spa+Gili"}, {"time": "14:00", "name": "Коралловый пляж", "desc": "Безмятежный коралловый берег со свежими кокосами, где ноги погружаются в бархатный белый песок.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Coral+Beach+Gili"}],
+    [{"time": "11:30", "name": "Balinese Healing", "desc": " Массажные техники Бали, как искусство, открывают новую глубину расслабления и мягко снимают напряжение.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Balinese+Healing+Gili"}, {"time": "15:00", "name": "Саундхилинг-резиденция", "desc": "Звуковые вибрации беглых гонгов и нежного колокольчика создают медитативное пространство внутренней тишины.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Sound+Healing+Gili"}, {"time": "18:00", "name": "Sunset Poin", "desc": "Закат, где лучи мягко утопают в океане, а тепло песка нежно обволакивает ноги.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sunset+Point+Gili"}],
+    [{"time": "10:00", "name": "Meno Escape Spa", "desc": " Исцеляющие процедуры в спокойной атмосфере, где природа сама заботится о блаженном покое.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Meno+Escape+Spa+Gili"}, {"time": "12:30", "name": "Голубая лагуна", "desc": "Лагуна под обволакивающий звук волн, поддерживающая тонкое равновесие между природной красотой и душевным умиротворением.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Blue+Lagoon+Gili"}],
     // --- Маршрут 1/10: Снорклинг ---
     [
       {
@@ -808,16 +812,75 @@ var MANUAL_ROUTES_ZONE = [
     ]
   ];
 
-function generateRandomRoute(zoneKey) {
+function showRouteGallery() {
   try {
     var routes = MANUAL_ROUTES_ZONE;
     if (!routes || routes.length === 0) { alert('Маршруты для этого района пока в разработке'); return; }
-    if (!window._routeIdx) window._routeIdx = 0;
-    var idx = window._routeIdx;
-    window._routeIdx = (idx + 1) % routes.length;
+    
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
+    
+    for (var i = 0; i < routes.length; i++) {
+      var route = routes[i];
+      var isHard = false;
+      var isChill = false;
+      var routeText = JSON.stringify(route).toLowerCase();
+      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+      var hourMatch = firstTimeStr.match(/\d{2}/);
+      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+      
+      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+        isHard = true;
+      }
+      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+        isChill = true;
+        isHard = false;
+      }
+      
+      var badge = '';
+      if (isChill) {
+        badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
+      } else if (isHard) {
+        badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
+      } else {
+        badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
+      }
+      
+      var places = [];
+      for(var j = 0; j < route.length; j++) {
+        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
+        if(!isHotel && route[j].name) {
+          places.push(route[j].name);
+        }
+      }
+      var previewText = places.join(' → ');
+      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
+
+      html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
+      html += '    <div>' + badge + '</div>';
+      html += '  </div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '</div>';
+    }
+    
+    html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
+    html += '</div>';
+    
+    document.getElementById('guideContent').style.display = 'none';
+    var rs = document.getElementById('routeScreen');
+    rs.innerHTML = html;
+    rs.style.display = 'block';
+    window.scrollTo(0, 0);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function showSingleRoute(idx) {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
     var route = routes[idx];
-    var html = '<div style="padding:20px">';
-    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:20px">🗺 Твой маршрут на день</div>';
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
     
     var isHard = false;
     var isChill = false;
@@ -843,8 +906,8 @@ function generateRandomRoute(zoneKey) {
       badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
     }
 
-    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px;display:flex;align-items:center;justify-content:center;">Маршрут ' + (idx+1) + '/' + routes.length + badge + '</div>';
-    html += '<div style="font-size:11px;color:rgba(42,42,40,0.4);text-align:center;margin-top:-16px;margin-bottom:24px;">Нажми ещё раз для следующего</div>';
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px">🗺 Маршрут ' + (idx+1) + '</div>';
+    html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
 
     for (var i = 0; i < route.length; i++) {
       var p = route[i];
@@ -852,7 +915,7 @@ function generateRandomRoute(zoneKey) {
       html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
       html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
       if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
-      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
+      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
     }
 
@@ -861,7 +924,7 @@ function generateRandomRoute(zoneKey) {
     for (var j = 0; j < route.length; j++) {
       var tags = route[j].tags || [];
       var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
-      if (!isHotel) {
+      if (!isHotel && route[j].name) {
         mapPlaces.push(route[j].name);
       }
     }
@@ -880,13 +943,12 @@ function generateRandomRoute(zoneKey) {
       html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
     }
     // --- End Google Maps Directions button ---
-    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="generateRandomRoute(\'gili\')" style="padding:12px 24px;border-radius:12px">🔄 Другой маршрут</button></div>';
-    html += '<div style="text-align:center;margin-top:16px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к гайду</button></div>';
+    
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="padding:12px 24px;border-radius:12px">← Назад к выбору маршрутов</button></div>';
     html += '</div>';
-    document.getElementById('guideContent').style.display = 'none';
+    
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
-    rs.style.display = 'block';
     window.scrollTo(0, 0);
   } catch(e) { alert('Ошибка: ' + e.message); }
 }
