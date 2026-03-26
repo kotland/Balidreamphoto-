@@ -2032,7 +2032,38 @@ function showRouteGallery() {
         isHard = false;
       }
       
-      var badge = '';
+      
+      let totalK = 0;
+      for (let j = 0; j < r.length; j++) {
+        if (r[j].price) {
+          let pstr = r[j].price.toLowerCase().replace(/,/g, '');
+          let nums = pstr.match(/\d+/g);
+          if (nums) {
+             let avg = 0;
+             if (nums.length === 1) avg = parseInt(nums[0]);
+             else avg = (parseInt(nums[0]) + parseInt(nums[1])) / 2;
+             
+             if (pstr.includes('m') || pstr.includes('м')) {
+                 avg = avg * 1000;
+             } else if (!pstr.includes('k') && !pstr.includes('к') && avg < 1000) {
+                 // if it's just '50' without K, assume 50K if it's IDR, but if it's $, then $50 = 750K
+                 if (pstr.includes('$')) avg = avg * 15;
+                 else avg = avg; 
+             }
+             totalK += avg;
+          }
+        }
+      }
+      let budgetStr = '';
+      if (totalK > 0) {
+         if (totalK >= 1000) budgetStr = '~' + (totalK/1000).toFixed(1) + ' млн IDR';
+         else budgetStr = '~' + Math.round(totalK) + 'k IDR';
+      } else {
+         budgetStr = 'Свободный бюджет';
+      }
+      
+      let budgetBadge = '<span style="margin-left:8px; background:rgba(42, 107, 90, 0.1); color:#2a6b5a; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">💸 ' + budgetStr + '</span>';
+var badge = '';
       if (isChill) {
         badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
       } else if (isHard) {
@@ -2060,7 +2091,9 @@ function showRouteGallery() {
       html += '</div>';
     }
     
-    html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
+    
+      badge += budgetBadge;
+html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
     html += '</div>';
     
     document.getElementById('guideContent').style.display = 'none';
