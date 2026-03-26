@@ -465,14 +465,45 @@ function showSingleRoute(idx) {
     html += '<div style="font-size:14px;color:rgba(42,42,40,0.7);text-align:center;margin-bottom:16px;line-height:1.4">' + route.preview + '</div>';
     html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
 
+    
     for (var i = 0; i < route.places.length; i++) {
       var p = route.places[i];
-      html += '<div style="background:rgba(255,255,255,0.7);border-radius:16px;padding:16px;margin-bottom:12px">';
-      html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
-      html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc + '</div>';
-      if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
-      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
-      html += '</div>';
+      if (p.time && (p.time.includes('❗️') || p.time.includes('📎'))) {
+          html += '<div style="background:rgba(232, 62, 140, 0.05); border-left:4px solid #e83e8c; border-radius:12px; padding:20px; margin-bottom:20px;">';
+          html += '  <div style="font-size:14px; font-weight:700; color:#e83e8c; margin-bottom:8px; display:flex; align-items:center; gap:6px;">' + p.time + '</div>';
+          html += '  <div style="font-size:16px; font-weight:700; color:#2a2a28; margin-bottom:8px;">' + p.name + '</div>';
+          let fd = p.desc.replace(/\b(\d+\.)/g, '<br><br>$1').replace(/^<br><br>/, '');
+          html += '  <div style="font-size:13px; color:rgba(42,42,40,0.8); line-height:1.6;">' + fd + '</div>';
+          html += '</div>';
+      } else if (p.time && p.time.includes('🏨')) {
+          html += '<div style="background:rgba(42, 107, 90, 0.03); border-left:4px solid #2a6b5a; border-radius:12px; padding:16px; margin-bottom:20px;">';
+          html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+          html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">' + p.name + '</div>';
+          html += '    <div style="font-size:12px; font-weight:700; color:#2a6b5a; opacity:0.8;">' + p.time.replace('🏨 ', '') + '</div>';
+          html += '  </div>';
+          html += '  <div style="font-size:13px; font-weight:600; color:rgba(42,107,90,0.85); line-height:1.5;">' + p.desc + '</div>';
+          html += '</div>';
+      } else {
+          html += '<div style="background:#ffffff;border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);position:relative;">';
+          html += '  <div style="display:inline-block;background:#2a6b5a;color:white;padding:4px 10px;border-radius:8px;font-size:12px;font-weight:700;margin-bottom:12px;">' + p.time + '</div>';
+          html += '  <div style="font-size:18px;font-weight:700;color:#2a2a28;margin-bottom:8px;">' + p.name + '</div>';
+          
+          let fd = p.desc;
+          if (fd.includes('✨ Атмосфера:')) {
+              fd = fd.replace('✨ Атмосфера:', '<b>✨ Атмосфера:</b><br>');
+              fd = fd.replace('🏄‍♀️ Чем заняться:', '<br><br><b>🏄‍♀️ Чем заняться:</b><br>');
+              fd = fd.replace('🍽 Что заказать:', '<br><br><b>🍽 Что заказать:</b><br>');
+          }
+          
+          html += '  <div style="font-size:14px;color:rgba(42,42,40,0.7);line-height:1.5;margin-bottom:12px;">' + fd + '</div>';
+          if (p.price && p.price !== 'Бесплатно' && p.price !== 'По меню' && p.price !== '') {
+            html += '  <div style="font-size:13px;font-weight:600;color:#2a6b5a;margin-bottom:12px;">' + p.price + '</div>';
+          }
+          if (p.maps && p.maps !== '#' && p.maps !== '') {
+            html += '  <div style="margin-top:8px;"><a href="' + p.maps + '" target="_blank" style="color:#e83e8c;text-decoration:none;font-weight:500;font-size:13px;">📍 Открыть в Google Maps</a></div>';
+          }
+          html += '</div>';
+      }
     }
 
     // --- Google Maps Directions button ---
