@@ -455,725 +455,138 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
-    [{"time": "10:30", "name": "Uluwatu Yoga Barn", "desc": "[чилл] Услышьте шелест пальм и окунитесь в тихое расслабление на йога-террасе с видом на океан. Здесь вы найдете гармонию тела и души в каждом движении.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Uluwatu+Yoga+Barn"}, {"time": "13:00", "name": "Dreamland Beach", "desc": "Идеальное место для спокойного отдыха, где белый песок встречается с прозрачной водой. Закат здесь похож на магию, окрашивает небо в оранжевые и розовые тона.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Dreamland+Beach"}],
-    [{"time": "11:00", "name": "Bingin Spa Retreat", "desc": "[чилл] Затеряйтесь в уединении и уюте спа, где каждый массаж наполняется теплом и заботой местных мастеров. Ощутите, как исчезает напряжение в атмосфере покоя.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Bingin+Spa+Retreat"}, {"time": "14:00", "name": "Padang Padang Beach", "desc": "Наслаждайтесь ленивым временем на пленительном пляже с мягкими волнами, свисающими скалами и тропическими звуками природы вокруг.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Padang+Padang+Beach"}],
-    [{"time": "11:30", "name": "Karma Kandara Wellness", "desc": "[чилл] Погрузитесь в атмосферу балийского рая в спа-центре, где ароматные масла и нежные прикосновения специалистов наполнят вас энергией на весь день.", "price": "500k IDR", "maps": "https://maps.google.com/?q=Karma+Kandara+Wellness"}, {"time": "15:00", "name": "Single Fin", "desc": "Посидите на террасе бара с видом на Балианский залив, расслабляясь под шум прибоя и наслаждаясь коктейлем под мягкие звуки живой музыки.", "price": "120k IDR", "maps": "https://maps.google.com/?q=Single+Fin"}],
-    [{"time": "10:00", "name": "Tjendana Villas Nusa Dua", "desc": "[чилл] Начните день с ощущения блаженства, посетив утреннюю медитацию среди зелени и ароматов свежих цветов, пробуждая сознание и тело.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Tjendana+Villas+Nusa+Dua"}, {"time": "12:30", "name": "Balangan Beach", "desc": "Изучите спокойный, протяженный песок Балангана, ловя тихие волны и наслаждаясь шумом легких брызг среди сияющего солнца.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Balangan+Beach"}],
-    [{"time": "11:00", "name": "Serenity Spa Bali", "desc": "[чилл] Дайте себе погрузиться в чудесный мир расслабления с эфирными массажами, окруженными сладостным ароматом жасмина и звуками текучей воды.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Serenity+Spa+Bali"}, {"time": "14:00", "name": "Thomas Beach", "desc": "Кристально чистая вода и уединенное окружение предоставляют идеальные условия для отдыха, где время останавливается, и каждый вздох моря ласкает вас.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Thomas+Beach"}],
-    [{"time": "10:45", "name": "Ritz-Carlton Spa", "desc": "[чилл] Ощутите атмосферу роскоши и полного релакса в элитном спа. Каждое прикосновение здесь дарует ощущение свежести и обновления, отгоняя все тревоги.", "price": "600k IDR", "maps": "https://maps.google.com/?q=Ritz-Carlton+Spa"}, {"time": "13:30", "name": "Ulu Cliffhouse", "desc": "Это место идеальное, чтобы насладиться легким обедом с видом на бескрайний океан, под шепоты легкого бриза и шорох волн о скалы.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Ulu+Cliffhouse"}],
-    [{"time": "11:15", "name": "PinkCoco Spa", "desc": "[чилл] Нежно и ароматно, это место погружает вас в пространство, где чувственные ароматы и массажные процедуры бережно заботятся о каждой клеточке вашей кожи.", "price": "280k IDR", "maps": "https://maps.google.com/?q=PinkCoco+Spa"}, {"time": "14:15", "name": "Nyang Nyang Beach", "desc": "Прогуляйтесь вдоль длинного безмятежного побережья, где каждый шаг оставляет след на мягком песке, а волны плещутся в такт медитации.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Nyang+Nyang+Beach"}],
-    [{"time": "10:30", "name": "Yoga Searcher Bali", "desc": "[чилл] Погрузитесь в ритм дыхания и покоя, занимаясь йогой прямо под открытым небом, где звуки природы помогают достичь внутреннего баланса.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Yoga+Searcher+Bali"}, {"time": "13:45", "name": "Padang Padang Spa", "desc": "Наслаждайтесь элементами природы и традиционными балийскими процедурами, которые подарят телу и душе глубокое чувство внутренней гармонии.", "price": "320k IDR", "maps": "https://maps.google.com/?q=Padang+Padang+Spa"}],
-    [{"time": "11:00", "name": "The Edge Spa", "desc": "[чилл] Пожалуй, лучшее место для спа-процедур с захватывающим видом. Каждое прикосновение — это вдохновение, каждая минута — роскошь.", "price": "700k IDR", "maps": "https://maps.google.com/?q=The+Edge+Spa"}, {"time": "14:00", "name": "Pantai Tegal Wangi", "desc": "Эти небольшие бухты славятся своими гротами и тенью многолетних скал, что создаёт неповторимую атмосферу спокойствия и уединения.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Pantai+Tegal+Wangi"}],
-    [{"time": "10:45", "name": "Tropical Day Spa", "desc": "[чилл] Окунитесь в спокойствие, где природные ингредиенты и умиротворяющие техники помогут почувствовать себя обновленным и безмятежным.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Tropical+Day+Spa"}, {"time": "13:00", "name": "Jimbaran Beach", "desc": "Медленно прогуливаясь по мягкому песку, наслаждайтесь живописными видами и шумом океана, который станет лучшим фоном для расслабления умиротворённой души.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Jimbaran+Beach"}],
-    // --- Variant 1: Пляжный (Beach day) ---
     [
-      {
-        time: '09:30',
-        name: 'Artisan of Bali',
-        desc: 'Завтрак на Буките — тут cinnamon roll за 30K, который ты будешь вспоминать. Кофе тоже огонь. Приходи голодным.',
-        price: 'завтрак 60-90K',
-        maps: 'https://maps.google.com/?q=Artisan+Bali+Uluwatu+Bali',
-        tags: ['завтрак', 'кафе'],
-        booking: false
-      },
-      {
-        time: '10:30',
-        name: 'Melasti Beach',
-        desc: 'Бирюзовая вода между скал — самый красивый пляж Букита. Утром спокойно, вода как бассейн. Купайся до обеда пока не припекло. Дорога к пляжу через скалы — уже вау.',
-        price: 'парковка 5-10K, лежак 100-150K',
-        maps: 'https://maps.google.com/?q=Melasti+Beach+Ungasan',
-        tags: ['пляж', 'купание'],
-        booking: false
-      },
-      {
-        time: '13:00',
-        name: 'Warung Guero',
-        desc: 'Мексиканская еда на Бали? Да, и она крутая. Тако 65K за 3 штуки, буррито размером с руку. 5 минут от Melasti. Местные экспаты тут зависают.',
-        price: 'тако 65K/3шт, буррито 75K',
-        maps: 'https://maps.google.com/?q=Warung+Guero+Uluwatu+Bali',
-        tags: ['обед', 'мексиканская'],
-        booking: false
-      },
-      {
-        time: '14:30',
-        name: 'U Spa Uluwatu',
-        desc: 'После пляжа и обеда — массаж. Балийский масляный на час, смоет соль и усталость. Рядом с Melasti, не надо далеко ехать.',
-        price: 'массаж от 250K/час',
-        maps: 'https://maps.google.com/?q=U+Spa+Uluwatu+Bali',
-        tags: ['спа', 'массаж', 'отдых'],
-        booking: true
-      },
-      {
-        time: '16:30',
-        name: 'Padang Padang Beach',
-        desc: 'Тот самый пляж из «Ешь, молись, люби». Маленькая бухта в скалах, лестница вниз. К 16:30 солнце мягкое, не обгоришь. Сёрферы, закатный свет — магия.',
-        price: 'вход 15K',
-        maps: 'https://maps.google.com/?q=Padang+Padang+Beach',
-        tags: ['пляж', 'закат'],
-        booking: false
-      },
-      {
-        time: '18:00',
-        name: 'Uluwatu Temple + Kecak Dance',
-        desc: 'Храм на краю 70-метровой скалы + танец Кечак на закате. Десятки мужчин в кругу кричут «чак-чак-чак», огонь, океан, закат — мурашки по коже. Приходи за 30 минут занять место с видом на океан! Прячь очки от обезьян.',
-        price: 'храм 60K + Kecak 150K',
-        maps: 'https://maps.google.com/?q=Uluwatu+Bali+Temple',
-        tags: ['храм', 'духовное', 'закат', 'культура'],
-        booking: false
-      },
-      {
-        time: '20:30',
-        name: 'Jimbaran Seafood Bay',
-        desc: 'Рыба на песке. Буквально — столы стоят прямо на пляже, ты выбираешь рыбу из ведра, её жарят на гриле. Ноги в песке, свечи, волны. Классика Бали. Бери lobster — тут он по-человечески.',
-        price: 'сет на двоих 300-500K',
-        maps: 'https://maps.google.com/?q=Jimbaran+Seafood+Bay',
-        tags: ['ужин', 'морепродукты', 'пляж'],
-        booking: false
-      },
-      {
-        time: '🏨',
-        name: 'The Istana Bali (Bukit)',
-        desc: 'Виллы на скалах Букита с infinity pool и видом на океан. Или бюджетнее — Mana Uluwatu ($40, чисто и стильно).',
-        price: 'от $40-150/ночь',
-        maps: 'https://maps.google.com/?q=Mana+Uluwatu+Bali',
-        tags: ['отель'],
-        booking: true
-      }
+        {
+            "time": "10:00",
+            "name": "The Edge Spa",
+            "desc": "[чилл] Бассейн на краю утеса. Гладкий мрамор, шум прибоя далеко внизу и безупречный массаж с теплыми вулканическими камнями.",
+            "price": "800k IDR",
+            "maps": "https://maps.google.com/?q=The+Edge+Bali"
+        },
+        {
+            "time": "13:30",
+            "name": "Teja",
+            "desc": "Ресторан с видом на горизонт. Кухня открытого огня, минималистичная керамика, запах дыма и терпкое оливковое масло.",
+            "price": "350k IDR",
+            "maps": "https://maps.google.com/?q=Teja+Bali"
+        },
+        {
+            "time": "17:00",
+            "name": "Dreamland Beach",
+            "desc": "Золотой час у подножия известняковых скал. Мощные волны разбиваются о берег, оставляя соленую пыль в прохладном вечернем воздухе.",
+            "price": "Бесплатно",
+            "maps": "https://maps.google.com/?q=Dreamland+Beach"
+        }
     ],
-    // --- Variant 2: Приключения (Adventure) ---
     [
-      {
-        time: '09:30',
-        name: '% Arabica Bali',
-        desc: 'Японская кофейня с эспрессо в кокосе — да, звучит странно, но это лучший кофе на Буките. Минималистичный дизайн, красивые чашки, инстаграмное место.',
-        price: 'кофе 50-70K',
-        maps: 'https://maps.google.com/?q=Arabica+Bali',
-        tags: ['завтрак', 'кафе'],
-        booking: false
-      },
-      {
-        time: '10:30',
-        name: 'Paragliding Timbis',
-        desc: 'Полёт на параплане с обрыва Букита — 15 минут паришь над океаном как птица. Инструктор рулит, ты просто кайфуешь и орёшь. Одно из лучших ощущений на Бали. БРОНИРУЙ заранее!',
-        price: '1.2-1.5M IDR (15 мин)',
-        maps: 'https://maps.google.com/?q=Timbis+Paragliding',
-        tags: ['активность', 'экстрим', 'приключения'],
-        booking: true
-      },
-      {
-        time: '12:30',
-        name: 'KALA Uluwatu',
-        desc: 'Греческая кухня на скалах Букита. Old money вайб — белые скатерти, вид на океан, хумус и питы. После параглайдинга — идеально. Чувствуешь себя на Санторини.',
-        price: 'обед 200-350K',
-        maps: 'https://maps.google.com/?q=Kala+Uluwatu+Bali',
-        tags: ['обед', 'ресторан'],
-        booking: false
-      },
-      {
-        time: '14:00',
-        name: 'Nyang Nyang Beach',
-        desc: 'Дикий пляж — нет кафе, нет лежаков, нет людей. Только ты, океан и 500 ступенек вниз (и вверх потом, ха). Тут стоит заброшенный корабль для фото. Вода спокойная, можно купаться.',
-        price: 'бесплатно',
-        maps: 'https://maps.google.com/?q=Nyang+Nyang+Beach',
-        tags: ['пляж', 'дикий', 'приключения'],
-        booking: false
-      },
-      {
-        time: '16:30',
-        name: 'Karang Boma Cliff',
-        desc: 'Фото на краю скалы — тот самый вирусный ракурс. Реально стоишь над пропастью, внизу океан. Страшно и красиво. Бесплатно, рядом с Улувату.',
-        price: 'бесплатно',
-        maps: 'https://maps.google.com/?q=Karang+Boma+Cliff',
-        tags: ['фото', 'природа', 'закат'],
-        booking: false
-      },
-      {
-        time: '18:00',
-        name: 'Jaran Hill',
-        desc: 'Топ-1 место для заката на Буките — и бесплатно! Маленький холм с видом на 360°, народу мало (пока не стал популярным). Приноси пиво из 7-Eleven.',
-        price: 'бесплатно',
-        maps: 'https://maps.google.com/?q=Jaran+Hill+Uluwatu+Bali',
-        tags: ['закат', 'природа'],
-        booking: false
-      },
-      {
-        time: '20:00',
-        name: 'Single Fin',
-        desc: 'Культовый бар на скале над сёрф-спотом Улувату. Коктейли, живая музыка, по воскресеньям — вечеринка. Еда средняя, но за атмосферу прощаешь всё.',
-        price: 'коктейль 80-120K, ужин 150-250K',
-        maps: 'https://maps.google.com/?q=Single+Fin+Uluwatu+Bali',
-        tags: ['бар', 'ужин', 'вечеринка'],
-        booking: false
-      },
-      {
-        time: '🏨',
-        name: 'Sal Secret Spot Uluwatu',
-        desc: 'Бутик-отель для искателей приключений, где волнующие моменты переплетаются с комфортом. Бассейн сверкает под солнцем, а все лучшие локации находятся в шаговой доступности. Для тех, кто ищет экономичный вариант — The Niti, уютный refuge за 25 долларов.',
-        price: 'от $25-100/ночь',
-        maps: 'https://maps.google.com/?q=Sal+Secret+Uluwatu+Bali',
-        tags: ['отель'],
-        booking: true
-      }
+        {
+            "time": "11:00",
+            "name": "Bvlgari Resort Lounge",
+            "desc": "[чилл] Архитектурный шедевр, парящий над океаном. Строгая роскошь итальянского дизайна, балийский камень и безупречный эспрессо.",
+            "price": "250k IDR",
+            "maps": "https://maps.google.com/?q=Bvlgari+Resort+Bali"
+        },
+        {
+            "time": "14:30",
+            "name": "Thomas Beach",
+            "desc": "Скрытая бухта с белым песком. Контрастные тени от скал, прозрачная бирюзовая вода и уединение вдали от пляжных клубов.",
+            "price": "Бесплатно",
+            "maps": "https://maps.google.com/?q=Thomas+Beach"
+        },
+        {
+            "time": "18:00",
+            "name": "Teja",
+            "desc": "Вечерняя посадка. Приглушенный свет, монохромный интерьер и гастрономия, где каждый ингредиент звучит максимально чисто.",
+            "price": "400k IDR",
+            "maps": "https://maps.google.com/?q=Teja+Bali"
+        }
     ],
-    // --- Variant 3: Духовный + культура ---
     [
-      {
-        time: '09:00',
-        name: 'Uluwatu Temple (утро)',
-        desc: 'Приходи утром — храм только для тебя. Ни толп, ни давки. Обезьяны сонные, свет мягкий, можно спокойно погулять по тропам вдоль обрыва. Совсем другой опыт, чем на закате.',
-        price: 'вход 60K',
-        maps: 'https://maps.google.com/?q=Uluwatu+Bali+Temple',
-        tags: ['храм', 'духовное', 'культура'],
-        booking: false
-      },
-      {
-        time: '11:00',
-        name: 'Silver Jewelry Class',
-        desc: 'Делаешь кольцо своими руками из серебра — за 2-3 часа. Мастер показывает, ты пилишь, куёшь, полируешь. Уезжаешь с кольцом, которое сделал(а) сам(а). Лучший сувенир.',
-        price: '400-600K (включая материал)',
-        maps: 'https://maps.google.com/?q=Silver+Class+Uluwatu+Bali',
-        tags: ['мастер-класс', 'культура', 'сувенир'],
-        booking: true
-      },
-      {
-        time: '13:00',
-        name: 'Le Cliff Bali',
-        desc: 'Обед на краю скалы — внизу сёрферы ловят волны, ты ешь пасту и смотришь. Атмосфера расслабленного Средиземноморья. Салаты огонь, порции большие.',
-        price: 'обед 150-250K',
-        maps: 'https://maps.google.com/?q=Le+Cliff+Bali',
-        tags: ['обед', 'ресторан', 'вид'],
-        booking: false
-      },
-      {
-        time: '14:30',
-        name: 'Museum Pasifika',
-        desc: 'Крупнейший музей Азиатско-Тихоокеанского искусства! 200+ художников из 25 стран, 600 работ. Каждый зал — новое открытие. Классы рисования, батика, танцев. Nusa Dua.',
-        price: 'вход 90K',
-        maps: 'https://maps.google.com/?q=Museum+Pasifika+Nusa+Dua',
-        tags: ['музей', 'культура', 'искусство'],
-        booking: false
-      },
-      {
-        time: '16:30',
-        name: 'Gunung Payung Beach',
-        desc: 'Безлюдный секретный пляж — спускаешься через амфитеатр (серьёзно, тут реально амфитеатр в скалах). Внизу белый песок и ни души. Вода тёплая, волн почти нет.',
-        price: 'парковка 5K',
-        maps: 'https://maps.google.com/?q=Gunung+Payung+Beach',
-        tags: ['пляж', 'секретный', 'природа'],
-        booking: false
-      },
-      {
-        time: '18:00',
-        name: 'Kecak Dance',
-        desc: 'Танец огня на закате — 50+ мужчин в кругу, ритмичное «чак-чак-чак», потом один из них ходит по углям. Это не шоу для туристов — это реально древний ритуал. Мурашки гарантированы.',
-        price: '150K',
-        maps: 'https://maps.google.com/?q=Uluwatu+Bali+Kecak',
-        tags: ['культура', 'закат', 'духовное'],
-        booking: false
-      },
-      {
-        time: '19:30',
-        name: 'MASONRY',
-        desc: 'Серьёзный ресторан на Буките — авторская кухня, красивая подача, коктейли от бармена. После духовного дня — ужин, который запомнишь. Бронируй столик.',
-        price: 'ужин 300-500K',
-        maps: 'https://maps.google.com/?q=Masonry+Uluwatu+Bali',
-        tags: ['ужин', 'fine dining'],
-        booking: true
-      },
-      {
-        time: '🏨',
-        name: 'Radisson Blu Uluwatu',
-        desc: 'Спокойный отель с видом на океан. После духовного дня — правильное место. Или Suarga Padang Padang (виллы в джунглях, $80).',
-        price: 'от $80-180/ночь',
-        maps: 'https://maps.google.com/?q=Radisson+Blu+Uluwatu+Bali',
-        tags: ['отель'],
-        booking: true
-      }
+        {
+            "time": "09:00",
+            "name": "Alchemy Uluwatu",
+            "desc": "[изи] Белоснежное футуристичное пространство. Игра света сквозь круглые световые люки, сыроедческие десерты и плотный матча.",
+            "price": "150k IDR",
+            "maps": "https://maps.google.com/?q=Alchemy+Uluwatu"
+        },
+        {
+            "time": "13:00",
+            "name": "Bali Paragliding Tandem",
+            "desc": "Отрыв от земли. Ветер в лицо, парящий полет над отвесными скалами и градиентом Индийского океана. ($65)",
+            "price": "1m IDR",
+            "maps": "https://maps.google.com/?q=Bali+Paragliding"
+        },
+        {
+            "time": "17:30",
+            "name": "Dreamland Beach",
+            "desc": "Спуск к воде перед закатом. Брутальная красота дикой природы, влажный песок и обволакивающее тепло уходящего солнца.",
+            "price": "Бесплатно",
+            "maps": "https://maps.google.com/?q=Dreamland+Beach"
+        }
     ],
-    // --- Variant 4: Сёрф-день ---
     [
-      {
-        time: '07:00',
-        name: 'Drifter Surf Shop & Cafe',
-        desc: 'Ранний подъём — правильный сёрф-день начинается рано. Кофе, асаи-боул и сёрф-атмосфера. Тут же можно арендовать доску на день.',
-        price: 'завтрак 50-80K, аренда доски 100-200K/день',
-        maps: 'https://maps.google.com/?q=Drifter+Surf+Shop+Uluwatu+Bali',
-        tags: ['завтрак', 'кафе', 'сёрфинг'],
-        booking: false
-      },
-      {
-        time: '08:00',
-        name: 'Padang Padang Beach',
-        desc: 'Тот самый пляж из «Ешь, молись, люби». Утром народу мало — идеальный момент искупаться в кристальной воде между скал. Спуск по узкой лестнице в расщелине — уже приключение.',
-        price: 'вход 15K',
-        maps: 'https://maps.google.com/?q=Padang+Padang+Beach+Bali',
-        tags: ['пляж', 'купание'],
-        booking: false
-      },
-      {
-        time: '10:00',
-        name: 'Suluban Beach (Blue Point)',
-        desc: 'Легендарный сёрф-спот Бали. Спуск через пещеры и лестницы к воде — сам по себе вау. Волны серьёзные, смотри по уровню. Даже если не сёрфишь — виды нереальные.',
-        price: 'вход 10K',
-        maps: 'https://maps.google.com/?q=Suluban+Beach+Blue+Point+Bali',
-        tags: ['пляж', 'сёрфинг'],
-        booking: false
-      },
-      {
-        time: '12:30',
-        name: 'Bukit Cafe',
-        desc: 'Обед с видом на океан. Смузи-боулы, бургеры и балийская кухня. Отличное место перевести дух между сёрф-сессиями.',
-        price: 'обед 70-120K',
-        maps: 'https://maps.google.com/?q=Bukit+Cafe+Uluwatu+Bali',
-        tags: ['обед', 'кафе'],
-        booking: false
-      },
-      {
-        time: '14:00',
-        name: 'Сёрф-урок в Padang Padang',
-        desc: 'Если ты новичок — бери урок. Инструкторы на Паданг-Паданге терпеливые, волны помягче чем в Улувату. 2 часа — встанешь на доску гарантированно. Есть русскоговорящие инструкторы.',
-        price: '350-500K/2 часа с доской',
-        maps: 'https://maps.google.com/?q=Padang+Padang+Surf+Lesson+Bali',
-        tags: ['сёрфинг', 'активности'],
-        booking: true
-      },
-      {
-        time: '16:30',
-        name: 'Thomas Homemade Gelato',
-        desc: 'Лучшее джелато на Буките. Натуральные вкусы — кокос, маракуйя, манго. Маленькая лавочка у дороги, но очередь выдаёт качество.',
-        price: '35-50K',
-        maps: 'https://maps.google.com/?q=Thomas+Homemade+Gelato+Uluwatu+Bali',
-        tags: ['десерт', 'перекус'],
-        booking: false
-      },
-      {
-        time: '17:30',
-        name: 'Single Fin',
-        desc: 'Культовый клифф-бар с лучшим закатом на Буките. Воскресные вечеринки — легенда. Бери столик у перил, заказывай Bintang и смотри как сёрферы ловят волны внизу.',
-        price: 'напитки 60-120K, еда 80-160K',
-        maps: 'https://maps.google.com/?q=Single+Fin+Bali',
-        tags: ['бар', 'закат', 'сёрфинг'],
-        booking: false
-      }
+        {
+            "time": "11:00",
+            "name": "Gooseberry Restaurant",
+            "desc": "[изи] Французская эстетика в тропиках. Безупречные круассаны, стекло, бетон и вид на ухоженный бассейн сквозь панорамные окна.",
+            "price": "200k IDR",
+            "maps": "https://maps.google.com/?q=Gooseberry+Bali"
+        },
+        {
+            "time": "14:30",
+            "name": "Bali Paragliding Tandem",
+            "desc": "Адреналин, переходящий в медитацию. Тишина на высоте птичьего полета, геометричные узоры коралловых рифов внизу. ($65)",
+            "price": "1m IDR",
+            "maps": "https://maps.google.com/?q=Bali+Paragliding"
+        },
+        {
+            "time": "18:00",
+            "name": "Uluwatu Temple",
+            "desc": "Силуэт древнего храма на фоне багрового неба. Камерность ритуала Кечак, монотонное пение и огонь, разрезающий сумерки.",
+            "price": "150k IDR",
+            "maps": "https://maps.google.com/?q=Uluwatu+Temple"
+        }
     ],
-    // --- Variant 5: Luxury ---
     [
-      {
-        time: '09:00',
-        name: '% Arabica Bali',
-        desc: 'Японская кофейня с мировым именем. Минималистичный дизайн, идеальный flat white и виды на джунгли с террасы. Фотогеничное место — очередь бывает, но двигается быстро.',
-        price: 'кофе 50-80K',
-        maps: 'https://maps.google.com/?q=Percent+Arabica+Bali',
-        tags: ['кофе', 'кафе'],
-        booking: false
-      },
-      {
-        time: '10:30',
-        name: 'Museum Pasifika (Nusa Dua, 20 мин)',
-        desc: 'Один из лучших музеев Бали — коллекция искусства Азии и Тихого океана. Балийская живопись, индонезийский батик, работы европейцев вдохновлённых Бали. Кондиционер — бонус в жару.',
-        price: 'вход 100K',
-        maps: 'https://maps.google.com/?q=Museum+Pasifika+Nusa+Dua+Bali',
-        tags: ['музей', 'культура'],
-        booking: false
-      },
-      {
-        time: '12:30',
-        name: 'Savaya Day Club',
-        desc: 'Премиум дей-клаб на скалах над океаном. The Cube — гигантская LED-инсталляция. Бассейн, дейбеды, коктейли мирового уровня. Дресс-код smart casual.',
-        price: 'вход от 500K, дейбед от 3M, коктейли 180-250K',
-        maps: 'https://maps.google.com/?q=Savaya+Bali',
-        tags: ['дей-клаб', 'luxury'],
-        booking: true
-      },
-      {
-        time: '15:00',
-        name: 'Koral Restaurant (Nusa Dua, 20 мин)',
-        desc: 'Ресторан внутри аквариума — буквально. Обедаешь в окружении рыб и кораллов. Подводная тематика, морепродукты высочайшего уровня. Бронируй заранее — мест мало.',
-        price: 'от 500K-1.2M/персона',
-        maps: 'https://maps.google.com/?q=Koral+Restaurant+Apurva+Kempinski+Bali',
-        tags: ['ресторан', 'fine dining'],
-        booking: true
-      },
-      {
-        time: '17:00',
-        name: 'El Kabron',
-        desc: 'Средиземноморский ресторан на скале. Дейбеды у бассейна, испанские тапас и розовый закат. Атмосфера Ибицы, только дешевле и красивее. Must-visit на Буките.',
-        price: 'минимум 300-500K/чел, дейбед от 2.5M',
-        maps: 'https://maps.google.com/?q=El+Kabron+Bali',
-        tags: ['ресторан', 'закат', 'бар'],
-        booking: true
-      },
-      {
-        time: '19:30',
-        name: 'Ju Ma Na Restaurant',
-        desc: 'Fine dining в Banyan Tree resort. Французская кухня с азиатским твистом. Столик у обрыва, свечи, океан внизу — идеальный финал luxury-дня. Дресс-код smart.',
-        price: 'ужин от 800K-1.5M/чел',
-        maps: 'https://maps.google.com/?q=Ju+Ma+Na+Banyan+Tree+Ungasan+Bali',
-        tags: ['ресторан', 'fine dining'],
-        booking: true
-      }
+        {
+            "time": "14:00",
+            "name": "Bali Paragliding Tandem",
+            "desc": "[хард] Вызов гравитации. Резкие потоки ветра, контроль над крылом и пронзительное чувство свободы над бездной океана. ($65)",
+            "price": "1m IDR",
+            "maps": "https://maps.google.com/?q=Bali+Paragliding"
+        },
+        {
+            "time": "17:00",
+            "name": "Dreamland Beach",
+            "desc": "Стихия воды. Наблюдение за мощными сетами волн, необработанный ландшафт и суровая эстетика известняковых плит.",
+            "price": "Бесплатно",
+            "maps": "https://maps.google.com/?q=Dreamland+Beach"
+        },
+        {
+            "time": "20:00",
+            "name": "Teja",
+            "desc": "Ужин после насыщенного дня. Запеченные мозговые косточки, обугленные овощи, тяжелые винные бокалы и солидная тишина.",
+            "price": "500k IDR",
+            "maps": "https://maps.google.com/?q=Teja+Bali"
+        }
     ],
-    // --- Variant 6: Фото-локации ---
     [
-      {
-        time: '06:30',
-        name: 'Nyang Nyang Beach (кораблекрушение)',
-        desc: 'Дикий пляж с заброшенным кораблём — культовый фото-спот. Приходи на рассвете: никого нет, свет мягкий, кадры будут огненные. Спуск 20 минут по тропе — обувь крепкую!',
-        price: 'бесплатно',
-        maps: 'https://maps.google.com/?q=Nyang+Nyang+Beach+Shipwreck+Bali',
-        tags: ['пляж', 'фото'],
-        booking: false
-      },
-      {
-        time: '09:00',
-        name: 'Artisan of Bali',
-        desc: 'Завтрак после рассветного похода — заслуженно. Блинчики с бананом, гранола и крепкий кофе. Уютная веранда в зелени.',
-        price: 'завтрак 60-90K',
-        maps: 'https://maps.google.com/?q=Artisan+of+Bali+Uluwatu',
-        tags: ['завтрак', 'кафе'],
-        booking: false
-      },
-      {
-        time: '10:30',
-        name: 'Karang Boma Cliff',
-        desc: '70-метровый обрыв над Индийским океаном. Один из самых драматичных видов на Бали. Фото на краю скалы — классика Instagram. Осторожно, ограждений нет!',
-        price: 'бесплатно',
-        maps: 'https://maps.google.com/?q=Karang+Boma+Cliff+Bali',
-        tags: ['фото', 'природа'],
-        booking: false
-      },
-      {
-        time: '12:00',
-        name: 'The Loft Uluwatu',
-        desc: 'Стильное кафе с захватывающим видом открывает панораму на город. Нежная паста, разнообразные боулы и свежевыжатые соки создают кулинарный праздник. Идеальное место для тихой перезагрузки между увлекательными локациями.',
-        price: 'обед 80-130K',
-        maps: 'https://maps.google.com/?q=The+Loft+Uluwatu+Bali',
-        tags: ['обед', 'кафе'],
-        booking: false
-      },
-      {
-        time: '13:30',
-        name: 'Melasti Beach',
-        desc: 'Белоснежный пляж между высоченными скалами — кадры как с другой планеты. Бирюзовая вода, белые скалы. Дорога вниз через скальный каньон — снимай и её!',
-        price: 'вход + парковка 10-20K',
-        maps: 'https://maps.google.com/?q=Melasti+Beach+Bali',
-        tags: ['пляж', 'фото'],
-        booking: false
-      },
-      {
-        time: '15:30',
-        name: 'Uluwatu Temple',
-        desc: 'Древний храм на 70-метровом утёсе. Архитектура, обезьяны, океан внизу — фотогеничнее места на Бали нет. Одевайся закрыто (саронг дают на входе).',
-        price: 'вход 60K',
-        maps: 'https://maps.google.com/?q=Uluwatu+Temple+Bali',
-        tags: ['храм', 'культура', 'фото'],
-        booking: false
-      },
-      {
-        time: '17:30',
-        name: 'Sundays Beach Club',
-        desc: 'Частный пляж-клуб — спускаешься на лифте через скалу. Кристальная бухта, каяки, закатные фото на мостике. Фантастическое место для финального golden hour.',
-        price: 'вход по минимуму заказа 350K',
-        maps: 'https://maps.google.com/?q=Sundays+Beach+Club+Bali',
-        tags: ['бич-клаб', 'закат', 'фото'],
-        booking: true
-      }
-    ],
-    // --- Variant 7: Семейный ---
-    [
-      {
-        time: '09:00',
-        name: 'Waterbom Bali (Nusa Dua, 20 мин)',
-        desc: 'Лучший аквапарк Азии — не преувеличение, он реально в топ-3 мира. Горки для всех возрастов: от детских до экстрима. Ленивая река, бассейны, зона для малышей. Целый день развлечений.',
-        price: 'взрослый 610K, ребёнок 495K',
-        maps: 'https://maps.google.com/?q=Waterbom+Bali+Kuta',
-        tags: ['аквапарк', 'дети', 'активности'],
-        booking: true
-      },
-      {
-        time: '12:30',
-        name: 'Naughty Nuri\'s Jimbaran',
-        desc: 'Легендарные рёбрышки BBQ. Дети обожают — мясо мягкое, порции огромные. Атмосфера расслабленная, балийский стиль. Взрослым — их знаменитые мартини.',
-        price: 'обед 100-180K/чел',
-        maps: 'https://maps.google.com/?q=Naughty+Nuris+Jimbaran+Bali',
-        tags: ['обед', 'ресторан'],
-        booking: false
-      },
-      {
-        time: '14:00',
-        name: 'Pandawa Beach',
-        desc: 'Спокойный пляж с пологим входом — идеально для детей. Волн почти нет, вода тёплая. Можно арендовать каяк или полежать на шезлонге. По дороге — вырезанные в скале статуи Пандавов.',
-        price: 'вход 20K, шезлонг 50K',
-        maps: 'https://maps.google.com/?q=Pandawa+Beach+Bali',
-        tags: ['пляж', 'дети'],
-        booking: false
-      },
-      {
-        time: '16:00',
-        name: 'Thomas Homemade Gelato',
-        desc: 'Мороженое для всей семьи! Натуральные вкусы — кокос, шоколад, маракуйя. Дети в восторге, порции щедрые. Маленькая лавочка, но всегда очередь — значит вкусно.',
-        price: '35-50K',
-        maps: 'https://maps.google.com/?q=Thomas+Homemade+Gelato+Uluwatu+Bali',
-        tags: ['десерт', 'перекус'],
-        booking: false
-      },
-      {
-        time: '17:00',
-        name: 'Jimbaran Seafood Beach',
-        desc: 'Ужин на пляже с ногами в песке — балийская классика. Выбираешь рыбу/креветки/лобстера, жарят на гриле при тебе. Дети играют у воды, закат прилагается. Бронируй столик у воды.',
-        price: 'ужин 150-350K/чел, лобстер от 300K',
-        maps: 'https://maps.google.com/?q=Jimbaran+Seafood+Beach+Bali',
-        tags: ['ужин', 'морепродукты', 'пляж'],
-        booking: true
-      },
-      {
-        time: '19:00',
-        name: 'GWK Cultural Park (свето-шоу)',
-        desc: 'Гигантская статуя Гаруда Вишну — 121 метр! Вечером подсветка и иногда шоу. Дети обожают масштаб. Территория огромная, можно гулять. Фото на фоне статуи — обязательно.',
-        price: 'вход 150K взрослый, дети бесплатно',
-        maps: 'https://maps.google.com/?q=GWK+Cultural+Park+Bali',
-        tags: ['достопримечательность', 'культура'],
-        booking: false
-      }
-    ],
-    // --- Variant 8: Закатный ---
-    [
-      {
-        time: '10:00',
-        name: 'Artisan of Bali',
-        desc: 'Поздний бранч — закатный день не требует ранних подвигов. Авокадо-тост, гранола и хороший кофе. Настройся на расслабленный день.',
-        price: 'бранч 70-100K',
-        maps: 'https://maps.google.com/?q=Artisan+of+Bali+Uluwatu',
-        tags: ['завтрак', 'кафе'],
-        booking: false
-      },
-      {
-        time: '11:30',
-        name: 'Balangan Beach',
-        desc: 'Один из красивейших пляжей Букита. Широкая полоса золотого песка, скалы по бокам. Купайся, загорай, обедай в варунге прямо на пляже. Народу меньше чем на Melasti.',
-        price: 'вход 10K',
-        maps: 'https://maps.google.com/?q=Balangan+Beach+Bali',
-        tags: ['пляж', 'купание'],
-        booking: false
-      },
-      {
-        time: '14:00',
-        name: 'Cashew Tree',
-        desc: 'Уютное кафе в джунглях. Боулы, салаты, холодный кофе. Качели над обрывом — классное фото. Место для передышки перед закатной программой.',
-        price: 'обед 70-110K',
-        maps: 'https://maps.google.com/?q=Cashew+Tree+Uluwatu+Bali',
-        tags: ['обед', 'кафе'],
-        booking: false
-      },
-      {
-        time: '15:30',
-        name: 'Karang Boma Cliff',
-        desc: 'Обрыв 70 метров — первый закатный спот. Солнце ещё высоко, но свет уже золотой. Фото на краю скалы, ветер в лицо, океан внизу. Мощная энергетика.',
-        price: 'бесплатно',
-        maps: 'https://maps.google.com/?q=Karang+Boma+Cliff+Bali',
-        tags: ['природа', 'фото'],
-        booking: false
-      },
-      {
-        time: '17:00',
-        name: 'Uluwatu Temple + Kecak Dance',
-        desc: 'Кечак — огненный танец на закате у храма. 60 мужчин поют «чак-чак-чак», танцоры в огне, солнце садится в океан за ними. Один из сильнейших моментов на Бали. Бери билет заранее!',
-        price: 'вход храм 60K + Kecak 150K',
-        maps: 'https://maps.google.com/?q=Kecak+Dance+Uluwatu+Temple+Bali',
-        tags: ['храм', 'шоу', 'закат'],
-        booking: true
-      },
-      {
-        time: '19:00',
-        name: 'Single Fin',
-        desc: 'После Кечака — коктейль в лучшем клифф-баре. Остатки заката, огни внизу, живая музыка. Если воскресенье — попадёшь на легендарную вечеринку.',
-        price: 'коктейли 80-140K',
-        maps: 'https://maps.google.com/?q=Single+Fin+Bali',
-        tags: ['бар', 'закат'],
-        booking: false
-      },
-      {
-        time: '20:30',
-        name: 'Ulu Cliffhouse',
-        desc: 'Финал закатного дня — бар на скале с бассейном и звёздным небом. DJ, инфинити-пул, коктейли. Атмосфера от расслабленной до клубной — зависит от вечера.',
-        price: 'коктейли 120-180K, минимум заказа может быть',
-        maps: 'https://maps.google.com/?q=Ulu+Cliffhouse+Bali',
-        tags: ['бар', 'клуб', 'ночь'],
-        booking: true
-      }
-    ],
-    // --- Variant 9: Дайвинг + снорклинг ---
-    [
-      {
-        time: '08:00',
-        name: 'Café Bali Nusa Dua (Nusa Dua, 20 мин)',
-        desc: 'Плотный завтрак перед водным днём. Омлеты, панкейки, свежевыжатые соки. Рядом с пляжем Нуса Дуа — удобный старт.',
-        price: 'завтрак 60-100K',
-        maps: 'https://maps.google.com/?q=Cafe+Bali+Nusa+Dua',
-        tags: ['завтрак', 'кафе'],
-        booking: false
-      },
-      {
-        time: '09:30',
-        name: 'Снорклинг у рифа Nusa Dua',
-        desc: 'Прямо у пляжа Нуса Дуа — коралловый риф с черепахами и тропическими рыбами. Маска+ласты в аренду на месте. Вода спокойная, течения слабые — подходит даже новичкам.',
-        price: 'аренда снаряжения 50-100K, тур 200-350K',
-        maps: 'https://maps.google.com/?q=Nusa+Dua+Reef+Snorkeling+Bali',
-        tags: ['снорклинг', 'активности'],
-        booking: true
-      },
-      {
-        time: '12:00',
-        name: 'Warung Dobiel',
-        desc: 'Настоящий балийский варунг с видом на море. Наси горенг, сатай, свежий тунец-гриль. Дёшево, вкусно, аутентично. Отдыхай от воды.',
-        price: 'обед 40-70K',
-        maps: 'https://maps.google.com/?q=Warung+Dobiel+Nusa+Dua+Bali',
-        tags: ['обед', 'варунг'],
-        booking: false
-      },
-      {
-        time: '13:30',
-        name: 'Tanjung Benoa Water Sports',
-        desc: 'Центр водных развлечений Бали. Парасейлинг, банан, джет-ски, флайборд — всё тут. Можно взять пакет на несколько активностей. Торгуйся — первую цену всегда завышают!',
-        price: 'пакет 3 активности 350-600K, отдельно от 150K',
-        maps: 'https://maps.google.com/?q=Tanjung+Benoa+Water+Sports+Bali',
-        tags: ['водный спорт', 'активности'],
-        booking: true
-      },
-      {
-        time: '15:30',
-        name: 'Dive Concepts Bali',
-        desc: 'Дайвинг для всех уровней. Discovery Dive для новичков — погружение до 12м с инструктором. Опытным — рифы Нуса Дуа с мантами и скатами. Снаряжение включено.',
-        price: 'discovery dive 900K-1.5M, fun dive 700K-1M',
-        maps: 'https://maps.google.com/?q=Dive+Concepts+Bali',
-        tags: ['дайвинг', 'активности'],
-        booking: true
-      },
-      {
-        time: '18:00',
-        name: 'Roosterfish Beach Club',
-        desc: 'Пляжный клуб на Пандаве — после дайвинга самое то. Бассейн, шезлонги, закат над скалами. Морепродукты на гриле и холодное пиво. Заслуженный отдых после водного дня.',
-        price: 'минимум заказа 200-350K',
-        maps: 'https://maps.google.com/?q=Roosterfish+Beach+Club+Pandawa+Bali',
-        tags: ['бич-клаб', 'закат', 'ужин'],
-        booking: true
-      }
-    ],
-    // --- Variant 10: Гастро ---
-    [
-      {
-        time: '09:00',
-        name: 'Suka Espresso',
-        desc: 'Specialty coffee на Буките. Местные зёрна, V60, flat white — всё идеально. Маленькое уютное место, завтраки тоже огонь — eggs benny рекомендуем.',
-        price: 'завтрак 60-90K',
-        maps: 'https://maps.google.com/?q=Suka+Espresso+Uluwatu+Bali',
-        tags: ['кофе', 'завтрак'],
-        booking: false
-      },
-      {
-        time: '10:30',
-        name: 'Warung Guero',
-        desc: 'Мексиканская кухня от экспата, который знает толк. Буррито, такос, кесадильи — всё из свежих ингредиентов. Лучшая мексиканская еда на Бали, без шуток.',
-        price: '60-110K',
-        maps: 'https://maps.google.com/?q=Warung+Guero+Uluwatu+Bali',
-        tags: ['ресторан', 'мексиканская'],
-        booking: false
-      },
-      {
-        time: '12:30',
-        name: 'KALA Uluwatu',
-        desc: 'Модный ресторан с азиатско-балийской кухней. Тунец-татаки, говяжьи щёки, крафтовые коктейли. Дизайн как из журнала — бамбук, открытое пространство, вид на тропики.',
-        price: 'обед 120-200K',
-        maps: 'https://maps.google.com/?q=KALA+Uluwatu+Bali',
-        tags: ['ресторан', 'fine dining'],
-        booking: true
-      },
-      {
-        time: '14:30',
-        name: 'Warung Local (Bingin)',
-        desc: 'Настоящий балийский варунг у пляжа Бингин. Наси чампур, баби гулинг, самбал огненный. Тут едят сёрферы и местные — значит, вкусно и честно по цене.',
-        price: '30-50K',
-        maps: 'https://maps.google.com/?q=Warung+Local+Bingin+Bali',
-        tags: ['варунг', 'балийская'],
-        booking: false
-      },
-      {
-        time: '16:00',
-        name: 'Masonry Uluwatu',
-        desc: 'Пекарня и кафе с каменной печью. Багеты, круассаны, тартины — всё свежее утром. Днём — сэндвичи и пицца. Место для кофе-гиков и хлебных снобов.',
-        price: 'кофе + выпечка 50-80K',
-        maps: 'https://maps.google.com/?q=Masonry+Uluwatu+Bali',
-        tags: ['кафе', 'пекарня'],
-        booking: false
-      },
-      {
-        time: '17:30',
-        name: 'Le Cliff Bali',
-        desc: 'Французско-балийский ресторан на обрыве. Утиная грудка, фуа-гра, дегустационное меню. Закат с бокалом вина — это уже не просто ужин, а впечатление на всю жизнь.',
-        price: 'ужин 250-500K/чел, дегустация от 600K',
-        maps: 'https://maps.google.com/?q=Le+Cliff+Bali+Uluwatu',
-        tags: ['fine dining', 'закат'],
-        booking: true
-      },
-      {
-        time: '20:00',
-        name: 'Dugong Uluwatu',
-        desc: 'Финал гастро-тура — крафтовые коктейли и тапас. Авторская барная карта, каждый напиток — маленькое произведение. Бармены знают своё дело, атмосфера тёплая.',
-        price: 'коктейли 100-160K',
-        maps: 'https://maps.google.com/?q=Dugong+Uluwatu+Bali',
-        tags: ['бар', 'коктейли'],
-        booking: false
-      }
-    ],
-    // --- Variant 11: Сёрф-кофе-закат ---
-    [
-      {
-        time: '08:00',
-        name: "Kelly's Warung",
-        desc: 'Легендарный варунг на Bingin Beach. Наси горенг и свежий сок — завтрак как у настоящего балийского сёрфера.',
-        price: '30-80K',
-        maps: 'https://maps.google.com/maps/search/Kellys+Warung+Bingin+Bali',
-        tags: ['завтрак', 'варунг'],
-        booking: false
-      },
-      {
-        time: '09:30',
-        name: 'Bingin Beach Surf',
-        desc: 'Сёрфинг на Bingin — мощные рифовые волны для продвинутых. Для новичков — можно просто смотреть сверху.',
-        price: 'бесплатно',
-        maps: 'https://maps.google.com/?q=Bingin+Beach+Bali',
-        tags: ['сёрф', 'пляж'],
-        booking: false
-      },
-      {
-        time: '12:00',
-        name: 'Ulu Garden',
-        desc: 'Кафе утопает в зелени тропического сада, где аромат свежесваренного кофе смешивается с легким шепотом листвы. Здесь царит умиротворяющая тишина, а на столах – яркие боулы, наполненные свежими ароматами экзотических фруктов. Каждое мгновение наполнено гармонией и спокойствием, создавая идеальный уголок для отдыха после активного утра.',
-        price: '60-130K',
-        maps: 'https://maps.google.com/maps/search/Ulu+Garden+Uluwatu+Bali',
-        tags: ['обед', 'здоровая еда'],
-        booking: false
-      },
-      {
-        time: '15:00',
-        name: 'Suka Espresso',
-        desc: 'Мини-кофейня для истинных сёрферов. Тягучий эспрессо и нежный банановый хлеб, сотворённый с любовью. Уютное пространство, излучающее энергетику океана и страсть к жизни.',
-        price: '35-80K',
-        maps: 'https://maps.google.com/maps/search/Suka+Espresso+Uluwatu+Bali',
-        tags: ['кофе'],
-        booking: false
-      },
-      {
-        time: '17:30',
-        name: 'Uluwatu Temple (Kecak Dance)',
-        desc: 'Храм Улувату, утопающий в закатных огнях, словно величественное одеяние на краю обрыва. Тайный танец Кечак, звучащий среди воинственных криков обезьян, создает атмосферу магического балийского вечера. Яркий свет огня и тени на скалах наполняют этот момент чувством неизведанного.',
-        price: '50K',
-        maps: 'https://maps.google.com/?q=Uluwatu+Temple+Bali',
-        tags: ['культура', 'закат'],
-        booking: false
-      }
+        {
+            "time": "15:00",
+            "name": "Savaya Bali",
+            "desc": "[хард] Куб, парящий над океаном. Монументальная архитектура, строгие линии, вибрация глубокого баса и ледяные коктейли.",
+            "price": "500k IDR",
+            "maps": "https://maps.google.com/?q=Savaya+Bali"
+        },
+        {
+            "time": "19:00",
+            "name": "The Cave by Chef Ryan Clift",
+            "desc": "Подземный файн-дайнинг. Первозданная структура пещеры, сталактиты, точечный свет и гастрономический сет из 7 курсов.",
+            "price": "1.5m IDR",
+            "maps": "https://maps.google.com/?q=The+Cave+Bali"
+        }
     ]
-  ];
+];
 
 function showRouteGallery() {
   try {
@@ -1260,7 +673,6 @@ var badge = '';
     }
     
     
-      badge += budgetBadge;
 html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
     html += '</div>';
     
