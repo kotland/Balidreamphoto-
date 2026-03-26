@@ -1016,6 +1016,7 @@ var badge = '';
         badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
       }
       
+      badge += budgetBadge;
       var places = [];
       for(var j = 0; j < route.length; j++) {
         var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
