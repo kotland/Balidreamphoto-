@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Семиньяк — Гайд · Где свои на Бали</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=1774488851">
 </head>
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
@@ -452,7 +452,7 @@
 </div>
 </div>
 </div>
-<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="generateRandomRoute('seminyak')" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
+<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
 <div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
@@ -462,19 +462,21 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
-    [{"time": "10:30", "name": "Chillhouse Spa", "desc": "[чилл] В сердце Семиньяка, где тихие воды бассейна встречаются с эдемской зеленью, неторопливые ритуалы блаженства оживают. Масла из тропических цветов нежно успокаивают, каждый момент приносит ощущение безмятежности.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Chillhouse+Spa+Seminyak"}, {"time": "13:00", "name": "Karma Beach", "desc": "Тихая бухта с белым песком, омываемая кристально-чистыми водами. Едва слышный шёпот волн и жаркие лучи солнца создают идеальное уединение, гармонируя с природной симфонией тихих морских приливов.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Karma+Beach+Bali"}],
-    [{"time": "11:00", "name": "Yoga Barn Healing", "desc": "[чилл] В тенистом уголке, окружённом колышущимися пальмами, звуки нежных песнопений и аромат сладких специй погружают в состояние внутреннего покоя. Звуковое исцеление очищает разум, наполняя окружающее пространство легкостью и вдохновением.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Yoga+Barn+Healing+Seminyak"}, {"time": "14:00", "name": "Echo Beach", "desc": "Подлинная бережливая красота с атмосферой уединённой гармонии. Волны настойчиво ласкают мелкую гальку побережья, а закатные краски создают акварельную картину неба, отражаясь в спокойных водах океана.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Echo+Beach+Bali"}],
-    [{"time": "10:00", "name": "Bliss Sanctuary", "desc": "[чилл] Тайный сад в сердце острова, где каждое мгновение пропитано ощущением лёгкости. Ритуалы массажа, выполненные мягкими, плавными движениями, окружают почтением и вниманием к каждой детали.", "price": "400k IDR", "maps": "https://maps.google.com/?q=Bliss+Sanctuary+Seminyak"}, {"time": "12:30", "name": "Finns Beach Club", "desc": "Стильный оазис у вода, с пейзажами, манящими к отдыху. Лёгкий мелодичный шум спокойных волн и освежающие коктейли из экзотических фруктов создают идеальную гармонию для созерцания и расслабления.", "price": "Бесплатно снимаемая плата за услуги", "maps": "https://maps.google.com/?q=Finns+Beach+Club+Bali"}],
-    [{"time": "11:30", "name": "Serene Spa Retreat", "desc": "[чилл] Глубокая тишина и аромат свежих трав постепенно проникают в сознание. Квалифицированные руки, деликатно успокаивающие чрезмерное напряжение, отправляют в путешествие навстречу внутренней гармонии и спокойствию.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Serene+Spa+Retreat+Seminyak"}, {"time": "14:00", "name": "Double Six Beach", "desc": "Светило близится к горизонту, краски неба насыщаются пурпуром и золотом, робкое освещение превращает песок в мерцающее полотно. Мягкий бриз в сочетании с шумом прибоя, уносящим мысли в безмолвие, приглашает к созерцанию.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Double+Six+Beach+Bali"}],
-    [{"time": "12:00", "name": "Floating Leaf Eco-Luxury", "desc": "[чилл] Лёгкое прикосновение природы и заботливый шёпот волшебства. Незабываемое путешествие к внутреннему миру завершается в тёплой атмосфере гармонии и красивое гогкотание волны приносят неизмеримое спокойствие.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Floating+Leaf+Eco-Luxury+Bali"}, {"time": "15:00", "name": "Petitenget Temple Beach", "desc": "Золотая пляжная полоса, обрамленная священными статуями и изящно изрезанными скалами, ласкает взгляд живописными видами. Басистый шум океана и переливы солнечных красках вызывают чувство вечности и умиротворения.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Petitenget+Temple+Beach+Bali"}],
-    [{"time": "10:30", "name": "Fivelements Retreat", "desc": "[чилл] Эко-дом, где философия благополучия тесно вплетена в тропический пейзаж. Лепестки лотоса и капли тропического дождя рассыпаются по воде, создавая неспешную беседу, пока душа и тело находят покой.", "price": "450k IDR", "maps": "https://maps.google.com/?q=Fivelements+Retreat+Bali"}, {"time": "13:00", "name": "Canggu Beach", "desc": "В этом райском уголке воздух пропитан ароматом океанского бриза и нежным теплом солнечного света. Пространства природной красоты способны вдохновить, а спокойствие горизонта наполняет жизнь наслаждением.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Canggu+Beach+Bali"}],
-    [{"time": "11:00", "name": "Tirta Empul Healing Springs", "desc": "[чилл] Животворящие источники в окружении зелени, где древние ритуалы исцеления кристаллизуются в движении воды. Атмосфера пронизана тишиной и ароматами природы, каждый момент — это величественное мгновение внутреннего омоложения.", "price": "25k IDR", "maps": "https://maps.google.com/?q=Tirta+Empul+Healing+Springs+Ubud"}, {"time": "13:30", "name": "Sanur Beach", "desc": "Мягкий песок окутывает ступни, волны нежно катятся к берегу, оставляя за собой узоры пены. Солнечные блики на воде создают мозаичные узоры, погружающие в состояние полной безмятежности.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sanur+Beach+Bali"}],
-    [{"time": "12:00", "name": "Maya Ubud Spa & Resort", "desc": "[чилл] Глубокое уединение в окружении джунглей, тропические деревья играют на солнце, как мелодия природы. Ощущение полного погружения в жизнь медленно наполняет дух, возвращая утреннюю ясность и обновление.", "price": "500k IDR", "maps": "https://maps.google.com/?q=Maya+Ubud+Spa+&+Resort+Bali"}, {"time": "15:00", "name": "Benoa Beach", "desc": "Светлый песок плавно сливается с лазурными водами, величие которого завораживает. Мягкие облака скользят по небу, наполняя горизонты новым светом, который разливается тихим спокойствием.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Benoa+Beach+Bali"}],
+    [{"time": "10:30", "name": "Chillax Spa", "desc": "[чилл] Погрузитесь в волны спокойствия в этом оазисе релаксации, где нежные руки профессионалов помогут вам отключиться от реальности.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Chillax+Spa+Seminyak"}, {"time": "12:00", "name": "Nyaman Healing", "desc": "Откройте для себя гармонию души и тела в месте, где каждый звук превращается в мелодию внутреннего покоя.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Nyaman+Healing+Seminyak"}],
+    [{"time": "11:00", "name": "Serene Sessions", "desc": "[чилл] Позвольте себе плавное погружение в мир тишины и комфорта, где расслабление приходит само собой.", "price": "180k IDR", "maps": "https://maps.google.com/?q=Serene+Sessions+Seminyak"}, {"time": "13:00", "name": "Karma Beach", "desc": "Почувствуйте свежий морской бриз, встречая ласковые волны под лучами балийского солнца.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Karma+Beach+Seminyak"}],
+    [{"time": "11:30", "name": "Zen Sanctuary Spa", "desc": "[чилл] Нежное прикосновение к внутреннему спокойствию, в месте, где забота об отдыхе превращается в настоящее искусство.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Zen+Sanctuary+Spa+Seminyak"}, {"time": "13:00", "name": "Shanti Gardens", "desc": "Проникнитесь атмосферой тихих садов, окутанных ароматами цветов и шелестом листвы.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Shanti+Gardens+Seminyak"}, {"time": "16:00", "name": "Sunset Lounge", "desc": "Смотрите, как заходящее солнце окрашивает небо в золотые тона, под приятные мелодии дня, завершающегося в раю.", "price": "160k IDR", "maps": "https://maps.google.com/?q=Sunset+Lounge+Seminyak"}],
+    [{"time": "10:45", "name": "Solace Retreat", "desc": "[чилл] Насладитесь уединением и отдыхом в пространстве, где каждая деталь способствует полному расслаблению.", "price": "220k IDR", "maps": "https://maps.google.com/?q=Solace+Retreat+Seminyak"}, {"time": "13:15", "name": "Echo Beach", "desc": "Ощутите спокойствие и рассредоточенность на белых песках, слушая музыку океанских волн.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Echo+Beach+Seminyak"}],
+    [{"time": "11:15", "name": "Tranquil Vibes", "desc": "[чилл] Смутите шум города за пределами своего восприятия в этом тихом уголке мира с мягкими ароматами и релаксирующей музыкой.", "price": "230k IDR", "maps": "https://maps.google.com/?q=Tranquil+Vibes+Seminyak"}, {"time": "13:45", "name": "Paradise Sound Healing", "desc": "Погрузитесь в сессионное путешествие звуков, где тонкие вибрации музыкальных инструментов способствуют глубокой релаксации.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Paradise+Sound+Healing+Seminyak"}],
+    [{"time": "10:00", "name": "Calm Escape Spa", "desc": "[чилл] Преобразитесь в оазисе мягкости и безмятежности, где масляные ароматы унесут вас далеко от повседневной суеты.", "price": "210k IDR", "maps": "https://maps.google.com/?q=Calm+Escape+Spa+Seminyak"}, {"time": "14:00", "name": "Sunset Beach Bounty", "desc": "Закатное волшебство, когда каждый момент окутан нежностью и теплотой золотого света.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sunset+Beach+Bounty+Seminyak"}],
+    [{"time": "11:45", "name": "Pure Bliss Haven", "desc": "[чилл] Стремитесь к внутренней гармонии в месте, где забота и внимание превращаются в сны о благополучии.", "price": "190k IDR", "maps": "https://maps.google.com/?q=Pure+Bliss+Haven+Seminyak"}, {"time": "13:30", "name": "Dreamland Beach", "desc": "Насладитесь шелковым песком и звучанием спокойных волн, отдыхая в совершенной гармонии с природой.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Dreamland+Beach+Seminyak"}],
+    [{"time": "10:15", "name": "Harmony Spa", "desc": "[чилл] Испытайте волшебное прикосновение исцеления, где вся атмосфера поможет вам перезагрузиться.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Harmony+Spa+Seminyak"}, {"time": "14:30", "name": "Serenity Beach", "desc": "Наполнитесь энергией моря, отдыхая на пляже с видом на безбрежный горизонт.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Serenity+Beach+Seminyak"}],
+    [{"time": "11:20", "name": "Relaxation Cove Spa", "desc": "[чилл] Войдите в пространство комфорта, где каждый вдох наполняется новыми силами, а умиротворение становится главным героем дня.", "price": "240k IDR", "maps": "https://maps.google.com/?q=Relaxation+Cove+Spa+Seminyak"}, {"time": "16:00", "name": "Purple Sunset Point", "desc": "Ощутите необыкновенную красоту заката, рисующую фиолетовые и розовые акварели на вечернем небе.", "price": "180k IDR", "maps": "https://maps.google.com/?q=Purple+Sunset+Point+Seminyak"}],
+    [{"time": "10:30", "name": "Repose Spa & Lounge", "desc": "[чилл] Погрузитесь в атмосферу роскоши и умиротворения, где ваши чувства образываются новыми красками.", "price": "220k IDR", "maps": "https://maps.google.com/?q=Repose+Spa+%26+Lounge+Seminyak"}, {"time": "15:00", "name": "Peaceful Beach Retreat", "desc": "Проведите время на пляже, подобном мягкому одеялу, который согреет вашу душу и тело.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Peaceful+Beach+Retreat+Seminyak"}],
     [
       {
         time: '11:00',
         name: 'Sisterfields',
-        desc: '[чилл] Выспались и идём на идеальный мейнстримный бранч. Панкейки, кофе и приятный городской вайб.',
+        desc: ' Выспались и идём на идеальный мейнстримный бранч. Панкейки, кофе и приятный городской вайб.',
         price: '150k IDR',
         maps: 'https://maps.google.com/?q=Sisterfields+Seminyak'
       },
@@ -497,7 +499,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '10:00',
         name: 'KYND Community',
-        desc: '[чилл] Неспешное утро в розовом раю. Боулы с буквами, смузи и максимальный фото-чилл.',
+        desc: ' Неспешное утро в розовом раю. Боулы с буквами, смузи и максимальный фото-чилл.',
         price: '150k IDR',
         maps: 'https://maps.google.com/?q=KYND+Community+Seminyak'
       },
@@ -547,7 +549,7 @@ var MANUAL_ROUTES_ZONE = [
 ],
 // V4: Спа день
 [
-  {time:"09:00",name:"Yoga at Jiwa Bikram Yoga",desc:"Утренние занятия йогой наполняют пространство свежестью, нежно пробуждая каждый мускул. Хот-йога и виньяса-флоу становятся идеальным вступлением в мир расслабления и восстановления, настраивая на гармонию перед спа-ритуалом.",price:"150-200k IDR",maps:"https://maps.google.com/?q=Jiwa+Bikram+Yoga+Seminyak+Bali",tags:["йога"]},
+  {time:"09:00",name:"Yoga at Jiwa Bikram Yoga",desc:"Утреннее солнце, мягко касающееся кожи, сопровождает плавное пробуждение тела на коврике для йоги. Горячая йога или виньяса-флоу создают гармонию, готовя к расслабляющему спа-дню. Каждый вдох наполняет энергией, а каждый выдох уносит тревоги.",price:"150-200k IDR",maps:"https://maps.google.com/?q=Jiwa+Bikram+Yoga+Seminyak+Bali",tags:["йога"]},
   {time:"10:30",name:"Prana Spa",desc:"Роскошный спа-дворец в индийско-марокканском стиле с мозаичными бассейнами и позолоченными интерьерами. Балийский массаж здесь — это театр, не просто процедура.",price:"500-1500k IDR",maps:"https://maps.google.com/?q=Prana+Spa+Seminyak+Bali",tags:["спа"]},
   {time:"13:00",name:"Nalu Bowls",desc:"Свежие асаи-боулы и смузи для лёгкого обеда после спа. Тропические фрукты и суперфуды — ваше тело скажет спасибо.",price:"60-90k IDR",maps:"https://maps.google.com/?q=Nalu+Bowls+Seminyak+Bali",tags:["кафе"]},
   {time:"14:30",name:"Body Works Bali",desc:"Легендарный массажный салон с 20-летней историей и десятками мастеров. Двухчасовой балийский массаж стоит как один коктейль в бич-клабе — невероятное качество за свою цену.",price:"250-400k IDR",maps:"https://maps.google.com/?q=Body+Works+Bali+Seminyak",tags:["спа"]},
@@ -611,16 +613,75 @@ var MANUAL_ROUTES_ZONE = [
 ]
 ];
 
-function generateRandomRoute(zoneKey) {
+function showRouteGallery() {
   try {
     var routes = MANUAL_ROUTES_ZONE;
     if (!routes || routes.length === 0) { alert('Маршруты для этого района пока в разработке'); return; }
-    if (!window._routeIdx) window._routeIdx = 0;
-    var idx = window._routeIdx;
-    window._routeIdx = (idx + 1) % routes.length;
+    
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
+    
+    for (var i = 0; i < routes.length; i++) {
+      var route = routes[i];
+      var isHard = false;
+      var isChill = false;
+      var routeText = JSON.stringify(route).toLowerCase();
+      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+      var hourMatch = firstTimeStr.match(/\d{2}/);
+      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+      
+      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+        isHard = true;
+      }
+      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+        isChill = true;
+        isHard = false;
+      }
+      
+      var badge = '';
+      if (isChill) {
+        badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
+      } else if (isHard) {
+        badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
+      } else {
+        badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
+      }
+      
+      var places = [];
+      for(var j = 0; j < route.length; j++) {
+        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
+        if(!isHotel && route[j].name) {
+          places.push(route[j].name);
+        }
+      }
+      var previewText = places.join(' → ');
+      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
+
+      html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
+      html += '    <div>' + badge + '</div>';
+      html += '  </div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '</div>';
+    }
+    
+    html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
+    html += '</div>';
+    
+    document.getElementById('guideContent').style.display = 'none';
+    var rs = document.getElementById('routeScreen');
+    rs.innerHTML = html;
+    rs.style.display = 'block';
+    window.scrollTo(0, 0);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function showSingleRoute(idx) {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
     var route = routes[idx];
-    var html = '<div style="padding:20px">';
-    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:20px">🗺 Твой маршрут на день</div>';
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
     
     var isHard = false;
     var isChill = false;
@@ -646,8 +707,8 @@ function generateRandomRoute(zoneKey) {
       badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
     }
 
-    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px;display:flex;align-items:center;justify-content:center;">Маршрут ' + (idx+1) + '/' + routes.length + badge + '</div>';
-    html += '<div style="font-size:11px;color:rgba(42,42,40,0.4);text-align:center;margin-top:-16px;margin-bottom:24px;">Нажми ещё раз для следующего</div>';
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px">🗺 Маршрут ' + (idx+1) + '</div>';
+    html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
 
     for (var i = 0; i < route.length; i++) {
       var p = route[i];
@@ -655,7 +716,7 @@ function generateRandomRoute(zoneKey) {
       html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
       html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
       if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
-      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
+      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
     }
 
@@ -664,7 +725,7 @@ function generateRandomRoute(zoneKey) {
     for (var j = 0; j < route.length; j++) {
       var tags = route[j].tags || [];
       var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
-      if (!isHotel) {
+      if (!isHotel && route[j].name) {
         mapPlaces.push(route[j].name);
       }
     }
@@ -683,13 +744,12 @@ function generateRandomRoute(zoneKey) {
       html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
     }
     // --- End Google Maps Directions button ---
-    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="generateRandomRoute(\'seminyak\')" style="padding:12px 24px;border-radius:12px">🔄 Другой маршрут</button></div>';
-    html += '<div style="text-align:center;margin-top:16px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к гайду</button></div>';
+    
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="padding:12px 24px;border-radius:12px">← Назад к выбору маршрутов</button></div>';
     html += '</div>';
-    document.getElementById('guideContent').style.display = 'none';
+    
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
-    rs.style.display = 'block';
     window.scrollTo(0, 0);
   } catch(e) { alert('Ошибка: ' + e.message); }
 }
