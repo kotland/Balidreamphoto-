@@ -934,6 +934,39 @@ function filterRoutes(style, budget) {
     currentBudget = budget;
     
     var container = document.getElementById('routesListContainer');
+    
+    // Reset all buttons visual state
+    ['all','chill','easy','hard'].forEach(s => {
+        let b = document.getElementById('btn_style_' + s);
+        if(b) {
+            if(s==='all') b.style.background = 'white'; b.style.color = '#2a6b5a'; b.style.border = '1px solid #2a6b5a';
+            if(s==='chill') b.style.background = 'white'; b.style.color = '#e83e8c'; b.style.border = '1px solid #e83e8c';
+            if(s==='easy') b.style.background = 'white'; b.style.color = '#388e3c'; b.style.border = '1px solid #388e3c';
+            if(s==='hard') b.style.background = 'white'; b.style.color = '#e64a19'; b.style.border = '1px solid #e64a19';
+        }
+    });
+    ['all','cheap','medium','luxury'].forEach(b => {
+        let el = document.getElementById('btn_budget_' + b);
+        if(el) {
+            el.style.background = 'white'; el.style.color = '#2a6b5a'; el.style.border = '1px solid #2a6b5a';
+        }
+    });
+    
+    // Light up selected buttons
+    let sBtn = document.getElementById('btn_style_' + style);
+    if(sBtn) {
+        if(style==='all') { sBtn.style.background = '#2a6b5a'; sBtn.style.color = 'white'; sBtn.style.border='none'; }
+        if(style==='chill') { sBtn.style.background = 'rgba(255,182,193,0.4)'; sBtn.style.color = '#e83e8c'; sBtn.style.border='1px solid transparent'; }
+        if(style==='easy') { sBtn.style.background = 'rgba(76,175,80,0.2)'; sBtn.style.color = '#388e3c'; sBtn.style.border='1px solid transparent'; }
+        if(style==='hard') { sBtn.style.background = 'rgba(255,87,34,0.2)'; sBtn.style.color = '#e64a19'; sBtn.style.border='1px solid transparent'; }
+    }
+    
+    let bBtn = document.getElementById('btn_budget_' + budget);
+    if(bBtn) {
+        if(budget==='all') { bBtn.style.background = '#2a6b5a'; bBtn.style.color = 'white'; bBtn.style.border='none'; }
+        else { bBtn.style.background = 'rgba(42,107,90,0.2)'; bBtn.style.color = '#2a6b5a'; bBtn.style.border='1px solid transparent'; }
+    }
+
     var routes = MANUAL_ROUTES_ZONE;
     var html = '';
     var count = 0;
@@ -1020,7 +1053,7 @@ function showRouteGallery() {
     html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
     
     html += '<div style="background:rgba(42,107,90,0.03); border-radius:16px; padding:20px; margin-bottom:24px; border:1px solid rgba(42,107,90,0.1);">';
-    html += '  <div style="font-weight:700; color:#2a6b5a; font-size:18px; margin-bottom:12px; display:flex; align-items:center; gap:8px;"><span>📌</span> Как выбрать свой день?</div>';
+    html += '  <div style="font-weight:700; color:#2a6b5a; font-size:18px; margin-bottom:12px; display:flex; align-items:center; gap:8px;"><span>📁</span> Как выбрать свой день?</div>';
     html += '  <div style="font-size:14px; line-height:1.5; color:rgba(42,42,40,0.8); margin-bottom:16px;">Этот гайд — ваш личный консьерж. Мы не просто накидали случайные места, мы физиологически просчитали идеальные тайминги, учли жару, пробки и ваше выгорание. Выбирайте фильтр под своё состояние:</div>';
     
     html += '  <div style="margin-bottom:12px;">';
