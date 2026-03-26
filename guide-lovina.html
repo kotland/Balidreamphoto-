@@ -3846,7 +3846,22 @@ function showRouteGallery() {
     html += '  </div>';
     html += '</div>';
 
+    
+    // --- Days Filter ---
     html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
+    var dAllBg = (typeof currentDays !== 'undefined' && currentDays === 'all') ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
+    var dAllCol = (typeof currentDays !== 'undefined' && currentDays === 'all') ? 'white' : '#2a6b5a';
+    var d1Bg = (typeof currentDays !== 'undefined' && currentDays === 1) ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
+    var d1Col = (typeof currentDays !== 'undefined' && currentDays === 1) ? 'white' : '#2a6b5a';
+    var d2Bg = (typeof currentDays !== 'undefined' && currentDays === 2) ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
+    var d2Col = (typeof currentDays !== 'undefined' && currentDays === 2) ? 'white' : '#2a6b5a';
+    
+    html += '  <button onclick="setDaysFilter(\'all\')" style="padding:8px 16px; border-radius:20px; border:none; background:' + dAllBg + '; color:' + dAllCol + '; white-space:nowrap; font-weight:600;">Все дни</button>';
+    html += '  <button onclick="setDaysFilter(1)" style="padding:8px 16px; border-radius:20px; border:none; background:' + d1Bg + '; color:' + d1Col + '; white-space:nowrap; font-weight:600;">1 день</button>';
+    html += '  <button onclick="setDaysFilter(2)" style="padding:8px 16px; border-radius:20px; border:none; background:' + d2Bg + '; color:' + d2Col + '; white-space:nowrap; font-weight:600;">2-3 дня</button>';
+    html += '</div>';
+    
+html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
     html += '  <button onclick="filterRoutes(\'all\', currentBudget)" style="padding:8px 16px; border-radius:20px; border:none; background:#2a6b5a; color:white; white-space:nowrap; font-weight:600;">Все темпы</button>';
     html += '  <button onclick="filterRoutes(\'chill\', currentBudget)" style="padding:8px 16px; border-radius:20px; border:none; background:rgba(255,182,193,0.3); color:#e83e8c; white-space:nowrap; font-weight:600;">🌸 Чилл</button>';
     html += '  <button onclick="filterRoutes(\'easy\', currentBudget)" style="padding:8px 16px; border-radius:20px; border:none; background:rgba(76,175,80,0.15); color:#388e3c; white-space:nowrap; font-weight:600;">🟢 Изи</button>';
@@ -3931,6 +3946,11 @@ html += '</div>'; html += '<div style="display:flex;gap:12px;margin-top:24px;">'
     rs.style.display = 'block';
     window.scrollTo(0, 0);
   } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function setDaysFilter(days) {
+  currentDays = days;
+  showRouteGallery();
 }
 
 function showSingleRoute(idx) {
