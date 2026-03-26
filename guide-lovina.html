@@ -3920,7 +3920,8 @@ function showRouteGallery() {
     
 html += '</div>'; html += '<div style="display:flex;gap:12px;margin-top:24px;">';
     html += '  <button class="btn btn-primary" onclick="hideRouteOverlay()" style="flex:1;padding:14px;border-radius:14px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;font-weight:600;">← Назад</button>';
-    html += '  <button class="btn btn-primary" onclick="generateRandomRoute()" style="flex:2;padding:14px;border-radius:14px;background:#2a6b5a;color:white;border:none;font-weight:600;">🎲 Сгенерировать ещё</button>';
+    var btnText = '🔄 Другой ' + (rStyle === 'chill' ? 'CHILL' : (rStyle === 'hard' ? 'HARD' : 'EASY')) + '-маршрут';
+    html += '  <button class="btn btn-primary" onclick="generateRandomRoute(\'' + rStyle + '\', ' + (routeObj.days || 1) + ')" style="flex:2;padding:14px;border-radius:14px;background:#2a6b5a;color:white;border:none;font-weight:600;font-size:14px;">' + btnText + '</button>';
     html += '</div>';
     html += '</div>';
     
@@ -4013,19 +4014,20 @@ document.addEventListener('DOMContentLoaded', function() {
     Telegram.WebApp.expand();
   }
 });
-function generateRandomRoute() {
+function generateRandomRoute(forcedStyle, forcedDays) {
   var available = [];
   for (var i = 0; i < MANUAL_ROUTES_ZONE.length; i++) {
     var route = MANUAL_ROUTES_ZONE[i];
-    var styleMatch = (typeof currentStyle !== 'undefined' && currentStyle !== 'all') ? (route.style === currentStyle) : true;
-    var daysMatch = (typeof currentDays !== 'undefined' && currentDays !== 'all') ? ((route.days || 1) == currentDays) : true;
-    if (styleMatch && daysMatch) available.push(i);
+    var routeDays = route.days || 1;
+    if (route.style === forcedStyle && routeDays === forcedDays) {
+      available.push(i);
+    }
   }
   if (available.length > 0) {
     var randomIdx = available[Math.floor(Math.random() * available.length)];
     showSingleRoute(randomIdx);
   } else {
-    alert('Нет маршрутов по вашим фильтрам. Измените настройки!');
+    alert('Нет других ' + forcedStyle + ' маршрутов на ' + forcedDays + ' дн.');
   }
 }
 </script>
