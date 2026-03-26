@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Ловина — Гайд · Где свои на Бали</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=1774488851">
 </head>
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
@@ -472,7 +472,7 @@
 </div>
 </div>
 </div>
-<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="generateRandomRoute('north')" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
+<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
 <div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
@@ -482,10 +482,14 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
-    [{"time": "10:30", "name": "Aura Spa Retreat", "desc": "[чилл] Волны тишины окутывают атмосферу этого спа, где ароматы эфирных масел нежно наполняют воздух. Расслабляющий массаж уносит в мир покоя и гармонии.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Aura+Spa+Retreat+Lovina"}, {"time": "14:00", "name": "Secret Sunset Beach", "desc": "Уединенный пляж с мягким песком и тихим шелестом прибоя. Здесь время течет медленнее, заставляя наслаждаться каждым нежным касанием солнца и ветра.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Secret+Sunset+Beach+Lovina"}],
-    [{"time": "11:00", "name": "Zen Sound Healing", "desc": "[чилл] В пространстве, пропитанном временем, звуковые вибрации стекаются в благозвучную симфонию. Глубокая медитация настраивает на волну внутреннего равновесия.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Zen+Sound+Healing+Lovina"}, {"time": "15:00", "name": "Tranquil Garden Cafe", "desc": "Кафе, утопающее в зелени, где мятный чай и легкие закуски дарят свежесть и обновление. Звуки природы становятся лучшей мелодией для маркёров безмятежности.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Tranquil+Garden+Cafe+Lovina"}],
-    [{"time": "10:00", "name": "Silence Bliss Spa", "desc": "[чилл] Трепетное уединение окутывает пространство, где деликатные прикосновения и ароматерапия возрождают чувство комфорта и уюта.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Silence+Bliss+Spa+Lovina"}, {"time": "13:30", "name": "Whispering Waves Beach", "desc": "Сонное спокойствие мягких пограничных волн, нежно ласкающих берег, предлагает почувствовать единство с природой. Пляжные шезлонги становятся проводниками в мир мечты.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Whispering+Waves+Beach+Lovina"}],
-    [{"time": "11:30", "name": "Harmony Yoga Studio", "desc": "[чилл] Студия, погруженная в эхолоты утренней тишины, где каждое движение течет плавными линиями среди приглушенного света и ароматов сандалового дерева.", "price": "180k IDR", "maps": "https://maps.google.com/?q=Harmony+Yoga+Studio+Lovina"}, {"time": "14:00", "name": "Ocean Breeze Beach Lounge", "desc": "Лежаки на пляже, охлаждаемые ветром океана, создают оазис расслабления, а закат окрашивает небо в мягкие пастельные тона, приглашая к созерцанию.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Ocean+Breeze+Beach+Lounge+Lovina"}],
+    [{"time": "10:30", "name": "Bali Reflеction Spa", "desc": "[чилл] Насыщенные ароматы экзотических масел пробуждают чувства, обволакивая тело в тёплом коконе расслабления. В осеннем полумраке джунглей каждый вдох здесь — как личная мощная мантра спокойствия.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Bali+Reflection+Spa"}, {"time": "13:00", "name": "Lovina Beach", "desc": "Тонкий шелест волн и редкие крики птиц создают мелодии уединения. Нежный солнечный свет ложится мозаикой на кожу, а белый песок манит неторопливо оглядеться по сторонам.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Lovina+Beach"}, {"time": "17:00", "name": "Spice Beach Club", "desc": "Гряда оранжевых и фиолетовых красок вечернего неба сплетается с ароматами тропических коктейлей, создавая идеальную симфонию для завершающего получения.", "price": "100k IDR", "maps": "https://maps.google.com/?q=Spice+Beach+Club"}],
+    [{"time": "11:00", "name": "Buddha Bali Spa", "desc": "[чилл] Легкое прикосновение мастера переносит в мир индонезийских древних ритуалов. Пряные запахи имбиря и лайма делают из каждой минуты здесь вечность, которая растворяет воспоминания о суете.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Buddha+Bali+Spa"}, {"time": "14:30", "name": "Singaraja Secret Garden", "desc": "Зеленые переливы листьев и крик обезьян, уносящийся в небытие, создают театральное пространство для спокойного созерцания.", "price": "50k IDR", "maps": "https://maps.google.com/?q=Singaraja+Secret+Garden"}],
+    [{"time": "10:45", "name": "Pamper Lounge Bali", "desc": "[чилл] Нежное шуршание ароматических свечей и приглушенные звуки природы создают тихую обитель для восстановления.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Pamper+Lounge+Bali"}, {"time": "13:00", "name": "Banyualit Spa", "desc": "Трель цикад и легкий запах эвкалипта окутывают вокруг, словно мягкий шерстяной плед. Каждое движение массажиста — тайный эликсир для обновления силы.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Banyualit+Spa"}, {"time": "15:30", "name": "Warung Dolphin", "desc": "Сочные краски натуральных соков и свежepрогретый тёплым полднем воздух заполняют с собой момент изобильного созидания и мечтаний.", "price": "80k IDR", "maps": "https://maps.google.com/?q=Warung+Dolphin"}],
+    [{"time": "11:30", "name": "Manna Spa Bali", "desc": "[чилл] Милосердие природы выливается в лечебные прикосновения, где ароматы жасмина сплетены с нежностью рыбок-докторов.", "price": "280k IDR", "maps": "https://maps.google.com/?q=Manna+Spa+Bali"}, {"time": "14:00", "name": "Kalibukbuk Beach", "desc": "Береговая линия с тихо погружающимися в песок волнами словно шепчет о потерянных временах. Легкое шуршание пальм перешептывается с ветром.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Kalibukbuk+Beach"}, {"time": "17:30", "name": "Sea Breeze Cafe", "desc": "Шепот заката на горизонте встречает игру света и тени, запирая тёплые воспоминания внутри кокоса, наполненного ароматом бодрящего лайма.", "price": "120k IDR", "maps": "https://maps.google.com/?q=Sea+Breeze+Cafe"}],
+    [{"time": "10:30", "name": "Ароматерапевтический визит в Beji Ayu Spa", "desc": " Утро начинается неспешно с погружения в мир ароматных масел и невесомых касаний. Здесь каждый вдох наполняется сладкими нотами расслабления и гармонии.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Beji+Ayu+Spa+Lovina"}, {"time": "13:00", "name": "Пляж Ловина", "desc": "Ленивые волны омывают берег, солнце согревает кожу, создавая уютную атмосферу для задумчивого отдыха на песке.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Lovina+Beach+Bali"}, {"time": "17:30", "name": "Закат в Kopi Bali House", "desc": "Вечерняя палитра небес отражается в чашке местного кофе, создавая идеальный фон для уединенного вздоха перед наступлением ночи.", "price": "50k IDR", "maps": "https://maps.google.com/?q=Kopi+Bali+House+Lovina"}],
+    [{"time": "11:00", "name": "Звуковое исцеление в Санкальпа Циркль", "desc": " Звуки поющих чаш медленно наполняют сознание миром и тишиной, тонко проникая в глубины души.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Sankalpa+Circle+Bali"}, {"time": "15:00", "name": "Krisna Funtastic Land", "desc": "На закате медленное катание на каруселях и легкие развлечения, как детские мечты, возвращают невесомое чувство радости.", "price": "100k IDR", "maps": "https://maps.google.com/?q=Krisna+Funtastic+Land+Lovina"}],
+    [{"time": "11:30", "name": "Раслабляющий сеанс массажа в Padmasana Spa", "desc": " Полумрак, легкий аромат трав и искусные руки мастеров словно растворяют все заботы, даруя телу и душе абсолютное спокойствие.", "price": "180k IDR", "maps": "https://maps.google.com/?q=Padmasana+Spa+Lovina"}, {"time": "14:00", "name": "Пляж Секуха", "desc": "Мягкий песок под ногами и прозрачная вода создают идеальные условия для медитативной прогулки вдоль берега.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sekumpul+Beach+Lovina"}, {"time": "17:00", "name": "Ужин в Lesehan Segara Tegeh", "desc": "Тихий шепот волн сопровождает неспешную дегустацию местных деликатесов, подаваемых с видом на уединенный закат.", "price": "75k IDR", "maps": "https://maps.google.com/?q=Lesehan+Segara+Tegeh+Lovina"}],
+    [{"time": "12:00", "name": "Уютный уголок в Spice Beach Club", "desc": " Белые пески и синие волны становятся декорацией к затерянному миру спокойствия и неспешности с коктейлем в руке.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Spice+Beach+Club+Lovina"}, {"time": "15:30", "name": "Мелодии заката в Ganesha Cafe", "desc": "Легкие мелодии и чарующий закат становятся завершающим аккордом идеального дня в атмосфере безмятежности.", "price": "60k IDR", "maps": "https://maps.google.com/?q=Ganesha+Cafe+Lovina"}],
 // V1: Дельфины + снорклинг
 [
   {time:"05:00",name:"Lovina Dolphin Boat Tour",desc:"Выход в море на традиционной лодке джукунг ещё до рассвета. Десятки диких дельфинов играют в волнах на фоне восхода — главное зрелище северного Бали.",price:"100-150k IDR",maps:"https://maps.google.com/?q=Dolphin+Tour+Lovina+Bali",tags:["тур"]},
@@ -579,16 +583,75 @@ var MANUAL_ROUTES_ZONE = [
 ]
 ];
 
-function generateRandomRoute(zoneKey) {
+function showRouteGallery() {
   try {
     var routes = MANUAL_ROUTES_ZONE;
     if (!routes || routes.length === 0) { alert('Маршруты для этого района пока в разработке'); return; }
-    if (!window._routeIdx) window._routeIdx = 0;
-    var idx = window._routeIdx;
-    window._routeIdx = (idx + 1) % routes.length;
+    
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
+    
+    for (var i = 0; i < routes.length; i++) {
+      var route = routes[i];
+      var isHard = false;
+      var isChill = false;
+      var routeText = JSON.stringify(route).toLowerCase();
+      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+      var hourMatch = firstTimeStr.match(/\d{2}/);
+      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+      
+      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+        isHard = true;
+      }
+      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+        isChill = true;
+        isHard = false;
+      }
+      
+      var badge = '';
+      if (isChill) {
+        badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
+      } else if (isHard) {
+        badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
+      } else {
+        badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
+      }
+      
+      var places = [];
+      for(var j = 0; j < route.length; j++) {
+        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
+        if(!isHotel && route[j].name) {
+          places.push(route[j].name);
+        }
+      }
+      var previewText = places.join(' → ');
+      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
+
+      html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
+      html += '    <div>' + badge + '</div>';
+      html += '  </div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '</div>';
+    }
+    
+    html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
+    html += '</div>';
+    
+    document.getElementById('guideContent').style.display = 'none';
+    var rs = document.getElementById('routeScreen');
+    rs.innerHTML = html;
+    rs.style.display = 'block';
+    window.scrollTo(0, 0);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function showSingleRoute(idx) {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
     var route = routes[idx];
-    var html = '<div style="padding:20px">';
-    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:20px">🗺 Твой маршрут на день</div>';
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
     
     var isHard = false;
     var isChill = false;
@@ -614,8 +677,8 @@ function generateRandomRoute(zoneKey) {
       badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
     }
 
-    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px;display:flex;align-items:center;justify-content:center;">Маршрут ' + (idx+1) + '/' + routes.length + badge + '</div>';
-    html += '<div style="font-size:11px;color:rgba(42,42,40,0.4);text-align:center;margin-top:-16px;margin-bottom:24px;">Нажми ещё раз для следующего</div>';
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px">🗺 Маршрут ' + (idx+1) + '</div>';
+    html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
 
     for (var i = 0; i < route.length; i++) {
       var p = route[i];
@@ -623,7 +686,7 @@ function generateRandomRoute(zoneKey) {
       html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
       html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
       if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
-      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
+      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
     }
 
@@ -632,7 +695,7 @@ function generateRandomRoute(zoneKey) {
     for (var j = 0; j < route.length; j++) {
       var tags = route[j].tags || [];
       var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
-      if (!isHotel) {
+      if (!isHotel && route[j].name) {
         mapPlaces.push(route[j].name);
       }
     }
@@ -651,13 +714,12 @@ function generateRandomRoute(zoneKey) {
       html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
     }
     // --- End Google Maps Directions button ---
-    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="generateRandomRoute(\'lovina\')" style="padding:12px 24px;border-radius:12px">🔄 Другой маршрут</button></div>';
-    html += '<div style="text-align:center;margin-top:16px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к гайду</button></div>';
+    
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="padding:12px 24px;border-radius:12px">← Назад к выбору маршрутов</button></div>';
     html += '</div>';
-    document.getElementById('guideContent').style.display = 'none';
+    
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
-    rs.style.display = 'block';
     window.scrollTo(0, 0);
   } catch(e) { alert('Ошибка: ' + e.message); }
 }
