@@ -462,155 +462,130 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
-    [{"time": "10:30", "name": "Chillax Spa", "desc": "[чилл] Погрузитесь в волны спокойствия в этом оазисе релаксации, где нежные руки профессионалов помогут вам отключиться от реальности.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Chillax+Spa+Seminyak"}, {"time": "12:00", "name": "Nyaman Healing", "desc": "Откройте для себя гармонию души и тела в месте, где каждый звук превращается в мелодию внутреннего покоя.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Nyaman+Healing+Seminyak"}],
-    [{"time": "11:00", "name": "Serene Sessions", "desc": "[чилл] Позвольте себе плавное погружение в мир тишины и комфорта, где расслабление приходит само собой.", "price": "180k IDR", "maps": "https://maps.google.com/?q=Serene+Sessions+Seminyak"}, {"time": "13:00", "name": "Karma Beach", "desc": "Почувствуйте свежий морской бриз, встречая ласковые волны под лучами балийского солнца.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Karma+Beach+Seminyak"}],
-    [{"time": "11:30", "name": "Zen Sanctuary Spa", "desc": "[чилл] Нежное прикосновение к внутреннему спокойствию, в месте, где забота об отдыхе превращается в настоящее искусство.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Zen+Sanctuary+Spa+Seminyak"}, {"time": "13:00", "name": "Shanti Gardens", "desc": "Проникнитесь атмосферой тихих садов, окутанных ароматами цветов и шелестом листвы.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Shanti+Gardens+Seminyak"}, {"time": "16:00", "name": "Sunset Lounge", "desc": "Смотрите, как заходящее солнце окрашивает небо в золотые тона, под приятные мелодии дня, завершающегося в раю.", "price": "160k IDR", "maps": "https://maps.google.com/?q=Sunset+Lounge+Seminyak"}],
-    [{"time": "10:45", "name": "Solace Retreat", "desc": "[чилл] Насладитесь уединением и отдыхом в пространстве, где каждая деталь способствует полному расслаблению.", "price": "220k IDR", "maps": "https://maps.google.com/?q=Solace+Retreat+Seminyak"}, {"time": "13:15", "name": "Echo Beach", "desc": "Ощутите спокойствие и рассредоточенность на белых песках, слушая музыку океанских волн.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Echo+Beach+Seminyak"}],
-    [{"time": "11:15", "name": "Tranquil Vibes", "desc": "[чилл] Смутите шум города за пределами своего восприятия в этом тихом уголке мира с мягкими ароматами и релаксирующей музыкой.", "price": "230k IDR", "maps": "https://maps.google.com/?q=Tranquil+Vibes+Seminyak"}, {"time": "13:45", "name": "Paradise Sound Healing", "desc": "Погрузитесь в сессионное путешествие звуков, где тонкие вибрации музыкальных инструментов способствуют глубокой релаксации.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Paradise+Sound+Healing+Seminyak"}],
-    [{"time": "10:00", "name": "Calm Escape Spa", "desc": "[чилл] Преобразитесь в оазисе мягкости и безмятежности, где масляные ароматы унесут вас далеко от повседневной суеты.", "price": "210k IDR", "maps": "https://maps.google.com/?q=Calm+Escape+Spa+Seminyak"}, {"time": "14:00", "name": "Sunset Beach Bounty", "desc": "Закатное волшебство, когда каждый момент окутан нежностью и теплотой золотого света.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sunset+Beach+Bounty+Seminyak"}],
-    [{"time": "11:45", "name": "Pure Bliss Haven", "desc": "[чилл] Стремитесь к внутренней гармонии в месте, где забота и внимание превращаются в сны о благополучии.", "price": "190k IDR", "maps": "https://maps.google.com/?q=Pure+Bliss+Haven+Seminyak"}, {"time": "13:30", "name": "Dreamland Beach", "desc": "Насладитесь шелковым песком и звучанием спокойных волн, отдыхая в совершенной гармонии с природой.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Dreamland+Beach+Seminyak"}],
-    [{"time": "10:15", "name": "Harmony Spa", "desc": "[чилл] Испытайте волшебное прикосновение исцеления, где вся атмосфера поможет вам перезагрузиться.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Harmony+Spa+Seminyak"}, {"time": "14:30", "name": "Serenity Beach", "desc": "Наполнитесь энергией моря, отдыхая на пляже с видом на безбрежный горизонт.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Serenity+Beach+Seminyak"}],
-    [{"time": "11:20", "name": "Relaxation Cove Spa", "desc": "[чилл] Войдите в пространство комфорта, где каждый вдох наполняется новыми силами, а умиротворение становится главным героем дня.", "price": "240k IDR", "maps": "https://maps.google.com/?q=Relaxation+Cove+Spa+Seminyak"}, {"time": "16:00", "name": "Purple Sunset Point", "desc": "Ощутите необыкновенную красоту заката, рисующую фиолетовые и розовые акварели на вечернем небе.", "price": "180k IDR", "maps": "https://maps.google.com/?q=Purple+Sunset+Point+Seminyak"}],
-    [{"time": "10:30", "name": "Repose Spa & Lounge", "desc": "[чилл] Погрузитесь в атмосферу роскоши и умиротворения, где ваши чувства образываются новыми красками.", "price": "220k IDR", "maps": "https://maps.google.com/?q=Repose+Spa+%26+Lounge+Seminyak"}, {"time": "15:00", "name": "Peaceful Beach Retreat", "desc": "Проведите время на пляже, подобном мягкому одеялу, который согреет вашу душу и тело.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Peaceful+Beach+Retreat+Seminyak"}],
     [
-      {
-        time: '11:00',
-        name: 'Sisterfields',
-        desc: ' Выспались и идём на идеальный мейнстримный бранч. Панкейки, кофе и приятный городской вайб.',
-        price: '150k IDR',
-        maps: 'https://maps.google.com/?q=Sisterfields+Seminyak'
-      },
-      {
-        time: '13:00',
-        name: 'Bodyworks Spa',
-        desc: 'Самое инстаграмное и качественное спа в районе. Марокканский интерьер, ванны с лепестками роз и балийский массаж.',
-        price: '300-600k IDR',
-        maps: 'https://maps.google.com/?q=Bodyworks+Spa+Seminyak'
-      },
-      {
-        time: '17:00',
-        name: 'Ku De Ta',
-        desc: 'Идём провожать солнце на мягкие диваны с бокалом игристого. Классика Семиньяка, которая никогда не подводит.',
-        price: 'От 250k IDR',
-        maps: 'https://maps.google.com/?q=KU+DE+TA+Bali'
-      }
+        {
+            "time": "10:00",
+            "name": "Breadyard",
+            "desc": "[чилл] Строгая геометрия пространства. Звук разламывающейся корочки тартин-хлеба, ферментированное тесто и насыщенный фильтр-кофе.",
+            "price": "150k IDR",
+            "maps": "https://maps.google.com/?q=Breadyard+Bali"
+        },
+        {
+            "time": "13:00",
+            "name": "Kim Soo",
+            "desc": "Интерьерная эстетика монохрома. Обилие бетона, черного дерева и керамики ручной работы. Идеальное место для визуального отдыха.",
+            "price": "Вход свободный",
+            "maps": "https://maps.google.com/?q=Kim+Soo+Bali"
+        },
+        {
+            "time": "16:00",
+            "name": "Petitenget Beach",
+            "desc": "Медленное погружение солнца в океан. Плотный мокрый песок, отражающий закатное небо, и монотонный гул волн.",
+            "price": "Бесплатно",
+            "maps": "https://maps.google.com/?q=Petitenget+Beach"
+        }
     ],
     [
-      {
-        time: '10:00',
-        name: 'KYND Community',
-        desc: ' Неспешное утро в розовом раю. Боулы с буквами, смузи и максимальный фото-чилл.',
-        price: '150k IDR',
-        maps: 'https://maps.google.com/?q=KYND+Community+Seminyak'
-      },
-      {
-        time: '12:00',
-        name: 'Double Six Beach',
-        desc: 'Мягкий песок, арендуем лежак с зонтиком. Отличное место, чтобы просто послушать подкаст или вздремнуть под шум волн.',
-        price: '50k IDR',
-        maps: 'https://maps.google.com/?q=Double+Six+Beach'
-      },
-      {
-        time: '16:30',
-        name: 'La Plancha',
-        desc: 'Яркие бинбэги на пляже. Занимаем место поближе к воде, берём закуски и просто смотрим, как садится солнце.',
-        price: 'От 100k IDR',
-        maps: 'https://maps.google.com/?q=La+Plancha+Bali'
-      }
+        {
+            "time": "11:00",
+            "name": "Spring Spa",
+            "desc": "[чилл] Лаконичное пространство для ревитализации. Приглушенная акустика, холодный камень и теплые масла, снимающие напряжение.",
+            "price": "350k IDR",
+            "maps": "https://maps.google.com/?q=Spring+Spa+Bali"
+        },
+        {
+            "time": "14:00",
+            "name": "Kynd Community",
+            "desc": "Растительная гастрономия в пастельных тонах. Эстетика чистого питания, обилие света и флористические мотивы в каждом блюде.",
+            "price": "200k IDR",
+            "maps": "https://maps.google.com/?q=Kynd+Community"
+        },
+        {
+            "time": "17:00",
+            "name": "Mano Beach House",
+            "desc": "Камерный пляжный клуб. Тканевые навесы, плетеная мебель, игра светотени на деревянных террасах и сухой балийский брют.",
+            "price": "300k IDR",
+            "maps": "https://maps.google.com/?q=Mano+Beach+House"
+        }
     ],
-
-// V1: Шоппинг + бранч
-[
-  {time:"09:00",name:"Sisterfields",desc:"Культовое бранч-кафе Семиньяка с австралийской кухней. Попробуйте рикотта-панкейки и flat white — идеальное начало дня шопоголика.",price:"120-200k IDR",maps:"https://maps.google.com/?q=Sisterfields+Seminyak+Bali",tags:["кафе"]},
-  {time:"10:30",name:"Seminyak Village",desc:"Современный торговый центр с кондиционером и десятками бутиков. Здесь собраны местные дизайнеры и международные бренды — от пляжной моды до украшений.",price:"Вход свободный",maps:"https://maps.google.com/?q=Seminyak+Village+Bali",tags:["шоппинг"]},
-  {time:"12:00",name:"Бутики Jalan Kayu Aya",desc:"Главная шоппинг-улица Семиньяка — десятки авторских бутиков с балийской модой, серфвеаром и сувенирами ручной работы. Торгуйтесь в маленьких лавках!",price:"Бюджет на покупки",maps:"https://maps.google.com/?q=Jalan+Kayu+Aya+Seminyak+Bali",tags:["шоппинг"]},
-  {time:"13:30",name:"Sea Circus",desc:"Яркое кафе с мексикано-средиземноморской кухней в красочном интерьере. Тако с рыбой и свежие соки — отличная передышка между магазинами.",price:"80-150k IDR",maps:"https://maps.google.com/?q=Sea+Circus+Seminyak+Bali",tags:["кафе"]},
-  {time:"15:00",name:"Biasa Boutique",desc:"Флагманский бутик знаменитого балийского дизайнера Сусанны Перини. Элегантная одежда из натуральных тканей — must-visit для ценителей моды.",price:"Премиум сегмент",maps:"https://maps.google.com/?q=Biasa+Boutique+Seminyak+Bali",tags:["шоппинг"]},
-  {time:"16:30",name:"Ku De Ta",desc:"Легендарный бич-клаб для завершения дня на высшей ноте. Займите столик у бассейна, закажите коктейль и встречайте знаменитый закат Семиньяка.",price:"Коктейли 150-250k IDR",maps:"https://maps.google.com/?q=Ku+De+Ta+Seminyak+Bali",tags:["бич-клаб"]}
-],
-// V2: Beach clubs
-[
-  {time:"10:00",name:"La Plancha",desc:"Самый колоритный пляжный бар Семиньяка с яркими разноцветными зонтиками-бинбэгами прямо на песке. Бюджетные коктейли и идеальный вайб для начала бич-клаб дня.",price:"80-120k IDR за коктейль",maps:"https://maps.google.com/?q=La+Plancha+Seminyak+Bali",tags:["бар"]},
-  {time:"11:30",name:"Double Six Beach",desc:"Широкий песчаный пляж с отличными волнами для бодибординга. Прогуляйтесь по берегу, искупайтесь — между клабами нужна пауза для моря.",price:"Бесплатно",maps:"https://maps.google.com/?q=Double+Six+Beach+Seminyak+Bali",tags:["пляж"]},
-  {time:"13:00",name:"Potato Head Beach Club",desc:"Иконический бич-клаб с уникальным фасадом из тысяч старых оконных рам. Бассейн-инфинити, крафтовые коктейли и потрясающая архитектура — главная достопримечательность Семиньяка.",price:"Мин. заказ 350k IDR",maps:"https://maps.google.com/?q=Potato+Head+Beach+Club+Seminyak+Bali",tags:["бич-клаб"]},
-  {time:"15:00",name:"Revolver Espresso",desc:"Крошечная кофейня, спрятанная в переулке за тяжёлой деревянной дверью. Лучший кофе в Семиньяке — идеальная перезарядка между клабами.",price:"40-60k IDR",maps:"https://maps.google.com/?q=Revolver+Espresso+Seminyak+Bali",tags:["кафе"]},
-  {time:"16:00",name:"KU DE TA",desc:"Элегантный бич-клаб с ресторанным сервисом и продуманной коктейльной картой. Живая музыка на закате превращает вечер в событие.",price:"Коктейли 180-280k IDR",maps:"https://maps.google.com/?q=Ku+De+Ta+Seminyak+Bali",tags:["бич-клаб"]},
-  {time:"18:00",name:"Woo Bar W Bali",desc:"Стильный бар при отеле W с диджей-сетами и закатными видами. Финальная точка вашего бич-клаб марафона — коктейли, музыка и огни ночного Семиньяка.",price:"200-350k IDR",maps:"https://maps.google.com/?q=Woo+Bar+W+Bali+Seminyak",tags:["бар"]}
-],
-// V3: Гастро-тур
-[
-  {time:"11:00",name:"Mama San",desc:"Ресторан-легенда от шефа Уилла Мейрика в здании старого склада. Азиатские тапас, дим-самы и карри в индустриальном интерьере с антиквариатом — must visit.",price:"200-400k IDR",maps:"https://maps.google.com/?q=Mama+San+Seminyak+Bali",tags:["ресторан"]},
-  {time:"13:00",name:"Pura Petitenget",desc:"Важный морской храм XVI века на пляже Петитенгет. Прогулка после обеда среди балийской архитектуры — красивая пауза между ресторанами.",price:"Донейшн",maps:"https://maps.google.com/?q=Pura+Petitenget+Seminyak+Bali",tags:["храм"]},
-  {time:"14:00",name:"Merah Putih",desc:"Грандиозный ресторан с 12-метровыми потолками и современной интерпретацией индонезийской кухни. Ренданг, наси горенг и сатай здесь подают на уровне fine dining.",price:"250-500k IDR",maps:"https://maps.google.com/?q=Merah+Putih+Seminyak+Bali",tags:["ресторан"]},
-  {time:"16:00",name:"Seminyak Beach Walk",desc:"Прогулка по пляжу от Петитенгет до Дабл Сикс. Солёный бриз и вид на океан — лучший способ нагулять аппетит для вечерних ресторанов.",price:"Бесплатно",maps:"https://maps.google.com/?q=Seminyak+Beach+Bali",tags:["пляж"]},
-  {time:"17:00",name:"Sardine",desc:"Ресторан в бамбуковом павильоне среди рисовых полей с видом на цапель. Свежайшие морепродукты с рыбного рынка Джимбарана — лучший рыбный ресторан Семиньяка.",price:"300-500k IDR",maps:"https://maps.google.com/?q=Sardine+Restaurant+Seminyak+Bali",tags:["ресторан"]},
-  {time:"19:00",name:"Métis Garden Lounge",desc:"Аперитив в средиземноморском саду ресторана Métis — авторские коктейли среди фонтанов и свечей. Настройтесь на финальный ужин в атмосфере южной Франции.",price:"150-250k IDR",maps:"https://maps.google.com/?q=Metis+Restaurant+Seminyak+Bali",tags:["бар"]},
-  {time:"20:00",name:"Métis — Ужин",desc:"Французская кухня в роскошном особняке с антикварной мебелью. Дегустационное меню и винная карта мирового класса завершают гастро-день на высшей ноте.",price:"500-1000k IDR",maps:"https://maps.google.com/?q=Metis+Restaurant+Seminyak+Bali",tags:["ресторан"]}
-],
-// V4: Спа день
-[
-  {time:"09:00",name:"Yoga at Jiwa Bikram Yoga",desc:"Утреннее солнце, мягко касающееся кожи, сопровождает плавное пробуждение тела на коврике для йоги. Горячая йога или виньяса-флоу создают гармонию, готовя к расслабляющему спа-дню. Каждый вдох наполняет энергией, а каждый выдох уносит тревоги.",price:"150-200k IDR",maps:"https://maps.google.com/?q=Jiwa+Bikram+Yoga+Seminyak+Bali",tags:["йога"]},
-  {time:"10:30",name:"Prana Spa",desc:"Роскошный спа-дворец в индийско-марокканском стиле с мозаичными бассейнами и позолоченными интерьерами. Балийский массаж здесь — это театр, не просто процедура.",price:"500-1500k IDR",maps:"https://maps.google.com/?q=Prana+Spa+Seminyak+Bali",tags:["спа"]},
-  {time:"13:00",name:"Nalu Bowls",desc:"Свежие асаи-боулы и смузи для лёгкого обеда после спа. Тропические фрукты и суперфуды — ваше тело скажет спасибо.",price:"60-90k IDR",maps:"https://maps.google.com/?q=Nalu+Bowls+Seminyak+Bali",tags:["кафе"]},
-  {time:"14:30",name:"Body Works Bali",desc:"Легендарный массажный салон с 20-летней историей и десятками мастеров. Двухчасовой балийский массаж стоит как один коктейль в бич-клабе — невероятное качество за свою цену.",price:"250-400k IDR",maps:"https://maps.google.com/?q=Body+Works+Bali+Seminyak",tags:["спа"]},
-  {time:"17:00",name:"Бутики Jalan Laksmana",desc:"Прогулка по бутикам улицы Eat Street после спа — местные дизайнеры, украшения из серебра, органическая косметика и ароматические масла.",price:"Бюджет на покупки",maps:"https://maps.google.com/?q=Jalan+Laksmana+Seminyak+Bali",tags:["шоппинг"]},
-  {time:"18:30",name:"Seasalt at Alila",desc:"Ужин в элегантном ресторане при бутик-отеле Alila с видом на закат. Свежие морепродукты на гриле и авторские коктейли — мягкое завершение дня заботы о себе.",price:"300-500k IDR",maps:"https://maps.google.com/?q=Seasalt+Alila+Seminyak+Bali",tags:["ресторан"]}
-],
-// V5: Закатный маршрут
-[
-  {time:"14:00",name:"Biku Restaurant",desc:"Очаровательный ресторан в старинном джогло (яванском деревянном доме). Начните с послеобеденного чая с домашней выпечкой — here time slows down.",price:"150-250k IDR",maps:"https://maps.google.com/?q=Biku+Restaurant+Seminyak+Bali",tags:["ресторан"]},
-  {time:"15:30",name:"Seminyak Beach Promenade",desc:"Неспешная прогулка вдоль берега от центра к Double Six. Золотой песок, серфёры и предзакатный свет — идеальное время для фото.",price:"Бесплатно",maps:"https://maps.google.com/?q=Seminyak+Beach+Bali",tags:["пляж"]},
-  {time:"16:30",name:"La Plancha",desc:"Занимайте бинбэг на песке пока не набежала толпа. Разноцветные зонтики, холодное пиво и первые краски заката — самый инстаграмный спот Семиньяка.",price:"80-120k IDR",maps:"https://maps.google.com/?q=La+Plancha+Seminyak+Bali",tags:["бар"]},
-  {time:"17:30",name:"Double Six Rooftop",desc:"Поднимитесь на руфтоп-бар отеля Double Six ради панорамного вида на закат. Коктейли, музыка и 360° океана — здесь закат становится событием.",price:"150-250k IDR",maps:"https://maps.google.com/?q=Double+Six+Rooftop+Seminyak+Bali",tags:["бар"]},
-  {time:"19:00",name:"Ultimo Italian Restaurant",desc:"Аутентичная итальянская кухня от шефа-неаполитанца. Домашняя паста, пицца из дровяной печи и тирамису — романтичный ужин после заката.",price:"200-400k IDR",maps:"https://maps.google.com/?q=Ultimo+Restaurant+Seminyak+Bali",tags:["ресторан"]},
-  {time:"21:00",name:"Mirror Lounge",desc:"Бар-лаунж в стиле готического собора с витражами и зеркалами. Авторские коктейли в фантастическом интерьере — атмосферный финал закатного дня.",price:"150-250k IDR",maps:"https://maps.google.com/?q=Mirror+Lounge+Seminyak+Bali",tags:["бар"]}
-],
-// V6: Ночная жизнь
-[
-  {time:"18:00",name:"Petitenget Beach Sunset",desc:"Начните вечер с заката на пляже Петитенгет — менее людном, чем Double Six. Купите холодный Bintang у пляжного торговца и настройтесь на ночь.",price:"25k IDR",maps:"https://maps.google.com/?q=Petitenget+Beach+Seminyak+Bali",tags:["пляж"]},
-  {time:"19:30",name:"Motel Mexicola",desc:"Буйный мексиканский бар с неоновыми вывесками, тако и маргаритами. Живая музыка и танцы на столах — идеальный разогрев перед клубами.",price:"100-200k IDR",maps:"https://maps.google.com/?q=Motel+Mexicola+Seminyak+Bali",tags:["бар"]},
-  {time:"21:30",name:"Red Ruby",desc:"Камерный спикизи-бар за неприметной дверью. Авторские коктейли от топ-барменов Бали, джазовая атмосфера и приглушённый свет — для тех, кто ценит качество.",price:"150-250k IDR",maps:"https://maps.google.com/?q=Red+Ruby+Seminyak+Bali",tags:["бар"]},
-  {time:"23:00",name:"La Favela",desc:"Главный клуб Семиньяка в джунглях из растений и антиквариата. Несколько танцполов, международные диджеи и вечеринки до рассвета — здесь тусуется весь остров.",price:"Вход 100-200k IDR",maps:"https://maps.google.com/?q=La+Favela+Seminyak+Bali",tags:["клуб"]},
-  {time:"01:00",name:"Mirror Bali",desc:"Клуб в стиле европейского собора с впечатляющими витражами и лазерным шоу. Техно, хаус и транс до утра — для тех, кто не готов останавливаться.",price:"Вход 150-250k IDR",maps:"https://maps.google.com/?q=Mirror+Bali+Seminyak",tags:["клуб"]},
-  {time:"03:00",name:"Late Night Warungs Jl Abimanyu",desc:"Финал ночи — локальные варунги на улице Абиманью, работающие до утра. Наси горенг или ми горенг за 25k — лучшее средство после клубного марафона.",price:"25-40k IDR",maps:"https://maps.google.com/?q=Jalan+Abimanyu+Seminyak+Bali",tags:["еда"]}
-],
-// V7: Романтический
-[
-  {time:"10:00",name:"Prana Spa — Couples Treatment",desc:"Спа для двоих в марокканском дворце: синхронный массаж, цветочная ванна и ароматерапия. Два часа полного расслабления вместе — лучшее начало романтического дня.",price:"1200-2000k IDR за двоих",maps:"https://maps.google.com/?q=Prana+Spa+Seminyak+Bali",tags:["спа"]},
-  {time:"12:30",name:"Sisterfields Brunch",desc:"Уютный бранч для двоих в самом стильном кафе Семиньяка. Разделите ягодные панкейки и смузи-боул — утренняя романтика в австралийском стиле.",price:"200-350k IDR на двоих",maps:"https://maps.google.com/?q=Sisterfields+Seminyak+Bali",tags:["кафе"]},
-  {time:"14:00",name:"Seminyak Beach Horse Riding",desc:"Прогулка верхом вдоль берега океана — один из самых романтичных опытов на Бали. Лошади спокойные, инструктор рядом, пейзаж невероятный.",price:"500-800k IDR на двоих",maps:"https://maps.google.com/?q=Horse+Riding+Seminyak+Beach+Bali",tags:["активность"]},
-  {time:"16:00",name:"Potato Head Beach Club",desc:"Бассейн-инфинити, дизайнерские шезлонги и коктейли на двоих. Предзакатное время в Potato Head — когда свет золотой, музыка нежная и хочется быть рядом.",price:"Мин. заказ 500k IDR",maps:"https://maps.google.com/?q=Potato+Head+Beach+Club+Seminyak+Bali",tags:["бич-клаб"]},
-  {time:"18:00",name:"Закат на Double Six Beach",desc:"Спуститесь на песок для самого красивого заката Семиньяка. Босиком у кромки воды, с бокалом шампанского — момент, который запомнится навсегда.",price:"Бесплатно",maps:"https://maps.google.com/?q=Double+Six+Beach+Seminyak+Bali",tags:["пляж"]},
-  {time:"19:30",name:"Starfish Bloo",desc:"Ужин у бассейна при отеле W Bali под звёздным небом. Морепродукты, свечи и живая акустическая музыка — финал романтического дня, который невозможно забыть.",price:"500-800k IDR на двоих",maps:"https://maps.google.com/?q=Starfish+Bloo+W+Bali+Seminyak",tags:["ресторан"]}
-],
-// V8: Фото-локации
-[
-  {time:"07:00",name:"Pura Petitenget",desc:"Древний храм на пляже в утреннем свете — лучшее время для фото без толп. Каменные ворота, дракон-статуи и океан на фоне — волшебные кадры.",price:"Донейшн",maps:"https://maps.google.com/?q=Pura+Petitenget+Seminyak+Bali",tags:["храм"]},
-  {time:"08:30",name:"Café Organic",desc:"Фотогеничное кафе с тропическим садом и знаменитыми смузи-боулами-цветками. Завтрак, который создан для Instagram — каждая подача как произведение искусства.",price:"80-130k IDR",maps:"https://maps.google.com/?q=Cafe+Organic+Seminyak+Bali",tags:["кафе"]},
-  {time:"10:00",name:"Street Art Jalan Kayu Aya",desc:"Уличное искусство и муралы вдоль главной улицы Семиньяка. Яркие стены бутиков и ресторанов — каждые 50 метров новый фотобэкграунд.",price:"Бесплатно",maps:"https://maps.google.com/?q=Jalan+Kayu+Aya+Seminyak+Bali",tags:["стрит-арт"]},
-  {time:"11:30",name:"Seminyak Village Интерьеры",desc:"Архитектурный торговый центр с фотогеничными инсталляциями и тропическим дизайном. Лестницы, зелень и свет — отличные портретные локации.",price:"Вход свободный",maps:"https://maps.google.com/?q=Seminyak+Village+Bali",tags:["шоппинг"]},
-  {time:"13:00",name:"Motel Mexicola",desc:"Неоновые вывески, розовые стены и мексиканский китч — самый фотогеничный ресторан Семиньяка. Закажите тако и сфотографируйте каждый угол.",price:"100-200k IDR",maps:"https://maps.google.com/?q=Motel+Mexicola+Seminyak+Bali",tags:["ресторан"]},
-  {time:"15:00",name:"Бутики Jalan Laksmana",desc:"Дизайнерские витрины и балийская архитектура — прогулка по Eat Street с камерой. Каменные ворота, тропические растения и стильные фасады.",price:"Бесплатно",maps:"https://maps.google.com/?q=Jalan+Laksmana+Seminyak+Bali",tags:["шоппинг"]},
-  {time:"17:00",name:"La Plancha Sunset",desc:"Разноцветные зонтики на золотом песке в лучах заката — самый узнаваемый кадр Семиньяка. Приходите за час до заката, чтобы занять лучшее место.",price:"80-120k IDR",maps:"https://maps.google.com/?q=La+Plancha+Seminyak+Bali",tags:["бар"]}
-],
-// V9: Веган/ЗОЖ
-[
-  {time:"07:30",name:"The Practice Bali — Yoga",desc:"Утренняя виньяса в одной из лучших йога-студий Семиньяка. Открытое пространство с видом на тропический сад — духовное начало ЗОЖ-дня.",price:"150k IDR",maps:"https://maps.google.com/?q=The+Practice+Bali+Seminyak",tags:["йога"]},
-  {time:"09:30",name:"Kynd Community",desc:"Культовое веганское кафе с розовыми стенами и знаменитыми смузи-боулами. 100% plant-based меню, порции огромные, всё невероятно фотогеничное.",price:"70-120k IDR",maps:"https://maps.google.com/?q=Kynd+Community+Seminyak+Bali",tags:["кафе"]},
-  {time:"11:00",name:"Seminyak Beach Walk",desc:"Прогулка босиком по пляжу — заземление и витамин D. Океанский воздух и звук волн перезагружают голову лучше любой медитации.",price:"Бесплатно",maps:"https://maps.google.com/?q=Seminyak+Beach+Bali",tags:["пляж"]},
-  {time:"12:30",name:"Shelter Café",desc:"Здоровая кухня в расслабленной атмосфере: салаты, боулы с киноа и raw-десерты. Свежевыжатые соки и комбуча — детокс без компромиссов во вкусе.",price:"80-140k IDR",maps:"https://maps.google.com/?q=Shelter+Cafe+Seminyak+Bali",tags:["кафе"]},
-  {time:"14:30",name:"Spring Spa",desc:"Органический спа с натуральными маслами и веганской косметикой. Часовой массаж с кокосовым маслом — тело после йоги и моря будет благодарно.",price:"300-500k IDR",maps:"https://maps.google.com/?q=Spring+Spa+Seminyak+Bali",tags:["спа"]},
-  {time:"16:30",name:"Milu by Nook",desc:"Расслабленное кафе с растительными опциями среди рисовых полей. Закатный свет, веганский карри и свежий сок — мягкое завершение здорового дня.",price:"80-130k IDR",maps:"https://maps.google.com/?q=Milu+by+Nook+Seminyak+Bali",tags:["кафе"]}
-],
-// V10: Luxury
-[
-  {time:"09:00",name:"W Bali — Away Spa",desc:"Люксовый спа при отеле W Bali с авторскими ритуалами и видом на океан. Балийский массаж в приватной вилле с бассейном — роскошь с первых минут дня.",price:"1500-3000k IDR",maps:"https://maps.google.com/?q=Away+Spa+W+Bali+Seminyak",tags:["спа"]},
-  {time:"11:30",name:"Sisterfields Premium Brunch",desc:"Бранч в лучшем кафе Семиньяка: трюфельные яйца, лосось со сливочным сыром и шампанское. Здесь собирается стильная публика — и вы среди них.",price:"200-350k IDR",maps:"https://maps.google.com/?q=Sisterfields+Seminyak+Bali",tags:["кафе"]},
-  {time:"13:30",name:"Potato Head Beach Club — Cabana",desc:"Забронируйте приватную кабану в Potato Head с персональным сервисом. Бассейн, авторские коктейли и панорама океана — так выглядит бали-люкс.",price:"Кабана от 3000k IDR",maps:"https://maps.google.com/?q=Potato+Head+Beach+Club+Seminyak+Bali",tags:["бич-клаб"]},
-  {time:"16:00",name:"Magali Paris Boutique",desc:"Эксклюзивный бутик парижского дизайнера на Бали — украшения, аксессуары и одежда ручной работы. Шоппинг для тех, кто ищет уникальные вещи.",price:"Премиум сегмент",maps:"https://maps.google.com/?q=Magali+Paris+Seminyak+Bali",tags:["шоппинг"]},
-  {time:"17:30",name:"Ku De Ta Sunset Lounge",desc:"VIP-зона Ku De Ta для приватного заката — лучшие столики, эксклюзивные коктейли и вид, ради которого люди возвращаются на Бали снова и снова.",price:"Коктейли 200-350k IDR",maps:"https://maps.google.com/?q=Ku+De+Ta+Seminyak+Bali",tags:["бич-клаб"]},
-  {time:"19:30",name:"Sarong Restaurant",desc:"Fine dining от шефа Уилла Мейрика — изысканная паназиатская кухня в колониальном интерьере. Дегустационное меню с вином — ужин уровня мишленовских звёзд.",price:"600-1200k IDR",maps:"https://maps.google.com/?q=Sarong+Restaurant+Seminyak+Bali",tags:["ресторан"]}
-]
+    [
+        {
+            "time": "09:30",
+            "name": "Breadyard",
+            "desc": "[изи] Утро начинается с безупречной выпечки. Холодный металл кофемашины, теплый аромат сливочного масла и строгий минимализм зала.",
+            "price": "120k IDR",
+            "maps": "https://maps.google.com/?q=Breadyard+Bali"
+        },
+        {
+            "time": "12:30",
+            "name": "John Hardy Boutique",
+            "desc": "Ювелирное искусство сквозь призму архитектуры. Традиционные техники, бамбуковые конструкции и игра света на серебре.",
+            "price": "Вход свободный",
+            "maps": "https://maps.google.com/?q=John+Hardy+Bali"
+        },
+        {
+            "time": "15:30",
+            "name": "Kynd Community",
+            "desc": "Легкий обед в окружении безупречной флоры. Веганские десерты, сложная текстура смузи-боулов и залитый солнцем интерьер.",
+            "price": "180k IDR",
+            "maps": "https://maps.google.com/?q=Kynd+Community"
+        }
+    ],
+    [
+        {
+            "time": "12:00",
+            "name": "Revolver Espresso",
+            "desc": "[изи] Узкие коридоры, винтажные постеры и атмосфера андеграунда. Крепкий эспрессо, тяжелая посуда и брутальный дух Семиньяка.",
+            "price": "100k IDR",
+            "maps": "https://maps.google.com/?q=Revolver+Espresso"
+        },
+        {
+            "time": "15:00",
+            "name": "Biasa ArtSpace",
+            "desc": "Галерея современного искусства. Белоснежные стены, масштабные полотна индонезийских художников и абсолютная визуальная тишина.",
+            "price": "Вход свободный",
+            "maps": "https://maps.google.com/?q=Biasa+ArtSpace"
+        },
+        {
+            "time": "19:00",
+            "name": "ShiShi Nightclub & Izakaya Lounge",
+            "desc": "Безлимитные устрицы и премиальный вагю. Солидная подача, неон, отражающийся в темном стекле, и пульсирующая энергия вечера.",
+            "price": "400k IDR",
+            "maps": "https://maps.google.com/?q=ShiShi+Bali"
+        }
+    ],
+    [
+        {
+            "time": "18:00",
+            "name": "Mauri Restaurant",
+            "desc": "[хард] Апулийская кухня в интерьере из белого камня. Стеклянный купол, дегустационный сет и филигранная работа со вкусом.",
+            "price": "1.2m IDR",
+            "maps": "https://maps.google.com/?q=Mauri+Restaurant+Bali"
+        },
+        {
+            "time": "21:00",
+            "name": "ShiShi Nightclub & Izakaya Lounge",
+            "desc": "Эскалация вечера. Плотный бас, гипнотический свет и многоуровневое пространство, где время теряет свои границы.",
+            "price": "400k IDR",
+            "maps": "https://maps.google.com/?q=ShiShi+Bali"
+        }
+    ],
+    [
+        {
+            "time": "19:00",
+            "name": "ShiShi Nightclub & Izakaya Lounge",
+            "desc": "[хард] Гастрономический старт. Мраморная говядина тает на языке, ледяное саке в тяжелой керамике и безупречный сервис.",
+            "price": "400k IDR",
+            "maps": "https://maps.google.com/?q=ShiShi+Bali"
+        },
+        {
+            "time": "23:00",
+            "name": "Red Ruby",
+            "desc": "Погружение в электронный андеграунд. Красный бархат, строгий фейсконтроль, индустриальные ритмы и густая атмосфера ночи.",
+            "price": "300k IDR",
+            "maps": "https://maps.google.com/?q=Red+Ruby+Bali"
+        }
+    ]
 ];
 
 function showRouteGallery() {
@@ -698,7 +673,6 @@ var badge = '';
     }
     
     
-      badge += budgetBadge;
 html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
     html += '</div>';
     
