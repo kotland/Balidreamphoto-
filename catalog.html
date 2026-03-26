@@ -1216,6 +1216,12 @@ function updateFilter(key, value, el) {
   document.getElementById('catalogCuisineFilter').style.display = ['еда', 'кофейни'].includes(state.category) ? 'block' : 'none';
   document.getElementById('catalogShopFilter').style.display = state.category === 'шоппинг' ? 'block' : 'none';
 
+  
+  if (key === 'category') {
+    var sf = document.getElementById('sportFilters');
+    if (sf) sf.style.display = (value === 'спорт') ? 'block' : 'none';
+  }
+
   applyFilters();
 }
 
@@ -1316,7 +1322,13 @@ window.onload = function() {
       }
     });
   } else {
-    applyFilters();
+    
+  if (key === 'category') {
+    var sf = document.getElementById('sportFilters');
+    if (sf) sf.style.display = (value === 'спорт') ? 'block' : 'none';
+  }
+
+  applyFilters();
   }
 };
 </script>
