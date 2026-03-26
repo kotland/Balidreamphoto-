@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Амед — Гайд · Где свои на Бали</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=1774488851">
 </head>
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
@@ -536,7 +536,7 @@
 </div>
 </div>
 </div>
-<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="generateRandomRoute('amed')" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
+<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
 <div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
@@ -546,10 +546,14 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
-    [{"time": "10:30", "name": "Yoga Shala Amed", "desc": "[чилл] В уединенном павильоне, утопающем в зелени, практикуются утренние сессии йоги. Приятный бриз через открытые окна приносит аромат тропических цветов, усиливая атмосферу покоя и безмятежности.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Yoga+Shala+Amed"}, {"time": "13:00", "name": "Life in Amed Bali Spa", "desc": "Нежные руки мастера и ароматические масла создают идеальную симфонию расслабления. Пространство оформлено в спокойных тонах, наполняя каждого посетителя чувством умиротворения.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Life+in+Amed+Bali+Spa"}, {"time": "17:30", "name": "Sunset Point Amed", "desc": "На вершине холма открывается завораживающий вид на закат, когда солнце тонет в океане, окрашивая небо всеми оттенками красного и оранжевого. Мягкие звуки волн постепенно растворяются в вечере.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sunset+Point+Amed"}],
-    [{"time": "11:00", "name": "Jemeluk Beach", "desc": "[чилл] Мягкий песок под ногами и бесконечный горизонт. Это место идеальное для ленивого отдыха и наблюдения за спокойно покачивающимися рыбацкими лодками.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Jemeluk+Beach"}, {"time": "15:00", "name": "Ocean Spa and Wellness Amed", "desc": "Сеанс массажа, с видом на волнующиеся волны, строит гармонию между телом и духом. Натуральные масла, экстрактированные из местных растений, увеличивают благотворное воздействие.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Ocean+Spa+and+Wellness+Amed"}],
-    [{"time": "11:30", "name": "Bali Silent Retreat", "desc": "[чилл] Этот уединенный оазис приглашает забыть о суете мира и погрузиться в атмосферу тишины и созерцания. Пение птиц и шёпот деревьев станут идеальным сопровождением для медитации.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Bali+Silent+Retreat"}, {"time": "16:00", "name": "Blue Earth Village Café", "desc": "Слегка выбеленная солнцем терраса над утёсовым обрывом предлагает свежевыжатые соки и натуральные коктейли, отражающие вкус острова. Каждая нота освежающего напитка — это отдача природе.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Blue+Earth+Village+Cafe"}],
-    [{"time": "11:45", "name": "L'Ayurveda Spa", "desc": "[чилл] Прикосновение древних традиций в сочетании с современными техниками создает уникальный опыт спокойствия. Внутренний дворик, наполненный светом и уютом, размывает границы времени.", "price": "280k IDR", "maps": "https://maps.google.com/?q=L'Ayurveda+Spa"}, {"time": "14:30", "name": "Sun & Surf Amed", "desc": "Тонкие потоки энергии, исходящие от серферов, встречающих волну, успокаивают и вдохновляют. Нездешние виды открываются с удобных шезлонгов, когда солнце мягко касаясь кожи.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Sun+&+Surf+Amed"}],
+    [{"time": "10:30", "name": "Amed Pure Spa", "desc": "[чилл] Пробуждение начинается с тонкого аромата масел и нежного прикосновения. В окружении успокаивающих тайских мотивов, тело погружается в мир гармонии и релаксации.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Amed+Pure+Spa"}, {"time": "13:00", "name": "Lipah Beach", "desc": "Мягкий песок под ногами и шелест волн навевают мечты о безмятежности. Зонтик от солнца и кресло у самого моря — идеальные спутники тихого, размеренного дня.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Lipah+Beach"}, {"time": "17:30", "name": "Sunset Point Amed", "desc": "Небо заливается золотом, море отражает последние лучи уходящего дня. С вершины открывается захватывающий вид, который провожает закат красочным прощанием.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sunset+Point+Amed"}],
+    [{"time": "11:00", "name": "Jepun Traditional Spa", "desc": "[чилл] В тихом уединении традиционного спа, ароматы трав и специй пробуждают чувства, погружая в древние секреты балийского искусства расслабления.", "price": "180k IDR", "maps": "https://maps.google.com/?q=Jepun+Traditional+Spa"}, {"time": "14:00", "name": "Amed Beach", "desc": "Прозрачная вода и мягкие волны создают особую симфонию, которую можно слушать часами. Легкий бриз приносит аромат соли и свободы.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Amed+Beach"}, {"time": "17:00", "name": "Bali Yoga & Sound Healing", "desc": "Звуки поющих чаш и успокаивающий голос йога-мастера окутывают пространство спокойствием. Эта гармония пробуждает внутренний баланс и тихую силу.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Bali+Yoga+&+Sound+Healing"}],
+    [{"time": "10:45", "name": "Bali Bening Spa Amed", "desc": "[чилл] Завораживающая атмосфера спа с мягким светом и интерьерами, вдохновленными природой, приглашает погрузиться в безмятежность и расслабление.", "price": "220k IDR", "maps": "https://maps.google.com/?q=Bali+Bening+Spa+Amed"}, {"time": "13:45", "name": "Selang Beach", "desc": "Уединение в окружении коралловых рифов, где кристально чистая вода создаёт уникальную игру света и обликов. Вдохновение и покой среди открытого простора и синевы небес.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Selang+Beach"}],
+    [{"time": "11:30", "name": "Aqua Terrace Spa", "desc": "[чилл] Изящные интерьеры в кремовых тонах, приглушенная музыка и ароматические свечи создают атмосферу изысканного спокойствия и элегантности.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Aqua+Terrace+Spa"}, {"time": "14:00", "name": "Jemeluk Viewpoint", "desc": "Прогулки по живописным тропам среди скал и густой зелени открывают вид на бескрайние просторы океана. Вдохновляющая панорама заставляет сердце биться чаще.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Jemeluk+Viewpoint"}, {"time": "16:30", "name": "Calm Beach Cafe", "desc": "Легкие закуски и свежевыжатые соки на фоне морского прибоя. Простота и гастрономический уют в сопровождении теплого закатного света.", "price": "60k IDR", "maps": "https://maps.google.com/?q=Calm+Beach+Cafe"}],
+    [{"time": "10:30", "name": "Aroma Spa Retreat", "desc": " Восхитительные ароматы натуральных масел окутывают пространство, создавая атмосферу умиротворения и покоя. Каждое прикосновение опытных мастеров — это шаг к гармонии и обновлению.", "price": "450k IDR", "maps": "https://maps.google.com/?q=Aroma+Spa+Retreat"}, {"time": "13:00", "name": "Lipah Beach", "desc": "Идеально спокойная поверхность лазурной воды соединяется с мягким песком в танце тишины и безмятежности. День здесь проходит медленно, в нежном обволакивающем ритме океана.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Lipah+Beach"}, {"time": "16:30", "name": "Sunset Point Amed", "desc": "Здесь закат превращается в магическое шоу света и тени, где горизонты сливаются в сказочную гармонию, создавая уникальные моменты удивления и спокойствия.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sunset+Point+Amed"}],
+    [{"time": "11:00", "name": "Jepun Bali Spa", "desc": " Атмосфера элегантной простоты с выразительной интонацией покоя. Расположиться в тёмном деревенском деньке среди тиковых стен и шелковых ароматов — идеальное начало дня.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Jepun+Bali+Spa"}, {"time": "13:30", "name": "Amed Beach", "desc": "Под мягким покровом солнца, Amed Beach открывает свою естественную красоту — песчинки шёпотом передают историю океана, расслабляя и завораживая.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Amed+Beach"}, {"time": "18:00", "name": "Blue Earth Village", "desc": "Вечерняя суета улетучивается под звуки океана и приятное тепло островного воздуха. Здесь свежесть кухонь с открытыми пространствами и яркими звуками природы как завораживающая симфония.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Blue+Earth+Village"}],
+    [{"time": "11:30", "name": "The Griya Villas & Spa", "desc": " Укутанное в тишине и покое пространство приносит освобождение от суеты. Наслаждение утончённой роскошью и видом на бескрайние морские просторы.", "price": "500k IDR", "maps": "https://maps.google.com/?q=The+Griya+Villas+&+Spa"}, {"time": "14:00", "name": "Jemeluk Bay", "desc": "Чистая вода, подобно стеклу, обманчиво спокойна. Здесь время замирает, а мир звуков сливается с миром красок.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Jemeluk+Bay"}, {"time": "17:00", "name": "Sunrise Beach", "desc": "Палитра заката нежно раскрашивает ясное небо, готовя фон для новых мечтаний и потолков. Мягкий песок и шум прибоя созидают неповторимую атмосферу гармонии.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sunrise+Beach+Amed"}],
+    [{"time": "10:00", "name": "Amed Yoga and Meditation", "desc": " Восстановление через гармонию тела и разума в атмосфере абсолютного спокойствия. Проникновенная энергия, которая течёт сквозь пространство и уносит в мир безмятежности.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Amed+Yoga+and+Meditation"}, {"time": "12:30", "name": "Lempuyang Temple", "desc": "Священные ворота, застилаемые облаками, открывают путь к тишине и древним откровениям. Здесь каждый кадр — встреча с вечностью.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Lempuyang+Temple"}, {"time": "16:00", "name": "ナテボア", "desc": "Сочетание умиротворяющей изысканности гор и звуков экзотической живописи под бокал местного вина. Здесь каждый миг — ода наслаждению и покою.", "price": "250k IDR", "maps": "https://maps.google.com/?q=ナテボア"}],
     // --- Variant 1 ---
     [
       {
@@ -1149,7 +1153,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '07:00',
         name: 'Sidemen Valley Viewpoint',
-        desc: 'Рассвет окутывает долину Сидемен мягким светом, а рисовые террасы сверкают как изумрудные мозаики. Вулкана Агунг гордо возвышается на горизонте, создавая идеальную симфонию природы без суеты и толп. Здесь царит тихая гармония настоящего Бали.',
+        desc: 'С рассветом над долиной Сидемен пробуждаются рисовые террасы, умытые мягким светом. Величественный вулкан Агунг величественно высится на горизонте, а тишина окутывает истинный Бали. Здесь нет толп, только умиротворяющая красота природы.',
         price: 'бесплатно',
         maps: 'https://maps.google.com/maps/search/Sidemen+Valley+Viewpoint+Bali',
         tags: ['рассвет', 'фото']
@@ -1157,7 +1161,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '09:30',
         name: 'Bali Asli Restaurant',
-        desc: 'Завтрак от шеф-повара — это гастрономический ритуал на дровяной печи, где свежие ингредиенты, собранные с собственного огорода, наполняют каждое блюдо ароматами земли и солнца. За окном величественно восходит вулкан Агунг, создавая идеальный фон для наслаждения каждым мгновением.',
+        desc: 'Завтрак от шеф-повара — это волшебство, созданное на дровах, где аромат свежих трав сливается с духом утреннего рынка. Ингредиенты, собранные с ухоженного огорода, радуют глаз и дарят неповторимый вкус. Впереди величественный Агунг, возвышающийся над живописным пространством, словно охранник этого утреннего блаженства.',
         price: '80-180K',
         maps: 'https://maps.google.com/maps/search/Bali+Asli+Restaurant+Amlapura',
         tags: ['завтрак', 'местная']
@@ -1165,7 +1169,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '12:00',
         name: 'Jasmine Kitchen Amed',
-        desc: 'Кулинарная идиллия на краю моря. Аромат индонезийских блюд и свежевыловленная рыба, окруженные буйной зеленью сада, дарят незабываемую атмосферу. Здесь каждый уголок пропитан свежестью океана и теплом домашнего уюта.',
+        desc: 'Уютная кухня у самого моря, где ароматы индонезийских блюд переплетаются с запахом свежей рыбы. Сады, омываемые морским бризом, открывают великолепные виды на бескрайний океан, создавая атмосферу спокойствия и умиротворения.',
         price: '30-70K',
         maps: 'https://maps.google.com/maps/search/Jasmine+Kitchen+Amed+Bali',
         tags: ['обед', 'местная']
@@ -1173,7 +1177,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '14:00',
         name: 'Snorkeling Amed',
-        desc: 'Светлые воды вокруг японского корабля USS Liberty окутаны тайной, где мир подводной флоры и фауны сверкает всеми цветами радуги. Нежные движения черепах, танцующих между коралловыми садами, создают атмосферу волшебства и гармонии. Дельные рыбки, словно искристые драгоценности, наполняют этот подводный мир живой музыкой.',
+        desc: 'Снорклинг вокруг японского корабля USS Liberty дарит незабываемые встречи с величественными черепахами и яркими тропическими рыбами. Цветные кораллы, словно подводные садовые шедевры, искрятся в лучах солнца, а прозрачные воды манят в свой мир загадок.',
         price: '50-100K',
         maps: 'https://maps.google.com/?q=Amed+Beach+Snorkeling',
         tags: ['снорклинг', 'море']
@@ -1181,7 +1185,7 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '16:30',
         name: 'Gusto Gelato Amed',
-        desc: 'Итальянское мороженое, словно свежий бриз, окутывает своим кремовым облаком после захватывающего снорклинга. Тропические ароматы — манго, кокоса и маракуйи — нежно обнимают нежное морозное лакомство, наполняя наслаждением каждый миг. Натуральные ингредиенты дарят неповторимую слоговую гармонию лета, оставляя за собою сладкий след.',
+        desc: 'Итальянское мороженое, словно освежающий бриз, ждет после захватывающего снорклинга. Тропические вкусы, наполненные солнечными нотами, гармонично переплетаются с нежными натуральными ингредиентами. Наслаждение, которое объединяет яркость приключения и роскошь отпускного момента.',
         price: '25-50K',
         maps: 'https://maps.google.com/maps/search/Gusto+Gelato+Amed+Bali',
         tags: ['десерт']
@@ -1197,16 +1201,75 @@ var MANUAL_ROUTES_ZONE = [
     ]
   ];
 
-function generateRandomRoute(zoneKey) {
+function showRouteGallery() {
   try {
     var routes = MANUAL_ROUTES_ZONE;
     if (!routes || routes.length === 0) { alert('Маршруты для этого района пока в разработке'); return; }
-    if (!window._routeIdx) window._routeIdx = 0;
-    var idx = window._routeIdx;
-    window._routeIdx = (idx + 1) % routes.length;
+    
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
+    
+    for (var i = 0; i < routes.length; i++) {
+      var route = routes[i];
+      var isHard = false;
+      var isChill = false;
+      var routeText = JSON.stringify(route).toLowerCase();
+      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+      var hourMatch = firstTimeStr.match(/\d{2}/);
+      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+      
+      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+        isHard = true;
+      }
+      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+        isChill = true;
+        isHard = false;
+      }
+      
+      var badge = '';
+      if (isChill) {
+        badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
+      } else if (isHard) {
+        badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
+      } else {
+        badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
+      }
+      
+      var places = [];
+      for(var j = 0; j < route.length; j++) {
+        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
+        if(!isHotel && route[j].name) {
+          places.push(route[j].name);
+        }
+      }
+      var previewText = places.join(' → ');
+      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
+
+      html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
+      html += '    <div>' + badge + '</div>';
+      html += '  </div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '</div>';
+    }
+    
+    html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
+    html += '</div>';
+    
+    document.getElementById('guideContent').style.display = 'none';
+    var rs = document.getElementById('routeScreen');
+    rs.innerHTML = html;
+    rs.style.display = 'block';
+    window.scrollTo(0, 0);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function showSingleRoute(idx) {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
     var route = routes[idx];
-    var html = '<div style="padding:20px">';
-    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:20px">🗺 Твой маршрут на день</div>';
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
     
     var isHard = false;
     var isChill = false;
@@ -1232,8 +1295,8 @@ function generateRandomRoute(zoneKey) {
       badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
     }
 
-    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px;display:flex;align-items:center;justify-content:center;">Маршрут ' + (idx+1) + '/' + routes.length + badge + '</div>';
-    html += '<div style="font-size:11px;color:rgba(42,42,40,0.4);text-align:center;margin-top:-16px;margin-bottom:24px;">Нажми ещё раз для следующего</div>';
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px">🗺 Маршрут ' + (idx+1) + '</div>';
+    html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
 
     for (var i = 0; i < route.length; i++) {
       var p = route[i];
@@ -1241,7 +1304,7 @@ function generateRandomRoute(zoneKey) {
       html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
       html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
       if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
-      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
+      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
     }
 
@@ -1250,7 +1313,7 @@ function generateRandomRoute(zoneKey) {
     for (var j = 0; j < route.length; j++) {
       var tags = route[j].tags || [];
       var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
-      if (!isHotel) {
+      if (!isHotel && route[j].name) {
         mapPlaces.push(route[j].name);
       }
     }
@@ -1269,13 +1332,12 @@ function generateRandomRoute(zoneKey) {
       html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
     }
     // --- End Google Maps Directions button ---
-    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="generateRandomRoute(\'amed\')" style="padding:12px 24px;border-radius:12px">🔄 Другой маршрут</button></div>';
-    html += '<div style="text-align:center;margin-top:16px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к гайду</button></div>';
+    
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="padding:12px 24px;border-radius:12px">← Назад к выбору маршрутов</button></div>';
     html += '</div>';
-    document.getElementById('guideContent').style.display = 'none';
+    
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
-    rs.style.display = 'block';
     window.scrollTo(0, 0);
   } catch(e) { alert('Ошибка: ' + e.message); }
 }
