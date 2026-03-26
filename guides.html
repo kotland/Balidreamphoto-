@@ -14,7 +14,7 @@
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
 <div class="app">
-<button class="btn btn-primary back-home-btn" onclick="window.location.href='index.html'" style="font-size:13px;padding:8px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1)">← Главная</button>
+<button class="btn btn-primary back-home-btn" onclick="window.location.href='index.html?v=' + Date.now() + '" style="font-size:13px;padding:8px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1)">← Главная</button>
 
 <!-- Map overlay/popup (referenced by JS) -->
 <div id="mapOverlay" class="map-overlay" onclick="hidePopup()"></div>
@@ -260,7 +260,7 @@ function openGuide(guide){
       resultsHTML: document.getElementById('resultsContainer').parentElement.innerHTML
     }));
   } catch(e) { console.error('Error saving quiz results', e); }
-  window.location.href='guide-'+guide+'.html';
+  window.location.href='guide-'+guide+'.html?v=' + Date.now() + ';
 }
 function shareResults(){
 var text='Привет! Вот мои топ-районы на Бали:\n\nУзнай свой район 👉 https://t.me/balidreamphoto_bot';
