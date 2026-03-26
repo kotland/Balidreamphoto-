@@ -811,144 +811,66 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
-    [
-        {
-            "time": "10:00",
-            "name": "GD Spa",
-            "desc": "[чилл] Камерное пространство, где свет мягко преломляется сквозь бамбуковые жалюзи. Ароматика сандала и глубокая проработка мышечных зажимов.",
-            "price": "350k IDR",
-            "maps": "https://maps.google.com/?q=GD+Spa+Bali"
-        },
-        {
-            "time": "13:00",
-            "name": "32do",
-            "desc": "Минимализм корейской эстетики. Строгие линии интерьера и терпкий матча в керамике ручной работы. Игра теней на бетонных стенах.",
-            "price": "120k IDR",
-            "maps": "https://maps.google.com/?q=32do+Bali"
-        },
-        {
-            "time": "15:00",
-            "name": "Pantai Seseh",
-            "desc": "Черный вулканический песок и необузданная энергия океана. Солидная тишина без туристического шума, пронизывающий соленый ветер.",
-            "price": "Бесплатно",
-            "maps": "https://maps.google.com/?q=Pantai+Seseh"
-        }
-    ],
-    [
-        {
-            "time": "11:00",
-            "name": "Glamara",
-            "desc": "[чилл] Студия-мастерская с приглушенным светом. Тактильное взаимодействие с воском и создание индивидуального ольфакторного профиля.",
-            "price": "400k IDR",
-            "maps": "https://maps.google.com/?q=Glamara+Bali"
-        },
-        {
-            "time": "14:00",
-            "name": "Sabia",
-            "desc": "Утонченная гастрономия в светлом воздушном зале. Акцент на локальных ингредиентах, чистые вкусы и фактурная льняная сервировка.",
-            "price": "250k IDR",
-            "maps": "https://maps.google.com/?q=Sabia+Bali"
-        },
-        {
-            "time": "16:00",
-            "name": "Predmet Kaba Kaba Resort",
-            "desc": "Архитектурный ретрит. Бруталистские формы, утопающие в тропической зелени. Абсолютная изоляция и медитативное созерцание.",
-            "price": "150k IDR",
-            "maps": "https://maps.google.com/?q=Predmet+Kaba+Kaba"
-        }
-    ],
-    [
-        {
-            "time": "10:00",
-            "name": "Luciee",
-            "desc": "[изи] Утренние лучи заливают просторный зал. Безупречная слоистая выпечка, хрустящая корочка круассанов и плотный спешлти кофе.",
-            "price": "150k IDR",
-            "maps": "https://maps.google.com/?q=Luciee+Bali"
-        },
-        {
-            "time": "12:30",
-            "name": "Balinesia",
-            "desc": "Концепт-стор и галерея. Выверенная селекция локальных дизайнеров, натуральные ткани и предметы интерьера с характером.",
-            "price": "Вход свободный",
-            "maps": "https://maps.google.com/?q=Balinesia+Bali"
-        },
-        {
-            "time": "15:00",
-            "name": "Penny Lane",
-            "desc": "Современная эклектика с античными мотивами. Теплый свет пробивается сквозь сводчатые потолки, освежая интерьер с бокалом балийского брюта.",
-            "price": "200k IDR",
-            "maps": "https://maps.google.com/?q=Penny+Lane+Bali"
-        }
-    ],
-    [
-        {
-            "time": "12:00",
-            "name": "Oribinal Burger",
-            "desc": "[изи] Лаконичный интерьер и солидная подача крафтового стритфуда. Мраморная говядина, пышная бриошь и идеальный баланс соусов.",
-            "price": "180k IDR",
-            "maps": "https://maps.google.com/?q=Oribinal+Burger+Bali"
-        },
-        {
-            "time": "15:00",
-            "name": "Desa Kitsune",
-            "desc": "Масштабный лайфстайл-комплекс. Эстетика неспешной жизни, выверенный ландшафтный дизайн и авангардные инсталляции под открытым небом.",
-            "price": "150k IDR",
-            "maps": "https://maps.google.com/?q=Desa+Kitsune+Bali"
-        },
-        {
-            "time": "19:00",
-            "name": "SIA Grill & Seafood",
-            "desc": "Блюда на открытом огне. Обугленное щупальце осьминога, тяжелые столовые приборы, звон хрусталя и прохладное белое вино.",
-            "price": "500k IDR",
-            "maps": "https://maps.google.com/?q=SIA+Grill+Bali"
-        }
-    ],
-    [
-        {
-            "time": "14:00",
-            "name": "Desa Kitsune",
-            "desc": "[хард] Дневное погружение в эстетику пространства. Слияние моды, гастрономии и современного искусства в окружении строгих геометрических форм.",
-            "price": "Вход свободный",
-            "maps": "https://maps.google.com/?q=Desa+Kitsune+Bali"
-        },
-        {
-            "time": "18:00",
-            "name": "SIA Grill & Seafood",
-            "desc": "Ужин при свечах. Стейки сухой выдержки, насыщенный вкус дыма, темные породы дерева и плотные танины в бокале.",
-            "price": "600k IDR",
-            "maps": "https://maps.google.com/?q=SIA+Grill+Bali"
-        },
-        {
-            "time": "21:00",
-            "name": "The Mailroom",
-            "desc": "Скрытый спикизи-бар с входом по ключам. Бархатная обивка, тяжелые портьеры, сложная миксология и камерная атмосфера закрытого клуба.",
-            "price": "400k IDR",
-            "maps": "https://maps.google.com/?q=The+Mailroom+Bali"
-        }
-    ],
-    [
-        {
-            "time": "15:00",
-            "name": "Balinesia",
-            "desc": "[хард] Поиск уникальных артефактов и тактильный опыт взаимодействия с текстурами. Исследование современной балийской эстетики.",
-            "price": "Вход свободный",
-            "maps": "https://maps.google.com/?q=Balinesia+Bali"
-        },
-        {
-            "time": "18:00",
-            "name": "Sabia",
-            "desc": "Вечерняя посадка с приглушенным освещением. Филигранная работа шефа, деликатные текстуры и минималистичная презентация блюд.",
-            "price": "350k IDR",
-            "maps": "https://maps.google.com/?q=Sabia+Bali"
-        },
-        {
-            "time": "21:30",
-            "name": "The Mailroom",
-            "desc": "Продолжение ночи в строгой секретности. Авторские коктейли в хрустале, джазовые мотивы и полумрак, скрывающий лица.",
-            "price": "450k IDR",
-            "maps": "https://maps.google.com/?q=The+Mailroom+Bali"
-        }
-    ]
+    {
+        title: "🌊 Утренний детокс и дикий океан",
+        preview: "Медленное утро с глубоким массажем, идеальный матча и встреча заката на черном песке вдали от толпы.",
+        style: "chill",
+        places: [
+            {time: "10:00", name: "GD Spa", desc: "Скрытый от суеты спот. Глубокий балийский массаж горячими камнями снимает спазмы после долгих поездок на байке. Воздух пропитан лемонграссом.", price: "350k IDR", maps: "https://maps.google.com/?q=GD+Spa+Bali"},
+            {time: "13:00", name: "32do", desc: "Корейская кофейня с минималистичным бетонным интерьером. Идеальный церемониальный матча и тишина, чтобы собраться с мыслями перед океаном.", price: "120k IDR", maps: "https://maps.google.com/?q=32do+Bali"},
+            {time: "16:30", name: "Pantai Seseh", desc: "Дикий пляж с черным вулканическим песком. Никаких бич-клабов, только мощные волны и невероятный простор для созерцания заката.", price: "Бесплатно", maps: "https://maps.google.com/?q=Pantai+Seseh"}
+        ]
+    },
+    {
+        title: "✨ Тотальный релакс и эстетика",
+        preview: "День максимальной заботы о себе: премиальный уход для лица, неспешный шопинг и красивый закатный ужин.",
+        style: "chill",
+        places: [
+            {time: "11:00", name: "Glamara", desc: "Премиальное бьюти-пространство с идеальным кондиционированием. Расслабляющий уход для лица и тела с использованием органической косметики.", price: "400k IDR", maps: "https://maps.google.com/?q=Glamara+Bali"},
+            {time: "14:30", name: "Balinesia", desc: "Прохладный и аутентичный бутик. Отборные локальные бренды, ароматические свечи ручной работы и приятная фоновая музыка для неспешного выбора.", price: "Вход свободный", maps: "https://maps.google.com/?q=Balinesia+Bali"},
+            {time: "17:00", name: "La Brisa", desc: "Завершение дня в бохо-атмосфере. Свежие морепродукты и бокал белого вина с видом на заходящее солнце.", price: "350k IDR", maps: "https://maps.google.com/?q=La+Brisa+Canggu"}
+        ]
+    },
+    {
+        title: "🍔 Серф-вайб и винтаж",
+        preview: "Сочные бургеры, винтажные интерьеры и стильный вечер. Идеальный баланс между расслабленностью и модной тусовкой.",
+        style: "easy",
+        places: [
+            {time: "13:00", name: "Oribinal Burger", desc: "Крафтовая бургерная с правильным мясом. Сочные котлеты, свежеиспеченные бриоши и непринужденная атмосфера — то, что нужно для восстановления сил.", price: "180k IDR", maps: "https://maps.google.com/?q=Oribinal+Burger+Bali"},
+            {time: "16:00", name: "Penny Lane", desc: "Масштабное пространство, объединяющее винтажный декор, пальмы и классические аркадные автоматы. Огромные порции и ледяные коктейли.", price: "200k IDR", maps: "https://maps.google.com/?q=Penny+Lane+Bali"},
+            {time: "19:00", name: "The Mailroom", desc: "Спикизи-бар за неприметной дверью. Внутри — полумрак, кожаные диваны и авторские коктейли со сложной рецептурой.", price: "400k IDR", maps: "https://maps.google.com/?q=The+Mailroom+Bali"}
+        ]
+    },
+    {
+        title: "🛍 Дизайн, мода и вкус",
+        preview: "Исследование концепт-сторов, поиск уникальных вещей и эстетичный обед в окружении стильных людей.",
+        style: "easy",
+        places: [
+            {time: "11:00", name: "Desa Kitsune", desc: "Масштабный концепт-стор с французским шиком и балийской расслабленностью. Просторные залы с одеждой и стильное кафе внутри.", price: "150k IDR", maps: "https://maps.google.com/?q=Desa+Kitsune+Bali"},
+            {time: "14:00", name: "Balinesia", desc: "Загляните за локальными сувенирами и специями. Эстетичная выкладка товаров и приятные мелочи для дома.", price: "Вход свободный", maps: "https://maps.google.com/?q=Balinesia+Bali"},
+            {time: "16:30", name: "32do", desc: "Остановка на кофе. Минимализм в деталях, отличная акустика и десерты, которые выглядят как произведения искусства.", price: "120k IDR", maps: "https://maps.google.com/?q=32do+Bali"}
+        ]
+    },
+    {
+        title: "🔥 Гастро-отрыв и ритм ночи",
+        preview: "Насыщенный вечер для тех, кто любит плотный звук, премиальное мясо и долгие коктейльные истории.",
+        style: "hard",
+        places: [
+            {time: "18:00", name: "SIA Grill & Seafood", desc: "Ужин с размахом. Премиальные стейки из мраморной говядины, свежайшие устрицы и безупречный сервис в атмосфере элегантного шика.", price: "600k IDR", maps: "https://maps.google.com/?q=SIA+Grill+Bali"},
+            {time: "21:00", name: "The Mailroom", desc: "Переход к коктейльной программе. Идеально выверенные пропорции в бокалах, виниловый саундтрек и публика, знающая толк в барной культуре.", price: "450k IDR", maps: "https://maps.google.com/?q=The+Mailroom+Bali"},
+            {time: "23:30", name: "Desa Kitsune", desc: "Эскалация ночи. Электронная музыка, стильный неоновый свет и танцы до рассвета в компании самой модной публики Чангу.", price: "300k IDR", maps: "https://maps.google.com/?q=Desa+Kitsune+Bali"}
+        ]
+    },
+    {
+        title: "🖤 Темная эстетика и драйв",
+        preview: "Мощный день с интенсивными вкусами: сочное мясо, дикий океанский бриз и секретные бары для своих.",
+        style: "hard",
+        places: [
+            {time: "15:00", name: "Oribinal Burger", desc: "Плотный поздний обед. Большие порции, хрустящий картофель и авторские соусы — заряжаемся энергией перед длинным вечером.", price: "180k IDR", maps: "https://maps.google.com/?q=Oribinal+Burger+Bali"},
+            {time: "17:30", name: "Pantai Seseh", desc: "Прогулка по черному вулканическому песку на закате. Соленый ветер, шум бьющихся о берег волн и ощущение полной свободы.", price: "Бесплатно", maps: "https://maps.google.com/?q=Pantai+Seseh"},
+            {time: "20:00", name: "The Mailroom", desc: "Финал дня в скрытом от чужих глаз баре. Строгий дресс-код, крепкие напитки и разговоры до глубокой ночи.", price: "450k IDR", maps: "https://maps.google.com/?q=The+Mailroom+Bali"}
+        ]
+    }
 ];
 
 function showRouteGallery() {
@@ -961,26 +883,14 @@ function showRouteGallery() {
     
     for (var i = 0; i < routes.length; i++) {
       var route = routes[i];
-      var isHard = false;
-      var isChill = false;
-      var routeText = JSON.stringify(route).toLowerCase();
-      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
-      var hourMatch = firstTimeStr.match(/\d{2}/);
-      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
-      
-      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
-        isHard = true;
-      }
-      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
-        isChill = true;
-        isHard = false;
-      }
-      
+      var isHard = route.style === 'hard';
+      var isChill = route.style === 'chill';
+      var isEasy = route.style === 'easy';
       
       let totalK = 0;
-      for (let j = 0; j < route.length; j++) {
-        if (route[j].price) {
-          let pstr = route[j].price.toLowerCase().replace(/,/g, '');
+      for (let j = 0; j < route.places.length; j++) {
+        if (route.places[j].price) {
+          let pstr = route.places[j].price.toLowerCase().replace(/,/g, '');
           let nums = pstr.match(/\d+/g);
           if (nums) {
              let avg = 0;
@@ -990,7 +900,6 @@ function showRouteGallery() {
              if (pstr.includes('m') || pstr.includes('м')) {
                  avg = avg * 1000;
              } else if (!pstr.includes('k') && !pstr.includes('к') && avg < 1000) {
-                 // if it's just '50' without K, assume 50K if it's IDR, but if it's $, then $50 = 750K
                  if (pstr.includes('$')) avg = avg * 15;
                  else avg = avg; 
              }
@@ -1007,7 +916,7 @@ function showRouteGallery() {
       }
       
       let budgetBadge = '<span style="margin-left:8px; background:rgba(42, 107, 90, 0.1); color:#2a6b5a; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">💸 ' + budgetStr + '</span>';
-var badge = '';
+      var badge = '';
       if (isChill) {
         badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
       } else if (isHard) {
@@ -1017,22 +926,13 @@ var badge = '';
       }
       
       badge += budgetBadge;
-      var places = [];
-      for(var j = 0; j < route.length; j++) {
-        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
-        if(!isHotel && route[j].name) {
-          places.push(route[j].name);
-        }
-      }
-      var previewText = places.join(' → ');
-      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
 
       html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
-      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
-      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
-      html += '    <div>' + badge + '</div>';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a; max-width:65%; line-height:1.2;">' + route.title + '</div>';
+      html += '    <div style="text-align:right;">' + badge + '</div>';
       html += '  </div>';
-      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + route.preview + '</div>';
       html += '</div>';
     }
     
@@ -1054,38 +954,28 @@ function showSingleRoute(idx) {
     var route = routes[idx];
     var html = '<div style="padding:20px; padding-bottom:100px;">';
     
-    var isHard = false;
-    var isChill = false;
-    var routeText = JSON.stringify(route).toLowerCase();
-    var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
-    var hourMatch = firstTimeStr.match(/\d{2}/);
-    var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
-    
-    if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
-      isHard = true;
-    }
-    if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
-      isChill = true;
-      isHard = false;
-    }
+    var isHard = route.style === 'hard';
+    var isChill = route.style === 'chill';
+    var isEasy = route.style === 'easy';
     
     var badge = '';
     if (isChill) {
-      badge = '<span style="margin-left:8px; background:rgba(255,182,193,0.3); color:#e83e8c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🌸 Чилл</span>';
+      badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🌸 Чилл</span>';
     } else if (isHard) {
-      badge = '<span style="margin-left:8px; background:rgba(255,87,34,0.15); color:#e64a19; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🔥 Хард</span>';
+      badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🔥 Хард</span>';
     } else {
-      badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
+      badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
     }
 
-    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px">🗺 Маршрут ' + (idx+1) + '</div>';
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px;line-height:1.2;">' + route.title + '</div>';
+    html += '<div style="font-size:14px;color:rgba(42,42,40,0.7);text-align:center;margin-bottom:16px;line-height:1.4">' + route.preview + '</div>';
     html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
 
-    for (var i = 0; i < route.length; i++) {
-      var p = route[i];
+    for (var i = 0; i < route.places.length; i++) {
+      var p = route.places[i];
       html += '<div style="background:rgba(255,255,255,0.7);border-radius:16px;padding:16px;margin-bottom:12px">';
       html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
-      html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
+      html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc + '</div>';
       if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
       if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
@@ -1093,11 +983,11 @@ function showSingleRoute(idx) {
 
     // --- Google Maps Directions button ---
     var mapPlaces = [];
-    for (var j = 0; j < route.length; j++) {
-      var tags = route[j].tags || [];
-      var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
-      if (!isHotel && route[j].name) {
-        mapPlaces.push(route[j].name);
+    for (var j = 0; j < route.places.length; j++) {
+      var tags = route.places[j].tags || [];
+      var isHotel = (route.places[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
+      if (!isHotel && route.places[j].name) {
+        mapPlaces.push(route.places[j].name);
       }
     }
     if (mapPlaces.length >= 2) {
