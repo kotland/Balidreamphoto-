@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Нуса Пенида — Гайд · Где свои на Бали</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=1774488851">
 </head>
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
@@ -395,7 +395,7 @@
 </div>
 </div>
 </div>
-<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="generateRandomRoute('nusaPenida')" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
+<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
 <div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 
@@ -410,10 +410,14 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
-    [{"time": "10:30", "name": "Suwehan Beach", "desc": "[чилл] Песок будто создан для отдыха. Легкий ветерок треплет пальмы, а шелест волн приносит умиротворение. Природа будто предлагает утонуть в минуты вечного покоя.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Suwehan+Beach"}, {"time": "14:00", "name": "Giri Putri Cave", "desc": "Спокойствие и тайна, окруженные известняковыми стенами. Вход словно портал в иной мир, где длительное эхо звуковых колоколов щекочет слух.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Giri+Putri+Cave"}],
-    [{"time": "11:00", "name": "Crystal Bay Beach", "desc": "[чилл] Прозрачная вода усыпает мысли, пенистые волны сверкают как кристаллы под золотым солнцем. Лежа, словно на облаке, наслаждаются тишиной.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Crystal+Bay+Beach"}, {"time": "16:30", "name": "Sandy Bay Beach Club", "desc": "Мягкий свет огней, согревающий вечерний воздух, приветствует за бокалами коктейлей. Под звуки прибоя, наливают бокал изысканности.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Sandy+Bay+Beach+Club"}],
-    [{"time": "11:30", "name": "The Sanctuary Spa", "desc": "[чилл] Атмосфера уюта и гармонии вплетается в каждое движение рук мастера. Ароматы благовоний уходят высоко под потолок, наполняя всё пространство покоем.", "price": "500k IDR", "maps": "https://maps.google.com/?q=The+Sanctuary+Spa+Nusa+Penida"}, {"time": "15:00", "name": "Amok Sunset", "desc": "Как кинематографический кадр: солнце растворяется в синей линии горизонта, оставляя послевкусие сладкой безмятежности. Начало мечтательного вечера.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Amok+Sunset+Nusa+Penida"}],
-    [{"time": "12:00", "name": "Tembeling Natural Pool", "desc": "[чилл] Вода кристальной лагуны обнимает пространство между скалами, создавая ощущения полной изоляции от суеты. Природная купель с оттенком сказочности.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Tembeling+Natural+Pool"}, {"time": "16:00", "name": "Sound Healing Pyramids", "desc": "Пирамиды излучают звуки древности, под нежные вибрации которых, второй план теряется, оставляя все заботы далеко позади.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Sound+Healing+Pyramids+Nusa+Penida"}],
+    [{"time": "10:30", "name": "Sanctuary Wellness Oasis", "desc": "[чилл] Укройте душу покоем в святилище, где негу звукового благополучия дополняет целительная сила ароматерапии. Потеряться в звуках тибетских чаш и приглушенных шепотов живой природы.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Sanctuary+Wellness+Oasis+Nusa+Penida"}, {"time": "15:00", "name": "Crystal Bay Beach", "desc": "С кристально чистой водой и шелковистым песком, пляж, словно оправа для мерцающих бирюзовых волн, укутывает мечтателей своими спокойными очертаниями и солнечными поцелуями.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Crystal+Bay+Beach+Nusa+Penida"}],
+    [{"time": "11:00", "name": "Lotus Sound Temple", "desc": "[чилл] Погрузитесь в волшебство гудения гонга, плавно окутывающего пространство, где дыхание становится медитацией, а тишина — музыкой в лотосовом храме звука.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Lotus+Sound+Temple+Nusa+Penida"}, {"time": "17:30", "name": "Amok Sunset Bar", "desc": "Забытая элегантность времени в розовых облаках заката, утопленных в теплых струях океанского бриза. Легкость коктейлей сочетается с медленно умирающим светом дня.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Amok+Sunset+Bar+Nusa+Penida"}],
+    [{"time": "11:30", "name": "Nirvana Spa", "desc": "[чилл] Мудрость веков и нежное прикосновение мастера сплетаются в ритуалах спокойствия, среди курортных тропиков и шелестящих листьев, растворяя заботы в ароматных облаках благовоний.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Nirvana+Spa+Nusa+Penida"}, {"time": "16:00", "name": "Atuh Beach", "desc": "Пейзажи, запечатленные в мягких линиях морских волн и скалистых берегов, как тихая колыбель, где время, беззаботно дрейфующее, отступает перед бурлящими каскадами.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Atuh+Beach+Nusa+Penida"}],
+    [{"time": "12:00", "name": "Serenity Yoga Retreat", "desc": "[чилл] Плавно переходя из асаны в асану, из дыхания в дыхание, здесь начинается путешествие в глубину внутреннего спокойствия, где каждый вдох дарит исцеление и наполняет зеленой гармонией.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Serenity+Yoga+Retreat+Nusa+Penida"}, {"time": "17:00", "name": "Sunset Point Nusa Penida", "desc": "Тонкие сетки заката, рваные и алые, простираются над горизонтом, тая в объятиях вечернего ветра. В ершистых силуэтах пальм ритмичный шепот волн расплетается песней под ледяными звездами.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sunset+Point+Nusa+Penida"}],
+    [{"time": "10:00", "name": "Chill Spa Retreat", "desc": " Утро начинается с тихого шороха водопадов и нежного прикосновения заботливых рук в тропическом укрытии. Благоухание экзотических масел наполняет атмосферу чувством полного покоя.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Chill+Spa+Retreat+Nusa+Penida"}, {"time": "13:00", "name": "Atuh Beach", "desc": "Рассыпанные рыбацкие лодки и безмятежные просторы лазурного моря создают умиротворяющий пейзаж. Песчаный берег манит к себе создать следы в белоснежной текстуре.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Atuh+Beach+Nusa+Penida"}],
+    [{"time": "11:00", "name": "Zen Garden Sound Healing", "desc": " Пленительное звучание хрустальных чаш наполняет внутровечное пространство гармонией, где каждая вибрация словно растворяет усталость и тревоги.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Zen+Garden+Sound+Healing+Nusa+Penida"}, {"time": "15:00", "name": "Diamond Beach", "desc": "Под тенью вековых скал, пляж приглашает провести нежные часы безмолвия, вглядываясь в запредельное синее безграничье океана.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Diamond+Beach+Nusa+Penida"}],
+    [{"time": "10:30", "name": "Luxe Bamboo Spa", "desc": " Бамбуковый павильон среди изумрудно-зеленой растительности превращается в оазис очаровательного уюта, где расслабление обретает новые горизонты через искусство масляного массажа.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Luxe+Bamboo+Spa+Nusa+Penida"}, {"time": "13:30", "name": "Crystal Bay", "desc": "Мягкие лучи солнца касаются кристально чистой воды, оттеняющей каждый пиксель подводного мира. Здесь время как будто замедляется и дарит мгновения созерцания.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Crystal+Bay+Nusa+Penida"}],
+    [{"time": "12:00", "name": "Peaceful Reflection Center", "desc": " В центре умиротворений шаги ведут по журчащим гравийным дорожкам среди ухоженной природы, создавая идеальные условия для медитации и восстановления.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Peaceful+Reflection+Center+Nusa+Penida"}, {"time": "16:00", "name": "Suwehan Beach", "desc": "Колыбель тихих олеандровых ветров, где песня природы напевает древние легенды, а легкие волны шепчут у ног, словно приглашая к плавному танцу.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Suwehan+Beach+Nusa+Penida"}],
     // --- Variant 1 ---
     [
       {
@@ -1062,16 +1066,75 @@ var MANUAL_ROUTES_ZONE = [
     ]
   ];
 
-function generateRandomRoute(zoneKey) {
+function showRouteGallery() {
   try {
     var routes = MANUAL_ROUTES_ZONE;
     if (!routes || routes.length === 0) { alert('Маршруты для этого района пока в разработке'); return; }
-    if (!window._routeIdx) window._routeIdx = 0;
-    var idx = window._routeIdx;
-    window._routeIdx = (idx + 1) % routes.length;
+    
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
+    
+    for (var i = 0; i < routes.length; i++) {
+      var route = routes[i];
+      var isHard = false;
+      var isChill = false;
+      var routeText = JSON.stringify(route).toLowerCase();
+      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+      var hourMatch = firstTimeStr.match(/\d{2}/);
+      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+      
+      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+        isHard = true;
+      }
+      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+        isChill = true;
+        isHard = false;
+      }
+      
+      var badge = '';
+      if (isChill) {
+        badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
+      } else if (isHard) {
+        badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
+      } else {
+        badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
+      }
+      
+      var places = [];
+      for(var j = 0; j < route.length; j++) {
+        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
+        if(!isHotel && route[j].name) {
+          places.push(route[j].name);
+        }
+      }
+      var previewText = places.join(' → ');
+      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
+
+      html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
+      html += '    <div>' + badge + '</div>';
+      html += '  </div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '</div>';
+    }
+    
+    html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
+    html += '</div>';
+    
+    document.getElementById('guideContent').style.display = 'none';
+    var rs = document.getElementById('routeScreen');
+    rs.innerHTML = html;
+    rs.style.display = 'block';
+    window.scrollTo(0, 0);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function showSingleRoute(idx) {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
     var route = routes[idx];
-    var html = '<div style="padding:20px">';
-    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:20px">🗺 Твой маршрут на день</div>';
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
     
     var isHard = false;
     var isChill = false;
@@ -1097,8 +1160,8 @@ function generateRandomRoute(zoneKey) {
       badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
     }
 
-    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px;display:flex;align-items:center;justify-content:center;">Маршрут ' + (idx+1) + '/' + routes.length + badge + '</div>';
-    html += '<div style="font-size:11px;color:rgba(42,42,40,0.4);text-align:center;margin-top:-16px;margin-bottom:24px;">Нажми ещё раз для следующего</div>';
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px">🗺 Маршрут ' + (idx+1) + '</div>';
+    html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
 
     for (var i = 0; i < route.length; i++) {
       var p = route[i];
@@ -1106,7 +1169,7 @@ function generateRandomRoute(zoneKey) {
       html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
       html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
       if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
-      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
+      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
     }
 
@@ -1115,7 +1178,7 @@ function generateRandomRoute(zoneKey) {
     for (var j = 0; j < route.length; j++) {
       var tags = route[j].tags || [];
       var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
-      if (!isHotel) {
+      if (!isHotel && route[j].name) {
         mapPlaces.push(route[j].name);
       }
     }
@@ -1134,13 +1197,12 @@ function generateRandomRoute(zoneKey) {
       html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
     }
     // --- End Google Maps Directions button ---
-    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="generateRandomRoute(\'nusaPenida\')" style="padding:12px 24px;border-radius:12px">🔄 Другой маршрут</button></div>';
-    html += '<div style="text-align:center;margin-top:16px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к гайду</button></div>';
+    
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="padding:12px 24px;border-radius:12px">← Назад к выбору маршрутов</button></div>';
     html += '</div>';
-    document.getElementById('guideContent').style.display = 'none';
+    
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
-    rs.style.display = 'block';
     window.scrollTo(0, 0);
   } catch(e) { alert('Ошибка: ' + e.message); }
 }
