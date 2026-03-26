@@ -1336,6 +1336,16 @@ window.toggleFavorite = function(name, event) {
 
 window.toggleShowFavorites = function() {
     state.showFavorites = !state.showFavorites;
+    
+    // Clear other filters so we see ALL favorites
+    if (state.showFavorites) {
+        state.district = null;
+        state.category = null;
+        state.budget = null;
+        state.shopType = null;
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+    }
+
     let btn = document.getElementById('btnFav');
     let fBtn = document.getElementById('floatingFavBtn');
     if (state.showFavorites) {
@@ -1345,8 +1355,12 @@ window.toggleShowFavorites = function() {
         if(btn) { btn.style.background = 'white'; btn.style.border = '1px solid rgba(42,107,90,0.2)'; }
         if(fBtn) { fBtn.style.background = '#fff'; fBtn.style.color = '#e83e8c'; }
     }
+    
+    // Apply filters and instantly scroll to the top so the user SEES the results
     applyFilters();
+    window.scrollTo({top: 0, behavior: 'smooth'});
 };
+
 
 // --- End Favorites Logic ---
 
