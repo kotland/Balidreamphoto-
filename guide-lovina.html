@@ -482,105 +482,43 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
-    [{"time": "10:30", "name": "Bali Reflеction Spa", "desc": "[чилл] Насыщенные ароматы экзотических масел пробуждают чувства, обволакивая тело в тёплом коконе расслабления. В осеннем полумраке джунглей каждый вдох здесь — как личная мощная мантра спокойствия.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Bali+Reflection+Spa"}, {"time": "13:00", "name": "Lovina Beach", "desc": "Тонкий шелест волн и редкие крики птиц создают мелодии уединения. Нежный солнечный свет ложится мозаикой на кожу, а белый песок манит неторопливо оглядеться по сторонам.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Lovina+Beach"}, {"time": "17:00", "name": "Spice Beach Club", "desc": "Гряда оранжевых и фиолетовых красок вечернего неба сплетается с ароматами тропических коктейлей, создавая идеальную симфонию для завершающего получения.", "price": "100k IDR", "maps": "https://maps.google.com/?q=Spice+Beach+Club"}],
-    [{"time": "11:00", "name": "Buddha Bali Spa", "desc": "[чилл] Легкое прикосновение мастера переносит в мир индонезийских древних ритуалов. Пряные запахи имбиря и лайма делают из каждой минуты здесь вечность, которая растворяет воспоминания о суете.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Buddha+Bali+Spa"}, {"time": "14:30", "name": "Singaraja Secret Garden", "desc": "Зеленые переливы листьев и крик обезьян, уносящийся в небытие, создают театральное пространство для спокойного созерцания.", "price": "50k IDR", "maps": "https://maps.google.com/?q=Singaraja+Secret+Garden"}],
-    [{"time": "10:45", "name": "Pamper Lounge Bali", "desc": "[чилл] Нежное шуршание ароматических свечей и приглушенные звуки природы создают тихую обитель для восстановления.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Pamper+Lounge+Bali"}, {"time": "13:00", "name": "Banyualit Spa", "desc": "Трель цикад и легкий запах эвкалипта окутывают вокруг, словно мягкий шерстяной плед. Каждое движение массажиста — тайный эликсир для обновления силы.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Banyualit+Spa"}, {"time": "15:30", "name": "Warung Dolphin", "desc": "Сочные краски натуральных соков и свежepрогретый тёплым полднем воздух заполняют с собой момент изобильного созидания и мечтаний.", "price": "80k IDR", "maps": "https://maps.google.com/?q=Warung+Dolphin"}],
-    [{"time": "11:30", "name": "Manna Spa Bali", "desc": "[чилл] Милосердие природы выливается в лечебные прикосновения, где ароматы жасмина сплетены с нежностью рыбок-докторов.", "price": "280k IDR", "maps": "https://maps.google.com/?q=Manna+Spa+Bali"}, {"time": "14:00", "name": "Kalibukbuk Beach", "desc": "Береговая линия с тихо погружающимися в песок волнами словно шепчет о потерянных временах. Легкое шуршание пальм перешептывается с ветром.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Kalibukbuk+Beach"}, {"time": "17:30", "name": "Sea Breeze Cafe", "desc": "Шепот заката на горизонте встречает игру света и тени, запирая тёплые воспоминания внутри кокоса, наполненного ароматом бодрящего лайма.", "price": "120k IDR", "maps": "https://maps.google.com/?q=Sea+Breeze+Cafe"}],
-    [{"time": "10:30", "name": "Ароматерапевтический визит в Beji Ayu Spa", "desc": " Утро начинается неспешно с погружения в мир ароматных масел и невесомых касаний. Здесь каждый вдох наполняется сладкими нотами расслабления и гармонии.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Beji+Ayu+Spa+Lovina"}, {"time": "13:00", "name": "Пляж Ловина", "desc": "Ленивые волны омывают берег, солнце согревает кожу, создавая уютную атмосферу для задумчивого отдыха на песке.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Lovina+Beach+Bali"}, {"time": "17:30", "name": "Закат в Kopi Bali House", "desc": "Вечерняя палитра небес отражается в чашке местного кофе, создавая идеальный фон для уединенного вздоха перед наступлением ночи.", "price": "50k IDR", "maps": "https://maps.google.com/?q=Kopi+Bali+House+Lovina"}],
-    [{"time": "11:00", "name": "Звуковое исцеление в Санкальпа Циркль", "desc": " Звуки поющих чаш медленно наполняют сознание миром и тишиной, тонко проникая в глубины души.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Sankalpa+Circle+Bali"}, {"time": "15:00", "name": "Krisna Funtastic Land", "desc": "На закате медленное катание на каруселях и легкие развлечения, как детские мечты, возвращают невесомое чувство радости.", "price": "100k IDR", "maps": "https://maps.google.com/?q=Krisna+Funtastic+Land+Lovina"}],
-    [{"time": "11:30", "name": "Раслабляющий сеанс массажа в Padmasana Spa", "desc": " Полумрак, легкий аромат трав и искусные руки мастеров словно растворяют все заботы, даруя телу и душе абсолютное спокойствие.", "price": "180k IDR", "maps": "https://maps.google.com/?q=Padmasana+Spa+Lovina"}, {"time": "14:00", "name": "Пляж Секуха", "desc": "Мягкий песок под ногами и прозрачная вода создают идеальные условия для медитативной прогулки вдоль берега.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sekumpul+Beach+Lovina"}, {"time": "17:00", "name": "Ужин в Lesehan Segara Tegeh", "desc": "Тихий шепот волн сопровождает неспешную дегустацию местных деликатесов, подаваемых с видом на уединенный закат.", "price": "75k IDR", "maps": "https://maps.google.com/?q=Lesehan+Segara+Tegeh+Lovina"}],
-    [{"time": "12:00", "name": "Уютный уголок в Spice Beach Club", "desc": " Белые пески и синие волны становятся декорацией к затерянному миру спокойствия и неспешности с коктейлем в руке.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Spice+Beach+Club+Lovina"}, {"time": "15:30", "name": "Мелодии заката в Ganesha Cafe", "desc": "Легкие мелодии и чарующий закат становятся завершающим аккордом идеального дня в атмосфере безмятежности.", "price": "60k IDR", "maps": "https://maps.google.com/?q=Ganesha+Cafe+Lovina"}],
-// V1: Дельфины + снорклинг
-[
-  {time:"05:00",name:"Lovina Dolphin Boat Tour",desc:"Выход в море на традиционной лодке джукунг ещё до рассвета. Десятки диких дельфинов играют в волнах на фоне восхода — главное зрелище северного Бали.",price:"100-150k IDR",maps:"https://maps.google.com/?q=Dolphin+Tour+Lovina+Bali",tags:["тур"]},
-  {time:"07:00",name:"Завтрак в Warung Bambu",desc:"Простой локальный варунг прямо у пляжа. Наси горенг с яйцом и свежий сок после раннего подъёма — заслуженный завтрак с видом на океан.",price:"30-50k IDR",maps:"https://maps.google.com/?q=Warung+Bambu+Lovina+Bali",tags:["кафе"]},
-  {time:"09:00",name:"Lovina Beach",desc:"Чёрный вулканический пляж Ловины с спокойной водой без волн. Расслабьтесь после утреннего приключения — здесь тихо, мало людей и прекрасный снорклинг у берега.",price:"Бесплатно",maps:"https://maps.google.com/?q=Lovina+Beach+Bali",tags:["пляж"]},
-  {time:"10:30",name:"Снорклинг на рифе",desc:"Выход на лодке к коралловому рифу в 200 метрах от берега. Черепахи, рыбы-клоуны и разноцветные кораллы в кристально чистой воде — маска и ласты включены.",price:"150-200k IDR",maps:"https://maps.google.com/?q=Snorkeling+Lovina+Bali",tags:["снорклинг"]},
-  {time:"13:00",name:"Spice Beach Club",desc:"Расслабленный бич-клаб с бассейном у моря. После подводных приключений — время для холодного коктейля и обеда с видом на Балийское море.",price:"100-200k IDR",maps:"https://maps.google.com/?q=Spice+Beach+Club+Lovina+Bali",tags:["бич-клаб"]},
-  {time:"15:00",name:"Sunset на пляже Ловина",desc:"Спокойный закат на чёрном песке без толп туристов. Северное побережье подарит вам тишину, которую невозможно найти на юге Бали.",price:"Бесплатно",maps:"https://maps.google.com/?q=Lovina+Beach+Sunset+Bali",tags:["пляж"]}
-],
-// V2: Водопады
-[
-  {time:"07:00",name:"Завтрак в Jasmine Kitchen",desc:"Плотный завтрак перед дорогой к водопадам. Блинчики, свежие фрукты и балийский кофе — энергия на весь день пеших походов.",price:"40-70k IDR",maps:"https://maps.google.com/?q=Jasmine+Kitchen+Lovina+Bali",tags:["кафе"]},
-  {time:"08:30",name:"Sekumpul Waterfall",desc:"Самый величественный водопад Бали — 80 метров падающей воды в изумрудном каньоне. Спуск по 400 ступеням через джунгли стоит каждого шага.",price:"20k IDR вход + 100k гид",maps:"https://maps.google.com/?q=Sekumpul+Waterfall+Bali",tags:["водопад"]},
-  {time:"11:30",name:"Warung у Sekumpul",desc:"Обед в деревенском варунге рядом с водопадом. Простая домашняя еда с видом на рисовые террасы — восстановление сил после подъёма.",price:"30-50k IDR",maps:"https://maps.google.com/?q=Sekumpul+Village+Bali",tags:["еда"]},
-  {time:"13:00",name:"Banyumala Twin Waterfall",desc:"Двойной водопад с природным бассейном для купания. Менее раскрученный чем Секумпул, но не менее красивый — вода прохладная и невероятно освежающая.",price:"30k IDR",maps:"https://maps.google.com/?q=Banyumala+Twin+Waterfall+Bali",tags:["водопад"]},
-  {time:"15:30",name:"Git Git Waterfall",desc:"Классический водопад северного Бали в 40 минутах от Ловины. 35 метров чистейшей воды в окружении тропических папоротников — красивый финал водопадного дня.",price:"20k IDR",maps:"https://maps.google.com/?q=Git+Git+Waterfall+Bali",tags:["водопад"]},
-  {time:"17:30",name:"Lovina Beach Sunset",desc:"Возвращение на пляж Ловины для заката. Усталые ноги, полная камера и закат над Балийским морем — идеальный финал приключенческого дня.",price:"Бесплатно",maps:"https://maps.google.com/?q=Lovina+Beach+Bali",tags:["пляж"]}
-],
-// V3: Горячие источники
-[
-  {time:"08:00",name:"Завтрак в отеле",desc:"Спокойное утро с балийским завтраком — наси чампур, тропические фрукты и кофе лувак. Сегодня день релакса, торопиться некуда.",price:"Включён или 50-80k IDR",maps:"https://maps.google.com/?q=Lovina+Hotels+Bali",tags:["кафе"]},
-  {time:"09:30",name:"Banjar Hot Springs",desc:"Горячие серные источники в тропическом саду с каменными нагами, из пастей которых льётся горячая вода. Три бассейна разной температуры — главный спа-спот северного Бали.",price:"20k IDR",maps:"https://maps.google.com/?q=Banjar+Hot+Springs+Bali",tags:["источники"]},
-  {time:"11:30",name:"Brahma Vihara Arama",desc:"Буддийский монастырь в 10 минутах от источников — мини-копия Боробудура на холме с видом на океан. Медитативная тишина и оранжевые ступы.",price:"Донейшн",maps:"https://maps.google.com/?q=Brahma+Vihara+Arama+Bali",tags:["храм"]},
-  {time:"13:00",name:"Warung Taman Lily",desc:"Обед в варунге с видом на рисовые террасы. Свежая рыба на гриле и самбал — простая, но невероятно вкусная балийская кухня.",price:"40-70k IDR",maps:"https://maps.google.com/?q=Warung+Taman+Lily+Banjar+Bali",tags:["еда"]},
-  {time:"14:30",name:"Air Panas Spa",desc:"Частный спа, использующий воду из тех же горячих источников. Массаж горячими камнями и обёртывание — продолжение термальной терапии в приватной обстановке.",price:"200-400k IDR",maps:"https://maps.google.com/?q=Air+Panas+Banjar+Bali",tags:["спа"]},
-  {time:"16:30",name:"Lovina Sunset Lounge",desc:"Вечерний коктейль на берегу после дня в горячей воде. Тело расслаблено до предела, закат тёплый — хочется остаться здесь навсегда.",price:"80-120k IDR",maps:"https://maps.google.com/?q=Lovina+Beach+Bar+Bali",tags:["бар"]}
-],
-// V4: Храмы и духовность
-[
-  {time:"07:00",name:"Brahma Vihara Arama",desc:"Самый большой буддийский монастырь на Бали в утренней тишине. Оранжевые ступы, золотой Будда и мини-Боробудур — когда монахи ещё медитируют, энергия места особенная.",price:"Донейшн",maps:"https://maps.google.com/?q=Brahma+Vihara+Arama+Bali",tags:["храм"]},
-  {time:"09:00",name:"Warung рядом с монастырём",desc:"Простой завтрак с видом на горы и океан. Балийский кофе и жареный банан — минимализм, который идеально продолжает медитативное утро.",price:"20-40k IDR",maps:"https://maps.google.com/?q=Banjar+Village+Bali",tags:["кафе"]},
-  {time:"10:30",name:"Pura Dalem Jagaraga",desc:"Индуистский храм XVII века с уникальными барельефами — самолёты, автомобили и велосипеды, вырезанные мастерами, впервые увидевшими технику. Удивительный культурный артефакт.",price:"Донейшн",maps:"https://maps.google.com/?q=Pura+Dalem+Jagaraga+Bali",tags:["храм"]},
-  {time:"12:30",name:"Singaraja Market Lunch",desc:"Обед на традиционном рынке бывшей столицы Бали. Десятки варунгов с домашней едой — попробуйте сипал (улиток) и лавар, которые не найдёте на юге.",price:"20-40k IDR",maps:"https://maps.google.com/?q=Singaraja+Market+Bali",tags:["еда"]},
-  {time:"14:00",name:"Pura Beji Sangsit",desc:"Храм с самыми детальными каменными барельефами на Бали — демоны, наги и цветы, покрытые мхом. Архитектурное чудо северного стиля резьбы.",price:"Донейшн",maps:"https://maps.google.com/?q=Pura+Beji+Sangsit+Bali",tags:["храм"]},
-  {time:"16:00",name:"Пляж медитация Ловина",desc:"Медитация на чёрном вулканическом песке под звук волн. Завершите духовный день, наблюдая за закатом в полной тишине северного побережья.",price:"Бесплатно",maps:"https://maps.google.com/?q=Lovina+Beach+Bali",tags:["пляж"]}
-],
-// V5: Биолюминесцентный планктон + закат
-[
-  {time:"15:00",name:"Lovina Beach Relax",desc:"Начните вечерний маршрут с послеобеденного отдыха на пляже. Спокойное море, чёрный песок — набирайтесь сил перед ночным приключением.",price:"Бесплатно",maps:"https://maps.google.com/?q=Lovina+Beach+Bali",tags:["пляж"]},
-  {time:"16:30",name:"Funky Place Lovina",desc:"Яркий бар-ресторан с растаманским вайбом — лучшее место для предзакатного коктейля в Ловине. Живая музыка по вечерам и дружелюбная атмосфера.",price:"60-100k IDR",maps:"https://maps.google.com/?q=Funky+Place+Lovina+Bali",tags:["бар"]},
-  {time:"17:30",name:"Sunset Point Lovina",desc:"Закат с западной стороны пляжа — солнце садится прямо в море без единого здания на горизонте. На юге Бали такого не увидишь.",price:"Бесплатно",maps:"https://maps.google.com/?q=Lovina+Sunset+Point+Bali",tags:["пляж"]},
-  {time:"19:00",name:"Ужин в Kakatua Bar",desc:"Ужин с морепродуктами у моря: свежий барракуда на гриле, сатай и холодный Bintang. Неторопливый ужин перед ночным туром.",price:"80-150k IDR",maps:"https://maps.google.com/?q=Kakatua+Bar+Lovina+Bali",tags:["ресторан"]},
-  {time:"21:00",name:"Bioluminescent Plankton Tour",desc:"Ночной выход в море на лодке — тысячи огоньков светящегося планктона под водой. Проведите рукой по воде и она засветится неоновым голубым — незабываемое зрелище.",price:"200-300k IDR",maps:"https://maps.google.com/?q=Bioluminescent+Plankton+Tour+Lovina+Bali",tags:["тур"]}
-],
-// V6: Дайвинг (Menjangan Island)
-[
-  {time:"06:00",name:"Выезд к Menjangan Island",desc:"Ранний старт из Ловины к острову Менджанган в нацпарке Западный Бали. Полтора часа дороги через горы с невероятными видами на вулканы.",price:"Трансфер 300-500k IDR",maps:"https://maps.google.com/?q=Menjangan+Island+Bali",tags:["трансфер"]},
-  {time:"08:00",name:"Лодка на Menjangan Island",desc:"20-минутная переправа на традиционной лодке через бирюзовую воду. Остров виден с берега — нацпарк с девственными коралловыми стенами, ждущими дайверов.",price:"Включено в тур",maps:"https://maps.google.com/?q=Menjangan+Island+Jetty+Bali",tags:["лодка"]},
-  {time:"09:00",name:"Dive 1 — Coral Wall",desc:"Первое погружение у знаменитой коралловой стены Менджангана. Отвесный дропофф на 60 метров, покрытый горгонариями, и стаи барракуд — один из лучших дайв-сайтов Бали.",price:"800-1200k IDR за 2 дайва",maps:"https://maps.google.com/?q=Menjangan+Island+Diving+Bali",tags:["дайвинг"]},
-  {time:"11:00",name:"Обед на острове",desc:"Пикник на белоснежном пляже необитаемого острова. Рис, курица и фрукты в тени мангровых деревьев — дайверский обед с видом на нацпарк.",price:"Включено в тур",maps:"https://maps.google.com/?q=Menjangan+Island+Beach+Bali",tags:["еда"]},
-  {time:"12:30",name:"Dive 2 — Temple Point",desc:"Второе погружение у древнего подводного храма. Мягкие кораллы, рыбы-ангелы и черепахи — видимость здесь до 30 метров круглый год.",price:"Включено",maps:"https://maps.google.com/?q=Menjangan+Island+Temple+Point+Bali",tags:["дайвинг"]},
-  {time:"15:00",name:"Возвращение + закат в Ловине",desc:"Обратная дорога через горы с остановкой у смотровой площадки. Закат после дня погружений — адреналин, тишина и невероятные воспоминания.",price:"Бесплатно",maps:"https://maps.google.com/?q=Lovina+Beach+Bali",tags:["пляж"]}
-],
-// V7: Чилл
-[
-  {time:"09:00",name:"Slow Morning на пляже",desc:"Проснитесь без будильника и выйдите на пляж. Чёрный песок, тёплая вода и ни одного серфера — Ловина создана для тех, кто устал от хаоса юга.",price:"Бесплатно",maps:"https://maps.google.com/?q=Lovina+Beach+Bali",tags:["пляж"]},
-  {time:"10:30",name:"Балийский массаж на пляже",desc:"Часовой массаж прямо на берегу под звук волн. Местные массажистки работают за копейки, но руки у них золотые — глубокое расслабление.",price:"80-120k IDR",maps:"https://maps.google.com/?q=Lovina+Beach+Massage+Bali",tags:["спа"]},
-  {time:"12:00",name:"Warung Dolphin",desc:"Обед в простом варунге у моря: свежий тунец на гриле, рис и самбал. Здесь нет меню на английском — и в этом вся прелесть.",price:"30-50k IDR",maps:"https://maps.google.com/?q=Warung+Dolphin+Lovina+Bali",tags:["еда"]},
-  {time:"14:00",name:"Бассейн в Funky Place",desc:"Расслабьтесь у бассейна яркого Funky Place — коктейли, настольные игры и регги из колонок. Самое тусовочное место Ловины для дневного чилла.",price:"60-100k IDR",maps:"https://maps.google.com/?q=Funky+Place+Lovina+Bali",tags:["бар"]},
-  {time:"16:00",name:"Книга в гамаке",desc:"Найдите гамак под пальмами и проведите пару часов с книгой. Ловина — это не про достопримечательности, а про искусство ничего не делать.",price:"Бесплатно",maps:"https://maps.google.com/?q=Lovina+Beach+Resort+Bali",tags:["релакс"]},
-  {time:"17:30",name:"Закат + ужин в Seyu 1001",desc:"Ужин на террасе с видом на закат — свежие морепродукты, прохладный вечерний бриз и ощущение, что вы нашли настоящий Бали.",price:"80-150k IDR",maps:"https://maps.google.com/?q=Seyu+1001+Lovina+Bali",tags:["ресторан"]}
-],
-// V8: Культурный (Singaraja)
-[
-  {time:"08:00",name:"Gedong Kirtya Library",desc:"Старейшая библиотека на Бали с коллекцией лонтар — рукописей на пальмовых листьях. Голландская колониальная архитектура и тысячелетние тексты — музей в миниатюре.",price:"10k IDR",maps:"https://maps.google.com/?q=Gedong+Kirtya+Singaraja+Bali",tags:["музей"]},
-  {time:"09:30",name:"Pasar Anyar Singaraja",desc:"Крупнейший рынок бывшей столицы Бали — специи, ткани, фрукты и уличная еда. Атмосфера колониального торгового порта жива до сих пор.",price:"Бесплатно (еда 10-30k)",maps:"https://maps.google.com/?q=Pasar+Anyar+Singaraja+Bali",tags:["рынок"]},
-  {time:"11:00",name:"Ling Gwan Kiong Chinese Temple",desc:"Китайский храм 1873 года в центре Сингараджи — свидетельство мультикультурной истории северного Бали. Красные фонари, дракон на крыше и запах благовоний.",price:"Донейшн",maps:"https://maps.google.com/?q=Ling+Gwan+Kiong+Chinese+Temple+Singaraja+Bali",tags:["храм"]},
-  {time:"12:30",name:"Обед в Hardy's Singaraja",desc:"Фуд-корт в торговом центре Hardy's — десятки балийских блюд по местным ценам. Попробуйте аям бетуту — курицу, запечённую в банановых листьях.",price:"20-40k IDR",maps:"https://maps.google.com/?q=Hardys+Singaraja+Bali",tags:["еда"]},
-  {time:"14:00",name:"Museum Buleleng",desc:"Музей истории округа Булеленг — от доколониального королевства до борьбы за независимость. Старые фото, оружие и королевские регалии.",price:"15k IDR",maps:"https://maps.google.com/?q=Museum+Buleleng+Singaraja+Bali",tags:["музей"]},
-  {time:"15:30",name:"Старый порт Singaraja",desc:"Прогулка по набережной бывшего главного порта Бали. Голландские склады, рыбацкие лодки и вид на море — дух старого Бали витает в воздухе.",price:"Бесплатно",maps:"https://maps.google.com/?q=Singaraja+Old+Port+Bali",tags:["прогулка"]},
-  {time:"17:00",name:"Закат в Ловине",desc:"Возвращение на пляж Ловины с полной головой истории. Культурный день завершается самым простым удовольствием — закатом над тихим морем.",price:"Бесплатно",maps:"https://maps.google.com/?q=Lovina+Beach+Bali",tags:["пляж"]}
-],
-// V9: Octagon + природа
-[
-  {time:"08:00",name:"West Bali National Park — Trek",desc:"Утренний трекинг по нацпарку Западный Бали — мангровые леса, олени и десятки видов птиц. Парк занимает 10% острова, но туристов здесь почти нет.",price:"200k IDR вход + гид",maps:"https://maps.google.com/?q=West+Bali+National+Park",tags:["трекинг"]},
-  {time:"10:30",name:"Mangrove Trail",desc:"Тропа через мангровые заросли на деревянных мостках. Крабы, цапли и корни деревьев, уходящие в солёную воду — другая сторона балийской природы.",price:"Включено",maps:"https://maps.google.com/?q=Mangrove+Trail+West+Bali+National+Park",tags:["природа"]},
-  {time:"12:00",name:"Варунг у нацпарка",desc:"Обед в деревенском варунге на выходе из парка. Рис, рыба и самбал — простая еда, которая вкуснее любого ресторана после утра в джунглях.",price:"30-50k IDR",maps:"https://maps.google.com/?q=West+Bali+National+Park+Entrance+Bali",tags:["еда"]},
-  {time:"14:00",name:"Octagon Ocean Club",desc:"Модный клаб-ресторан с бассейном-инфинити и панорамным видом на океан. Стильная архитектура и коктейли на уровне южного Бали — неожиданная роскошь на севере.",price:"Мин. заказ 200-300k IDR",maps:"https://maps.google.com/?q=Octagon+Ocean+Club+Lovina+Bali",tags:["бич-клаб"]},
-  {time:"16:30",name:"Munduk Waterfall Viewpoint",desc:"Смотровая площадка на водопад Мундук по дороге обратно. Быстрая остановка ради потрясающего вида на каскад в тропических джунглях.",price:"10k IDR",maps:"https://maps.google.com/?q=Munduk+Waterfall+Bali",tags:["водопад"]},
-  {time:"18:00",name:"Закат в Ловине",desc:"Финальный закат после дня в дикой природе. Контраст джунглей утром и тихого моря вечером — в этом магия северного Бали.",price:"Бесплатно",maps:"https://maps.google.com/?q=Lovina+Beach+Bali",tags:["пляж"]}
-],
-// V10: Микс лучшее
-[
-  {time:"05:00",name:"Дельфины на рассвете",desc:"Классический ранний выход в море на лодке. Стаи дельфинов играют в утренних лучах — то зрелище, ради которого все едут в Ловину.",price:"100-150k IDR",maps:"https://maps.google.com/?q=Dolphin+Tour+Lovina+Bali",tags:["тур"]},
-  {time:"07:30",name:"Завтрак на пляже",desc:"Плотный балийский завтрак в варунге у моря. Наси горенг, сок манго и крепкий кофе — впереди насыщенный день.",price:"30-50k IDR",maps:"https://maps.google.com/?q=Lovina+Beach+Restaurant+Bali",tags:["кафе"]},
-  {time:"09:00",name:"Banjar Hot Springs",desc:"Горячие серные источники в тропическом саду — три бассейна с целебной водой. Каменные наги, из пастей которых льётся горячая вода — знаковое место севера.",price:"20k IDR",maps:"https://maps.google.com/?q=Banjar+Hot+Springs+Bali",tags:["источники"]},
-  {time:"11:30",name:"Banyumala Twin Waterfall",desc:"Двойной водопад с прозрачным бассейном для купания. После горячих источников — освежающий контраст в прохладной горной воде.",price:"30k IDR",maps:"https://maps.google.com/?q=Banyumala+Twin+Waterfall+Bali",tags:["водопад"]},
-  {time:"14:00",name:"Обед в Octagon Ocean Club",desc:"Стильный ресторан с бассейном-инфинити — заслуженный отдых после утренних приключений. Коктейли и морепродукты с видом на Балийское море.",price:"150-300k IDR",maps:"https://maps.google.com/?q=Octagon+Ocean+Club+Lovina+Bali",tags:["бич-клаб"]},
-  {time:"16:00",name:"Массаж на пляже Ловина",desc:"Расслабляющий массаж на берегу перед закатом. После дельфинов, источников и водопадов — ваше тело заслужило час блаженства.",price:"80-120k IDR",maps:"https://maps.google.com/?q=Lovina+Beach+Massage+Bali",tags:["спа"]},
-  {time:"17:30",name:"Финальный закат Ловины",desc:"Закат с коктейлем в руке — итог идеального дня на северном Бали. Вы увидели всё лучшее, что может предложить Ловина, за один день.",price:"50-80k IDR",maps:"https://maps.google.com/?q=Lovina+Beach+Sunset+Bali",tags:["пляж"]}
-]
+
+    // --- Chill 1 ---
+    [
+      { "time": "09:00", "name": "Lovina Beach", "desc": "Утренняя прогулка по темному вулканическому песку. Спокойные воды северного побережья создают атмосферу полного умиротворения.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Lovina+Beach" },
+      { "time": "12:00", "name": "Banjar Hot Springs", "desc": "Погружение в термальные источники среди пышных тропических садов. Теплая серная вода расслабляет тело и очищает разум.", "price": "20k IDR", "maps": "https://maps.google.com/?q=Banjar+Hot+Springs" },
+      { "time": "16:00", "name": "Buda Bakery", "desc": "Легкий перекус свежей выпечкой в уютном саду. Идеальное место для неспешного чтения и вечернего чая.", "price": "80k IDR", "maps": "https://maps.google.com/?q=Buda+Bakery+Lovina" }
+    ],
+    // --- Chill 2 ---
+    [
+      { "time": "10:00", "name": "Brahma Vihara Arama", "desc": "Крупнейший буддийский монастырь Бали. Архитектурная изысканность и медитативная тишина на склоне холма с видом на океан.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Brahma+Vihara+Arama" },
+      { "time": "13:30", "name": "Secret Garden Restaurant", "desc": "Обед в скрытом от посторонних глаз саду. Изысканная подача локальных блюд и абсолютная приватность.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Secret+Garden+Restaurant+Lovina" },
+      { "time": "17:00", "name": "Lovina Beach", "desc": "Созерцание заката на пустынном пляже. Северное побережье славится своими мягкими, пастельными оттенками вечернего неба.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Lovina+Beach" }
+    ],
+    // --- Easy 1 ---
+    [
+      { "time": "08:00", "name": "Капитан Gede", "desc": "Индивидуальный выход в море с капитаном Геде. Позднее время позволяет избежать скопления лодок и наблюдать за дельфинами в естественной тишине.", "price": "1M IDR", "maps": "https://maps.google.com/?q=Lovina+Beach" },
+      { "time": "11:30", "name": "Akar Cafe", "desc": "Полезный бранч после морской прогулки. Пространство с акцентом на растительное меню и осознанное потребление.", "price": "100k IDR", "maps": "https://maps.google.com/?q=Akar+Cafe+Lovina" },
+      { "time": "14:00", "name": "Banjar Hot Springs", "desc": "Восстановление сил в горячих источниках. Архитектура комплекса с резными драконами добавляет мистической эстетики.", "price": "20k IDR", "maps": "https://maps.google.com/?q=Banjar+Hot+Springs" }
+    ],
+    // --- Easy 2 ---
+    [
+      { "time": "08:00", "name": "Капитан Gede", "desc": "Уединенная встреча с дельфинами на горизонте северного моря. Утренний свет мягко ложится на спокойную воду, создавая кинематографичный пейзаж.", "price": "1M IDR", "maps": "https://maps.google.com/?q=Lovina+Beach" },
+      { "time": "12:00", "name": "Singaraja Market", "desc": "Неспешная прогулка по локальному рынку в бывшей столице острова. Аутентичные запахи специй и колорит повседневной балийской жизни.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Singaraja+Market" },
+      { "time": "15:00", "name": "Brahma Vihara Arama", "desc": "Завершение дня в медитативной тишине буддийского храма. Миниатюрная копия Боробудура на фоне заходящего солнца.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Brahma+Vihara+Arama" }
+    ],
+    // --- Hard 1 ---
+    [
+      { "time": "08:00", "name": "Капитан Gede", "desc": "Экспедиция к дельфинам с последующим снорклингом на коралловом рифе Ловины. Исследование подводного мира северного Бали.", "price": "1M IDR", "maps": "https://maps.google.com/?q=Lovina+Beach" },
+      { "time": "13:00", "name": "Aling-Aling Waterfall", "desc": "Треккинг к мощному водопаду. Прыжки со скал и скольжение по природным водным горкам для искателей острых ощущений.", "price": "125k IDR", "maps": "https://maps.google.com/?q=Aling-Aling+Waterfall" },
+      { "time": "17:00", "name": "Spice Beach Club", "desc": "Ужин на побережье после активного дня. Изысканная кухня и вид на океан в элегантной обстановке.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Spice+Beach+Club+Lovina" }
+    ],
+    // --- Hard 2 ---
+    [
+      { "time": "07:00", "name": "Sekumpul Waterfall", "desc": "Сложный спуск сквозь густые джунгли к одному из самых впечатляющих водопадов острова. Мощь падающей воды и абсолютная дикая природа.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Sekumpul+Waterfall" },
+      { "time": "13:00", "name": "Fiji Waterfall", "desc": "Продолжение треккинга к соседнему каскаду. Тропа требует выносливости, но вознаграждает редкими кинематографичными видами.", "price": "Включено", "maps": "https://maps.google.com/?q=Fiji+Waterfall" },
+      { "time": "16:30", "name": "Banjar Hot Springs", "desc": "Глубокое мышечное расслабление в термальных водах после экстремального треккинга. Идеальное завершение физически насыщенного маршрута.", "price": "20k IDR", "maps": "https://maps.google.com/?q=Banjar+Hot+Springs" }
+    ]
 ];
 
 function showRouteGallery() {
@@ -668,7 +606,6 @@ var badge = '';
     }
     
     
-      badge += budgetBadge;
 html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
     html += '</div>';
     
