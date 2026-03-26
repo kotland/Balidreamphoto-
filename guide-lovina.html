@@ -610,9 +610,9 @@ function showRouteGallery() {
       
       
       let totalK = 0;
-      for (let j = 0; j < r.length; j++) {
-        if (r[j].price) {
-          let pstr = r[j].price.toLowerCase().replace(/,/g, '');
+      for (let j = 0; j < route.length; j++) {
+        if (route[j].price) {
+          let pstr = route[j].price.toLowerCase().replace(/,/g, '');
           let nums = pstr.match(/\d+/g);
           if (nums) {
              let avg = 0;
