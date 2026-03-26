@@ -1300,8 +1300,13 @@ function applyFilters() {
 
 // --- Favorites (Wishlist) Logic ---
 function getFavorites() {
+    
     let favs = localStorage.getItem('bali_favorites');
-    return favs ? JSON.parse(favs) : [];
+    favs = favs ? JSON.parse(favs) : [];
+    let countEl = document.getElementById('floatingFavCount');
+    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
+    return favs;
+
 }
 
 window.toggleFavorite = function(name, event) {
@@ -1315,12 +1320,11 @@ window.toggleFavorite = function(name, event) {
     }
     localStorage.setItem('bali_favorites', JSON.stringify(favs));
     
-    // Quick DOM update to prevent full re-render scroll jump
-    let heartEl = event.currentTarget;
+    let heartContainer = event.currentTarget;
     if (idx > -1) {
-        heartEl.innerHTML = '🤍';
+        heartContainer.innerHTML = '<div style="font-size:22px;">🤍</div><div style="font-size:9px; font-weight:600; color:rgba(42,42,40,0.4); margin-top:2px;">сохранить</div>';
     } else {
-        heartEl.innerHTML = '❤️';
+        heartContainer.innerHTML = '<div style="font-size:22px;">❤️</div><div style="font-size:9px; font-weight:600; color:#e83e8c; margin-top:2px;">сохранено</div>';
     }
     
     // If we are currently in Favorites view, we should re-filter
@@ -1329,18 +1333,21 @@ window.toggleFavorite = function(name, event) {
     }
 };
 
+
 window.toggleShowFavorites = function() {
     state.showFavorites = !state.showFavorites;
     let btn = document.getElementById('btnFav');
+    let fBtn = document.getElementById('floatingFavBtn');
     if (state.showFavorites) {
-        btn.style.background = 'rgba(255, 182, 193, 0.2)';
-        btn.style.border = '1px solid #e83e8c';
+        if(btn) { btn.style.background = 'rgba(255, 182, 193, 0.2)'; btn.style.border = '1px solid #e83e8c'; }
+        if(fBtn) { fBtn.style.background = '#e83e8c'; fBtn.style.color = '#fff'; }
     } else {
-        btn.style.background = 'white';
-        btn.style.border = '1px solid rgba(42,107,90,0.2)';
+        if(btn) { btn.style.background = 'white'; btn.style.border = '1px solid rgba(42,107,90,0.2)'; }
+        if(fBtn) { fBtn.style.background = '#fff'; fBtn.style.color = '#e83e8c'; }
     }
     applyFilters();
 };
+
 // --- End Favorites Logic ---
 
 function loadMoreCards() {
@@ -1432,5 +1439,10 @@ window.onload = function() {
   }
 };
 </script>
+
+<div id="floatingFavBtn" onclick="toggleShowFavorites()" style="position:fixed; bottom:20px; right:20px; background:#fff; border:2px solid #e83e8c; color:#e83e8c; padding:12px 20px; border-radius:30px; font-weight:700; font-size:14px; box-shadow:0 8px 24px rgba(232, 62, 140, 0.25); z-index:9999; display:flex; align-items:center; gap:8px; cursor:pointer; transition: transform 0.2s;">
+  <span id="floatingFavCount">❤️ 0</span>
+</div>
+
 </body>
 </html>
