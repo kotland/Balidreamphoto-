@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Санур — Гайд · Где свои на Бали</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=1774488851">
 </head>
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
@@ -480,7 +480,7 @@
 </div>
 </div>
 </div>
-<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="generateRandomRoute('sanur')" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
+<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
 <div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
 <div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
 </div>
@@ -490,9 +490,9 @@
 </div>
 <script>
 var MANUAL_ROUTES_ZONE = [
-    [{"time": "10:30", "name": "Kayumanis Spa", "desc": "[чилл] Утренние промены с ароматом тропического масла под пальмами изящного курорта. Нежный массаж, утопленный в шелковистых тканях, уносит на краешек безмятежности.", "price": "350k IDR", "maps": "https://maps.google.com/?q=Kayumanis+Spa+Sanur"}, {"time": "13:00", "name": "Pantai Karang", "desc": "Тихий пляж, где время застыло и только мягкий плеск волн шепчет о вечности. Песчаная коса, обрамленная коралловыми оттенками, приглашает к неспешным прогулкам.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Pantai+Karang"}, {"time": "16:30", "name": "Sanur Beach Market", "desc": "Рынок у морского бриза, в окружении звуков живой природы. Зов тропических фруктов и ремесленных изделий аккуратно вплетается в закатные лучи.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Sanur+Beach+Market"}],
-    [{"time": "11:00", "name": "The Nest Beachside Spa", "desc": "[чилл] Грациозная гавань расслабления, где ароматы эвкалипта обнимают, а успокаивающие прикосновения гармонируют с видом на океанские далекоходы.", "price": "400k IDR", "maps": "https://maps.google.com/?q=The+Nest+Beachside+Spa+Sanur"}, {"time": "14:00", "name": "Bali Stand Up Paddle School", "desc": "Зеркальная гладь воды под доской, медитативные движения и искрящие солнцем капли создают утонченную симфонию спокойствия и силы.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Bali+Stand+Up+Paddle+School"}],
-    [{"time": "11:30", "name": "Glo Day Spa", "desc": "[чилл] Оазис для тела и духа, где пробуждаются чувства. Нарядный интерьер соперничает с изысканными процедурами, а свежесть ароматных масел навсегда пленит сердце.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Glo+Day+Spa+Sanur"}, {"time": "14:30", "name": "Sindhu Beach", "desc": "Пляж, где мягкие волны разбегаются по золотистому песку, создавая идеальные условия для второй дыхательной практики под небесным сводом.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Sindhu+Beach"}, {"time": "17:00", "name": "Kopi Kiosk", "desc": "Тихая кофейня в тени вечнозеленых деревьев, где аутентичные зерна раскрывают свои секреты. Мелодии ветра дополняют обволакивающее тепло чашки в руке.", "price": "60k IDR", "maps": "https://maps.google.com/?q=Kopi+Kiosk+Sanur"}],
+    [{"time": "10:30", "name": "The Nest Beachside Spa", "desc": "[чилл] Утро начинается под звуки плещущихся волн в The Nest Beachside Spa. Здесь основное внимание уделяется глубокой релаксации и гармонии с природой. Нежные руки мастеров проведут через путешествие в мир ароматерапии и детоксикации.", "price": "250k IDR", "maps": "https://maps.google.com/?q=The+Nest+Beachside+Spa"}, {"time": "13:00", "name": "Pantai Karang", "desc": "Шелковый песок, уединённые уголки и музыка природы - Pantai Karang предлагает идеальное место для ленивого дня на пляже. Мелодия ветра и шорох волн создают симфонию спокойствия.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Pantai+Karang"}],
+    [{"time": "11:15", "name": "Spa Alila", "desc": "[чилл] Изысканная атмосфера Spa Alila выполнена в лучших традициях уединённых святилищ Бали. Ощущайте, как эфирные масла обволакивают кожу, а традиционные балийские техники медленно оживляют тело и дух.", "price": "400k IDR", "maps": "https://maps.google.com/?q=Spa+Alila+Sanur"}, {"time": "14:00", "name": "Обед в Artotel Beach Club", "desc": "Легкий бриз, тени пальм и изысканная кухня ждут в Artotel Beach Club. Каждое блюдо здесь – это гастрономическое произведение искусства, создающее уютную атмосферу под аккомпанемент океанских закатов.", "price": "150k IDR (на человека)", "maps": "https://maps.google.com/?q=Artotel+Beach+Club+Sanur"}],
+    [{"time": "11:00", "name": "Morning Light Yoga Studio", "desc": "[чилл] В Morning Light Yoga Studio мягкие лучи утреннего солнца переплетаются с расслабляющими течениями йоги. Каждый вдох здесь становится плавным движением, дарящим гармонию и обновление.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Morning+Light+Yoga+Studio"}, {"time": "13:30", "name": "Саундхилинг в Pyramid Yoga", "desc": "Путешествие в звуковой мир начинается в Pyramid Yoga, где волнение улетучивается под гармоничные вибрации гонгов и тибетских чаш. Ощущения покоя и обновления не покидают пространства ума и тела.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Pyramid+Yoga+Sound+Healing"}],
     [
       {
         time: '09:00',
@@ -504,14 +504,14 @@ var MANUAL_ROUTES_ZONE = [
       {
         time: '11:00',
         name: 'Massimo Italian',
-        desc: 'Настоящее итальянское джелато тает на языке, оставляя аромат сладких ягод и нежную кремовость. Утренние пасты, окутанные паром, создают атмосферу неспешного наслаждения, наполняя воздух нотами свежих трав и долины Ольтрепо. Время останавливается, уступая место истинным удовольствиям.',
+        desc: 'Настоящее итальянское джелато тает на языке, даря наслаждение в каждом укусе, а ранняя паста наполняет воздух ароматами свежих трав и спелых помидоров. Время здесь словно останавливается, позволяя погрузиться в атмосферу неподдельного итальянского уюта. Каждый момент — это легкость и беззаботность, что создает идеальный еда-путешествие.',
         price: '100k IDR',
         maps: 'https://maps.google.com/?q=Massimo+Italian+Sanur'
       },
       {
         time: '14:00',
         name: 'The Nest Beachside Spa',
-        desc: 'Балийский массаж на берегу океана, где волны шепчут о расслаблении. Ароматы тропиков обвивают, пена моря уносит заботы, наполняя момент полным дзеном.',
+        desc: 'На берегу моря, среди шепота волн, разливается неземной звук расслабления. Каждый прикосновение мастера — это танец, уносящий в состояние полного дзена. В воздухе витает свежесть salt, а солнце, касаясь кожи, создает гармонию уединения.',
         price: '200k IDR',
         maps: 'https://maps.google.com/?q=The+Nest+Beachside+Spa+Sanur'
       }
@@ -983,16 +983,75 @@ var MANUAL_ROUTES_ZONE = [
     ]
   ];
 
-function generateRandomRoute(zoneKey) {
+function showRouteGallery() {
   try {
     var routes = MANUAL_ROUTES_ZONE;
     if (!routes || routes.length === 0) { alert('Маршруты для этого района пока в разработке'); return; }
-    if (!window._routeIdx) window._routeIdx = 0;
-    var idx = window._routeIdx;
-    window._routeIdx = (idx + 1) % routes.length;
+    
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
+    
+    for (var i = 0; i < routes.length; i++) {
+      var route = routes[i];
+      var isHard = false;
+      var isChill = false;
+      var routeText = JSON.stringify(route).toLowerCase();
+      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+      var hourMatch = firstTimeStr.match(/\d{2}/);
+      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+      
+      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+        isHard = true;
+      }
+      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+        isChill = true;
+        isHard = false;
+      }
+      
+      var badge = '';
+      if (isChill) {
+        badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
+      } else if (isHard) {
+        badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
+      } else {
+        badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
+      }
+      
+      var places = [];
+      for(var j = 0; j < route.length; j++) {
+        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
+        if(!isHotel && route[j].name) {
+          places.push(route[j].name);
+        }
+      }
+      var previewText = places.join(' → ');
+      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
+
+      html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
+      html += '    <div>' + badge + '</div>';
+      html += '  </div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '</div>';
+    }
+    
+    html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
+    html += '</div>';
+    
+    document.getElementById('guideContent').style.display = 'none';
+    var rs = document.getElementById('routeScreen');
+    rs.innerHTML = html;
+    rs.style.display = 'block';
+    window.scrollTo(0, 0);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function showSingleRoute(idx) {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
     var route = routes[idx];
-    var html = '<div style="padding:20px">';
-    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:20px">🗺 Твой маршрут на день</div>';
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
     
     var isHard = false;
     var isChill = false;
@@ -1018,8 +1077,8 @@ function generateRandomRoute(zoneKey) {
       badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
     }
 
-    html += '<div style="font-size:13px;color:rgba(42,42,40,0.5);text-align:center;margin-bottom:24px;display:flex;align-items:center;justify-content:center;">Маршрут ' + (idx+1) + '/' + routes.length + badge + '</div>';
-    html += '<div style="font-size:11px;color:rgba(42,42,40,0.4);text-align:center;margin-top:-16px;margin-bottom:24px;">Нажми ещё раз для следующего</div>';
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px">🗺 Маршрут ' + (idx+1) + '</div>';
+    html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
 
     for (var i = 0; i < route.length; i++) {
       var p = route[i];
@@ -1027,7 +1086,7 @@ function generateRandomRoute(zoneKey) {
       html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
       html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
       if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
-      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target=\"_blank\" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
+      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
       html += '</div>';
     }
 
@@ -1036,7 +1095,7 @@ function generateRandomRoute(zoneKey) {
     for (var j = 0; j < route.length; j++) {
       var tags = route[j].tags || [];
       var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
-      if (!isHotel) {
+      if (!isHotel && route[j].name) {
         mapPlaces.push(route[j].name);
       }
     }
@@ -1055,13 +1114,12 @@ function generateRandomRoute(zoneKey) {
       html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
     }
     // --- End Google Maps Directions button ---
-    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="generateRandomRoute(\'sanur\')" style="padding:12px 24px;border-radius:12px">🔄 Другой маршрут</button></div>';
-    html += '<div style="text-align:center;margin-top:16px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к гайду</button></div>';
+    
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="padding:12px 24px;border-radius:12px">← Назад к выбору маршрутов</button></div>';
     html += '</div>';
-    document.getElementById('guideContent').style.display = 'none';
+    
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
-    rs.style.display = 'block';
     window.scrollTo(0, 0);
   } catch(e) { alert('Ошибка: ' + e.message); }
 }
