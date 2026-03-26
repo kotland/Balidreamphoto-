@@ -1297,7 +1297,54 @@ function applyFilters() {
   loadMoreCards();
 }
 
+
+// --- Favorites (Wishlist) Logic ---
+function getFavorites() {
+    let favs = localStorage.getItem('bali_favorites');
+    return favs ? JSON.parse(favs) : [];
+}
+
+window.toggleFavorite = function(name, event) {
+    if (event) event.stopPropagation();
+    let favs = getFavorites();
+    let idx = favs.indexOf(name);
+    if (idx > -1) {
+        favs.splice(idx, 1);
+    } else {
+        favs.push(name);
+    }
+    localStorage.setItem('bali_favorites', JSON.stringify(favs));
+    
+    // Quick DOM update to prevent full re-render scroll jump
+    let heartEl = event.currentTarget;
+    if (idx > -1) {
+        heartEl.innerHTML = '🤍';
+    } else {
+        heartEl.innerHTML = '❤️';
+    }
+    
+    // If we are currently in Favorites view, we should re-filter
+    if (state.showFavorites) {
+        applyFilters();
+    }
+};
+
+window.toggleShowFavorites = function() {
+    state.showFavorites = !state.showFavorites;
+    let btn = document.getElementById('btnFav');
+    if (state.showFavorites) {
+        btn.style.background = 'rgba(255, 182, 193, 0.2)';
+        btn.style.border = '1px solid #e83e8c';
+    } else {
+        btn.style.background = 'white';
+        btn.style.border = '1px solid rgba(42,107,90,0.2)';
+    }
+    applyFilters();
+};
+// --- End Favorites Logic ---
+
 function loadMoreCards() {
+
   const container = document.getElementById('catalogResults');
   const fragment = document.createDocumentFragment();
   const end = Math.min(currentIndex + ITEMS_PER_PAGE, filteredPlaces.length);
@@ -1312,7 +1359,16 @@ function loadMoreCards() {
       html += '<div style="display:inline-block;background:#fff9e6;color:#b38a00;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;margin-bottom:8px;border:1px solid rgba(179,138,0,0.2)">⭐️ Выбор большинства</div>';
     }
     
-    html += '<div class="place-name">' + escapeHtml(p.name) + '</div>';
+    
+    let favs = getFavorites();
+    let isFav = favs.includes(p.name);
+    let heartIcon = isFav ? '❤️' : '🤍';
+    
+    html += '<div style="display:flex; justify-content:space-between; align-items:flex-start;">';
+    html += '  <div class="place-name" style="margin-bottom:0;">' + escapeHtml(p.name) + '</div>';
+    html += '  <div onclick="toggleFavorite(\'' + escapeHtml(p.name).replace(/'/g, "\\'") + '\', event)" style="font-size:24px; padding:0 0 0 10px; cursor:pointer;">' + heartIcon + '</div>';
+    html += '</div>';
+
     
     let meta = [];
     if (p.district) meta.push(escapeHtml(p.district));
