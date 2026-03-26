@@ -1345,29 +1345,34 @@ window.toggleFavorite = function(name, event) {
 window.toggleShowFavorites = function() {
     state.showFavorites = !state.showFavorites;
     
-    // Clear other filters so we see ALL favorites
+    let btn = document.getElementById('btnFav');
+    let fBtn = document.getElementById('floatingFavBtn');
+    let pageTitle = document.getElementById('pageTitle');
+    
     if (state.showFavorites) {
         state.district = null;
         state.category = null;
         state.budget = null;
         state.shopType = null;
         document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
-    }
-
-    let btn = document.getElementById('btnFav');
-    let fBtn = document.getElementById('floatingFavBtn');
-    if (state.showFavorites) {
+        
         if(btn) { btn.style.background = 'rgba(255, 182, 193, 0.2)'; btn.style.border = '1px solid #e83e8c'; }
         if(fBtn) { fBtn.style.background = '#e83e8c'; fBtn.style.color = '#fff'; }
+        if(pageTitle) { pageTitle.innerText = 'Мои сохранёнки'; pageTitle.style.color = '#e83e8c'; }
     } else {
         if(btn) { btn.style.background = 'white'; btn.style.border = '1px solid rgba(42,107,90,0.2)'; }
         if(fBtn) { fBtn.style.background = '#fff'; fBtn.style.color = '#e83e8c'; }
+        if(pageTitle) { pageTitle.innerText = 'Каталог'; pageTitle.style.color = '#2a2a28'; }
     }
     
-    // Apply filters and instantly scroll to the top so the user SEES the results
     applyFilters();
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    
+    // Force aggressive scrolling to top for iOS WebKit
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 };
+
 
 
 // --- End Favorites Logic ---
