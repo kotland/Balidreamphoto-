@@ -1331,6 +1331,14 @@ window.toggleFavorite = function(name, event) {
     if (state.showFavorites) {
         applyFilters();
     }
+    
+    // Update floating button count immediately
+    let countEl = document.getElementById('floatingFavCount');
+    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
+    
+    // Also deduplicate just in case
+    let uniqueFavs = [...new Set(favs)];
+    localStorage.setItem('bali_favorites', JSON.stringify(uniqueFavs));
 };
 
 
