@@ -3707,8 +3707,8 @@ function filterRoutes(style, budget) {
       
       var rTitle = routeObj.title || ('Маршрут ' + (i + 1));
       var rPreview = routeObj.preview || '';
-      var isChill = (rStyle === 'chill');
-      var isHard = (rStyle === 'hard');
+      var isChill = (route.style === 'chill');
+      var isHard = (route.style === 'hard');
       
       let budgetStr = '';
       if (totalK > 0) {
@@ -3990,10 +3990,10 @@ function showSingleRoute(idx) {
     }
     // --- End Google Maps Directions button ---
     
-    var btnText = '🔄 Другой ' + (rStyle === 'chill' ? 'CHILL' : (rStyle === 'hard' ? 'HARD' : 'EASY')) + '-маршрут';
+    var btnText = '🔄 Другой ' + (route.style === 'chill' ? 'CHILL' : (route.style === 'hard' ? 'HARD' : 'EASY')) + '-маршрут';
     html += '<div style="display:flex;gap:12px;margin-top:24px;">';
     html += '  <button class="btn btn-primary" onclick="showRouteGallery()" style="flex:1;padding:14px;border-radius:14px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;font-weight:600;">← Назад к результатам</button>';
-    html += '  <button class="btn btn-primary" onclick="generateRandomRoute(\'' + rStyle + '\', ' + (route.days || 1) + ')" style="flex:2;padding:14px;border-radius:14px;background:#2a6b5a;color:white;border:none;font-weight:600;font-size:14px;">' + btnText + '</button>';
+    html += '  <button class="btn btn-primary" onclick="generateRandomRoute(\'' + route.style + '\', ' + (route.days || 1) + ')" style="flex:2;padding:14px;border-radius:14px;background:#2a6b5a;color:white;border:none;font-weight:600;font-size:14px;">' + btnText + '</button>';
     html += '</div>';
     html += '</div>';
     
