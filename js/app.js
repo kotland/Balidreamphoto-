@@ -192,7 +192,7 @@ window.showRouteGallery = function() {
         html += '<div style="text-align:center; padding:20px; color:rgba(42,42,40,0.5);">Для этой комбинации фильтров маршрутов пока нет. Выберите другой фильтр.</div>';
     }
     
-    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="window.location.href=\'guides.html?v=\' + Date.now()" style="padding:12px 24px;border-radius:12px; border:none; background:rgba(42,42,40,0.1); color:#2a2a28; font-weight:600; cursor:pointer;">← Назад к выбору района</button></div>';
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="window.location.href=\'guides.html?v=\' + Date.now()" style="padding:12px 24px;border-radius:12px; border:none; background:rgba(42,42,40,0.1); color:#2a2a28; font-weight:600; cursor:pointer;">← Назад к выбору маршрутов</button></div>';
     html += '</div>';
     
     document.getElementById('routesListContainer').innerHTML = html;
@@ -297,7 +297,7 @@ window.showSingleRoute = function(idx) {
     
     var btnText = '🔄 Другой ' + (rStyle === 'chill' ? 'CHILL' : (rStyle === 'hard' ? 'HARD' : 'EASY')) + '-маршрут';
     html += '<div style="display:flex;gap:12px;margin-top:32px;">';
-    html += '  <button class="btn btn-primary" onclick="window.hideRouteOverlay()" style="flex:1;padding:16px;border-radius:14px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;font-weight:700;font-size:15px;cursor:pointer;">← Назад</button>';
+    html += '  <button class="btn btn-primary" onclick="window.hideRouteOverlay()" style="flex:1;padding:16px;border-radius:14px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;font-weight:700;font-size:15px;cursor:pointer;">← Назад к выбору маршрутов</button>';
     html += '  <button class="btn btn-primary" onclick="generateRandomRoute(\'' + rStyle + '\', ' + (routeObj.days || 1) + ')" style="flex:2;padding:16px;border-radius:14px;background:#2a6b5a;color:white;border:none;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 15px rgba(42,107,90,0.3);">' + btnText + '</button>';
     html += '</div>';
     html += '</div>';
