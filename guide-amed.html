@@ -3744,23 +3744,21 @@ var MANUAL_ROUTES_ZONE = [
 ];
 
 
-        var currentDays = 'all';
-        function setDays(days, btn) {
-            currentDays = days;
-            var siblings = btn.parentElement.children;
-            for(var i=0; i<siblings.length; i++){
-                siblings[i].style.background = 'white';
-                siblings[i].style.color = '#2a2a28';
-                siblings[i].classList.remove('active');
-            }
-            btn.style.background = '#2a6b5a';
-            btn.style.color = 'white';
-            btn.classList.add('active');
-            showRouteGallery();
-        }
-        
+// 1. Initialize State
 var currentStyle = 'all';
 var currentBudget = 'all';
+var currentDays = 'all';
+
+function hideRouteOverlay() {
+  document.getElementById('routeScreen').style.display = 'none';
+  document.getElementById('guideContent').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function setDaysFilter(days) {
+  currentDays = days;
+  showRouteGallery();
+}
 
 function filterRoutes(style, budget) {
     currentStyle = style;
@@ -3772,46 +3770,108 @@ function filterRoutes(style, budget) {
     ['all','chill','easy','hard'].forEach(s => {
         let b = document.getElementById('btn_style_' + s);
         if(b) {
-            if(s==='all') b.style.background = 'white'; b.style.color = '#2a6b5a'; b.style.border = '1px solid #2a6b5a';
-            if(s==='chill') b.style.background = 'white'; b.style.color = '#e83e8c'; b.style.border = '1px solid #e83e8c';
-            if(s==='easy') b.style.background = 'white'; b.style.color = '#388e3c'; b.style.border = '1px solid #388e3c';
-            if(s==='hard') b.style.background = 'white'; b.style.color = '#e64a19'; b.style.border = '1px solid #e64a19';
-        }
-    });
-    ['all','cheap','medium','luxury'].forEach(b => {
-        let el = document.getElementById('btn_budget_' + b);
-        if(el) {
-            el.style.background = 'white'; el.style.color = '#2a6b5a'; el.style.border = '1px solid #2a6b5a';
+            if(s==='all') { b.style.background = 'white'; b.style.color = '#2a6b5a'; b.style.border = '1px solid #2a6b5a'; }
+            else if(s==='chill') { b.style.background = 'white'; b.style.color = '#e83e8c'; b.style.border = '1px solid rgba(232, 62, 140, 0.3)'; }
+            else if(s==='easy') { b.style.background = 'white'; b.style.color = '#388e3c'; b.style.border = '1px solid rgba(76, 175, 80, 0.3)'; }
+            else if(s==='hard') { b.style.background = 'white'; b.style.color = '#e64a19'; b.style.border = '1px solid rgba(255, 87, 34, 0.3)'; }
         }
     });
     
-    // Light up selected buttons
-    let sBtn = document.getElementById('btn_style_' + style);
-    if(sBtn) {
-        if(style==='all') { sBtn.style.background = '#2a6b5a'; sBtn.style.color = 'white'; sBtn.style.border='none'; }
-        if(style==='chill') { sBtn.style.background = 'rgba(255,182,193,0.4)'; sBtn.style.color = '#e83e8c'; sBtn.style.border='1px solid transparent'; }
-        if(style==='easy') { sBtn.style.background = 'rgba(76,175,80,0.2)'; sBtn.style.color = '#388e3c'; sBtn.style.border='1px solid transparent'; }
-        if(style==='hard') { sBtn.style.background = 'rgba(255,87,34,0.2)'; sBtn.style.color = '#e64a19'; sBtn.style.border='1px solid transparent'; }
+    ['all','cheap','medium','luxury'].forEach(b => {
+        let btn = document.getElementById('btn_budget_' + b);
+        if(btn) { btn.style.background = 'white'; btn.style.color = '#2a2a28'; btn.style.border = '1px solid rgba(42,42,40,0.1)'; }
+    });
+
+    let activeStyleBtn = document.getElementById('btn_style_' + style);
+    if (activeStyleBtn) {
+        if(style==='all') { activeStyleBtn.style.background = '#2a6b5a'; activeStyleBtn.style.color = 'white'; activeStyleBtn.style.border = 'none'; }
+        else if(style==='chill') { activeStyleBtn.style.background = 'rgba(255,182,193,0.3)'; activeStyleBtn.style.color = '#e83e8c'; activeStyleBtn.style.border = 'none'; }
+        else if(style==='easy') { activeStyleBtn.style.background = 'rgba(76,175,80,0.15)'; activeStyleBtn.style.color = '#388e3c'; activeStyleBtn.style.border = 'none'; }
+        else if(style==='hard') { activeStyleBtn.style.background = 'rgba(255,87,34,0.15)'; activeStyleBtn.style.color = '#e64a19'; activeStyleBtn.style.border = 'none'; }
     }
     
-    let bBtn = document.getElementById('btn_budget_' + budget);
-    if(bBtn) {
-        if(budget==='all') { bBtn.style.background = '#2a6b5a'; bBtn.style.color = 'white'; bBtn.style.border='none'; }
-        else { bBtn.style.background = 'rgba(42,107,90,0.2)'; bBtn.style.color = '#2a6b5a'; bBtn.style.border='1px solid transparent'; }
+    let activeBudgetBtn = document.getElementById('btn_budget_' + budget);
+    if(activeBudgetBtn) {
+        if(budget==='all') { activeBudgetBtn.style.background = '#2a2a28'; activeBudgetBtn.style.color = 'white'; }
+        else if(budget==='cheap') { activeBudgetBtn.style.background = 'rgba(76,175,80,0.1)'; activeBudgetBtn.style.color = '#2a6b5a'; }
+        else if(budget==='medium') { activeBudgetBtn.style.background = 'rgba(243,156,18,0.1)'; activeBudgetBtn.style.color = '#d35400'; }
+        else if(budget==='luxury') { activeBudgetBtn.style.background = 'rgba(231,76,60,0.1)'; activeBudgetBtn.style.color = '#c0392b'; }
+        activeBudgetBtn.style.border = 'none';
     }
 
+    showRouteGallery();
+}
+
+function showRouteGallery() {
+  try {
     var routes = MANUAL_ROUTES_ZONE;
-    var html = '';
-    var count = 0;
+    if (!routes || routes.length === 0) {
+        document.getElementById('routesListContainer').innerHTML = '<div style="padding:20px; text-align:center; color:rgba(42,42,40,0.5);">Маршруты для этого района пока в разработке.</div>';
+        return; 
+    }
     
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
+    
+    // Base Info Block
+    html += '<div style="background:rgba(42,107,90,0.03); border-radius:16px; padding:20px; margin-bottom:24px; border:1px solid rgba(42,107,90,0.1);">';
+    html += '  <div style="font-weight:700; color:#2a6b5a; font-size:18px; margin-bottom:12px; display:flex; align-items:center; gap:8px;"><span>📁</span> Как выбрать свой день?</div>';
+    html += '  <div style="font-size:14px; line-height:1.5; color:rgba(42,42,40,0.8); margin-bottom:16px;">Этот гайд — ваш личный консьерж. Мы не просто накидали случайные места, мы физиологически просчитали идеальные тайминги, учли жару, пробки и ваше выгорание. Выбирайте фильтр под своё состояние:</div>';
+    
+    html += '  <div style="margin-bottom:12px;">';
+    html += '    <div style="font-weight:700; font-size:15px; color:#e83e8c; margin-bottom:4px;">🌸 Чилл (Восстановление)</div>';
+    html += '    <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">Идеален для спасения от джетлага и солнца. Дневная сиеста на вилле, расслабляющие спа, долгие обеды и никаких переездов по жаре.</div>';
+    html += '  </div>';
+    
+    html += '  <div style="margin-bottom:12px;">';
+    html += '    <div style="font-weight:700; font-size:15px; color:#388e3c; margin-bottom:4px;">🟢 Изи (Островной баланс)</div>';
+    html += '    <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">Плотный, но комфортный день: творческие мастер-классы, шопинг сувениров, эстетичные закаты и лёгкие вечеринки без гонки на выживание.</div>';
+    html += '  </div>';
+    
+    html += '  <div>';
+    html += '    <div style="font-weight:700; font-size:15px; color:#e64a19; margin-bottom:4px;">🔥 Хард (Выжать всё)</div>';
+    html += '    <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">Для тех, кому не сидится. Вулканы, грязные квадроциклы, дикие пляжи и шумные клубы. Обязательная смена лука перед ужином.</div>';
+    html += '  </div>';
+    html += '</div>';
+
+    // Days Filter (only shows up properly if currentDays logic exists)
+    html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Длительность экспедиции:</div>';
+    html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
+    var dAllBg = (currentDays === 'all') ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
+    var dAllCol = (currentDays === 'all') ? 'white' : '#2a6b5a';
+    var d1Bg = (currentDays === 1) ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
+    var d1Col = (currentDays === 1) ? 'white' : '#2a6b5a';
+    var d2Bg = (currentDays === 2) ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
+    var d2Col = (currentDays === 2) ? 'white' : '#2a6b5a';
+    var d3Bg = (currentDays === 3) ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
+    var d3Col = (currentDays === 3) ? 'white' : '#2a6b5a';
+    html += '  <button onclick="setDaysFilter(\'all\')" style="padding:8px 16px; border-radius:20px; border:none; background:' + dAllBg + '; color:' + dAllCol + '; white-space:nowrap; font-weight:600;">Все варианты</button>';
+    html += '  <button onclick="setDaysFilter(1)" style="padding:8px 16px; border-radius:20px; border:none; background:' + d1Bg + '; color:' + d1Col + '; white-space:nowrap; font-weight:600;">1 день</button>';
+    html += '  <button onclick="setDaysFilter(2)" style="padding:8px 16px; border-radius:20px; border:none; background:' + d2Bg + '; color:' + d2Col + '; white-space:nowrap; font-weight:600;">2 дня</button>';
+    html += '  <button onclick="setDaysFilter(3)" style="padding:8px 16px; border-radius:20px; border:none; background:' + d3Bg + '; color:' + d3Col + '; white-space:nowrap; font-weight:600;">3 дня</button>';
+    html += '</div>';
+
+    // Style Filter
+    html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Стиль поездки:</div>';
+    html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
+    html += '  <button id="btn_style_all" onclick="filterRoutes(\'all\', currentBudget)" style="padding:8px 16px; border-radius:20px; border:1px solid #2a6b5a; background:white; color:#2a6b5a; white-space:nowrap; font-weight:600;">Все темпы</button>';
+    html += '  <button id="btn_style_chill" onclick="filterRoutes(\'chill\', currentBudget)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(232, 62, 140, 0.3); background:white; color:#e83e8c; white-space:nowrap; font-weight:600;">🌸 Чилл</button>';
+    html += '  <button id="btn_style_easy" onclick="filterRoutes(\'easy\', currentBudget)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(76, 175, 80, 0.3); background:white; color:#388e3c; white-space:nowrap; font-weight:600;">🟢 Изи</button>';
+    html += '  <button id="btn_style_hard" onclick="filterRoutes(\'hard\', currentBudget)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(255, 87, 34, 0.3); background:white; color:#e64a19; white-space:nowrap; font-weight:600;">🔥 Хард</button>';
+    html += '</div>';
+
+    let matchedCount = 0;
+    
+    // Render the cards
     for (var i = 0; i < routes.length; i++) {
       var route = routes[i];
-      if (typeof currentStyle !== 'undefined' && currentStyle !== 'all' && route.style !== currentStyle) continue;
-      if (typeof currentDays !== 'undefined' && currentDays !== 'all') {
+      if (currentStyle !== 'all' && route.style !== currentStyle) continue;
+      if (currentDays !== 'all') {
           var rd = route.days || 1;
           if (currentDays !== rd) continue;
       }
       
+      matchedCount++;
       var isChill = (route.style === 'chill');
       var isHard = (route.style === 'hard');
       var isEasy = (route.style === 'easy');
@@ -3847,43 +3907,40 @@ function filterRoutes(style, budget) {
       html += '</div>';
     }
     
-    if (html === '<div style="padding:20px; padding-bottom:100px;"><div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>') {
+    if (matchedCount === 0) {
         html += '<div style="text-align:center; padding:20px; color:rgba(42,42,40,0.5);">Для этой комбинации фильтров маршруты пока собираются. Выберите другой фильтр.</div>';
     }
     
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="window.location.href=\'guides.html?v=\' + Date.now()" style="padding:12px 24px;border-radius:12px">← Назад к результатам</button></div>';
+    html += '</div>';
+    
     document.getElementById('routesListContainer').innerHTML = html;
-  } catch(e) { alert('Ошибка: ' + e.message); }
+  } catch(e) { 
+    console.error(e); 
+    document.getElementById('routesListContainer').innerHTML = '<div style="padding:20px; text-align:center; color:red;">Произошла ошибка загрузки галереи.</div>'; 
+  }
 }
 
 function showSingleRoute(idx) {
   try {
     var routes = MANUAL_ROUTES_ZONE;
-    var route = routes[idx];
+    var routeObj = routes[idx];
+    var routeArray = Array.isArray(routeObj) ? routeObj : routeObj.places;
+    var rTitle = routeObj.title || ('Маршрут ' + (idx + 1));
+    var rPreview = routeObj.preview || '';
+    var rStyle = routeObj.style || 'easy';
+    
+    var isChill = (rStyle === 'chill'); 
+    var isHard = (rStyle === 'hard');
+    var badge = isChill ? '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🌸 Чилл</span>' : (isHard ? '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🔥 Хард</span>' : '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>');
+    
     var html = '<div style="padding:20px; padding-bottom:100px;">';
-    
-    var isHard = route.style === 'hard';
-    var isChill = route.style === 'chill';
-    var isEasy = route.style === 'easy';
-    
-    var badge = '';
-    if (isChill) {
-      badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🌸 Чилл</span>';
-    } else if (isHard) {
-      badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🔥 Хард</span>';
-    } else {
-      badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
-    }
-
-    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px;line-height:1.2;">' + route.title + '</div>';
-    html += '<div style="font-size:14px;color:rgba(42,42,40,0.7);text-align:center;margin-bottom:16px;line-height:1.4">' + route.preview + '</div>';
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px;line-height:1.2;">' + rTitle + '</div>';
+    if(rPreview) html += '<div style="font-size:14px;color:rgba(42,42,40,0.7);text-align:center;margin-bottom:16px;line-height:1.4">' + rPreview + '</div>';
     html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
 
-    
-    
-    
-    
-    for (var i = 0; i < route.places.length; i++) {
-      var p = route.places[i];
+    for (var i = 0; i < routeArray.length; i++) {
+      var p = routeArray[i];
       if (p.time && (p.time.includes('❗️') || p.time.includes('📎'))) {
           html += '<div style="background:rgba(232, 62, 140, 0.05); border-left:4px solid #e83e8c; border-radius:12px; padding:20px; margin-bottom:20px;">';
           html += '  <div style="font-size:14px; font-weight:700; color:#e83e8c; margin-bottom:8px; display:flex; align-items:center; gap:6px;">' + p.time + '</div>';
@@ -3921,14 +3978,14 @@ function showSingleRoute(idx) {
           html += '</div>';
       }
     }
-
+    
     // --- Google Maps Directions button ---
     var mapPlaces = [];
-    for (var j = 0; j < route.places.length; j++) {
-      var tags = route.places[j].tags || [];
-      var isHotel = (route.places[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
-      if (!isHotel && route.places[j].name) {
-        mapPlaces.push(route.places[j].name);
+    for (var j = 0; j < routeArray.length; j++) {
+      var tags = routeArray[j].tags || [];
+      var isHotel = (routeArray[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
+      if (!isHotel && routeArray[j].name) {
+        mapPlaces.push(routeArray[j].name);
       }
     }
     if (mapPlaces.length >= 2) {
@@ -3945,19 +4002,20 @@ function showSingleRoute(idx) {
       var mapsUrl = 'https://www.google.com/maps/dir/?api=1&origin=' + origin + '&destination=' + destination + waypoints + '&travelmode=driving';
       html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
     }
-    // --- End Google Maps Directions button ---
     
-    var btnText = '🔄 Другой ' + (route.style === 'chill' ? 'CHILL' : (route.style === 'hard' ? 'HARD' : 'EASY')) + '-маршрут';
+    var btnText = '🔄 Другой ' + (rStyle === 'chill' ? 'CHILL' : (rStyle === 'hard' ? 'HARD' : 'EASY')) + '-маршрут';
     html += '<div style="display:flex;gap:12px;margin-top:24px;">';
-    html += '  <button class="btn btn-primary" onclick="showRouteGallery()" style="flex:1;padding:14px;border-radius:14px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;font-weight:600;">← Назад к результатам</button>';
-    html += '  <button class="btn btn-primary" onclick="generateRandomRoute(\'' + route.style + '\', ' + (route.days || 1) + ')" style="flex:2;padding:14px;border-radius:14px;background:#2a6b5a;color:white;border:none;font-weight:600;font-size:14px;">' + btnText + '</button>';
+    html += '  <button class="btn btn-primary" onclick="showRouteGallery()" style="flex:1;padding:14px;border-radius:14px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;font-weight:600;">← Назад</button>';
+    html += '  <button class="btn btn-primary" onclick="generateRandomRoute(\'' + rStyle + '\', ' + (routeObj.days || 1) + ')" style="flex:2;padding:14px;border-radius:14px;background:#2a6b5a;color:white;border:none;font-weight:600;font-size:14px;">' + btnText + '</button>';
     html += '</div>';
     html += '</div>';
     
+    document.getElementById('guideContent').style.display = 'none';
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
+    rs.style.display = 'block';
     window.scrollTo(0, 0);
-  } catch(e) { alert('Ошибка: ' + e.message); }
+  } catch(e) { console.error(e); alert('Ошибка: ' + e.message); }
 }
 
 function generateRandomRoute(forcedStyle, forcedDays) {
@@ -3976,6 +4034,14 @@ function generateRandomRoute(forcedStyle, forcedDays) {
     alert('Нет других ' + forcedStyle + ' маршрутов на ' + forcedDays + ' дн.');
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.Telegram && Telegram.WebApp) {
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+  }
+});
+
 </script>
 </body>
 </html>
