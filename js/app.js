@@ -40,22 +40,42 @@ window.showRouteGallery = function() {
     var html = '<div style="padding:20px; padding-bottom:100px;">';
     html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
     
-    // Calculate daily average cost for the district (roughly)
-    let totalCost = 0;
-    let totalItems = 0;
+        // Calculate daily average cost for the district
+    let totalRouteCosts = 0;
+    let totalRouteDays = 0;
     routes.forEach(r => {
+        let routeCost = 0;
         if (r.places && Array.isArray(r.places)) {
             r.places.forEach(p => {
                 if (p.price && p.price.includes('K')) {
                     let nums = p.price.match(/\d+/g);
-                    if (nums) { totalCost += parseInt(nums[0]); totalItems++; }
+                    // Just take the first number (or average of range)
+                    if (nums) {
+                       let avg = parseInt(nums[0]);
+                       if (nums.length > 1) {
+                           avg = (parseInt(nums[0]) + parseInt(nums[1])) / 2;
+                       }
+                       // If it's something like 1.5M, the K match might fail or be weird.
+                       // Let's just handle K
+                       routeCost += avg;
+                    }
+                } else if (p.price && (p.price.includes('M') || p.price.includes('м'))) {
+                    let nums = p.price.match(/\d+\.?\d*/g);
+                    if (nums) routeCost += parseFloat(nums[0]) * 1000;
+                } else if (p.price && p.price.includes('$')) {
+                    let nums = p.price.match(/\d+/g);
+                    if (nums) routeCost += parseInt(nums[0]) * 16;
                 }
             });
         }
+        totalRouteCosts += routeCost;
+        totalRouteDays += (r.days || 1);
     });
-    let avgCost = totalItems > 0 ? Math.round(totalCost / totalItems) : 600;
-    let avgDollars = Math.round(avgCost / 16);
     
+    let avgCostPerDayIDR = totalRouteDays > 0 ? (totalRouteCosts / totalRouteDays) : 600;
+    let avgDollars = Math.round(avgCostPerDayIDR / 16);
+    if (avgDollars < 15) avgDollars = 25; // Sane fallback minimums if parsing fails
+
     // Base Info Block with Budget
     
     // Base Info Block with Budget AND Style Descriptions
