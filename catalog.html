@@ -1405,7 +1405,7 @@ function loadMoreCards() {
     
     html += '<div style="display:flex; justify-content:space-between; align-items:flex-start;">';
     html += '  <div class="place-name" style="margin-bottom:0;">' + escapeHtml(p.name) + '</div>';
-    html += '  <div onclick="toggleFavorite(\'' + escapeHtml(p.name).replace(/'/g, "\\'") + '\', event)" style="font-size:24px; padding:0 0 0 10px; cursor:pointer;">' + heartIcon + '</div>';
+    html += '  <div onclick=\'toggleFavorite(' + JSON.stringify(p.name).replace(/"/g, "&quot;") + ', event)\' style="font-size:24px; padding:0 0 0 10px; cursor:pointer;">' + heartIcon + '</div>';
     html += '</div>';
 
     
