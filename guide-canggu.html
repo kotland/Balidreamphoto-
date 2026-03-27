@@ -3641,6 +3641,8 @@ function filterRoutes(style, budget) {
         html += '<div style="text-align:center; padding:20px; color:rgba(42,42,40,0.5);">Для этой комбинации фильтров маршруты пока собираются. Выберите другой бюджет.</div>';
     }
     document.getElementById('routesListContainer').innerHTML = html;
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
 }
 
 function showRouteGallery() {
