@@ -3741,74 +3741,52 @@ function filterRoutes(style, budget) {
     var count = 0;
     
     for (var i = 0; i < routes.length; i++) {
-      var routeObj = routes[i];
-      var rStyle = routeObj.style || 'easy';
-      
-      // Determine budget based on totalK
-      let totalK = 0;
-      var rPlaces = Array.isArray(routeObj) ? routeObj : routeObj.places;
-      for (let j = 0; j < rPlaces.length; j++) {
-        if (rPlaces[j].price) {
-          let pstr = rPlaces[j].price.toLowerCase().replace(/,/g, '');
-          let nums = pstr.match(/\d+/g);
-          if (nums) {
-             let avg = 0;
-             if (nums.length === 1) avg = parseInt(nums[0]);
-             else avg = (parseInt(nums[0]) + parseInt(nums[1])) / 2;
-             if (pstr.includes('m') || pstr.includes('м')) avg = avg * 1000;
-             else if (!pstr.includes('k') && !pstr.includes('к') && avg < 1000) {
-                 if (pstr.includes('$')) avg = avg * 15;
-             }
-             totalK += avg;
-          }
-        }
+      var route = routes[i];
+      if (typeof currentStyle !== 'undefined' && currentStyle !== 'all' && route.style !== currentStyle) continue;
+      if (typeof currentDays !== 'undefined' && currentDays !== 'all') {
+          var rd = route.days || 1;
+          if (currentDays !== rd) continue;
       }
-      var rBudget = 'medium';
-      if (totalK < 300) rBudget = 'cheap';
-      else if (totalK > 1500) rBudget = 'luxury';
       
-      if (currentStyle !== 'all' && rStyle !== currentStyle) continue;
-      // Skip budget filter for now to guarantee results, or loosely apply
-      if (currentBudget !== 'all' && rBudget !== currentBudget && totalK > 0) {
-          // If strictly filtering by budget, we might hide some. Let's do it:
-          if (currentBudget == 'cheap' && totalK > 500) continue;
-          if (currentBudget == 'luxury' && totalK < 1000) continue;
-          if (currentBudget == 'medium' && (totalK < 300 || totalK > 1500)) continue;
-      }
-      count++;
-      
-      var rTitle = routeObj.title || ('Маршрут ' + (i + 1));
-      var rPreview = routeObj.preview || '';
       var isChill = (route.style === 'chill');
       var isHard = (route.style === 'hard');
+      var isEasy = (route.style === 'easy');
       
-      let budgetStr = '';
-      if (totalK > 0) {
-         if (totalK >= 1000) budgetStr = '~' + (totalK/1000).toFixed(1) + ' млн IDR';
-         else budgetStr = '~' + Math.round(totalK) + 'k IDR';
+      let badge = '';
+      if (isChill) {
+        badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
+      } else if (isHard) {
+        badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
       } else {
-         budgetStr = 'Свободный бюджет';
+        badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
       }
       
-      let budgetBadge = '<span style="margin-left:8px; background:rgba(42, 107, 90, 0.1); color:#2a6b5a; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">💸 ' + budgetStr + '</span>';
-      var badge = '';
-      if (isChill) badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
-      else if (isHard) badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
-      else badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
+      let budgetBadge = '';
+      if (route.budget === 'cheap') budgetBadge = '<span style="margin-left:6px; background:rgba(76,175,80,0.1); color:#2a6b5a; padding:4px 8px; border-radius:6px; font-weight:600; font-size:12px;">💚 Бюджет</span>';
+      else if (route.budget === 'luxury') budgetBadge = '<span style="margin-left:6px; background:rgba(231,76,60,0.1); color:#c0392b; padding:4px 8px; border-radius:6px; font-weight:600; font-size:12px;">❤️ Люкс</span>';
+      else if (route.budget === 'medium') budgetBadge = '<span style="margin-left:6px; background:rgba(243,156,18,0.1); color:#d35400; padding:4px 8px; border-radius:6px; font-weight:600; font-size:12px;">💛 Средне</span>';
+
       badge += budgetBadge;
-      if (!rPreview) rPreview = rPlaces.map(p => p.name).join(' → ').substring(0,77) + '...';
+
+      var rTitle = route.title || ('Маршрут ' + (i + 1));
+      var rPreview = route.preview || '';
+      if (!rPreview && route.places) {
+          rPreview = route.places.map(p => p.name).join(' → ').substring(0, 77) + '...';
+      }
 
       html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
       html += '  <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">';
-      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a; max-width:65%; line-height:1.2;">' + rTitle + '</div>';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a2a28; max-width:65%; line-height:1.2;">' + rTitle + '</div>';
       html += '    <div style="text-align:right;">' + badge + '</div>';
       html += '  </div>';
       html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + rPreview + '</div>';
       html += '</div>';
     }
-    if (count === 0) {
-        html += '<div style="text-align:center; padding:20px; color:rgba(42,42,40,0.5);">Для этой комбинации фильтров маршруты пока собираются. Выберите другой бюджет.</div>';
+    
+    if (html === '<div style="padding:20px; padding-bottom:100px;"><div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>') {
+        html += '<div style="text-align:center; padding:20px; color:rgba(42,42,40,0.5);">Для этой комбинации фильтров маршруты пока собираются. Выберите другой фильтр.</div>';
     }
+    
     document.getElementById('routesListContainer').innerHTML = html;
 }
 
