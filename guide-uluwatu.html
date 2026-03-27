@@ -2977,63 +2977,140 @@ var MANUAL_ROUTES_ZONE = [
     }
 ];
 
+
+// 1. Initialize State
+var currentStyle = 'all';
+var currentBudget = 'all';
+var currentDays = 'all';
+
+function hideRouteOverlay() {
+  document.getElementById('routeScreen').style.display = 'none';
+  document.getElementById('guideContent').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function setDaysFilter(days) {
+  currentDays = days;
+  showRouteGallery();
+}
+
+function filterRoutes(style, budget) {
+    currentStyle = style;
+    currentBudget = budget;
+    
+    var container = document.getElementById('routesListContainer');
+    
+    // Reset all buttons visual state
+    ['all','chill','easy','hard'].forEach(s => {
+        let b = document.getElementById('btn_style_' + s);
+        if(b) {
+            if(s==='all') { b.style.background = 'white'; b.style.color = '#2a6b5a'; b.style.border = '1px solid #2a6b5a'; }
+            else if(s==='chill') { b.style.background = 'white'; b.style.color = '#e83e8c'; b.style.border = '1px solid rgba(232, 62, 140, 0.3)'; }
+            else if(s==='easy') { b.style.background = 'white'; b.style.color = '#388e3c'; b.style.border = '1px solid rgba(76, 175, 80, 0.3)'; }
+            else if(s==='hard') { b.style.background = 'white'; b.style.color = '#e64a19'; b.style.border = '1px solid rgba(255, 87, 34, 0.3)'; }
+        }
+    });
+    
+    ['all','cheap','medium','luxury'].forEach(b => {
+        let btn = document.getElementById('btn_budget_' + b);
+        if(btn) { btn.style.background = 'white'; btn.style.color = '#2a2a28'; btn.style.border = '1px solid rgba(42,42,40,0.1)'; }
+    });
+
+    let activeStyleBtn = document.getElementById('btn_style_' + style);
+    if (activeStyleBtn) {
+        if(style==='all') { activeStyleBtn.style.background = '#2a6b5a'; activeStyleBtn.style.color = 'white'; activeStyleBtn.style.border = 'none'; }
+        else if(style==='chill') { activeStyleBtn.style.background = 'rgba(255,182,193,0.3)'; activeStyleBtn.style.color = '#e83e8c'; activeStyleBtn.style.border = 'none'; }
+        else if(style==='easy') { activeStyleBtn.style.background = 'rgba(76,175,80,0.15)'; activeStyleBtn.style.color = '#388e3c'; activeStyleBtn.style.border = 'none'; }
+        else if(style==='hard') { activeStyleBtn.style.background = 'rgba(255,87,34,0.15)'; activeStyleBtn.style.color = '#e64a19'; activeStyleBtn.style.border = 'none'; }
+    }
+    
+    let activeBudgetBtn = document.getElementById('btn_budget_' + budget);
+    if(activeBudgetBtn) {
+        if(budget==='all') { activeBudgetBtn.style.background = '#2a2a28'; activeBudgetBtn.style.color = 'white'; }
+        else if(budget==='cheap') { activeBudgetBtn.style.background = 'rgba(76,175,80,0.1)'; activeBudgetBtn.style.color = '#2a6b5a'; }
+        else if(budget==='medium') { activeBudgetBtn.style.background = 'rgba(243,156,18,0.1)'; activeBudgetBtn.style.color = '#d35400'; }
+        else if(budget==='luxury') { activeBudgetBtn.style.background = 'rgba(231,76,60,0.1)'; activeBudgetBtn.style.color = '#c0392b'; }
+        activeBudgetBtn.style.border = 'none';
+    }
+
+    showRouteGallery();
+}
+
 function showRouteGallery() {
   try {
     var routes = MANUAL_ROUTES_ZONE;
-    if (!routes || routes.length === 0) { alert('Маршруты для этого района пока в разработке'); return; }
+    if (!routes || routes.length === 0) {
+        document.getElementById('routesListContainer').innerHTML = '<div style="padding:20px; text-align:center; color:rgba(42,42,40,0.5);">Маршруты для этого района пока в разработке.</div>';
+        return; 
+    }
     
     var html = '<div style="padding:20px; padding-bottom:100px;">';
     html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
     
+    // Base Info Block
+    html += '<div style="background:rgba(42,107,90,0.03); border-radius:16px; padding:20px; margin-bottom:24px; border:1px solid rgba(42,107,90,0.1);">';
+    html += '  <div style="font-weight:700; color:#2a6b5a; font-size:18px; margin-bottom:12px; display:flex; align-items:center; gap:8px;"><span>📁</span> Как выбрать свой день?</div>';
+    html += '  <div style="font-size:14px; line-height:1.5; color:rgba(42,42,40,0.8); margin-bottom:16px;">Этот гайд — ваш личный консьерж. Мы не просто накидали случайные места, мы физиологически просчитали идеальные тайминги, учли жару, пробки и ваше выгорание. Выбирайте фильтр под своё состояние:</div>';
+    
+    html += '  <div style="margin-bottom:12px;">';
+    html += '    <div style="font-weight:700; font-size:15px; color:#e83e8c; margin-bottom:4px;">🌸 Чилл (Восстановление)</div>';
+    html += '    <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">Идеален для спасения от джетлага и солнца. Дневная сиеста на вилле, расслабляющие спа, долгие обеды и никаких переездов по жаре.</div>';
+    html += '  </div>';
+    
+    html += '  <div style="margin-bottom:12px;">';
+    html += '    <div style="font-weight:700; font-size:15px; color:#388e3c; margin-bottom:4px;">🟢 Изи (Островной баланс)</div>';
+    html += '    <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">Плотный, но комфортный день: творческие мастер-классы, шопинг сувениров, эстетичные закаты и лёгкие вечеринки без гонки на выживание.</div>';
+    html += '  </div>';
+    
+    html += '  <div>';
+    html += '    <div style="font-weight:700; font-size:15px; color:#e64a19; margin-bottom:4px;">🔥 Хард (Выжать всё)</div>';
+    html += '    <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">Для тех, кому не сидится. Вулканы, грязные квадроциклы, дикие пляжи и шумные клубы. Обязательная смена лука перед ужином.</div>';
+    html += '  </div>';
+    html += '</div>';
+
+    // Days Filter (only shows up properly if currentDays logic exists)
+    html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Длительность экспедиции:</div>';
+    html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
+    var dAllBg = (currentDays === 'all') ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
+    var dAllCol = (currentDays === 'all') ? 'white' : '#2a6b5a';
+    var d1Bg = (currentDays === 1) ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
+    var d1Col = (currentDays === 1) ? 'white' : '#2a6b5a';
+    var d2Bg = (currentDays === 2) ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
+    var d2Col = (currentDays === 2) ? 'white' : '#2a6b5a';
+    var d3Bg = (currentDays === 3) ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
+    var d3Col = (currentDays === 3) ? 'white' : '#2a6b5a';
+    html += '  <button onclick="setDaysFilter(\'all\')" style="padding:8px 16px; border-radius:20px; border:none; background:' + dAllBg + '; color:' + dAllCol + '; white-space:nowrap; font-weight:600;">Все варианты</button>';
+    html += '  <button onclick="setDaysFilter(1)" style="padding:8px 16px; border-radius:20px; border:none; background:' + d1Bg + '; color:' + d1Col + '; white-space:nowrap; font-weight:600;">1 день</button>';
+    html += '  <button onclick="setDaysFilter(2)" style="padding:8px 16px; border-radius:20px; border:none; background:' + d2Bg + '; color:' + d2Col + '; white-space:nowrap; font-weight:600;">2 дня</button>';
+    html += '  <button onclick="setDaysFilter(3)" style="padding:8px 16px; border-radius:20px; border:none; background:' + d3Bg + '; color:' + d3Col + '; white-space:nowrap; font-weight:600;">3 дня</button>';
+    html += '</div>';
+
+    // Style Filter
+    html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Стиль поездки:</div>';
+    html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
+    html += '  <button id="btn_style_all" onclick="filterRoutes(\'all\', currentBudget)" style="padding:8px 16px; border-radius:20px; border:1px solid #2a6b5a; background:white; color:#2a6b5a; white-space:nowrap; font-weight:600;">Все темпы</button>';
+    html += '  <button id="btn_style_chill" onclick="filterRoutes(\'chill\', currentBudget)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(232, 62, 140, 0.3); background:white; color:#e83e8c; white-space:nowrap; font-weight:600;">🌸 Чилл</button>';
+    html += '  <button id="btn_style_easy" onclick="filterRoutes(\'easy\', currentBudget)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(76, 175, 80, 0.3); background:white; color:#388e3c; white-space:nowrap; font-weight:600;">🟢 Изи</button>';
+    html += '  <button id="btn_style_hard" onclick="filterRoutes(\'hard\', currentBudget)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(255, 87, 34, 0.3); background:white; color:#e64a19; white-space:nowrap; font-weight:600;">🔥 Хард</button>';
+    html += '</div>';
+
+    let matchedCount = 0;
+    
+    // Render the cards
     for (var i = 0; i < routes.length; i++) {
       var route = routes[i];
-      var isHard = false;
-      var isChill = false;
-      var routeText = JSON.stringify(route).toLowerCase();
-      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
-      var hourMatch = firstTimeStr.match(/\d{2}/);
-      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
-      
-      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
-        isHard = true;
-      }
-      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
-        isChill = true;
-        isHard = false;
+      if (currentStyle !== 'all' && route.style !== currentStyle) continue;
+      if (currentDays !== 'all') {
+          var rd = route.days || 1;
+          if (currentDays !== rd) continue;
       }
       
+      matchedCount++;
+      var isChill = (route.style === 'chill');
+      var isHard = (route.style === 'hard');
+      var isEasy = (route.style === 'easy');
       
-      let totalK = 0;
-      for (let j = 0; j < route.length; j++) {
-        if (route[j].price) {
-          let pstr = route[j].price.toLowerCase().replace(/,/g, '');
-          let nums = pstr.match(/\d+/g);
-          if (nums) {
-             let avg = 0;
-             if (nums.length === 1) avg = parseInt(nums[0]);
-             else avg = (parseInt(nums[0]) + parseInt(nums[1])) / 2;
-             
-             if (pstr.includes('m') || pstr.includes('м')) {
-                 avg = avg * 1000;
-             } else if (!pstr.includes('k') && !pstr.includes('к') && avg < 1000) {
-                 // if it's just '50' without K, assume 50K if it's IDR, but if it's $, then $50 = 750K
-                 if (pstr.includes('$')) avg = avg * 15;
-                 else avg = avg; 
-             }
-             totalK += avg;
-          }
-        }
-      }
-      let budgetStr = '';
-      if (totalK > 0) {
-         if (totalK >= 1000) budgetStr = '~' + (totalK/1000).toFixed(1) + ' млн IDR';
-         else budgetStr = '~' + Math.round(totalK) + 'k IDR';
-      } else {
-         budgetStr = 'Свободный бюджет';
-      }
-      
-      let budgetBadge = '<span style="margin-left:8px; background:rgba(42, 107, 90, 0.1); color:#2a6b5a; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">💸 ' + budgetStr + '</span>';
-var badge = '';
+      let badge = '';
       if (isChill) {
         badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
       } else if (isHard) {
@@ -3042,37 +3119,137 @@ var badge = '';
         badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
       }
       
+      let budgetBadge = '';
+      if (route.budget === 'cheap') budgetBadge = '<span style="margin-left:6px; background:rgba(76,175,80,0.1); color:#2a6b5a; padding:4px 8px; border-radius:6px; font-weight:600; font-size:12px;">💚 Бюджет</span>';
+      else if (route.budget === 'luxury') budgetBadge = '<span style="margin-left:6px; background:rgba(231,76,60,0.1); color:#c0392b; padding:4px 8px; border-radius:6px; font-weight:600; font-size:12px;">❤️ Люкс</span>';
+      else if (route.budget === 'medium') budgetBadge = '<span style="margin-left:6px; background:rgba(243,156,18,0.1); color:#d35400; padding:4px 8px; border-radius:6px; font-weight:600; font-size:12px;">💛 Средне</span>';
+
       badge += budgetBadge;
-      var places = [];
-      for(var j = 0; j < route.length; j++) {
-        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
-        if(!isHotel && route[j].name) {
-          places.push(route[j].name);
-        }
+
+      var rTitle = route.title || ('Маршрут ' + (i + 1));
+      var rPreview = route.preview || '';
+      if (!rPreview && route.places) {
+          rPreview = route.places.map(p => p.name).join(' → ').substring(0, 77) + '...';
       }
-      var previewText = places.join(' → ');
-      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
 
       html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
-      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
-      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
-      html += '    <div>' + badge + '</div>';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a2a28; max-width:65%; line-height:1.2;">' + rTitle + '</div>';
+      html += '    <div style="text-align:right;">' + badge + '</div>';
       html += '  </div>';
-      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + rPreview + '</div>';
       html += '</div>';
     }
     
+    if (matchedCount === 0) {
+        html += '<div style="text-align:center; padding:20px; color:rgba(42,42,40,0.5);">Для этой комбинации фильтров маршруты пока собираются. Выберите другой фильтр.</div>';
+    }
     
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="window.location.href=\'guides.html?v=\' + Date.now()" style="padding:12px 24px;border-radius:12px">← Назад к результатам</button></div>';
+    html += '</div>';
+    
+    document.getElementById('routesListContainer').innerHTML = html;
+  } catch(e) { 
+    console.error(e); 
+    document.getElementById('routesListContainer').innerHTML = '<div style="padding:20px; text-align:center; color:red;">Произошла ошибка загрузки галереи.</div>'; 
+  }
+}
 
+function showSingleRoute(idx) {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
+    var routeObj = routes[idx];
+    var routeArray = Array.isArray(routeObj) ? routeObj : routeObj.places;
+    var rTitle = routeObj.title || ('Маршрут ' + (idx + 1));
+    var rPreview = routeObj.preview || '';
+    var rStyle = routeObj.style || 'easy';
+    
+    var isChill = (rStyle === 'chill'); 
+    var isHard = (rStyle === 'hard');
+    var badge = isChill ? '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🌸 Чилл</span>' : (isHard ? '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🔥 Хард</span>' : '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>');
+    
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px;line-height:1.2;">' + rTitle + '</div>';
+    if(rPreview) html += '<div style="font-size:14px;color:rgba(42,42,40,0.7);text-align:center;margin-bottom:16px;line-height:1.4">' + rPreview + '</div>';
+    html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
+
+    for (var i = 0; i < routeArray.length; i++) {
+      var p = routeArray[i];
+      if (p.time && (p.time.includes('❗️') || p.time.includes('📎'))) {
+          html += '<div style="background:rgba(232, 62, 140, 0.05); border-left:4px solid #e83e8c; border-radius:12px; padding:20px; margin-bottom:20px;">';
+          html += '  <div style="font-size:14px; font-weight:700; color:#e83e8c; margin-bottom:8px; display:flex; align-items:center; gap:6px;">' + p.time + '</div>';
+          html += '  <div style="font-size:16px; font-weight:700; color:#2a2a28; margin-bottom:8px;">' + p.name + '</div>';
+          let fd = p.desc.replace(/\b(\d+\.)/g, '<br><br>$1').replace(/^<br><br>/, '');
+          html += '  <div style="font-size:13px; color:rgba(42,42,40,0.8); line-height:1.6;">' + fd + '</div>';
+          html += '</div>';
+      } else if (p.time && p.time.includes('🏨')) {
+          html += '<div style="background:rgba(42, 107, 90, 0.03); border-left:4px solid #2a6b5a; border-radius:12px; padding:16px; margin-bottom:20px;">';
+          html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+          html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">' + p.name + '</div>';
+          html += '    <div style="font-size:12px; font-weight:700; color:#2a6b5a; opacity:0.8;">' + p.time.replace('🏨 ', '') + '</div>';
+          html += '  </div>';
+          html += '  <div style="font-size:13px; font-weight:600; color:rgba(42,107,90,0.85); line-height:1.5;">' + p.desc + '</div>';
+          html += '</div>';
+      } else {
+          html += '<div style="background:#ffffff;border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);position:relative;">';
+          html += '  <div style="display:inline-block;background:#2a6b5a;color:white;padding:4px 10px;border-radius:8px;font-size:12px;font-weight:700;margin-bottom:12px;">' + p.time + '</div>';
+          html += '  <div style="font-size:18px;font-weight:700;color:#2a2a28;margin-bottom:8px;">' + p.name + '</div>';
+          
+          let fd = p.desc;
+          if (fd.includes('✨ Атмосфера:')) {
+              fd = fd.replace('✨ Атмосфера:', '<b>✨ Атмосфера:</b><br>');
+              fd = fd.replace('🏄‍♀️ Чем заняться:', '<br><br><b>🏄‍♀️ Чем заняться:</b><br>');
+              fd = fd.replace('🍽 Что заказать:', '<br><br><b>🍽 Что заказать:</b><br>');
+          }
+          
+          html += '  <div style="font-size:14px;color:rgba(42,42,40,0.7);line-height:1.5;margin-bottom:12px;">' + fd + '</div>';
+          if (p.price && p.price !== 'Бесплатно' && p.price !== 'По меню' && p.price !== '') {
+            html += '  <div style="font-size:13px;font-weight:600;color:#2a6b5a;margin-bottom:12px;">' + p.price + '</div>';
+          }
+          if (p.maps && p.maps !== '#' && p.maps !== '') {
+            html += '  <div style="margin-top:8px;"><a href="' + p.maps + '" target="_blank" style="color:#e83e8c;text-decoration:none;font-weight:500;font-size:13px;">📍 Открыть в Google Maps</a></div>';
+          }
+          html += '</div>';
+      }
+    }
+    
+    // --- Google Maps Directions button ---
+    var mapPlaces = [];
+    for (var j = 0; j < routeArray.length; j++) {
+      var tags = routeArray[j].tags || [];
+      var isHotel = (routeArray[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
+      if (!isHotel && routeArray[j].name) {
+        mapPlaces.push(routeArray[j].name);
+      }
+    }
+    if (mapPlaces.length >= 2) {
+      var origin = encodeURIComponent(mapPlaces[0] + ' Bali');
+      var destination = encodeURIComponent(mapPlaces[mapPlaces.length - 1] + ' Bali');
+      var waypoints = '';
+      if (mapPlaces.length > 2) {
+        var wp = [];
+        for (var k = 1; k < mapPlaces.length - 1; k++) {
+          wp.push(encodeURIComponent(mapPlaces[k] + ' Bali'));
+        }
+        waypoints = '&waypoints=' + wp.join('%7C');
+      }
+      var mapsUrl = 'https://www.google.com/maps/dir/?api=1&origin=' + origin + '&destination=' + destination + waypoints + '&travelmode=driving';
+      html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
+    }
+    
+    var btnText = '🔄 Другой ' + (rStyle === 'chill' ? 'CHILL' : (rStyle === 'hard' ? 'HARD' : 'EASY')) + '-маршрут';
+    html += '<div style="display:flex;gap:12px;margin-top:24px;">';
+    html += '  <button class="btn btn-primary" onclick="showRouteGallery()" style="flex:1;padding:14px;border-radius:14px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;font-weight:600;">← Назад</button>';
+    html += '  <button class="btn btn-primary" onclick="generateRandomRoute(\'' + rStyle + '\', ' + (routeObj.days || 1) + ')" style="flex:2;padding:14px;border-radius:14px;background:#2a6b5a;color:white;border:none;font-weight:600;font-size:14px;">' + btnText + '</button>';
+    html += '</div>';
+    html += '</div>';
     
     document.getElementById('guideContent').style.display = 'none';
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
     rs.style.display = 'block';
-  } catch(e) { alert('Ошибка: ' + e.message); }
-}
-
-} catch(e) { alert('Ошибка: ' + e.message); }
+    window.scrollTo(0, 0);
+  } catch(e) { console.error(e); alert('Ошибка: ' + e.message); }
 }
 
 function generateRandomRoute(forcedStyle, forcedDays) {
@@ -3091,6 +3268,14 @@ function generateRandomRoute(forcedStyle, forcedDays) {
     alert('Нет других ' + forcedStyle + ' маршрутов на ' + forcedDays + ' дн.');
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.Telegram && Telegram.WebApp) {
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+  }
+});
+
 </script>
 </body>
 </html>
