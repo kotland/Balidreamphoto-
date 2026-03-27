@@ -94,11 +94,33 @@ window.showRouteGallery = function() {
     let avgDollars = Math.round(avgCost / 16);
     
     // Base Info Block with Budget
+    
+    // Base Info Block with Budget AND Style Descriptions
     html += '<div style="background:rgba(42,107,90,0.03); border-radius:16px; padding:20px; margin-bottom:24px; border:1px solid rgba(42,107,90,0.1);">';
-    html += '  <div style="font-weight:700; color:#2a6b5a; font-size:18px; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between;"><span>📁 Как выбрать свой день?</span>';
+    html += '  <div style="font-weight:700; color:#2a6b5a; font-size:18px; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between;"><span>📁 Как выбрать маршрут?</span>';
     html += '  <div style="text-align:right;"><div style="font-size:18px;font-weight:800;color:#2a2a28">$' + avgDollars + '<span style="font-size:12px;font-weight:400;color:rgba(42,42,40,0.6)">/день</span></div><div style="font-size:11px;color:rgba(42,42,40,0.5)">Средний чек района</div></div></div>';
-    html += '  <div style="font-size:14px; line-height:1.5; color:rgba(42,42,40,0.8); margin-bottom:16px;">Каждая карточка уже посчитала примерный чек за весь день (от кофе до бичклаба). Выбирайте фильтры <span style="font-weight:600">💚 (бэкпекер / стритфуд)</span>, <span style="font-weight:600">💛 (средние кафе)</span> или <span style="font-weight:600">❤️ (тяжёлый люкс и файн-дайнинг)</span>.</div>';
+    
+    html += '  <div style="font-size:14px; line-height:1.5; color:rgba(42,42,40,0.8); margin-bottom:16px;">Каждая карточка уже посчитала примерный чек за весь день. Выбирайте фильтры <span style="font-weight:600">💚 (до $10)</span>, <span style="font-weight:600">💛 ($10-30)</span> или <span style="font-weight:600">❤️ (от $30)</span>.</div>';
+
+    html += '  <div style="font-size:14px; font-weight:700; line-height:1.5; color:rgba(42,42,40,0.9); margin-bottom:12px;">Стиль поездки и темп (физиологически просчитанные тайминги):</div>';
+
+    html += '  <div style="margin-bottom:12px;">';
+    html += '    <div style="font-weight:700; font-size:15px; color:#e83e8c; margin-bottom:4px;">🌸 Чилл (Восстановление)</div>';
+    html += '    <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">Идеален для спасения от джетлага и солнца. Обязательная дневная сиеста на вилле, расслабляющие спа, долгие обеды и никаких переездов по жаре.</div>';
+    html += '  </div>';
+    
+    html += '  <div style="margin-bottom:12px;">';
+    html += '    <div style="font-weight:700; font-size:15px; color:#388e3c; margin-bottom:4px;">🟢 Изи (Островной баланс)</div>';
+    html += '    <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">Живём как экспаты. Плотный, но комфортный день: творческие мастер-классы, шопинг сувениров, эстетичные закаты и лёгкие вечеринки без гонки на выживание.</div>';
+    html += '  </div>';
+    
+    html += '  <div>';
+    html += '    <div style="font-weight:700; font-size:15px; color:#e64a19; margin-bottom:4px;">🔥 Хард (Выжать всё)</div>';
+    html += '    <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">Для тех, кому не сидится. Адреналин, грязные квадроциклы, дикие пляжи и шумные клубы. Смена лука перед ужином обязательна.</div>';
+    html += '  </div>';
+
     html += '</div>';
+
 
     // Days Filter
     html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Длительность экспедиции:</div>';
