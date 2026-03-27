@@ -20,42 +20,6 @@ window.setDaysFilter = function(days) {
 window.filterRoutes = function(style, budget) {
     if (style !== undefined) currentStyle = style;
     if (budget !== undefined) currentBudget = budget;
-    
-    // Reset style buttons
-    ['all','chill','easy','hard'].forEach(s => {
-        let b = document.getElementById('btn_style_' + s);
-        if(b) {
-            b.style.background = 'white';
-            if(s==='all') { b.style.color = '#2a6b5a'; b.style.border = '1px solid #2a6b5a'; }
-            else if(s==='chill') { b.style.color = '#e83e8c'; b.style.border = '1px solid rgba(232, 62, 140, 0.3)'; }
-            else if(s==='easy') { b.style.color = '#388e3c'; b.style.border = '1px solid rgba(76, 175, 80, 0.3)'; }
-            else if(s==='hard') { b.style.color = '#e64a19'; b.style.border = '1px solid rgba(255, 87, 34, 0.3)'; }
-        }
-    });
-
-    let activeStyleBtn = document.getElementById('btn_style_' + currentStyle);
-    if (activeStyleBtn) {
-        if(currentStyle==='all') { activeStyleBtn.style.background = '#2a6b5a'; activeStyleBtn.style.color = 'white'; activeStyleBtn.style.border = 'none'; }
-        else if(currentStyle==='chill') { activeStyleBtn.style.background = 'rgba(255,182,193,0.3)'; activeStyleBtn.style.color = '#e83e8c'; activeStyleBtn.style.border = 'none'; }
-        else if(currentStyle==='easy') { activeStyleBtn.style.background = 'rgba(76,175,80,0.15)'; activeStyleBtn.style.color = '#388e3c'; activeStyleBtn.style.border = 'none'; }
-        else if(currentStyle==='hard') { activeStyleBtn.style.background = 'rgba(255,87,34,0.15)'; activeStyleBtn.style.color = '#e64a19'; activeStyleBtn.style.border = 'none'; }
-    }
-    
-    // Reset budget buttons
-    ['all','cheap','medium','luxury'].forEach(b => {
-        let btn = document.getElementById('btn_budget_' + b);
-        if(btn) { btn.style.background = 'white'; btn.style.color = '#2a2a28'; btn.style.border = '1px solid rgba(42,42,40,0.1)'; }
-    });
-    
-    let activeBudgetBtn = document.getElementById('btn_budget_' + currentBudget);
-    if(activeBudgetBtn) {
-        if(currentBudget==='all') { activeBudgetBtn.style.background = '#2a2a28'; activeBudgetBtn.style.color = 'white'; }
-        else if(currentBudget==='cheap') { activeBudgetBtn.style.background = 'rgba(76,175,80,0.1)'; activeBudgetBtn.style.color = '#2a6b5a'; }
-        else if(currentBudget==='medium') { activeBudgetBtn.style.background = 'rgba(243,156,18,0.1)'; activeBudgetBtn.style.color = '#d35400'; }
-        else if(currentBudget==='luxury') { activeBudgetBtn.style.background = 'rgba(231,76,60,0.1)'; activeBudgetBtn.style.color = '#c0392b'; }
-        activeBudgetBtn.style.border = 'none';
-    }
-
     window.showRouteGallery();
 };
 
@@ -93,7 +57,13 @@ window.showRouteGallery = function() {
     html += '  <div style="font-weight:700; color:#2a6b5a; font-size:18px; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between;"><span>📁 Как выбрать маршрут?</span>';
     html += '  <div style="text-align:right;"><div style="font-size:18px;font-weight:800;color:#2a2a28">$' + avgDollars + '<span style="font-size:12px;font-weight:400;color:rgba(42,42,40,0.6)">/день</span></div><div style="font-size:11px;color:rgba(42,42,40,0.5)">Средний чек района</div></div></div>';
     
-    html += '  <div style="font-size:14px; line-height:1.5; color:rgba(42,42,40,0.8); margin-bottom:16px;">Каждая карточка уже посчитала примерный чек за весь день. Выбирайте фильтры <span style="font-weight:600">💚 Бэкпекер (до 150K)</span>, <span style="font-weight:600">💛 Путешественник (150-500K)</span> или <span style="font-weight:600">❤️ Люкс (от 500K)</span>.</div>';
+    
+    html += '  <div style="font-size:14px; line-height:1.5; color:rgba(42,42,40,0.8); margin-bottom:16px;">Каждая карточка уже посчитала примерный чек за весь день. Выбирайте фильтры:<br>';
+    html += '    <span style="font-weight:600; display:inline-block; margin-top:4px;">💚 Бэкпекер</span><br>';
+    html += '    <span style="font-weight:600; display:inline-block; margin-top:4px;">💛 Путешественник</span><br>';
+    html += '    <span style="font-weight:600; display:inline-block; margin-top:4px;">❤️ Люкс</span>';
+    html += '  </div>';
+
 
     html += '  <div style="font-size:14px; font-weight:700; line-height:1.5; color:rgba(42,42,40,0.9); margin-bottom:12px;">Стиль поездки и темп (физиологически просчитанные тайминги):</div>';
 
@@ -116,7 +86,7 @@ window.showRouteGallery = function() {
 
 
     // Days Filter
-    html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Длительность экспедиции:</div>';
+    html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Длительность путешествия:</div>';
     html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
     var dAllBg = (currentDays === 'all') ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
     var dAllCol = (currentDays === 'all') ? 'white' : '#2a6b5a';
@@ -135,19 +105,19 @@ window.showRouteGallery = function() {
     // Budget Filter
     html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Бюджет маршрутов:</div>';
     html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
-    html += '  <button id="btn_budget_all" onclick="filterRoutes(undefined, \'all\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); background:white; color:#2a2a28; white-space:nowrap; font-weight:600;">Все бюджеты</button>';
-    html += '  <button id="btn_budget_cheap" onclick="filterRoutes(undefined, \'cheap\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); background:white; color:#2a6b5a; white-space:nowrap; font-weight:600;">💚 Бэкпекер (до 150K)</button>';
-    html += '  <button id="btn_budget_medium" onclick="filterRoutes(undefined, \'medium\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); background:white; color:#d35400; white-space:nowrap; font-weight:600;">💛 Путешественник (150-500K)</button>';
-    html += '  <button id="btn_budget_luxury" onclick="filterRoutes(undefined, \'luxury\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); background:white; color:#c0392b; white-space:nowrap; font-weight:600;">❤️ Люкс (от 500K)</button>';
+    html += '  <button id="btn_budget_all" onclick="filterRoutes(undefined, \'all\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'all' ? 'background:#2a2a28; color:white;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">Все бюджеты</button>';
+    html += '  <button id="btn_budget_cheap" onclick="filterRoutes(undefined, \'cheap\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'cheap' ? 'background:rgba(76,175,80,0.1); color:#2a6b5a;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">💚 Бэкпекер</button>';
+    html += '  <button id="btn_budget_medium" onclick="filterRoutes(undefined, \'medium\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'medium' ? 'background:rgba(243,156,18,0.1); color:#d35400;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">💛 Путешественник</button>';
+    html += '  <button id="btn_budget_luxury" onclick="filterRoutes(undefined, \'luxury\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'luxury' ? 'background:rgba(231,76,60,0.1); color:#c0392b;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">❤️ Люкс</button>';
     html += '</div>';
 
     // Style Filter
     html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Стиль поездки:</div>';
     html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
-    html += '  <button id="btn_style_all" onclick="filterRoutes(\'all\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid #2a6b5a; background:white; color:#2a6b5a; white-space:nowrap; font-weight:600;">Все темпы</button>';
-    html += '  <button id="btn_style_chill" onclick="filterRoutes(\'chill\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(232, 62, 140, 0.3); background:white; color:#e83e8c; white-space:nowrap; font-weight:600;">🌸 Чилл</button>';
-    html += '  <button id="btn_style_easy" onclick="filterRoutes(\'easy\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(76, 175, 80, 0.3); background:white; color:#388e3c; white-space:nowrap; font-weight:600;">🟢 Изи</button>';
-    html += '  <button id="btn_style_hard" onclick="filterRoutes(\'hard\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(255, 87, 34, 0.3); background:white; color:#e64a19; white-space:nowrap; font-weight:600;">🔥 Хард</button>';
+    html += '  <button id="btn_style_all" onclick="filterRoutes(\'all\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid #2a6b5a; ' + (currentBudget === 'cheap' ? 'background:rgba(76,175,80,0.1); color:#2a6b5a;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">Все темпы</button>';
+    html += '  <button id="btn_style_chill" onclick="filterRoutes(\'chill\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(232, 62, 140, 0.3); ' + (currentStyle === 'chill' ? 'background:rgba(255,182,193,0.3); color:#e83e8c;' : 'background:white; color:#e83e8c;') + ' white-space:nowrap; font-weight:600;">🌸 Чилл</button>';
+    html += '  <button id="btn_style_easy" onclick="filterRoutes(\'easy\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(76, 175, 80, 0.3); ' + (currentStyle === 'easy' ? 'background:rgba(76,175,80,0.15); color:#388e3c;' : 'background:white; color:#388e3c;') + ' white-space:nowrap; font-weight:600;">🟢 Изи</button>';
+    html += '  <button id="btn_style_hard" onclick="filterRoutes(\'hard\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(255, 87, 34, 0.3); ' + (currentStyle === 'hard' ? 'background:rgba(255,87,34,0.15); color:#e64a19;' : 'background:white; color:#e64a19;') + ' white-space:nowrap; font-weight:600;">🔥 Хард</button>';
     html += '</div>';
 
     let matchedCount = 0;
