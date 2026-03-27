@@ -272,24 +272,17 @@ window.showSingleRoute = function(idx) {
     }
     
     // --- Google Maps Directions button ---
-    var mapPlaces = [];
+        var mapPlaces = [];
     for (var j = 0; j < routeArray.length; j++) {
       let p = routeArray[j];
-      let tags = p.tags || [];
-      let t = p.time || '';
       let n = p.name || '';
+      let maps = p.maps || '';
       
-      // Filter out Concierge blocks, Hotels, Siestas, Home
-      let isServiceSlot = (
-          t.includes('🏨') || t.includes('📎') || t.includes('❗️') ||
-          n.includes('Сиеста') || n.includes('Дорога') || n.includes('Важное') || 
-          n.includes('Совет') || n.includes('Подготовка') || n.includes('Старт') || 
-          n.includes('Смена лука') || n.includes('Ночевка') || n.includes('Ночёвка') ||
-          tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0
-      );
+      let hasMapLink = (maps && maps.length > 5 && maps !== '#');
+      // For safety, exclude standard rest blocks if they somehow got a generic map link
+      let isRestBlock = (n.includes('Сиеста') || n.includes('Ночев') || n.includes('Дорога'));
       
-      if (!isServiceSlot && n) {
-        // Exclude specific words in parentheses like "(соседний магазин)" so Google Maps can find it better
+      if (hasMapLink && !isRestBlock) {
         let cleanName = n.replace(/\s*\([^)]*\)/g, '').trim();
         if(cleanName) mapPlaces.push(cleanName);
       }
