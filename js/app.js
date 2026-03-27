@@ -349,3 +349,26 @@ window.generateRandomRoute = function(forcedStyle, forcedDays) {
     alert('Нет других ' + forcedStyle + ' маршрутов на ' + forcedDays + ' дн.');
   }
 };
+
+
+document.addEventListener('DOMContentLoaded', async function() {
+  if (window.Telegram && Telegram.WebApp) {
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+  }
+  
+  if (!districtSlug) return;
+  
+  try {
+      const name = await fetchDistrictName(districtSlug);
+      document.getElementById('districtTitle').innerText = name;
+      
+      const routes = await fetchDistrictRoutes(districtSlug);
+      MANUAL_ROUTES_ZONE = routes;
+      
+      window.filterRoutes('all', 'all');
+  } catch (e) {
+      console.error(e);
+      document.getElementById('routesListContainer').innerHTML = '<div style="padding:20px; text-align:center; color:red;">Ошибка загрузки маршрутов с сервера. Попробуйте обновить страницу.</div>';
+  }
+});
