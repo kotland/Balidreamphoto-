@@ -10,6 +10,11 @@ let districtSlug = new URLSearchParams(window.location.search).get('slug') || 'c
 window.hideRouteOverlay = function() {
     document.getElementById('routeScreen').style.display = 'none';
     document.getElementById('guideContent').style.display = 'block';
+    let topBtn = document.querySelector('.back-home-btn');
+    if (topBtn) {
+        topBtn.innerText = '← Назад к выбору районов';
+        topBtn.onclick = function() { window.location.href = 'guides.html?v=' + Date.now(); };
+    }
     window.scrollTo(0, 0);
 };
 
@@ -313,6 +318,11 @@ window.showSingleRoute = function(idx) {
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
     rs.style.display = 'block';
+    let topBtn = document.querySelector('.back-home-btn');
+    if (topBtn) {
+        topBtn.innerText = '← Назад к выбору маршрутов';
+        topBtn.onclick = window.hideRouteOverlay;
+    }
     window.scrollTo(0, 0);
   } catch(e) { console.error(e); alert('Ошибка: ' + e.message); }
 };
