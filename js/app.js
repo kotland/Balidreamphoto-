@@ -246,13 +246,19 @@ window.showSingleRoute = function(idx) {
           html += '  <div style="display:inline-block;background:#2a6b5a;color:white;padding:4px 10px;border-radius:8px;font-size:12px;font-weight:700;margin-bottom:12px;">' + p.time + '</div>';
           html += '  <div style="font-size:18px;font-weight:700;color:#2a2a28;margin-bottom:8px;">' + p.name + '</div>';
           
-          let fd = p.desc;
-          if (fd.includes('✨ Атмосфера:')) {
-              fd = fd.replace('✨ Атмосфера:', '<b>✨ Атмосфера:</b><br>');
-              fd = fd.replace('🏄‍♀️ Чем заняться:', '<br><br><b>🏄‍♀️ Чем заняться:</b><br>');
-              fd = fd.replace('🍽 Что заказать:', '<br><br><b>🍽 Что заказать:</b><br>');
-              fd = fd.replace('📋 Детали:', '<br><br><b>📋 Детали:</b><br>');
-          }
+                    let fd = p.desc || '';
+          // Remove double <b> blocks just in case they were already replaced
+          fd = fd.replace(/<b><b>/g, '<b>').replace(/<\/b><\/b>/g, '</b>');
+          // Remove double BRs after <b> tags that were incorrectly added
+          fd = fd.replace(/<b>(.*?)<\/b><br><\/b><br>/g, '<b>$1</b><br>');
+          
+          // Make all <b> tags pop with solid color
+          fd = fd.replace(/<b>/g, '<b style="color:#2a2a28; display:block; margin-top:12px; margin-bottom:4px; font-size:14px;">');
+          // Remove existing <br> immediately after <b> tags because we are using display:block
+          fd = fd.replace(/(<b style=".*?">.*?<\/b>)\s*(?:<br\s*\/?>)+/g, '$1');
+          
+          // Clean up excessive BRs
+          fd = fd.replace(/(<br\s*\/?>\s*){3,}/g, '<br><br>');
           
           html += '  <div style="font-size:14px;color:rgba(42,42,40,0.7);line-height:1.6;margin-bottom:16px;">' + fd + '</div>';
           if (p.price && p.price !== 'Бесплатно' && p.price !== 'По меню' && p.price !== '') {
