@@ -80,6 +80,11 @@
 <!-- START SCREEN (District filter intro) -->
 </div>
 <script>
+
+function startLiving(){ checkRouteAccess('guides.html?v=' + Date.now()); }
+function openBase(){ window.location.href = 'base.html?v=' + Date.now(); }
+function openCatalog(){ checkRouteAccess('catalog.html?v=' + Date.now()); }
+
 function setLang(lang) {
   localStorage.setItem('bali_lang', lang);
   document.getElementById('langOverlay').style.display = 'none';
