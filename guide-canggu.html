@@ -3573,7 +3573,7 @@ function filterRoutes(style, budget) {
     
     for (var i = 0; i < routes.length; i++) {
       var routeObj = routes[i];
-      var rStyle = routeObj.style || 'easy';
+      var route.style = routeObj.style || 'easy';
       
       // Determine budget based on totalK
       let totalK = 0;
@@ -3598,7 +3598,7 @@ function filterRoutes(style, budget) {
       if (totalK < 300) rBudget = 'cheap';
       else if (totalK > 1500) rBudget = 'luxury';
       
-      if (currentStyle !== 'all' && rStyle !== currentStyle) continue;
+      if (currentStyle !== 'all' && route.style !== currentStyle) continue;
       // Skip budget filter for now to guarantee results, or loosely apply
       if (currentBudget !== 'all' && rBudget !== currentBudget && totalK > 0) {
           // If strictly filtering by budget, we might hide some. Let's do it:
@@ -3830,6 +3830,9 @@ function showSingleRoute(idx) {
     window.scrollTo(0, 0);
     setTimeout(() => filterRoutes('all', 'all'), 50);
   } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+} catch(e) { alert('Ошибка: ' + e.message); }
 }
 
 function generateRandomRoute(forcedStyle, forcedDays) {
