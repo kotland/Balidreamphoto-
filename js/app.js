@@ -3,13 +3,6 @@ import { fetchDistrictRoutes, fetchDistrictName } from './api.js';
 let MANUAL_ROUTES_ZONE = [];
 let currentStyle = 'all';
 let currentDays = 'all';
-let districtSlug = new URLSearchParams(window.location.search).get('slug') || 'canggu';
-
-import { fetchDistrictRoutes, fetchDistrictName } from './api.js';
-
-let MANUAL_ROUTES_ZONE = [];
-let currentStyle = 'all';
-let currentDays = 'all';
 let currentBudget = 'all';
 let districtSlug = new URLSearchParams(window.location.search).get('slug') || 'canggu';
 
