@@ -10,20 +10,21 @@
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
 <div class="app">
-<div id="passwordOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#f8f6f2;z-index:99999;display:flex;align-items:center;justify-content:center">
-<div style="text-align:center;padding:20px">
-<div style="font-size:48px;margin-bottom:20px">🔒</div>
-<h1 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px">Закрытый доступ</h1>
-<p style="color:rgba(42,42,40,0.5);margin-bottom:30px">Введите код для входа</p>
-<input type="text" id="accessCode" placeholder="Код" style="width:150px;padding:14px 20px;border:2px solid rgba(42,107,90,0.2);border-radius:14px;font-size:18px;text-align:center;outline:none;font-family:Inter,sans-serif" onkeyup="if(event.key==='Enter')checkAccess()">
-<div style="margin-top:16px">
-<button onclick="checkAccess()" style="padding:14px 40px;border-radius:14px;font-size:16px;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600">Войти</button>
+<!-- AUTHENTICATION OVERLAY -->
+<div id="authOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#f8f6f2;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+    <div id="authLoader" style="text-align:center;padding:20px;">
+        <div style="font-size:48px;margin-bottom:20px;animation:spin 2s linear infinite;">⏳</div>
+        <h1 style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:8px;color:#2a6b5a;">Проверка доступа...</h1>
+        <p style="color:rgba(42,42,40,0.5);">Соединение с Telegram</p>
+    </div>
+    <div id="authDenied" style="text-align:center;padding:20px;display:none;">
+        <div style="font-size:48px;margin-bottom:20px;">⛔️</div>
+        <h1 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px;color:#e74c3c;">Доступ закрыт</h1>
+        <p style="color:rgba(42,42,40,0.7);margin-bottom:20px;line-height:1.5;">Для входа в гайд необходимо<br>оформить подписку в боте.</p>
+        <button onclick="window.Telegram.WebApp.close()" style="padding:14px 40px;border-radius:14px;font-size:16px;background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600;box-shadow:0 4px 15px rgba(231,76,60,0.3);">Закрыть</button>
+    </div>
+    <style>@keyframes spin { 100% { transform:rotate(360deg); } }</style>
 </div>
-<div id="codeError" style="color:#e74c3c;margin-top:12px;font-size:14px;display:none">Неверный код</div>
-</div>
-</div>
-
-
 
 <!-- LANGUAGE SELECTION -->
 <div id="langOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#f8f6f2;z-index:99998;display:flex;align-items:center;justify-content:center;display:none">
@@ -97,22 +98,63 @@ function showLangOverlay() {
   }
   document.getElementById('langOverlay').style.display = 'flex';
 }
-function checkAccess(){
-  var code=document.getElementById('accessCode').value.trim();
-  if(code==='111'){
-    localStorage.setItem('bali_access','granted');
-    document.getElementById('passwordOverlay').style.display='none';
-    showLangOverlay();
-  } else {
-    document.getElementById('codeError').style.display='block';
-    setTimeout(function(){document.getElementById('codeError').style.display='none'},2000);
-  }
+
+const SUPABASE_URL = "https://hukabkvchfaueonkiocw.supabase.co/rest/v1";
+const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh1a2Fia3ZjaGZhdWVvbmtpb2N3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1OTQ0MDksImV4cCI6MjA5MDE3MDQwOX0.PR14C60SvJ_7xvjgG5Uyq-B2aarlmIrzRXV9RzYjF8c";
+
+async function verifyAccess() {
+    if (!window.Telegram || !window.Telegram.WebApp || !window.Telegram.WebApp.initDataUnsafe || !window.Telegram.WebApp.initDataUnsafe.user) {
+        // Not opened in Telegram or WebApp not ready
+        document.getElementById('authLoader').style.display = 'none';
+        document.getElementById('authDenied').innerHTML = '<div style="font-size:48px;margin-bottom:20px;">📱</div><h1 style="font-family:\'Playfair Display\',serif;font-size:24px;margin-bottom:8px;color:#e74c3c;">Откройте в Telegram</h1><p style="color:rgba(42,42,40,0.7);margin-bottom:20px;">Гайд доступен только внутри бота.</p>';
+        document.getElementById('authDenied').style.display = 'block';
+        return;
+    }
+
+    const user = window.Telegram.WebApp.initDataUnsafe.user;
+    const userId = user.id;
+    const username = user.username ? user.username.toLowerCase() : '';
+
+    try {
+        // Check database via REST API
+        let query = `?select=has_access&or=(id.eq.${userId},username.eq.${username})&has_access=eq.true`;
+        
+        let response = await fetch(`${SUPABASE_URL}/users${query}`, {
+            headers: {
+                'apikey': SUPABASE_ANON,
+                'Authorization': `Bearer ${SUPABASE_ANON}`
+            }
+        });
+        
+        let data = await response.json();
+        
+        if (data && data.length > 0 && data[0].has_access) {
+            // User has access!
+            document.getElementById('authOverlay').style.display = 'none';
+            showLangOverlay();
+        } else {
+            // No access
+            document.getElementById('authLoader').style.display = 'none';
+            document.getElementById('authDenied').style.display = 'block';
+        }
+    } catch(e) {
+        document.getElementById('authLoader').style.display = 'none';
+        document.getElementById('authDenied').innerHTML = '<p>Ошибка соединения с базой данных</p>';
+        document.getElementById('authDenied').style.display = 'block';
+    }
 }
-if(localStorage.getItem('bali_access')==='granted'){
-  var po=document.getElementById('passwordOverlay');
-  if(po)po.style.display='none';
-  showLangOverlay();
+
+// Start verification automatically when WebApp is ready
+if(window.Telegram && Telegram.WebApp) {
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+    // Wait a tiny bit for initData to populate just in case
+    setTimeout(verifyAccess, 100);
+} else {
+    // Local dev testing fallback or direct browser open
+    setTimeout(verifyAccess, 100);
 }
+
 function startLiving(){ window.location.href = 'guides.html?v=' + Date.now(); }
 function openBase(){ window.location.href = 'base.html?v=' + Date.now(); }
 function openCatalog(){ window.location.href = 'catalog.html?v=' + Date.now(); }
