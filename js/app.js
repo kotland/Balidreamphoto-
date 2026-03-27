@@ -100,7 +100,7 @@ window.showRouteGallery = function() {
     html += '  <div style="font-weight:700; color:#2a6b5a; font-size:18px; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between;"><span>📁 Как выбрать маршрут?</span>';
     html += '  <div style="text-align:right;"><div style="font-size:18px;font-weight:800;color:#2a2a28">$' + avgDollars + '<span style="font-size:12px;font-weight:400;color:rgba(42,42,40,0.6)">/день</span></div><div style="font-size:11px;color:rgba(42,42,40,0.5)">Средний чек района</div></div></div>';
     
-    html += '  <div style="font-size:14px; line-height:1.5; color:rgba(42,42,40,0.8); margin-bottom:16px;">Каждая карточка уже посчитала примерный чек за весь день. Выбирайте фильтры <span style="font-weight:600">💚 (до $10)</span>, <span style="font-weight:600">💛 ($10-30)</span> или <span style="font-weight:600">❤️ (от $30)</span>.</div>';
+    html += '  <div style="font-size:14px; line-height:1.5; color:rgba(42,42,40,0.8); margin-bottom:16px;">Каждая карточка уже посчитала примерный чек за весь день. Выбирайте фильтры <span style="font-weight:600">💚 Бэкпекер (до 150K)</span>, <span style="font-weight:600">💛 Путешественник (150-500K)</span> или <span style="font-weight:600">❤️ Люкс (от 500K)</span>.</div>';
 
     html += '  <div style="font-size:14px; font-weight:700; line-height:1.5; color:rgba(42,42,40,0.9); margin-bottom:12px;">Стиль поездки и темп (физиологически просчитанные тайминги):</div>';
 
@@ -143,9 +143,9 @@ window.showRouteGallery = function() {
     html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Бюджет маршрутов:</div>';
     html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
     html += '  <button id="btn_budget_all" onclick="filterRoutes(undefined, \'all\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); background:white; color:#2a2a28; white-space:nowrap; font-weight:600;">Все бюджеты</button>';
-    html += '  <button id="btn_budget_cheap" onclick="filterRoutes(undefined, \'cheap\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); background:white; color:#2a6b5a; white-space:nowrap; font-weight:600;">💚 до $10 (до 150K)</button>';
-    html += '  <button id="btn_budget_medium" onclick="filterRoutes(undefined, \'medium\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); background:white; color:#d35400; white-space:nowrap; font-weight:600;">💛 $10-30 (150-500K)</button>';
-    html += '  <button id="btn_budget_luxury" onclick="filterRoutes(undefined, \'luxury\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); background:white; color:#c0392b; white-space:nowrap; font-weight:600;">❤️ от $30 (от 500K)</button>';
+    html += '  <button id="btn_budget_cheap" onclick="filterRoutes(undefined, \'cheap\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); background:white; color:#2a6b5a; white-space:nowrap; font-weight:600;">💚 Бэкпекер (до 150K)</button>';
+    html += '  <button id="btn_budget_medium" onclick="filterRoutes(undefined, \'medium\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); background:white; color:#d35400; white-space:nowrap; font-weight:600;">💛 Путешественник (150-500K)</button>';
+    html += '  <button id="btn_budget_luxury" onclick="filterRoutes(undefined, \'luxury\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); background:white; color:#c0392b; white-space:nowrap; font-weight:600;">❤️ Люкс (от 500K)</button>';
     html += '</div>';
 
     // Style Filter
