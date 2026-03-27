@@ -3788,6 +3788,8 @@ function filterRoutes(style, budget) {
     }
     
     document.getElementById('routesListContainer').innerHTML = html;
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
 }
 
 function showRouteGallery() {
