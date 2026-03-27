@@ -11,7 +11,7 @@
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
 <div class="app">
 <!-- AUTHENTICATION OVERLAY -->
-<div id="authOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#f8f6f2;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+<div id="authOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(248,246,242,0.9);backdrop-filter:blur(5px);z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;display:none;">
     <div id="authLoader" style="text-align:center;padding:20px;">
         <div style="font-size:48px;margin-bottom:20px;animation:spin 2s linear infinite;">⏳</div>
         <h1 style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:8px;color:#2a6b5a;">Проверка доступа...</h1>
@@ -21,7 +21,10 @@
         <div style="font-size:48px;margin-bottom:20px;">⛔️</div>
         <h1 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px;color:#e74c3c;">Доступ закрыт</h1>
         <p style="color:rgba(42,42,40,0.7);margin-bottom:20px;line-height:1.5;">Для входа в гайд необходимо<br>оформить подписку в боте.</p>
-        <button onclick="window.Telegram.WebApp.close()" style="padding:14px 40px;border-radius:14px;font-size:16px;background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600;box-shadow:0 4px 15px rgba(231,76,60,0.3);">Закрыть</button>
+        <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:280px;margin:0 auto;">
+            <button onclick="window.Telegram.WebApp.openTelegramLink('https://t.me/balidreamphoto_bot')" style="padding:14px 20px;border-radius:14px;font-size:16px;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600;box-shadow:0 4px 15px rgba(42,107,90,0.3);">💳 Оплатить тариф</button>
+            <button onclick="document.getElementById('authOverlay').style.display='none'" style="padding:14px 20px;border-radius:14px;font-size:16px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600;">Отмена</button>
+        </div>
     </div>
     <style>@keyframes spin { 100% { transform:rotate(360deg); } }</style>
 </div>
@@ -99,14 +102,26 @@ function showLangOverlay() {
   document.getElementById('langOverlay').style.display = 'flex';
 }
 
+
 const SUPABASE_URL = "https://hukabkvchfaueonkiocw.supabase.co/rest/v1";
 const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh1a2Fia3ZjaGZhdWVvbmtpb2N3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1OTQ0MDksImV4cCI6MjA5MDE3MDQwOX0.PR14C60SvJ_7xvjgG5Uyq-B2aarlmIrzRXV9RzYjF8c";
 
-async function verifyAccess() {
+let hasVerifiedAccess = false; // Cache the access so we don't query repeatedly
+
+async function checkRouteAccess(targetUrl) {
+    if (hasVerifiedAccess) {
+        window.location.href = targetUrl;
+        return;
+    }
+
+    document.getElementById('authOverlay').style.display = 'flex';
+    document.getElementById('authLoader').style.display = 'block';
+    document.getElementById('authDenied').style.display = 'none';
+
     if (!window.Telegram || !window.Telegram.WebApp || !window.Telegram.WebApp.initDataUnsafe || !window.Telegram.WebApp.initDataUnsafe.user) {
-        // Not opened in Telegram or WebApp not ready
+        // Not opened in Telegram
         document.getElementById('authLoader').style.display = 'none';
-        document.getElementById('authDenied').innerHTML = '<div style="font-size:48px;margin-bottom:20px;">📱</div><h1 style="font-family:\'Playfair Display\',serif;font-size:24px;margin-bottom:8px;color:#e74c3c;">Откройте в Telegram</h1><p style="color:rgba(42,42,40,0.7);margin-bottom:20px;">Гайд доступен только внутри бота.</p>';
+        document.getElementById('authDenied').innerHTML = '<div style="font-size:48px;margin-bottom:20px;">📱</div><h1 style="font-family:\'Playfair Display\',serif;font-size:24px;margin-bottom:8px;color:#e74c3c;">Откройте в Telegram</h1><p style="color:rgba(42,42,40,0.7);margin-bottom:20px;">Платные разделы доступны только внутри бота.</p><div style="text-align:center;"><button onclick="document.getElementById(\'authOverlay\').style.display=\'none\'" style="padding:14px 40px;border-radius:14px;font-size:16px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;font-weight:600;">Закрыть</button></div>';
         document.getElementById('authDenied').style.display = 'block';
         return;
     }
@@ -116,48 +131,44 @@ async function verifyAccess() {
     const username = user.username ? user.username.toLowerCase() : '';
 
     try {
-        // Check database via REST API
         let query = `?select=has_access&or=(id.eq.${userId},username.eq.${username})&has_access=eq.true`;
-        
         let response = await fetch(`${SUPABASE_URL}/users${query}`, {
             headers: {
                 'apikey': SUPABASE_ANON,
                 'Authorization': `Bearer ${SUPABASE_ANON}`
             }
         });
-        
         let data = await response.json();
         
         if (data && data.length > 0 && data[0].has_access) {
-            // User has access!
+            hasVerifiedAccess = true;
             document.getElementById('authOverlay').style.display = 'none';
-            showLangOverlay();
+            window.location.href = targetUrl;
         } else {
-            // No access
             document.getElementById('authLoader').style.display = 'none';
             document.getElementById('authDenied').style.display = 'block';
         }
     } catch(e) {
         document.getElementById('authLoader').style.display = 'none';
-        document.getElementById('authDenied').innerHTML = '<p>Ошибка соединения с базой данных</p>';
+        document.getElementById('authDenied').innerHTML = '<p>Ошибка соединения с базой данных</p><button onclick="document.getElementById(\'authOverlay\').style.display=\'none\'" style="margin-top:10px;padding:10px 20px;background:rgba(0,0,0,0.1);border-radius:10px;border:none;">Закрыть</button>';
         document.getElementById('authDenied').style.display = 'block';
     }
 }
 
-// Start verification automatically when WebApp is ready
-if(window.Telegram && Telegram.WebApp) {
-    Telegram.WebApp.ready();
-    Telegram.WebApp.expand();
-    // Wait a tiny bit for initData to populate just in case
-    setTimeout(verifyAccess, 100);
-} else {
+ // FREE ACCESS
+
+    if (lg === 'ua') { window.location.href = 'ua/index.html?v=' + Date.now(); }
+    if (lg === 'kz') { window.location.href = 'kz/index.html?v=' + Date.now(); }
+    if (lg === 'ar') { window.location.href = 'ar/index.html?v=' + Date.now(); }
+}
+ else {
     // Local dev testing fallback or direct browser open
     setTimeout(verifyAccess, 100);
 }
 
-function startLiving(){ window.location.href = 'guides.html?v=' + Date.now(); }
-function openBase(){ window.location.href = 'base.html?v=' + Date.now(); }
-function openCatalog(){ window.location.href = 'catalog.html?v=' + Date.now(); }
+
+
+
 
 var CHOICE_PHRASES=['Выбери, что нужно именно тебе','С чего начнём?','Что ищешь на Бали?'];
 var cSub=document.getElementById('choiceSubtitle');
