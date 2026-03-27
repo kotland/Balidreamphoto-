@@ -367,8 +367,10 @@ document.addEventListener('DOMContentLoaded', async function() {
       MANUAL_ROUTES_ZONE = routes;
       
       window.filterRoutes('all', 'all');
+      let ldr = document.getElementById('districtLoader'); if(ldr) ldr.style.display = 'none';
   } catch (e) {
       console.error(e);
       document.getElementById('routesListContainer').innerHTML = '<div style="padding:20px; text-align:center; color:red;">Ошибка загрузки маршрутов с сервера. Попробуйте обновить страницу.</div>';
+      let ldr = document.getElementById('districtLoader'); if(ldr) ldr.style.display = 'none';
   }
 });
