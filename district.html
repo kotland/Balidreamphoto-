@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Район · Гайд · Где свои на Бали</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css?v=1774488851">
+</head>
+<body>
+<div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
+<div class="app">
+    <button class="btn btn-primary back-home-btn" onclick="window.location.href='guides.html#results'" style="font-size:13px;padding:8px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1)">← Назад к результатам</button>
+
+    <div id="guideContent" style="display:block;overflow-y:auto;padding-bottom:80px;text-align:center;">
+        <h1 id="districtTitle">Загрузка...</h1>
+        <p class="sub">Полный гайд по району · @balidreamphoto</p>
+        
+        <div id="routesListContainer" style="text-align:left;">
+            <div style="padding:20px; color:rgba(42,42,40,0.5);">Загрузка маршрутов...</div>
+        </div>
+        
+        <div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
+        <div style="margin:20px 0 40px">
+            <button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button>
+        </div>
+    </div>
+
+    <div id="routeScreen" style="display:none;padding-bottom:80px"></div>
+
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
