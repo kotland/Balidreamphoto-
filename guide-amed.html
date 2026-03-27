@@ -3951,7 +3951,7 @@ function showRouteGallery() {
     var d3Bg = (typeof currentDays !== 'undefined' && currentDays === 3) ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
     var d3Col = (typeof currentDays !== 'undefined' && currentDays === 3) ? 'white' : '#2a6b5a';
     
-    html += '  <button onclick="setDaysFilter(\'all\')" style="padding:8px 16px; border-radius:20px; border:none; background:' + dAllBg + '; color:' + dAllCol + '; white-space:nowrap; font-weight:600;">Все дни</button>';
+    html += '  <button onclick="setDaysFilter(\'all\')" style="padding:8px 16px; border-radius:20px; border:none; background:' + dAllBg + '; color:' + dAllCol + '; white-space:nowrap; font-weight:600;">Все варианты</button>';
     html += '  <button onclick="setDaysFilter(1)" style="padding:8px 16px; border-radius:20px; border:none; background:' + d1Bg + '; color:' + d1Col + '; white-space:nowrap; font-weight:600;">1 день</button>';
     html += '  <button onclick="setDaysFilter(2)" style="padding:8px 16px; border-radius:20px; border:none; background:' + d2Bg + '; color:' + d2Col + '; white-space:nowrap; font-weight:600;">2 дня</button>';
     html += '  <button onclick="setDaysFilter(3)" style="padding:8px 16px; border-radius:20px; border:none; background:' + d3Bg + '; color:' + d3Col + '; white-space:nowrap; font-weight:600;">3 дня</button>';
