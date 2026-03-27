@@ -80,7 +80,6 @@
 <!-- START SCREEN (District filter intro) -->
 </div>
 <script>
-
 function startLiving(){ checkRouteAccess('guides.html?v=' + Date.now()); }
 function openBase(){ window.location.href = 'base.html?v=' + Date.now(); }
 function openCatalog(){ checkRouteAccess('catalog.html?v=' + Date.now()); }
@@ -94,9 +93,9 @@ function setLang(lang) {
   if (lang === 'ar') { window.location.href = 'ar/index.html?v=' + Date.now(); return; }
   // ru — stay on current page
 }
+
 function showLangOverlay() {
   if (localStorage.getItem('bali_lang')) {
-    // Language already chosen — redirect if needed
     var lang = localStorage.getItem('bali_lang');
     if (lang === 'en') { window.location.href = 'en/index.html?v=' + Date.now(); return; }
     if (lang === 'ua') { window.location.href = 'ua/index.html?v=' + Date.now(); return; }
@@ -107,11 +106,10 @@ function showLangOverlay() {
   document.getElementById('langOverlay').style.display = 'flex';
 }
 
-
 const SUPABASE_URL = "https://hukabkvchfaueonkiocw.supabase.co/rest/v1";
 const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh1a2Fia3ZjaGZhdWVvbmtpb2N3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1OTQ0MDksImV4cCI6MjA5MDE3MDQwOX0.PR14C60SvJ_7xvjgG5Uyq-B2aarlmIrzRXV9RzYjF8c";
 
-let hasVerifiedAccess = false; // Cache the access so we don't query repeatedly
+let hasVerifiedAccess = false;
 
 async function checkRouteAccess(targetUrl) {
     if (hasVerifiedAccess) {
@@ -124,7 +122,6 @@ async function checkRouteAccess(targetUrl) {
     document.getElementById('authDenied').style.display = 'none';
 
     if (!window.Telegram || !window.Telegram.WebApp || !window.Telegram.WebApp.initDataUnsafe || !window.Telegram.WebApp.initDataUnsafe.user) {
-        // Not opened in Telegram
         document.getElementById('authLoader').style.display = 'none';
         document.getElementById('authDenied').innerHTML = '<div style="font-size:48px;margin-bottom:20px;">📱</div><h1 style="font-family:\'Playfair Display\',serif;font-size:24px;margin-bottom:8px;color:#e74c3c;">Откройте в Telegram</h1><p style="color:rgba(42,42,40,0.7);margin-bottom:20px;">Платные разделы доступны только внутри бота.</p><div style="text-align:center;"><button onclick="document.getElementById(\'authOverlay\').style.display=\'none\'" style="padding:14px 40px;border-radius:14px;font-size:16px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;font-weight:600;">Закрыть</button></div>';
         document.getElementById('authDenied').style.display = 'block';
@@ -155,33 +152,29 @@ async function checkRouteAccess(targetUrl) {
         }
     } catch(e) {
         document.getElementById('authLoader').style.display = 'none';
-        document.getElementById('authDenied').innerHTML = '<p>Ошибка соединения с базой данных</p><button onclick="document.getElementById(\'authOverlay\').style.display=\'none\'" style="margin-top:10px;padding:10px 20px;background:rgba(0,0,0,0.1);border-radius:10px;border:none;">Закрыть</button>';
+        document.getElementById('authDenied').innerHTML = '<p>Ошибка соединения с БД</p><button onclick="document.getElementById(\'authOverlay\').style.display=\'none\'" style="margin-top:10px;padding:10px 20px;background:rgba(0,0,0,0.1);border-radius:10px;border:none;">Закрыть</button>';
         document.getElementById('authDenied').style.display = 'block';
     }
 }
-
- // FREE ACCESS
-
-    if (lg === 'ua') { window.location.href = 'ua/index.html?v=' + Date.now(); }
-    if (lg === 'kz') { window.location.href = 'kz/index.html?v=' + Date.now(); }
-    if (lg === 'ar') { window.location.href = 'ar/index.html?v=' + Date.now(); }
-}
- else {
-    // Local dev testing fallback or direct browser open
-    
-}
-
-
-
-
 
 var CHOICE_PHRASES=['Выбери, что нужно именно тебе','С чего начнём?','Что ищешь на Бали?'];
 var cSub=document.getElementById('choiceSubtitle');
 if(cSub){cSub.textContent=CHOICE_PHRASES[Math.floor(Math.random()*CHOICE_PHRASES.length)];}
 
-if(window.Telegram&&Telegram.WebApp){
+if(window.Telegram && Telegram.WebApp){
   Telegram.WebApp.ready();
   Telegram.WebApp.expand();
+}
+
+// Show lang overlay immediately on load
+if (!localStorage.getItem('bali_lang')) {
+    document.getElementById('langOverlay').style.display = 'flex';
+} else {
+    var lg = localStorage.getItem('bali_lang');
+    if (lg === 'en') { window.location.href = 'en/index.html?v=' + Date.now(); }
+    if (lg === 'ua') { window.location.href = 'ua/index.html?v=' + Date.now(); }
+    if (lg === 'kz') { window.location.href = 'kz/index.html?v=' + Date.now(); }
+    if (lg === 'ar') { window.location.href = 'ar/index.html?v=' + Date.now(); }
 }
 </script>
 </body>
