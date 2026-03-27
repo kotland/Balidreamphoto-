@@ -1271,4 +1271,31 @@ function showSingleRoute(idx) {
     rs.innerHTML = html;
     window.scrollTo(0, 0);
     setTimeout(() => filterRoutes('all', 'all'), 50);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function generateRandomRoute(forcedStyle, forcedDays) {
+  var available = [];
+  for (var i = 0; i < MANUAL_ROUTES_ZONE.length; i++) {
+    var route = MANUAL_ROUTES_ZONE[i];
+    var routeDays = route.days || 1;
+    if (route.style === forcedStyle && routeDays === forcedDays) {
+      available.push(i);
+    }
+  }
+  if (available.length > 0) {
+    var randomIdx = available[Math.floor(Math.random() * available.length)];
+    showSingleRoute(randomIdx);
+  } else {
+    alert('Нет других ' + forcedStyle + ' маршрутов на ' + forcedDays + ' дн.');
+  }
+}
+
+if (window.Telegram && Telegram.WebApp) {
+  Telegram.WebApp.ready();
+  Telegram.WebApp.expand();
+}
+</script>
+</body>
+</html>
   
