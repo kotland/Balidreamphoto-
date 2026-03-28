@@ -9,75 +9,83 @@
 </head>
 <body>
 
+
 <style>
     @keyframes blobShape {
-        0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; transform: scale(1) rotate(0deg); }
-        34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; transform: scale(1.05) rotate(5deg); }
-        67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; transform: scale(0.95) rotate(-5deg); }
-        100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; transform: scale(1) rotate(0deg); }
-    }
-    @keyframes blobGradient {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% { border-radius: 50%; transform: scale(1) translate(0, 0); }
+        33% { border-radius: 47% 53% 50% 50% / 50% 48% 52% 50%; transform: scale(1.02) translate(1px, -2px); }
+        66% { border-radius: 52% 48% 49% 51% / 49% 51% 48% 52%; transform: scale(0.98) translate(-1px, 2px); }
+        100% { border-radius: 50%; transform: scale(1) translate(0, 0); }
     }
     @keyframes blobBlink {
-        0%, 96%, 98% { transform: scaleY(1); }
-        97% { transform: scaleY(0.1); }
+        0%, 95%, 98% { transform: scaleY(1); }
+        96% { transform: scaleY(0.1); }
     }
     @keyframes blobSmile {
-        0%, 100% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(-2px) rotate(3deg); }
-    }
-    @keyframes fadeOutLoader {
-        from { opacity: 1; visibility: visible; }
-        to { opacity: 0; visibility: hidden; }
+        0%, 100% { border-bottom-width: 4px; transform: translateY(0); }
+        50% { border-bottom-width: 5px; transform: translateY(-1px); }
     }
     .blob-container {
-        width: 120px;
-        height: 120px;
-        background: linear-gradient(135deg, #ffc3a0 0%, #ffafbd 50%, #ffc3a0 100%);
-        background-size: 200% 200%;
-        animation: blobShape 6s ease-in-out infinite, blobGradient 4s ease infinite;
+        width: 140px;
+        height: 140px;
+        /* The beautiful gradient from the screenshot: Top-left peach, right white/blue, bottom-left pink/blue */
+        background: radial-gradient(circle at 30% 30%, #ffdfcc 0%, #ffb8b8 40%, #d4e4f7 80%, #ffffff 100%);
+        animation: blobShape 4s ease-in-out infinite;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 10px 30px rgba(255, 175, 189, 0.4);
+        /* Outer soft glow and inner 3d shading */
+        box-shadow: 0 15px 40px rgba(180, 200, 255, 0.4), 
+                    inset -15px -15px 25px rgba(255, 255, 255, 0.7),
+                    inset 10px 10px 20px rgba(255, 210, 200, 0.5);
     }
     .blob-face {
-        position: relative;
-        width: 60px;
-        height: 40px;
+        position: absolute;
+        top: 50%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        width: 65px;
+        height: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
     }
     .blob-eyes {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        padding: 0 8px;
+        padding: 0 4px;
         box-sizing: border-box;
-        margin-bottom: 6px;
     }
     .blob-eye {
-        width: 12px;
-        height: 12px;
-        background: #2a2a28;
+        width: 11px;
+        height: 15px;
+        background: #1a1a1a;
         border-radius: 50%;
-        animation: blobBlink 4s infinite;
+        animation: blobBlink 5s infinite;
+        /* slight rotation for cute look */
+        transform-origin: center;
     }
+    .blob-eye:first-child { transform: rotate(5deg); }
+    .blob-eye:last-child { transform: rotate(-5deg); }
+    
     .blob-mouth {
-        width: 24px;
-        height: 12px;
-        border-bottom: 4px solid #2a2a28;
-        border-radius: 0 0 20px 20px;
+        width: 18px;
+        height: 9px;
+        border-bottom: 4px solid #1a1a1a;
+        border-radius: 0 0 18px 18px;
+        margin-top: 2px;
         animation: blobSmile 3s ease-in-out infinite;
     }
+    
+    /* Background for the loader itself: soft blue/white to match the image environment */
+    #loaderOverlay, #loaderOverlay {
+        background: linear-gradient(180deg, #f0f6ff 0%, #ffffff 100%) !important;
+    }
 </style>
-<div id="loaderOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(253,251,251,0.95); z-index:99999; display:flex; flex-direction:column; align-items:center; justify-content:center; backdrop-filter:blur(12px); transition: opacity 0.5s ease;">
+<div id="loaderOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:99999; display:flex; flex-direction:column; align-items:center; justify-content:center; transition: opacity 0.5s ease;">
     <div class="blob-container">
         <div class="blob-face">
             <div class="blob-eyes">
@@ -87,6 +95,10 @@
             <div class="blob-mouth"></div>
         </div>
     </div>
+    <div style="margin-top:40px; font-weight:800; color:#1a1a1a; font-size:20px; letter-spacing:0.5px;">Загружаем магию...</div>
+    <div style="margin-top:8px; font-weight:500; color:#666; font-size:14px;">Ищем лучшие места для вас</div>
+</div>
+
     <div style="margin-top:32px; font-weight:800; color:#2a2a28; font-size:18px; letter-spacing:0.5px;">Загружаем магию...</div>
     <div style="margin-top:8px; font-weight:500; color:#888; font-size:13px;">Ищем лучшие места для вас</div>
 </div>
