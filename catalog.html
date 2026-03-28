@@ -52,7 +52,8 @@ window.renderFavoritesOverlay = function() {
                 <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(p.name)}">❤️</div>
                 <div class="fav-card-title">${escapeHtml(p.name)}</div>
                 <div class="fav-card-meta">${district} · ${cat}</div>
-                <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
+                                <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
+                ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Открыть на карте</a></div>` : ''}
             </div>`;
         } else {
             // Unmatched place, maybe database was updated
@@ -530,7 +531,8 @@ window.renderFavoritesOverlay = function() {
                 <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(p.name)}">❤️</div>
                 <div class="fav-card-title">${escapeHtml(p.name)}</div>
                 <div class="fav-card-meta">${district} · ${cat}</div>
-                <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
+                                <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
+                ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Открыть на карте</a></div>` : ''}
             </div>`;
         } else {
             // Unmatched place, maybe database was updated
