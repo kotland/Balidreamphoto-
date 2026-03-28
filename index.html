@@ -38,30 +38,48 @@
         66% { transform: translateX(-52%) rotate(2deg) translateY(1px); }
         100% { transform: translateX(-50%) rotate(5deg) translateY(0); }
     }
-    .blob-face {
+        .blob-face {
         position: absolute;
         top: 50%;
         left: 53%;
         transform: translate(-50%, -50%);
-        width: 70px;
-        height: 35px;
+        width: 55px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .blob-eyes {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 4px;
+        box-sizing: border-box;
     }
     .blob-eye {
-        transform-origin: 50% 20px;
+        width: 10px;
+        height: 14px;
+        background: #1a1a1a;
+        border-radius: 50%;
         animation: blobBlink 5s infinite;
+        transform-origin: center;
     }
-    .left-eye { transform: rotate(5deg); transform-origin: 19px 20px; }
-    .right-eye { transform: rotate(-5deg); transform-origin: 81px 20px; }
     .blob-mouth {
+        width: 14px;
+        height: 8px;
+        border-bottom: 4px solid #1a1a1a;
+        border-radius: 0 0 14px 14px;
+        margin-top: 4px;
         animation: blobSmile 3s ease-in-out infinite;
-        transform-origin: 50% 35px;
     }
-    
+    @keyframes blobBlink {
+        0%, 95%, 98% { transform: scaleY(1); }
         96% { transform: scaleY(0.1); }
     }
     @keyframes blobSmile {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-2px); }
+        0%, 100% { border-bottom-width: 4px; transform: translateY(0); }
+        50% { border-bottom-width: 5px; transform: translateY(-1px); }
     }
 </style>
 
@@ -85,7 +103,15 @@
             <button onclick="document.getElementById('authOverlay').style.display='none'" style="padding:14px 20px;border-radius:14px;font-size:16px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600;">Отмена</button>
         </div>
     </div>
-    <style>@keyframes spin { 100% { transform:rotate(360deg); } }</style>
+    <style>@keyframes spin { 100% { transform:rotate(360deg); } }    @keyframes blobBlink {
+        0%, 95%, 98% { transform: scaleY(1); }
+        96% { transform: scaleY(0.1); }
+    }
+    @keyframes blobSmile {
+        0%, 100% { border-bottom-width: 4px; transform: translateY(0); }
+        50% { border-bottom-width: 5px; transform: translateY(-1px); }
+    }
+</style>
 </div>
 
 <!-- LANGUAGE SELECTION -->
