@@ -39,17 +39,6 @@
                     inset 10px 10px 25px rgba(255, 210, 200, 0.6);
         margin: 0 auto 32px auto;
     }
-        .blob-hat {
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%) rotate(5deg);
-        font-size: 50px;
-        animation: blobHatBob 4s ease-in-out infinite;
-        z-index: 2;
-    }
-    @keyframes blobHatBob {
-        0% { transform: translateX(-50%) rotate(5deg) translateY(0); }
         33% { transform: translateX(-48%) rotate(8deg) translateY(-2px); }
         66% { transform: translateX(-52%) rotate(2deg) translateY(1px); }
         100% { transform: translateX(-50%) rotate(5deg) translateY(0); }
@@ -75,7 +64,6 @@
 </style>
 <div id="loaderOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, #eaf2ff 0%, #ffffff 100%) !important; z-index:99999; display:flex; flex-direction:column; align-items:center; justify-content:center; transition: opacity 0.5s ease;">
     <div class="blob-container">
-        <div class="blob-hat">👒</div>
         <svg class="blob-face" viewBox="0 0 100 50">
             <rect class="blob-eye left-eye" x="12" y="10" width="14" height="20" rx="7" fill="#1a1a1a" />
             <rect class="blob-eye right-eye" x="74" y="10" width="14" height="20" rx="7" fill="#1a1a1a" />
