@@ -231,7 +231,7 @@ async function fetchAllPlaces() {
         console.error("Failed to load catalog:", e);
     }
     
-    if (loader) loader.style.display = 'none';
+    if (loader) { loader.style.opacity = '0'; setTimeout(() => loader.style.display = 'none', 500); }
     window.applyFilters();
 }
 
