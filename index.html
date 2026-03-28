@@ -14,12 +14,10 @@
         66% { border-radius: 51% 49% 49% 51% / 49% 51% 48% 52%; transform: scale(0.98) translate(-1px, 2px); }
         100% { border-radius: 50%; transform: scale(1) translate(0, 0); }
     }
-    @keyframes blobBlink {
-        0%, 95%, 98% { transform: scaleY(1); }
+    
         96% { transform: scaleY(0.1); }
     }
-    @keyframes blobSmile {
-        0%, 100% { border-bottom-width: 4px; transform: translateY(0); }
+    
         50% { border-bottom-width: 5px; transform: translateY(-1px); }
     }
     .blob-container {
@@ -36,40 +34,30 @@
                     inset 10px 10px 25px rgba(255, 210, 200, 0.6);
         margin: 60px auto 32px auto;
     }
-    .blob-face {
+        .blob-face {
         position: absolute;
         top: 50%;
         left: 53%;
         transform: translate(-50%, -50%);
-        width: 55px;
-        height: 25px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .blob-eyes {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 4px;
-        box-sizing: border-box;
+        width: 70px;
+        height: 35px;
     }
     .blob-eye {
-        width: 10px;
-        height: 14px;
-        background: #1a1a1a;
-        border-radius: 50%;
+        transform-origin: 50% 20px;
         animation: blobBlink 5s infinite;
-        transform-origin: center;
     }
+    .left-eye { transform: rotate(5deg); transform-origin: 19px 20px; }
+    .right-eye { transform: rotate(-5deg); transform-origin: 81px 20px; }
     .blob-mouth {
-        width: 14px;
-        height: 8px;
-        border-bottom: 4px solid #1a1a1a;
-        border-radius: 0 0 14px 14px;
-        margin-top: 4px;
         animation: blobSmile 3s ease-in-out infinite;
+        transform-origin: 50% 35px;
+    }
+    
+        96% { transform: scaleY(0.1); }
+    }
+    @keyframes blobSmile {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-2px); }
     }
 </style>
 
@@ -115,11 +103,11 @@
 
 <div class="screen active" id="choiceScreen">
 <div class="blob-container">
-        <div class="blob-face">
-            <div class="blob-eyes">
-                <div class="blob-eye"></div>
-                <div class="blob-eye"></div>
-            </div>
+                <svg class="blob-face" viewBox="0 0 100 50">
+            <rect class="blob-eye left-eye" x="12" y="10" width="14" height="20" rx="7" fill="#1a1a1a" />
+            <rect class="blob-eye right-eye" x="74" y="10" width="14" height="20" rx="7" fill="#1a1a1a" />
+            <path class="blob-mouth" d="M36 32 Q50 44 64 32" fill="none" stroke="#1a1a1a" stroke-width="6.5" stroke-linecap="round" />
+        </svg>
             <div class="blob-mouth"></div>
         </div>
     </div>
