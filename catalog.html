@@ -38,72 +38,7 @@ window.renderFavoritesOverlay = function() {
     let favs = JSON.parse(localStorage.getItem('bali_favorites') || '[]');
     let content = document.getElementById('favoritesContent');
     if (favs.length === 0) {
-        content.innerHTML = '<div style="text-align:center; padding:60px 20px; color:rgba(42,42,40,0.5);"><div style="font-size:40px; margin-bottom:12px; opacity:0.5;">🤍</div><div style="font-size:16px; font-weight:600; color:#2a2a28; margin-bottom:8px;">Пока ничего нет</div><div style="font-size:13px;">Нажимайте на сердечки в каталоге, чтобы собрать свой личный вишлист мест.</div></div>';
-        return;
-    }
-    let htmlStr = '';
-    favs.forEach(name => {
-        let p = PLACES.find(x => x.name === name);
-        if (p) {
-            let district = p.district ? escapeHtml(p.district) : '';
-            let cat = p.category ? escapeHtml(p.category) : '';
-            htmlStr += `
-            <div class="fav-card">
-                <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(p.name)}">❤️</div>
-                <div class="fav-card-title">${escapeHtml(p.name)}</div>
-                <div class="fav-card-meta">${district} · ${cat}</div>
-                                <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
-                ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Открыть на карте</a></div>` : ''}
-            </div>`;
-        } else {
-            // Unmatched place, maybe database was updated
-            htmlStr += `
-            <div class="fav-card" style="opacity: 0.5;">
-                <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(name)}">❤️</div>
-                <div class="fav-card-title">${escapeHtml(name)}</div>
-                <div class="fav-card-meta">Локация устарела</div>
-            </div>`;
-        }
-    });
-    content.innerHTML = htmlStr;
-}
-
-window.removeFavoriteOverlay = function(btn) {
-    let name = decodeURIComponent(btn.getAttribute('data-name'));
-    
-    let favs = JSON.parse(localStorage.getItem('bali_favorites') || '[]');
-    favs = favs.filter(f => f !== name); 
-    localStorage.setItem('bali_favorites', JSON.stringify(favs));
-    syncFavoritesToSupabase(favs);
-    let countEl = document.getElementById('floatingFavCount');
-    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
-    
-    // Animate removing the card
-    let card = btn.parentElement;
-    card.style.opacity = '0';
-    card.style.transform = 'scale(0.95)';
-    card.style.transition = 'all 0.2s';
-    
-    setTimeout(() => {
-        renderFavoritesOverlay();
-    }, 200);
-}
-
-</script>
-</head>
-<body class="catalog-page">
-
-<button class="btn-green" onclick="window.location.href='index.html?v=108'">← Назад</button>
-<h1 style="font-family:'Playfair Display',serif;text-align:center;margin:20px 0;font-size:24px">Каталог <em style="color:#2a6b5a">мест</em></h1>
-<p style="text-align:center;color:rgba(42,42,40,0.5);margin-bottom:24px"><span id="countBadge">1005</span> мест</p>
-
-<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">РАЙОН</div>
-<div id="districtChips" class="wrap-chips">
-  <div class="chip" onclick="updateFilter('district', 'Убуд', this)">🌿 Убуд</div>
-  <div class="chip" onclick="updateFilter('district', 'Чангу', this)">🏄 Чангу</div>
-  <div class="chip" onclick="updateFilter('district', 'Семиньяк', this)">🍸 Семиньяк</div>
-  <div class="chip" onclick="updateFilter('district', 'Улувату', this)">🌊 Улувату</div>
-  <div class="chip" onclick="updateFilter('district', 'Букит и Нуса-Дуа', this)">🏝️ Букит и Нуса-Дуа</div>
+        content.innerHTML = '
   <div class="chip" onclick="updateFilter('district', 'Санур', this)">🌅 Санур</div>
   <div class="chip" onclick="updateFilter('district', 'Амед и Восток', this)">🌋 Амед и Восток</div>
   <div class="chip" onclick="updateFilter('district', 'Кинтамани', this)">🏔 Кинтамани</div>
