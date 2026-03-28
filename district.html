@@ -13,71 +13,84 @@
 <style>
     @keyframes blobShape {
         0% { border-radius: 50%; transform: scale(1) translate(0, 0); }
-        33% { border-radius: 47% 53% 50% 50% / 50% 48% 52% 50%; transform: scale(1.02) translate(1px, -2px); }
-        66% { border-radius: 52% 48% 49% 51% / 49% 51% 48% 52%; transform: scale(0.98) translate(-1px, 2px); }
+        33% { border-radius: 48% 52% 50% 50% / 50% 49% 51% 50%; transform: scale(1.02) translate(1px, -2px); }
+        66% { border-radius: 51% 49% 49% 51% / 49% 51% 48% 52%; transform: scale(0.98) translate(-1px, 2px); }
         100% { border-radius: 50%; transform: scale(1) translate(0, 0); }
     }
-    
+    @keyframes blobBlink {
+        0%, 95%, 98% { transform: scaleY(1); }
         96% { transform: scaleY(0.1); }
     }
-    
+    @keyframes blobSmile {
+        0%, 100% { border-bottom-width: 4px; transform: translateY(0); }
         50% { border-bottom-width: 5px; transform: translateY(-1px); }
     }
     .blob-container {
         width: 140px;
         height: 140px;
-        /* The beautiful gradient from the screenshot: Top-left peach, right white/blue, bottom-left pink/blue */
-        background: radial-gradient(circle at 30% 30%, #ffdfcc 0%, #ffb8b8 40%, #d4e4f7 80%, #ffffff 100%);
+        background-color: #ffd1b8;
+        background: -webkit-radial-gradient(30% 30%, circle, #ffd1b8 0%, #ffb8c5 40%, #c1d8f5 80%, #f4f8ff 100%);
+        background: radial-gradient(circle at 30% 30%, #ffd1b8 0%, #ffb8c5 40%, #c1d8f5 80%, #f4f8ff 100%);
         animation: blobShape 4s ease-in-out infinite;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        /* Outer soft glow and inner 3d shading */
-        box-shadow: 0 15px 40px rgba(180, 200, 255, 0.4), 
-                    inset -15px -15px 25px rgba(255, 255, 255, 0.7),
-                    inset 10px 10px 20px rgba(255, 210, 200, 0.5);
+        box-shadow: 0 15px 30px rgba(180, 200, 255, 0.4), 
+                    inset -10px -10px 20px rgba(255, 255, 255, 0.8),
+                    inset 8px 8px 15px rgba(255, 210, 200, 0.6);
+        margin: 0 auto 32px auto;
+        z-index: 100;
     }
-        .blob-face {
+    .blob-face {
         position: absolute;
         top: 50%;
         left: 53%;
         transform: translate(-50%, -50%);
-        width: 70px;
-        height: 35px;
+        width: 55px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .blob-eyes {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 4px;
+        box-sizing: border-box;
     }
     .blob-eye {
-        transform-origin: 50% 20px;
+        width: 10px;
+        height: 14px;
+        background: #1a1a1a;
+        border-radius: 50%;
         animation: blobBlink 5s infinite;
+        transform-origin: center;
     }
-    .left-eye { transform: rotate(5deg); transform-origin: 19px 20px; }
-    .right-eye { transform: rotate(-5deg); transform-origin: 81px 20px; }
     .blob-mouth {
+        width: 14px;
+        height: 8px;
+        border-bottom: 4px solid #1a1a1a;
+        border-radius: 0 0 14px 14px;
+        margin-top: 4px;
         animation: blobSmile 3s ease-in-out infinite;
-        transform-origin: 50% 35px;
     }
-    
-        96% { transform: scaleY(0.1); }
-    }
-    @keyframes blobSmile {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-2px); }
-    }
-    
-    /* Background for the loader itself: soft blue/white to match the image environment */
-    #loaderOverlay, #loaderOverlay {
-        background: linear-gradient(180deg, #f0f6ff 0%, #ffffff 100%) !important;
+    #loaderOverlay {
+        background: linear-gradient(180deg, #eaf2ff 0%, #ffffff 100%) !important;
     }
 </style>
 <div id="loaderOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:99999; display:flex; flex-direction:column; align-items:center; justify-content:center; transition: opacity 0.5s ease;">
     <div class="blob-container">
-                <svg class="blob-face" viewBox="0 0 100 50">
-            <rect class="blob-eye left-eye" x="12" y="10" width="14" height="20" rx="7" fill="#1a1a1a" />
-            <rect class="blob-eye right-eye" x="74" y="10" width="14" height="20" rx="7" fill="#1a1a1a" />
-            <path class="blob-mouth" d="M36 32 Q50 44 64 32" fill="none" stroke="#1a1a1a" stroke-width="6.5" stroke-linecap="round" />
-        </svg>
+        <div class="blob-face">
+            <div class="blob-eyes">
+                <div class="blob-eye"></div>
+                <div class="blob-eye"></div>
+            </div>
             <div class="blob-mouth"></div>
         </div>
+    </div>
     </div>
     <div style="margin-top:40px; font-weight:800; color:#1a1a1a; font-size:20px; letter-spacing:0.5px;">Загружаем магию...</div>
     <div style="margin-top:8px; font-weight:500; color:#666; font-size:14px;">Ищем лучшие места для вас</div>
