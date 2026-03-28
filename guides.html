@@ -25,8 +25,6 @@
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-2px); }
     }
-    @keyframes blobHatBob {
-        0% { transform: translateX(-50%) rotate(5deg) translateY(0); }
         33% { transform: translateX(-48%) rotate(8deg) translateY(-2px); }
         66% { transform: translateX(-52%) rotate(2deg) translateY(1px); }
         100% { transform: translateX(-50%) rotate(5deg) translateY(0); }
@@ -46,15 +44,6 @@
                     inset -15px -15px 30px rgba(255, 255, 255, 0.8),
                     inset 10px 10px 25px rgba(255, 210, 200, 0.6);
         margin: 60px auto 32px auto;
-    }
-    .blob-hat {
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%) rotate(5deg);
-        font-size: 50px;
-        animation: blobHatBob 4s ease-in-out infinite;
-        z-index: 2;
     }
     .blob-face {
         position: absolute;
@@ -88,7 +77,6 @@
 
 <div class="screen active" id="startScreen"><div id="loadingIndicator" style="text-align:center;padding:40px;color:rgba(42,42,40,0.5)">Загрузка...</div>
 <div class="blob-container">
-        <div class="blob-hat">👒</div>
         <svg class="blob-face" viewBox="0 0 100 50">
             <rect class="blob-eye left-eye" x="12" y="10" width="14" height="20" rx="7" fill="#1a1a1a" />
             <rect class="blob-eye right-eye" x="74" y="10" width="14" height="20" rx="7" fill="#1a1a1a" />
