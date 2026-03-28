@@ -74,7 +74,7 @@ window.removeFavoriteOverlay = function(btn) {
     let favs = JSON.parse(localStorage.getItem('bali_favorites') || '[]');
     favs = favs.filter(f => f !== name); 
     localStorage.setItem('bali_favorites', JSON.stringify(favs));
-    
+    syncFavoritesToSupabase(favs);
     let countEl = document.getElementById('floatingFavCount');
     if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
     
@@ -226,6 +226,7 @@ async function fetchAllPlaces() {
         // Sort top choices first if needed
         allPlaces.sort((a,b) => (b.priority || 0) - (a.priority || 0));
         PLACES = allPlaces;
+        await loadFavoritesFromSupabase();
     } catch(e) {
         console.error("Failed to load catalog:", e);
     }
@@ -334,16 +335,52 @@ window.applyFilters = function() {
 }
 
 
-// --- Favorites (Wishlist) Logic ---
+
+// --- Favorites (Wishlist) Logic with Supabase Sync ---
 function getFavorites() {
-    
     let favs = localStorage.getItem('bali_favorites');
     favs = favs ? JSON.parse(favs) : [];
     let countEl = document.getElementById('floatingFavCount');
     if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
     return favs;
-
 }
+
+async function syncFavoritesToSupabase(favs) {
+    if (window.tgUser && window.tgUser.username) {
+        let username = window.tgUser.username.toLowerCase();
+        try {
+            await fetch(`${SUPABASE_URL}/users?username=eq.${username}`, {
+                method: 'PATCH',
+                headers: {
+                    "apikey": SUPABASE_ANON,
+                    "Authorization": `Bearer ${SUPABASE_ANON}`,
+                    "Content-Type": "application/json",
+                    "Prefer": "return=minimal"
+                },
+                body: JSON.stringify({ favorites: favs })
+            });
+        } catch(e) { console.error("Sync favs error:", e); }
+    }
+}
+
+async function loadFavoritesFromSupabase() {
+    if (window.tgUser && window.tgUser.username) {
+        let username = window.tgUser.username.toLowerCase();
+        try {
+            let res = await fetch(`${SUPABASE_URL}/users?username=eq.${username}&select=favorites`, {
+                headers: { "apikey": SUPABASE_ANON, "Authorization": `Bearer ${SUPABASE_ANON}` }
+            });
+            let data = await res.json();
+            if (data && data.length > 0 && Array.isArray(data[0].favorites)) {
+                localStorage.setItem('bali_favorites', JSON.stringify(data[0].favorites));
+                // Force UI update if already rendered
+                let countEl = document.getElementById('floatingFavCount');
+                if (countEl) countEl.innerText = '❤️ ' + data[0].favorites.length + ' сохранённых';
+            }
+        } catch(e) { console.error("Load favs error:", e); }
+    }
+}
+
 
 window.toggleFavorite = function(name, event) {
     if (event) event.stopPropagation();
@@ -375,6 +412,7 @@ window.toggleFavorite = function(name, event) {
     // Also deduplicate just in case
     let uniqueFavs = [...new Set(favs)];
     localStorage.setItem('bali_favorites', JSON.stringify(uniqueFavs));
+    syncFavoritesToSupabase(uniqueFavs);
 };
 
 
@@ -554,7 +592,7 @@ window.removeFavoriteOverlay = function(btn) {
     let favs = JSON.parse(localStorage.getItem('bali_favorites') || '[]');
     favs = favs.filter(f => f !== name); 
     localStorage.setItem('bali_favorites', JSON.stringify(favs));
-    
+    syncFavoritesToSupabase(favs);
     let countEl = document.getElementById('floatingFavCount');
     if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
     
