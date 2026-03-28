@@ -85,23 +85,40 @@
         z-index: 3;
         transform-origin: bottom center;
     }
-    .blob-face {
+        .blob-face {
         position: absolute;
         top: 50%;
         left: 53%;
         transform: translate(-50%, -50%);
         width: 55px;
-        height: 28px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .blob-eyes {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 4px;
+        box-sizing: border-box;
     }
     .blob-eye {
-        transform-origin: 50% 20px;
+        width: 10px;
+        height: 14px;
+        background: #1a1a1a;
+        border-radius: 50%;
         animation: blobBlink 5s infinite;
+        transform-origin: center;
     }
-    .left-eye { transform: rotate(5deg); transform-origin: 15px 20px; }
-    .right-eye { transform: rotate(-5deg); transform-origin: 85px 20px; }
     .blob-mouth {
+        width: 14px;
+        height: 8px;
+        border-bottom: 4px solid #1a1a1a;
+        border-radius: 0 0 14px 14px;
+        margin-top: 4px;
         animation: blobSmile 3s ease-in-out infinite;
-        transform-origin: 50% 35px;
     }
 </style>
 
@@ -121,11 +138,13 @@
         <div class="blob-map"></div>
         <div class="blob-shadow"></div>
         <div class="blob-character">
-            <svg class="blob-face" viewBox="0 0 100 50">
-                <rect class="blob-eye left-eye" x="15" y="10" width="12" height="18" rx="6" fill="#1a1a1a" />
-                <rect class="blob-eye right-eye" x="73" y="10" width="12" height="18" rx="6" fill="#1a1a1a" />
-                <path class="blob-mouth" d="M35 34 Q50 45 65 34" fill="none" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round" />
-            </svg>
+            <div class="blob-face">
+            <div class="blob-eyes">
+                <div class="blob-eye"></div>
+                <div class="blob-eye"></div>
+            </div>
+            <div class="blob-mouth"></div>
+        </div>
         </div>
     </div>
 <div class="title">Найди <em>свой район</em> на Бали</div>
