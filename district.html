@@ -43,23 +43,40 @@
         66% { transform: translateX(-52%) rotate(2deg) translateY(1px); }
         100% { transform: translateX(-50%) rotate(5deg) translateY(0); }
     }
-    .blob-face {
+        .blob-face {
         position: absolute;
         top: 50%;
         left: 53%;
         transform: translate(-50%, -50%);
-        width: 70px;
-        height: 35px;
+        width: 55px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .blob-eyes {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 4px;
+        box-sizing: border-box;
     }
     .blob-eye {
-        transform-origin: 50% 20px;
+        width: 10px;
+        height: 14px;
+        background: #1a1a1a;
+        border-radius: 50%;
         animation: blobBlink 5s infinite;
+        transform-origin: center;
     }
-    .left-eye { transform: rotate(5deg); transform-origin: 19px 20px; }
-    .right-eye { transform: rotate(-5deg); transform-origin: 81px 20px; }
     .blob-mouth {
+        width: 14px;
+        height: 8px;
+        border-bottom: 4px solid #1a1a1a;
+        border-radius: 0 0 14px 14px;
+        margin-top: 4px;
         animation: blobSmile 3s ease-in-out infinite;
-        transform-origin: 50% 35px;
     }
 </style>
 <div id="loaderOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, #eaf2ff 0%, #ffffff 100%) !important; z-index:99999; display:flex; flex-direction:column; align-items:center; justify-content:center; transition: opacity 0.5s ease;">
