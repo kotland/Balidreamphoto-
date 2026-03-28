@@ -7,38 +7,82 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <link rel="stylesheet" href="style.css?v=1774488851">
 
+
+
 <style>
     @keyframes blobShape {
-        0% { border-radius: 50%; transform: scale(1) translate(0, 0); }
-        33% { border-radius: 48% 52% 50% 50% / 50% 49% 51% 50%; transform: scale(1.02) translate(1px, -2px); }
-        66% { border-radius: 51% 49% 49% 51% / 49% 51% 48% 52%; transform: scale(0.98) translate(-1px, 2px); }
-        100% { border-radius: 50%; transform: scale(1) translate(0, 0); }
+        0% { border-radius: 50%; }
+        33% { border-radius: 48% 52% 50% 50% / 50% 49% 51% 50%; }
+        66% { border-radius: 51% 49% 49% 51% / 49% 51% 48% 52%; }
+        100% { border-radius: 50%; }
     }
-    
+    @keyframes blobBlink {
+        0%, 95%, 98% { transform: scaleY(1); }
         96% { transform: scaleY(0.1); }
     }
-    
+    @keyframes blobSmile {
+        0%, 100% { border-bottom-width: 4px; transform: translateY(0); }
         50% { border-bottom-width: 5px; transform: translateY(-1px); }
     }
-    .blob-container {
-        width: 140px;
-        height: 140px;
-        background-color: #ffd1b8; background: -webkit-radial-gradient(30% 30%, circle, #ffd1b8 0%, #ffb8c5 40%, #c1d8f5 80%, #f4f8ff 100%); background: radial-gradient(circle at 30% 30%, #ffd1b8 0%, #ffb8c5 40%, #c1d8f5 80%, #f4f8ff 100%);
-        animation: blobShape 4s ease-in-out infinite;
+    @keyframes blobJump {
+        0%, 100% { transform: translateY(0) scale(1, 1); }
+        40% { transform: translateY(-25px) scale(0.95, 1.05); }
+        50% { transform: translateY(-30px) scale(0.9, 1.1); }
+        60% { transform: translateY(-25px) scale(0.95, 1.05); }
+        90% { transform: translateY(2px) scale(1.05, 0.95); }
+    }
+    @keyframes shadowScale {
+        0%, 100% { transform: scale(1); opacity: 0.6; }
+        50% { transform: scale(0.6); opacity: 0.2; }
+    }
+    .blob-scene {
         position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 40px auto 20px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .blob-map {
+        position: absolute;
+        bottom: 10px;
+        width: 140px;
+        height: 40px;
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        border-radius: 50%;
+        box-shadow: inset 0 -4px 10px rgba(0,0,0,0.05), 0 10px 20px rgba(168, 237, 234, 0.4);
+        z-index: 1;
+    }
+    .blob-shadow {
+        position: absolute;
+        bottom: 25px;
+        width: 80px;
+        height: 15px;
+        background: rgba(0,0,0,0.15);
+        border-radius: 50%;
+        filter: blur(2px);
+        animation: shadowScale 1.5s ease-in-out infinite;
+        z-index: 2;
+    }
+    .blob-character {
+        position: absolute;
+        bottom: 20px;
+        width: 110px;
+        height: 110px;
+        background-color: #ffd1b8;
+        background: -webkit-radial-gradient(30% 30%, circle, #ffd1b8 0%, #ffb8c5 40%, #c1d8f5 80%, #f4f8ff 100%);
+        background: radial-gradient(circle at 30% 30%, #ffd1b8 0%, #ffb8c5 40%, #c1d8f5 80%, #f4f8ff 100%);
+        animation: blobShape 4s ease-in-out infinite, blobJump 1.5s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 20px 50px rgba(180, 200, 255, 0.5), 
-                    inset -15px -15px 30px rgba(255, 255, 255, 0.8),
-                    inset 10px 10px 25px rgba(255, 210, 200, 0.6);
-        margin: 60px auto 32px auto;
+        box-shadow: 0 15px 35px rgba(180, 200, 255, 0.4), inset -10px -10px 20px rgba(255, 255, 255, 0.8), inset 8px 8px 15px rgba(255, 210, 200, 0.6);
+        z-index: 3;
+        transform-origin: bottom center;
     }
-        33% { transform: translateX(-48%) rotate(8deg) translateY(-2px); }
-        66% { transform: translateX(-52%) rotate(2deg) translateY(1px); }
-        100% { transform: translateX(-50%) rotate(5deg) translateY(0); }
-    }
-        .blob-face {
+    .blob-face {
         position: absolute;
         top: 50%;
         left: 53%;
@@ -72,14 +116,6 @@
         border-radius: 0 0 14px 14px;
         margin-top: 4px;
         animation: blobSmile 3s ease-in-out infinite;
-    }
-    @keyframes blobBlink {
-        0%, 95%, 98% { transform: scaleY(1); }
-        96% { transform: scaleY(0.1); }
-    }
-    @keyframes blobSmile {
-        0%, 100% { border-bottom-width: 4px; transform: translateY(0); }
-        50% { border-bottom-width: 5px; transform: translateY(-1px); }
     }
 </style>
 
