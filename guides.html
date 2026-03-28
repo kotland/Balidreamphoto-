@@ -130,7 +130,7 @@
 <!-- LOADING SCREEN -->
 <div class="screen" id="loadingScreen">
 <div style="text-align:center;padding:80px 20px">
-<div style="font-size:48px;margin-bottom:20px;animation:pulse 1.5s ease-in-out infinite">🌴</div>
+<div style="font-size:48px;margin-bottom:20px;animation:pulse 1.5s ease-in-out infinite"></div>
 <h2 style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:12px">Подбираем <em style="color:#2a6b5a">район</em></h2>
 <p style="color:rgba(42,42,40,0.5);font-size:14px">Анализируем ваши предпочтения...</p>
 <div style="margin-top:30px;width:200px;height:4px;background:rgba(42,107,90,0.1);border-radius:4px;margin-left:auto;margin-right:auto;overflow:hidden">
@@ -175,7 +175,7 @@ var WHO=[
 {id:'family',emoji:'👨‍👩‍👧',label:'Семья с детьми'},
 {id:'business',emoji:'💼',label:'Предприниматель'},
 {id:'artist',emoji:'🎨',label:'Художник / музыкант'},
-{id:'tourist',emoji:'🌴',label:'Просто отдыхаю'}
+{id:'tourist',emoji:'',label:'Просто отдыхаю'}
 ];
 var WHAT=[
 {id:'ocean',emoji:'🌊',label:'Рядом океан'},
@@ -224,7 +224,7 @@ var AREAS=[
 {name:'Ловина',island:true,guide:'lovina',who:['family','tourist','yoga'],what:['quiet','budget','culture','ocean','swim','farm','banya','dive'],who_text:'Искатели тишины',desc:'Дельфины, горячие источники, чёрный песок.',places:['🐬 Дельфины на рассвете','♨️ Banjar Hot Springs','🛕 Brahma Vihara','🍜 Еда от 15K','🌊 Спокойное море']},
 {name:'Кинтамани',guide:'kintamani',who:['photo','tourist','yoga'],what:['volcano','quiet','budget','culture','photo_sp','retreat'],who_text:'Искатели гор и кофе',desc:'Вулкан Батур, спешелти кофейни, горячие источники.',places:['🌋 Вулкан Батур','☕ Pahdi Coffee','♨️ Toya Devasya','🏕 Black Lava Camp']},
 {name:'Бедугул и Мундук',guide:'bedugul',who:['photo','tourist','family'],what:['quiet','budget','culture','photo_sp','farm','retreat','golf'],who_text:'Любители озер и клубники',desc:'Озёра, водопады, туманы, ботанический сад и гольф.',places:['🍓 Клубничные фермы','💧 Sekumpul Waterfall','⛳ Handara Golf','🌲 Ботанический сад']},
-{name:'Нуса Пенида',guide:'nusapenida',island:true,who:['photo','surfer','tourist'],what:['ocean','dive','photo_sp','quiet','swim','budget','volcano'],who_text:'Фотографы, авантюристы',desc:'Скалы, манты, бирюзовая вода.',places:['📸 Kelingking Beach','🤿 Манта Рэй','🏖 Diamond Beach','🌊 Broken Beach','🌴 Treehouse']},
+{name:'Нуса Пенида',guide:'nusapenida',island:true,who:['photo','surfer','tourist'],what:['ocean','dive','photo_sp','quiet','swim','budget','volcano'],who_text:'Фотографы, авантюристы',desc:'Скалы, манты, бирюзовая вода.',places:['📸 Kelingking Beach','🤿 Манта Рэй','🏖 Diamond Beach','🌊 Broken Beach',' Treehouse']},
 {name:'Острова Гили',guide:'gili',island:true,who:['tourist','photo','surfer','yoga'],what:['ocean','dive','photo_sp','quiet','swim','party','budget'],who_text:'Снорклеры, тусовщики, романтики',desc:'Бирюзовая вода, черепахи, без машин.',places:['🐢 Turtle Point','🗿 Underwater Statues','🏖 Sunset Point Gili T','🤿 Снорклинг-тур 3 острова','🎉 Mad Monkey Bar']},
 {name:'Ломбок и Сумбава',guide:'lombok',island:true,who:['surfer','photo','tourist','yoga'],what:['surf','ocean','dive','quiet','volcano','budget','photo_sp'],who_text:'Сёрферы, треккеры, авантюристы',desc:'Ринджани, розовые пляжи, китовые акулы.',places:['🌋 Вулкан Ринджани','🏖 Pink Beach','🏄 Desert Point','🐋 Китовые акулы','🏖 Tanjung Aan']},
 {name:'Ява',guide:'java',island:true,who:['tourist','photo','yoga'],what:['volcano','culture','photo_sp','budget','quiet'],who_text:'Исследователи, культурные путешественники',desc:'Бромо, Иджен, Боробудур — другая планета.',places:['🌋 Вулкан Бромо','🔥 Голубое пламя Иджен','💧 Тумпак Севу','🏛 Боробудур','🏛 Прамбанан']}
