@@ -41,5 +41,38 @@
 </div>
 
 <script type="module" src="js/app.js"></script>
+
+<script type="module">
+import { fetchDistrictRoutes, fetchDistrictName } from './js/api.js';
+
+window.routes = [];
+
+const slug = new URLSearchParams(window.location.search).get('slug') || 'canggu';
+
+fetchDistrictName(slug).then(name => {
+    let titleEl = document.getElementById('districtTitle');
+    if(titleEl && name) titleEl.innerHTML = name + ' <span style="color:rgba(42,42,40,0.5); font-weight:400;">— Маршруты</span>';
+});
+
+fetchDistrictRoutes(slug).then(data => {
+    window.routes = data;
+    window.showRouteGallery();
+    
+    // Hide loader
+    setTimeout(() => {
+        let loader = document.getElementById('loaderOverlay');
+        if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 500);
+        }
+    }, 500);
+}).catch(e => {
+    console.error("Failed to load routes:", e);
+    // Hide loader anyway
+    let loader = document.getElementById('loaderOverlay');
+    if (loader) loader.style.display = 'none';
+});
+</script>
+
 </body>
 </html>
