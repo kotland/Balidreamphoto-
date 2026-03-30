@@ -248,6 +248,7 @@ async function fetchAllPlaces() {
 }
 
 const ITEMS_PER_PAGE = 20;
+let filteredPlaces = [];
 let currentIndex = 0;
 
 function escapeHtml(text) {
