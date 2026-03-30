@@ -19,7 +19,7 @@ window.hideRouteOverlay = function() {
 };
 
 window.setDaysFilter = function(days) {
-    currentDays = days;
+    currentDays = (days === 'all') ? 'all' : parseInt(days);
     window.showRouteGallery();
 };
 
@@ -223,7 +223,7 @@ window.showRouteGallery = function() {
     document.getElementById('routesListContainer').innerHTML = html;
     
     // Highlight buttons after render
-    setTimeout(() => filterRoutes(currentStyle, currentBudget), 50);
+    // Highlight logic handled in HTML inline styles
   } catch(e) { 
     console.error(e); 
     document.getElementById('routesListContainer').innerHTML = '<div style="padding:20px; text-align:center; color:red;">Произошла ошибка загрузки галереи.</div>'; 
