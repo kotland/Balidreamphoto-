@@ -45,7 +45,7 @@
 <script type="module">
 import { fetchDistrictRoutes, fetchDistrictName } from './js/api.js';
 
-window.routes = [];
+window.MANUAL_ROUTES_ZONE = [];
 
 const slug = new URLSearchParams(window.location.search).get('slug') || 'canggu';
 
@@ -55,7 +55,7 @@ fetchDistrictName(slug).then(name => {
 });
 
 fetchDistrictRoutes(slug).then(data => {
-    window.routes = data;
+    window.MANUAL_ROUTES_ZONE = data;
     window.showRouteGallery();
     
     // Hide loader
