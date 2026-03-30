@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="kk">
+
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Балидегі гидің</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Где свои на Бали</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<link rel="stylesheet" href="../style.css">
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
@@ -13,18 +14,15 @@
 <div id="passwordOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#f8f6f2;z-index:99999;display:flex;align-items:center;justify-content:center">
 <div style="text-align:center;padding:20px">
 <div style="font-size:48px;margin-bottom:20px">🔒</div>
-<h1 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px">Жабық қолжетімділік</h1>
-<p style="color:rgba(42,42,40,0.5);margin-bottom:30px">Кіру кодын енгізіңіз</p>
-<input type="text" id="accessCode" placeholder="Код" style="width:150px;padding:14px 20px;border:2px solid rgba(42,107,90,0.2);border-radius:14px;font-size:18px;text-align:center;outline:none;font-family:Inter,sans-serif" onkeyup="if(event.key==='Enter')checkAccess()">
+<h1 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px">Закрытый доступ</h1>
+<p style="color:rgba(42,42,40,0.5);margin-bottom:30px">Введите код для входа</p>
+<input id="accessCode" onkeyup="if(event.key==='Enter')checkAccess()" placeholder="Код" style="width:150px;padding:14px 20px;border:2px solid rgba(42,107,90,0.2);border-radius:14px;font-size:18px;text-align:center;outline:none;font-family:Inter,sans-serif" type="text"/>
 <div style="margin-top:16px">
-<button onclick="checkAccess()" style="padding:14px 40px;border-radius:14px;font-size:16px;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600">Кіру</button>
+<button onclick="checkAccess()" style="padding:14px 40px;border-radius:14px;font-size:16px;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border:none;cursor:pointer;font-family:Inter,sans-serif;font-weight:600">Войти</button>
 </div>
-<div id="codeError" style="color:#e74c3c;margin-top:12px;font-size:14px;display:none">Қате код</div>
+<div id="codeError" style="color:#e74c3c;margin-top:12px;font-size:14px;display:none">Неверный код</div>
 </div>
 </div>
-
-
-
 <!-- LANGUAGE SELECTION -->
 <div id="langOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#f8f6f2;z-index:99998;display:flex;align-items:center;justify-content:center;display:none">
 <div style="text-align:center;padding:20px">
@@ -39,38 +37,34 @@
 </div>
 </div>
 </div>
-
 <!-- CHOICE SCREEN -->
-
 <div class="screen active" id="choiceScreen">
 <div style="font-size:48px;text-align:center;margin:60px 0 16px">🌴</div>
-<div class="title">Балиге <em>гидің</em></div>
-<div class="subtitle" style="margin-bottom:32px" id="choiceSubtitle">Саған не керек екенін таңда</div>
+<div class="title">Твой <em>гид</em> по Бали</div>
+<div class="subtitle" id="choiceSubtitle" style="margin-bottom:32px">Выбери, что нужно именно тебе</div>
 <button class="btn btn-primary" onclick="startLiving()" style="margin-bottom:12px;padding:20px 24px">
 <div style="text-align:left;width:100%">
-<div style="font-size:16px;font-weight:700">Балиде қайда тұру керек</div>
-<div style="font-size:12px;color:rgba(42,42,40,0.5);margin-top:4px">Демалыс · 90+ бағыт</div>
+<div style="font-size:16px;font-weight:700">Где жить на Бали</div>
+<div style="font-size:12px;color:rgba(42,42,40,0.5);margin-top:4px">Отпуск · 90+ маршрутов</div>
 </div>
-<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
 </button>
-
 <button class="btn btn-primary" onclick="openCatalog()" style="padding:20px 24px;margin-bottom:12px">
 <div style="text-align:left;width:100%">
-<div style="font-size:16px;font-weight:700">📍 Орындар каталогы</div>
-<div style="font-size:12px;color:rgba(42,42,40,0.5);margin-top:4px">200+ орын аудандар мен санаттар бойынша</div>
+<div style="font-size:16px;font-weight:700">📍 Каталог мест</div>
+<div style="font-size:12px;color:rgba(42,42,40,0.5);margin-top:4px">200+ мест по районам и категориям</div>
 </div>
-<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
 </button>
 <button class="btn btn-primary" onclick="openBase()" style="padding:20px 24px;background:rgba(42,107,90,0.06);border:1px solid rgba(42,107,90,0.1)">
 <div style="text-align:left;width:100%">
-<div style="font-size:16px;font-weight:700;color:#2a6b5a">📋 Бали Базасы</div>
-<div style="font-size:12px;color:rgba(42,42,40,0.5);margin-top:4px">Қауіптер · Мотоцикл · Дәрі · Ақша · Мәдениет</div>
+<div style="font-size:16px;font-weight:700;color:#2a6b5a">📋 Бали База</div>
+<div style="font-size:12px;color:rgba(42,42,40,0.5);margin-top:4px">Опасности · Байк · Аптечка · Деньги · Культура</div>
 </div>
-<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#2a6b5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+<svg fill="none" height="16" stroke="#2a6b5a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
 </button>
-
 <div style="text-align:center;margin-top:24px">
-<button onclick="localStorage.removeItem('bali_lang');showLangOverlay()" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(42,107,90,0.15);background:rgba(42,107,90,0.04);font-size:13px;cursor:pointer;font-family:Inter,sans-serif;color:rgba(42,42,40,0.5)">🌍 Тілді ауыстыру</button>
+<button onclick="localStorage.removeItem('bali_lang');showLangOverlay()" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(42,107,90,0.15);background:rgba(42,107,90,0.04);font-size:13px;cursor:pointer;font-family:Inter,sans-serif;color:rgba(42,42,40,0.5)">🌍 Сменить язык</button>
 </div>
 </div>
 <!-- START SCREEN (District filter intro) -->
@@ -79,20 +73,20 @@
 function setLang(lang) {
   localStorage.setItem('bali_lang', lang);
   document.getElementById('langOverlay').style.display = 'none';
-  if (lang === 'en') { window.location.href = '../en/index.html'; return; }
-  if (lang === 'ua') { window.location.href = '../ua/index.html'; return; }
-  if (lang === 'kz') { window.location.href = '../kz/index.html'; return; }
-  if (lang === 'ar') { window.location.href = '../ar/index.html'; return; }
+  if (lang === 'en') { window.location.href = 'en/index.html'; return; }
+  if (lang === 'ua') { window.location.href = 'ua/index.html'; return; }
+  if (lang === 'kz') { window.location.href = 'kz/index.html'; return; }
+  if (lang === 'ar') { window.location.href = 'ar/index.html'; return; }
   // ru — stay on current page
 }
 function showLangOverlay() {
   if (localStorage.getItem('bali_lang')) {
     // Language already chosen — redirect if needed
     var lang = localStorage.getItem('bali_lang');
-    if (lang === 'en') { window.location.href = '../en/index.html'; return; }
-    if (lang === 'ua') { window.location.href = '../ua/index.html'; return; }
-    if (lang === 'kz') { window.location.href = '../kz/index.html'; return; }
-    if (lang === 'ar') { window.location.href = '../ar/index.html'; return; }
+    if (lang === 'en') { window.location.href = 'en/index.html'; return; }
+    if (lang === 'ua') { window.location.href = 'ua/index.html'; return; }
+    if (lang === 'kz') { window.location.href = 'kz/index.html'; return; }
+    if (lang === 'ar') { window.location.href = 'ar/index.html'; return; }
     return; // ru — stay
   }
   document.getElementById('langOverlay').style.display = 'flex';
@@ -117,7 +111,7 @@ function startLiving(){ window.location.href='guides.html'; }
 function openBase(){ window.location.href='base.html'; }
 function openCatalog(){ window.location.href='catalog.html'; }
 
-var CHOICE_PHRASES=['Саған не керек екенін таңда','Неден бастаймыз?','Балиден не іздейсің?'];
+var CHOICE_PHRASES=['Выбери, что нужно именно тебе','С чего начнём?','Что ищешь на Бали?'];
 var cSub=document.getElementById('choiceSubtitle');
 if(cSub){cSub.textContent=CHOICE_PHRASES[Math.floor(Math.random()*CHOICE_PHRASES.length)];}
 
