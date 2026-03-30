@@ -1,5 +1,5 @@
 import os
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo, MenuButtonWebApp
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler
 
 TOKEN = os.environ.get('BOT_TOKEN', '')
@@ -87,17 +87,42 @@ async def start(update: Update, context):
         reply_markup=reply_markup
     )
 
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo, MenuButtonWebApp
+
 async def lang_callback(update: Update, context):
     query = update.callback_query
     await query.answer()
     lang = query.data.replace("lang_", "")
     greeting = GREETINGS.get(lang, GREETINGS["en"])
-    # Edit the original message to remove buttons
+    
+    # Update the greeting language
     await query.message.edit_text(
         "✅ " + {"ru":"Русский","en":"English","ua":"Українська","kz":"Қазақша","ar":"العربية"}.get(lang, lang)
     )
-    # Send greeting as new message
-    await query.message.reply_text(greeting)
+    
+    # Build the personalized WebApp URL
+    base_url = "https://kotland.github.io/Balidreamphoto-"
+    app_url = f"{base_url}/{lang}/guides.html" if lang != 'ru' else f"{base_url}/guides.html"
+    
+    # Also change the Menu Button for this specific user so the bottom left button works perfectly in their language!
+    try:
+        btn_text = {"ru":"Открыть Гайд", "en":"Open Guide", "ua":"Відкрити Гід", "kz":"Гидті ашу", "ar":"افتح الدليل"}.get(lang, "Open Guide")
+        await context.bot.set_chat_menu_button(
+            chat_id=query.message.chat_id,
+            menu_button=MenuButtonWebApp(type="web_app", text=btn_text, web_app=WebAppInfo(url=app_url))
+        )
+    except Exception as e:
+        print("Failed to set menu button:", e)
+
+    # Send greeting with a giant "Open App" button directly in the chat as well!
+    btn_text_inline = {"ru":"🚀 Открыть Гайд", "en":"🚀 Open Guide", "ua":"🚀 Відкрити Гід", "kz":"🚀 Гидті ашу", "ar":"🚀 افتح الدليل"}.get(lang, "🚀 Open Guide")
+    markup = InlineKeyboardMarkup([[InlineKeyboardButton(btn_text_inline, web_app=WebAppInfo(url=app_url))]])
+    
+    await context.bot.send_message(
+        chat_id=query.message.chat_id,
+        text=greeting,
+        reply_markup=markup
+    )
 
 def main():
     app = Application.builder().token(TOKEN).build()
