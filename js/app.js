@@ -1,7 +1,7 @@
 import { fetchDistrictRoutes, fetchDistrictName } from './api.js';
 
 
-let MANUAL_ROUTES_ZONE = [];
+let MANUAL_ROUTES_ZONE = window.MANUAL_ROUTES_ZONE || [];
 let currentStyle = 'all';
 let currentDays = 'all';
 let currentBudget = 'all';
@@ -31,7 +31,7 @@ window.filterRoutes = function(style, budget) {
 
 window.showRouteGallery = function() {
   try {
-    var routes = MANUAL_ROUTES_ZONE;
+    var routes = window.MANUAL_ROUTES_ZONE || MANUAL_ROUTES_ZONE;
     if (!routes || routes.length === 0) {
         document.getElementById('routesListContainer').innerHTML = '<div style="padding:20px; text-align:center; color:rgba(42,42,40,0.5);">Маршруты для этого района пока в разработке.</div>';
         return; 
@@ -232,7 +232,7 @@ window.showRouteGallery = function() {
 
 window.showSingleRoute = function(idx) {
   try {
-    var routes = MANUAL_ROUTES_ZONE;
+    var routes = window.MANUAL_ROUTES_ZONE || MANUAL_ROUTES_ZONE;
     var routeObj = routes[idx];
     var routeArray = Array.isArray(routeObj) ? routeObj : routeObj.places;
     var rTitle = routeObj.title || ('Маршрут ' + (idx + 1));
