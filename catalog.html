@@ -148,17 +148,12 @@ window.removeFavoriteOverlay = function(btn) {
   </div>
 </div>
 
-<div id="catalogBudgetPicker" style="margin-top:16px;display:none">
-  <div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">БЮДЖЕТ</div>
-  <div class="wrap-chips">
-    <div class="chip" onclick="updateFilter('budget', '', this)">Все</div>
-    <div class="chip" onclick="updateFilter('budget', '💚', this)">💚 до $10 (900₽)</div>
-    <div class="chip" onclick="updateFilter('budget', '💛', this)">💛 $10-30 (1-3k ₽)</div>
-    <div class="chip" onclick="updateFilter('budget', '🧡', this)">🧡 $30-50 (3-5k ₽)</div>
-    <div class="chip" onclick="updateFilter('budget', '❤️', this)">❤️ от $50 (Люкс)</div>
-  </div>
-</div>
 
+
+<div style="margin-top:16px; margin-left:16px; padding:12px; background:rgba(42,107,90,0.04); border-radius:12px; border:1px solid rgba(42,107,90,0.1); display:inline-block; font-size:12px; color:rgba(42,42,40,0.7); line-height:1.5;">
+    <div style="font-weight:700; color:#2a6b5a; margin-bottom:4px;">Подсказка по бюджету:</div>
+    💚 до $10 &nbsp; 💛 $10-30 &nbsp; 🧡 $30-50 &nbsp; ❤️ от $50
+</div>
 <div id="catalogCuisineFilter" style="margin-top:16px;display:none">
   <div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">КУХНЯ</div>
   <div class="wrap-chips">
@@ -293,7 +288,7 @@ function matchDistrict(pDistrict, filterD) {
   return pDistrict === filterD;
 }
 
-let state = { district: '', category: '', budget: '', cuisine: '', shopType: '' };
+let state = { district: '', category: '', cuisine: '', shopType: '' };
 
 function updateFilter(key, value, el) {
   if (el) {
@@ -304,22 +299,22 @@ function updateFilter(key, value, el) {
   state[key] = value;
 
   if (key === 'district') {
-    state.category = ''; state.budget = ''; state.cuisine = ''; state.shopType = '';
+    state.category = ''; state.cuisine = ''; state.shopType = '';
     document.querySelectorAll('#catalogCategoryPicker .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
+    
     document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
     document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
   }
   
   if (key === 'category') {
-    state.budget = ''; state.cuisine = ''; state.shopType = '';
-    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
+    state.cuisine = ''; state.shopType = '';
+    
     document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
     document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
   }
 
   document.getElementById('catalogCategoryPicker').style.display = state.district ? 'block' : 'none';
-  document.getElementById('catalogBudgetPicker').style.display = ['еда', 'кофейни', 'beach_club', 'спа', 'жильё'].includes(state.category) ? 'block' : 'none';
+  
   document.getElementById('catalogCuisineFilter').style.display = ['еда', 'кофейни'].includes(state.category) ? 'block' : 'none';
   document.getElementById('catalogShopFilter').style.display = state.category === 'шоппинг' ? 'block' : 'none';
 
@@ -362,7 +357,7 @@ window.applyFilters = function() {
         return false;
       }
     }
-    if (state.budget && p.budget !== state.budget) return false;
+    
     if (state.shopType && (!p.tags || !p.tags.includes(state.shopType))) return false;
 
     if (state.cuisine) {
