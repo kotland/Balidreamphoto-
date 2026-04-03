@@ -315,13 +315,13 @@ window.showSingleRoute = function(idx) {
       }
     }
     if (mapPlaces.length >= 2) {
-      var origin = encodeURIComponent(mapPlaces[0] + ',' + (forcedDistrict || 'Bali'));
-      var destination = encodeURIComponent(mapPlaces[mapPlaces.length - 1] + ',' + (forcedDistrict || 'Bali'));
+      var origin = encodeURIComponent(mapPlaces[0] + ',' + (typeof forcedDistrict !== 'undefined' ? forcedDistrict : (new URLSearchParams(window.location.search).get('slug') || 'Bali')));
+      var destination = encodeURIComponent(mapPlaces[mapPlaces.length - 1] + ',' + (typeof forcedDistrict !== 'undefined' ? forcedDistrict : (new URLSearchParams(window.location.search).get('slug') || 'Bali')));
       var waypoints = '';
       if (mapPlaces.length > 2) {
         var wp = [];
         for (var k = 1; k < mapPlaces.length - 1; k++) {
-          wp.push(encodeURIComponent(mapPlaces[k] + ',' + (forcedDistrict || 'Bali')));
+          wp.push(encodeURIComponent(mapPlaces[k] + ',' + (typeof forcedDistrict !== 'undefined' ? forcedDistrict : (new URLSearchParams(window.location.search).get('slug') || 'Bali'))));
         }
         waypoints = '&waypoints=' + wp.join('%7C');
       }
