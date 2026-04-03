@@ -138,13 +138,15 @@ window.showRouteGallery = function() {
     html += '</div>';
 
     // Style Filter
-    html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Стиль поездки:</div>';
-    html += '<div class="filter-scroll-wrapper" style="display:flex; flex-wrap:nowrap; gap:8px; overflow-x:auto; overflow-y:hidden; padding-bottom:12px; margin-bottom:16px; -webkit-overflow-scrolling: touch; scrollbar-width: none; /* Hide scrollbar for Chrome/Edge */" onwheel="this.scrollLeft += event.deltaY">';
-    html += '  <button id="btn_style_all" onclick="filterRoutes(\'all\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid #2a6b5a; ' + (currentBudget === 'cheap' ? 'background:rgba(76,175,80,0.1); color:#2a6b5a;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">Все темпы</button>';
-    html += '  <button id="btn_style_chill" onclick="filterRoutes(\'chill\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(232, 62, 140, 0.3); ' + (currentStyle === 'chill' ? 'background:rgba(255,182,193,0.3); color:#e83e8c;' : 'background:white; color:#e83e8c;') + ' white-space:nowrap; font-weight:600;">🌸 Чилл</button>';
-    html += '  <button id="btn_style_easy" onclick="filterRoutes(\'easy\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(76, 175, 80, 0.3); ' + (currentStyle === 'easy' ? 'background:rgba(76,175,80,0.15); color:#388e3c;' : 'background:white; color:#388e3c;') + ' white-space:nowrap; font-weight:600;">🟢 Изи</button>';
-    html += '  <button id="btn_style_hard" onclick="filterRoutes(\'hard\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(255, 87, 34, 0.3); ' + (currentStyle === 'hard' ? 'background:rgba(255,87,34,0.15); color:#e64a19;' : 'background:white; color:#e64a19;') + ' white-space:nowrap; font-weight:600;">🔥 Хард</button>';
-    html += '</div>';
+    if (currentDays === 'all' || currentDays === 1) {
+        html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Стиль поездки:</div>';
+        html += '<div class="filter-scroll-wrapper" style="display:flex; flex-wrap:nowrap; gap:8px; overflow-x:auto; overflow-y:hidden; padding-bottom:12px; margin-bottom:16px; -webkit-overflow-scrolling: touch; scrollbar-width: none; /* Hide scrollbar for Chrome/Edge */" onwheel="this.scrollLeft += event.deltaY">';
+        html += '  <button id="btn_style_all" onclick="filterRoutes(\'all\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid #2a6b5a; ' + (currentStyle === 'all' ? 'background:rgba(42,107,90,0.1); color:#2a6b5a;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">Все темпы</button>';
+        html += '  <button id="btn_style_chill" onclick="filterRoutes(\'chill\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(232, 62, 140, 0.3); ' + (currentStyle === 'chill' ? 'background:rgba(255,182,193,0.3); color:#e83e8c;' : 'background:white; color:#e83e8c;') + ' white-space:nowrap; font-weight:600;">🌸 Чилл</button>';
+        html += '  <button id="btn_style_easy" onclick="filterRoutes(\'easy\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(76, 175, 80, 0.3); ' + (currentStyle === 'easy' ? 'background:rgba(76,175,80,0.15); color:#388e3c;' : 'background:white; color:#388e3c;') + ' white-space:nowrap; font-weight:600;">🟢 Изи</button>';
+        html += '  <button id="btn_style_hard" onclick="filterRoutes(\'hard\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(255, 87, 34, 0.3); ' + (currentStyle === 'hard' ? 'background:rgba(255,87,34,0.15); color:#e64a19;' : 'background:white; color:#e64a19;') + ' white-space:nowrap; font-weight:600;">🔥 Хард</button>';
+        html += '</div>';
+    }
 
     let matchedCount = 0;
     
