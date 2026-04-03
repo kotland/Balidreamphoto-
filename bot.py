@@ -116,7 +116,12 @@ async def lang_callback(update: Update, context):
 
     # Send greeting with a giant "Open App" button directly in the chat as well!
     btn_text_inline = {"ru":"🚀 Открыть Гайд", "en":"🚀 Open Guide", "ua":"🚀 Відкрити Гід", "kz":"🚀 Гидті ашу", "ar":"🚀 افتح الدليل"}.get(lang, "🚀 Open Guide")
-    markup = InlineKeyboardMarkup([[InlineKeyboardButton(btn_text_inline, web_app=WebAppInfo(url=app_url))]])
+    support_text = {"ru":"💬 Техподдержка", "en":"💬 Support", "ua":"💬 Підтримка", "kz":"💬 Қолдау", "ar":"💬 الدعم"}.get(lang, "💬 Support")
+    
+    markup = InlineKeyboardMarkup([
+        [InlineKeyboardButton(btn_text_inline, web_app=WebAppInfo(url=app_url))],
+        [InlineKeyboardButton(support_text, url="https://t.me/daria_is_here")]
+    ])
     
     await context.bot.send_message(
         chat_id=query.message.chat_id,
