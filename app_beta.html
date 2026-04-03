@@ -40,7 +40,7 @@
   </div>
   
     <div style="position:relative; margin-top:12px;">
-        <div id="filtersWrapper" style="max-height: 40px; overflow: hidden; transition: max-height 0.3s ease-out; position:relative;">
+        <div id="filtersWrapper" style="height: 32px; overflow: hidden; transition: max-height 0.3s ease-out; position:relative;">
             <div class="filters" id="catFilters" style="display:flex; flex-wrap:wrap; gap:8px; padding-bottom:8px;">
                 <div class="filter-btn active" onclick="filterMap('all', this)">Все места</div>
                 <div class="filter-btn" onclick="filterMap('еда', this)">🍜 Рестораны</div>
@@ -59,7 +59,7 @@
             <div id="filterGradient" style="position:absolute; bottom:0; left:0; right:0; height:20px; background:linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1)); pointer-events:none;"></div>
         </div>
         <div id="toggleFiltersBtn" onclick="toggleFilters()" style="text-align:center; font-size:12px; color:#2a6b5a; cursor:pointer; padding:4px 0; font-weight:600;">
-            Показать все фильтры ▼
+            ⬇ Показать все фильтры
         </div>
     </div>
     <script>
@@ -67,13 +67,13 @@
         var w = document.getElementById('filtersWrapper');
         var btn = document.getElementById('toggleFiltersBtn');
         var grad = document.getElementById('filterGradient');
-        if (w.style.maxHeight === '40px') {
-            w.style.maxHeight = '500px';
-            btn.innerHTML = 'Скрыть фильтры ▲';
+        if (w.style.height === '32px') {
+            w.style.height = 'auto'; w.style.paddingBottom = '10px';
+            btn.innerHTML = '⬆ Скрыть фильтры';
             grad.style.display = 'none';
         } else {
-            w.style.maxHeight = '40px';
-            btn.innerHTML = 'Показать все фильтры ▼';
+            w.style.height = '32px'; w.style.paddingBottom = '0px';
+            btn.innerHTML = '⬇ Показать все фильтры';
             grad.style.display = 'block';
         }
     }
