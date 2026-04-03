@@ -233,7 +233,13 @@ async function fetchAllPlaces() {
         
         // Sort top choices first if needed
         allPlaces.sort((a,b) => (b.priority || 0) - (a.priority || 0));
-        PLACES = allPlaces;
+        allPlaces.forEach(p => {
+    if (p.district_id && !p.district) {
+        const ID_TO_SLUG = {1:'canggu', 2:'uluwatu', 3:'ubud', 4:'seminyak', 5:'amed', 6:'lovina', 7:'kintamani', 8:'gili', 9:'bukit_nusadua', 10:'bedugul', 11:'nusapenida', 12:'lombok', 13:'java', 14:'sanur', 15:'north'};
+        p.district = ID_TO_SLUG[p.district_id] || '';
+    }
+});
+PLACES = allPlaces;
         await loadFavoritesFromSupabase();
     } catch(e) {
         console.error("Failed to load catalog:", e);
