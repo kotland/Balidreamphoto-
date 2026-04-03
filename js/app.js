@@ -132,9 +132,9 @@ window.showRouteGallery = function() {
     html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Бюджет маршрутов:</div>';
     html += '<div class="filter-scroll-wrapper" style="display:flex; flex-wrap:nowrap; gap:8px; overflow-x:auto; overflow-y:hidden; padding-bottom:12px; margin-bottom:16px; -webkit-overflow-scrolling: touch; scrollbar-width: none; /* Hide scrollbar for Chrome/Edge */" onwheel="this.scrollLeft += event.deltaY">';
     html += '  <button id="btn_budget_all" onclick="filterRoutes(undefined, \'all\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'all' ? 'background:#2a2a28; color:white;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">Все бюджеты</button>';
-    html += '  <button id="btn_budget_cheap" onclick="filterRoutes(undefined, \'cheap\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'cheap' ? 'background:rgba(76,175,80,0.1); color:#2a6b5a;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">💚 Бэкпекер (до $25 / 2.5k₽)</button>';
-    html += '  <button id="btn_budget_medium" onclick="filterRoutes(undefined, \'medium\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'medium' ? 'background:rgba(243,156,18,0.1); color:#d35400;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">💛 Комфорт ($25-60 / 2.5-6k₽)</button>';
-    html += '  <button id="btn_budget_luxury" onclick="filterRoutes(undefined, \'luxury\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'luxury' ? 'background:rgba(231,76,60,0.1); color:#c0392b;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">❤️ Люкс (от $60 / 6k₽)</button>';
+    html += '  <button id="btn_budget_cheap" onclick="filterRoutes(undefined, \'cheap\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'cheap' ? 'background:rgba(76,175,80,0.1); color:#2a6b5a;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">💚 Бэкпекер (до $30 / 450K IDR)</button>';
+    html += '  <button id="btn_budget_medium" onclick="filterRoutes(undefined, \'medium\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'medium' ? 'background:rgba(243,156,18,0.1); color:#d35400;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">💛 Комфорт ($30-70 / 450K-1M IDR)</button>';
+    html += '  <button id="btn_budget_luxury" onclick="filterRoutes(undefined, \'luxury\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'luxury' ? 'background:rgba(231,76,60,0.1); color:#c0392b;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">❤️ Люкс (от $70 / 1M+ IDR)</button>';
     html += '</div>';
 
     // Style Filter
@@ -173,8 +173,8 @@ window.showRouteGallery = function() {
       }
       let rdDays = route.days || 1;
       let rcostPerDay = rcost / rdDays;
-      if (rcostPerDay <= 400) rb = 'cheap';
-      else if (rcostPerDay >= 900) rb = 'luxury';
+      if (rcostPerDay <= 450) rb = 'cheap';
+      else if (rcostPerDay >= 1000) rb = 'luxury';
       else rb = 'medium';
       
       if (currentBudget !== 'all' && rb !== currentBudget) continue;
