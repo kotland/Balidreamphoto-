@@ -262,6 +262,24 @@ function escapeHtml(text) {
     .replace(/'/g, "&#039;");
 }
 
+
+const DISTRICT_SUBS = {
+  'Убуд': ['ubud', 'убуд'],
+  'Чангу': ['canggu', 'чангу'],
+  'Семиньяк': ['seminyak', 'семиньяк'],
+  'Улувату': ['uluwatu', 'улувату'],
+  'Букит и Нуса-Дуа': ['bukit_nusadua', 'bukit', 'nusadua', 'нуса-дуа', 'букит'],
+  'Санур': ['sanur', 'санур'],
+  'Амед и Восток': ['amed', 'амед'],
+  'Кинтамани': ['kintamani', 'north', 'кинтамани'],
+  'Бедугул и Мундук': ['bedugul', 'munduk', 'бедугул'],
+  'Ловина': ['lovina', 'ловина'],
+  'Нуса Пенида': ['nusapenida', 'нуса пенида'],
+  'Гили': ['gili', 'гили'],
+  'Ломбок и Сумбава': ['lombok', 'ломбок'],
+  'Ява': ['java', 'ява']
+};
+
 function matchDistrict(pDistrict, filterD) {
   if (!filterD) return true;
   var subs = DISTRICT_SUBS[filterD];
