@@ -330,7 +330,14 @@ window.applyFilters = function() {
     
     if (state.district && !matchDistrict(p.district, state.district)) return false;
 
-    if (state.category && p.category !== state.category) return false;
+        if (state.category) {
+      if (state.category === 'рынки') {
+        const text = (p.name + " " + p.desc).toLowerCase();
+        if (!text.includes('рынок') && !text.includes('pasar') && !text.includes('фрукт') && !text.includes('market')) return false;
+      } else if (p.category !== state.category) {
+        return false;
+      }
+    }
     if (state.budget && p.budget !== state.budget) return false;
     if (state.shopType && (!p.tags || !p.tags.includes(state.shopType))) return false;
 
