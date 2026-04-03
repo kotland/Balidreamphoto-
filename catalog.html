@@ -268,6 +268,8 @@ function matchDistrict(pDistrict, filterD) {
   return pDistrict === filterD;
 }
 
+let state = { district: '', category: '', budget: '', cuisine: '', shopType: '' };
+
 function updateFilter(key, value, el) {
   if (el) {
     el.parentNode.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
