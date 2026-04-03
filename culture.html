@@ -3,144 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Бали База (Premium)</title>
-<link rel="stylesheet" href="style.css?v=1774488851">
-<style>
-  body { background:#f4f3ec; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #2a2a28; }
-  .base-header { text-align:center; padding: 40px 20px 20px; }
-  .base-header h1 { font-family: 'Playfair Display', serif; font-size: 32px; color: #2a6b5a; margin-bottom: 10px; }
-  .base-header p { font-size: 15px; color: rgba(42,42,40,0.6); line-height: 1.5; }
-  .section-card { background: #fff; border-radius: 20px; margin: 0 16px 20px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-  .section-title { font-size: 20px; font-weight: 700; color: #2a6b5a; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-  .item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(0,0,0,0.05); }
-  .item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-  .item-title { font-weight: 700; font-size: 16px; margin-bottom: 8px; color: #2a2a28; display:flex; justify-content: space-between;}
-  .item-badge { background: rgba(42, 107, 90, 0.1); color: #2a6b5a; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; }
-  .item-desc { font-size: 14px; line-height: 1.5; color: rgba(42,42,40,0.8); }
-  .warning-text { background: rgba(230, 74, 25, 0.05); padding: 12px; border-left: 3px solid #e64a19; border-radius: 4px; font-size: 13px; margin-top: 8px; color: #d84315; }
-</style>
+<title>Культура Бали</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div style="padding: 16px;">
-  <button onclick="window.location.href='index.html'" style="background: rgba(42,107,90,0.1); color: #2a6b5a; border: none; padding: 10px 20px; border-radius: 12px; font-weight: 600; cursor:pointer;">← Назад</button>
+<button class="btn-green" onclick="window.location.href='index.html?v=110'">← Назад</button>
+<h1 style="font-family:'Playfair Display',serif;text-align:center;margin:20px 0;font-size:28px">Культура <em style="color:#2a6b5a">Бали</em></h1>
+<p style="text-align:center;color:rgba(42,42,40,0.5);margin-bottom:24px">Традиции, религия, менталитет и фрукты</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
-<div class="base-header">
-  <h1>Bali Base</h1>
-  <p>Закрытая база знаний консьерж-уровня. То, о чём молчат бесплатные блоги: прямые контакты, защита от скама и реальная жизнь на острове.</p>
+<button class="btn-green" onclick="window.location.href='index.html?v=110'" style="margin-top:20px">← Назад</button>
+</body>
+</html><div style="padding:0 20px 20px;">
+<input type="text" id="baseSearch" placeholder="🔍 Найти (напр. 'оле', 'касты')" style="width:100%;padding:12px 16px;border:1px solid rgba(42,107,90,0.2);border-radius:12px;font-size:14px;background:#f8f6f2;color:#2a2a28;outline:none;">
+</div>
+<script>
+document.getElementById('baseSearch').addEventListener('input', function(e) {
+    const term = e.target.value.toLowerCase();
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(s => {
+        const text = s.textContent.toLowerCase();
+        const body = s.querySelector('.section-body');
+        const arrow = s.querySelector('.arrow');
+        if (text.includes(term)) {
+            s.style.display = 'block';
+            if (term.length > 2) {
+                body.style.display = 'block';
+                if(arrow) arrow.style.transform = 'rotate(180deg)';
+            } else if (term.length === 0) {
+                body.style.display = 'none';
+                if(arrow) arrow.style.transform = 'rotate(0deg)';
+            }
+        } else {
+            s.style.display = 'none';
+        }
+    });
+});
+</script>
+<div class="section">
+<div class="section-header" onclick="var b=this.nextElementSibling;var s=window.getComputedStyle(b).display;b.style.display=s==='none'?'block':'none';this.querySelector('.arrow').style.transform=s==='none'?'rotate(180deg)':'rotate(0deg)'">
+<span>🕊</span><span>Традиции и Культура: Ньепи</span><span class='arrow'>▼</span>
+</div>
+<div class="section-body">
+<div class="item"><div class="item-title">Ньепи (День тишины)</div><div class="item-desc">Балийский Новый год отмечается не 1 января, а весной (обычно в марте) по лунному индуистскому календарю Сака. Бали отстает от остального мира на 78 лет (в 2026 году там наступит 1948 год!). 24 часа тишины: нельзя выходить на улицу, включать свет, шуметь. Серьёзно — даже аэропорт закрыт и отключают интернет.</div></div>
+<div class="item"><div class="item-title">Парады Ого-Ого (вечер до Ньепи)</div><div class="item-desc">Гигантские демоны-куклы из бамбука и папье-маше! Их несут по улицам с музыкой, чтобы выгнать злых духов с острова. В последние годы Ого-Ого стали делать в виде огромных <b>механических, движущихся статуй</b> — это невероятное зрелище.</div></div>
+</div>
 </div>
 
-
-<div style="background:rgba(42,107,90,0.03); border-radius:16px; padding:20px; margin:0 16px 24px; border:1px solid rgba(42,107,90,0.1);">
-  <div style="font-weight:700; color:#2a6b5a; font-size:18px; margin-bottom:12px; display:flex; align-items:center; gap:8px;"><span>📁</span> Зачем нужна эта База?</div>
-  <div style="font-size:14px; line-height:1.5; color:rgba(42,42,40,0.8);">Это ваша <strong>энциклопедия выживания</strong> на острове. Здесь мы собрали то, о чём молчат бесплатные блоги:
-    <br><br>
-    💸 <strong>Разводы (Скам):</strong> Как не потерять деньги в обменнике и банкомате.<br>
-    📞 <strong>Прямые контакты:</strong> Номера гидов и лодочников (без наценок агентств).<br>
-    💊 <strong>Здоровье:</strong> Какие таблетки покупать при Бали-белли и кого бояться в джунглях.<br>
-    <br>
-    Просто нажимайте на любой заголовок ниже, чтобы раскрыть его и прочитать секреты! 👇
-  </div>
+<div class="section">
+<div class="section-header" onclick="var b=this.nextElementSibling;var s=window.getComputedStyle(b).display;b.style.display=s==='none'?'block':'none';this.querySelector('.arrow').style.transform=s==='none'?'rotate(180deg)':'rotate(0deg)'">
+<span>👹</span><span>Традиции и Культура: Ого-Ого</span><span class='arrow'>▼</span>
 </div>
-<div class="section-card" id="fruits">
-  <div class="section-title">🥭 Тропические фрукты (Гайд)</div>
-  <div class="item">
-    <div class="item-title">Мангостин (Manggis)</div>
-    <div class="item-desc"><div style="text-align:center; margin-bottom:12px;"><img src="img/mangosteen.jpg" style="width:100%; height:240px; object-fit:cover; border-radius:12px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.1);"></div>Король фруктов! Плотная фиолетовая кожура, внутри белые дольки со вкусом смеси персика, клубники и винограда. Выбирайте мягкие при нажатии (твердые как камень — испорчены).</div>
-  </div>
-  <div class="item">
-    <div class="item-title">Снейкфрут (Salak)</div>
-    <div class="item-desc"><div style="text-align:center; margin-bottom:12px;"><img src="img/salak.jpg" style="width:100%; height:240px; object-fit:cover; border-radius:12px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.1);"></div>Кожура реально как змеиная чешуя. Внутри хрустящий плод, по текстуре как плотное яблоко, вкус сладко-кислый с нотами валерьянки и клубники. Слишком много не ешьте (может крепить).</div>
-  </div>
-  <div class="item">
-    <div class="item-title">Рамбутан</div>
-    <div class="item-desc"><div style="text-align:center; margin-bottom:12px;"><img src="img/rambutan.jpg" style="width:100%; height:240px; object-fit:cover; border-radius:12px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.1);"></div>Волосатые красные шарики. Внутри полупрозрачная сладкая мякоть. Сезон: с декабря по март. Если "волосы" почернели — фрукт уже старый.</div>
-  </div>
-  <div class="item">
-    <div class="item-title">Где покупать?</div>
-    <div class="item-desc">Никаких супермаркетов (там дорого и пластиково). Покупайте в локальных фруктовых лавках у дороги (Pasar Buah) или на утренних рынках. Цены: Манго ~30k/кг, Мангостин ~40k/кг, Папайя ~15k за огромную штуку.</div>
-  </div>
+<div class="section-body">
+<div class="item"><div class="item-title">Что такое Ого-Ого?</div><div class="item-desc">Это гигантские фигуры демонов (Бутакала), которых проносят по улицам и сжигают на Бали за ночь до Нового Года (Ньепи). Название происходит от балийского слова «Ога-Ога» — «то, что трясут». Когда фигуру несут на платформе, её специально раскачивают, чтобы демон казался живым.</div></div>
+<div class="item"><div class="item-title">В чем глубинный смысл?</div><div class="item-desc">Балийцы верят, что за год в человеке и в мире накапливается тёмная энергия — злость, страхи, зависть. Ого-Ого — это её физическое воплощение. Деревня строит демона неделями, выносит его на перекрёстки, трясёт под громкие крики и музыку, а потом сжигает. Огонь забирает всё плохое.</div></div>
+</div>
 </div>
 
-<div class="section-card" id="contacts">
-  <div class="section-title">📞 Прямые контакты (Без наценок)</div>
-  <div class="item">
-    <div class="item-title">Рыбалка и лодки в Амеде <span class="item-badge">Капитан Кадек</span></div>
-    <div class="item-desc">Прямой номер местного рыбака без агентских наценок в 300%. Отвезет на рассветную рыбалку или сноркелинг на своей лодке с глазами (джукунг).<br><strong>WhatsApp:</strong> +62 812-XXXX-XXXX (По запросу)</div>
-  </div>
-  <div class="item">
-    <div class="item-title">Гид на водопады Севера <span class="item-badge">Гедэ</span></div>
-    <div class="item-desc">Проверенный балиец. Знает, когда на Секумпуле нет китайских туристов. Поможет с парковкой, проведёт тайными тропами.<br><strong>WhatsApp:</strong> +62 813-XXXX-XXXX (По запросу)</div>
-  </div>
-  <div class="item">
-    <div class="item-title">Джипы на вулкан Батур <span class="item-badge">Ваян</span></div>
-    <div class="item-desc">Бронируйте джипы напрямую у водителей, а не в уличных палатках Убуда. Экономия до $30 с машины.<br><strong>WhatsApp:</strong> +62 821-XXXX-XXXX (По запросу)</div>
-  </div>
+<div class="section">
+<div class="section-header" onclick="var b=this.nextElementSibling;var s=window.getComputedStyle(b).display;b.style.display=s==='none'?'block':'none';this.querySelector('.arrow').style.transform=s==='none'?'rotate(180deg)':'rotate(0deg)'">
+<span>🌺</span><span>Традиции и Культура: Чананг Сари</span><span class='arrow'>▼</span>
+</div>
+<div class="section-body">
+<div class="item"><div class="item-title">Что это такое?</div><div class="item-desc">Ежедневное подношение богам. Каждое утро женщины плетут десятки корзиночек из молодых листьев пальмы. Балийка — хранительница связи между мирами: богами, людьми и демонами.</div></div>
+<div class="item"><div class="item-title">Боги или демоны?</div><div class="item-desc">Если подношение лежит наверху на алтаре — это богам (всегда с горящей аромапалочкой). Если подношение лежит на земле у порога — это сегихан для демонов (без палочки). Их цель не прогнать, а задобрить — на Бали уважают темную сторону. Можно наступать на них — суть уже ушла с дымом.</div></div>
+</div>
 </div>
 
-<div class="section-card">
-  <div class="section-title">💸 Деньги и Скам (Разводы)</div>
-  <div class="item">
-    <div class="item-title">Обменники и "падающая купюра"</div>
-    <div class="item-desc">НИКОГДА не меняйте деньги в ларьках с завышенным курсом (в переулках Куты и Семиньяка). У них под столом губка или они виртуозно "роняют" 1-2 купюры по 100k при пересчете у вас на глазах. <strong>Идите только в официальные: BMC (Bali Maspintjinra) или Central Kuta.</strong></div>
-  </div>
-  <div class="item">
-    <div class="item-title">Скиммеры в банкоматах</div>
-    <div class="item-desc">Не снимайте деньги в одиночных банкоматах на улице. Там часто стоят скиммеры (считыватели карт). Снимайте наличные ТОЛЬКО в банкоматах внутри отделений банков (BCA, Mandiri, BNI) или внутри супермаркетов Indomaret/Alfamart.</div>
-  </div>
-  <div class="item">
-    <div class="item-title">Оплата по QRIS (GoPay)</div>
-    <div class="item-desc">Сейчас на Бали 90% мест принимают оплату по QR-коду (даже макашницы). Скачайте приложение Gojek, пополните баланс наличными в любом Indomaret, и оплачивайте сканом с телефона. Никакой сдачи и мелочи в карманах.</div>
-  </div>
-  <div class="item">
-    <div class="item-title">Бронь жилья через Agoda без карты</div>
-    <div class="item-desc">Если у вас нет зарубежной карты: бронируете отель на Agoda (выбирая "Оплата в магазине"), идете в Indomaret, показываете штрих-код на кассе и платите наличными рупиями! Бронь подтверждается за 1 минуту.</div>
-  </div>
+<div class="section">
+<div class="section-header" onclick="var b=this.nextElementSibling;var s=window.getComputedStyle(b).display;b.style.display=s==='none'?'block':'none';this.querySelector('.arrow').style.transform=s==='none'?'rotate(180deg)':'rotate(0deg)'">
+<span>🏛</span><span>Традиции и Культура: Балийский Дом</span><span class='arrow'>▼</span>
+</div>
+<div class="section-body">
+<div class="item"><div class="item-title">Философия двора</div><div class="item-desc">Традиционный балийский дом — это не одно здание, а комплекс павильонов вокруг центрального открытого двора (Ната). Пространство строится по строгим правилам Фен-Шуй (Аста Косала Косали) и ориентации по компасу (горы-океан).</div></div>
+<div class="item"><div class="item-title">Алинг-алинг и Ворота</div><div class="item-desc"><b>Лаванг</b> — входные ворота комплекса.<br><b>Алинг-алинг</b> — специальная стена-перегородка сразу за воротами. Она закрывает прямой вид во двор и защищает от злых духов (демоны умеют двигаться только по прямой и врезаются в стену).</div></div>
+</div>
 </div>
 
-<div class="section-card">
-  <div class="section-title">💊 Здоровье и Опасности</div>
-  <div class="item">
-    <div class="item-title">Ядовитые жуки Томкоты</div>
-    <div class="item-desc">Красно-чёрные маленькие жучки (живут у рисовых полей). <strong>ЕСЛИ СЕЛ НА ВАС — НЕ ДАВИТЕ!</strong> Просто сдуйте. При раздавливании они выделяют кислоту (педерин), которая оставляет жуткие химические ожоги (похоже на герпес на пол-лица).</div>
-  </div>
-  <div class="item">
-    <div class="item-title">Бали-белли (Отравление)</div>
-    <div class="item-desc">Случается почти у всех в первые дни (реакция на бактерии в воде/еде). <strong>Никакого активированного угля!</strong> Идите в аптеку Kimia Farma или Guardian и берите:<br>• <strong>Entrostop</strong> (останавливает диарею)<br>• <strong>Norit</strong> (местный мощный сорбент)<br>• <strong>Pocari Sweat</strong> (изотоник из магазина, пить литрами).</div>
-  </div>
-  <div class="item">
-    <div class="item-title">Агрессивные Макаки (Улувату/Убуд)</div>
-    <div class="item-desc">Это мафия. Снимайте очки, кепки, прячьте телефоны. Не смотрите им в глаза и <strong>не улыбайтесь с зубами</strong> (это знак агрессии для приматов). Если украли вещь — зовите местного с рогаткой и бананами для обмена.</div>
-  </div>
-  <div class="item">
-    <div class="item-title">Денге (Комары)</div>
-    <div class="item-desc">Днём кусают комары-переносчики лихорадки Денге. Обязательно используйте спреи с DEET (продаются в аптеках, местный Soffell тоже ок). Если температура резко 39+ и ломит кости — сразу сдавать кровь в госпиталь (Siloam, BIMC).</div>
-  </div>
+<div class="section">
+<div class="section-header" onclick="var b=this.nextElementSibling;var s=window.getComputedStyle(b).display;b.style.display=s==='none'?'block':'none';this.querySelector('.arrow').style.transform=s==='none'?'rotate(180deg)':'rotate(0deg)'">
+<span>🛕</span><span>Традиции и Культура: Домашний Храм</span><span class='arrow'>▼</span>
+</div>
+<div class="section-body">
+<div class="item"><div class="item-title">Семейный храм (Сангах Кемулан)</div><div class="item-desc">Балийские дома строятся по строгой духовной географии. Храм всегда располагается в самой священной части участка, в направлении священного вулкана Агунг. Эта система координат называется <b>Каджа</b> (направление к горам, священное) и <b>Келод</b> (направление к океану, менее священное). В центре всегда стоит главный алтарь предков.</div></div>
+<div class="item"><div class="item-title">Что такое "Таксу"?</div><div class="item-desc"><b>Таксу</b> — это божественная харизма, магнетизм и энергия. Она даёт человеку силу проявляться в искусстве, бизнесе, танце или лечении. У человека может быть талант, но без Таксу другие люди его просто не почувствуют.</div></div>
+</div>
 </div>
 
-<div class="section-card">
-  <div class="section-title">🧺 Быт: Стирка и Химчистка</div>
-  <div class="item">
-    <div class="item-title">Где стирать бренды и шелк</div>
-    <div class="item-desc">Если у вас дорогие вещи — сдавайте ТОЛЬКО в <strong>Jeeves</strong> (элитная химчистка) или сетевые прачечные с хорошим рейтингом. В обычных уличных "Laundry 10k/kg" вещи сушат на солнце, гладят раскаленным железом и часто красят чужими футболками.</div>
-  </div>
-  <div class="item">
-    <div class="item-title">Повседневная стирка</div>
-    <div class="item-desc">Ищите прачечные с приставкой "Eco" или "Premium" (цены около 25-40k за кг). Они сушат в машинках и не портят хлопок. Лайфхак: можно заказать курьера из прачечной прямо на виллу через WhatsApp или Gojek (GoSend).</div>
-  </div>
+<div class="section">
+<div class="section-header" onclick="var b=this.nextElementSibling;var s=window.getComputedStyle(b).display;b.style.display=s==='none'?'block':'none';this.querySelector('.arrow').style.transform=s==='none'?'rotate(180deg)':'rotate(0deg)'">
+<span>🔥</span><span>Традиции и Культура: Танец Кечак</span><span class='arrow'>▼</span>
+</div>
+<div class="section-body">
+<div class="item"><div class="item-title">Что такое Кечак?</div><div class="item-desc">Знаменитый балийский танец огня (исполняется на закате в Улувату). Уникален тем, что в нём нет музыкальных инструментов — ритм создают десятки мужчин, напевающих гипнотическое "чак-чак-чак". Сюжет танца основан на древнеиндийском эпосе «Рамаяна». Раньше это был закрытый транс-ритуал без зрителей. Но в 1930-х годах немецкий художник Вальтер Шпис вместе с балийским мастером Ваяном Лимбаком превратили этот ритуал в театр.</div></div>
+<div class="item"><div class="item-title">Метафора танца</div><div class="item-desc">Рама — это сознание. Сита — душа. Равана — хаос и эго. Хануман — энергия действия. А хор Кечак — это Прана (коллективная жизненная энергия). Танец Кечак — это история о том, как человек (сознание) теряет свою душу (Ситу) из-за иллюзий и эго (Равана), и с помощью силы духа и сообщества (обезьян) проходит через очищающий огонь, чтобы найти путь обратно.</div></div>
+</div>
 </div>
 
-<div class="section-card" id="visa">
-  <div class="section-title">🛂 Виза и Автогейты</div>
-  <div class="item">
-    <div class="item-title">Электронная виза (e-VOA)</div>
-    <div class="item-desc">Оформляйте ТОЛЬКО на официальном сайте <strong>molina.imigrasi.go.id</strong>. В интернете полно фейковых сайтов-посредников, которые берут $100 вместо $35. Электронная виза позволяет пройти пограничный контроль за 1 минуту через автоматические турникеты (Автогейты), минуя гигантскую очередь к офицерам!</div>
-  </div>
+<div class="section">
+<div class="section-header" onclick="var b=this.nextElementSibling;var s=window.getComputedStyle(b).display;b.style.display=s==='none'?'block':'none';this.querySelector('.arrow').style.transform=s==='none'?'rotate(180deg)':'rotate(0deg)'">
+<span>⚖️</span><span>Традиции и Культура: Философия</span><span class='arrow'>▼</span>
+</div>
+<div class="section-body">
+<div class="item"><div class="item-title">Бали — это не Индонезия</div><div class="item-desc">87% Индонезии — мусульмане, а Бали — это уникальный индуистский остров. Религия на Бали — это не просто походы в храм по выходным, это основа абсолютно всего: архитектуры, бизнеса, времени и семьи. Главная цель балийца — не победить зло, а поддерживать баланс.</div></div>
+<div class="item"><div class="item-title">Рва Бхинеда (Двойственность мира)</div><div class="item-desc">Концепция баланса противоположностей: света и тьмы, порядка и хаоса, добра и зла (символом которой является черно-белая клетчатая ткань Сапут Поленг). Балийцы считают, что зло невозможно и не нужно побеждать полностью, его нужно просто успокаивать. Деньги, карьера и развитие — вторичны. Поэтому балиец легко может отказаться от выгодного контракта ради церемонии, не будет перенапрягаться ради роста и никогда не поставит результат выше ритуала.</div></div>
+</div>
 </div>
 
-<div style="text-align:center; padding: 20px; color: rgba(42,42,40,0.5); font-size: 13px;">
-  Bali Dream Guide · 2026
+<div class="section">
+<div class="section-header" onclick="var b=this.nextElementSibling;var s=window.getComputedStyle(b).display;b.style.display=s==='none'?'block':'none';this.querySelector('.arrow').style.transform=s==='none'?'rotate(180deg)':'rotate(0deg)'">
+<span>👑</span><span>Традиции и Культура: Касты</span><span class='arrow'>▼</span>
+</div>
+<div class="section-body">
+<div class="item"><div class="item-title">Кастовая система Бали</div><div class="item-desc">На Бали до сих пор сохраняется индуистская кастовая структура. У высших каст есть специальные титулы. Брахманы: Ида Багус (мужчина), Ида Аю (женщина). Кшатрии (Аристократия): Анак Агунг, Чокорда, Дева, Густи.</div></div>
+<div class="item"><div class="item-title">Порядок рождения в имени</div><div class="item-desc">У обычных балийцев (касты Судра) имя зависит от порядка рождения:<br>1-й ребенок: Ваян, Путу или Геде.<br>2-й ребенок: Маде или Кадек.<br>3-й ребенок: Ньоман или Команг.<br>4-й ребенок: Кетут.<br>Также перед именем ставится приставка пола: <b>«И»</b> для мужчин и <b>«Ни»</b> для женщин.</div></div>
+</div>
 </div>
 
+<div class="section">
+<div class="section-header" onclick="var b=this.nextElementSibling;var s=window.getComputedStyle(b).display;b.style.display=s==='none'?'block':'none';this.querySelector('.arrow').style.transform=s==='none'?'rotate(180deg)':'rotate(0deg)'">
+<span>🧠</span><span>Традиции и Культура: Менталитет</span><span class='arrow'>▼</span>
+</div>
+<div class="section-body">
+<div class="item"><div class="item-title">Сила Общины (Банджар)</div><div class="item-desc">Индивидуализм здесь отсутствует. Вы — не личность, вы — часть структуры. Жизнью управляет <b>Банджар</b> (местная община), которая решает всё. Семья и община всегда важнее личных желаний.</div></div>
+<div class="item"><div class="item-title">Отношение к иностранцам</div><div class="item-desc">Для балийцев иностранцы — это временные гости и источник денег. Они всегда доброжелательны и улыбчивы, но никогда не считают вас "своими" и крайне редко пускают в свою глубинную жизнь.</div></div>
+<div class="item"><div class="item-title">Потеря лица и слово "НЕТ"</div><div class="item-desc">Балийцы всячески избегают конфликтов. Прямое слово «НЕТ» — это табу. Отказ обычно выражается через молчание, улыбку, обещание «сделать позже» или исчезновение. Повышать голос, давить, публично критиковать или агрессивно торопить — значит «потерять лицо». Вы мгновенно теряете уважение.</div></div>
+<div class="item"><div class="item-title">Восприятие времени и дедлайны</div><div class="item-desc">Время на Бали нелинейное. Существует два календаря: обычный 365-дневный и Павукон (210-дневный). Поэтому «завтра» может значить «когда наступит правильный день». Опоздание не считается неуважением.</div></div>
+<div class="item"><div class="item-title">Работа и Деньги</div><div class="item-desc">Работа для балийца — это не его идентичность. Можно работать плохо, но быть «хорошим человеком». Ответственность коллективная, а не персональная (поэтому все договоренности требуют мягкого контроля с вашей стороны). Балийцы не мыслят стратегически на 5-10 лет и редко копят. Жизнь одним днём.</div></div>
+<div class="item"><div class="item-title">Смерть как праздник (Нгабен)</div><div class="item-desc">Смерть на Бали — это не трагедия, а праздник и переход. Церемония кремации (Нгабен) — один из самых масштабных ритуалов. Тело сжигают, чтобы окончательно освободить душу. Плакать на похоронах нежелательно (чтобы не тянуть душу назад), атмосфера всегда радостная и шумная.</div></div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header" onclick="var b=this.nextElementSibling;var s=window.getComputedStyle(b).display;b.style.display=s==='none'?'block':'none';this.querySelector('.arrow').style.transform=s==='none'?'rotate(180deg)':'rotate(0deg)'">
+<span>🌋</span><span>Традиции и Культура: Вулкан Агунг</span><span class='arrow'>▼</span>
+</div>
+<div class="section-body">
+<div class="item"><div class="item-title">Ось духовной вселенной</div><div class="item-desc">Для балийцев Агунг — это не просто красивый вулкан. Это высшая точка концепции Каджа (направление к богам), портал между мирами и дом для духов предков. Все кровати на острове ориентированы на вершину Агунга.</div></div>
+<div class="item"><div class="item-title">Дракон Басуки и Извержение</div><div class="item-desc">Считается, что вулкан охраняет гигантский мифический змей Басуки, который контролирует извержения. Последнее страшное извержение Агунга в 1963 году балийцы считают наказанием за утрату духовного баланса на острове.</div></div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header" onclick="var b=this.nextElementSibling;var s=window.getComputedStyle(b).display;b.style.display=s==='none'?'block':'none';this.querySelector('.arrow').style.transform=s==='none'?'rotate(180deg)':'rotate(0deg)'">
+<span>🥭</span><span>Тропические Фрукты</span><span class='arrow'>▼</span>
+</div>
+<div class="section-body">
+<div class="item"><div class="item-title">Манго (Mangga)</div><div class="item-desc"><b>Сезон:</b> Октябрь – Февраль.<br>Балийские манго — зелёные снаружи (даже когда спелые!), но ярко-оранжевые внутри. Самый сладкий сорт — Harum Manis. Выбирайте по запаху и мягкости.</div></div>
+<div class="item"><div class="item-title">Мангостин (Manggis)</div><div class="item-desc"><b>Сезон:</b> Декабрь – Март.<br>Король фруктов! Толстая фиолетовая кожура, внутри — белые дольки, похожие на чеснок. Вкус — смесь персика, клубники и ананаса. Берите мягкие при нажатии (каменные = испорчены).</div></div>
+<div class="item"><div class="item-title">Снейкфрут (Salak)</div><div class="item-desc"><b>Сезон:</b> Круглый год.<br>Шкурка похожа на змеиную чешую. Внутри хрустящие дольки, вкус — смесь яблока, банана и ореха. Очень сытный.</div></div>
+<div class="item"><div class="item-title">Драгонфрут (Buah Naga)</div><div class="item-desc"><b>Сезон:</b> Круглый год (пик зимой).<br>Ярко-малиновый фрукт с чешуйками. Внутри бывает белым или кроваво-красным. На вкус как водянистое киви. Отлично освежает в жару. Пачкает руки!</div></div>
+<div class="item"><div class="item-title">Рамбутан</div><div class="item-desc"><b>Сезон:</b> Декабрь – Март.<br>Красные «волосатые» шарики. Внутри сочная мякоть (похожа на личи). Сладкий, как мармелад. Отлично чистится руками.</div></div>
+<div class="item"><div class="item-title">Маракуйя (Markisa)</div><div class="item-desc"><b>Сезон:</b> Круглый год.<br>Балийская маракуйя часто жёлтая или зеленоватая, а не фиолетовая. Внутри кисло-сладкая желеобразная икра с косточками.</div></div>
+<div class="item"><div class="item-title">Папайя</div><div class="item-desc"><b>Сезон:</b> Круглый год.<br>Огромная, дешевая, идеальна для пищеварения. Покупайте уже жёлтую или оранжевую. Зеленая — сырая.</div></div>
+<div class="item"><div class="item-title">Дуриан (Durian)</div><div class="item-desc"><b>Сезон:</b> Декабрь – Март.<br>Фрукт, который пахнет адом, но на вкус как рай (смесь заварного крема, лука и миндаля). Запрещено проносить в отели. Нагревает тело. Не смешивать с алкоголем!</div></div>
+<div class="item"><div class="item-title">Сметанное яблоко (Sirsak)</div><div class="item-desc"><b>Сезон:</b> Июнь – Сентябрь.<br>Огромный зелёный колючий плод. Внутри белоснежная мякоть со вкусом клубники, ананаса и цитруса со сметаной. Идеален для смузи.</div></div>
+<div class="item"><div class="item-title">Джекфрут (Nangka)</div><div class="item-desc"><b>Сезон:</b> Апрель – Сентябрь.<br>Огромные плоды. Внутри ярко-жёлтые липкие дольки со вкусом жвачки "Бубль-Гум". Покупайте уже разделанным, иначе увязнете в смоле!</div></div>
+<div class="item"><div class="item-title">Лонган (Lengkeng)</div><div class="item-desc"><b>Сезон:</b> Июнь – Сентябрь.<br>Гроздья песочно-коричневых шариков. Внутри прозрачная сладкая мякоть с жесткой косточкой. Вкус похож на виноград с дыней. Легко чистится.</div></div>
+<div class="item"><div class="item-title">Гуава (Jambu Biji)</div><div class="item-desc"><b>Сезон:</b> Круглый год.<br>Похожа на бугристое зеленое яблоко. Внутри розовая мякоть с мелкими косточками. Сок из гуавы отлично помогает при лихорадке Денге!</div></div>
+<div class="item"><div class="item-title">Ананас (Nanas)</div><div class="item-desc"><b>Сезон:</b> Круглый год.<br>На Бали ананасы очень сладкие (особенно жёлтые сорта). Не покупайте зелёные — они для готовки.</div></div>
+<div class="item"><div class="item-title">Белое манго (Wani)</div><div class="item-desc"><b>Сезон:</b> Декабрь – Март.<br>Уникальный балийский эндемик! Коричневая шкурка, а внутри — белоснежная мякоть. На вкус напоминает сливочное мороженое или заварной крем.</div></div>
+<div class="item"><div class="item-title">Личи (Leci)</div><div class="item-desc"><b>Сезон:</b> Май – Октябрь.<br>Близкий родственник рамбутана и лонгана, но с более ярким, парфюмерным вкусом. На Бали встречается реже и стоит дороже.</div></div>
+<div class="item"><div class="item-title">Желтый арбуз (Semangka Kuning)</div><div class="item-desc"><b>Сезон:</b> Круглый год.<br>На Бали красные арбузы часто водянистые, а вот ярко-жёлтые — невероятно сладкие, медовые и почти всегда без косточек!</div></div>
+<div class="item"><div class="item-title">Карамбола / Старфрут (Belimbing)</div><div class="item-desc"><b>Сезон:</b> Круглый год.<br>Фрукт в форме пятиконечной звезды. Жёлтые плоды — сладкие, зелёные — кисловатые (напоминают микс яблока, огурца и крыжовника). Очень сочный.</div></div>
+<div class="item"><div class="item-title">Бананы (Pisang)</div><div class="item-desc"><b>Сезон:</b> Круглый год.<br>Самые вкусные — <b>Pisang Susu</b> (молочные бананы): они маленькие, пузатые и невероятно сладкие. Зелёные бананы не всегда незрелые, но чаще местные берут их для жарки.</div></div>
+<div class="item"><div class="item-title">Молодой Кокос (Kelapa Muda)</div><div class="item-desc"><b>Сезон:</b> Круглый год.<br>Идеальный природный изотоник! Заказывайте именно <b>Kelapa Muda</b> (молодой кокос): в нём сладкая вода и нежная, как желе, мякоть. Старые кокосы балийцы используют для стружки.</div></div>
+<div class="item"><div class="item-title">Где покупать?</div><div class="item-desc">Никаких супермаркетов (там дорого и всё лежит в холодильниках). Покупайте в локальных уличных лавках (<b>Pasar Buah</b>) или на утренних рынках.</div></div>
+</div>
+</div>
 </body>
 </html>
