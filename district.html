@@ -20,7 +20,7 @@
 
 <div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
 <div class="app">
-    <button class="btn btn-primary" onclick="window.location.href = slug + '-guide.html'" style="font-size:13px;padding:12px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);width:100%;margin-bottom:16px;border-radius:12px;">← Назад в Гайд</button>
+    <button class="btn btn-primary" onclick="window.location.href = (new URLSearchParams(window.location.search).get('slug') || 'canggu') + '-guide.html'" style="font-size:13px;padding:12px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);width:100%;margin-bottom:16px;border-radius:12px;">← Назад в Гайд</button>
 
     <div id="guideContent" style="display:block;overflow-y:auto;padding-bottom:80px;text-align:center;">
         <h1 id="districtTitle">Загрузка...</h1>
