@@ -123,7 +123,17 @@ function loadData(filterCat) {
     loadData(cat);
   }
 
-  loadData('all');
+  const catParam = urlParams.get('c') || 'all';
+    // Select the correct button in UI if possible
+    document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('active');
+        if (catParam !== 'all' && b.innerText.toLowerCase().includes(catParam.toLowerCase())) {
+            b.classList.add('active');
+        } else if (catParam === 'all' && b.innerText === 'Все места') {
+            b.classList.add('active');
+        }
+    });
+    loadData(catParam);
 </script>
 </body>
 </html>
