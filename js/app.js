@@ -308,7 +308,7 @@ window.showSingleRoute = function(idx) {
       let isRestBlock = (n.includes('Сиеста') || n.includes('Ночев') || n.includes('Дорога'));
       
       if (hasMapLink && !isRestBlock) {
-        let cleanName = n.replace(/\s*\([^)]*\)/g, '').trim();
+        let cleanName = n.replace(/^.*?:\s*/, '').replace(/\s*\([^)]*\)/g, '').trim();
         if(cleanName) mapPlaces.push(cleanName);
       }
     }
