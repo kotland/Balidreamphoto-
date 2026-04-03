@@ -76,11 +76,15 @@
       return m[cat] || '📍';
   }
 
-  function loadData(filterCat) {
+  const urlParams = new URLSearchParams(window.location.search);
+const districtParam = urlParams.get('d');
+
+function loadData(filterCat) {
     markers.clearLayers();
     allLayers = [];
 
     placesData.features.forEach(function(feature) {
+      if (districtParam && feature.properties.district !== districtParam) return;
       if (filterCat !== 'all' && feature.properties.category !== filterCat) return;
 
       var latlng = L.latLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]);
@@ -107,7 +111,10 @@
       allLayers.push(marker);
     });
     
-    map.addLayer(markers);
+        map.addLayer(markers);
+    if (markers.getLayers().length > 0) {
+        map.fitBounds(markers.getBounds(), {padding: [50, 50]});
+    }
   }
 
   function filterMap(cat, btn) {
