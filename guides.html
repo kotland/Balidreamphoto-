@@ -251,7 +251,7 @@ function openGuide(guide){
       resultsHTML: document.getElementById('resultsContainer').parentElement.innerHTML
     }));
   } catch(e) { console.error('Error saving quiz results', e); }
-  window.location.href='district.html?slug='+guide+'&v=' + Date.now();
+  window.location.href=guide+'-guide.html?v=' + Date.now();
 }
 function shareResults(){
 var text='Привет! Вот мои топ-районы на Бали:\n\nУзнай свой район 👉 https://t.me/balidreamphoto_bot';
