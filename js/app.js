@@ -171,8 +171,10 @@ window.showRouteGallery = function() {
               }
           });
       }
-      if (rcost < 150) rb = 'cheap';
-      else if (rcost > 600) rb = 'luxury';
+      let rdDays = route.days || 1;
+      let rcostPerDay = rcost / rdDays;
+      if (rcostPerDay < 150) rb = 'cheap';
+      else if (rcostPerDay > 600) rb = 'luxury';
       else rb = 'medium';
       
       if (currentBudget !== 'all' && rb !== currentBudget) continue;
