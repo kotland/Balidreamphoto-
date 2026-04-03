@@ -2,117 +2,85 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
-h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
-h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
-.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
-h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
-h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
-p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
-.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
-.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
-table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
-th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
-td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
-tr:last-child td{border:none}
-.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
-.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
-.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
-.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
-.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
-.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
-.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
-.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
-.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
-.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
-.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
-.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
-.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
-.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
-.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
-.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
-.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
-@media print{body{padding:20px}}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Убуд — Гайд · Где свои на Бали</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <button onclick="window.location.href='index.html'" style="font-family:'Inter',sans-serif;font-size:13px;padding:12px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);width:100%;margin-bottom:16px;border-radius:12px;font-weight:600;cursor:pointer;">← К выбору районов</button>
+<div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
+<div class="app">
+<button class="btn btn-primary back-home-btn" onclick="window.location.href='guides.html#results'" style="font-size:13px;padding:8px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1)">← Назад к результатам</button>
+
+<div id="guideContent" style="display:block;overflow-y:auto;padding-bottom:80px">
+
+
 
 <h1><em>Убуд</em></h1>
 <div style="margin:20px 16px;">
-    <button class="btn btn-primary" onclick="window.location.href='district.html?slug=ubud'" style="padding:16px 24px;border-radius:16px;width:100%;font-size:16px;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;box-shadow:0 4px 15px rgba(42,107,90,0.3);">
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
-            <span style="font-size:24px;">🗺️</span>
-            <span style="font-weight:700;">Готовые маршруты по району</span>
-        </div>
-    </button>
-</div>
+<button class="btn btn-primary" onclick="window.location.href='district.html?slug=ubud'" style="padding:16px 24px;border-radius:16px;width:100%;font-size:16px;background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;box-shadow:0 4px 15px rgba(42,107,90,0.3);">
+<div style="display:flex;align-items:center;justify-content:center;gap:12px;">
+<span style="font-size:24px;">🗺️</span><span style="font-weight:700;">Готовые маршруты по району</span>
+</div></button></div>
 <p class="sub">Полный гайд по району · @balidreamphoto</p>
-
 <div class="tag">🧘 Йога</div>
 <div class="tag">🌾 Рисовые террасы</div>
 <div class="tag">🎨 Искусство</div>
 <div class="tag">🌱 Веган</div>
 <div class="tag">🛕 Храмы</div>
 <div class="tag">🌋 Вулканы</div>
-<div class="tag">💻 Коворкинги</div>
+<div class="tag">💻 Кафе с Wi-Fi</div>
 <div class="tag">🍜 Рестораны</div>
-
-<div class="vibe">«Проснулся в джунглях, йога на рассвете, кофе с видом на рисовые террасы, вечером звуки гамелана из храма.»</div>
-
+<div class="vibe" style="font-size:22px;color:#2a6b5a;font-style:italic;line-height:1.5">«Проснулся в джунглях, йога на рассвете, кофе с видом на рисовые террасы, вечером звуки гамелана из храма.»</div>
 <p>Убуд — культурное сердце Бали. Джунгли, храмы, рисовые поля, йога-ретриты и лучшая вегетарианская еда на острове. Тут живут художники, духовные искатели и remote workers, которым не нужен океан. Средний возраст 30-45. Тише и дешевле Чангу.</p>
-
-<h2>☕ Кофейни</h2>
-
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">☕ Кофейни <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <div class="place">
 <div class="place-name">Seniman Coffee Studio</div>
 <div class="place-desc">Лучший specialty coffee в Убуде. Свои зёрна, обжарка на месте, pour-over, cold brew.</div>
 <div class="place-meta">📍 Jl. Sriwedari · Кофе 35-60K · WiFi ⭐⭐⭐⭐</div>
 </div>
-
 <div class="place">
 <div class="place-name">Anomali Coffee</div>
 <div class="place-desc">Индонезийский specialty бренд. Зёрна со всего архипелага. Уютная терраса.</div>
 <div class="place-meta">📍 Jl. Raya Ubud · Кофе 35-55K · WiFi ⭐⭐⭐⭐</div>
 </div>
-
 <div class="place">
 <div class="place-name">Mudra Cafe</div>
 <div class="place-desc">Кофе + raw десерты. Тихая атмосфера, вид на сад. Идеально для утра.</div>
 <div class="place-meta">📍 Jl. Hanoman · Кофе 30-50K · WiFi ⭐⭐⭐</div>
 </div>
-
 <div class="place">
 <div class="place-name">Kopi Toko Djawa</div>
 <div class="place-desc">Колониальный стиль, балкон с видом на улицу. Яванский и балийский кофе.</div>
 <div class="place-meta">📍 Jl. Goutama · Кофе 30-45K · WiFi ⭐⭐⭐</div>
 </div>
-
-<h2>💻 Коворкинги</h2>
-
+<div class="place"><div class="place-name">Seniman Coffee Studio</div><div class="place-desc">Пионер specialty coffee в Убуде. Single-origin индонезийские зёрна, ручные методы заварки.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Seniman+Coffee+Studio+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · от 25K</div></div>
+<div class="place"><div class="place-name">Ubud Coffee Roastery</div><div class="place-desc">Маленький, но отличный — 100% индонезийская арабика, обжарка на месте.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Ubud+Coffee+Roastery" target="_blank" style="color:#3a9b7a">Maps</a> · от 20K</div></div>
+<div class="place"><div class="place-name">Monsieur Spoon</div><div class="place-desc">Французская пекарня-кафе, потрясающая выпечка и кофе.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Monsieur+Spoon+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · 30-55K</div></div>
+<div class="place"><div class="place-name">Daily Baguette</div><div class="place-desc">Кафе во французском стиле с хорошим кофе и выпечкой.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Daily+Baguette+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · 25-50K</div></div>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">💻 Кафе с Wi-Fi <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <div class="place">
 <div class="place-name">Outpost Ubud</div>
-<div class="place-desc">Главный коворкинг в Убуде. Бамбуковое здание в джунглях, бассейн, быстрый WiFi.</div>
+<div class="place-desc">Главный  в Убуде. Бамбуковое здание в джунглях, бассейн, быстрый WiFi.</div>
 <div class="place-meta">📍 Jl. Raya Nyuh Kuning · 250K/день · 3M/мес · WiFi ⭐⭐⭐⭐⭐</div>
 </div>
-
 <div class="place">
 <div class="place-name">Hubud (ныне Livit Hub)</div>
 <div class="place-desc">Легенда среди коворкингов. Бамбуковая конструкция, комьюнити-ивенты, воркшопы.</div>
 <div class="place-meta">📍 Jl. Monkey Forest · 200K/день · 2.5M/мес · WiFi ⭐⭐⭐⭐</div>
 </div>
-
 <div class="place">
 <div class="place-name">Genius Cafe</div>
-<div class="place-desc">Кафе-коворкинг с тихой зоной. Хороший кофе + рабочее пространство.</div>
+<div class="place-desc">Кафе- с тихой зоной. Хороший кофе + рабочее пространство.</div>
 <div class="place-meta">📍 Jl. Raya Ubud · 150K минимум заказ · WiFi ⭐⭐⭐⭐</div>
 </div>
-
-<h2>🍜 Рестораны</h2>
-
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🍜 Рестораны <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <h3>Бюджетно (25-50K)</h3>
 <div class="place">
 <div class="place-name">Warung Biah Biah</div>
@@ -129,7 +97,6 @@ tr:last-child td{border:none}
 <div class="place-desc">Утренний рынок с уличной едой. Баксо, мартабак, наси горенг от 15K.</div>
 <div class="place-meta">📍 Центр Убуда · 15-35K</div>
 </div>
-
 <h3>Средне (80-180K)</h3>
 <div class="place">
 <div class="place-name">Locavore To Go</div>
@@ -146,21 +113,112 @@ tr:last-child td{border:none}
 <div class="place-desc">Индонезийская кухня в красивом саду. Ренданг, пепес, гадо-гадо.</div>
 <div class="place-meta">📍 Jl. Monkey Forest · 70-150K</div>
 </div>
-
 <h3>Fine dining (300K+)</h3>
 <div class="place">
-<div class="place-name">Locavore</div>
+<div class="place-name">⭐️ Locavore</div>
 <div class="place-desc">Топ-1 ресторан Бали. Фермерские дегустационные сеты. Бронь за месяц!</div>
 <div class="place-meta">📍 Jl. Dewi Sita · Сет от 1.2M</div>
 </div>
 <div class="place">
-<div class="place-name">Mozaic</div>
+<div class="place-name">⭐️ Mozaic</div>
 <div class="place-desc">Французско-индонезийский фьюжн. Романтический сад, дегустационное меню.</div>
 <div class="place-meta">📍 Jl. Raya Sanggingan · Сет от 900K</div>
 </div>
-
-<h2>🥗 Вегетарианские заведения</h2>
-
+<div class="place">
+<div class="place-name">Warung Garasi</div>
+<div class="place-desc">Скутер-тематика, можно есть сидя на скутере. Одно из самых дешёвых мест в Убуде. Locals secret.</div>
+<div class="place-meta">📍 Off Monkey Forest Road · 20-40K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Ijo</div>
+<div class="place-desc">Местная столовая прямо посреди зелёных рисовых полей. Аутентичная балийская кухня, виды на террасы.</div>
+<div class="place-meta">📍 Среди рисовых полей · 25-45K</div>
+</div>
+<div class="place">
+<div class="place-name">Merlin's</div>
+<div class="place-desc">Мистический ресторан! Необычная атмосфера и декор.</div>
+<div class="place-meta">📍 Убуд</div>
+</div>
+<div class="place">
+<div class="place-name">CHUPACABRAS</div>
+<div class="place-desc">Стейки огонь! Мясной ресторан.</div>
+<div class="place-meta">📍 Убуд · 🔥</div>
+</div>
+<div class="place">
+<div class="place-name">MAMU Garden Cafe</div>
+<div class="place-desc">Кафе в саду от владельца CHITO. Зелень, покой.</div>
+<div class="place-meta">📍 Убуд</div>
+</div>
+<div class="place">
+<div class="place-name">Blend Cafe</div>
+<div class="place-desc">Уютное кафе в Убуде. Кофе, завтраки.</div>
+<div class="place-meta">📍 Убуд</div>
+</div>
+<div class="place">
+<div class="place-name">Lova Cafe</div>
+<div class="place-desc">Уютное кафе. Круассан + матча латте = идеальное утро.</div>
+<div class="place-meta">📍 Убуд</div>
+</div>
+<div class="place">
+<div class="place-name">Batu Karu Kopi</div>
+<div class="place-desc">Вид на рисовые поля! Sourdough Pancakes 50K, Tumeric Jamu Latte 35K.</div>
+<div class="place-meta">📍 Убуд · 35-80K</div>
+</div>
+<div class="place">
+<div class="place-name">Brie</div>
+<div class="place-desc">Сыроварня! XXL сырник + куриный паштет с малиновым мармеладом. Ритуал.</div>
+</div>
+<div class="place">
+<div class="place-name">Fu Shou Noodle</div>
+<div class="place-desc">Лучшая лапша на острове! Жирная, китайская, острая. Лапша от 30K!</div>
+</div>
+<div class="place">
+<div class="place-name">Chito</div>
+<div class="place-desc">Грузинский! Хинкали 40K/шт — идеальные. Десерт в форме хинкали = шедевр.</div>
+</div>
+<div class="place">
+<div class="place-name">Taman Dedari</div>
+<div class="place-desc">10м статуи ангелов! Как в сказке. Приезжать к закату. Кухня Индонезия/Корея.</div>
+</div>
+<div class="place">
+<div class="place-name">Apéritif</div>
+<div class="place-desc">Fine dining мирового уровня. Дегустационные сеты. Бронируй заранее!</div>
+</div>
+<div class="place">
+<div class="place-name">Kawi</div>
+<div class="place-desc">СЕКРЕТНЫЙ speakeasy бар! Томная атмосфера, приглушённый свет, авторские коктейли.</div>
+</div>
+<div class="place">
+<div class="place-name">Draniki</div>
+<div class="place-desc">Белорусская кухня — драники и борщ на Бали.</div>
+</div>
+<div class="place">
+<div class="place-name">Usha</div>
+<div class="place-desc">Русская кухня. Оливье, пельмени, торты. Завтраки тоже топ!</div>
+</div>
+<div class="place">
+<div class="place-name">Bukhara Chaihana</div>
+<div class="place-desc">Узбекский — манты, лепёшки, плов. Аутентично.</div>
+</div>
+<div class="place">
+<div class="place-name">Tukies Coconut</div>
+<div class="place-desc">Must visit для фанатов кокоса! Кокосовое мороженое 40K.</div>
+</div>
+<div class="place">
+<div class="place-name">Ritatkala Cafe</div>
+<div class="place-desc">Уютное кафе в Убуде.</div>
+</div>
+<div class="place"><div class="place-name">Nautilus Ubud</div><div class="place-desc">Атмосферный ресторан.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Nautilus+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Donna Ubud</div><div class="place-desc">Итальянская кухня в джунглях.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Donna+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Arcadia</div><div class="place-desc">Растительная кухня.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Arcadia+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Yellow Flower Café</div><div class="place-desc">Уютное кафе с видом.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Yellow+Flower+Cafe+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">⭐️ Alchemy</div><div class="place-desc">Культовое raw vegan кафе. Салат-бар, cold-pressed соки, десерты из какао-бобов.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Alchemy+Bali+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Sala Bistro</div><div class="place-desc">10 из 10. Просто иди и не задавай вопросов.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Sala+Bistro+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Casa Curandera</div><div class="place-desc">Какао-церемонии, атмосферная еда, место силы. Приходи за вайбом.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Casa+Curandera+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Pyramids of Chi</div><div class="place-desc">Звуковые ванны в настоящих пирамидах. Гонги, поющие чаши, полная перезагрузка.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Pyramids+of+Chi+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🥗 Веган / вегетарианское <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <div class="place">
 <div class="place-name">Sage</div>
 <div class="place-desc">Полностью вегетарианский ресторан. Красивые тарелки, органические ингредиенты.</div>
@@ -176,9 +234,6 @@ tr:last-child td{border:none}
 <div class="place-desc">Вегетарианское кафе с огромным меню: азиатское, западное, raw food.</div>
 <div class="place-meta">📍 Jl. Goutama Selatan · 55-110K</div>
 </div>
-
-<h2>🌱 Веганские заведения</h2>
-
 <div class="place">
 <div class="place-name">Alchemy</div>
 <div class="place-desc">Культовое raw vegan кафе. Салат-бар, соки cold-pressed, шоколад из какао-бобов.</div>
@@ -194,47 +249,99 @@ tr:last-child td{border:none}
 <div class="place-desc">Raw vegan ресторан + академия raw food. Лучшие сыроедческие десерты на Бали.</div>
 <div class="place-meta">📍 Jl. Goutama · 55-120K</div>
 </div>
-
-<h2>🏄 Сёрфинг</h2>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🏄 Сёрфинг <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <p>В Убуде нет сёрфинга — это горный район без выхода к океану. Ближайший: <strong>Чангу</strong> (1-1.5 часа), <strong>Керамас</strong> (45 мин, продвинутый уровень).</p>
-
-<h2>🤿 Дайвинг</h2>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🤿 Под водой <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <p>В Убуде нет — нет побережья. Ближайший: <strong>Падангбай</strong> (1.5 часа) — Blue Lagoon, рифы. <strong>Туламбен</strong> (2 часа) — USS Liberty. <strong>Nusa Penida</strong> (2+ часа) — манты.</p>
-
-<h2>🫁 Фридайвинг</h2>
 <p>В Убуде нет — ближайший: <strong>Амед</strong> (2 часа), <strong>Nusa Penida</strong> (2.5 часа). Школы организуют трансферы.</p>
-
-<h2>🐠 Снорклинг</h2>
 <p>В Убуде нет — ближайший: <strong>Падангбай</strong> (Blue Lagoon, 1.5 часа), <strong>Амед</strong> (Japanese Shipwreck, 2 часа).</p>
-
-<h2>🏖 Пляжи без волн</h2>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🏖 Пляжи без волн <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <p>В Убуде нет пляжей — горный район. Ближайший: <strong>Sanur</strong> (1 час) — спокойная вода, идеально для купания.</p>
-
-<h2>🧘 Йога и велнес</h2>
-
-<div class="place">
-<div class="place-name">Yoga Barn</div>
-<div class="place-desc">Главная йога-студия Убуда. 15+ классов в день: виньяса, кундалини, экстатик-дэнс. Сад, кафе.</div>
-<div class="place-meta">📍 Jl. Hanoman · 130-180K/занятие · Безлимит от 1.5M/нед</div>
 </div>
-<div class="place">
-<div class="place-name">Radiantly Alive</div>
-<div class="place-desc">Йога для всех уровней. Профессиональные преподаватели, красивый шала.</div>
-<div class="place-meta">📍 Jl. Jembawan · 150-180K/занятие</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🧘 Йога <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+
+<div class="place"><div class="place-name">The Yoga Barn</div><div class="place-desc">Легендарная йога-студия Убуда. 15+ классов в день: виньяса, кундалини, экстатик-дэнс. Сад, кафе. Мировая известность.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/The+Yoga+Barn+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · 130-150K/занятие</div></div>
+<div class="place"><div class="place-name">Radiantly Alive</div><div class="place-desc">Одна из старейших студий Убуда. Три красивых шалы в джунглях. Виньяса, воркшопы, teacher trainings.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Radiantly+Alive+Yoga+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · 150K/занятие</div></div>
+<div class="place"><div class="place-name">Intuitive Flow</div><div class="place-desc">Виньяса и хатха в открытом шала с видом на рисовые поля. Магия. Интимные группы.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Intuitive+Flow+Yoga+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · 130K/занятие</div></div>
+<div class="place"><div class="place-name">Ubud Yoga Centre</div><div class="place-desc">Горячая йога, Hatha, FlyHighYoga, Hot TRX. Современный подход.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Ubud+Yoga+Centre+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · 120-150K/занятие</div></div>
+<div class="place"><div class="place-name">Heart Space Bali</div><div class="place-desc">Инь-йога и целительство в центре Убуда. Отличное кафе Flourish (безглютеновое).</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Heart+Space+Bali+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · 120-150K/занятие</div></div>
+<div class="place"><div class="place-name">Taksu Yoga</div><div class="place-desc">Скрытая жемчужина в центре Убуда, окружённая зеленью. Ощущение другого мира.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Taksu+Yoga+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · 120K/занятие</div></div>
+<div class="place"><div class="place-name">COMO Shambhala Estate</div><div class="place-desc">Ультра-люкс wellness resort. Персональная йога, пилатес, аюрведа. Резидентный йога-мастер.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/COMO+Shambhala+Estate+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Day pass от $150</div></div>
+<div class="place"><div class="place-name">Fivelements Retreat</div><div class="place-desc">Бамбуковый ретрит у реки. Священные искусства, йога, raw food. Спокойно и продумано.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Fivelements+Retreat+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Day programs от $100</div></div>
+
 </div>
-<div class="place">
-<div class="place-name">Intuitive Flow</div>
-<div class="place-desc">Виньяса и хатха в открытом шала с видом на рисовые поля. Магия.</div>
-<div class="place-meta">📍 Jl. Tirta Tawar · 120-150K/занятие</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🏖 Pool Clubs <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+<div class="place"><div class="place-name">Cretya Ubud</div><div class="place-desc">Infinity pool среди рисовых полей, DJ сеты. IDR 150K+ (включая напиток).</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Cretya+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">The Jungle Fish</div><div class="place-desc">Infinity pool в джунглях над ущельем. 🔥</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Jungle+Fish+Bali" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Omma Day Club</div><div class="place-desc">Бассейн в джунглях, расслабленный вайб.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Omma+Day+Club+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Kabana</div><div class="place-desc">Бамбуковая архитектура, бассейн, кокосы.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Kabana+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Folk Pool & Gardens</div><div class="place-desc">Стильный бассейн в центре Убуда.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Folk+Pool+Gardens+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Tis Café</div><div class="place-desc">Кафе с бассейном, тихое место.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Tis+Cafe+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
 </div>
-<div class="place">
-<div class="place-name">Taksu Spa</div>
-<div class="place-desc">Балийский массаж, цветочные ванны, энергетическое целительство. Спа в саду.</div>
-<div class="place-meta">📍 Jl. Goutama · Массаж от 200K</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">💆 Спа и массаж <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+
+<div class="place"><div class="place-name">Kaveri Spa (The Udaya)</div><div class="place-desc">Безупречный люкс-спа. Отлично обученные массажисты. «Celebration of Flowers» — хит.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Kaveri+Spa+The+Udaya+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · 2ч от 800K</div></div>
+<div class="place"><div class="place-name">Mandala Spa</div><div class="place-desc">«THE find» для многих — волшебные руки, грациозный персонал. Традиционные и современные процедуры.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Mandala+Spa+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Массаж от 400K</div></div>
+<div class="place"><div class="place-name">Ubud Traditional Spa</div><div class="place-desc">Аутентичный балийский массаж с профессиональными терапевтами. Отличное качество.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Ubud+Traditional+Spa+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · 90мин от 250K</div></div>
+<div class="place"><div class="place-name">Svaha Spa Bisma</div><div class="place-desc">Спа на красивой улице Бисма. Осознанный подход, eco-conscious.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Svaha+Spa+Bisma+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Массаж от 200K</div></div>
+<div class="place"><div class="place-name">INKA Ubud Spa</div><div class="place-desc">Signature массажи, уникальный спа-опыт. Relaxation & rejuvenation.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/INKA+Ubud+Spa+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Массаж от 300K</div></div>
+<div class="place"><div class="place-name">Nusa Therapy</div><div class="place-desc">Чисто, центр Убуда. Быстрый и качественный массаж. Идеально для reset.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Nusa+Therapy+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Массаж от 150K</div></div>
+<div class="place"><div class="place-name">Kappa Senses Spa</div><div class="place-desc">Люкс-resort спа. Clarins процедуры, аромамассаж, балийские обёртывания.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Kappa+Senses+Ubud+Spa+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · 60мин от 950K++</div></div>
+<div class="place"><div class="place-name">Taksu Spa</div><div class="place-desc">Балийский массаж, цветочные ванны, энергетическое целительство. Спа в саду.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Taksu+Spa+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Массаж от 200K</div></div>
+
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🔮 Велнес <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+
+<div class="place"><div class="place-name">COMO Shambhala Estate</div><div class="place-desc">Мировой уровень! Холистические программы, кислородная терапия, аюрведический доктор, детокс-программы.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/COMO+Shambhala+Estate+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Day programs от $150</div></div>
+<div class="place"><div class="place-name">Gdas Bali Health & Wellness</div><div class="place-desc">«Bali Eden» — комплексный велнес-центр. Криотерапия (-200°F!), IV терапия, колонотерапия, инфракрасные процедуры.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Gdas+Bali+Health+Wellness+Resort" target="_blank" style="color:#3a9b7a">Maps</a> · Процедуры от 500K</div></div>
+<div class="place"><div class="place-name">The Istana</div><div class="place-desc">Баня на скале с видом на океан! ТЕЛЕФОНЫ ЗАБИРАЮТ — 2-3 часа тишины. Спа от 220K.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/The+Istana+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Спа от 220K</div></div>
+<div class="place"><div class="place-name">Jungle Fish</div><div class="place-desc">Инфинити-бассейн в джунглях. Вход 250K (депозит на еду). Вид потрясающий.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Jungle+Fish+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · 250K</div></div>
+<div class="place"><div class="place-name">TUJU</div><div class="place-desc">Бамбуковый интерьер, бассейн, центр Убуда. Вход 300K (депозит на еду).</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/TUJU+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · 300K</div></div>
+
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">💅 Салоны красоты <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+
+<div class="place"><div class="place-name">NOKTI Ubud</div><div class="place-desc">Русский маникюр и smart-педикюр. Филиал популярной сети.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/NOKTI+nail+salon+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · Маникюр от 200K</div></div>
+<div class="place"><div class="place-name">Face Therapy</div><div class="place-desc">Массаж лица — секрет baby face. Glass Skin. Face Therapy 60мин 690K.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Face+Therapy+Ubud+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · 690K</div></div>
+
 </div>
 
-<h2>🏋️ Спортзалы</h2>
-
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🏋️ Спортзалы <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <div class="place">
 <div class="place-name">Ubud Fitness Center</div>
 <div class="place-desc">Основной тренажёрный зал. Кардио, свободные веса, простое оборудование.</div>
@@ -246,9 +353,9 @@ tr:last-child td{border:none}
 <div class="place-meta">📍 Jl. Raya Pengosekan · 70K/день · 500K/мес</div>
 </div>
 <p>Убуд — не про качалки. Тут больше йога, бег по рисовым полям и треккинг. Серьёзных залов мало.</p>
-
-<h2>🌅 Закаты / Восходы</h2>
-
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🌅 Закаты / Восходы <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <table>
 <tr><th>Место</th><th>Тип</th><th>Вайб</th></tr>
 <tr><td><strong>Campuhan Ridge Walk</strong></td><td>🌅 Закат / 🌄 Восход</td><td>Тропа по холму между двух долин. Золотой свет.</td></tr>
@@ -257,9 +364,9 @@ tr:last-child td{border:none}
 <tr><td><strong>Karsa Spa</strong></td><td>🌅 Закат</td><td>Вид на рисовые поля из кафе</td></tr>
 <tr><td><strong>Sari Organik</strong></td><td>🌅 Закат</td><td>Ресторан среди рисовых полей</td></tr>
 </table>
-
-<h2>🌋 Вулканы и горы рядом</h2>
-
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🌋 Вулканы и горы рядом <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <div class="place">
 <div class="place-name">Гунунг Батур</div>
 <div class="place-desc">Восхождение на рассвете (2 часа подъём). Вид на озеро в кратере. Must-do!</div>
@@ -275,9 +382,9 @@ tr:last-child td{border:none}
 <div class="place-desc">Третий по высоте вулкан. Меньше туристов, джунгли, вид на Батур.</div>
 <div class="place-meta">📍 Кинтамани · 1.5 часа от Убуда · от 500K</div>
 </div>
-
-<h2>🌾 Рисовые террасы рядом</h2>
-
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🌾 Рисовые террасы рядом <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <div class="place">
 <div class="place-name">Tegallalang Rice Terrace</div>
 <div class="place-desc">Знаменитые каскадные террасы. Инстаграмная классика. Приходи к 7 утра — без толп.</div>
@@ -293,12 +400,13 @@ tr:last-child td{border:none}
 <div class="place-desc">UNESCO. Огромные террасы без толп. Самые впечатляющие на Бали.</div>
 <div class="place-meta">📍 1 час от Убуда · Вход 40K</div>
 </div>
-
-<h2>⛳ Гольф</h2>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">⛳ Гольф <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <p>В Убуде нет гольф-полей. Ближайший: <strong>Handara Golf & Resort</strong> (Бедугул, 1 час) — горное поле в кратере, от 1.2M/раунд. <strong>Bali National Golf Club</strong> (Nusa Dua, 1.5 часа).</p>
-
-<h2>🍓 Фермы</h2>
-
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🍓 Фермы и фрукты <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <div class="place">
 <div class="place-name">Bali Pulina</div>
 <div class="place-desc">Кофейная плантация с дегустацией кофе лювак. Бесплатный тур, виды на джунгли.</div>
@@ -314,9 +422,6 @@ tr:last-child td{border:none}
 <div class="place-desc">Органическая ферма с туром. Выращивают овощи, специи, учат готовить.</div>
 <div class="place-meta">📍 Jl. Suweta · 30 мин от центра</div>
 </div>
-
-<h2>🍉 Фруктовые рынки</h2>
-
 <div class="place">
 <div class="place-name">Pasar Ubud (утренний рынок)</div>
 <div class="place-desc">До 8 утра — настоящий фермерский рынок. Фрукты, овощи, специи по местным ценам.</div>
@@ -327,44 +432,35 @@ tr:last-child td{border:none}
 <div class="place-desc">По субботам. Органические овощи, фрукты, хлеб, джемы от местных фермеров.</div>
 <div class="place-meta">📍 Pizza Bagus, Jl. Pengosekan · Сб 9-13</div>
 </div>
-
-<h2>🛍 Шоппинг</h2>
-
-<div class="place">
-<div class="place-name">Pasar Ubud (дневной)</div>
-<div class="place-desc">После 10 утра — сувенирный рынок. Саронги, статуэтки, корзины. Торгуйся на 50%!</div>
-<div class="place-meta">📍 Центр Убуда</div>
 </div>
-<div class="place">
-<div class="place-name">Jl. Hanoman Boutiques</div>
-<div class="place-desc">Дизайнерские бутики: одежда из натуральных тканей, ювелирка, керамика.</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛍 Шоппинг <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+<div class="place"><div class="place-name">Ubud Market</div><div class="place-desc">Сувениры, ткани, резьба. Торгуйся!</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Ubud+Art+Market" target="_blank" style="color:#3a9b7a">Maps</a> · от 10K</div></div>
+<div class="place"><div class="place-name">Tegallalang Shops</div><div class="place-desc">Скульптуры, сумочки, люстры — всё!</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Tegallalang+Shopping" target="_blank" style="color:#3a9b7a">Maps</a> · от 20K</div></div>
+<div class="place"><div class="place-name">Curating Studio Shop</div><div class="place-desc">620+ отзывов! Супер место с красивыми вещами ручной работы <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Curating+Studio+Shop+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Ubud Art Market</div><div class="place-desc">Шёлковые шарфы, маски, батик, ротанг. Утром — лучшие цены <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Ubud+Art+Market" target="_blank" style="color:#3a9b7a">Maps</a> · $</div></div>
+<div class="place"><div class="place-name">Amethysta Ubud</div><div class="place-desc">Кристаллы, целительные камни, метафизические украшения <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">благовония</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Amethysta+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">John Hardy</div><div class="place-desc">Легендарный балийский бренд. Серебро ручной работы + мастерская <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">люкс</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/John+Hardy+Boutique+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Indigo Luna</div><div class="place-desc">138 отзывов. Йога-одежда, потрясающий магазинчик! <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">спорт</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Indigo+Luna+Store+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Bintara Art Gallery</div><div class="place-desc">1100+ отзывов. Handmade сувениры, скидка новым клиентам <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Bintara+Art+Gallery+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Smile Shop Nyuh Kuning</div><div class="place-desc">128 отзывов. Секонд-хенд для благотворительности! <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">секонд</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Smile+Shop+Nyuh+Kuning+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $</div></div>
+<div class="place"><div class="place-name">Nudes Concept</div><div class="place-desc">85 отзывов. Стильный бутик с местными модными брендами <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Nudes+Concept+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Bamboo Blonde Ubud</div><div class="place-desc">80 отзывов. Качественные вещи, тропический минимализм <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">женское</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">одежда</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Bamboo+Blonde+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Threads of Life</div><div class="place-desc">Традиционные текстили всей Индонезии, fair trade, музейный уровень <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">для дома</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Threads+of+Life+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $$$</div></div>
+<div class="place"><div class="place-name">Celuk Silver Centre</div><div class="place-desc">Серебро ручной работы. Десятки мастерских, можно заказать свой дизайн <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">ювелирка</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Celuk+Silver+Craft+Centre" target="_blank" style="color:#3a9b7a">Maps</a> · $$</div></div>
+<div class="place"><div class="place-name">Toko Dupa KM</div><div class="place-desc">Магазин благовоний! Ароматы на любой вкус <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">благовония</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Toko+Dupa+KM+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $</div></div>
+<div class="place"><div class="place-name">Wayan's Shop</div><div class="place-desc">162 отзыва. Купила себе и в подарок — отличные сувениры <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">сувениры</span> <span style="display:inline-block;background:rgba(42,107,90,0.08);color:#2a6b5a;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px">$</span></div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Wayans+Shop+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · $</div></div>
 </div>
-<div class="place">
-<div class="place-name">Threads of Life</div>
-<div class="place-desc">Галерея текстиля: традиционные ткани ручной работы от деревенских мастеров.</div>
-<div class="place-meta">📍 Jl. Kajeng</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛒 Продуктовые магазины <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+<div class="place"><div class="place-name">Delta Dewata</div><div class="place-desc">Главный супермаркет Убуда. Огромный ассортимент: импорт, местные продукты, мясо, морепродукты, бытовая химия. Дешевле Pepito, больше выбора чем Bintang.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Delta+Dewata+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Bintang Supermarket</div><div class="place-desc">Второй по размеру в Убуде. Импортные продукты, сыры, вино, бытовая химия. Удобная локация в центре.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Bintang+Supermarket+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Bali Buda Shop</div><div class="place-desc">Рай для ЗОЖников. Органические крупы на развес (гречка!), суперфуды, комбуча. Готовая вегетарианская еда на вынос. Внутри кафе — можно позавтракать между покупками.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Bali+Buda+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Indomaret / Alfamart</div><div class="place-desc">Одно и то же, разные вывески. Снеки, напитки, базовая бытовка (помыться, побриться). На каждом углу, 24/7. Мяса и импорта нет — для этого в Pepito.</div><div class="place-meta">📍 Есть в каждом районе</div></div>
+<div class="place"><div class="place-name">Circle K</div><div class="place-desc">Круглосуточный мини-маркет. Снеки, холодные напитки, кофе на вынос. Спасает ночью и рано утром.</div><div class="place-meta">📍 Есть в каждом районе</div></div>
 </div>
-
-<h2>🛒 Продуктовые магазины</h2>
-
-<div class="place">
-<div class="place-name">Bintang Supermarket</div>
-<div class="place-desc">Главный супермаркет Убуда. Импортные продукты, сыры, вино, бытовая химия.</div>
-<div class="place-meta">📍 Jl. Raya Sanggingan</div>
-</div>
-<div class="place">
-<div class="place-name">Bali Buda</div>
-<div class="place-desc">Органические продукты: безглютеновое, тофу, темпе, ореховое молоко.</div>
-<div class="place-meta">📍 Jl. Jembawan</div>
-</div>
-<div class="place">
-<div class="place-name">Delta Dewata</div>
-<div class="place-desc">Большой супермаркет с широким ассортиментом, включая импорт.</div>
-<div class="place-meta">📍 Jl. Andong</div>
-</div>
-
-<h2>👕 Прачечные</h2>
-
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">👕 Прачечные <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <div class="place">
 <div class="place-name">Ubud Laundry</div>
 <div class="place-desc">Быстрая стирка + глажка. Пикап и доставка по Убуду.</div>
@@ -376,8 +472,12 @@ tr:last-child td{border:none}
 <div class="place-meta">📍 Jl. Monkey Forest · от 10K/кг</div>
 </div>
 <p>Self-service мало. Большинство — drop-off: сдал утром, забрал вечером или на следующий день.</p>
-
-<h2>🎉 Клубы и ночная жизнь</h2>
+<div class="place"><div class="place-name">Swastee Eco Laundry Ubud</div><div class="place-desc">Эко-стирка как в Чангу. Self-service, drop-off или пикап с доставкой.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Swastee+Eco+Laundry+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · от 30K/кг</div></div>
+<div class="place"><div class="place-name">Premium Laundry Bali</div><div class="place-desc">Профессиональный сервис уровня отеля. Химчистка есть.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Premium+Laundry+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · от 35K/кг</div></div>
+<div class="place"><div class="place-name">Bali Laundry Service</div><div class="place-desc">Бесплатный пикап и доставка в отель. Экспресс 7ч — 50K, супер-экспресс 3ч — 80K.</div><div class="place-meta">📍 <a href="https://maps.google.com/maps/search/Bali+Laundry+Service" target="_blank" style="color:#3a9b7a">Maps</a> · от 35K/кг</div></div>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🎉 Клубы и ночная жизнь <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <p>Убуд — не тусовочное место. Баров мало, клубов нет. Но есть:</p>
 <div class="place">
 <div class="place-name">CP Lounge</div>
@@ -394,27 +494,64 @@ tr:last-child td{border:none}
 <div class="place-desc">Экстатик-дэнс по пятницам. Трезвая вечеринка: танцы босиком до рассвета.</div>
 <div class="place-meta">📍 Jl. Hanoman · 150K</div>
 </div>
-
-<h2>🏥 Клиники и аптеки</h2>
-
 <div class="place">
-<div class="place-name">Ubud Care Clinic</div>
-<div class="place-desc">Англоговорящие врачи, общая практика, стоматология. Приём от 200K.</div>
-<div class="place-meta">📍 Jl. Raya Ubud</div>
+<div class="place-name">Sangeh Monkey Forest</div>
+<div class="place-desc">Лес обезьян — менее туристический чем Ubud Monkey Forest. Спокойнее.</div>
+<div class="place-meta">📍 30 мин от Убуда</div>
 </div>
 <div class="place">
-<div class="place-name">Toya Medika Clinic</div>
-<div class="place-desc">Круглосуточная клиника с анализами. Приём от 150K.</div>
-<div class="place-meta">📍 Jl. Raya Mas</div>
+<div class="place-name">Bali Reptile Park + Bird Park</div>
+<div class="place-desc">Напротив друг друга. Ты среди животных — рептилии и птицы.</div>
+<div class="place-meta">📍 30 мин от Убуда</div>
 </div>
 <div class="place">
-<div class="place-name">Kimia Farma / K24</div>
-<div class="place-desc">Аптеки с базовыми лекарствами. Антибиотики, обезболивающие — дёшево.</div>
-<div class="place-meta">📍 Центр Убуда · от 10K</div>
+<div class="place-name">Nadis Herbal</div>
+<div class="place-desc">Воркшоп по приготовлению jamu — традиционных лечебных напитков. Аутентично и тепло.</div>
+<div class="place-meta">📍 Убуд · 200-350K</div>
 </div>
-
-<h2>🛕 Храмы</h2>
-
+<div class="place">
+<div class="place-name">Gianyar Night Market</div>
+<div class="place-desc">Самый аутентичный ночной рынок! Babi guling, sate lilit, nasi campur. Locals-only vibe.</div>
+<div class="place-meta">📍 Gianyar · 30 мин от Убуда · 10-30K за блюдо</div>
+</div>
+<div class="place">
+<div class="place-name">Bumii Pottery</div>
+<div class="place-desc">Лепка из глины на свидание. Смеяться над кривыми формами — живое свидание без телефонов!</div>
+<div class="place-meta">📍 Район Убуда</div>
+</div>
+<div class="place">
+<div class="place-name">Полёт на воздушном шаре</div>
+<div class="place-desc">Рассвет/закат над пальмами и террасами. Тишина, вау-фото, только вдвоём.</div>
+<div class="place-meta">📍 Tanah Gajah, восток Убуда</div>
+</div>
+<div class="place">
+<div class="place-name">Eat Pray Love House</div>
+<div class="place-desc">Домик из фильма «Ешь, молись, люби» + красивые дороги на байке среди полей.</div>
+<div class="place-meta">📍 Убуд</div>
+</div>
+<div class="place">
+<div class="place-name">Sayan Point</div>
+<div class="place-desc">Инфинити-бассейн с видом на джунгли и реку.</div>
+<div class="place-meta">📍 Убуд</div>
+</div>
+<div class="place">
+<div class="place-name">Dukuh Paradise</div>
+<div class="place-desc">Качели над обрывом в кафе! Адреналин + фото.</div>
+<div class="place-meta">📍 Убуд</div>
+</div>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 Секрет района</div>
+<div class="secret-text">Penestanan — тихий район на холме над Убудом. Виллы среди рисовых полей, ни одного туриста. Цены в 2 раза ниже центра. Лучший spot для long-stay.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ Минусы</div>
+<div class="warn-text">Влажность 85-95% — вещи плесневеют. Много мартышек (воруют очки, телефоны). Нет пляжа. Далеко от аэропорта. Мало ночной жизни. Москиты в сезон дождей. Узкие дороги с обезьянами.</div>
+</div>
+<div class="divider"></div>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛕 Храмы <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <div class="place">
 <div class="place-name">Pura Tirta Empul</div>
 <div class="place-desc">Священный источник. Ритуальное омовение — мощный опыт. Саронг обязателен.</div>
@@ -435,9 +572,14 @@ tr:last-child td{border:none}
 <div class="place-desc">Храм на пруду с лотосами в центре Убуда. Бесплатно. Вечерние танцы легонг.</div>
 <div class="place-meta">📍 Jl. Raya Ubud · Бесплатно</div>
 </div>
-
-<h2>🇷🇺 Русское комьюнити</h2>
-
+<div class="place"><div class="place-name">Pura Taman Saraswati</div><div class="place-desc">Храм богини знаний в центре Убуда. Пруды с розовыми лотосами, 2 мин от рынка. Бесплатно.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/saraswatiubud" target="_blank" style="color:#3a9b7a">Maps</a> · Вход Бесплатно</div></div>
+<div class="place"><div class="place-name">Goa Gajah (Слоновья пещера)</div><div class="place-desc">Древний храм IX века. Резные пещеры, купальни, фонтаны. 5 мин от парковки.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/goagajah" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 50K</div></div>
+<div class="place"><div class="place-name">Batuan Temple</div><div class="place-desc">Храм 944 года! Невероятно детальная резьба по камню. Менее туристический, аутентичный опыт.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/batuan" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 25-50K</div></div>
+<div class="place"><div class="place-name">Pura Kehen</div><div class="place-desc">Храмовый комплекс XI века на холме. Терраcный дизайн, огромный баньян. Вне туристических маршрутов.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/purakehen" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 30-50K</div></div>
+<div class="place"><div class="place-name">Besakih Temple (Храм-Мать)</div><div class="place-desc">Крупнейший храм Бали! 80+ храмов на склоне вулкана Агунг. Духовный центр балийского индуизма с 1007 года.</div><div class="place-meta">📍 <a href="https://goo.gl/maps/RsJ5uNiq2Q62" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 60-150K</div></div>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🇷🇺 Русское комьюнити <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <div class="place">
 <div class="place-name">Телеграм-чаты</div>
 <div class="place-desc">«Убуд Русские», «Бали Убуд Чат» — аренда, рекомендации, мероприятия.</div>
@@ -450,86 +592,2204 @@ tr:last-child td{border:none}
 <div class="place-name">Русскоговорящие специалисты</div>
 <div class="place-desc">Ищи в чатах: натуропаты, аюрведа-консультанты, гиды — всё есть.</div>
 </div>
-
-<h2>🎒 Детские сады и школы</h2>
-
-<div class="place">
-<div class="place-name">Green School Bali</div>
-<div class="place-desc">Знаменитая эко-школа из бамбука. Международная программа, природа. 3-18 лет.</div>
-<div class="place-meta">📍 Jl. Raya Sibang Kaja · от $10,000/год</div>
+<div class="place"><div class="place-name">БалиФорум — Общий чат</div><div class="place-desc">30,000+ подписчиков. Главный русскоязычный чат о Бали. Все вопросы, помощь, общение.</div><div class="place-meta">💬 <a href="https://t.me/balichat" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">БалиЧатик</div><div class="place-desc">15,000+ подписчиков. Единый большой чат, все темы.</div><div class="place-meta">💬 <a href="https://t.me/balichatik" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Список всех чатов Бали</div><div class="place-desc">Каталог всех групп и каналов Бали.</div><div class="place-meta">💬 <a href="https://t.me/baliallgroup" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Убуд чат</div><div class="place-desc">Чат района Убуд. Аренда, рекомендации, мероприятия.</div><div class="place-meta">💬 <a href="https://t.me/balichat_ubud" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Визы и перелеты</div><div class="place-desc">Визовые вопросы, авиабилеты.</div><div class="place-meta">💬 <a href="https://t.me/balichatvisa" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Аренда жилья</div><div class="place-desc">Аренда вилл, домов, квартир.</div><div class="place-meta">💬 <a href="https://t.me/balichatarenda" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Работа на Бали</div><div class="place-desc">Вакансии и резюме.</div><div class="place-meta">💬 <a href="https://t.me/rabota_na_bali" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Здоровье</div><div class="place-desc">Медицина, врачи, клиники.</div><div class="place-meta">💬 <a href="https://t.me/balichathealth" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Тусовки</div><div class="place-desc">Анонсы вечеринок.</div><div class="place-meta">💬 <a href="https://t.me/bali_party" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
+<div class="place"><div class="place-name">Полицейские облавы</div><div class="place-desc">Предупреждения о рейдах.</div><div class="place-meta">💬 <a href="https://t.me/balistop" target="_blank" style="color:#3a9b7a">Telegram</a></div></div>
 </div>
-<div class="place">
-<div class="place-name">Pelangi School</div>
-<div class="place-desc">Балийская международная школа. Доступнее Green School. 2-12 лет.</div>
-<div class="place-meta">📍 Jl. Raya Nyuh Kuning · от $3000/год</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">📸 Фото-локации <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+
+<div class="place"><div class="place-name">Tegallalang Ceking Viewpoint</div><div class="place-desc">Самые знаменитые рисовые террасы Бали (UNESCO). Лучший вид — с Ceking terrace (северный конец). Кафе вдоль хребта.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/Z6iHB7tjsP1XBFSQ8" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Campuhan Ridge Walk</div><div class="place-desc">Живописная тропа на холме между двух речных долин. Лучше на рассвете — золотой свет, туман над джунглями. Бесплатно.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/campuhanridgewalk" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Taman Dedari</div><div class="place-desc">Сад с 10-метровыми статуями ангелов, качелями и видом на террасы. Спокойнее чем Alas Harum.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/tamandedari" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Bali Swing</div><div class="place-desc">Оригинальные качели над джунглями! Наденьте развевающееся платье (или возьмите напрокат на месте).</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/2hkKMzoU9yVbXCVN9" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Alas Harum</div><div class="place-desc">Парк развлечений: качели, зиплайн, sky bike над террасами + инфинити-бассейн Cretya (18+). На весь день!</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/alasharum" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Tukad Cepung Waterfall</div><div class="place-desc">Водопад внутри пещерного каньона! Солнечные лучи пробиваются сквозь расщелину — волшебный свет с 9 до 11 утра.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/tukadcepung" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Tegenungan Waterfall</div><div class="place-desc">Мощный 25-метровый водопад в джунглях, близко к Убуду. Можно плавать у подножия. Вход ~20K.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/F77PcJEAcAwgj1nf9" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Sari Organik Cafe</div><div class="place-desc">Пионер органической кухни среди рисовых полей. До кафе — прогулка через поля, сама дорога — фото-спот!</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/sariorganik" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Karsa Cafe</div><div class="place-desc">Уютное кафе над террасными рисовыми полями + йога и спа. Тихое место для фото вдали от толп.</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/karsacafe" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
 </div>
-<div class="place">
-<div class="place-name">Русские детские сады</div>
-<div class="place-desc">Есть небольшие группы — ищи в чате «Бали Мамы». От 2M/мес.</div>
-</div>
-
-<h2>📸 Фото-локации</h2>
-<p>• Tegallalang — каскадные рисовые террасы<br>
-• Campuhan Ridge Walk — тропа на рассвете<br>
-• Monkey Forest — мартышки в джунглях<br>
-• Tirta Empul — омовение в источнике<br>
-• Pura Gunung Kawi — храмы в скале<br>
-• Любое кафе с видом на рисовые поля<br>
-• Ворота Handara (по дороге в Бедугул)</p>
-
-<h2>🏠 Жильё</h2>
-
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🏠 Жильё <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <table>
-<tr><th>Тип</th><th>Цена/мес</th><th>Где искать</th></tr>
-<tr><td>Гестхаус / комната</td><td>$200-400</td><td>Booking, на месте</td></tr>
-<tr><td>Студия / 1BR</td><td>$400-700</td><td>Facebook groups, Flokq</td></tr>
-<tr><td>Вилла с бассейном</td><td>$700-1200</td><td>Airbnb, Villa Finder</td></tr>
-<tr><td>Luxury вилла в джунглях</td><td>$1500-4000</td><td>Прямые контакты, агенты</td></tr>
+<tr><th>Тип</th><th>День / Неделя</th><th>Где искать</th></tr>
+<tr><td>Гестхаус / комната</td><td>$8–15 / $50–100</td><td>Booking, на месте</td></tr>
+<tr><td>Студия / 1BR</td><td>$15–30 / $100–175</td><td>Facebook groups, Flokq</td></tr>
+<tr><td>Вилла с бассейном</td><td>$30–50 / $175–300</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Luxury вилла в джунглях</td><td>$60–150 / $375–1000</td><td>Прямые контакты, агенты</td></tr>
 </table>
 <p><strong>Лучшие районы:</strong> Penestanan (тихо, виллы в рисовых полях), Nyuh Kuning (у Monkey Forest), Sanggingan (виды). Убуд дешевле Чангу на 20-30%.</p>
-
-<h2>🛵 Транспорт</h2>
+<h3 style="color:#2a6b5a;margin:16px 0 8px">💚 Бюджет ($15-40)</h3>
+<div class="place"><div class="place-name">Shana Homestay by EPS</div><div class="place-desc">⭐ 8.5 Booking · $15-25/ночь · WiFi, кондиционер, обновлённые номера, отличная локация. В самом центре за копейки — рядом дворец и храм Сарасвати</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/shana-homestay-ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Sri Ratih Cottages</div><div class="place-desc">⭐ 8.3 Booking · $20-35/ночь · Балийский стиль, тропический сад, WiFi, завтрак. Классические балийские коттеджи в зелени — аутентично и бюджетно</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/sri-ratih-ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Junjungan Serenity Villas</div><div class="place-desc">⭐ 9.0 Booking · $30-45/ночь · Вид на долину, бассейн, рисовые поля, завтрак включён. Настоящий Бали за смешные деньги — долина, рис, тишина</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/junjungan-ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<h3 style="color:#2a6b5a;margin:16px 0 8px">🧡 Комфорт ($40-150)</h3>
+<div class="place"><div class="place-name">Bisma Eight — Ubud</div><div class="place-desc">⭐ 8.7 Booking / Michelin Key · $80-150/ночь · Infinity pool с видом на джунгли, бутик-отель, культурные программы, ресторан. Michelin Key бутик-отель — стильно, с кураторскими экскурсиями и джунгли-пулом</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/bisma-eight-ubud" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://www.booking.com/hotel/id/bisma-eight.html" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+<div class="place"><div class="place-name">Alaya Resort Ubud</div><div class="place-desc">⭐ 8.8 Booking · $70-130/ночь · 5-звёздочный сервис, бассейн, спа, в центре на улице Ханоман. Роскошь в центре Убуда — пешком до всего, а чувствуешь себя в раю</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/alaya-resort-ubud" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://www.booking.com/hotel/id/alaya-resort-ubud.html" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+<div class="place"><div class="place-name">Gusku Uma Villa</div><div class="place-desc">⭐ 9.2 Booking · $60-110/ночь · Приватный бассейн вокруг виллы, стеклянный фасад, уютно и тепло. Вилла с бассейном по периметру — ощущение приватного острова за $80</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/gusku-uma-villa" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<h3 style="color:#2a6b5a;margin:16px 0 8px">❤️ Люкс ($150+)</h3>
+<div class="place"><div class="place-name">Viceroy Bali</div><div class="place-desc">⭐ 9.3 Booking / 5.0 TripAdvisor · $350-700/ночь · 40+ вилл с приватными infinity pool, "Долина королей", 2 ресторана fine dining. Семейный бутик в "Долине Королей" — каждая вилла с бесконечным бассейном</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/viceroy-bali" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://www.booking.com/hotel/id/viceroy-bali.html" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+<div class="place"><div class="place-name">Hanging Gardens of Bali</div><div class="place-desc">⭐ 8.5 Booking / 4.5 TripAdvisor · $300-600/ночь · Иконический двухуровневый infinity pool, 1000 sqft номера, джунгли. Тот самый инстаграмный бассейн в джунглях — мечта визуала</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/hanging-gardens-bali" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://www.booking.com/hotel/id/hanging-gardens-ubud.html" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+<div class="place"><div class="place-name">Padma Resort Ubud</div><div class="place-desc">⭐ 9.0 Booking · $180-350/ночь · 89-метровый infinity pool в джунглях, детский клуб, спа, river valley. 89-метровый бассейн в речной долине — лучший пул-опыт на Бали</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/padma-resort-ubud" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://www.booking.com/hotel/id/padma-resort-ubud.html" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+<div class="place"><div class="place-name">Capella Ubud</div><div class="place-desc">⭐ 9.4 Booking / "Лучший резорт Азии" · $600-1500/ночь · 22 глэмпинг-тента с приватными бассейнами, дизайн Bill Bensley, ресторан Api Jiwa (farm-to-table). Глэмпинг мирового уровня — тент, бассейн, джунгли, награда "лучший в Азии"</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/capella-ubud" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://www.booking.com/hotel/id/capella-ubud.html" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+<h3 style="color:#2a6b5a;margin:16px 0 8px">🌟 ВАУ-отели Бали (уникальный опыт)</h3>
+<div class="place"><div class="place-name">🏆 The Apurva Kempinski Bali</div><div class="place-desc">⭐ 9.1 Booking / 4.5 TripAdvisor · $300-800/ночь · Грандиозная архитектура, приватный пляж, 5 бассейнов, 7 ресторанов. 🏖 **Reef Beach Club** — вход БЕСПЛАТНЫЙ для гостей (обычно доступ 500K+ IDR) 🐠 **Koral Restaurant** — ужин в подводном аквариуме, единственный в Бали</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/kempinski-nusa-dua" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://www.booking.com/hotel/id/the-apurva-kempinski-bali.html" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+<div class="place"><div class="place-name">🏆 Hilton Bali Resort</div><div class="place-desc">⭐ 8.7 Booking / 4.0 TripAdvisor · $150-400/ночь · На утёсе над пляжем Sawangan, 3 бассейна, виллы с приватными пулами. 🎫 **Day Pass** с кредитом 200,000 IDR (~$12.5) на еду/напитки 💆 **Mandara Spa** — скидка 50% для дневных гостей</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/hilton-bali-nusa-dua" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://www.booking.com/hotel/id/hilton-bali-resort.html" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+<div class="place"><div class="place-name">🏆 Regent Bali Canggu</div><div class="place-desc">⭐ 9.1 Booking / 4.5 TripAdvisor · $350-800/ночь · 150 сьютов и вилл, пентхаус 618 м², шофёрский трансфер. 🌅 **Infinity Sunset Pool** — бесконечный бассейн на закате над Индийским океаном</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/regent-bali-canggu" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://www.booking.com/hotel/id/regent-bali-canggu.html" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+<div class="place"><div class="place-name">🏆 Lomo Boutique Hotel</div><div class="place-desc">⭐ ~8.5 Google · $80-200/ночь · Полностью белая архитектура, инстаграмный дизайн. 🏛 **Белоснежная архитектура** — каждый угол фотогеничен</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/lomo-boutique-bali" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">🏆 Lodge in the Woods</div><div class="place-desc">⭐ 9.0+ Google / 93K подписчиков Instagram · ~$276/ночь · 6 номеров, ферма-приют для животных, ресторан, тропический лес. 🐴 **Белые (альбиносные) животные** — лошади, куры, собаки, голуби, козы 🌿 Животные свободно гуляют по территории — завтрак рядом с белой лошадью</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/lodge-in-the-woods-bali" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://lodgeinthewoods.com/" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+<div class="place"><div class="place-name">🏆 Mandapa, a Ritz-Carlton Reserve</div><div class="place-desc">⭐ 9.4 Booking / 4.5 TripAdvisor · $600-958+/ночь · Виллы с приватными бассейнами, 4 ресторана мирового класса, батлер-сервис, спа, река Аюнг. 👑 Один из всего 5 отелей **Ritz-Carlton Reserve** в мире</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/mandapa-ritz-carlton" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://www.booking.com/hotel/id/mandapa-a-ritz-carlton-reserve.html" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+<div class="place"><div class="place-name">🏆 Four Seasons Resort Bali at Sayan</div><div class="place-desc">⭐ 9.5 Booking (location) / 4.5 TripAdvisor / **#1 Hotel in the World** (Travel+Leisure, 2018) · $662-1300+/ночь · Подвесной мост-вход, виллы в джунглях, приватные бассейны, река Аюнг. 🌎 Был назван **лучшим отелем в мире** по версии Travel + Leisure</div><div class="place-meta">📍 <a href="https://maps.app.goo.gl/four-seasons-sayan" target="_blank" style="color:#3a9b7a">Maps</a> · <a href="https://www.booking.com/hotel/id/four-seasons-resort-bali-at-sayan.html" target="_blank" style="color:#3a9b7a">Booking</a></div></div>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛵 Транспорт <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <p>• <strong>Скутер:</strong> 600K-900K/мес (осторожно — узкие горные дороги!)<br>
 • <strong>Grab/Gojek:</strong> работают, но водителей меньше чем в Чангу. от 10K<br>
 • <strong>До аэропорта:</strong> 1.5-2 часа, 300-400K<br>
 • <strong>До Чангу:</strong> 1-1.5 часа<br>
 • <strong>До Санура:</strong> 45-60 мин</p>
-
-<div class="divider"></div>
-
-<div class="secret">
-<div class="secret-title">🤫 Секрет района</div>
-<div class="secret-text">Penestanan — тихий район на холме над Убудом. Виллы среди рисовых полей, ни одного туриста. Цены в 2 раза ниже центра. Лучший spot для long-stay.</div>
 </div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🎉 Развлечения <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 
-<div class="warn">
-<div class="warn-title">⚠️ Минусы</div>
-<div class="warn-text">Влажность 85-95% — вещи плесневеют. Много мартышек (воруют очки, телефоны). Нет пляжа. Далеко от аэропорта. Мало ночной жизни. Москиты в сезон дождей. Узкие дороги с обезьянами.</div>
+<div class="place"><div class="place-name">Bali Safari & Marine Park</div><div class="place-desc">Сафари-парк! Завтрак со ЛЬВОМ 790K! Бунгало на ночь среди животных.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Bali+Safari+Marine+Park" target="_blank" style="color:#3a9b7a">Maps</a> · от 200K</div></div>
+<div class="place"><div class="place-name">Sacred Monkey Forest</div><div class="place-desc">Священный лес обезьян в центре Убуда. 700+ макак, храмы, мосты. Must-visit!</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Sacred+Monkey+Forest+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · Вход 80K</div></div>
+<div class="place"><div class="place-name">Tegallalang Rice Terrace Swing</div><div class="place-desc">Качели над рисовыми террасами — инстаграмная классика Бали.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Tegallalang+Rice+Terrace+Swing" target="_blank" style="color:#3a9b7a">Maps</a> · от 100K</div></div>
+<div class="place"><div class="place-name">Campuhan Ridge Walk</div><div class="place-desc">Утренняя прогулка по хребту между двумя долинами. Бесплатно и потрясающе.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Campuhan+Ridge+Walk+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · Бесплатно</div></div>
+<div class="place"><div class="place-name">White Water Rafting (Ayung River)</div><div class="place-desc">Рафтинг 2ч, адреналин! IDR 350-500K.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Rafting+Ayung+River+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Sangeh Monkey Forest</div><div class="place-desc">Тише чем Sacred, огромные деревья.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Sangeh+Monkey+Forest+Bali" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Bali Swing</div><div class="place-desc">Гигантские качели над ущельем в джунглях. Адреналин + инстаграм. Бронируй утром — меньше очередь.</div>
+<div class="place-meta">📍 <a href="https://maps.google.com/?q=Bali+Swing+Ubud" target="_blank" style="color:#3a9b7a">Maps</a> · от 350K</div></div>
+<div class="place"><div class="place-name">Elephant Safari Park</div><div class="place-desc">Кормить слонов, кататься, фоткаться. Особенно круто с детьми. Суматранские слоны.</div>
+<div class="place-meta">📍 <a href="https://maps.google.com/?q=Elephant+Safari+Park+Bali" target="_blank" style="color:#3a9b7a">Maps</a> · от 450K</div></div>
+<div class="place"><div class="place-name">Kecak Dance at Royal Palace</div><div class="place-desc">Танец Кечак каждый вечер в королевском дворце. 100K вход. Десятки мужчин, огонь, транс — мурашки.</div>
+<div class="place-meta">📍 <a href="https://maps.google.com/?q=Ubud+Royal+Palace" target="_blank" style="color:#3a9b7a">Maps</a> · 100K</div></div>
+<div class="place"><div class="place-name">Flying Dress фотосессия</div><div class="place-desc">Фотосессия в летящем платье на фоне рисовых террас Тегаллаланг. Инста-мечта!</div>
+<div class="place-meta">📍 <a href="https://maps.google.com/?q=Flying+Dress+Tegallalang" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+
 </div>
-
-<div class="divider"></div>
-
-<h2>💰 Бюджет на месяц</h2>
-
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🌋 Кинтамани (1 час от Убуда) <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+<p>Горный район у вулкана Батур. Рассветы, глэмпинги, горячие источники и хвойный лес! 1 час от Убуда.</p>
+<div class="place">
+<div class="place-name">Mount Batur</div>
+<div class="place-desc">Рассвет на вулкане! Подъём под звёздами, 2 часа. Гид обязателен.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Mount+Batur+Trek" target="_blank" style="color:#3a9b7a">Maps</a> · от 350K</div>
+</div>
+<div class="place">
+<div class="place-name">Cinze Hot Spring</div>
+<div class="place-desc">Каскадные горячие бассейны из природного источника.</div>
+<div class="place-meta">📍 <a href="https://www.google.com/maps/search/Cinze+Hot+Spring" target="_blank" style="color:#3a9b7a">Maps</a> · от 200K</div>
+</div>
+<p style="margin-top:12px;padding:12px;background:rgba(42,107,90,0.06);border-radius:12px;font-size:13px;color:#2a6b5a">→ Полный гайд по Кинтамани, Бедугул и Мундук — в разделе <strong>«Север Бали»</strong>: водопады, глэмпинги, фермы, ворота Handara и ещё 20+ мест</p>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">💧 Водопады рядом с Убудом <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+<div class="place">
+<div class="place-name">Suwat Waterfall</div>
+<div class="place-desc">Мощный водопад в ущелье. Можно купаться! 🔥</div>
+<div class="place-meta">📍 30 мин от Убуда</div>
+</div>
+<div class="place">
+<div class="place-name">Tibumana Waterfall</div>
+<div class="place-desc">Тихий водопад в джунглях. Мало людей, красивая тропа.</div>
+<div class="place-meta">📍 25 мин от Убуда</div>
+</div>
+<div class="place">
+<div class="place-name">Tegenungan Waterfall</div>
+<div class="place-desc">Один из самых известных, но всё ещё впечатляющий. Приходи к 8 утра.</div>
+<div class="place-meta">📍 15 мин от Убуда · 20K</div>
+</div>
+<div class="place">
+<div class="place-name">Taman Sari Waterfall</div>
+<div class="place-desc">Водопад с натуральным бассейном — можно купаться!</div>
+<div class="place-meta">📍 30 мин от Убуда</div>
+</div>
+<div class="place">
+<div class="place-name">Blangsinga Waterfall</div>
+<div class="place-desc">Большая территория. Высокий водопад в скалистом ущелье.</div>
+<div class="place-meta">📍 25 мин от Убуда</div>
+</div>
+<div class="place">
+<div class="place-name">Manuaba Waterfall</div>
+<div class="place-desc">Водопад В ПЕЩЕРЕ! Идти по реке к нему. Незабываемый опыт. 🔥</div>
+<div class="place-meta">📍 40 мин от Убуда</div>
+</div>
+<div class="place">
+<div class="place-name">Gembleng Waterfall</div>
+<div class="place-desc">Водопад с натуральными ваннами для купания.</div>
+<div class="place-meta">📍 45 мин от Убуда</div>
+</div>
+<div class="place">
+<div class="place-name">Tukad Cepung Waterfall</div>
+<div class="place-desc">Водопад внутри пещеры — лучи света пробиваются сквозь скалы. Магия!</div>
+<div class="place-meta">📍 40 мин от Убуда</div>
+</div>
+<div class="place">
+<div class="place-name">Leke-leke Waterfall</div>
+<div class="place-desc">Узкий высокий водопад. Много ступеней вниз, но награда того стоит.</div>
+<div class="place-meta">📍 45 мин от Убуда</div>
+</div>
+<div class="place">
+<div class="place-name">Banyu Wana Amertha</div>
+<div class="place-desc">Каскад из нескольких водопадов в одном месте.</div>
+<div class="place-meta">📍 1 час от Убуда</div>
+</div>
+<div class="place"><div class="place-name">Sumampan Waterfall</div><div class="place-desc">Скрытый водопад!</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Sumampan+Waterfall+Bali" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Uma Anyar Waterfall</div><div class="place-desc">Нетуристический.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Uma+Anyar+Waterfall+Bali" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🛕 Духовное и культурное <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+<div class="place">
+<div class="place-name">Gunung Kawi Sebatu</div>
+<div class="place-desc">Тихий водный храм в тропических садах. Альтернатива переполненному Tirta Empul — в 10 раз тише.</div>
+<div class="place-meta">📍 Sebatu · 30 мин от Убуда · 30-50K</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Kehen</div>
+<div class="place-desc">Храм XIII века с невероятной каменной резьбой и гигантскими баньянами. Мало туристов.</div>
+<div class="place-meta">📍 Bangli · 40 мин от Убуда · 30K</div>
+</div>
+<div class="place">
+<div class="place-name">Penglipuran Village</div>
+<div class="place-desc">Одна из чистейших деревень мира. Bali Aga — пре-хинду традиции. Все дома одинаковые.</div>
+<div class="place-meta">📍 Bangli · 45 мин от Убуда · 30-50K</div>
+</div>
+<div class="place">
+<div class="place-name">Silver Making в Celuk</div>
+<div class="place-desc">Деревня серебряных мастеров. Сделай своё серебряное кольцо за пару часов!</div>
+<div class="place-meta">📍 Celuk Village · 250-500K</div>
+</div>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">🖼 Галереи и музеи <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+<div class="place"><div class="place-name">Agung Rai Museum of Art (ARMA)</div><div class="place-desc">Коллекция балийского и индонезийского искусства в красивом тропическом саду. Работы Уолтера Шписа, Рудольфа Бонне и современных балийских мастеров.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=ARMA+Museum+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Neka Art Museum</div><div class="place-desc">Лучший обзор балийской живописи от традиционной до современной. 6 павильонов. Потрясающий вид на долину.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Neka+Art+Museum+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Puri Lukisan Museum</div><div class="place-desc">Старейший художественный музей на Бали (с 1956). Традиционная балийская живопись и резьба по дереву.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Puri+Lukisan+Museum+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Setia Darma House of Masks and Puppets</div><div class="place-desc">1300+ масок и кукол со всей Индонезии и Азии. Бесплатный вход! Одно из самых необычных мест Убуда.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Setia+Darma+House+of+Masks+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Five Arts Studio 🔥</div><div class="place-desc">5.0⭐ (692 отзыва!) — лидер среди галерей Убуда! Живопись, скульптура, мастер-классы.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Five+Arts+Studio+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Blanco Renaissance Museum</div><div class="place-desc">Дом художника с видом на реку Кампухан. Яркие картины, балийский + западный стиль.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Blanco+Renaissance+Museum+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Museum Rudana</div><div class="place-desc">4.6⭐ — три этажа балийского и индонезийского искусства.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Museum+Rudana+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Kupu Kupu Gallery</div><div class="place-desc">5.0⭐ — галерея + мастер-класс рисования!</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Kupu+Kupu+Gallery+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Feliz'Eye Art Gallery</div><div class="place-desc">4.9⭐ — авторский взгляд на балийское искусство.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Feliz+Eye+Art+Gallery+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Nyoman Jendra</div><div class="place-desc">4.8⭐ — приватная студия балийского мастера.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Nyoman+Jendra+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Komaneka Fine Art</div><div class="place-desc">4.6⭐ — Monkey Forest. Современный балийский арт.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Komaneka+Fine+Art+Gallery+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Purga Artspace</div><div class="place-desc">4.7⭐ — кофейня + арт на Bisma.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Purga+Artspace+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Tonyraka Art Lounge</div><div class="place-desc">4.6⭐ (962 отзыва!) — лаунж + современное искусство.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Tonyraka+Art+Lounge+Ubud" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Kebon Vintage Cars 🔥</div><div class="place-desc">100+ винтажных машин! Денпасар.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Kebon+Vintage+Cars+Bali" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Таман Нуса 🔥</div><div class="place-desc">10 га! 60 домов разных этносов, танцы, ремёсла.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Taman+Nusa+Bali" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Музей Ого-Ого</div><div class="place-desc">Монстры Ньепи! Уникально.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Ogoh+Ogoh+Museum+Bali" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Музей гамелана</div><div class="place-desc">Батубулан. Можно играть самому!</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Gamelan+Museum+Batubulan+Bali" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+<div class="place"><div class="place-name">Керта Госа</div><div class="place-desc">Клунгкунг — дворец с фресками Махабхараты.</div><div class="place-meta">📍 <a href="https://maps.google.com/?q=Kerta+Gosa+Klungkung+Bali" target="_blank" style="color:#3a9b7a">Maps</a></div></div>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">💡 Лайфхаки <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
+<h3 style="color:#2a6b5a;margin:20px 0 10px">💡 Лайфхаки Убуда</h3>
+<div class="place"><div class="place-desc">🌅 Campuhan Ridge Walk — приходить к 5:30. К 9:00 уже толпы</div></div>
+<div class="place"><div class="place-desc">🐒 Monkey Forest — убирать очки, серьги, бутылки с водой. Обезьяны воруют!</div></div>
+<div class="place"><div class="place-desc">💍 Celuk Silver — сравнивайте цены в нескольких мастерских. Проба 925 = настоящее</div></div>
+<div class="place"><div class="place-desc">🌿 Tegallalang — рано утром (до 9:00). К 11:00 приезжают автобусы</div></div>
+<div class="place"><div class="place-desc">🏍 От Убуда до Чангу 1-1.5 часа на байке через рисовые поля — красивейшая дорога</div></div>
+</div>
+<h2 class="accordion-cat" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">💰 Бюджет <span class="arrow-cat">▸</span></h2>
+<div class="accordion-cat-content">
 <div class="budget-grid">
 <div class="budget-card">
 <div class="budget-label">Минимум</div>
-<div class="budget-price">$500</div>
-<div class="budget-unit">в месяц</div>
+<div class="budget-price">$17<span style="font-size:12px;font-weight:400">/день</span></div>
+<div class="budget-unit">$125/нед</div>
 </div>
 <div class="budget-card">
 <div class="budget-label">Комфортно</div>
-<div class="budget-price">$1100</div>
-<div class="budget-unit">в месяц</div>
+<div class="budget-price">$37<span style="font-size:12px;font-weight:400">/день</span></div>
+<div class="budget-unit">$275/нед</div>
 </div>
 <div class="budget-card">
 <div class="budget-label">Luxury</div>
-<div class="budget-price">$3000</div>
-<div class="budget-unit">в месяц</div>
+<div class="budget-price">$100<span style="font-size:12px;font-weight:400">/день</span></div>
+<div class="budget-unit">$750/нед</div>
 </div>
 </div>
-
+</div>
+<div style="text-align:center;margin:30px 0 20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="font-size:16px;padding:16px 32px;border-radius:16px;width:100%">🗺 Составить маршрут<div style="font-size:12px;opacity:0.7;margin-top:4px">Готовый маршрут на день по этому району</div></button></div>
 <div class="footer-guide">@balidreamphoto · Гайд по районам Бали · 2026</div>
+<div style="text-align:center;margin:20px 0 40px"><button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Назад к результатам</button></div>
+</div>
 
+<div id="routeScreen" style="display:none;padding-bottom:80px"></div>
+
+</div>
+<script>
+var MANUAL_ROUTES_ZONE = [
+    [{"time": "10:30", "name": "Ubud Yoga House", "desc": "[чилл] На вершине холма, Ubud Yoga House дарит вам утреннюю безмятежность с медитацией среди густой зелени, где ваши мысли растворяются в шелесте листьев.", "price": "150k IDR", "maps": "https://maps.google.com/?q=Ubud+Yoga+House"}, {"time": "12:00", "name": "Tjampuhan Spa", "desc": "Под звуки журчащей реки, Tjampuhan Spa перенесет вас в мир расслабления, предлагая массажи в окружении природной гармонии.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Tjampuhan+Spa"}, {"time": "14:00", "name": "Clover Spa & Fitness", "desc": "Элегантный уголок для отдыха, где ароматы эфирных масел и легкая музыка унесут вас в царство спокойствия.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Clover+Spa+%26+Fitness"}],
+    [{"time": "11:00", "name": "Taksu Spa", "desc": "[чилл] Среди древних деревьев и щебетания птиц, Taksu Spa предлагает сокровенное уединение, где каждому дню соответствует свой ритуал расслабления.", "price": "200k IDR", "maps": "https://maps.google.com/?q=Taksu+Spa"}, {"time": "13:00", "name": "Sunset at Campuhan Ridge Walk", "desc": "Буйство красок заката на горизонте, медленная прогулка среди спокойствия холмов и ощущение гармонии в каждой клеточке тела.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Campuhan+Ridge+Walk"}],
+    [{"time": "10:00", "name": "Radiantly Alive Yoga", "desc": "[чилл] Раскрывайте внутренний свет под ведущими мастерами йоги, где мелодии природы соединяются с ритмом ваших дыханий.", "price": "180k IDR", "maps": "https://maps.google.com/?q=Radiantly+Alive+Yoga"}, {"time": "11:30", "name": "DaLa Spa", "desc": "Лепестки роз и теплые ароматы масел расскажут вам о сказке, где время течет иначе, и каждая секунда наполняет вас миром.", "price": "350k IDR", "maps": "https://maps.google.com/?q=DaLa+Spa"}, {"time": "15:00", "name": "Cekingan Terrace Café", "desc": "Присесть с чашкой свежесваренного кофе и видом на террасы, где зелень террас соединяет вас с древними традициями.", "price": "50k IDR", "maps": "https://maps.google.com/?q=Cekingan+Terrace+Café"}],
+    [{"time": "10:45", "name": "The Yoga Barn", "desc": "[чилл] Пение птиц и звук гонга станут вашими проводниками в утреннюю медитацию среди бамбуковых стен этого сакрального места.", "price": "200k IDR", "maps": "https://maps.google.com/?q=The+Yoga+Barn"}, {"time": "12:30", "name": "Karsa Spa", "desc": "Погружение в ванну из экзотических цветов в Karsa Spa - это путь к глубочайшему расслаблению и обновлению.", "price": "400k IDR", "maps": "https://maps.google.com/?q=Karsa+Spa"}, {"time": "16:00", "name": "Tegalalang Rice Terrace", "desc": "Вечерняя прогулка по террасам сладеет душу, и взгляд на уходящее солнце за горизонтом сделает ваш день незабываемым.", "price": "20k IDR", "maps": "https://maps.google.com/?q=Tegalalang+Rice+Terrace"}],
+    [{"time": "11:15", "name": "Amrtasiddhi Ayurveda", "desc": "[чилл] Погрузитесь в мир аюрведы, где древние традиции оживают в каждой процедуре, принося гармонию и баланс.", "price": "250k IDR", "maps": "https://maps.google.com/?q=Amrtasiddhi+Ayurveda"}, {"time": "13:00", "name": "Jungle Fish Beach Club", "desc": "Скрытый от глаз, клуб открывает бассейн с видом на джунгли, где отдохнуть можно среди шёпота ветра и пения птиц.", "price": "100k IDR", "maps": "https://maps.google.com/?q=Jungle+Fish+Beach+Club"}],
+    [{"time": "10:15", "name": "Bali Botanica Day Spa", "desc": "[чилл] Каждое прикосновение здесь - это поэма, где кожа впитывает целительную силу природы и все вокруг наполняется светом.", "price": "300k IDR", "maps": "https://maps.google.com/?q=Bali+Botanica+Day+Spa"}, {"time": "12:00", "name": "Sacred Monkey Forest Sanctuary", "desc": "Тропический лес с вековыми деревьями и игривыми обезьянами, священное место, где время замирает в тишине природы.", "price": "80k IDR", "maps": "https://maps.google.com/?q=Sacred+Monkey+Forest+Sanctuary"}, {"time": "15:00", "name": "La Brisa Bali", "desc": "Ультрамодный пляжный клуб создает атмосферу свободы под колышущееся вечернее море и золотистые лучи заходящего солнца.", "price": "150k IDR", "maps": "https://maps.google.com/?q=La+Brisa+Bali"}],
+    [{"time": "10:45", "name": "Bliss Spa", "desc": "[чилл] Нежные коконы ароматов окутывают вас в Bliss Spa, где каждая минута - эликсир расслабления.", "price": "280k IDR", "maps": "https://maps.google.com/?q=Bliss+Spa"}, {"time": "12:30", "name": "Tirta Taman Mumbul Temple", "desc": "Храм, где тишина и вода сливаются в гармонию, окружая посетителей атмосферой умиротворенности и покоя.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Tirta+Taman+Mumbul+Temple"}],
+    [{"time": "11:30", "name": "Ubud Healing House", "desc": "[чилл] Место, где свет вдохновения и мудрость земли соединяются в практике исцеления и внутренней гармонии.", "price": "320k IDR", "maps": "https://maps.google.com/?q=Ubud+Healing+House"}, {"time": "13:00", "name": "Campuhan Bridge", "desc": "Старинный мост над рекой, место для задумчивых прогулок, где каждой вдыхаемый воздух говорит тише, и спокойствие окутывает вас.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Campuhan+Bridge"}, {"time": "16:00", "name": "Pantai Bias Tugel Beach", "desc": "Уединенный пляж с белым песком и бирюзовыми водами, где звук волн гармонично сочетается с тихим шепотом ветра.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Pantai+Bias+Tugel+Beach"}],
+    [{"time": "11:00", "name": "Titi Batu Ubud Club", "desc": "[чилл] Плавная вода бассейна Titi Batu зовет вас погрузиться в сладкую негу, обнимите безмятежность здесь.", "price": "100k IDR", "maps": "https://maps.google.com/?q=Titi+Batu+Ubud+Club"}, {"time": "14:00", "name": "Petulu Heron Sanctuary", "desc": "Каждый вечер сотни цапель возвращаются домой, укрывая небо белым вуалем вдохновения.", "price": "50k IDR", "maps": "https://maps.google.com/?q=Petulu+Heron+Sanctuary"}],
+    [{"time": "10:20", "name": "Cantika Spa", "desc": "[чилл] В сердце Убуда, Cantika Spa - это ода спокойствию, точка, где энергия земли переливается через каждую клеточку вашего тела.", "price": "270k IDR", "maps": "https://maps.google.com/?q=Cantika+Spa"}, {"time": "12:30", "name": "Echo Beach", "desc": "Шелест волн и соленый воздух Echo Beach станут идеальным завершением вашего дня на песчаном берегу под крышей пальм.", "price": "Бесплатно", "maps": "https://maps.google.com/?q=Echo+Beach"}],
+    [
+      {
+        time: '10:00',
+        name: 'Alchemy',
+        desc: '[чилл] Начинаем день с очищения. Лучшие raw-десерты, свежие соки и салат-бар. Максимально спокойная атмосфера.',
+        price: '150k IDR',
+        maps: 'https://maps.google.com/?q=Alchemy+Bali'
+      },
+      {
+        time: '12:00',
+        name: 'Tjampuhan Spa',
+        desc: 'Грот, высеченный в скале! Одно из самых атмосферных спа в Убуде с тёплыми и холодными бассейнами в пещере.',
+        price: '250k IDR',
+        maps: 'https://maps.google.com/?q=Tjampuhan+Spa'
+      },
+      {
+        time: '16:00',
+        name: 'Lazy Cat Cafe',
+        desc: 'Сквозь мягкость винтажного дивана проникает аромат чая, окутывающий атмосферу уюта. Мягкие шёпоты местных котов, зевая на солнце, приглашают остановить время, а страницы книги, перелистываемые сквозь невидимую паутину счастья, шепчут о далеких мирах.',
+        price: '80k IDR',
+        maps: 'https://maps.google.com/?q=Lazy+Cat+Cafe+Ubud'
+      }
+    ],
+    [
+      {
+        time: '11:00',
+        name: 'Zest',
+        desc: '[чилл] Королевский веганский завтрак в деревянном храме на холме. Тут можно зависнуть на пару часов просто разглядывая джунгли.',
+        price: '150k IDR',
+        maps: 'https://maps.google.com/?q=Zest+Ubud'
+      },
+      {
+        time: '14:00',
+        name: 'Karsa Spa',
+        desc: 'Спа среди рисовых полей. Делаем массаж горячими камнями или цветочную ванну. Записываться нужно за неделю!',
+        price: '300k IDR',
+        maps: 'https://maps.google.com/?q=Karsa+Spa+Ubud'
+      },
+      {
+        time: '17:00',
+        name: 'Sayan House',
+        desc: 'Ужин с живописным видом на ущелье реки Аюнг окутан волшебством заката. Нежные оттенки неба сливаются с экзотическими вкусами японско-латинского фьюжна, создавая гастрономический праздник для чувств. Тишина окрестностей наполняется энергией этого уникального сочетания.',
+        price: 'От 250k IDR',
+        maps: 'https://maps.google.com/?q=Sayan+House+Ubud'
+      }
+    ],
+    [
+      {
+        time: '10:00',
+        name: 'Pyramids of Chi',
+        desc: '[чилл] Звуковая медитация (sound healing). Лежишь в пирамиде, слушаешь гонги и поющие чаши — мозг отключается полностью.',
+        price: '300k IDR',
+        maps: 'https://maps.google.com/?q=Pyramids+of+Chi+Ubud'
+      },
+      {
+        time: '13:00',
+        name: 'Cretya Ubud',
+        desc: 'Перемещаемся к рисовым террасам, но не ходить, а плавать. Берём лежак у инфинити-бассейна, заказываем кокос.',
+        price: 'От 150k IDR',
+        maps: 'https://maps.google.com/?q=Cretya+Ubud'
+      },
+      {
+        time: '17:00',
+        name: 'Casa Curandera',
+        desc: 'Тихий вечер наполнен ароматом свежезаваренного какао, а мягкий свет свечей создает атмосферу уюта и умиротворения. Здоровый ужин превращается в гастрономический ритуал, где каждая деталь играет свою роль в создании гармонии. Погружение в эту идиллию восстанавливает душевное равновесие.',
+        price: '150k IDR',
+        maps: 'https://maps.google.com/?q=Casa+Curandera'
+      }
+    ],
+
+    // --- Variant 1: Культура + природа ---
+    [
+      {
+        time: '09:00',
+        name: 'Campuhan Ridge Walk',
+        desc: 'Тропа художников — узкая дорожка по хребту между двух долин. Утром туман, пальмы, тишина. 30 минут туда, 30 обратно. Лучшее начало дня в Убуде. Пешком от центра!',
+        price: 'бесплатно',
+        maps: 'https://maps.google.com/?q=Campuhan+Ridge+Walk',
+        tags: ['природа', 'прогулка', 'утро'],
+        booking: false
+      },
+      {
+        time: '10:30',
+        name: 'Brie Ubud',
+        desc: 'Сырник XXL — размером с голову. Плюс кофе, свежий сок. Небольшое кафе с видом на рисовые поля. После прогулки — то что надо.',
+        price: 'завтрак 60-100K',
+        maps: 'https://maps.google.com/?q=Brie+Ubud+Bali',
+        tags: ['завтрак', 'кафе'],
+        booking: false
+      },
+      {
+        time: '12:00',
+        name: 'Sacred Monkey Forest',
+        desc: 'Обезьяний лес — 700+ макак в древнем лесу с храмами. Реально волшебное место. НО: прячь очки, серёжки, бутылки — обезьяны воруют ВСЁ. Не улыбайся им (показ зубов = агрессия).',
+        price: 'вход 100K (будни) / 120K (выходные)',
+        maps: 'https://maps.google.com/?q=Monkey+Forest+Ubud+Bali',
+        tags: ['природа', 'храм', 'обезьяны'],
+        booking: false
+      },
+      {
+        time: '13:30',
+        name: 'Chito Ubud',
+        desc: 'Грузинские хинкали на Бали за 40K! Реально вкусные. Маленькое место, хозяин грузин, всё свежее. Хачапури тоже есть. Лучший бюджетный обед в Убуде.',
+        price: 'хинкали 40K, обед 60-100K',
+        maps: 'https://maps.google.com/?q=Chito+Ubud+Bali',
+        tags: ['обед', 'грузинская', 'бюджет'],
+        booking: false
+      },
+      {
+        time: '15:00',
+        name: 'ARMA Museum',
+        desc: 'Главный музей балийского искусства. Основан коллекционером Агунг Раем — картины на коре, камасан-стиль, работы международных художников. Тихие сады между галереями. 2 часа минимум.',
+        price: 'вход 150K, дети бесплатно',
+        maps: 'https://maps.google.com/?q=ARMA+Museum+Ubud',
+        tags: ['музей', 'культура', 'искусство'],
+        booking: false
+      },
+      {
+        time: '17:00',
+        name: 'Tegallalang Rice Terrace',
+        desc: 'Открыточные рисовые террасы. К 17:00 автобусы с туристами уехали — можно гулять спокойно. Свет уже мягкий, не припекает. Местные просят donation 10-20K за проход — это нормально.',
+        price: 'вход 25-50K',
+        maps: 'https://maps.google.com/?q=Tegallalang+Rice+Terrace',
+        tags: ['природа', 'фото', 'рисовые террасы'],
+        booking: false
+      },
+      {
+        time: '19:00',
+        name: 'Elevator Sunset Bar',
+        desc: 'Коктейли с видом на рисовые поля в вечернем свете. Расслабленная атмосфера, хороший бармен. Закажи Negroni и просто сиди.',
+        price: 'коктейли 80-130K, закуски 60-100K',
+        maps: 'https://maps.google.com/?q=Elevator+Bar+Ubud+Bali',
+        tags: ['бар', 'закат', 'ужин'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Bisma Eight',
+        desc: 'Бутик-отель на Bisma Road с infinity pool в джунглях. Или бюджетно — Pondok Pundi ($20, центр).',
+        price: 'от $20-120/ночь',
+        maps: 'https://maps.google.com/?q=Bisma+Eight+Ubud+Bali',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 2: Духовный ---
+    [
+      {
+        time: '09:00',
+        name: 'Tirta Empul',
+        desc: 'Храм священных источников — очищение в холодной воде из 30 фонтанов. Заходишь в саронге, проходишь каждый фонтан, молишься. Приезжай РАНО — к 10 уже толпы. Реальный духовный опыт, не аттракцион.',
+        price: 'вход 75K, саронг дают',
+        maps: 'https://maps.google.com/?q=Tirta+Empul+Temple',
+        tags: ['храм', 'духовное', 'очищение'],
+        booking: false
+      },
+      {
+        time: '11:30',
+        name: 'Five Arts Studio',
+        desc: '5.0★ лидер среди галерей Убуда! Живопись, скульптура, можно часами зависать. Атмосфера чистого творчества, мастера работают прямо при тебе.',
+        price: 'вход свободный',
+        maps: 'https://maps.google.com/?q=Five+Arts+Studio+Ubud',
+        tags: ['галерея', 'искусство'],
+        booking: false
+      },
+      {
+        time: '12:30',
+        name: 'Sayuri Healing Food',
+        desc: 'Веган-кафе — но не пугайся. Живая еда, raw cakes, смузи-боулы. Тихое место после мощного духовного утра. Всё органическое, от фермеров рядом.',
+        price: 'завтрак 60-100K',
+        maps: 'https://maps.google.com/?q=Sayuri+Ubud+Bali',
+        tags: ['завтрак', 'веган', 'здоровое'],
+        booking: false
+      },
+      {
+        time: '13:00',
+        name: 'Gunung Kawi',
+        desc: 'Пещерные храмы XI века — вырезаны в скале, 300 ступеней вниз к реке. Мало туристов, много энергии. Один из старейших храмов Бали. Надевай удобную обувь.',
+        price: 'вход 50K',
+        maps: 'https://maps.google.com/?q=Gunung+Kawi+Temple',
+        tags: ['храм', 'древний', 'история'],
+        booking: false
+      },
+      {
+        time: '15:00',
+        name: 'The Istana Experience',
+        desc: 'Балийская баня — церемониальное купание, травяные компрессы, массаж. ТЕЛЕФОНЫ ЗАБИРАЮТ на входе. 3 часа без связи с миром. Ты выйдешь перезагруженным. Серьёзно, это трансформация.',
+        price: 'от 500K (3 часа)',
+        maps: 'https://maps.google.com/?q=Istana+Ubud+Bali',
+        tags: ['спа', 'wellness', 'церемония'],
+        booking: true
+      },
+      {
+        time: '18:00',
+        name: 'Ubud Royal Palace — Balinese Dance',
+        desc: 'Балийские танцы во дворце — Legong или Barong dance. Красочные костюмы, живой гамелан, древние истории. Каждый вечер разное шоу. 7K за билет — лучшая сделка на Бали.',
+        price: 'билет 100K',
+        maps: 'https://maps.google.com/?q=Ubud+Bali+Royal+Palace',
+        tags: ['культура', 'танцы', 'вечер'],
+        booking: false
+      },
+      {
+        time: '19:30',
+        name: 'Kawi Speakeasy',
+        desc: 'Секретный бар — вход через неприметную дверь. Авторские коктейли, приглушённый свет, музыка. Мало кто знает. Спроси у бармена за «the journey» — не пожалеешь.',
+        price: 'коктейли 90-140K',
+        maps: 'https://maps.google.com/?q=Kawi+Speakeasy+Ubud+Bali',
+        tags: ['бар', 'ужин', 'секретный'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Komaneka at Bisma',
+        desc: 'Тихий резорт в джунглях с медитативной атмосферой. Или бюджетно — Tapa Nata ($25, рисовые поля из окна).',
+        price: 'от $25-150/ночь',
+        maps: 'https://maps.google.com/?q=Komaneka+Bisma+Ubud+Bali',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 3: Приключения ---
+    [
+      {
+        time: '09:00',
+        name: 'Hidden Canyon Beji Guwang',
+        desc: 'Идёшь ПО ВОДЕ в узком ущелье — стены смыкаются над тобой, свет пробивается сверху. Как в Индиане Джонсе. Глубина воды по колено-пояс. Обувь не жалко — бери сандалии.',
+        price: 'вход 20K + гид 100K',
+        maps: 'https://maps.google.com/?q=Hidden+Canyon+Beji+Guwang',
+        tags: ['приключения', 'природа', 'каньон'],
+        booking: false
+      },
+      {
+        time: '11:30',
+        name: 'Fu Shou Noodle House',
+        desc: 'Лапша за 30K — и это лучшая лапша в Убуде. Бульон варят часами, порции огромные. Маленький варунг, пластиковые стулья, идеальный вкус. Местные тут обедают.',
+        price: 'лапша 30-50K',
+        maps: 'https://maps.google.com/?q=Fu+Shou+Noodle+Ubud+Bali',
+        tags: ['обед', 'бюджет', 'лапша'],
+        booking: false
+      },
+      {
+        time: '13:00',
+        name: 'ATV Quad Bike Adventure',
+        desc: 'Квадроциклы через рисовые поля, грязь, реки, джунгли — 2 часа адреналина. Будешь грязный с ног до головы и счастливый. БРОНИРУЙ заранее, места разбирают!',
+        price: '500-700K (2 часа)',
+        maps: 'https://maps.google.com/?q=Atv+Ubud+Bali',
+        tags: ['приключения', 'активность', 'квадроциклы'],
+        booking: true
+      },
+      {
+        time: '15:30',
+        name: 'Kanto Lampo Waterfall',
+        desc: 'Каскадный водопад — вода стекает по ступенчатым скалам, ты стоишь внизу. Не такой мощный как Секумпул, зато можно подойти вплотную. Красивые фото и освежиться после ATV.',
+        price: 'donation 20K',
+        maps: 'https://maps.google.com/?q=Kanto+Lampo+Waterfall',
+        tags: ['водопад', 'природа', 'купание'],
+        booking: false
+      },
+      {
+        time: '17:00',
+        name: 'Alas Harum + Cretya',
+        desc: 'Бассейн-инфинити с видом на рисовые террасы + качели над джунглями. К 17:00 свет золотой, толпы ушли. Cretya — бич-клаб в рисовых полях (серьёзно). Коктейль на закате тут — must do.',
+        price: 'вход от 150K (включая напиток)',
+        maps: 'https://maps.google.com/?q=Alas+Harum+Cretya',
+        tags: ['бассейн', 'закат', 'бар'],
+        booking: false
+      },
+      {
+        time: '19:30',
+        name: 'Apéritif by Viceroy',
+        desc: 'Fine dining в джунглях — дегустационный сет из 7 блюд, каждое с историей. Вид на долину, живая музыка. Дорого, но это ужин, который запомнишь на годы.',
+        price: 'дегустация от 800K',
+        maps: 'https://maps.google.com/?q=Aperitif+Viceroy+Ubud+Bali',
+        tags: ['ужин', 'fine dining'],
+        booking: true
+      },
+      {
+        time: '🏨',
+        name: 'Viceroy Bali',
+        desc: 'Роскошный курорт с виллами, парящими над живописной долиной, погружает в атмосферу уединения и гармонии. Для искателей более бюджетного отдыха Alam Indah предлагает уютные номера у бассейна на фоне бескрайних рисовых полей. Каждый уголок наполнен поэзией природы и спокойствием.',
+        price: 'от $30-300/ночь',
+        maps: 'https://maps.google.com/?q=Viceroy+Bali+Ubud+Bali',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 4: Гастро-тур ---
+    [
+      {
+        time: '09:00',
+        name: 'Copenhagen Ubud',
+        desc: 'Датский завтрак в тропиках — сморреброды, гранола с кокосовым йогуртом, flat white. Свежее, минималистичное, вкусное. Один из лучших завтраков Убуда.',
+        price: 'завтрак 80-130K',
+        maps: 'https://maps.google.com/?q=Copenhagen+Ubud',
+        tags: ['завтрак', 'кафе'],
+        booking: false
+      },
+      {
+        time: '10:30',
+        name: 'Pasar Ubud (рынок)',
+        desc: 'Утренний рынок — хаос цветов, специй, фруктов. Тут покупают подношения для церемоний. Торгуйся! Попробуй jaje laklak (блинчики с пальмовым сахаром) и свежий кокос.',
+        price: 'от 5K за снэки',
+        maps: 'https://maps.google.com/?q=Ubud+Traditional+Art+Market',
+        tags: ['рынок', 'культура', 'снэки'],
+        booking: false
+      },
+      {
+        time: '12:00',
+        name: 'Locavore To Go',
+        desc: 'Братья-шефы из Locavore (мишленовский уровень) открыли бургерную для обычных людей. Бургер из местной говядины за 80K — лучший на Бали. Без пафоса, чистый вкус.',
+        price: 'бургер 80K, обед 80-130K',
+        maps: 'https://maps.google.com/?q=Locavore+To+Go+Ubud',
+        tags: ['обед', 'бургеры'],
+        booking: false
+      },
+      {
+        time: '13:30',
+        name: 'Seniman Coffee Studio',
+        desc: 'Серьёзная кофейня — обжарка на месте, V60, сифон, аэропресс. Если любишь кофе — тебе сюда. Бариста объяснят каждый сорт. Кофе от фермеров Кинтамани.',
+        price: 'кофе 35-60K',
+        maps: 'https://maps.google.com/?q=Seniman+Coffee+Studio+Ubud',
+        tags: ['кофе', 'спешиалти'],
+        booking: false
+      },
+      {
+        time: '15:00',
+        name: 'Ubud Cooking Class (Paon Bali)',
+        desc: 'Кулинарный класс — идёшь на рынок за продуктами, потом готовишь 5 блюд: сатэ, наси горенг, лавар. Шеф-балиец шутит и учит. Уедешь с рецептами.',
+        price: '350-500K (3-4 часа)',
+        maps: 'https://maps.google.com/?q=Paon+Bali+Cooking+Class+Ubud',
+        tags: ['мастер-класс', 'кулинария'],
+        booking: true
+      },
+      {
+        time: '18:30',
+        name: 'Mozaic',
+        desc: 'Fine dining в тропическом саду — дегустационный сет из 6 блюд, каждое удивляет. Французская техника + балийские продукты. Один из топ-5 ресторанов острова. Бронируй!',
+        price: 'дегустация от 900K',
+        maps: 'https://maps.google.com/?q=Mozaic+Restaurant+Ubud',
+        tags: ['ужин', 'fine dining'],
+        booking: true
+      },
+      {
+        time: '🏨',
+        name: 'Shana Homestay',
+        desc: 'Уютный хомстей в центре — чисто, рисовые поля из окна, хозяйка печёт блинчики на завтрак. Или Alaya Resort ($80) для комфорта.',
+        price: 'от $20-80/ночь',
+        maps: 'https://maps.google.com/?q=Shana+Homestay+Ubud',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 5: Веган + Wellness ---
+    [
+      {
+        time: '07:00',
+        name: 'The Yoga Barn',
+        desc: 'Утренняя виньяса в самом большом йога-центре Убуда. Открытый шала среди деревьев, птицы поют. После класса — свежий сок в их кафе. Регистрация на ресепшн за 15 минут.',
+        price: 'класс 130-150K',
+        maps: 'https://maps.google.com/?q=The+Yoga+Barn+Ubud',
+        tags: ['йога', 'утро', 'wellness'],
+        booking: false
+      },
+      {
+        time: '09:00',
+        name: 'Alchemy',
+        desc: 'Raw-vegan кафе с салат-баром — сам собираешь боул из 40+ ингредиентов. Живая еда, ферментированное, проростки. Не пугайся — тут реально вкусно даже мясоедам.',
+        price: 'боул 70-120K',
+        maps: 'https://maps.google.com/?q=Alchemy+Ubud+Bali',
+        tags: ['завтрак', 'веган', 'raw'],
+        booking: false
+      },
+      {
+        time: '10:30',
+        name: 'Campuhan Ridge Walk',
+        desc: 'Прогулка по хребту между двух долин — пальмы, тишина, вид на зелёные холмы. 30 минут в одну сторону. Утром туман ещё не ушёл — волшебно.',
+        price: 'бесплатно',
+        maps: 'https://maps.google.com/?q=Campuhan+Ridge+Walk+Ubud',
+        tags: ['природа', 'прогулка'],
+        booking: false
+      },
+      {
+        time: '12:00',
+        name: 'Sage',
+        desc: 'Растительное кафе нового поколения — тут не «веган для хиппи», а реально красивая еда. Боулы, смузи, raw десерты. Тихий сад, хорошая музыка.',
+        price: '70-120K',
+        maps: 'https://maps.google.com/?q=Sage+Ubud+Bali',
+        tags: ['обед', 'веган'],
+        booking: false
+      },
+      {
+        time: '13:30',
+        name: 'The Istana Experience',
+        desc: 'Балийская баня — церемониальное купание, травяные компрессы, массаж. ТЕЛЕФОНЫ ЗАБИРАЮТ. 3 часа без связи с миром. Выходишь другим человеком.',
+        price: 'от 500K (3 часа)',
+        maps: 'https://maps.google.com/?q=The+Istana+Experience+Ubud',
+        tags: ['спа', 'wellness', 'церемония'],
+        booking: true
+      },
+      {
+        time: '17:00',
+        name: 'Tegallalang Rice Terrace',
+        desc: 'Рисовые террасы в золотом вечернем свете — автобусы уехали, народу мало. Гуляй по тропинкам между рисом. Donation 10-20K за проход — это нормально.',
+        price: 'вход 25-50K',
+        maps: 'https://maps.google.com/?q=Tegallalang+Rice+Terrace+Ubud',
+        tags: ['природа', 'фото'],
+        booking: false
+      },
+      {
+        time: '19:00',
+        name: 'Moksa',
+        desc: 'Веган-ресторан с собственным огородом — ты видишь грядки прямо из-за стола. Ферментация, грибы, всё местное. Десерт из чёрного риса — финальный аккорд wellness-дня.',
+        price: '80-150K',
+        maps: 'https://maps.google.com/?q=Moksa+Plant+Based+Cuisine+Ubud',
+        tags: ['ужин', 'веган'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Fivelements Retreat',
+        desc: 'Эко-ретрит на реке погружает в мир гармонии: бамбуковые виллы, утопающие в зелени, и растительная кухня, возвышающая вкус. Мягкие звуки природы создают идеальную атмосферу для расслабления в спа. Для экономного отдыха подойдёт Tapa Nata — изысканный уголок с непринужденной атмосферой.',
+        price: 'от $25-200/ночь',
+        maps: 'https://maps.google.com/?q=Fivelements+Retreat+Ubud',
+        tags: ['отель', 'retreat'],
+        booking: true
+      }
+    ],
+    // --- Variant 6: Фото-локации ---
+    [
+      {
+        time: '06:00',
+        name: 'Tegallalang Rice Terrace',
+        desc: 'Приезжай к 6 утра — ни одного туриста, туман поднимается от рисовых полей. Золотой час для фото. К 9 уже толпы. Вход 20K, парковка рядом.',
+        price: 'вход 25-50K',
+        maps: 'https://maps.google.com/?q=Tegallalang+Rice+Terrace+Ubud',
+        tags: ['фото', 'природа', 'рассвет'],
+        booking: false
+      },
+      {
+        time: '08:00',
+        name: 'Brie Ubud',
+        desc: 'Завтрак с видом на рисовые поля. Сырник размером с голову, кофе, свежий сок. Красивое место для кадра с едой на фоне террас.',
+        price: 'завтрак 60-100K',
+        maps: 'https://maps.google.com/?q=Brie+Cafe+Ubud',
+        tags: ['завтрак', 'кафе'],
+        booking: false
+      },
+      {
+        time: '09:30',
+        name: 'Tirta Empul',
+        desc: 'Храм священных источников — мощный кадр: люди в белых саронгах проходят через фонтаны. Утром свет падает красиво. Сама церемония тоже стоит — очищение водой.',
+        price: 'вход 75K',
+        maps: 'https://maps.google.com/?q=Tirta+Empul+Temple+Ubud',
+        tags: ['храм', 'фото', 'духовное'],
+        booking: false
+      },
+      {
+        time: '11:30',
+        name: 'Tukad Cepung Waterfall',
+        desc: 'Водопад в пещере — свет пробивается сквозь скалы сверху, вода сияет. Самый фотогеничный водопад Бали. Спуск 15 минут, несложный. Камеру в чехол — брызги!',
+        price: 'вход 20K',
+        maps: 'https://maps.google.com/?q=Tukad+Cepung+Waterfall+Bali',
+        tags: ['водопад', 'фото'],
+        booking: false
+      },
+      {
+        time: '13:00',
+        name: 'MAMU Garden Cafe',
+        desc: 'Кафе в тропическом саду с качелями и фото-зонами. Еда вкусная, порции большие. Отдохни и перекуси перед следующей точкой.',
+        price: '70-120K',
+        maps: 'https://maps.google.com/?q=MAMU+Garden+Cafe+Ubud',
+        tags: ['обед', 'кафе'],
+        booking: false
+      },
+      {
+        time: '16:00',
+        name: 'Alas Harum + Cretya',
+        desc: 'Качели над джунглями + infinity pool с видом на террасы. К 16:00 золотой час начинается, толпы уходят. Cretya — бич-клаб в рисовых полях. Коктейль на закате — must.',
+        price: 'вход от 150K',
+        maps: 'https://maps.google.com/?q=Cretya+Ubud+Bali',
+        tags: ['бассейн', 'фото', 'закат'],
+        booking: false
+      },
+      {
+        time: '18:30',
+        name: 'Elevator Sunset Bar',
+        desc: 'Коктейли с видом на бескрайние рисовые поля, окутанные мягким светом заката. В расслабленной атмосфере время замирает, создавая идеальный финал сказочного дня.',
+        price: 'коктейли 80-130K',
+        maps: 'https://maps.google.com/?q=Elevator+Bar+Ubud',
+        tags: ['бар', 'закат'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Gusku Uma Villa',
+        desc: 'Вилла с частным бассейном в рисовых полях — фото прямо из комнаты. Или бюджетно: Sri Ratih Cottages ($30).',
+        price: 'от $30-150/ночь',
+        maps: 'https://maps.google.com/?q=Gusku+Uma+Villa+Ubud',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 7: Арт-маршрут ---
+    [
+      {
+        time: '09:00',
+        name: 'Neka Art Museum',
+        desc: 'Лучший музей балийского искусства — 6 галерей от классики до модерна. Картины на коре дерева, камасан-стиль, балийский импрессионизм. 2 часа минимум.',
+        price: 'вход 100K',
+        maps: 'https://maps.google.com/?q=Neka+Art+Museum+Ubud',
+        tags: ['музей', 'искусство'],
+        booking: false
+      },
+      {
+        time: '11:00',
+        name: 'Mudra Cafe',
+        desc: 'Крафтовый кофе в арт-пространстве. Стены в картинах, мебель ручной работы. Матча-латте и банановый хлеб — комбо дня.',
+        price: 'кофе 40-65K',
+        maps: 'https://maps.google.com/?q=Mudra+Cafe+Ubud',
+        tags: ['кафе', 'кофе'],
+        booking: false
+      },
+      {
+        time: '12:00',
+        name: 'Blanco Renaissance Museum',
+        desc: 'Музей эксцентричного испанца Антонио Бланко — жил в Убуде 40 лет, рисовал балийских женщин. Дом-музей на холме, попугаи, вид на долину. Колоритно!',
+        price: 'вход 100K',
+        maps: 'https://maps.google.com/?q=Blanco+Renaissance+Museum+Ubud',
+        tags: ['музей', 'арт'],
+        booking: false
+      },
+      {
+        time: '13:30',
+        name: 'Warung Biah Biah',
+        desc: 'Традиционный варунг с балийской едой за копейки. Наси чампур 30K — рис, овощи, темпе, самбал. Как едят местные.',
+        price: '25-45K',
+        maps: 'https://maps.google.com/?q=Warung+Biah+Biah+Ubud',
+        tags: ['обед', 'бюджет', 'локальная'],
+        booking: false
+      },
+      {
+        time: '14:30',
+        name: 'Five Arts Studio',
+        desc: '5.0★ на Гугле — маленькая галерея с потрясающей живописью и скульптурой. Мастера работают при тебе. Можно купить картину напрямую у художника.',
+        price: 'вход свободный',
+        maps: 'https://maps.google.com/?q=Five+Arts+Studio+Ubud',
+        tags: ['галерея', 'арт'],
+        booking: false
+      },
+      {
+        time: '16:00',
+        name: 'Ubud Art Market',
+        desc: 'Художественный рынок в центре — картины, резьба по дереву, батик, серебро. Торгуйся! Начинай с 30% от цены. После обеда продавцы спокойнее.',
+        price: 'сувениры от 20K',
+        maps: 'https://maps.google.com/?q=Ubud+Art+Market',
+        tags: ['шоппинг', 'арт', 'сувениры'],
+        booking: false
+      },
+      {
+        time: '17:30',
+        name: 'Tonyraka Art Lounge',
+        desc: 'Галерея-бар — современное балийское искусство + коктейли. Художник Тони Рака сам иногда тут. Арт и вино — лучший финал арт-дня.',
+        price: 'коктейли 80-120K',
+        maps: 'https://maps.google.com/?q=Tonyraka+Art+Lounge+Ubud',
+        tags: ['галерея', 'бар'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Komaneka at Bisma',
+        desc: 'Арт-отель пленяет яркими полотнами в каждом номере и превращает пространство в галерею. Для искушенных путешественников подойдёт уютный Pondok Pundi за $20 — идеальное сочетание стиля и доступности.',
+        price: 'от $20-150/ночь',
+        maps: 'https://maps.google.com/?q=Komaneka+at+Bisma+Ubud',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 8: Природа + водопады ---
+    [
+      {
+        time: '06:30',
+        name: 'Tibumana Waterfall',
+        desc: 'Красивый двойной водопад в 20 мин от Убуда. Утром ты один — вода падает в изумрудный бассейн, можно плавать. Лёгкий спуск по лестнице.',
+        price: 'вход 20K',
+        maps: 'https://maps.google.com/?q=Tibumana+Waterfall+Bali',
+        tags: ['водопад', 'природа', 'утро'],
+        booking: false
+      },
+      {
+        time: '08:30',
+        name: 'Blend Cafe',
+        desc: 'Завтрак после водопада — смузи-боулы, тосты с авокадо, кофе. Уютное место с хорошим Wi-Fi. Заряди телефон перед следующим походом.',
+        price: '60-100K',
+        maps: 'https://maps.google.com/?q=Blend+Cafe+Ubud',
+        tags: ['завтрак', 'кафе'],
+        booking: false
+      },
+      {
+        time: '10:00',
+        name: 'Sacred Monkey Forest',
+        desc: '700+ макак в древнем лесу с храмами. Гигантские баньяны, мох, атмосфера. Прячь всё блестящее — обезьяны воруют. Не улыбайся (показ зубов = агрессия).',
+        price: 'вход 100K (будни) / 120K (выходные)',
+        maps: 'https://maps.google.com/?q=Sacred+Monkey+Forest+Ubud',
+        tags: ['природа', 'обезьяны'],
+        booking: false
+      },
+      {
+        time: '12:00',
+        name: 'Fu Shou Noodle House',
+        desc: 'Лапша за 30K — лучшая в Убуде. Бульон варят часами. Маленький варунг, пластиковые стулья, но вкус ресторанного уровня.',
+        price: '30-50K',
+        maps: 'https://maps.google.com/?q=Fu+Shou+Noodle+House+Ubud',
+        tags: ['обед', 'бюджет'],
+        booking: false
+      },
+      {
+        time: '13:30',
+        name: 'Tegenungan Waterfall',
+        desc: 'Самый доступный водопад — 10 мин от центра. Мощный поток, можно подойти близко. К обеду народу много, но сам водопад впечатляет.',
+        price: 'вход 20K',
+        maps: 'https://maps.google.com/?q=Tegenungan+Waterfall+Bali',
+        tags: ['водопад', 'купание'],
+        booking: false
+      },
+      {
+        time: '15:30',
+        name: 'Campuhan Ridge Walk',
+        desc: 'Вечерняя прогулка по хребту — к 15:30 жара спала, свет мягкий. Пальмы, зелёные холмы, тишина. 30 мин туда-обратно.',
+        price: 'бесплатно',
+        maps: 'https://maps.google.com/?q=Campuhan+Ridge+Walk+Ubud',
+        tags: ['прогулка', 'природа'],
+        booking: false
+      },
+      {
+        time: '17:30',
+        name: 'Karsa Cafe',
+        desc: 'Кафе среди рисовых полей — закатный свет на террасах. Чай, лёгкие закуски, абсолютная тишина. Место, которое не хочется покидать.',
+        price: '40-80K',
+        maps: 'https://maps.google.com/?q=Karsa+Cafe+Ubud',
+        tags: ['кафе', 'закат', 'рисовые поля'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Junjungan Serenity Villas',
+        desc: 'Виллы, утопающие в зелени джунглей, открывают захватывающий вид на пышную долину. Для тех, кто предпочитает экономичный вариант, уютные Sri Ratih Cottages предлагают комфорт всего за $30.',
+        price: 'от $30-120/ночь',
+        maps: 'https://maps.google.com/?q=Junjungan+Serenity+Villas+Ubud',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 9: Романтический ---
+    [
+      {
+        time: '09:00',
+        name: 'Donna Ubud',
+        desc: 'Итальянский завтрак для двоих — круассаны, капучино, тирамису. Утренний свет в саду, тихо, романтично. Бронируй столик у окна.',
+        price: '80-140K',
+        maps: 'https://maps.google.com/?q=Donna+Ubud+Bali',
+        tags: ['завтрак', 'романтика'],
+        booking: false
+      },
+      {
+        time: '10:30',
+        name: 'Campuhan Ridge Walk',
+        desc: 'Прогулка вдвоём по тропе художников — узкая дорожка, зелёные холмы, утренний туман. Романтичнее не придумаешь. Фото друг друга на фоне долины.',
+        price: 'бесплатно',
+        maps: 'https://maps.google.com/?q=Campuhan+Ridge+Walk+Ubud',
+        tags: ['прогулка', 'романтика'],
+        booking: false
+      },
+      {
+        time: '12:00',
+        name: 'Cretya Ubud',
+        desc: 'Инфинити-бассейн с видом на рисовые террасы. Лежаки, коктейли, DJ. Купайтесь, загорайте, чувствуйте себя на Мальдивах — но в джунглях.',
+        price: 'вход от 250K (вкл. напиток)',
+        maps: 'https://maps.google.com/?q=Cretya+Ubud+Bali',
+        tags: ['бассейн', 'клаб'],
+        booking: false
+      },
+      {
+        time: '15:00',
+        name: 'COMO Shambhala Estate',
+        desc: 'Спа-церемония для пар — массаж, цветочная ванна, чай. В джунглях на реке. 2 часа блаженства. Бронируй заранее — место популярное.',
+        price: 'от 1.5M за пару',
+        maps: 'https://maps.google.com/?q=COMO+Shambhala+Estate+Ubud',
+        tags: ['спа', 'романтика'],
+        booking: true
+      },
+      {
+        time: '17:30',
+        name: 'Tegallalang Rice Terrace',
+        desc: 'Рисовые террасы в закатном свете — золотые тона, тишина, магия. К вечеру туристы ушли. Фото вдвоём на фоне — классика.',
+        price: 'вход 25-50K',
+        maps: 'https://maps.google.com/?q=Tegallalang+Rice+Terrace+Ubud',
+        tags: ['природа', 'закат', 'фото'],
+        booking: false
+      },
+      {
+        time: '19:00',
+        name: 'Apéritif by Viceroy',
+        desc: 'Fine dining в джунглях — 7 блюд, каждое с историей. Вид на долину, свечи, живая музыка. Ужин, который запомнится навсегда.',
+        price: 'дегустация от 800K',
+        maps: 'https://maps.google.com/?q=Aperitif+Viceroy+Ubud',
+        tags: ['ужин', 'fine dining', 'романтика'],
+        booking: true
+      },
+      {
+        time: '🏨',
+        name: 'Viceroy Bali',
+        desc: 'Роскошные виллы на возвышенности открывают захватывающий вид на долину, где сливаются с небом нежные оттенки заката. Частные бассейны как оазисы уединения создают идеальные условия для романтических моментов, наполняя воздух атмосферой безмятежности. Этот уголок — настоящее воплощение блаженства для влюбленных.',
+        price: 'от $300/ночь',
+        maps: 'https://maps.google.com/?q=Viceroy+Bali+Ubud',
+        tags: ['отель', 'luxury'],
+        booking: true
+      }
+    ],
+    // --- Variant 10: Семейный ---
+    [
+      {
+        time: '09:00',
+        name: 'Sacred Monkey Forest',
+        desc: 'Дети обожают обезьян! 700+ макак в сказочном лесу. Держите еду в сумке, очки на верёвочке. Малышам объясните: не гладить, не дразнить. Гигантские деревья впечатляют всех.',
+        price: 'вход 100K будни / 120K выходные',
+        maps: 'https://maps.google.com/?q=Sacred+Monkey+Forest+Ubud',
+        tags: ['природа', 'дети', 'обезьяны'],
+        booking: false
+      },
+      {
+        time: '11:00',
+        name: 'Taman Dedari',
+        desc: 'Ресторан с рисовыми полями — дети бегают по тропинкам, родители пьют кофе. Большое меню, включая детские блюда. Качели для фото.',
+        price: '80-150K',
+        maps: 'https://maps.google.com/?q=Taman+Dedari+Ubud',
+        tags: ['обед', 'семья', 'кафе'],
+        booking: false
+      },
+      {
+        time: '12:30',
+        name: 'Silver Making в Celuk',
+        desc: 'Мастер-класс по серебру — дети от 8 лет делают своё кольцо! Мастер помогает. 1-2 часа, уносите сувенир. Деревня Celuk — 20 мин от Убуда.',
+        price: '250-400K с материалами',
+        maps: 'https://maps.google.com/?q=Silver+Making+Class+Celuk+Bali',
+        tags: ['мастер-класс', 'дети'],
+        booking: true
+      },
+      {
+        time: '14:30',
+        name: 'Bali Safari & Marine Park',
+        desc: 'Сафари-парк — слоны, жирафы, носороги на территории 40 га. Шоу с животными, аквапарк для детей. Целый день развлечений. Бронируй билеты онлайн — дешевле.',
+        price: 'от 400K (взрослый), 300K (дети)',
+        maps: 'https://maps.google.com/?q=Bali+Safari+Marine+Park',
+        tags: ['парк', 'дети', 'животные'],
+        booking: true
+      },
+      {
+        time: '17:00',
+        name: 'The Jungle Fish',
+        desc: 'Бассейн-инфинити в джунглях — дети плещутся, родители лежат на шезлонгах с коктейлем. Вид на зелёную долину. Семейный вайб.',
+        price: 'вход от 200K (вкл. напиток)',
+        maps: 'https://maps.google.com/?q=Jungle+Fish+Ubud',
+        tags: ['бассейн', 'семья'],
+        booking: false
+      },
+      {
+        time: '19:00',
+        name: 'Chito Ubud',
+        desc: 'Хинкали за 40K — дети съедают по 10 штук. Грузинская кухня, всё свежее, порции большие. Хачапури тоже есть. Лучший семейный ужин.',
+        price: '60-120K',
+        maps: 'https://maps.google.com/?q=Chito+Ubud+Bali',
+        tags: ['ужин', 'грузинская', 'бюджет'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Padma Resort Ubud',
+        desc: 'Семейный курорт, где каждый уголок наполняется радостью — детский клуб, яркие пейзажи и бескрайние просторы активной зоны. Для бюджетного уединения подойдёт Alam Indah, уютное убежище всего за $30. Здесь расслабление и веселье переплетаются, создавая идеальные условия для незабываемых моментов.',
+        price: 'от $30-200/ночь',
+        maps: 'https://maps.google.com/?q=Padma+Resort+Ubud',
+        tags: ['отель', 'семья'],
+        booking: true
+      }
+    ],
+    // --- Variant 11: Храмы + история ---
+    [
+      {
+        time: '06:30',
+        name: 'Tirta Empul',
+        desc: 'Приезжай к открытию — 7:00, очереди нет. Священные источники, 30 фонтанов для очищения. Заходишь в саронге, молишься, проходишь каждый поток. Мощный духовный опыт.',
+        price: 'вход 75K',
+        maps: 'https://maps.google.com/?q=Tirta+Empul+Temple+Ubud',
+        tags: ['храм', 'духовное', 'утро'],
+        booking: false
+      },
+      {
+        time: '09:00',
+        name: 'Ritatkala Cafe',
+        desc: 'Завтрак после духовного утра — спокойное кафе с балийской кухней. Наси кампур, свежий сок, тишина.',
+        price: '50-90K',
+        maps: 'https://maps.google.com/?q=Ritatkala+Cafe+Ubud',
+        tags: ['завтрак', 'кафе'],
+        booking: false
+      },
+      {
+        time: '10:30',
+        name: 'Gunung Kawi',
+        desc: 'Пещерные храмы XI века — вырезаны в скале, 300 ступеней вниз к реке. Мощная энергетика, мало туристов. Один из старейших на Бали. Удобная обувь!',
+        price: 'вход 50K',
+        maps: 'https://maps.google.com/?q=Gunung+Kawi+Temple+Ubud',
+        tags: ['храм', 'история'],
+        booking: false
+      },
+      {
+        time: '12:30',
+        name: 'Warung Garasi',
+        desc: 'Варунг в гараже — буквально. Наси горенг за 25K, сатэ за 20K. Местные едят тут каждый день. Аутентичнее некуда.',
+        price: '20-40K',
+        maps: 'https://maps.google.com/?q=Warung+Garasi+Ubud',
+        tags: ['обед', 'бюджет', 'локальная'],
+        booking: false
+      },
+      {
+        time: '14:00',
+        name: 'Pura Kehen',
+        desc: 'Огромный храм на 8 уровнях — как балийский Боробудур. Баньян-великан у входа, резьба по камню невероятная. Почти нет туристов! 30 мин от Убуда.',
+        price: 'donation 20K',
+        maps: 'https://maps.google.com/?q=Pura+Kehen+Bali',
+        tags: ['храм', 'архитектура'],
+        booking: false
+      },
+      {
+        time: '15:30',
+        name: 'Penglipuran Village',
+        desc: 'Самая красивая деревня Бали — идеальные бамбуковые дома, прямые улицы, цветы. Традиционный уклад жизни. Фото-мечта. 5 мин от Pura Kehen.',
+        price: 'вход 50K',
+        maps: 'https://maps.google.com/?q=Penglipuran+Village+Bali',
+        tags: ['деревня', 'культура', 'фото'],
+        booking: false
+      },
+      {
+        time: '18:00',
+        name: 'Ubud Royal Palace — Balinese Dance',
+        desc: 'Балийские танцы во дворце — Legong или Barong dance. Живой гамелан, красочные костюмы. Каждый вечер разное шоу. 100K за билет.',
+        price: 'билет 100K',
+        maps: 'https://maps.google.com/?q=Ubud+Royal+Palace',
+        tags: ['культура', 'танцы', 'вечер'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Alaya Resort Ubud',
+        desc: 'В самом сердце города раскинулся стильный курорт, где каждая деталь пропитана атмосферой утонченности. Для тех, кто ценит уют и экономию, найдется очаровательный Pondok Pundi — всего за $20 вы окунетесь в мир комфорта и уюта.',
+        price: 'от $20-120/ночь',
+        maps: 'https://maps.google.com/?q=Alaya+Resort+Ubud',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 12: Рафтинг + активный ---
+    [
+      {
+        time: '09:00',
+        name: 'White Water Rafting (Ayung River)',
+        desc: 'Рафтинг по реке Аюнг — 2 часа через джунгли, мимо водопадов и каменных рельефов. Класс 2-3, подходит новичкам. Мокрым будешь по уши. БРОНИРУЙ!',
+        price: '350-500K (2 часа)',
+        maps: 'https://maps.google.com/?q=Ayung+River+Rafting+Ubud',
+        tags: ['рафтинг', 'приключения'],
+        booking: true
+      },
+      {
+        time: '12:00',
+        name: 'Chito Ubud',
+        desc: 'После рафтинга — грузинские хинкали за 40K. Горячие, с мясом, идеально после холодной реки. Порции большие, голодным не уйдёшь.',
+        price: '60-100K',
+        maps: 'https://maps.google.com/?q=Chito+Ubud+Bali',
+        tags: ['обед', 'грузинская'],
+        booking: false
+      },
+      {
+        time: '13:30',
+        name: 'ARMA Museum',
+        desc: 'Отдых после приключений — тихие сады между галереями, балийское искусство. Основан коллекционером Агунг Раем. Картины на коре, камасан-стиль.',
+        price: 'вход 150K',
+        maps: 'https://maps.google.com/?q=ARMA+Museum+Ubud',
+        tags: ['музей', 'отдых'],
+        booking: false
+      },
+      {
+        time: '15:30',
+        name: 'Kanto Lampo Waterfall',
+        desc: 'Каскадный водопад — вода стекает по ступенчатым скалам. Красивые фото, можно подойти вплотную. Освежиться после культурного перерыва.',
+        price: 'donation 20K',
+        maps: 'https://maps.google.com/?q=Kanto+Lampo+Waterfall+Bali',
+        tags: ['водопад', 'купание'],
+        booking: false
+      },
+      {
+        time: '17:00',
+        name: 'Omma Day Club',
+        desc: 'Пул-клаб с видом на джунгли — инфинити бассейн, лежаки, коктейли. После активного дня — именно то что надо. DJ к вечеру.',
+        price: 'вход от 200K',
+        maps: 'https://maps.google.com/?q=Omma+Day+Club+Ubud',
+        tags: ['бассейн', 'бар'],
+        booking: false
+      },
+      {
+        time: '19:30',
+        name: 'Kawi Speakeasy',
+        desc: 'Секретный бар — вход через неприметную дверь. Авторские коктейли, приглушённый свет. Спроси «the journey» — особый коктейль от бармена.',
+        price: 'коктейли 90-140K',
+        maps: 'https://maps.google.com/?q=Kawi+Speakeasy+Ubud',
+        tags: ['бар', 'секретный'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Alam Indah',
+        desc: 'Отель, утопающий в зелени рисовых полей, предлагает освежающих окунаний в кристально чистый бассейн. Тишина и уют сливаются с ароматами свежезаваренного кофе и домашней выпечки, создавая атмосферу безмятежности. Каждое утро начинается здесь с удовольствием, пробуждая чувства в гармонии с природой.',
+        price: 'от $30/ночь',
+        maps: 'https://maps.google.com/?q=Alam+Indah+Hotel+Ubud',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 13: Русская кухня + микс ---
+    [
+      {
+        time: '09:00',
+        name: 'Draniki',
+        desc: 'Да, драники на Бали! Белорусские рецепты, сметана, укроп. Ностальгия по дому в тропиках. Плюс борщ и пельмени. Русское комьюнити завтракает тут.',
+        price: '60-100K',
+        maps: 'https://maps.google.com/?q=Draniki+Ubud+Bali',
+        tags: ['завтрак', 'русская'],
+        booking: false
+      },
+      {
+        time: '10:30',
+        name: 'Tegallalang Rice Terrace',
+        desc: 'Открыточные рисовые террасы — утром туман, свет мягкий. Автобусы приедут к 11, так что спеши. Гуляй по тропинкам, фоткай.',
+        price: 'вход 25-50K',
+        maps: 'https://maps.google.com/?q=Tegallalang+Rice+Terrace+Ubud',
+        tags: ['природа', 'фото'],
+        booking: false
+      },
+      {
+        time: '12:30',
+        name: 'Bukhara Chaihana',
+        desc: 'Узбекская чайхана — плов, лагман, шашлык. Всё как дома, только вокруг пальмы. Порции щедрые, чай в пиалах.',
+        price: '70-130K',
+        maps: 'https://maps.google.com/?q=Bukhara+Chaihana+Ubud',
+        tags: ['обед', 'узбекская'],
+        booking: false
+      },
+      {
+        time: '14:00',
+        name: 'Setia Darma House of Masks',
+        desc: 'Музей масок и кукол — тысячи масок со всей Азии в тропическом саду. Жутковатые, красивые, древние. Вход бесплатный! Один из секретов Убуда.',
+        price: 'donation',
+        maps: 'https://maps.google.com/?q=Setia+Darma+House+of+Masks+Ubud',
+        tags: ['музей', 'культура'],
+        booking: false
+      },
+      {
+        time: '16:00',
+        name: 'Alas Harum + Cretya',
+        desc: 'Качели над джунглями и инфинити-пул. К 16:00 свет золотой, толпы разъехались. Коктейль на закате обязателен.',
+        price: 'вход от 150K',
+        maps: 'https://maps.google.com/?q=Cretya+Ubud+Bali',
+        tags: ['бассейн', 'закат'],
+        booking: false
+      },
+      {
+        time: '18:30',
+        name: 'Usha',
+        desc: 'Русский ресторан радует изысканными стейками, нежной пастой и утонченными десертами. Дизайн пропитан атмосферой стиля и уюта, а доброжелательные русскоязычные официанты делают каждый ужин по-настоящему комфортным. Здесь язык не станет преградой для наслаждения истинным кулинарным искусством.',
+        price: '120-200K',
+        maps: 'https://maps.google.com/?q=Usha+Restaurant+Ubud+Bali',
+        tags: ['ужин', 'русская'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Bisma Eight',
+        desc: 'Стильный бутик-отель на Бисма Роуд утопает в зелени джунглей, где сливаются роскошь и природа. Безкрайний бассейн с эффектом бесконечности создает иллюзию плавного перехода в тропический рай. Каждое утро здесь начинается с симфонии пения птиц и шепота листвы.',
+        price: 'от $80/ночь',
+        maps: 'https://maps.google.com/?q=Bisma+Eight+Ubud',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 14: Музеи + галереи ---
+    [
+      {
+        time: '09:00',
+        name: 'Puri Lukisan Museum',
+        desc: 'Старейший музей Убуда — балийская живопись с 1930-х. Сады между галереями, пруды с лотосами. 2 часа тихого восторга. Тут понимаешь, зачем художники ехали на Бали.',
+        price: 'вход 100K',
+        maps: 'https://maps.google.com/?q=Puri+Lukisan+Museum+Ubud',
+        tags: ['музей', 'искусство'],
+        booking: false
+      },
+      {
+        time: '11:00',
+        name: 'Kopi Toko Djawa',
+        desc: 'Колониальный кофейхаус — кофе из разных регионов Индонезии. V60, эспрессо, холодный дрип. Интерьер в стиле голландской Ост-Индии.',
+        price: 'кофе 35-55K',
+        maps: 'https://maps.google.com/?q=Kopi+Toko+Djawa+Ubud',
+        tags: ['кафе', 'кофе'],
+        booking: false
+      },
+      {
+        time: '12:00',
+        name: 'Museum Rudana',
+        desc: 'Три этажа балийского и индонезийского искусства. Классика, модерн, скульптура. Менее людный чем Neka, но не менее сильный.',
+        price: 'вход 100K',
+        maps: 'https://maps.google.com/?q=Museum+Rudana+Ubud',
+        tags: ['музей', 'арт'],
+        booking: false
+      },
+      {
+        time: '13:30',
+        name: 'Clear Cafe',
+        desc: 'Эко-кафе с огромным меню — от наси горенг до raw пиццы. Многоуровневое здание, водопады внутри, аквариумы. Фильтруют воду, считают карбон-след.',
+        price: '70-130K',
+        maps: 'https://maps.google.com/?q=Clear+Cafe+Ubud',
+        tags: ['обед', 'эко'],
+        booking: false
+      },
+      {
+        time: '15:00',
+        name: 'Kupu Kupu Gallery',
+        desc: 'Современная галерея — молодые балийские художники, поп-арт, абстракция. Можно купить работы напрямую. Хозяин расскажет про каждую.',
+        price: 'вход свободный',
+        maps: 'https://maps.google.com/?q=Kupu+Kupu+Gallery+Ubud',
+        tags: ['галерея', 'шоппинг'],
+        booking: false
+      },
+      {
+        time: '16:30',
+        name: 'Purga Artspace',
+        desc: 'Арт-пространство Убуда погружает в мир необычных выставок и захватывающих перформансов. Каждый уголок кольца звуков и образов наполняет воздух экспрессивными шедеврами. Об обновлениях следует узнавать на Instagram, где жизнь пространства меняется с каждой минутой.',
+        price: 'вход свободный',
+        maps: 'https://maps.google.com/?q=Purga+Artspace+Ubud',
+        tags: ['арт', 'культура'],
+        booking: false
+      },
+      {
+        time: '18:30',
+        name: 'Locavore',
+        desc: 'Мишленовский уровень — дегустационный сет из местных продуктов. Шефы Эльяс и Рэй превращают балийские ингредиенты в haute cuisine. Бронируй за неделю!',
+        price: 'дегустация от 1M',
+        maps: 'https://maps.google.com/?q=Locavore+Restaurant+Ubud',
+        tags: ['ужин', 'fine dining'],
+        booking: true
+      },
+      {
+        time: '🏨',
+        name: 'Capella Ubud',
+        desc: 'Luxury glamping — палатки в джунглях с ванной и батлером. Или бюджетно: Tapa Nata ($25).',
+        price: 'от $25-500/ночь',
+        maps: 'https://maps.google.com/?q=Capella+Ubud',
+        tags: ['отель', 'luxury'],
+        booking: true
+      }
+    ],
+    // --- Variant 15: Велосипедный + водопады ---
+    [
+      {
+        time: '06:30',
+        name: 'Cycling Tour (Kintamani to Ubud)',
+        desc: 'Велотур с горы — 30 км вниз от вулкана Батур через деревни, рисовые поля, храмы. Педалить почти не надо — едешь с горки! Гид показывает жизнь деревень.',
+        price: '400-600K (4 часа, с велом)',
+        maps: 'https://maps.google.com/?q=Bali+Cycling+Tour+Kintamani',
+        tags: ['велосипед', 'приключения', 'утро'],
+        booking: true
+      },
+      {
+        time: '11:00',
+        name: 'Warung Pulau Kelapa',
+        desc: 'Кокосовый варунг — всё с кокосом: суп, рис, десерт. Свежий кокос 15K. Аутентичная балийская кухня в деревенском стиле.',
+        price: '30-60K',
+        maps: 'https://maps.google.com/?q=Warung+Pulau+Kelapa+Ubud',
+        tags: ['обед', 'локальная'],
+        booking: false
+      },
+      {
+        time: '12:30',
+        name: 'Suwat Waterfall',
+        desc: 'Секретный водопад — почти никто не знает! Мощный поток в каменной чаше. Спуск по лестнице, можно купаться. Ты будешь один.',
+        price: 'donation 20K',
+        maps: 'https://maps.google.com/?q=Suwat+Waterfall+Bali',
+        tags: ['водопад', 'природа'],
+        booking: false
+      },
+      {
+        time: '14:30',
+        name: 'Lova Cafe',
+        desc: 'Кафе на рисовых полях — оазис тишины среди бескрайних зелёных просторов, где аромат свежезаваренного кофе окутывает каждую деталь. Вдали шепчут листья, и каждый глоток словно пропитанный нежностью вечернего брезента. Идеальное место для тёплого расслабления перед погружением в вечерние приключения.',
+        price: '50-90K',
+        maps: 'https://maps.google.com/?q=Lova+Cafe+Ubud',
+        tags: ['кафе', 'отдых'],
+        booking: false
+      },
+      {
+        time: '16:00',
+        name: 'Blangsinga Waterfall',
+        desc: 'Широкий занавес воды — 15 метров, можно подплыть на бамбуковом плоту! Менее известный, очень фотогеничный. 20 мин от Убуда.',
+        price: 'вход 30K',
+        maps: 'https://maps.google.com/?q=Blangsinga+Waterfall+Bali',
+        tags: ['водопад', 'купание'],
+        booking: false
+      },
+      {
+        time: '18:00',
+        name: 'Arcadia',
+        desc: 'Модный ресторан — европейская кухня, стильный интерьер, вечерняя атмосфера. Паста, стейки, вино. Ужин после насыщенного дня.',
+        price: '120-200K',
+        maps: 'https://maps.google.com/?q=Arcadia+Ubud+Bali',
+        tags: ['ужин', 'европейская'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Bisma Eight',
+        desc: 'Бутик-отель с бездонным бассейном, утопающим в зелени джунглей, погружает в атмосферу умиротворения и роскоши. Для искателей экономии — Pondok Pundi, где комфорт встречается с доступными ценами.',
+        price: 'от $20-100/ночь',
+        maps: 'https://maps.google.com/?q=Bisma+Eight+Ubud',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 16: Vintage + необычное ---
+    [
+      {
+        time: '09:00',
+        name: 'Kebon Vintage Cars',
+        desc: 'Коллекция ретро-машин в джунглях! VW-жуки, винтажные мотоциклы, Porsche. Фото-мечта. Кафе на территории, завтрак с видом на классику.',
+        price: 'вход 50K',
+        maps: 'https://maps.google.com/?q=Kebon+Vintage+Cars+Ubud',
+        tags: ['музей', 'фото', 'необычное'],
+        booking: false
+      },
+      {
+        time: '10:30',
+        name: 'Tukies Coconut',
+        desc: 'Всё из кокоса — кокосовый айс, кокосовые блинчики, кокосовое мороженое. Маленькое кафе, балийский вайб, всё свежее.',
+        price: '30-70K',
+        maps: 'https://maps.google.com/?q=Tukies+Coconut+Ubud',
+        tags: ['кафе', 'снэки'],
+        booking: false
+      },
+      {
+        time: '11:30',
+        name: 'Setia Darma House of Masks',
+        desc: 'Тысячи масок и кукол со всей Азии — жуткие, красивые, древние. Тропический сад, тишина. Бесплатный вход! Секрет Убуда, который мало кто знает.',
+        price: 'donation',
+        maps: 'https://maps.google.com/?q=Setia+Darma+House+of+Masks+Ubud',
+        tags: ['музей', 'культура'],
+        booking: false
+      },
+      {
+        time: '13:00',
+        name: 'CHUPACABRAS',
+        desc: 'Мексиканская кухня — тако, буррито, маргарита. Маленькое яркое место, музыка, вайб. Тако за 45K — честная порция.',
+        price: '60-120K',
+        maps: 'https://maps.google.com/?q=CHUPACABRAS+Ubud+Bali',
+        tags: ['обед', 'мексиканская'],
+        booking: false
+      },
+      {
+        time: '14:30',
+        name: 'Таман Нуса',
+        desc: 'Парк культуры Индонезии — 60+ традиционных домов с разных островов. Суматра, Папуа, Ява — всё в одном месте. Прогулка на 2 часа через архипелаг.',
+        price: 'вход 100K',
+        maps: 'https://maps.google.com/?q=Taman+Nusa+Bali',
+        tags: ['парк', 'культура', 'история'],
+        booking: false
+      },
+      {
+        time: '17:00',
+        name: 'Kabana',
+        desc: 'Pool club в джунглях — кабаны (домики) с видом на рисовые террасы, бассейн, коктейли. Закатный час — лучшее время.',
+        price: 'вход от 200K',
+        maps: 'https://maps.google.com/?q=Kabana+Ubud+Bali',
+        tags: ['бассейн', 'закат', 'бар'],
+        booking: false
+      },
+      {
+        time: '19:30',
+        name: 'Nautilus Ubud',
+        desc: 'Ресторан-арт-объект погружает в атмосферу подводной лодки Наутилуса, где каждый элемент интерьера словно затаился в глубинах океана. Крафтовые коктейли и авторская кухня поражают смелостью и изысканностью. Это место, где каждый укус — открытие, каждый глоток — приключение.',
+        price: '100-180K',
+        maps: 'https://maps.google.com/?q=Nautilus+Ubud+Bali',
+        tags: ['ужин', 'необычное'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Hanging Gardens of Bali',
+        desc: 'Двухуровневый infinity pool в джунглях — тот самый из Instagram. Или бюджетно: Sri Ratih Cottages ($30).',
+        price: 'от $30-400/ночь',
+        maps: 'https://maps.google.com/?q=Hanging+Gardens+of+Bali',
+        tags: ['отель', 'luxury'],
+        booking: true
+      }
+    ],
+    // --- Variant 17: Восход на Батуре + день ---
+    [
+      {
+        time: '02:00',
+        name: 'Mount Batur Sunrise Trek',
+        desc: 'Подъём на вулкан ночью — 2 часа в темноте с фонариком. На вершине: рассвет над облаками, озеро в кратере, Агунг на горизонте. Яйцо, сваренное в вулканическом паре. Один из лучших рассветов в жизни.',
+        price: 'от 400K с гидом',
+        maps: 'https://maps.google.com/?q=Mount+Batur+Sunrise+Trek+Bali',
+        tags: ['вулкан', 'рассвет', 'трекинг'],
+        booking: true
+      },
+      {
+        time: '08:00',
+        name: 'Cinze Hot Spring',
+        desc: 'Горячие источники у подножия Батура — после 6 часов на ногах ноги скажут спасибо. Тёплая вода, вид на озеро. Идеальное восстановление.',
+        price: 'от 150K',
+        maps: 'https://maps.google.com/?q=Cinze+Hot+Spring+Batur+Bali',
+        tags: ['источники', 'отдых'],
+        booking: false
+      },
+      {
+        time: '10:00',
+        name: 'Brie Ubud',
+        desc: 'Поздний завтрак — после вулкана ты заслужил сырник XXL и литр кофе. Сядь у окна, смотри на рисовые поля, наслаждайся тем что жив.',
+        price: '60-100K',
+        maps: 'https://maps.google.com/?q=Brie+Cafe+Ubud',
+        tags: ['завтрак', 'кафе'],
+        booking: false
+      },
+      {
+        time: '12:00',
+        name: 'Gunung Kawi Sebatu',
+        desc: 'Тихий храм с источниками — не путать с Gunung Kawi! Меньше туристов, красивые каменные бассейны. Место для медитации.',
+        price: 'donation 20K',
+        maps: 'https://maps.google.com/?q=Gunung+Kawi+Sebatu+Bali',
+        tags: ['храм', 'источники'],
+        booking: false
+      },
+      {
+        time: '13:30',
+        name: 'Warung Ijo',
+        desc: 'Варунг среди зелени — наси чампур с видом на рисовые поля. Простая еда, но вкус! Местные рекомендуют.',
+        price: '30-50K',
+        maps: 'https://maps.google.com/?q=Warung+Ijo+Ubud',
+        tags: ['обед', 'локальная'],
+        booking: false
+      },
+      {
+        time: '15:00',
+        name: 'Mandala Spa',
+        desc: 'Глубокий балийский массаж на 90 минут — после вулкана и источников это финальная перезагрузка тела. Масло, тёплые камни, тишина.',
+        price: 'массаж от 400K',
+        maps: 'https://maps.google.com/?q=Mandala+Spa+Ubud',
+        tags: ['спа', 'массаж'],
+        booking: true
+      },
+      {
+        time: '17:30',
+        name: 'Elevator Sunset Bar',
+        desc: 'Финал дня — коктейль на закате с видом на рисовые поля. После вулкана, источников и массажа — ты в нирване.',
+        price: 'коктейли 80-130K',
+        maps: 'https://maps.google.com/?q=Elevator+Bar+Ubud',
+        tags: ['бар', 'закат'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Komaneka at Bisma',
+        desc: 'Резорт окутан медитативной атмосферой, идеально подходящей для расслабления после долгих дней. В Shana Homestay за $20 царит уют и простота, создающие атмосферу домашнего тепла. Каждое утро здесь начинает с теплого света и манящего аромата свежезаваренного кофе.',
+        price: 'от $20-150/ночь',
+        maps: 'https://maps.google.com/?q=Komaneka+at+Bisma+Ubud',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 18: Пулы + релакс ---
+    [
+      {
+        time: '09:00',
+        name: 'Anomali Coffee',
+        desc: 'Индонезийский спешиалти-кофе — зёрна с Суматры, Флореса, Явы. V60, эспрессо, колд-брю. Тихое утро с хорошей чашкой.',
+        price: 'кофе 35-55K',
+        maps: 'https://maps.google.com/?q=Anomali+Coffee+Ubud',
+        tags: ['кафе', 'кофе'],
+        booking: false
+      },
+      {
+        time: '10:00',
+        name: 'Svaha Spa',
+        desc: 'Балийский массаж на Bisma Road — масло, тёплые камни, аромат жасмина. Час стоит 200K — и ты выходишь другим человеком.',
+        price: 'массаж от 200K',
+        maps: 'https://maps.google.com/?q=Svaha+Spa+Ubud',
+        tags: ['спа', 'массаж'],
+        booking: true
+      },
+      {
+        time: '12:00',
+        name: 'Yellow Flower Café',
+        desc: 'Тихое кафе в центре — салаты, боулы, свежие соки. Красивая подача, спокойная атмосфера. Обед без суеты.',
+        price: '60-100K',
+        maps: 'https://maps.google.com/?q=Yellow+Flower+Cafe+Ubud',
+        tags: ['обед', 'здоровое'],
+        booking: false
+      },
+      {
+        time: '13:30',
+        name: 'The Jungle Fish',
+        desc: 'Инфинити-пул в джунглях — лежишь в воде, смотришь на зелёную долину. Коктейли, музыка, полный релакс. 2-3 часа тут — идеально.',
+        price: 'вход от 200K',
+        maps: 'https://maps.google.com/?q=Jungle+Fish+Ubud',
+        tags: ['бассейн', 'релакс'],
+        booking: false
+      },
+      {
+        time: '16:30',
+        name: 'Campuhan Ridge Walk',
+        desc: 'Лёгкая вечерняя прогулка — 30 мин по хребту. Вечерний свет, пальмы, тишина. Разомни ноги после пулов.',
+        price: 'бесплатно',
+        maps: 'https://maps.google.com/?q=Campuhan+Ridge+Walk+Ubud',
+        tags: ['прогулка', 'природа'],
+        booking: false
+      },
+      {
+        time: '18:00',
+        name: 'Taman Dedari',
+        desc: 'Ужин на рисовых террасах — огни в полях, тихая музыка, балийская и европейская кухня. Романтично вечером.',
+        price: '80-160K',
+        maps: 'https://maps.google.com/?q=Taman+Dedari+Ubud',
+        tags: ['ужин', 'вид'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Padma Resort Ubud',
+        desc: 'Роскошный курорт с величественным бассейном в Убуде, протянувшимся на 88 метров, манит своей водной гладью и экзотической атмосферой. Для более экономного отдыха доступен Alam Indah, где за 30 долларов открывается изысканный мир местной культуры и уюта.',
+        price: 'от $30-200/ночь',
+        maps: 'https://maps.google.com/?q=Padma+Resort+Ubud',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 19: Каньоны + экстрим ---
+    [
+      {
+        time: '06:30',
+        name: 'Hidden Canyon Beji Guwang',
+        desc: 'Ущелье — идёшь ПО ВОДЕ между скал, стены смыкаются. Как в кино. Утром свет красиво падает сверху. Вода по колено-пояс. Бери сандалии!',
+        price: 'вход 20K + гид 100K',
+        maps: 'https://maps.google.com/?q=Hidden+Canyon+Beji+Guwang+Bali',
+        tags: ['каньон', 'приключения', 'утро'],
+        booking: false
+      },
+      {
+        time: '09:00',
+        name: 'Monsieur Spoon',
+        desc: 'Французская пекарня — круассаны, Pain au chocolat, кофе. После каньона хочется цивилизации. Тут она в лучшем виде.',
+        price: '50-90K',
+        maps: 'https://maps.google.com/?q=Monsieur+Spoon+Ubud',
+        tags: ['завтрак', 'пекарня'],
+        booking: false
+      },
+      {
+        time: '10:30',
+        name: 'ATV Quad Bike Adventure',
+        desc: 'Квадроциклы через рисовые поля, грязь, реки — 2 часа адреналина! Будешь грязный и счастливый. БРОНИРУЙ!',
+        price: '500-700K (2 часа)',
+        maps: 'https://maps.google.com/?q=ATV+Adventure+Ubud+Bali',
+        tags: ['квадроцикл', 'экстрим'],
+        booking: true
+      },
+      {
+        time: '13:00',
+        name: 'Fu Shou Noodle House',
+        desc: 'Лапша за 30K — идеально после грязи и адреналина. Горячий бульон, огромные порции. Пластиковые стулья, настоящий вкус.',
+        price: '30-50K',
+        maps: 'https://maps.google.com/?q=Fu+Shou+Noodle+House+Ubud',
+        tags: ['обед', 'бюджет'],
+        booking: false
+      },
+      {
+        time: '15:00',
+        name: 'Gembleng Waterfall',
+        desc: 'Секретный водопад с природным душем — вода падает по лианам. Мало людей, мистическая атмосфера. 40 мин от Убуда.',
+        price: 'donation 20K',
+        maps: 'https://maps.google.com/?q=Gembleng+Waterfall+Bali',
+        tags: ['водопад', 'природа'],
+        booking: false
+      },
+      {
+        time: '17:00',
+        name: 'Omma Day Club',
+        desc: 'Экстрим сменяется атмосферой расслабления в пул-клубе. Беспечный коктейль в руках, а закат окутывает золотым светом бесконечный бассейн. Грязь прошедшего дня растворяется в мгновениях покоя.',
+        price: 'вход от 200K',
+        maps: 'https://maps.google.com/?q=Omma+Day+Club+Ubud',
+        tags: ['бассейн', 'бар'],
+        booking: false
+      },
+      {
+        time: '19:30',
+        name: 'Apéritif by Viceroy',
+        desc: 'Награда после дня приключений — fine dining с 7-course сетом. Вид на долину, свечи. Ты это заслужил.',
+        price: 'дегустация от 800K',
+        maps: 'https://maps.google.com/?q=Aperitif+Viceroy+Ubud',
+        tags: ['ужин', 'fine dining'],
+        booking: true
+      },
+      {
+        time: '🏨',
+        name: 'Viceroy Bali',
+        desc: 'Роскошные виллы раскрывают панораму на бескрайние долины, погружая в атмосферу утончённого покоя. Для искателей экономичных приключений уютный Alam Indah предлагает незабываемые впечатления всего за $30.',
+        price: 'от $30-300/ночь',
+        maps: 'https://maps.google.com/?q=Viceroy+Bali+Ubud',
+        tags: ['отель'],
+        booking: true
+      }
+    ],
+    // --- Variant 20: Йога-ретрит ---
+    [
+      {
+        time: '06:00',
+        name: 'Radiantly Alive',
+        desc: 'Утренняя практика с одним из лучших преподавателей Убуда. Шала на втором этаже, свет сквозь бамбук. Виньяса, хатха, инь — расписание на сайте.',
+        price: 'класс 150K',
+        maps: 'https://maps.google.com/?q=Radiantly+Alive+Yoga+Ubud',
+        tags: ['йога', 'утро'],
+        booking: false
+      },
+      {
+        time: '08:00',
+        name: 'Sayuri Healing Food',
+        desc: 'После занятий открываются двери в мир живой еды: яркие боулы с сырыми овощами, хрустящие проростки и нежное ферментированное лакомство. Каждый ингредиент — органический, словно сам по себе пропитан энергией природы. Тело наполняется легкостью и благодарностью за щедрость Земли.',
+        price: '60-100K',
+        maps: 'https://maps.google.com/?q=Sayuri+Healing+Food+Ubud',
+        tags: ['завтрак', 'веган', 'raw'],
+        booking: false
+      },
+      {
+        time: '09:30',
+        name: 'Tirta Empul',
+        desc: 'Храм очищения — пройди через 30 фонтанов в саронге. После утренней йоги духовный опыт усиливается. Приезжай к 9:30 — толпы ещё не подъехали.',
+        price: 'вход 75K',
+        maps: 'https://maps.google.com/?q=Tirta+Empul+Temple+Ubud',
+        tags: ['храм', 'духовное'],
+        booking: false
+      },
+      {
+        time: '12:00',
+        name: 'Seeds of Life',
+        desc: 'Raw-vegan ресторан с невероятными десертами. Торт без выпечки, который вкуснее обычного. Соки холодного отжима, чаи с адаптогенами.',
+        price: '60-110K',
+        maps: 'https://maps.google.com/?q=Seeds+of+Life+Ubud',
+        tags: ['обед', 'веган', 'raw'],
+        booking: false
+      },
+      {
+        time: '13:30',
+        name: 'COMO Shambhala Estate',
+        desc: 'Wellness ретрит на реке — выбери аюрведический массаж, рефлексологию или энергетическое исцеление. 90 мин трансформации.',
+        price: 'от 800K (90 мин)',
+        maps: 'https://maps.google.com/?q=COMO+Shambhala+Estate+Ubud',
+        tags: ['спа', 'wellness'],
+        booking: true
+      },
+      {
+        time: '16:00',
+        name: 'Tegallalang Rice Terrace',
+        desc: 'Медитативная прогулка по террасам — к 16:00 жара спала, свет золотой. Иди медленно, дыши, наблюдай. Это и есть mindfulness.',
+        price: 'вход 25-50K',
+        maps: 'https://maps.google.com/?q=Tegallalang+Rice+Terrace+Ubud',
+        tags: ['природа', 'медитация'],
+        booking: false
+      },
+      {
+        time: '18:00',
+        name: 'Intuitive Flow',
+        desc: 'Вечерняя инь-йога или sound healing — пение чаш, глубокое расслабление. Идеальный финал йога-дня. Шала в саду.',
+        price: 'класс 130K',
+        maps: 'https://maps.google.com/?q=Intuitive+Flow+Yoga+Ubud',
+        tags: ['йога', 'вечер', 'медитация'],
+        booking: false
+      },
+      {
+        time: '19:30',
+        name: 'Earth Cafe',
+        desc: 'Вегетарианский ужин наполняет воздух экзотическими ароматами Индонезии, яркими специями Мексики и свежими нотами Средиземноморья. Тёплая атмосфера завораживает, а звуки живой музыки по пятницам создают неповторимый вечерний настрой.',
+        price: '60-110K',
+        maps: 'https://maps.google.com/?q=Earth+Cafe+Ubud',
+        tags: ['ужин', 'вегетарианское'],
+        booking: false
+      },
+      {
+        time: '🏨',
+        name: 'Fivelements Retreat',
+        desc: 'Бамбуковые виллы незаметно притаились на берегу реки, окруженные тенистыми деревьями. Веганская кухня радует утончёнными вкусами, а ежедневные утренние занятия йогой наполняют воздух гармонией. Для тех, кто предпочитает экономичный отдых, Tapa Nata предлагает уединение всего за $25.',
+        price: 'от $25-250/ночь',
+        maps: 'https://maps.google.com/?q=Fivelements+Retreat+Ubud',
+        tags: ['отель', 'retreat'],
+        booking: true
+      }
+    ],
+    // --- Variant 21: Мастер-классы ---
+    [
+      {
+        time: '09:00',
+        name: 'Yoga at Unified Healing',
+        desc: 'Утренняя йога в одном из лучших центров Убуда. Мягкая практика, пранаяма, медитация. Идеальный старт дня перед мастер-классами.',
+        price: 'от 150K',
+        maps: 'https://maps.google.com/?q=Unified+Healing+Ubud',
+        tags: ['йога', 'утро', 'wellness'],
+        booking: true
+      },
+      {
+        time: '11:00',
+        name: 'Celuk Silver Class',
+        desc: 'Деревня серебряных мастеров. Делаешь кольцо или браслет своими руками под руководством балийского ювелира. Забираешь с собой — лучший сувенир.',
+        price: 'от 350K',
+        maps: 'https://maps.google.com/?q=Celuk+Silver+Village+Bali',
+        tags: ['мастер-класс', 'ювелирное'],
+        booking: true
+      },
+      {
+        time: '13:00',
+        name: 'Chito',
+        desc: 'Грузинский ресторан в Убуде! Хинкали 40K/шт — идеальные. Десерт в форме хинкали — шедевр. Обед после творчества.',
+        price: '80-150K',
+        maps: 'https://maps.google.com/?q=Chito+Ubud',
+        tags: ['обед', 'грузинская'],
+        booking: false
+      },
+      {
+        time: '15:00',
+        name: 'Batik class at Mas Village',
+        desc: 'Традиционный батик — рисуешь воском на ткани, красишь, получаешь уникальное произведение. Деревня Мас — центр ремёсел Бали.',
+        price: 'от 250K',
+        maps: 'https://maps.google.com/?q=Batik+Class+Mas+Village+Ubud',
+        tags: ['мастер-класс', 'искусство'],
+        booking: true
+      },
+      {
+        time: '17:00',
+        name: 'Ubud Art Market',
+        desc: 'Традиционный рынок искусства — картины, резьба, текстиль, украшения. Торгуйся! Начинай с 30% от названной цены. Лучшие вещи — в глубине рынка.',
+        price: 'бесплатно (покупки от 20K)',
+        maps: 'https://maps.google.com/?q=Ubud+Art+Market',
+        tags: ['шоппинг', 'искусство'],
+        booking: false
+      },
+      {
+        time: '19:00',
+        name: 'Kecak Dance',
+        desc: 'Танец Кечак в королевском дворце Убуда. Десятки мужчин в кругу, огонь, транс, «чак-чак-чак». Каждый вечер. Приходи за 20 мин занять место!',
+        price: '100K',
+        maps: 'https://maps.google.com/?q=Ubud+Royal+Palace',
+        tags: ['культура', 'танец', 'вечер'],
+        booking: false
+      }
+    ],
+    // --- Variant 22: Музеи и галереи ---
+    [
+      {
+        time: '09:00',
+        name: 'Campuhan Ridge Walk',
+        desc: 'Тропа художников по хребту между двух долин. Утренний туман, пальмы, тишина. 30 минут туда, 30 обратно. Разминка перед музейным днём.',
+        price: 'бесплатно',
+        maps: 'https://maps.google.com/?q=Campuhan+Ridge+Walk+Ubud',
+        tags: ['природа', 'прогулка', 'утро'],
+        booking: false
+      },
+      {
+        time: '10:30',
+        name: 'Blanco Renaissance Museum',
+        desc: 'Дом-музей Антонио Бланко — испанского художника, жившего в Убуде. Эксцентричные картины, попугаи, вид на долину. Как попасть в чужой безумный мир.',
+        price: '80K',
+        maps: 'https://maps.google.com/?q=Blanco+Renaissance+Museum+Ubud',
+        tags: ['музей', 'искусство'],
+        booking: false
+      },
+      {
+        time: '12:30',
+        name: 'Brie Ubud',
+        desc: 'Сырник XXL — размером с голову. Плюс кофе, свежий сок. Кафе-сыроварня с видом на рисовые поля. После прогулки и музея — то что надо.',
+        price: '60-100K',
+        maps: 'https://maps.google.com/?q=Brie+Ubud',
+        tags: ['обед', 'кафе'],
+        booking: false
+      },
+      {
+        time: '14:30',
+        name: 'ARMA Museum',
+        desc: 'Agung Rai Museum of Art — коллекция балийского и индонезийского искусства. Картины Вальтера Шписа, Ле Майера. Красивый сад с лотосовыми прудами.',
+        price: '80K',
+        maps: 'https://maps.google.com/?q=ARMA+Museum+Ubud',
+        tags: ['музей', 'искусство', 'сад'],
+        booking: false
+      },
+      {
+        time: '16:30',
+        name: 'Five Arts Studio',
+        desc: 'Маленькая галерея-студия с современным балийским искусством. Художники работают на месте — можно наблюдать процесс и купить работу.',
+        price: 'бесплатно',
+        maps: 'https://maps.google.com/?q=Five+Arts+Studio+Ubud',
+        tags: ['галерея', 'искусство'],
+        booking: false
+      },
+      {
+        time: '18:30',
+        name: 'Kawi Speakeasy',
+        desc: 'СЕКРЕТНЫЙ бар! Томная атмосфера, приглушённый свет, авторские коктейли. Идеальный финал арт-дня. Спроси пароль у бармена.',
+        price: 'коктейли 100-180K',
+        maps: 'https://maps.google.com/?q=Kawi+Speakeasy+Ubud',
+        tags: ['бар', 'коктейли', 'вечер'],
+        booking: false
+      }
+    ],
+    // --- Variant 23: Духовный ретрит ---
+    [
+      {
+        time: '07:00',
+        name: 'Unified Healing morning practice',
+        desc: 'Ранняя утренняя практика — медитация, пранаяма, мягкая йога. Начни день с тишины внутри. Центр с глубоким подходом к исцелению.',
+        price: 'от 150K',
+        maps: 'https://maps.google.com/?q=Unified+Healing+Ubud',
+        tags: ['медитация', 'йога', 'утро'],
+        booking: true
+      },
+      {
+        time: '09:30',
+        name: 'Sayuri Healing Food',
+        desc: 'Японско-веганский фьюжн. Raw суши, живые десерты, всё из растений. Еда как медицина. Лёгкий завтрак перед храмом.',
+        price: '65-130K',
+        maps: 'https://maps.google.com/?q=Sayuri+Healing+Food+Ubud',
+        tags: ['завтрак', 'веган', 'здоровое'],
+        booking: false
+      },
+      {
+        time: '11:00',
+        name: 'Tirta Empul',
+        desc: 'Священный храм с источниками очищения. Заходишь в воду, проходишь через 13 фонтанов — каждый смывает своё. Мощный духовный опыт. Саронг обязателен.',
+        price: '50K',
+        maps: 'https://maps.google.com/?q=Tirta+Empul+Temple',
+        tags: ['храм', 'духовное', 'очищение'],
+        booking: false
+      },
+      {
+        time: '13:30',
+        name: 'Sari Organik',
+        desc: 'Ресторан посреди рисовых полей — дойти можно только пешком по тропинке. Органическая еда, виды на 360°, полная тишина. Путь — часть опыта.',
+        price: '70-130K',
+        maps: 'https://maps.google.com/?q=Sari+Organik+Ubud',
+        tags: ['обед', 'органика', 'природа'],
+        booking: false
+      },
+      {
+        time: '15:30',
+        name: 'Pyramids of Chi',
+        desc: 'Звуковое исцеление в настоящих пирамидах! Гонги, поющие чаши, вибрации проходят через тело. 1.5 часа — как 8 часов сна. Бронируй заранее.',
+        price: 'от 350K',
+        maps: 'https://maps.google.com/?q=Pyramids+of+Chi+Ubud',
+        tags: ['звуковое исцеление', 'духовное', 'wellness'],
+        booking: true
+      },
+      {
+        time: '18:00',
+        name: 'Ubud Royal Palace Kecak Dance',
+        desc: 'Финал духовного дня — танец Кечак на закате в королевском дворце. Огонь, транс, голоса десятков мужчин. Мощное завершение ретрит-дня.',
+        price: '100K',
+        maps: 'https://maps.google.com/?q=Ubud+Royal+Palace',
+        tags: ['культура', 'танец', 'закат'],
+        booking: false
+      }
+    ],
+    // --- Variant 24: Фуди-тур по Убуду ---
+    [
+      {
+        time: '09:00',
+        name: 'Chandracafe',
+        desc: 'Начни утро в уютном кафе с видом на рисовые террасы. Смузи-боул с гранолой и свежими фруктами — лёгкий старт дня.',
+        price: '60-130K',
+        maps: 'https://maps.google.com/maps/search/Chandra+Cafe+Ubud+Bali',
+        tags: ['завтрак', 'кафе'],
+        booking: false
+      },
+      {
+        time: '10:30',
+        name: 'Green Rabbit Ubud',
+        desc: 'Центр Убуда, окутанный свежими ароматами, предлагает уникальное веганское кафе, где каждый десерт — произведение искусства. Нежные raw-торты и яркие смузи умело сочетаются с восхитительными боулами, приводя в восторг даже искушенных мясоедов. Атмосфера полного единения с природой делает каждую трапезу незабываемой.',
+        price: '45-100K',
+        maps: 'https://maps.google.com/maps/search/Green+Rabbit+Ubud+Bali',
+        tags: ['веган', 'кафе'],
+        booking: false
+      },
+      {
+        time: '12:00',
+        name: 'Satu Ubud',
+        desc: 'Современная интерпретация индонезийской кухни раскрашивает палитру Бали. Наси чампур, ароматный сатай и яркие самбалы создают симфонию вкусов, где каждый элемент пронизан духом островного рая. Настоящее наслаждение для гурманов, ищущих аутентичность в каждом блюде.',
+        price: '50-110K',
+        maps: 'https://maps.google.com/maps/search/Satu+Restaurant+Ubud+Bali',
+        tags: ['обед', 'местная'],
+        booking: false
+      },
+      {
+        time: '14:00',
+        name: 'Lazy Cat Cafe',
+        desc: 'Кофейня с котами! Specialty кофе, чизкейки, и пушистые друзья на коленях. Перерыв с терапевтическим эффектом.',
+        price: '40-90K',
+        maps: 'https://maps.google.com/maps/search/Lazy+Cat+Cafe+Ubud+Bali',
+        tags: ['кофе', 'отдых'],
+        booking: false
+      },
+      {
+        time: '16:00',
+        name: 'Shaffa Ubud',
+        desc: 'Ближневосточная кухня восхищает богатством вкусов: бархатный хумус, хрустящий фалафель и пряная шакшука. Каждое блюдо притягивает внимание утонченной подачей, погружая в магию Марракеша, где воздух напоён специями и радушием.',
+        price: '100-200K',
+        maps: 'https://maps.google.com/maps/search/Shaffa+Ubud+Bali',
+        tags: ['ужин', 'восточная'],
+        booking: false
+      },
+      {
+        time: '19:00',
+        name: 'Twelve Ubud',
+        desc: 'Изысканная кухня под пологом джунглей. Дегустационный сет, изысканные вина и мягкий свет свечей создают атмосферу волшебства. Завершение гастрономического дня в раю для гурманов.',
+        price: '100-250K',
+        maps: 'https://maps.google.com/maps/search/Twelve+Restaurant+Ubud+Bali',
+        tags: ['ужин', 'fine dining'],
+        booking: true
+      }
+    ],
+    // --- Variant 25: Здоровый Убуд ---
+    [
+      {
+        time: '08:00',
+        name: 'Feel Food Ubud',
+        desc: 'Роскошный растительный завтрак угощает веганскими боулами, их текстуры стремительно сменяются свежестью сырых десертов. Супер-фуд латте наполняет ароматом и уносит в мир гармонии. Энергия на весь день проникает в каждую клеточку.',
+        price: '50-110K',
+        maps: 'https://maps.google.com/maps/search/Feel+Food+Ubud+Bali',
+        tags: ['завтрак', 'веган'],
+        booking: false
+      },
+      {
+        time: '10:00',
+        name: 'Campuhan Ridge Walk',
+        desc: 'Прогулка по хребту после лёгкого завтрака. Утренний туман, пальмы, вид на две долины. 40 минут чистого дзена.',
+        price: 'бесплатно',
+        maps: 'https://maps.google.com/?q=Campuhan+Ridge+Walk+Ubud',
+        tags: ['прогулка', 'природа'],
+        booking: false
+      },
+      {
+        time: '12:00',
+        name: 'Atman Kafe',
+        desc: 'Сыроедческое кафе погружает в мир свежести и здоровья. Живая пицца, нежная raw-паста и яркие суперфуд-коктейли создают уникальный гастрономический опыт. Детокс в Убуде — это синергия вкусов и сияющих красок природы.',
+        price: '55-120K',
+        maps: 'https://maps.google.com/maps/search/Atman+Kafe+Ubud+Bali',
+        tags: ['обед', 'raw'],
+        booking: false
+      },
+      {
+        time: '14:00',
+        name: 'OpenHouse Ubud',
+        desc: 'Просторное кафе, утопающее в зелени рисовых полей, наполняет воздух ароматом свежезаваренного кофе. Легкие закуски, словно вдохновение, пробуждают вкусовые ощущения, создавая атмосферу уюта перед вечерними встречами.',
+        price: '60-140K',
+        maps: 'https://maps.google.com/maps/search/Open+House+Ubud+Bali',
+        tags: ['кафе', 'отдых'],
+        booking: false
+      },
+      {
+        time: '17:00',
+        name: 'Honey Kitchen Ubud',
+        desc: 'Легкие, воздушные панкейки, щедро политые медом и усыпанными свежими фруктами, словно нежные облака на тарелке. Атмосфера выполнения задумок плавно окутывает, приглашающая насладиться каждым мгновением.',
+        price: '50-100K',
+        maps: 'https://maps.google.com/maps/search/Honey+Kitchen+Ubud+Bali',
+        tags: ['полдник', 'десерт'],
+        booking: false
+      },
+      {
+        time: '19:00',
+        name: 'Manakitchen',
+        desc: 'Уютное кафе, где ароматы свежесваренных карри заполоняют воздух. Чаши с яркими боулами и вкусные соки словно созданы для теплого завершения дня. Это место дарит тихую гармонию и атмосферу домашнего уюта.',
+        price: '55-120K',
+        maps: 'https://maps.google.com/maps/search/Manakitchen+Ubud+Bali',
+        tags: ['ужин', 'домашняя'],
+        booking: false
+      }
+    ]
+  ];
+
+function showRouteGallery() {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
+    if (!routes || routes.length === 0) { alert('Маршруты для этого района пока в разработке'); return; }
+    
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    html += '<div style="font-size:22px;font-weight:700;text-align:center;margin-bottom:24px;">🗺 Выбор маршрута</div>';
+    
+    for (var i = 0; i < routes.length; i++) {
+      var route = routes[i];
+      var isHard = false;
+      var isChill = false;
+      var routeText = JSON.stringify(route).toLowerCase();
+      var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+      var hourMatch = firstTimeStr.match(/\d{2}/);
+      var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+      
+      if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+        isHard = true;
+      }
+      if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+        isChill = true;
+        isHard = false;
+      }
+      
+      var badge = '';
+      if (isChill) {
+        badge = '<span style="background:rgba(255,182,193,0.3); color:#e83e8c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🌸 Чилл</span>';
+      } else if (isHard) {
+        badge = '<span style="background:rgba(255,87,34,0.15); color:#e64a19; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🔥 Хард</span>';
+      } else {
+        badge = '<span style="background:rgba(76,175,80,0.15); color:#388e3c; padding:4px 8px; border-radius:6px; font-weight:700; font-size:12px;">🟢 Изи</span>';
+      }
+      
+      var places = [];
+      for(var j = 0; j < route.length; j++) {
+        var isHotel = (route[j].time === '🏨' || (route[j].tags && (route[j].tags.indexOf('отель') >= 0 || route[j].tags.indexOf('hotel') >= 0)));
+        if(!isHotel && route[j].name) {
+          places.push(route[j].name);
+        }
+      }
+      var previewText = places.join(' → ');
+      if (previewText.length > 80) previewText = previewText.substring(0, 77) + '...';
+
+      html += '<div onclick="showSingleRoute(' + i + ')" style="background:#ffffff; border-radius:16px; padding:16px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); cursor:pointer; transition:transform 0.2s;">';
+      html += '  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">';
+      html += '    <div style="font-size:16px; font-weight:700; color:#2a6b5a;">Маршрут ' + (i + 1) + '</div>';
+      html += '    <div>' + badge + '</div>';
+      html += '  </div>';
+      html += '  <div style="font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4;">' + previewText + '</div>';
+      html += '</div>';
+    }
+    
+    html += '<div style="text-align:center;margin-top:24px"><button class="btn btn-primary" onclick="hideRouteOverlay()" style="padding:14px 28px;border-radius:14px;width:100%;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;">← Назад к гайду</button></div>';
+    html += '</div>';
+    
+    document.getElementById('guideContent').style.display = 'none';
+    var rs = document.getElementById('routeScreen');
+    rs.innerHTML = html;
+    rs.style.display = 'block';
+    window.scrollTo(0, 0);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function showSingleRoute(idx) {
+  try {
+    var routes = MANUAL_ROUTES_ZONE;
+    var route = routes[idx];
+    var html = '<div style="padding:20px; padding-bottom:100px;">';
+    
+    var isHard = false;
+    var isChill = false;
+    var routeText = JSON.stringify(route).toLowerCase();
+    var firstTimeStr = (route[0] && route[0].time) ? route[0].time : '10:00';
+    var hourMatch = firstTimeStr.match(/\d{2}/);
+    var hour = hourMatch ? parseInt(hourMatch[0], 10) : 10;
+    
+    if (hour <= 8 || routeText.includes('водопад') || routeText.includes('вулкан') || routeText.includes('гора') || routeText.includes('треккинг') || routeText.includes('batur')) {
+      isHard = true;
+    }
+    if (routeText.includes('[chill]') || routeText.includes('чилл') || (routeText.includes('спа ') && routeText.includes('массаж') && route.length <= 4)) {
+      isChill = true;
+      isHard = false;
+    }
+    
+    var badge = '';
+    if (isChill) {
+      badge = '<span style="margin-left:8px; background:rgba(255,182,193,0.3); color:#e83e8c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🌸 Чилл</span>';
+    } else if (isHard) {
+      badge = '<span style="margin-left:8px; background:rgba(255,87,34,0.15); color:#e64a19; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🔥 Хард</span>';
+    } else {
+      badge = '<span style="margin-left:8px; background:rgba(76,175,80,0.15); color:#388e3c; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11px;">🟢 Изи</span>';
+    }
+
+    html += '<div style="font-size:20px;font-weight:700;text-align:center;margin-bottom:8px">🗺 Маршрут ' + (idx+1) + '</div>';
+    html += '<div style="text-align:center;margin-bottom:24px">' + badge + '</div>';
+
+    for (var i = 0; i < route.length; i++) {
+      var p = route[i];
+      html += '<div style="background:rgba(255,255,255,0.7);border-radius:16px;padding:16px;margin-bottom:12px">';
+      html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="background:linear-gradient(135deg,#2a6b5a,#3a9b7a);color:white;border-radius:10px;padding:4px 10px;font-size:13px;font-weight:600">' + p.time + '</div><div style="font-size:15px;font-weight:600">' + p.name + '</div></div>';
+      html += '<div style="font-size:13px;color:rgba(42,42,40,0.7);line-height:1.5">' + p.desc.replace(/\[чилл\]/gi, '').trim() + '</div>';
+      if (p.price) html += '<div style="font-size:12px;color:#2a6b5a;margin-top:6px;font-weight:500">' + p.price + '</div>';
+      if (p.maps) html += '<div style="margin-top:8px"><a href="' + p.maps + '" target="_blank" style="font-size:12px;color:#3a9b7a;text-decoration:none">📍 Открыть в Google Maps</a></div>';
+      html += '</div>';
+    }
+
+    // --- Google Maps Directions button ---
+    var mapPlaces = [];
+    for (var j = 0; j < route.length; j++) {
+      var tags = route[j].tags || [];
+      var isHotel = (route[j].time === '🏨' || tags.indexOf('отель') >= 0 || tags.indexOf('hotel') >= 0);
+      if (!isHotel && route[j].name) {
+        mapPlaces.push(route[j].name);
+      }
+    }
+    if (mapPlaces.length >= 2) {
+      var origin = encodeURIComponent(mapPlaces[0] + ' Bali');
+      var destination = encodeURIComponent(mapPlaces[mapPlaces.length - 1] + ' Bali');
+      var waypoints = '';
+      if (mapPlaces.length > 2) {
+        var wp = [];
+        for (var k = 1; k < mapPlaces.length - 1; k++) {
+          wp.push(encodeURIComponent(mapPlaces[k] + ' Bali'));
+        }
+        waypoints = '&waypoints=' + wp.join('%7C');
+      }
+      var mapsUrl = 'https://www.google.com/maps/dir/?api=1&origin=' + origin + '&destination=' + destination + waypoints + '&travelmode=driving';
+      html += '<a href="' + mapsUrl + '" target="_blank" style="display:block;margin:15px 0;padding:12px;background:#2a6b5a;color:white;text-align:center;border-radius:10px;text-decoration:none;font-weight:600">🗺️ Открыть маршрут на карте Google</a>';
+    }
+    // --- End Google Maps Directions button ---
+    
+    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="showRouteGallery()" style="padding:12px 24px;border-radius:12px">← Назад к выбору маршрутов</button></div>';
+    html += '</div>';
+    
+    var rs = document.getElementById('routeScreen');
+    rs.innerHTML = html;
+    window.scrollTo(0, 0);
+  } catch(e) { alert('Ошибка: ' + e.message); }
+}
+
+function hideRouteOverlay() {
+  document.getElementById('routeScreen').style.display = 'none';
+  document.getElementById('guideContent').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+/* Accordion logic */
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.Telegram && Telegram.WebApp) {
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+  }
+});
+</script>
 </body>
 </html>
