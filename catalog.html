@@ -358,11 +358,27 @@ window.applyFilters = function() {
     if (state.shopType && (!p.tags || !p.tags.includes(state.shopType))) return false;
 
     if (state.cuisine) {
-      const cuisineStr = ((p.cuisine || '') + ' ' + (p.desc || '')).toLowerCase();
-      if (state.cuisine === 'пп' && !cuisineStr.includes('пп') && !cuisineStr.includes('healthy') && !cuisineStr.includes('organic') && !cuisineStr.includes('зож')) return false;
-      if (state.cuisine === 'славянская' && !cuisineStr.includes('русская') && !cuisineStr.includes('славянская') && !cuisineStr.includes('белорусская')) return false;
-      if (state.cuisine === 'морепродукты' && !cuisineStr.includes('морепродукт') && !cuisineStr.includes('seafood') && !cuisineStr.includes('устриц') && !cuisineStr.includes('рыб')) return false;
-      if (state.cuisine !== 'пп' && state.cuisine !== 'славянская' && state.cuisine !== 'морепродукты' && !cuisineStr.includes(state.cuisine)) return false;
+      const cStr = ((p.cuisine || '') + ' ' + (p.desc || '') + ' ' + (p.name || '')).toLowerCase();
+      const keywords = {
+          'пп': ['пп', 'healthy', 'organic', 'зож', 'веган', 'vegan', 'вегетариан', 'боул', 'bowl'],
+          'славянская': ['русск', 'славянск', 'белорусск', 'борщ', 'сырник', 'пельмен', 'russian'],
+          'морепродукты': ['морепродукт', 'seafood', 'рыб', 'устриц', 'креветк', 'осьминог', 'fish', 'oyster'],
+          'итальянская': ['итальян', 'italian', 'пицц', 'pizza', 'паст', 'pasta', 'равиоли'],
+          'японская': ['японск', 'japan', 'суши', 'sushi', 'ролл', 'сашими', 'рамен', 'ramen', 'матча'],
+          'мексиканская': ['мексикан', 'mexican', 'тако', 'taco', 'кесадиль', 'начос', 'бурито', 'nachos'],
+          'тайская': ['тайск', 'thai', 'том ям', 'tom yum', 'пад тай', 'pad thai'],
+          'французская': ['франц', 'french', 'круассан', 'croissant', 'выпечк'],
+          'местная': ['местн', 'local', 'индонез', 'indones', 'наси горенг', 'варунг', 'warung', 'балийск', 'balines'],
+          'вегетарианское': ['вегетариан', 'vegetarian', 'vegan', 'веган', 'plant-based']
+      };
+      
+      let matched = false;
+      if (keywords[state.cuisine]) {
+          matched = keywords[state.cuisine].some(kw => cStr.includes(kw));
+      } else {
+          matched = cStr.includes(state.cuisine);
+      }
+      if (!matched) return false;
     }
     return true;
   });
