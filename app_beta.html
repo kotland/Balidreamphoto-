@@ -204,7 +204,10 @@ map.on('locationerror', function(e) {
 var locateBtn = L.control({position: 'bottomright'});
 locateBtn.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-    div.innerHTML = '<a href="#" onclick="locateUser(); return false;" title="Где я?" style="width: 44px; height: 44px; display: flex; justify-content: center; align-items: center; background: white; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.2); font-size: 20px;">🎯</a>';
+    div.innerHTML = '<a href="#" onclick="locateUser(); return false;" style="display: flex; gap: 8px; justify-content: center; align-items: center; background: #2a6b5a; color: white; padding: 12px 20px; border-radius: 30px; box-shadow: 0 4px 15px rgba(42,107,90,0.4); text-decoration: none; font-weight: 700; font-size: 14px; font-family: \'Inter\', sans-serif;"><span style="font-size:18px;">🎯</span> Где я?</a>';
+    div.style.border = 'none';
+    div.style.marginBottom = '20px';
+    div.style.marginRight = '10px';
     return div;
 };
 locateBtn.addTo(map);
