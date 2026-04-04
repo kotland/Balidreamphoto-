@@ -127,7 +127,35 @@ function loadData(filterCat) {
 
     placesData.features.forEach(function(feature) {
       if (districtParam && feature.properties.district !== districtParam) return;
-      if (filterCat !== 'all' && feature.properties.category !== filterCat) return;
+      if (filterCat !== 'all') {
+          var c = (feature.properties.category || '').toLowerCase();
+          var fc = filterCat.toLowerCase();
+          if (fc === 'beach_club') {
+              if (c !== 'beach_club' && c !== 'закат' && c !== 'вечеринки' && c !== 'развлечения') return;
+          } else if (fc === 'спа') {
+              if (c !== 'спа' && c !== 'салон' && c !== 'велнес' && c !== 'йога') return;
+          } else if (fc === 'природа') {
+              if (c !== 'природа' && c !== 'водопад' && c !== 'пляж') return;
+          } else if (fc === 'фото-локации') {
+              if (c !== 'фото' && c !== 'галерея' && c !== 'культура') return;
+          } else if (fc === 'еда') {
+              if (c !== 'еда' && c !== 'кофейни' && c !== 'бары') return;
+          } else if (fc === 'жильё') {
+              if (c !== 'жильё' && c !== 'глэмпинг') return;
+          } else if (fc === 'храмы') {
+              if (c !== 'храмы' && c !== 'культура') return;
+          } else if (fc === 'шоппинг') {
+              if (c !== 'шоппинг' && c !== 'галерея') return;
+          } else if (fc === 'продукты') {
+              if (c !== 'продукты' && c !== 'рынки') return;
+          } else if (fc === 'водопады') {
+              if (c !== 'водопад' && c !== 'природа') return;
+          } else if (fc === 'вулканы') {
+              if (c !== 'вулкан') return;
+          } else {
+              if (c !== fc && !fc.includes(c) && !c.includes(fc.replace('и',''))) return;
+          }
+      }
 
       var latlng = L.latLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]);
       var cat = feature.properties.category || '';
