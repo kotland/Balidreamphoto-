@@ -172,16 +172,25 @@ window.showRouteGallery = function() {
       let rcost = 0;
       if (route.places) {
           route.places.forEach(p => {
-              if (p.price && p.price.includes('K')) {
-                  let nums = p.price.match(/\d+/g);
-                  if (nums) rcost += parseInt(nums[0]);
+              if (p.price) {
+                  let txt = p.price.toUpperCase();
+                  if (txt.includes('M')) {
+                      let nums = txt.match(/[\d\.]+/g);
+                      if (nums) rcost += parseFloat(nums[0]) * 1000;
+                  } else if (txt.includes('K')) {
+                      let nums = txt.match(/\d+/g);
+                      if (nums) rcost += parseInt(nums[0]);
+                  } else if (txt.includes('$')) {
+                      let nums = txt.match(/\d+/g);
+                      if (nums) rcost += parseInt(nums[0]) * 16; // rough IDR conversion from USD
+                  }
               }
           });
       }
       let rdDays = route.days || 1;
       let rcostPerDay = rcost / rdDays;
-      if (rcostPerDay <= 450) rb = 'cheap';
-      else if (rcostPerDay >= 1000) rb = 'luxury';
+      if (rcostPerDay <= 350) rb = 'cheap';
+      else if (rcostPerDay >= 800) rb = 'luxury';
       else rb = 'medium';
       
       if (currentBudget !== 'all' && rb !== currentBudget) continue;
