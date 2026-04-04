@@ -153,7 +153,14 @@ window.showRouteGallery = function() {
     // Render the cards
     for (var i = 0; i < routes.length; i++) {
       var route = routes[i];
-      if (currentStyle !== 'all' && route.style !== currentStyle) continue;
+      
+      if (currentStyle !== 'all') {
+          // If multi-day is selected, ignore style filter because all multi-day routes are mixed-pace ('easy')
+          if (currentDays === 'all' || currentDays === 1) {
+              if (route.style !== currentStyle) continue;
+          }
+      }
+
       if (currentDays !== 'all') {
           var rd = route.days || 1;
           if (currentDays !== rd) continue;
