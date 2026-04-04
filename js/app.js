@@ -189,8 +189,8 @@ window.showRouteGallery = function() {
       }
       let rdDays = route.days || 1;
       let rcostPerDay = rcost / rdDays;
-      if (rcostPerDay <= 350) rb = 'cheap';
-      else if (rcostPerDay >= 800) rb = 'luxury';
+      if (rcostPerDay <= 450) rb = 'cheap';
+      else if (rcostPerDay >= 1000) rb = 'luxury';
       else rb = 'medium';
       
       if (currentBudget !== 'all' && rb !== currentBudget) continue;
