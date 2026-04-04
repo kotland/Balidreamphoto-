@@ -52,7 +52,7 @@ window.renderFavoritesOverlay = function() {
                 <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(p.name)}">❤️</div>
                 <div class="fav-card-title">${escapeHtml(p.name)}</div>
                 <div class="fav-card-meta">${district} · ${cat}</div>
-                                <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
+                                <div class="fav-card-desc">${formatPlaceDesc(escapeHtml(p.desc))}</div>
                 ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Открыть на карте</a></div>` : ''}
             </div>`;
         } else {
@@ -249,6 +249,25 @@ PLACES = allPlaces;
 const ITEMS_PER_PAGE = 20;
 let filteredPlaces = [];
 let currentIndex = 0;
+
+function formatPlaceDesc(text) {
+    if (!text) return '';
+    text = text.replace(/(Важно:)/gi, '<b>☝🏼 $1</b>');
+    text = text.replace(/(Мои рекомендации:)/gi, '<b>📎 $1</b>');
+    text = text.replace(/(Мой совет:)/gi, '<b>💎 $1</b>');
+    text = text.replace(/Стоит попробовать:/gi, '<b>🍽 Что заказать:</b><br>');
+    
+    if (text.length > 150 && !text.includes('<br>')) {
+        let sentences = text.split('. ');
+        if (sentences.length >= 3) {
+            let s1 = sentences[0] + '.';
+            let s2 = sentences.slice(1, -1).join('. ') + '.';
+            let s3 = sentences[sentences.length - 1];
+            text = '<b>✨ Атмосфера:</b><br>' + s1 + '<br><br><b>🏄‍♀️ Особенности:</b><br>' + s2 + '<br><br><b>📋 Детали:</b><br>' + s3;
+        }
+    }
+    return text;
+}
 
 function escapeHtml(text) {
   if(!text) return '';
@@ -625,7 +644,7 @@ window.renderFavoritesOverlay = function() {
                 <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(p.name)}">❤️</div>
                 <div class="fav-card-title">${escapeHtml(p.name)}</div>
                 <div class="fav-card-meta">${district} · ${cat}</div>
-                                <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
+                                <div class="fav-card-desc">${formatPlaceDesc(escapeHtml(p.desc))}</div>
                 ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Открыть на карте</a></div>` : ''}
             </div>`;
         } else {
