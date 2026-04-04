@@ -28,6 +28,11 @@
   .header-top { display: flex; align-items: center; gap: 15px; }
   .header-title { font-size: 18px; font-weight: 700; font-family: 'Playfair Display', serif; }
 </style>
+
+    <style>
+    .user-loc-icon { pointer-events: none; }
+    </style>
+    
 </head>
 <body>
 
@@ -101,6 +106,43 @@
     maxClusterRadius: 40,
     iconCreateFunction: function(cluster) {
       return L.divIcon({ html: '<div><span>' + cluster.getChildCount() + '</span></div>', className: 'custom-div-icon', iconSize: L.point(34, 34) });
+
+var userLocationMarker = null;
+
+function locateUser() {
+    map.locate({setView: true, maxZoom: 14});
+}
+
+map.on('locationfound', function(e) {
+    if (userLocationMarker) {
+        map.removeLayer(userLocationMarker);
+    }
+    
+    // Create a pulsing blue dot for the user's location
+    var userIcon = L.divIcon({
+        className: 'user-loc-icon',
+        html: '<div style="width: 14px; height: 14px; background: #007AFF; border: 2px solid white; border-radius: 50%; box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.3);"></div>',
+        iconSize: [20, 20],
+        iconAnchor: [10, 10]
+    });
+    
+    userLocationMarker = L.marker(e.latlng, {icon: userIcon, zIndexOffset: 1000}).addTo(map);
+    userLocationMarker.bindPopup("📍 Вы здесь").openPopup();
+});
+
+map.on('locationerror', function(e) {
+    alert("Не удалось определить вашу геопозицию. Убедитесь, что вы разрешили доступ к GPS для Telegram.");
+});
+
+// Add the physical button over the map (bottom right)
+var locateBtn = L.control({position: 'bottomright'});
+locateBtn.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+    div.innerHTML = '<a href="#" onclick="locateUser(); return false;" title="Где я?" style="width: 44px; height: 44px; display: flex; justify-content: center; align-items: center; background: white; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.2); font-size: 20px;">🎯</a>';
+    return div;
+};
+locateBtn.addTo(map);
+
     }
   });
   var allLayers = [];
