@@ -57,6 +57,7 @@
                 <div class="filter-btn" onclick="filterMap('храмы', this)">🛕 Храмы</div>
                 <div class="filter-btn" onclick="filterMap('фото-локации', this)">📸 Фото-локации</div>
                 <div class="filter-btn" onclick="filterMap('водопады', this)">💧 Водопады</div>
+                <div class="filter-btn" onclick="filterMap('активности', this)">🏄‍♀️ Активности</div>
                 <div class="filter-btn" onclick="filterMap('шоппинг', this)">🛍 Шоппинг</div>
                 <div class="filter-btn" onclick="filterMap('продукты', this)">🛒 Продуктовые</div>
                 <div class="filter-btn" onclick="filterMap('природа', this)">🌴 Природа</div>
@@ -152,6 +153,8 @@ function loadData(filterCat) {
               if (c !== 'водопад' && c !== 'природа') return;
           } else if (fc === 'вулканы') {
               if (c !== 'вулкан') return;
+          } else if (fc === 'активности') {
+              if (c !== 'активности' && c !== 'спорт') return;
           } else {
               if (c !== fc && !fc.includes(c) && !c.includes(fc.replace('и',''))) return;
           }
