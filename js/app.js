@@ -349,7 +349,7 @@ window.showSingleRoute = function(idx) {
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
     rs.style.display = 'block';
-    let topBtn = document.querySelector('.back-home-btn');
+    let topBtn = document.getElementById('districtBackBtn') || document.querySelector('.back-home-btn');
     if (topBtn) {
         topBtn.innerText = '← Назад к выбору маршрутов';
         topBtn.onclick = window.hideRouteOverlay;
