@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Каталог мест</title>
-<link rel="stylesheet" href="style.css?v=1774488851">
+<link rel="stylesheet" href="style.css?v=88888">
 <script>
 window.onerror = function(msg, url, line) {
    var errDiv = document.createElement('div');
@@ -52,7 +52,7 @@ window.renderFavoritesOverlay = function() {
                 <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(p.name)}">❤️</div>
                 <div class="fav-card-title">${escapeHtml(p.name)}</div>
                 <div class="fav-card-meta">${district} · ${cat}</div>
-                                <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
+                                <div class="fav-card-desc">${formatPlaceDesc(escapeHtml(p.desc))}</div>
                 ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Открыть на карте</a></div>` : ''}
             </div>`;
         } else {
@@ -94,15 +94,15 @@ window.removeFavoriteOverlay = function(btn) {
 <body class="catalog-page">
 
 <div id="catalogLoader" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(248,246,242,0.95);backdrop-filter:blur(5px);z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity 0.5s;">
-    <img src="img/star3.png" alt="Loading" style="width:140px;height:140px;margin-bottom:20px;animation:pulse 2s infinite ease-in-out;">
+    <div style="font-size:64px; text-align:center; margin:40px 0 16px; animation:pulse 2s infinite ease-in-out;">🏝️</div>
     <h1 style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:8px;color:#2a6b5a;text-align:center;">Загружаем каталог мест...</h1>
     <p style="color:rgba(42,42,40,0.5);text-align:center;">Синхронизация с базой</p>
 </div>
 
 
-<button class="btn-green" onclick="window.location.href='index.html?v=108'">← Назад</button>
+<button class="btn-green" onclick="window.location.href='index.html?v=88888'">← Назад</button>
 <h1 style="font-family:'Playfair Display',serif;text-align:center;margin:20px 0;font-size:24px">Каталог <em style="color:#2a6b5a">мест</em></h1>
-<p style="text-align:center;color:rgba(42,42,40,0.5);margin-bottom:12px"><span id="countBadge">1050</span>+ мест</p>
+<p style="text-align:center;color:rgba(42,42,40,0.5);margin-bottom:12px;display:none;"><span id="countBadge">1050</span>+ мест</p>
 
 <!-- Кнопка Интерактивной Карты -->
 <div style="padding: 0 16px; margin-bottom: 24px;">
@@ -144,6 +144,7 @@ window.removeFavoriteOverlay = function(btn) {
     <div class="chip" onclick="updateFilter('category', 'культура', this)">🛕 Храмы</div>
     <div class="chip" onclick="updateFilter('category', 'шоппинг', this)">🛍 Шоппинг</div>
     <div class="chip" onclick="updateFilter('category', 'продукты', this)">🛒 Продуктовые</div>
+    <div class="chip" onclick="updateFilter('category', 'рынки', this)">🍉 Рынки и фрукты</div>
     <div class="chip" onclick="updateFilter('category', 'жильё', this)">🏠 Жильё</div>
     <div class="chip" onclick="updateFilter('category', 'фото', this)">📸 Фото-локации</div>
     <div class="chip" onclick="updateFilter('category', 'водопад', this)">💧 Водопады</div>
@@ -152,17 +153,12 @@ window.removeFavoriteOverlay = function(btn) {
   </div>
 </div>
 
-<div id="catalogBudgetPicker" style="margin-top:16px;display:none">
-  <div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">БЮДЖЕТ</div>
-  <div class="wrap-chips">
-    <div class="chip" onclick="updateFilter('budget', '', this)">Все</div>
-    <div class="chip" onclick="updateFilter('budget', '💚', this)">💚 до $10 (900₽)</div>
-    <div class="chip" onclick="updateFilter('budget', '💛', this)">💛 $10-30 (1-3k ₽)</div>
-    <div class="chip" onclick="updateFilter('budget', '🧡', this)">🧡 от $50 (от 5000₽)</div>
-    <div class="chip" onclick="updateFilter('budget', '❤️', this)">❤️ от $50 (от 5000₽)</div>
-  </div>
-</div>
 
+
+<div style="margin-top:16px; margin-left:16px; padding:12px; background:rgba(42,107,90,0.04); border-radius:12px; border:1px solid rgba(42,107,90,0.1); display:inline-block; font-size:12px; color:rgba(42,42,40,0.7); line-height:1.5;">
+    <div style="font-weight:700; color:#2a6b5a; margin-bottom:4px;">Подсказка по бюджету:</div>
+    💚 до $10 &nbsp; 💛 $10-30 &nbsp; 🧡 $30-50 &nbsp; ❤️ от $50
+</div>
 <div id="catalogCuisineFilter" style="margin-top:16px;display:none">
   <div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">КУХНЯ</div>
   <div class="wrap-chips">
@@ -173,13 +169,10 @@ window.removeFavoriteOverlay = function(btn) {
     <div class="chip" onclick="updateFilter('cuisine', 'японская', this)">🍣 Японская</div>
     <div class="chip" onclick="updateFilter('cuisine', 'мексиканская', this)">🌮 Мексиканская</div>
     <div class="chip" onclick="updateFilter('cuisine', 'тайская', this)">🍛 Тайская</div>
-    <div class="chip" onclick="updateFilter('cuisine', 'грузинская', this)">🥟 Грузинская</div>
     <div class="chip" onclick="updateFilter('cuisine', 'славянская', this)">🥞 Русская / СНГ</div>
     <div class="chip" onclick="updateFilter('cuisine', 'французская', this)">🥐 Французская</div>
     <div class="chip" onclick="updateFilter('cuisine', 'морепродукты', this)">🦞 Морепродукты</div>
-    <div class="chip" onclick="updateFilter('cuisine', 'завтраки', this)">🍳 Завтраки</div>
     <div class="chip" onclick="updateFilter('cuisine', 'кофе', this)">☕ Specialty Кофе</div>
-    <div class="chip" onclick="updateFilter('cuisine', 'десерты', this)">🍰 Десерты</div>
     <div class="chip" onclick="updateFilter('cuisine', 'пп', this)">🥑 ПП / Organic</div>
     <div class="chip" onclick="updateFilter('cuisine', 'восточная', this)">🥙 Ближневосточная</div>
   </div>
@@ -237,7 +230,13 @@ async function fetchAllPlaces() {
         
         // Sort top choices first if needed
         allPlaces.sort((a,b) => (b.priority || 0) - (a.priority || 0));
-        PLACES = allPlaces;
+        allPlaces.forEach(p => {
+    if (p.district_id && !p.district) {
+        const ID_TO_SLUG = {1:'canggu', 2:'uluwatu', 3:'ubud', 4:'seminyak', 5:'amed', 6:'lovina', 7:'kintamani', 8:'gili', 9:'bukit_nusadua', 10:'bedugul', 11:'nusapenida', 12:'lombok', 13:'java', 14:'sanur', 15:'north'};
+        p.district = ID_TO_SLUG[p.district_id] || '';
+    }
+});
+PLACES = allPlaces;
         await loadFavoritesFromSupabase();
     } catch(e) {
         console.error("Failed to load catalog:", e);
@@ -253,7 +252,27 @@ async function fetchAllPlaces() {
 }
 
 const ITEMS_PER_PAGE = 20;
+let filteredPlaces = [];
 let currentIndex = 0;
+
+function formatPlaceDesc(text) {
+    if (!text) return '';
+    text = text.replace(/(Важно:)/gi, '<b>☝🏼 $1</b>');
+    text = text.replace(/(Мои рекомендации:)/gi, '<b>📎 $1</b>');
+    text = text.replace(/(Мой совет:)/gi, '<b>💎 $1</b>');
+    text = text.replace(/Стоит попробовать:/gi, '<b>🍽 Что заказать:</b><br>');
+    
+    if (text.length > 150 && !text.includes('<br>')) {
+        let sentences = text.split('. ');
+        if (sentences.length >= 3) {
+            let s1 = sentences[0] + '.';
+            let s2 = sentences.slice(1, -1).join('. ') + '.';
+            let s3 = sentences[sentences.length - 1];
+            text = '<b>✨ Атмосфера:</b><br>' + s1 + '<br><br><b>🏄‍♀️ Особенности:</b><br>' + s2 + '<br><br><b>📋 Детали:</b><br>' + s3;
+        }
+    }
+    return text;
+}
 
 function escapeHtml(text) {
   if(!text) return '';
@@ -265,12 +284,32 @@ function escapeHtml(text) {
     .replace(/'/g, "&#039;");
 }
 
+
+const DISTRICT_SUBS = {
+  'Убуд': ['ubud', 'убуд'],
+  'Чангу': ['canggu', 'чангу'],
+  'Семиньяк': ['seminyak', 'семиньяк'],
+  'Улувату': ['uluwatu', 'улувату'],
+  'Букит и Нуса-Дуа': ['bukit_nusadua', 'bukit', 'nusadua', 'нуса-дуа', 'букит'],
+  'Санур': ['sanur', 'санур'],
+  'Амед и Восток': ['amed', 'амед'],
+  'Кинтамани': ['kintamani', 'north', 'кинтамани'],
+  'Бедугул и Мундук': ['bedugul', 'munduk', 'бедугул'],
+  'Ловина': ['lovina', 'ловина'],
+  'Нуса Пенида': ['nusapenida', 'нуса пенида'],
+  'Гили': ['gili', 'гили'],
+  'Ломбок и Сумбава': ['lombok', 'ломбок'],
+  'Ява': ['java', 'ява']
+};
+
 function matchDistrict(pDistrict, filterD) {
   if (!filterD) return true;
   var subs = DISTRICT_SUBS[filterD];
   if (subs) return subs.includes(pDistrict);
   return pDistrict === filterD;
 }
+
+let state = { district: '', category: '', cuisine: '', shopType: '' };
 
 function updateFilter(key, value, el) {
   if (el) {
@@ -281,22 +320,22 @@ function updateFilter(key, value, el) {
   state[key] = value;
 
   if (key === 'district') {
-    state.category = ''; state.budget = ''; state.cuisine = ''; state.shopType = '';
+    state.category = ''; state.cuisine = ''; state.shopType = '';
     document.querySelectorAll('#catalogCategoryPicker .chip').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
+    
     document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
     document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
   }
   
   if (key === 'category') {
-    state.budget = ''; state.cuisine = ''; state.shopType = '';
-    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
+    state.cuisine = ''; state.shopType = '';
+    
     document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
     document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
   }
 
   document.getElementById('catalogCategoryPicker').style.display = state.district ? 'block' : 'none';
-  document.getElementById('catalogBudgetPicker').style.display = ['еда', 'кофейни', 'beach_club', 'спа', 'жильё'].includes(state.category) ? 'block' : 'none';
+  
   document.getElementById('catalogCuisineFilter').style.display = ['еда', 'кофейни'].includes(state.category) ? 'block' : 'none';
   document.getElementById('catalogShopFilter').style.display = state.category === 'шоппинг' ? 'block' : 'none';
 
@@ -331,15 +370,39 @@ window.applyFilters = function() {
     
     if (state.district && !matchDistrict(p.district, state.district)) return false;
 
-    if (state.category && p.category !== state.category) return false;
-    if (state.budget && p.budget !== state.budget) return false;
+        if (state.category) {
+      if (state.category === 'рынки') {
+        const text = (p.name + " " + p.desc).toLowerCase();
+        if (!text.includes('рынок') && !text.includes('pasar') && !text.includes('фрукт') && !text.includes('market')) return false;
+      } else if (p.category !== state.category) {
+        return false;
+      }
+    }
+    
     if (state.shopType && (!p.tags || !p.tags.includes(state.shopType))) return false;
 
     if (state.cuisine) {
-      const cuisineStr = ((p.cuisine || '') + ' ' + (p.desc || '')).toLowerCase();
-      if (state.cuisine === 'пп' && !cuisineStr.includes('пп') && !cuisineStr.includes('healthy') && !cuisineStr.includes('organic') && !cuisineStr.includes('зож')) return false;
-      if (state.cuisine === 'славянская' && !cuisineStr.includes('русская') && !cuisineStr.includes('славянская') && !cuisineStr.includes('белорусская')) return false;
-      if (state.cuisine !== 'пп' && state.cuisine !== 'славянская' && !cuisineStr.includes(state.cuisine)) return false;
+      const cStr = ((p.cuisine || '') + ' ' + (p.desc || '') + ' ' + (p.name || '')).toLowerCase();
+      const keywords = {
+          'пп': ['пп', 'healthy', 'organic', 'зож', 'веган', 'vegan', 'вегетариан', 'боул', 'bowl', 'смузи', 'smoothie', 'авокадо тост', 'avocado toast', 'без глютена', 'gluten free', 'матча', 'matcha', 'сыроед', 'raw', 'салат', 'salad', 'комбуча', 'kombucha'],
+          'славянская': ['русск', 'славянск', 'белорусск', 'борщ', 'сырник', 'пельмен', 'russian', 'вареники', 'блины', 'оливье', 'квас', 'котлет', 'пюре', 'медовик', 'сырок', 'сметана', 'гречка', 'blini', 'pelmeni', 'borsch', 'syrniki', 'сырники'],
+          'морепродукты': ['морепродукт', 'seafood', 'рыб', 'устриц', 'креветк', 'осьминог', 'fish', 'oyster', 'кальмар', 'мидии', 'лосось', 'тунец', 'краб', 'лобстер', 'salmon', 'tuna', 'crab', 'squid', 'prawn', 'shrimp', 'octopus', 'catch of the day'],
+          'итальянская': ['итальян', 'italian', 'пицц', 'pizza', 'паст', 'pasta', 'равиоли', 'ризотто', 'лазанья', 'ньокки', 'тирамису', 'спагетти', 'маргарита', 'карбонара', 'буратта', 'burrata', 'gelato', 'джелато'],
+          'японская': ['японск', 'japan', 'суши', 'sushi', 'ролл', 'сашими', 'рамен', 'ramen', 'матча', 'matcha', 'удон', 'собо', 'терияки', 'тонкацу', 'мисо', 'татаки', 'вагю', 'wagyu', 'nigiri', 'нигири', 'tempura', 'темпура', 'edamame'],
+          'мексиканская': ['мексикан', 'mexican', 'тако', 'taco', 'кесадиль', 'начос', 'бурито', 'nachos', 'гуакамоле', 'guacamole', 'фахитас', 'маргарита', 'quesadilla', 'burrito', 'churros', 'чуррос'],
+          'тайская': ['тайск', 'thai', 'том ям', 'tom yum', 'пад тай', 'pad thai', 'карри', 'curry', 'манго стики райс', 'mango sticky', 'папайя салат', 'khao soi', 'сом там'],
+          'французская': ['франц', 'french', 'круассан', 'croissant', 'выпечк', 'багет', 'улитки', 'эскарго', 'луковый суп', 'крепы', 'crepe', 'макарон', 'эклер', 'киш', 'quiche'],
+          'местная': ['местн', 'local', 'индонез', 'indones', 'наси горенг', 'nasi goreng', 'варунг', 'warung', 'балийск', 'balines', 'ми горенг', 'mie goreng', 'сате', 'sate', 'satay', 'баби гулинг', 'babi guling', 'гадо гадо', 'gado', 'ренданг', 'rendang', 'сото', 'soto', 'аям', 'ayam'],
+          'вегетарианское': ['вегетариан', 'vegetarian', 'vegan', 'веган', 'plant-based', 'тофу', 'tofu', 'темпе', 'tempeh', 'фалафель', 'falafel', 'хумус', 'hummus']
+      };
+      
+      let matched = false;
+      if (keywords[state.cuisine]) {
+          matched = keywords[state.cuisine].some(kw => cStr.includes(kw));
+      } else {
+          matched = cStr.includes(state.cuisine);
+      }
+      if (!matched) return false;
     }
     return true;
   });
@@ -551,9 +614,8 @@ window.onload = function() {
         setTimeout(() => c.scrollIntoView({behavior: "smooth", inline: "center"}), 100);
       }
     });
-  } else {
-    fetchAllPlaces();
   }
+  fetchAllPlaces();
 };
 
 // OVERLAY JS
@@ -587,7 +649,7 @@ window.renderFavoritesOverlay = function() {
                 <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(p.name)}">❤️</div>
                 <div class="fav-card-title">${escapeHtml(p.name)}</div>
                 <div class="fav-card-meta">${district} · ${cat}</div>
-                                <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
+                                <div class="fav-card-desc">${formatPlaceDesc(escapeHtml(p.desc))}</div>
                 ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Открыть на карте</a></div>` : ''}
             </div>`;
         } else {

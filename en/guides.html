@@ -223,17 +223,7 @@ function openGuide(guide){
     selWhat: selWhat,
     resultsHTML: document.getElementById('resultsContainer').parentElement.innerHTML
   }));
-  window.location.href='guide-'+guide+'.html';
-});
-  });
-  localStorage.setItem('quizResults', JSON.stringify({
-    districts: results,
-    selWho: selWho,
-    selWhat: selWhat,
-    resultsHTML: document.getElementById('resultsContainer').parentElement.innerHTML
-  }));
-  // Guide pages are in Russian — redirect to parent folder
-  window.location.href='../guide-'+guide+'.html';
+  window.location.href='../' + guide + '-guide.html';
 }
 function shareResults(){
 var text='Hey! Here are my top Bali areas:\n\nFind yours 👉 https://t.me/balidreamphoto_bot';

@@ -1,7 +1,7 @@
 import { fetchDistrictRoutes, fetchDistrictName } from './api.js';
 
 
-let MANUAL_ROUTES_ZONE = [];
+let MANUAL_ROUTES_ZONE = window.MANUAL_ROUTES_ZONE || [];
 let currentStyle = 'all';
 let currentDays = 'all';
 let currentBudget = 'all';
@@ -19,7 +19,7 @@ window.hideRouteOverlay = function() {
 };
 
 window.setDaysFilter = function(days) {
-    currentDays = days;
+    currentDays = (days === 'all') ? 'all' : parseInt(days);
     window.showRouteGallery();
 };
 
@@ -31,7 +31,7 @@ window.filterRoutes = function(style, budget) {
 
 window.showRouteGallery = function() {
   try {
-    var routes = MANUAL_ROUTES_ZONE;
+    var routes = window.MANUAL_ROUTES_ZONE || MANUAL_ROUTES_ZONE;
     if (!routes || routes.length === 0) {
         document.getElementById('routesListContainer').innerHTML = '<div style="padding:20px; text-align:center; color:rgba(42,42,40,0.5);">Маршруты для этого района пока в разработке.</div>';
         return; 
@@ -81,7 +81,7 @@ window.showRouteGallery = function() {
     // Base Info Block with Budget AND Style Descriptions
     html += '<div style="background:rgba(42,107,90,0.03); border-radius:16px; padding:20px; margin-bottom:24px; border:1px solid rgba(42,107,90,0.1);">';
     html += '  <div style="font-weight:700; color:#2a6b5a; font-size:18px; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between;"><span>📁 Как выбрать маршрут?</span>';
-    html += '  <div style="text-align:right;"><div style="font-size:18px;font-weight:800;color:#2a2a28">$' + avgDollars + '<span style="font-size:12px;font-weight:400;color:rgba(42,42,40,0.6)">/день</span></div><div style="font-size:11px;color:rgba(42,42,40,0.5)">Средний чек района</div></div></div>';
+    html += '  </div>';
     
     
     html += '  <div style="font-size:14px; line-height:1.5; color:rgba(42,42,40,0.8); margin-bottom:16px;">Каждая карточка уже посчитала примерный чек за весь день. Выбирайте фильтры:<br>';
@@ -113,7 +113,7 @@ window.showRouteGallery = function() {
 
     // Days Filter
     html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Длительность путешествия:</div>';
-    html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
+    html += '<div class="filter-scroll-wrapper" style="display:flex; flex-wrap:nowrap; gap:8px; overflow-x:auto; overflow-y:hidden; padding-bottom:12px; margin-bottom:16px; -webkit-overflow-scrolling: touch; scrollbar-width: none; /* Hide scrollbar for Chrome/Edge */" onwheel="this.scrollLeft += event.deltaY">';
     var dAllBg = (currentDays === 'all') ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
     var dAllCol = (currentDays === 'all') ? 'white' : '#2a6b5a';
     var d1Bg = (currentDays === 1) ? '#2a6b5a' : 'rgba(42,107,90,0.1)';
@@ -130,28 +130,37 @@ window.showRouteGallery = function() {
 
     // Budget Filter
     html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Бюджет маршрутов:</div>';
-    html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
+    html += '<div class="filter-scroll-wrapper" style="display:flex; flex-wrap:nowrap; gap:8px; overflow-x:auto; overflow-y:hidden; padding-bottom:12px; margin-bottom:16px; -webkit-overflow-scrolling: touch; scrollbar-width: none; /* Hide scrollbar for Chrome/Edge */" onwheel="this.scrollLeft += event.deltaY">';
     html += '  <button id="btn_budget_all" onclick="filterRoutes(undefined, \'all\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'all' ? 'background:#2a2a28; color:white;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">Все бюджеты</button>';
-    html += '  <button id="btn_budget_cheap" onclick="filterRoutes(undefined, \'cheap\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'cheap' ? 'background:rgba(76,175,80,0.1); color:#2a6b5a;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">💚 Бэкпекер</button>';
-    html += '  <button id="btn_budget_medium" onclick="filterRoutes(undefined, \'medium\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'medium' ? 'background:rgba(243,156,18,0.1); color:#d35400;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">💛 Путешественник</button>';
-    html += '  <button id="btn_budget_luxury" onclick="filterRoutes(undefined, \'luxury\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'luxury' ? 'background:rgba(231,76,60,0.1); color:#c0392b;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">❤️ Люкс</button>';
+    html += '  <button id="btn_budget_cheap" onclick="filterRoutes(undefined, \'cheap\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'cheap' ? 'background:rgba(76,175,80,0.1); color:#2a6b5a;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">💚 Бэкпекер (до $30 / 450K IDR)</button>';
+    html += '  <button id="btn_budget_medium" onclick="filterRoutes(undefined, \'medium\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'medium' ? 'background:rgba(243,156,18,0.1); color:#d35400;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">💛 Комфорт ($30-70 / 450K-1M IDR)</button>';
+    html += '  <button id="btn_budget_luxury" onclick="filterRoutes(undefined, \'luxury\')" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(42,42,40,0.1); ' + (currentBudget === 'luxury' ? 'background:rgba(231,76,60,0.1); color:#c0392b;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">❤️ Люкс (от $70 / 1M+ IDR)</button>';
     html += '</div>';
 
     // Style Filter
-    html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Стиль поездки:</div>';
-    html += '<div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px; margin-bottom:15px; scrollbar-width:none;">';
-    html += '  <button id="btn_style_all" onclick="filterRoutes(\'all\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid #2a6b5a; ' + (currentBudget === 'cheap' ? 'background:rgba(76,175,80,0.1); color:#2a6b5a;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">Все темпы</button>';
-    html += '  <button id="btn_style_chill" onclick="filterRoutes(\'chill\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(232, 62, 140, 0.3); ' + (currentStyle === 'chill' ? 'background:rgba(255,182,193,0.3); color:#e83e8c;' : 'background:white; color:#e83e8c;') + ' white-space:nowrap; font-weight:600;">🌸 Чилл</button>';
-    html += '  <button id="btn_style_easy" onclick="filterRoutes(\'easy\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(76, 175, 80, 0.3); ' + (currentStyle === 'easy' ? 'background:rgba(76,175,80,0.15); color:#388e3c;' : 'background:white; color:#388e3c;') + ' white-space:nowrap; font-weight:600;">🟢 Изи</button>';
-    html += '  <button id="btn_style_hard" onclick="filterRoutes(\'hard\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(255, 87, 34, 0.3); ' + (currentStyle === 'hard' ? 'background:rgba(255,87,34,0.15); color:#e64a19;' : 'background:white; color:#e64a19;') + ' white-space:nowrap; font-weight:600;">🔥 Хард</button>';
-    html += '</div>';
+    if (currentDays === 'all' || currentDays === 1) {
+        html += '<div style="font-weight:700; color:#2a2a28; margin-bottom:8px; font-size:14px;">Стиль поездки:</div>';
+        html += '<div class="filter-scroll-wrapper" style="display:flex; flex-wrap:nowrap; gap:8px; overflow-x:auto; overflow-y:hidden; padding-bottom:12px; margin-bottom:16px; -webkit-overflow-scrolling: touch; scrollbar-width: none; /* Hide scrollbar for Chrome/Edge */" onwheel="this.scrollLeft += event.deltaY">';
+        html += '  <button id="btn_style_all" onclick="filterRoutes(\'all\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid #2a6b5a; ' + (currentStyle === 'all' ? 'background:rgba(42,107,90,0.1); color:#2a6b5a;' : 'background:white; color:#2a2a28;') + ' white-space:nowrap; font-weight:600;">Все темпы</button>';
+        html += '  <button id="btn_style_chill" onclick="filterRoutes(\'chill\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(232, 62, 140, 0.3); ' + (currentStyle === 'chill' ? 'background:rgba(255,182,193,0.3); color:#e83e8c;' : 'background:white; color:#e83e8c;') + ' white-space:nowrap; font-weight:600;">🌸 Чилл</button>';
+        html += '  <button id="btn_style_easy" onclick="filterRoutes(\'easy\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(76, 175, 80, 0.3); ' + (currentStyle === 'easy' ? 'background:rgba(76,175,80,0.15); color:#388e3c;' : 'background:white; color:#388e3c;') + ' white-space:nowrap; font-weight:600;">🟢 Изи</button>';
+        html += '  <button id="btn_style_hard" onclick="filterRoutes(\'hard\', undefined)" style="padding:8px 16px; border-radius:20px; border:1px solid rgba(255, 87, 34, 0.3); ' + (currentStyle === 'hard' ? 'background:rgba(255,87,34,0.15); color:#e64a19;' : 'background:white; color:#e64a19;') + ' white-space:nowrap; font-weight:600;">🔥 Хард</button>';
+        html += '</div>';
+    }
 
     let matchedCount = 0;
     
     // Render the cards
     for (var i = 0; i < routes.length; i++) {
       var route = routes[i];
-      if (currentStyle !== 'all' && route.style !== currentStyle) continue;
+      
+      if (currentStyle !== 'all') {
+          // If multi-day is selected, ignore style filter because all multi-day routes are mixed-pace ('easy')
+          if (currentDays === 'all' || currentDays === 1) {
+              if (route.style !== currentStyle) continue;
+          }
+      }
+
       if (currentDays !== 'all') {
           var rd = route.days || 1;
           if (currentDays !== rd) continue;
@@ -163,14 +172,25 @@ window.showRouteGallery = function() {
       let rcost = 0;
       if (route.places) {
           route.places.forEach(p => {
-              if (p.price && p.price.includes('K')) {
-                  let nums = p.price.match(/\d+/g);
-                  if (nums) rcost += parseInt(nums[0]);
+              if (p.price) {
+                  let txt = p.price.toUpperCase();
+                  if (txt.includes('M')) {
+                      let nums = txt.match(/[\d\.]+/g);
+                      if (nums) rcost += parseFloat(nums[0]) * 1000;
+                  } else if (txt.includes('K')) {
+                      let nums = txt.match(/\d+/g);
+                      if (nums) rcost += parseInt(nums[0]);
+                  } else if (txt.includes('$')) {
+                      let nums = txt.match(/\d+/g);
+                      if (nums) rcost += parseInt(nums[0]) * 16; // rough IDR conversion from USD
+                  }
               }
           });
       }
-      if (rcost < 150) rb = 'cheap';
-      else if (rcost > 600) rb = 'luxury';
+      let rdDays = route.days || 1;
+      let rcostPerDay = rcost / rdDays;
+      if (rcostPerDay <= 450) rb = 'cheap';
+      else if (rcostPerDay >= 1000) rb = 'luxury';
       else rb = 'medium';
       
       if (currentBudget !== 'all' && rb !== currentBudget) continue;
@@ -217,13 +237,13 @@ window.showRouteGallery = function() {
         html += '<div style="text-align:center; padding:20px; color:rgba(42,42,40,0.5);">Для этой комбинации фильтров маршрутов пока нет. Выберите другой фильтр.</div>';
     }
     
-    html += '<div style="text-align:center;margin-top:20px"><button class="btn btn-primary" onclick="window.location.href=\'guides.html?v=\' + Date.now()" style="padding:12px 24px;border-radius:12px; border:none; background:rgba(42,42,40,0.1); color:#2a2a28; font-weight:600; cursor:pointer;">← Назад к выбору маршрутов</button></div>';
+    
     html += '</div>';
     
     document.getElementById('routesListContainer').innerHTML = html;
     
     // Highlight buttons after render
-    setTimeout(() => filterRoutes(currentStyle, currentBudget), 50);
+    // Highlight logic handled in HTML inline styles
   } catch(e) { 
     console.error(e); 
     document.getElementById('routesListContainer').innerHTML = '<div style="padding:20px; text-align:center; color:red;">Произошла ошибка загрузки галереи.</div>'; 
@@ -232,7 +252,7 @@ window.showRouteGallery = function() {
 
 window.showSingleRoute = function(idx) {
   try {
-    var routes = MANUAL_ROUTES_ZONE;
+    var routes = window.MANUAL_ROUTES_ZONE || MANUAL_ROUTES_ZONE;
     var routeObj = routes[idx];
     var routeArray = Array.isArray(routeObj) ? routeObj : routeObj.places;
     var rTitle = routeObj.title || ('Маршрут ' + (idx + 1));
@@ -308,18 +328,18 @@ window.showSingleRoute = function(idx) {
       let isRestBlock = (n.includes('Сиеста') || n.includes('Ночев') || n.includes('Дорога'));
       
       if (hasMapLink && !isRestBlock) {
-        let cleanName = n.replace(/\s*\([^)]*\)/g, '').trim();
+        let cleanName = n.replace(/^.*?:\s*/, '').replace(/\s*\([^)]*\)/g, '').trim();
         if(cleanName) mapPlaces.push(cleanName);
       }
     }
     if (mapPlaces.length >= 2) {
-      var origin = encodeURIComponent(mapPlaces[0] + ' Bali');
-      var destination = encodeURIComponent(mapPlaces[mapPlaces.length - 1] + ' Bali');
+      var origin = encodeURIComponent(mapPlaces[0] + ',' + (typeof forcedDistrict !== 'undefined' ? forcedDistrict : (new URLSearchParams(window.location.search).get('slug') || 'Bali')));
+      var destination = encodeURIComponent(mapPlaces[mapPlaces.length - 1] + ',' + (typeof forcedDistrict !== 'undefined' ? forcedDistrict : (new URLSearchParams(window.location.search).get('slug') || 'Bali')));
       var waypoints = '';
       if (mapPlaces.length > 2) {
         var wp = [];
         for (var k = 1; k < mapPlaces.length - 1; k++) {
-          wp.push(encodeURIComponent(mapPlaces[k] + ' Bali'));
+          wp.push(encodeURIComponent(mapPlaces[k] + ',' + (typeof forcedDistrict !== 'undefined' ? forcedDistrict : (new URLSearchParams(window.location.search).get('slug') || 'Bali'))));
         }
         waypoints = '&waypoints=' + wp.join('%7C');
       }
@@ -329,7 +349,7 @@ window.showSingleRoute = function(idx) {
     
     var btnText = '🔄 Другой ' + (rStyle === 'chill' ? 'CHILL' : (rStyle === 'hard' ? 'HARD' : 'EASY')) + '-маршрут';
     html += '<div style="display:flex;gap:12px;margin-top:32px;">';
-    html += '  <button class="btn btn-primary" onclick="window.hideRouteOverlay()" style="flex:1;padding:16px;border-radius:14px;background:rgba(42,42,40,0.1);color:#2a2a28;border:none;font-weight:700;font-size:15px;cursor:pointer;">← Назад к выбору маршрутов</button>';
+    
     html += '  <button class="btn btn-primary" onclick="generateRandomRoute(\'' + rStyle + '\', ' + (routeObj.days || 1) + ')" style="flex:2;padding:16px;border-radius:14px;background:#2a6b5a;color:white;border:none;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 15px rgba(42,107,90,0.3);">' + btnText + '</button>';
     html += '</div>';
     html += '</div>';
@@ -338,7 +358,7 @@ window.showSingleRoute = function(idx) {
     var rs = document.getElementById('routeScreen');
     rs.innerHTML = html;
     rs.style.display = 'block';
-    let topBtn = document.querySelector('.back-home-btn');
+    let topBtn = document.getElementById('districtBackBtn') || document.querySelector('.back-home-btn');
     if (topBtn) {
         topBtn.innerText = '← Назад к выбору маршрутов';
         topBtn.onclick = window.hideRouteOverlay;

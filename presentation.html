@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Презентация приложения</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-green: #2a6b5a;
+            --beige: #f8f6f2;
+            --text-main: #333333;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--beige);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-green);
+            margin-top: 0;
+        }
+        .slide {
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgba(42, 107, 90, 0.1);
+        }
+        .slide:last-child {
+            border-bottom: none;
+        }
+        .content-block {
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 20px; }
+        h2 { font-size: 2rem; margin-bottom: 20px; }
+        p { font-size: 1.1rem; margin-bottom: 20px; }
+        
+        .mockup-placeholder {
+            background-color: rgba(42, 107, 90, 0.1);
+            border: 2px dashed var(--dark-green);
+            border-radius: 12px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0 15px 0;
+            color: var(--dark-green);
+            font-weight: 600;
+        }
+        .caption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .pricing-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        @media (min-width: 600px) {
+            .pricing-grid {
+                flex-direction: row;
+            }
+        }
+        .tier {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            flex: 1;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        .tier.premium {
+            background: var(--dark-green);
+            color: var(--beige);
+        }
+        .tier.premium h3 {
+            color: var(--beige);
+        }
+        .price {
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            margin: 10px 0 20px 0;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+        li {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--dark-green);
+            font-weight: bold;
+        }
+        .tier.premium li::before {
+            color: var(--beige);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--dark-green);
+            color: var(--beige);
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: opacity 0.2s;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--dark-green);
+            color: var(--dark-green);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Cover -->
+    <section class="slide">
+        <div class="content-block">
+            <h1>Ваш личный консьерж в мире путешествий</h1>
+            <p>Премиальный доступ к лучшим локациям, маршрутам и впечатлениям.</p>
+        </div>
+    </section>
+
+    <!-- Slide 2: Problem -->
+    <section class="slide">
+        <div class="content-block">
+            <h2>Часы планирования и упущенные жемчужины</h2>
+            <p>Вы тратите дни на поиск идеальных мест, чтение отзывов и составление маршрутов. Но по приезде понимаете, что самые аутентичные локации остались скрыты от туристических радаров.</p>
+        </div>
+    </section>
+
+    <!-- Slide 3: Solution -->
+    <section class="slide">
+        <div class="content-block">
+            <h2>Мы сделали всю работу за вас</h2>
+            <p>Закрытое приложение с выверенными маршрутами и точными координатами мест, о которых знают только местные эстеты. Никакой воды — только концентрат лучшего опыта.</p>
+            
+            <div class="mockup-placeholder">
+                [ App Interface Mockup: Главный экран ]
+            </div>
+            <div class="caption">Интерфейс, созданный для вашего комфорта.</div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Features -->
+    <section class="slide">
+        <div class="content-block">
+            <h2>Точность в каждой детали</h2>
+            
+            <div class="mockup-placeholder">
+                [ App Interface Mockup: Интерактивная карта ]
+            </div>
+            <div class="caption">Интерактивная карта с 1070 точными координатами лучших мест.</div>
+
+            <div class="mockup-placeholder">
+                [ App Interface Mockup: Умный генератор маршрутов ]
+            </div>
+            <div class="caption">Умный генератор маршрутов: 650 готовых сценариев для вашего дня.</div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Tariffs -->
+    <section class="slide">
+        <div class="content-block">
+            <h2>Выберите свой уровень доступа</h2>
+            
+            <div class="pricing-grid">
+                <!-- $18 Tier -->
+                <div class="tier">
+                    <h3>Essential</h3>
+                    <div class="price">$18</div>
+                    <p>Базовый доступ для самостоятельных путешественников.</p>
+                    <ul>
+                        <li>Доступ к интерактивной карте</li>
+                        <li>1070 точных координат</li>
+                        <li>Базовые фильтры локаций</li>
+                        <li>Ежемесячное обновление базы</li>
+                    </ul>
+                </div>
+                
+                <!-- $75 Tier -->
+                <div class="tier premium">
+                    <h3>Premium Concierge</h3>
+                    <div class="price">$75</div>
+                    <p>Полный доступ и индивидуальный подход.</p>
+                    <ul>
+                        <li>Всё из тарифа Essential</li>
+                        <li>Умный генератор маршрутов (650+ сценариев)</li>
+                        <li>Приоритетная поддержка консьержа 24/7</li>
+                        <li>Бронирование столиков в закрытых заведениях</li>
+                        <li>Эксклюзивные приглашения на мероприятия</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: CTA -->
+    <section class="slide">
+        <div class="content-block">
+            <h2>Ваше лучшее путешествие начинается здесь</h2>
+            <p>Присоединяйтесь к закрытому клубу путешественников, ценящих своё время и высокий уровень сервиса.</p>
+            <a href="#" class="btn">Получить доступ</a>
+        </div>
+    </section>
+
+</body>
+</html>
