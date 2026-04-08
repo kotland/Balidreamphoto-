@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>Нуса Дуа</em></h1>
+<p class="sub">Аймақ бойынша толық нұсқаулық · @balidreamphoto</p>
+<div class="tag">🏖 Тыныш жағажай</div>
+<div class="tag">🏨 Курорттар</div>
+<div class="tag">⛳ Гольф</div>
+<div class="tag">👨‍👩‍👧 Отбасылар</div>
+<div class="tag">🐠 Суда жүзу</div>
+<div class="tag">💆 СПА</div>
+<div class="tag">🛍 Сауда</div>
+<div class="vibe">«Бирюза лагуна, ақ құм, 5 жұлдызды курорт, бассейн жанындағы коктейль. Хаоссыз Бали - не қалайтынын білетіндер үшін».</div>
+<p>Нуса Дуа - Балидің оңтүстік-шығысындағы курорттық анклав. Жүзу үшін ең жақсы жағажайлар, 5 жұлдызды демалыс орындары, таза тротуарлар, қауіпсіздік. Мұнда балалары бар отбасылар, гольф ойыншылары және «қалыпты» жағажай демалысын қалайтындар тұрады. Кішкентай балий дәмі, көп жайлылық.</p>
+<h2>☕ Кофеханалар</h2>
+<div class="place">
+<div class="place-name">Nyala Coffee</div>
+<div class="place-desc">Жағажайдың жанында арнайы кофе. Жақсы тегіс ақ, тыныш атмосфера.</div>
+<div class="place-meta">📍 BTDC аймағы · Кофе 40-60K · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Collection Cafes</div>
+<div class="place-desc">Сауда орталығында бірнеше кофеханалар. Starbucks, жергілікті брендтер.</div>
+<div class="place-meta">📍 Bali Collection Mall · Кофе 35-70К</div>
+</div>
+<div class="place">
+<div class="place-name">Курорттардағы кофеханалар</div>
+<div class="place-desc">St. Regis, Mulia, Sofitel - тамаша кофе бар лобби барлар. Қымбат, бірақ әдемі.</div>
+<div class="place-meta">📍 Курорт аймағы · Кофе 60-120К</div>
+</div>
+<h2>💻 Коворкинг орындары</h2>
+<p>Нуса Дуада коворкинг орындары жоқ – бұл курорттық аймақ. Олар кафеден немесе курорттық вестибюльден жұмыс істейді. Ауыр жұмыс үшін: <strong>Санур</strong> (20 мин) немесе <strong>Канггу</strong> (1 сағат).</p>
+<h2>🍜 Мейрамханалар</h2>
+<h3>Бюджет (30-60 мың)</h3>
+<div class="place">
+<div class="place-name">Warung Dobiel</div>
+<div class="place-desc">Курорт аймағынан тыс жергілікті тағамдар. Наси Чампур, ми горенг.</div>
+<div class="place-meta">📍 Jl. Pratama · 25-50K</div>
+</div>
+<div class="place">
+<div class="place-name">Nasi Ayam Kedewatan</div>
+<div class="place-desc">Бали тауығы қосылған күріш. Қарапайым, дәмді, арзан.</div>
+<div class="place-meta">📍 Jl. Pratama · 20-40K</div>
+</div>
+<h3>Орташа (100-250K)</h3>
+<div class="place">
+<div class="place-name">Nusa Dua Beach Grill</div>
+<div class="place-desc">Жағажайда қуырылған теңіз өнімдері. Омар, краб, жаңа піскен балық.</div>
+<div class="place-meta">📍 BTDC Beach · 100-250K</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Cardamon</div>
+<div class="place-desc">Үнді тағамдары: карри, тандыр, наан. Балидегі ең жақсы үнділердің бірі.</div>
+<div class="place-meta">📍 Jl. Pratama · 90-200K</div>
+</div>
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Kayuputi (St. Regis)</div>
+<div class="place-desc">Су үстінде жақсы тамақтану. Азиялық фьюжн, дәм тату жиынтықтары. Апыр-ай.</div>
+<div class="place-meta">📍 Сент-Регис курорты · 1,5М бастап жиналады</div>
+</div>
+<div class="place">
+<div class="place-name">The Mulia Deli</div>
+<div class="place-desc">Мулия курортындағы наубайхана + мейрамхана. Десерттер, теңіз өнімдері, таңғы ас.</div>
+<div class="place-meta">📍 Mulia Resort · 200-500K</div>
+</div>
+<h2>🥗 Вегетариандық мекемелер</h2>
+<div class="place">
+<div class="place-name">Bali Collection - сау кафелер</div>
+<div class="place-desc">Сауда орталығында вегетариандық нұсқалары бар бірнеше кафелер.</div>
+<div class="place-meta">📍 Bali Collection · 60-130K</div>
+</div>
+<p>Вегетариандық мекемелерді таңдау шектеулі. Әртүрлілік үшін: <strong>Санур</strong> (20 мин) немесе <strong>Семиняк</strong> (45 мин).</p>
+<h2>🌱 Вегетариандық орындар</h2>
+<p>Нуса Дуада арнайы вегетариандық мейрамханалар жоқ. Курорттар әдетте сұраныс бойынша вегетариандық опцияларды ұсынады. Өсімдік негізіндегі дәмхана үшін: <strong>Санур</strong> (20 мин), <strong>Семиняк</strong> (45 мин).</p>
+<h2>🏄 Серфинг</h2>
+<div class="place">
+<div class="place-name">Шри-Ланка (риф нүктесі)</div>
+<div class="place-desc">Орташа+ деңгейге арналған рифтік үзіліс. Оң толқын, қайық керек.</div>
+<div class="place-meta">📍 Теңіздегі Нуса Дуа · Қайық 150К</div>
+</div>
+<p>Нуса Дуа жағажайлары рифпен қорғалған - толқындар дерлік жоқ. Серфинг үшін: <strong>Улувату</strong> (30 мин), <strong>Канггу</strong> (1 сағат).</p>
+<h2>🤿 Дайвинг</h2>
+<div class="place">
+<div class="place-name">Курорттардағы дайвинг орталықтары</div>
+<div class="place-desc">Grand Hyatt, Sofitel - Nusa Penida және Tulamben қалаларына бір күндік саяхаттарды ұйымдастырады.</div>
+<div class="place-meta">📍 2 миллионнан бастап бір күндік саяхат</div>
+</div>
+<h2>🫁 Фридайвинг</h2>
+<p>Нуса Дуада мектеп жоқ. Ең жақын: <strong>Санур</strong> (20 мин) – Бали фридивинг, немесе <strong>Амед</strong> (2,5 сағат).</p>
+<h2>🐠 Суда жүзу</h2>
+<div class="place">
+<div class="place-name">Nusa Dua Reef</div>
+<div class="place-desc">Жағадан немесе қайықтан сноркинг. Мөлдір су, маржан, тропиктік балықтар.</div>
+<div class="place-meta">📍 BTDC жағажайы · Жағадан тегін / 200 мыңнан бастап қайық</div>
+</div>
+<div class="place">
+<div class="place-name">Tanjung Benoa Water Sports</div>
+<div class="place-desc">Сноркинг + судағы жаттығулар: банан, парасейлинг, реактивті шаңғы.</div>
+<div class="place-meta">📍 Танджунг Беноа · 150 мыңға дейін су астында жүзу</div>
+</div>
+<h2>🏖 Толқынсыз жағажайлар</h2>
+<div class="place">
+<div class="place-name">Geger Beach</div>
+<div class="place-desc">Нуса Дуадағы ең жақсы жағажай. Көгілдір лагуна, ақ құм, толқын жоқ дерлік. Көпшілікке!</div>
+<div class="place-meta">📍 BTDC South · Кіру тегін</div>
+</div>
+<div class="place">
+<div class="place-name">BTDC Beach</div>
+<div class="place-desc">Курорт жағажайы. Таза, жақсы ұсталған, тыныш су. 100 мыңнан бастап шезлонг.</div>
+</div>
+<div class="place">
+<div class="place-name">Mengiat Beach</div>
+<div class="place-desc">Кең жағажай, таяз су - балаларға өте ыңғайлы. Рифте сноркинг.</div>
+</div>
+<p>Нуса Дуа - Балидегі босаңсуға арналған ең жақсы орын!</p>
+<h2>🧘 Йога және сауықтыру</h2>
+<div class="place">
+<div class="place-name">Курорттардағы СПА</div>
+<div class="place-desc">St. Regis Remède Spa, Mulia Spa, Sofitel So SPA - әлемдік деңгейдегі. Массаж 500 мың.</div>
+</div>
+<div class="place">
+<div class="place-name">Devdan Show</div>
+<div class="place-desc">Нуса Дуа театрындағы бали би шоуы. Түрлі-түсті, бүкіл отбасы үшін.</div>
+<div class="place-meta">📍 BTDC · Билеттер 400 мыңнан</div>
+</div>
+<h2>🏋️ Спорт залдары</h2>
+<div class="place">
+<div class="place-name">Курорт залдары</div>
+<div class="place-desc">Grand Hyatt, Westin, Hilton барлығында қонақтарға арналған спорт залдары бар. Тұрғындар үшін тегін.</div>
+</div>
+<p>Жеке бөлмелер аз. Қоғамдық зал үшін: <strong>Санур</strong> (20 мин).</p>
+<h2>🌅 Күннің батуы / Күннің шығуы</h2>
+<table>
+<tr><th>Орын</th><th>Түр</th><th>Vibe</th></tr>
+<tr><td><strong>Geger Beach</strong></td><td>🌄 Күннің шығуы</td><td>Таңертеңгі жарықта көгілдір су</td></tr>
+<tr><td><strong>Water Blow</strong></td><td>🌅 Кез келген уақытта</td><td>Толқындар жартастарға соқтығысады - драмалық!</td></tr>
+</table>
+<p>Нуса Дуа - шығыс жағалауы, осында <strong>күннің шығуы</strong>. Күн бату үшін: Улувату (30 мин), Джимбаран (20 мин).</p>
+<h2>🌋 Жақын жерде жанартаулар мен таулар</h2>
+<p>Вулкандардан алыс. <strong>Гунунг Батур</strong> — 2,5 сағат. <strong>Гунунг Агунг</strong> - 3 сағат.</p>
+<h2>🌾 Жақын жерде күріш террассалары</h2>
+<p>Нуса Дуа жоқ. Ең жақын: <strong>Tegallalang</strong> (2 сағат, Убуд), <strong>Jatiluwih</strong> (2,5 сағат).</p>
+<h2>⛳ Гольф</h2>
+<div class="place">
+<div class="place-name">Bali National Golf Club</div>
+<div class="place-desc">Балидегі ең жақсы гольф алаңы! 18 шұңқыр, мұхит көрінісі, халықаралық турнирлер.</div>
+<div class="place-meta">📍 BTDC ауданы · 1,8 м/раундтан</div>
+</div>
+<h2>🍓 Фермалар</h2>
+<p>Нуса Дуада фермалар жоқ. Ең жақын: <strong>Bali Pulina</strong> (Убуд, 2 сағат), <strong>Strawberry Farm</strong> (Бедугүл, 2,5 сағат).</p>
+<h2>🍉 Жеміс базарлары</h2>
+<div class="place">
+<div class="place-name">Pasar Bualu</div>
+<div class="place-desc">BTDC кіре берісіндегі жергілікті базар. Жемістер, көкөністер, жеңіл тағамдар жергілікті бағамен.</div>
+<div class="place-meta">📍 Буалу · Таң</div>
+</div>
+<h2>🛍 Сауда</h2>
+<div class="place">
+<div class="place-name">Bali Collection</div>
+<div class="place-desc">BTDC сауда орталығы: бутиктер, мейрамханалар, кәдесыйлар. Конди!</div>
+<div class="place-meta">📍 BTDC Area</div>
+</div>
+<h2>🛒 Азық-түлік дүкендері</h2>
+<div class="place">
+<div class="place-name">Hardy's Nusa Dua</div>
+<div class="place-desc">Негізгі ассортименті бар супермаркет. Аздап импортталған.</div>
+<div class="place-meta">📍 Bualu</div>
+</div>
+<p>Кең импорт үшін: <strong>Pepito</strong> (Семиняк, 45 мин).</p>
+<h2>👕 Кірлер</h2>
+<div class="place">
+<div class="place-name">Курорттардағы кір жуу</div>
+<div class="place-desc">Барлық курорттар кір жуу қызметін ұсынады. Әдеттегіден қымбатырақ (20K/данадан).</div>
+</div>
+<div class="place">
+<div class="place-name">Local Laundry Bualu</div>
+<div class="place-desc">BTDC тыс кір жуатын орындар. Курорттарға қарағанда арзанырақ.</div>
+<div class="place-meta">📍 Буалу · 8К/кг бастап</div>
+</div>
+<h2>🎉 Клубтар мен түнгі өмір</h2>
+<p>Нуса Дуада түнгі өмір жоқтың қасы. Курорт барлары сағат 23:00-де жабылады. Тараптар үшін: <strong>Семиняк</strong> (45 мин), <strong>Кута</strong> (30 мин).</p>
+<h2>🏥 Емханалар мен дәріханалар</h2>
+<div class="place">
+<div class="place-name">BIMC Hospital Nusa Dua</div>
+<div class="place-desc">Халықаралық аурухана. Оңтүстік Балидегі ең жақсы. Ағылшын тілінде сөйлейтін дәрігерлер, ER 24/7.</div>
+<div class="place-meta">📍 BTDC · Қабылдау 500 мың</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma / Guardian</div>
+<div class="place-desc">Бали коллекциясы мен Буалудағы дәріханалар.</div>
+</div>
+<h2>🛕 Храмдар</h2>
+<div class="place">
+<div class="place-name">Pura Geger</div>
+<div class="place-desc">Гегер жағажайының үстіндегі жартастағы храм. Әдемі, тыныш, туристер аз.</div>
+<div class="place-meta">📍 Гегер жағажайы · Тегін</div>
+</div>
+<div class="place">
+<div class="place-name">Water Blow</div>
+<div class="place-desc">Ғибадатхана емес, бірақ көру керек - толқындар 10 м биіктікте фонтан сияқты жартасқа соғылады.</div>
+<div class="place-meta">📍 BTDC · Тегін</div>
+</div>
+<h2>🇷🇺 Орыс қауымы</h2>
+<p>Нуса Дуада орыстар өте аз - ұзақ тұруға емес, демалушыларға арналған аймақ. Орыс тілді гидтер қонақүйлер арқылы қол жетімді. Қауымдастық жоқ.</p>
+<h2>🎒 Балабақшалар мен мектептер</h2>
+<div class="place">
+<div class="place-name">Bali International School</div>
+<div class="place-desc">IB бағдарламасы. Балидегі ең жақсы халықаралық мектептердің бірі.</div>
+<div class="place-meta">📍 Джимбаран · Нуса Дуадан 15 минут · жылына $10 000 бастап</div>
+</div>
+<h2>📸 Фото орындар</h2>
+<p>• Гегер жағажайы – көгілдір су<br/>
+• Water Blow - драмалық толқындар<br/>
+• Пура Гегер – жағажай үстіндегі храм<br/>
+• BTDC - маникюрленген курорттық бақтар<br/>
+• Tanjung Benoa – балық аулау қайықтары</p>
+<h2>🏠 Тұрғын үй</h2>
+<table>
+<tr><th>Түр</th><th>Баға/ай</th><th>Қайда қарау керек</th></tr>
+<tr><td>Қонақ үй (Буалу)</td><td>$250-400</td><td>Брондау, сайтта</td></tr>
+<tr><td>Пәтерлер</td><td>$500-900</td><td>Airbnb</td></tr>
+<tr><td>Ас үйі бар демалыс орны</td><td>$1000-2000</td><td>Booking, resort sites</td></tr>
+<tr><td>Luxury suite</td><td>$3000-10000</td><td>St. Regis, Mulia</td></tr>
+</table>
+<p>Ұзақ тұру үшін: аудан <strong>Bualu</strong> BTDC сыртында - арзанырақ, варунгтар мен дүкендер бар.</p>
+<h2>🛵 Көлік</h2>
+<p>• <strong>Курорттардағы тасымалдау:</strong> Бали коллекциясына тегін аударымдар<br/>
+• <strong>Скутер:</strong> 700K-900K/ай<br/>
+• <strong>Grab/Gojek:</strong> 15 мыңнан<br/>
+• <strong>Әуежайға:</strong> 15-25 мин, 60-100К<br/>
+• <strong>Улуватуға:</strong> 20-30 мин<br/>
+• <strong>Семинякқа:</strong> 40-50 мин</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 Аймақтың құпиясы</div>
+<div class="secret-text">Буалу ауылы - BTDC кіре берісіндегі ауыл. Мұнда жергілікті тұрғындар тұрады, баға курорттық бағадан 3-5 есе төмен. 25К Warungs, базардағы жемістер, 7К/кг үшін кір. 5 минут жаяу - және сіз қайтадан 5 жұлдызды жағажайдасыз.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ Кемшіліктері</div>
+<div class="warn-text">Стерильді - балий дәмі жоқ. Қымбат (курорттық бағалар). Түнгі өмір жоқ. 3 күннен кейін жалықтым. Мәдени орындардан алыс. BTDC ішінде бірнеше дүкендер мен дүкендер бар.</div>
+</div>
+<div class="divider"></div>
+<h2>💰 Бір айға арналған бюджет</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Ең аз</div>
+<div class="budget-price">$600</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Ыңғайлы</div>
+<div class="budget-price">$1500</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$5000</div>
+<div class="budget-unit">айына</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · Бали аудандарына арналған гид · 2026 ж</div>
+</body>
+</html>

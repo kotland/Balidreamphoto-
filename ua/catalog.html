@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Каталог мест</title>
+<link href="style.css?v=1774488851" rel="stylesheet"/>
+<script>
+window.onerror = function(msg, url, line) {
+   var errDiv = document.createElement('div');
+   errDiv.style.background = 'red';
+   errDiv.style.color = 'white';
+   errDiv.style.padding = '20px';
+   errDiv.style.position = 'fixed';
+   errDiv.style.top = '0';
+   errDiv.style.left = '0';
+   errDiv.style.width = '100%';
+   errDiv.style.zIndex = '9999';
+   errDiv.innerHTML = "CRITICAL ERROR:<br>" + msg + "<br>Line: " + line;
+   document.body.appendChild(errDiv);
+   return false;
+};
+
+// OVERLAY JS
+window.openFavoritesOverlay = function() {
+    document.getElementById('favoritesOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; 
+    renderFavoritesOverlay();
+}
+
+window.closeFavoritesOverlay = function() {
+    document.getElementById('favoritesOverlay').style.display = 'none';
+    document.body.style.overflow = ''; 
+    window.applyFilters();
+}
+
+window.renderFavoritesOverlay = function() {
+    let favs = JSON.parse(localStorage.getItem('bali_favorites') || '[]');
+    let content = document.getElementById('favoritesContent');
+    if (favs.length === 0) {
+        content.innerHTML = '<div style="text-align:center; padding:60px 20px; color:rgba(42,42,40,0.5);"><div style="font-size:40px; margin-bottom:12px; opacity:0.5;">🤍</div><div style="font-size:16px; font-weight:600; color:#2a2a28; margin-bottom:8px;">Пока ничего нет</div><div style="font-size:13px;">Нажимайте на сердечки в каталоге, чтобы собрать свой личный вишлист мест.</div></div>';
+        return;
+    }
+    let htmlStr = '';
+    favs.forEach(name => {
+        let p = PLACES.find(x => x.name === name);
+        if (p) {
+            let district = p.district ? escapeHtml(p.district) : '';
+            let cat = p.category ? escapeHtml(p.category) : '';
+            htmlStr += `
+            <div class="fav-card">
+                <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(p.name)}">❤️</div>
+                <div class="fav-card-title">${escapeHtml(p.name)}</div>
+                <div class="fav-card-meta">${district} · ${cat}</div>
+                                <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
+                ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Открыть на карте</a></div>` : ''}
+            </div>`;
+        } else {
+            // Unmatched place, maybe database was updated
+            htmlStr += `
+            <div class="fav-card" style="opacity: 0.5;">
+                <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(name)}">❤️</div>
+                <div class="fav-card-title">${escapeHtml(name)}</div>
+                <div class="fav-card-meta">Локация устарела</div>
+            </div>`;
+        }
+    });
+    content.innerHTML = htmlStr;
+}
+
+window.removeFavoriteOverlay = function(btn) {
+    let name = decodeURIComponent(btn.getAttribute('data-name'));
+    
+    let favs = JSON.parse(localStorage.getItem('bali_favorites') || '[]');
+    favs = favs.filter(f => f !== name); 
+    localStorage.setItem('bali_favorites', JSON.stringify(favs));
+    syncFavoritesToSupabase(favs);
+    let countEl = document.getElementById('floatingFavCount');
+    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
+    
+    // Animate removing the card
+    let card = btn.parentElement;
+    card.style.opacity = '0';
+    card.style.transform = 'scale(0.95)';
+    card.style.transition = 'all 0.2s';
+    
+    setTimeout(() => {
+        renderFavoritesOverlay();
+    }, 200);
+}
+
+</script>
+</head>
+<body class="catalog-page">
+<div id="catalogLoader" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(248,246,242,0.95);backdrop-filter:blur(5px);z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity 0.5s;">
+<img alt="Loading" src="img/star3.png" style="width:140px;height:140px;margin-bottom:20px;animation:pulse 2s infinite ease-in-out;"/>
+<h1 style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:8px;color:#2a6b5a;text-align:center;">Завантажуємо каталог місць...</h1>
+<p style="color:rgba(42,42,40,0.5);text-align:center;">Синхронізація з базою</p>
+</div>
+<button class="btn-green" onclick="window.location.href='index.html?v=108'">← Назад</button>
+<h1 style="font-family:'Playfair Display',serif;text-align:center;margin:20px 0;font-size:24px">Каталог <em style="color:#2a6b5a">місць</em></h1>
+<p style="text-align:center;color:rgba(42,42,40,0.5);margin-bottom:24px"><span id="countBadge">1005</span> місць</p>
+<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">РАЙОН</div>
+<div class="wrap-chips" id="districtChips">
+<div class="chip" onclick="updateFilter('district', 'Убуд', this)">🌿 Убуд</div>
+<div class="chip" onclick="updateFilter('district', 'Чангу', this)">🏄 Чангу</div>
+<div class="chip" onclick="updateFilter('district', 'Семиньяк', this)">🍸 Семіньяк</div>
+<div class="chip" onclick="updateFilter('district', 'Улувату', this)">🌊 Улувату</div>
+<div class="chip" onclick="updateFilter('district', 'Букит и Нуса-Дуа', this)">🏝️ Букіт і Нуса-Дуа</div>
+<div class="chip" onclick="updateFilter('district', 'Санур', this)">🌅 Санур</div>
+<div class="chip" onclick="updateFilter('district', 'Амед и Восток', this)">🌋 Амед та Схід</div>
+<div class="chip" onclick="updateFilter('district', 'Кинтамани', this)">🏔 Кінтамані</div>
+<div class="chip" onclick="updateFilter('district', 'Бедугул и Мундук', this)">🍓 Бедугул та Мундук</div>
+<div class="chip" onclick="updateFilter('district', 'Ловина', this)">🐬 Ловина</div>
+<div class="chip" onclick="updateFilter('district', 'Нуса Пенида', this)">🐢 Нуса Пеніда</div>
+<div class="chip" onclick="updateFilter('district', 'Гили', this)">🚲 Острови Гілі</div>
+<div class="chip" onclick="updateFilter('district', 'Ломбок и Сумбава', this)">🐚 Ломбок та Сумбава</div>
+<div class="chip" onclick="updateFilter('district', 'Ява', this)">🌋 Ява</div>
+</div>
+<div id="catalogCategoryPicker" style="margin-top:16px;display:none">
+<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">КАТЕГОРІЯ</div>
+<div class="wrap-chips">
+<div class="chip" onclick="updateFilter('category', 'еда', this)">🍜 Поїсти</div>
+<div class="chip" onclick="updateFilter('category', 'кофейни', this)">☕ Кав'ярні</div>
+<div class="chip" onclick="updateFilter('category', 'пляж', this)">🏖 Пляжі</div>
+<div class="chip" onclick="updateFilter('category', 'beach_club', this)">🏖 Beach Clubs</div>
+<div class="chip" onclick="updateFilter('category', 'закат', this)">🌅 Захід сонця</div>
+<div class="chip" onclick="updateFilter('category', 'йога', this)">🧘 Йога</div>
+<div class="chip" onclick="updateFilter('category', 'спа', this)">💆 Спа та масаж</div>
+<div class="chip" onclick="updateFilter('category', 'велнес', this)">🔮 Велнес</div>
+<div class="chip" onclick="updateFilter('category', 'салон', this)">💅 Салони краси</div>
+<div class="chip" onclick="updateFilter('category', 'спорт', this)">🏋️ Спортзали</div>
+<div class="chip" onclick="updateFilter('category', 'развлечения', this)">🎉 Розваги</div>
+<div class="chip" onclick="updateFilter('category', 'культура', this)">🛕 Храми</div>
+<div class="chip" onclick="updateFilter('category', 'шоппинг', this)">🛍 Шопінг</div>
+<div class="chip" onclick="updateFilter('category', 'продукты', this)">🛒 Продуктові</div>
+<div class="chip" onclick="updateFilter('category', 'жильё', this)">🏠 Житло</div>
+<div class="chip" onclick="updateFilter('category', 'фото', this)">📸 Фото-локації</div>
+<div class="chip" onclick="updateFilter('category', 'водопад', this)">💧 Водоспади</div>
+<div class="chip" onclick="updateFilter('category', 'глэмпинг', this)">🏕 Глемпінги</div>
+<div class="chip" onclick="updateFilter('category', 'галерея', this)">🖼 Галереї</div>
+</div>
+</div>
+<div id="catalogBudgetPicker" style="margin-top:16px;display:none">
+<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">БЮДЖЕТ</div>
+<div class="wrap-chips">
+<div class="chip" onclick="updateFilter('budget', '', this)">Усі</div>
+<div class="chip" onclick="updateFilter('budget', '💚', this)">💚 до $10 (900₽)</div>
+<div class="chip" onclick="updateFilter('budget', '💛', this)">💛 $10-30 (1-3k ₽)</div>
+<div class="chip" onclick="updateFilter('budget', '🧡', this)">🧡 від $50 (від 5000₽)</div>
+<div class="chip" onclick="updateFilter('budget', '❤️', this)">❤️ від $50 (від 5000₽)</div>
+</div>
+</div>
+<div id="catalogCuisineFilter" style="margin-top:16px;display:none">
+<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">КУХНЯ</div>
+<div class="wrap-chips">
+<div class="chip" onclick="updateFilter('cuisine', '', this)">Усі</div>
+<div class="chip" onclick="updateFilter('cuisine', 'вегетарианское', this)">🥬 Вегетаріанське</div>
+<div class="chip" onclick="updateFilter('cuisine', 'местная', this)">🍚 Місцева</div>
+<div class="chip" onclick="updateFilter('cuisine', 'итальянская', this)">🍕 Італійська</div>
+<div class="chip" onclick="updateFilter('cuisine', 'японская', this)">🍣 Японська</div>
+<div class="chip" onclick="updateFilter('cuisine', 'мексиканская', this)">🌮 Мексиканська</div>
+<div class="chip" onclick="updateFilter('cuisine', 'тайская', this)">🍛 Тайська</div>
+<div class="chip" onclick="updateFilter('cuisine', 'грузинская', this)">🥟 Грузинська</div>
+<div class="chip" onclick="updateFilter('cuisine', 'славянская', this)">🥞 Російська / СНД</div>
+<div class="chip" onclick="updateFilter('cuisine', 'французская', this)">🥐 Французька</div>
+<div class="chip" onclick="updateFilter('cuisine', 'морепродукты', this)">🦞 Морепродукти</div>
+<div class="chip" onclick="updateFilter('cuisine', 'завтраки', this)">🍳 Сніданки</div>
+<div class="chip" onclick="updateFilter('cuisine', 'кофе', this)">☕ Specialty Кава</div>
+<div class="chip" onclick="updateFilter('cuisine', 'десерты', this)">🍰 Десерти</div>
+<div class="chip" onclick="updateFilter('cuisine', 'пп', this)">🥑 ПП / Organic</div>
+<div class="chip" onclick="updateFilter('cuisine', 'восточная', this)">🥙 Близькосхідна</div>
+</div>
+</div>
+<div id="catalogShopFilter" style="margin-top:16px;display:none">
+<div style="color:#2a6b5a;font-size:12px;font-weight:600;letter-spacing:2px;margin-bottom:8px;margin-left:16px;">ЩО ШУКАЄМО?</div>
+<div class="wrap-chips">
+<div class="chip" onclick="updateFilter('shopType', '', this)">Усі</div>
+<div class="chip" onclick="updateFilter('shopType', 'женское', this)">Жіноче</div>
+<div class="chip" onclick="updateFilter('shopType', 'мужское', this)">Чоловіче</div>
+<div class="chip" onclick="updateFilter('shopType', 'купальники', this)">Купальники</div>
+<div class="chip" onclick="updateFilter('shopType', 'спорт', this)">Спорт</div>
+<div class="chip" onclick="updateFilter('shopType', 'ювелирка', this)">Ювелірка</div>
+<div class="chip" onclick="updateFilter('shopType', 'для дома', this)">Для дому</div>
+<div class="chip" onclick="updateFilter('shopType', 'сувениры', this)">Сувеніри</div>
+<div class="chip" onclick="updateFilter('shopType', 'секонд', this)">Секонд-хенд</div>
+<div class="chip" onclick="updateFilter('shopType', 'унисекс', this)">Унісекс</div>
+</div>
+</div>
+<div id="catalogResults" style="margin-top:20px; padding-bottom: 60px;"></div>
+<div id="scrollTrigger" style="height: 50px;"></div>
+<script>
+
+const SUPABASE_URL = "https://hukabkvchfaueonkiocw.supabase.co/rest/v1";
+const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh1a2Fia3ZjaGZhdWVvbmtpb2N3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1OTQ0MDksImV4cCI6MjA5MDE3MDQwOX0.PR14C60SvJ_7xvjgG5Uyq-B2aarlmIrzRXV9RzYjF8c";
+
+let PLACES = [];
+
+async function fetchAllPlaces() {
+    let allPlaces = [];
+    let offset = 0;
+    const limit = 1000;
+    
+    // Show loader
+    const loader = document.getElementById('catalogLoader');
+    if (loader) loader.style.display = 'flex';
+    
+    try {
+        while (true) {
+            const res = await fetch(`${SUPABASE_URL}/places?select=*&offset=${offset}&limit=${limit}`, {
+                headers: {
+                    "apikey": SUPABASE_ANON,
+                    "Authorization": `Bearer ${SUPABASE_ANON}`
+                }
+            });
+            const data = await res.json();
+            if (!data || data.length === 0) break;
+            allPlaces = allPlaces.concat(data);
+            if (data.length < limit) break;
+            offset += limit;
+        }
+        
+        // Sort top choices first if needed
+        allPlaces.sort((a,b) => (b.priority || 0) - (a.priority || 0));
+        PLACES = allPlaces;
+        await loadFavoritesFromSupabase();
+    } catch(e) {
+        console.error("Failed to load catalog:", e);
+    }
+    
+    
+    if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 500);
+    }
+
+    window.applyFilters();
+}
+
+const ITEMS_PER_PAGE = 20;
+let currentIndex = 0;
+
+function escapeHtml(text) {
+  if(!text) return '';
+  return text.toString()
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function matchDistrict(pDistrict, filterD) {
+  if (!filterD) return true;
+  var subs = DISTRICT_SUBS[filterD];
+  if (subs) return subs.includes(pDistrict);
+  return pDistrict === filterD;
+}
+
+function updateFilter(key, value, el) {
+  if (el) {
+    el.parentNode.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+    if (value !== '') el.classList.add('selected');
+  }
+
+  state[key] = value;
+
+  if (key === 'district') {
+    state.category = ''; state.budget = ''; state.cuisine = ''; state.shopType = '';
+    document.querySelectorAll('#catalogCategoryPicker .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
+  }
+  
+  if (key === 'category') {
+    state.budget = ''; state.cuisine = ''; state.shopType = '';
+    document.querySelectorAll('#catalogBudgetPicker .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogCuisineFilter .chip').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('#catalogShopFilter .chip').forEach(c => c.classList.remove('selected'));
+  }
+
+  document.getElementById('catalogCategoryPicker').style.display = state.district ? 'block' : 'none';
+  document.getElementById('catalogBudgetPicker').style.display = ['еда', 'кофейни', 'beach_club', 'спа', 'жильё'].includes(state.category) ? 'block' : 'none';
+  document.getElementById('catalogCuisineFilter').style.display = ['еда', 'кофейни'].includes(state.category) ? 'block' : 'none';
+  document.getElementById('catalogShopFilter').style.display = state.category === 'шоппинг' ? 'block' : 'none';
+
+  
+  if (key === 'category') {
+    var sf = document.getElementById('sportFilters');
+    if (sf) sf.style.display = (value === 'спорт') ? 'block' : 'none';
+  }
+
+  window.applyFilters();
+}
+
+
+function toggleShowFavorites() {
+    state.showFavorites = !state.showFavorites;
+    let btn = document.getElementById('btnFav');
+    if (state.showFavorites) {
+        btn.style.background = 'rgba(255, 182, 193, 0.2)';
+        btn.style.border = '1px solid #e83e8c';
+    } else {
+        btn.style.background = 'white';
+        btn.style.border = '1px solid rgba(42,107,90,0.2)';
+    }
+    window.applyFilters();
+}
+
+window.applyFilters = function() {
+  var favs = JSON.parse(localStorage.getItem('bali_favorites') || '[]');
+  
+  filteredPlaces = PLACES.filter(p => {
+    if (state.showFavorites && !favs.includes(p.name)) return false;
+    
+    if (state.district && !matchDistrict(p.district, state.district)) return false;
+
+    if (state.category && p.category !== state.category) return false;
+    if (state.budget && p.budget !== state.budget) return false;
+    if (state.shopType && (!p.tags || !p.tags.includes(state.shopType))) return false;
+
+    if (state.cuisine) {
+      const cuisineStr = ((p.cuisine || '') + ' ' + (p.desc || '')).toLowerCase();
+      if (state.cuisine === 'пп' && !cuisineStr.includes('пп') && !cuisineStr.includes('healthy') && !cuisineStr.includes('organic') && !cuisineStr.includes('зож')) return false;
+      if (state.cuisine === 'славянская' && !cuisineStr.includes('русская') && !cuisineStr.includes('славянская') && !cuisineStr.includes('белорусская')) return false;
+      if (state.cuisine !== 'пп' && state.cuisine !== 'славянская' && !cuisineStr.includes(state.cuisine)) return false;
+    }
+    return true;
+  });
+
+  currentIndex = 0;
+  document.getElementById('catalogResults').innerHTML = '';
+  document.getElementById('countBadge').innerText = filteredPlaces.length;
+  
+  loadMoreCards();
+}
+
+
+
+// --- Favorites (Wishlist) Logic with Supabase Sync ---
+function getFavorites() {
+    let favs = localStorage.getItem('bali_favorites');
+    favs = favs ? JSON.parse(favs) : [];
+    let countEl = document.getElementById('floatingFavCount');
+    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
+    return favs;
+}
+
+async function syncFavoritesToSupabase(favs) {
+    if (window.tgUser && window.tgUser.username) {
+        let username = window.tgUser.username.toLowerCase();
+        try {
+            await fetch(`${SUPABASE_URL}/users?username=eq.${username}`, {
+                method: 'PATCH',
+                headers: {
+                    "apikey": SUPABASE_ANON,
+                    "Authorization": `Bearer ${SUPABASE_ANON}`,
+                    "Content-Type": "application/json",
+                    "Prefer": "return=minimal"
+                },
+                body: JSON.stringify({ favorites: favs })
+            });
+        } catch(e) { console.error("Sync favs error:", e); }
+    }
+}
+
+async function loadFavoritesFromSupabase() {
+    if (window.tgUser && window.tgUser.username) {
+        let username = window.tgUser.username.toLowerCase();
+        try {
+            let res = await fetch(`${SUPABASE_URL}/users?username=eq.${username}&select=favorites`, {
+                headers: { "apikey": SUPABASE_ANON, "Authorization": `Bearer ${SUPABASE_ANON}` }
+            });
+            let data = await res.json();
+            if (data && data.length > 0 && Array.isArray(data[0].favorites)) {
+                localStorage.setItem('bali_favorites', JSON.stringify(data[0].favorites));
+                // Force UI update if already rendered
+                let countEl = document.getElementById('floatingFavCount');
+                if (countEl) countEl.innerText = '❤️ ' + data[0].favorites.length + ' сохранённых';
+            }
+        } catch(e) { console.error("Load favs error:", e); }
+    }
+}
+
+
+window.toggleFavorite = function(name, event) {
+    if (event) event.stopPropagation();
+    let favs = getFavorites();
+    let idx = favs.indexOf(name);
+    if (idx > -1) {
+        favs.splice(idx, 1);
+    } else {
+        favs.push(name);
+    }
+    localStorage.setItem('bali_favorites', JSON.stringify(favs));
+    
+    let heartContainer = event.currentTarget;
+    if (idx > -1) {
+        heartContainer.innerHTML = '<div style="font-size:22px;">🤍</div><div style="font-size:9px; font-weight:600; color:rgba(42,42,40,0.4); margin-top:2px;">сохранить</div>';
+    } else {
+        heartContainer.innerHTML = '<div style="font-size:22px;">❤️</div><div style="font-size:9px; font-weight:600; color:#e83e8c; margin-top:2px;">сохранено</div>';
+    }
+    
+    // If we are currently in Favorites view, we should re-filter
+    if (state.showFavorites) {
+        window.applyFilters();
+    }
+    
+    // Update floating button count immediately
+    let countEl = document.getElementById('floatingFavCount');
+    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
+    
+    // Also deduplicate just in case
+    let uniqueFavs = [...new Set(favs)];
+    localStorage.setItem('bali_favorites', JSON.stringify(uniqueFavs));
+    syncFavoritesToSupabase(uniqueFavs);
+};
+
+
+window.toggleShowFavorites = function() {
+    state.showFavorites = !state.showFavorites;
+    
+    let btn = document.getElementById('btnFav');
+    let fBtn = document.getElementById('floatingFavBtn');
+    let pageTitle = document.getElementById('pageTitle');
+    
+    if (state.showFavorites) {
+        state.district = null;
+        state.category = null;
+        state.budget = null;
+        state.shopType = null;
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+        
+        if(btn) { btn.style.background = 'rgba(255, 182, 193, 0.2)'; btn.style.border = '1px solid #e83e8c'; }
+        if(fBtn) { fBtn.style.background = '#e83e8c'; fBtn.style.color = '#fff'; }
+        if(pageTitle) { pageTitle.innerText = 'Мои сохранёнки'; pageTitle.style.color = '#e83e8c'; }
+    } else {
+        if(btn) { btn.style.background = 'white'; btn.style.border = '1px solid rgba(42,107,90,0.2)'; }
+        if(fBtn) { fBtn.style.background = '#fff'; fBtn.style.color = '#e83e8c'; }
+        if(pageTitle) { pageTitle.innerText = 'Каталог'; pageTitle.style.color = '#2a2a28'; }
+    }
+    
+    window.applyFilters();
+    
+    // Force aggressive scrolling to top for iOS WebKit
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+};
+
+
+
+// --- End Favorites Logic ---
+
+function loadMoreCards() {
+
+  const container = document.getElementById('catalogResults');
+  const fragment = document.createDocumentFragment();
+  const end = Math.min(currentIndex + ITEMS_PER_PAGE, filteredPlaces.length);
+
+  for (let i = currentIndex; i < end; i++) {
+    const p = filteredPlaces[i];
+    const el = document.createElement('div');
+    el.className = 'place';
+    
+    let html = '';
+    if (p.isTopChoice) {
+      html += '<div style="display:inline-block;background:#fff9e6;color:#b38a00;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;margin-bottom:8px;border:1px solid rgba(179,138,0,0.2)">⭐️ Выбор большинства</div>';
+    }
+    
+    
+    let favs = getFavorites();
+    let isFav = favs.includes(p.name);
+    let heartIcon = isFav ? '❤️' : '🤍';
+    
+    html += '<div style="display:flex; justify-content:space-between; align-items:flex-start;">';
+    html += '  <div class="place-name" style="margin-bottom:0;">' + escapeHtml(p.name) + '</div>';
+    html += '  <div onclick=\"toggleFavorite(' + JSON.stringify(p.name).replace(/"/g, "&quot;") + ', event)\" style="font-size:24px; padding:0 0 0 10px; cursor:pointer;">' + heartIcon + '</div>';
+    html += '</div>';
+
+    
+    let meta = [];
+    if (p.district) meta.push(escapeHtml(p.district));
+    if (p.category) meta.push(escapeHtml(p.category));
+    if (p.budget) meta.push(escapeHtml(p.budget));
+    
+    html += '<div class="place-meta">' + meta.join(' · ') + '</div>';
+    html += '<div class="place-desc">' + escapeHtml(p.desc) + (p.price ? ' · ' + escapeHtml(p.price) : '') + '</div>';
+    
+    if (p.signatureDish) {
+      html += '<div style="margin-top:12px;padding-top:12px;border-top:1px dashed rgba(0,0,0,0.1);font-size:13px;color:rgba(42,42,40,0.8)"><span style="font-weight:600">🍽 Стоит попробовать:</span> ' + escapeHtml(p.signatureDish) + '</div>';
+    }
+    
+    if (p.maps) {
+      html += '<div class="place-meta" style="margin-top:12px">📍 <a href="' + escapeHtml(p.maps) + '" target="_blank" style="color:#2a6b5a;text-decoration:none;font-weight:500;">Открыть на карте</a></div>';
+    }
+    
+    el.innerHTML = html;
+    fragment.appendChild(el);
+  }
+
+  container.appendChild(fragment);
+  currentIndex = end;
+
+  const trigger = document.getElementById('scrollTrigger');
+  if (trigger) {
+    trigger.style.display = (currentIndex < filteredPlaces.length) ? 'block' : 'none';
+  }
+}
+
+let observer = null;
+try {
+  observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      loadMoreCards();
+    }
+  }, { rootMargin: '200px' });
+} catch(e) {
+  console.log("IntersectionObserver not supported");
+}
+
+window.onload = function() {
+  const trigger = document.getElementById('scrollTrigger');
+  if (observer && trigger) {
+    observer.observe(trigger);
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const districtParam = urlParams.get('d');
+  
+  if (districtParam) {
+    document.querySelectorAll('#districtChips .chip').forEach(function(c) {
+      if (c.innerText.includes(districtParam) || districtParam.includes(c.innerText.replace(/[^\wа-яА-ЯёЁ\s]/g,'').trim())) {
+        updateFilter('district', districtParam, c);
+        setTimeout(() => c.scrollIntoView({behavior: "smooth", inline: "center"}), 100);
+      }
+    });
+  } else {
+    fetchAllPlaces();
+  }
+};
+
+// OVERLAY JS
+window.openFavoritesOverlay = function() {
+    document.getElementById('favoritesOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; 
+    renderFavoritesOverlay();
+}
+
+window.closeFavoritesOverlay = function() {
+    document.getElementById('favoritesOverlay').style.display = 'none';
+    document.body.style.overflow = ''; 
+    window.applyFilters();
+}
+
+window.renderFavoritesOverlay = function() {
+    let favs = JSON.parse(localStorage.getItem('bali_favorites') || '[]');
+    let content = document.getElementById('favoritesContent');
+    if (favs.length === 0) {
+        content.innerHTML = '<div style="text-align:center; padding:60px 20px; color:rgba(42,42,40,0.5);"><div style="font-size:40px; margin-bottom:12px; opacity:0.5;">🤍</div><div style="font-size:16px; font-weight:600; color:#2a2a28; margin-bottom:8px;">Пока ничего нет</div><div style="font-size:13px;">Нажимайте на сердечки в каталоге, чтобы собрать свой личный вишлист мест.</div></div>';
+        return;
+    }
+    let htmlStr = '';
+    favs.forEach(name => {
+        let p = PLACES.find(x => x.name === name);
+        if (p) {
+            let district = p.district ? escapeHtml(p.district) : '';
+            let cat = p.category ? escapeHtml(p.category) : '';
+            htmlStr += `
+            <div class="fav-card">
+                <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(p.name)}">❤️</div>
+                <div class="fav-card-title">${escapeHtml(p.name)}</div>
+                <div class="fav-card-meta">${district} · ${cat}</div>
+                                <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
+                ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Открыть на карте</a></div>` : ''}
+            </div>`;
+        } else {
+            // Unmatched place, maybe database was updated
+            htmlStr += `
+            <div class="fav-card" style="opacity: 0.5;">
+                <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(name)}">❤️</div>
+                <div class="fav-card-title">${escapeHtml(name)}</div>
+                <div class="fav-card-meta">Локация устарела</div>
+            </div>`;
+        }
+    });
+    content.innerHTML = htmlStr;
+}
+
+window.removeFavoriteOverlay = function(btn) {
+    let name = decodeURIComponent(btn.getAttribute('data-name'));
+    
+    let favs = JSON.parse(localStorage.getItem('bali_favorites') || '[]');
+    favs = favs.filter(f => f !== name); 
+    localStorage.setItem('bali_favorites', JSON.stringify(favs));
+    syncFavoritesToSupabase(favs);
+    let countEl = document.getElementById('floatingFavCount');
+    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
+    
+    // Animate removing the card
+    let card = btn.parentElement;
+    card.style.opacity = '0';
+    card.style.transform = 'scale(0.95)';
+    card.style.transition = 'all 0.2s';
+    
+    setTimeout(() => {
+        renderFavoritesOverlay();
+    }, 200);
+}
+
+</script>
+<div id="floatingFavBtn" onclick="openFavoritesOverlay()" style="position:fixed; bottom:20px; right:20px; background:#fff; border:2px solid #e83e8c; color:#e83e8c; padding:12px 20px; border-radius:30px; font-weight:700; font-size:14px; box-shadow:0 8px 24px rgba(232, 62, 140, 0.25); z-index:9999; display:flex; align-items:center; gap:8px; cursor:pointer; transition: transform 0.2s;">
+<span id="floatingFavCount">❤️ 0</span>
+</div>
+<!-- FAVORITES OVERLAY -->
+<style>
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+    @keyframes slideUpFav { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    @keyframes fadeInFav { from { opacity: 0; } to { opacity: 1; } }
+    .fav-card { background:#fff; border:1px solid rgba(42,107,90,0.1); border-radius:12px; padding:16px; margin-bottom:12px; position:relative; box-shadow:0 4px 12px rgba(0,0,0,0.03); display:flex; flex-direction:column; }
+    .fav-card-title { font-size:16px; font-weight:700; color:#2a2a28; margin-bottom:4px; padding-right:30px;}
+    .fav-card-meta { font-size:11px; color:#e83e8c; font-weight:600; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;}
+    .fav-card-desc { font-size:13px; color:rgba(42,42,40,0.7); line-height:1.4; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;}
+    .fav-card-remove { position:absolute; top:16px; right:16px; font-size:22px; cursor:pointer; transition:transform 0.1s; }
+    .fav-card-remove:active { transform: scale(0.8); }
+</style>
+<div id="favoritesOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:10000; flex-direction:column; justify-content:flex-end; animation: fadeInFav 0.2s ease-out;">
+<div style="background:#fdfbfb; width:100%; height:85vh; border-radius:24px 24px 0 0; padding:24px 20px; box-sizing:border-box; display:flex; flex-direction:column; animation: slideUpFav 0.3s ease-out;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+<h2 style="margin:0; font-size:24px; color:#2a2a28; font-weight:800;">❤️ Збережені</h2>
+<div onclick="closeFavoritesOverlay()" style="background:#eee; width:32px; height:32px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:bold; cursor:pointer; color:#888;">✕</div>
+</div>
+<div id="favoritesContent" style="flex:1; overflow-y:auto; padding-bottom:60px;">
+<!-- Content injected here -->
+</div>
+</div>
+</div>
+</body>
+</html>

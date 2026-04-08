@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>Nusa Dua</em></h1>
+<p class="sub">Complete guide to the area · @balidreamphoto</p>
+<div class="tag">🏖 Calm beach</div>
+<div class="tag">🏨 Resorts</div>
+<div class="tag">⛳ Golf</div>
+<div class="tag">👨‍👩‍👧 Families</div>
+<div class="tag">🐠 Snorkeling</div>
+<div class="tag">💆 Spa</div>
+<div class="tag">🛍 Shopping</div>
+<div class="vibe">“Turquoise lagoon, white sand, 5-star resort, cocktail by the pool. Bali without chaos - for those who know what they want.”</div>
+<p>Nusa Dua is a resort enclave in southeast Bali. The best beaches for swimming, 5-star resorts, clean sidewalks, security. Families with children, golfers and those who want a “normal” beach holiday live here. A little Balinese flavor, a lot of comfort.</p>
+<h2>☕ Coffee shops</h2>
+<div class="place">
+<div class="place-name">Nyala Coffee</div>
+<div class="place-desc">Specialty coffee next to the beach. Nice flat white, quiet atmosphere.</div>
+<div class="place-meta">📍 BTDC Area · Coffee 40-60K · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Collection Cafes</div>
+<div class="place-desc">Several coffee shops in the shopping center. Starbucks, local brands.</div>
+<div class="place-meta">📍 Bali Collection Mall · Coffee 35-70K</div>
+</div>
+<div class="place">
+<div class="place-name">Coffee shops at resorts</div>
+<div class="place-desc">St. Regis, Mulia, Sofitel - lobby bars with excellent coffee. Expensive, but beautiful.</div>
+<div class="place-meta">📍 Resort area · Coffee 60-120K</div>
+</div>
+<h2>💻 Coworking spaces</h2>
+<p>There are no coworking spaces in Nusa Dua - this is a resort area. They operate from a cafe or resort lobby. For serious work: <strong>Sanur</strong> (20 min) or <strong>Canggu</strong> (1 hour).</p>
+<h2>🍜 Restaurants</h2>
+<h3>Budget (30-60K)</h3>
+<div class="place">
+<div class="place-name">Warung Dobiel</div>
+<div class="place-desc">Local cuisine outside the resort area. Nasi champur, mi goreng.</div>
+<div class="place-meta">📍 Jl. Pratama · 25-50K</div>
+</div>
+<div class="place">
+<div class="place-name">Nasi Ayam Kedewatan</div>
+<div class="place-desc">Rice with Balinese chicken. Simple, tasty, cheap.</div>
+<div class="place-meta">📍 Jl. Pratama · 20-40K</div>
+</div>
+<h3>Medium (100-250K)</h3>
+<div class="place">
+<div class="place-name">Nusa Dua Beach Grill</div>
+<div class="place-desc">Grilled seafood right on the beach. Lobster, crabs, fresh fish.</div>
+<div class="place-meta">📍 BTDC Beach · 100-250K</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Cardamon</div>
+<div class="place-desc">Indian cuisine: curry, tandoor, naan. One of the best Indian in Bali.</div>
+<div class="place-meta">📍 Jl. Pratama · 90-200K</div>
+</div>
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Kayuputi (St. Regis)</div>
+<div class="place-desc">Fine dining over water. Asian fusion, tasting sets. Wow.</div>
+<div class="place-meta">📍 St. Regis Resort · Set from 1.5M</div>
+</div>
+<div class="place">
+<div class="place-name">The Mulia Deli</div>
+<div class="place-desc">Bakery + restaurant at Mulia Resort. Desserts, seafood, brunch.</div>
+<div class="place-meta">📍 Mulia Resort · 200-500K</div>
+</div>
+<h2>🥗 Vegetarian establishments</h2>
+<div class="place">
+<div class="place-name">Bali Collection - healthy cafes</div>
+<div class="place-desc">Several cafes with vegetarian options in the shopping center.</div>
+<div class="place-meta">📍 Bali Collection · 60-130K</div>
+</div>
+<p>The choice of vegetarian establishments is limited. For variety: <strong>Sanur</strong> (20 min) or <strong>Seminyak</strong> (45 min).</p>
+<h2>🌱 Vegan places</h2>
+<p>There are no designated vegan restaurants in Nusa Dua. Resorts usually offer vegan options upon request. For plant-based cafe: <strong>Sanur</strong> (20 min), <strong>Seminyak</strong> (45 min).</p>
+<h2>🏄 Surfing</h2>
+<div class="place">
+<div class="place-name">Sri Lanka (reef spot)</div>
+<div class="place-desc">Reef break for intermediate+ level. Right wave, need a boat.</div>
+<div class="place-meta">📍 Offshore Nusa Dua · Boat 150K</div>
+</div>
+<p>The beaches of Nusa Dua are protected by a reef - there are almost no waves. For surfing: <strong>Uluwatu</strong> (30 min), <strong>Canggu</strong> (1 hour).</p>
+<h2>🤿 Diving</h2>
+<div class="place">
+<div class="place-name">Dive centers at resorts</div>
+<div class="place-desc">Grand Hyatt, Sofitel - organize day trips to Nusa Penida and Tulamben.</div>
+<div class="place-meta">📍 Day trip from 2M</div>
+</div>
+<h2>🫁 Freediving</h2>
+<p>There are no schools in Nusa Dua. Nearest: <strong>Sanur</strong> (20 min) – Bali Freediving, or <strong>Amed</strong> (2.5 hours).</p>
+<h2>🐠 Snorkeling</h2>
+<div class="place">
+<div class="place-name">Nusa Dua Reef</div>
+<div class="place-desc">Snorkeling from the shore or boat. Clear water, corals, tropical fish.</div>
+<div class="place-meta">📍 BTDC Beach · Free from shore / Boat from 200K</div>
+</div>
+<div class="place">
+<div class="place-name">Tanjung Benoa Water Sports</div>
+<div class="place-desc">Snorkeling + water activities: banana, parasailing, jet ski.</div>
+<div class="place-meta">📍 Tanjung Benoa · Snorkeling from 150K</div>
+</div>
+<h2>🏖 Beaches without waves</h2>
+<div class="place">
+<div class="place-name">Geger Beach</div>
+<div class="place-desc">The best beach in Nusa Dua. Turquoise lagoon, white sand, almost no waves. Public!</div>
+<div class="place-meta">📍 BTDC South · Free entry</div>
+</div>
+<div class="place">
+<div class="place-name">BTDC Beach</div>
+<div class="place-desc">Resort beach. Clean, well maintained, calm water. Sunbeds from 100K.</div>
+</div>
+<div class="place">
+<div class="place-name">Mengiat Beach</div>
+<div class="place-desc">Wide beach, shallow water - ideal for children. Snorkeling at the reef.</div>
+</div>
+<p>Nusa Dua is the best place in Bali for a relaxing swim!</p>
+<h2>🧘 Yoga and wellness</h2>
+<div class="place">
+<div class="place-name">Spa at resorts</div>
+<div class="place-desc">St. Regis Remède Spa, Mulia Spa, Sofitel So SPA - world class. Massage from 500K.</div>
+</div>
+<div class="place">
+<div class="place-name">Devdan Show</div>
+<div class="place-desc">Balinese dance show at Nusa Dua Theatre. Colorful, for the whole family.</div>
+<div class="place-meta">📍 BTDC · Tickets from 400K</div>
+</div>
+<h2>🏋️ Gyms</h2>
+<div class="place">
+<div class="place-name">Resort lounges</div>
+<div class="place-desc">Grand Hyatt, Westin, Hilton all have gyms for guests. Free for residents.</div>
+</div>
+<p>There are few private rooms. For a public hall: <strong>Sanur</strong> (20 min).</p>
+<h2>🌅 Sunsets / Sunrises</h2>
+<table>
+<tr><th>Place</th><th>Type</th><th>Vibe</th></tr>
+<tr><td><strong>Geger Beach</strong></td><td>🌄 Sunrise</td><td>Turquoise water in the morning light</td></tr>
+<tr><td><strong>Water Blow</strong></td><td>🌅 Any time</td><td>The waves crash on the rocks - dramatic!</td></tr>
+</table>
+<p>Nusa Dua - east coast, here <strong>sunrises</strong>. For sunsets: Uluwatu (30 min), Jimbaran (20 min).</p>
+<h2>🌋 Volcanoes and mountains nearby</h2>
+<p>Far from volcanoes. <strong>Gunung Batur</strong> — 2.5 hours. <strong>Gunung Agung</strong> - 3 hours.</p>
+<h2>🌾 Rice terraces nearby</h2>
+<p>There is no Nusa Dua. Nearest: <strong>Tegallalang</strong> (2 hours, Ubud), <strong>Jatiluwih</strong> (2.5 hours).</p>
+<h2>⛳ Golf</h2>
+<div class="place">
+<div class="place-name">Bali National Golf Club</div>
+<div class="place-desc">The best golf course in Bali! 18 holes, ocean view, international tournaments.</div>
+<div class="place-meta">📍 BTDC Area · from 1.8M/round</div>
+</div>
+<h2>🍓 Farms</h2>
+<p>There are no farms in Nusa Dua. Nearest: <strong>Bali Pulina</strong> (Ubud, 2 hours), <strong>Strawberry Farm</strong> (Bedugul, 2.5 hours).</p>
+<h2>🍉 Fruit markets</h2>
+<div class="place">
+<div class="place-name">Pasar Bualu</div>
+<div class="place-desc">Local market at the entrance to BTDC. Fruits, vegetables, snacks at local prices.</div>
+<div class="place-meta">📍 Bualu · Morning</div>
+</div>
+<h2>🛍 Shopping</h2>
+<div class="place">
+<div class="place-name">Bali Collection</div>
+<div class="place-desc">Shopping center in BTDC: boutiques, restaurants, souvenirs. Condey!</div>
+<div class="place-meta">📍 BTDC Area</div>
+</div>
+<h2>🛒 Grocery stores</h2>
+<div class="place">
+<div class="place-name">Hardy's Nusa Dua</div>
+<div class="place-desc">Supermarket with a basic assortment. A little imported.</div>
+<div class="place-meta">📍 Bualu</div>
+</div>
+<p>For wide import: <strong>Pepito</strong> (Seminyak, 45 min).</p>
+<h2>👕 Laundries</h2>
+<div class="place">
+<div class="place-name">Laundries at resorts</div>
+<div class="place-desc">All resorts offer laundry service. More expensive than usual (from 20K/piece).</div>
+</div>
+<div class="place">
+<div class="place-name">Local Laundry Bualu</div>
+<div class="place-desc">Laundries outside BTDC. Cheaper than resort ones.</div>
+<div class="place-meta">📍 Bualu · from 8K/kg</div>
+</div>
+<h2>🎉 Clubs and nightlife</h2>
+<p>There is almost no nightlife in Nusa Dua. Resort bars close at 23:00. For parties: <strong>Seminyak</strong> (45 min), <strong>Kuta</strong> (30 min).</p>
+<h2>🏥 Clinics and pharmacies</h2>
+<div class="place">
+<div class="place-name">BIMC Hospital Nusa Dua</div>
+<div class="place-desc">International Hospital. The best in south Bali. English speaking doctors, ER 24/7.</div>
+<div class="place-meta">📍 BTDC · Reception from 500K</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma / Guardian</div>
+<div class="place-desc">Pharmacies in Bali Collection and Bualu.</div>
+</div>
+<h2>🛕 Temples</h2>
+<div class="place">
+<div class="place-name">Pura Geger</div>
+<div class="place-desc">Temple on a cliff above Geger beach. Beautiful, quiet, few tourists.</div>
+<div class="place-meta">📍 Geger Beach · Free</div>
+</div>
+<div class="place">
+<div class="place-name">Water Blow</div>
+<div class="place-desc">Not a temple, but a must see - the waves crash against the rock like a fountain at 10m.</div>
+<div class="place-meta">📍 BTDC · Free</div>
+</div>
+<h2>🇷🇺 Russian community</h2>
+<p>There are very few Russians in Nusa Dua - an area for vacationers, not for long-stays. Russian-speaking guides are available through hotels. There is no community.</p>
+<h2>🎒 Kindergartens and schools</h2>
+<div class="place">
+<div class="place-name">Bali International School</div>
+<div class="place-desc">IB program. One of the best international schools in Bali.</div>
+<div class="place-meta">📍 Jimbaran · 15 min from Nusa Dua · from $10,000/year</div>
+</div>
+<h2>📸 Photo locations</h2>
+<p>• Geger Beach – turquoise water<br/>
+• Water Blow - dramatic waves<br/>
+• Pura Geger - temple above the beach<br/>
+• BTDC - manicured resort gardens<br/>
+• Tanjung Benoa – fishing boats</p>
+<h2>🏠 Housing</h2>
+<table>
+<tr><th>Type</th><th>Price/month</th><th>Where to look</th></tr>
+<tr><td>Guesthouse (Bualu)</td><td>$250-400</td><td>Booking, on site</td></tr>
+<tr><td>Apartments</td><td>$500-900</td><td>Airbnb</td></tr>
+<tr><td>Resort with kitchen</td><td>$1000-2000</td><td>Booking, resort sites</td></tr>
+<tr><td>Luxury suite</td><td>$3000-10000</td><td>St. Regis, Mulia</td></tr>
+</table>
+<p>For long-stay: area <strong>Bualu</strong> outside BTDC - cheaper, there are warungs and shops.</p>
+<h2>🛵 Transport</h2>
+<p>• <strong>Shuttle at resorts:</strong> free transfers to Bali Collection<br/>
+• <strong>Scooter:</strong> 700K-900K/month<br/>
+• <strong>Grab/Gojek:</strong> from 15K<br/>
+• <strong>To the airport:</strong> 15-25 min, 60-100K<br/>
+• <strong>To Uluwatu:</strong> 20-30 min<br/>
+• <strong>To Seminyak:</strong> 40-50 min</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 Secret of the area</div>
+<div class="secret-text">Bualu Village is a village right at the entrance to BTDC. Locals live here, prices are 3-5 times lower than resort prices. Warungs for 25K, fruit at the market, laundry for 7K/kg. 5 minutes walk - and you are again on a 5-star beach.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ Cons</div>
+<div class="warn-text">Sterile - no Balinese flavor. Expensive (resort prices). No nightlife. Bored after 3 days. Far from cultural attractions. There are few warungs and shops inside BTDC.</div>
+</div>
+<div class="divider"></div>
+<h2>💰 Budget for the month</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Minimum</div>
+<div class="budget-price">$600</div>
+<div class="budget-unit">per month</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Comfortable</div>
+<div class="budget-price">$1500</div>
+<div class="budget-unit">per month</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$5000</div>
+<div class="budget-unit">per month</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · Guide to Bali districts · 2026</div>
+</body>
+</html>

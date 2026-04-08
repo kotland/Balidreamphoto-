@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>سيمينياك</em></h1>
+<p class="sub">الدليل الكامل للمنطقة · @balidreamphoto</p>
+<div class="tag">🎉 الأندية</div>
+<div class="tag">🛍 التسوق</div>
+<div class="tag">🍜 مطاعم</div>
+<div class="tag">🌅 غروب الشمس</div>
+<div class="tag">🏖 الشواطئ</div>
+<div class="tag">💆 سبا</div>
+<div class="tag">🏄 ركوب الأمواج</div>
+<div class="vibe">"وجبة فطور وغداء في مقهى مصمم، والتسوق في المحلات، وغروب الشمس في نادي الشاطئ مع كوكتيل. بالي هي لأولئك الذين يحبون الحياة الجميلة."</div>
+<p>سيمينياك هي المنطقة الأكثر سحرا في بالي. أفضل المطاعم والمحلات والنوادي الشاطئية والحياة الليلية. فهي موطن للمغتربين ذوي الميزانية المحدودة، وعارضي الأزياء، ومدوني الطعام، ورجال الأعمال. أقرب إلى المطار من كانجو. متوسط ​​العمر 28-40.</p>
+<h2>☕ المقاهي</h2>
+<div class="place">
+<div class="place-name">Revolver Espresso</div>
+<div class="place-desc">مقهى مميز في شارع جانبي. أفضل إسبرسو في سيمينياك. قائمة الانتظار هي علامة على الجودة.</div>
+<div class="place-meta">📍جل. كايو آيا جانج 51 · القهوة 40-60 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Cafe Organic</div>
+<div class="place-desc">مقهى أسلوب حياة صحي + قهوة مختصة. أوعية عصير، توست الأفوكادو. انستغرام الداخلية.</div>
+<div class="place-meta">📍جل. بيتيتنغيت · القهوة 45-65 ك · واي فاي ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Sea Circus</div>
+<div class="place-desc">أجواء مكسيكية نابضة بالحياة. قهوة جيدة + الإفطار. جو ممتع.</div>
+<div class="place-meta">📍جل. كايو آية · قهوة 40-55 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Anomali Coffee</div>
+<div class="place-desc">العلامة التجارية الإندونيسية المتخصصة. الفاصوليا من جميع أنحاء الأرخبيل، شرفة هادئة.</div>
+<div class="place-meta">📍جل. رايا سيمينياك · القهوة 35-55 ك · واي فاي ⭐⭐⭐⭐</div>
+</div>
+<h2>💻 مساحات العمل المشترك</h2>
+<div class="place">
+<div class="place-name">Kumpul Coworking</div>
+<div class="place-desc">مساحة عمل مشتركة احترافية. تكييف الهواء، قاعات الاجتماعات، الطابعة.</div>
+<div class="place-meta">📍جل. طريق الغروب · 200 ألف / يوم · 2.5 مليون / شهر · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">مساحات عمل مشتركة في المقهى</div>
+<div class="place-desc">في سيمينياك يعملون من المقاهي: Cafe Organic، Revolver، Shelter Cafe - WiFi في كل مكان.</div>
+</div>
+<p>يوجد عدد أقل من مساحات العمل المشتركة المخصصة مقارنة بمدينة كانجو. معظمهم يعملون من المقهى أو من المنزل.</p>
+<h2>🍜 مطاعم</h2>
+<h3>الميزانية (30-60 ألف)</h3>
+<div class="place">
+<div class="place-name">Warung Made</div>
+<div class="place-desc">أسطورة سيمينياك منذ عام 1969. مطبخ إندونيسي، كميات ضخمة.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak · 30-60K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Murah</div>
+<div class="place-desc">المأكولات المحلية: ناسي جورينج، مي جورينج، سوتو أيام. رخيصة ولذيذة.</div>
+<div class="place-meta">📍 Jl. Nakula · 20-40K</div>
+</div>
+<h3>متوسطة (100-250 ألف)</h3>
+<div class="place">
+<div class="place-name">Mama San</div>
+<div class="place-desc">الانصهار الآسيوي في مستودع استعماري. ديم سوم، الكاري، الكوكتيلات. كتاب!</div>
+<div class="place-meta">📍 Jl. Raya Kerobokan · 120-250K</div>
+</div>
+<div class="place">
+<div class="place-name">Barbacoa</div>
+<div class="place-desc">شواء أمريكا الجنوبية. شرائح اللحم المشوية، ceviche، التاكو. الغلاف الجوي الداخلي.</div>
+<div class="place-meta">📍 Jl. Petitenget · 150-300K</div>
+</div>
+<div class="place">
+<div class="place-name">Sisterfields</div>
+<div class="place-desc">وجبة الفطور والغداء الأسترالية: بيض بنديكت، برجر، فلات وايت. أعلى الإفطار.</div>
+<div class="place-meta">📍 Jl. Kayu Cendana · 100-200K</div>
+</div>
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Sarong</div>
+<div class="place-desc">أحد أفضل المطاعم في بالي. مطبخ جنوب آسيا، قائمة تذوق مكونة من 11 طبقًا.</div>
+<div class="place-meta">📍جل. بيتيتنغيت · مجموعة من 800K</div>
+</div>
+<div class="place">
+<div class="place-name">Merah Putih</div>
+<div class="place-desc">طعام إندونيسي فاخر في مبنى رائع من الخيزران. ريندانج هوت المطبخ.</div>
+<div class="place-meta">📍 Jl. Petitenget · 250-500K</div>
+</div>
+<h2>🥗 مؤسسات نباتية</h2>
+<div class="place">
+<div class="place-name">Cafe Organic</div>
+<div class="place-desc">80% من القائمة نباتية. الأطباق والسلطات والعصائر. عرض جميل.</div>
+<div class="place-meta">📍 Jl. Petitenget · 70-140K</div>
+</div>
+<div class="place">
+<div class="place-name">Earth Cafe &amp; Market</div>
+<div class="place-desc">مقهى نباتي + متجر للأغذية العضوية. الكاري والأوعية والعصائر.</div>
+<div class="place-meta">📍 Jl. Kayu Aya · 60-120K</div>
+</div>
+<h2>🌱أماكن نباتية</h2>
+<div class="place">
+<div class="place-name">Kynd Community</div>
+<div class="place-desc">نباتي تمامًا وقابل للخطأ في Instagram. أوعية العصير الوردي والبرغر.</div>
+<div class="place-meta">📍 Jl. Petitenget · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Shelter Cafe</div>
+<div class="place-desc">مقهى نباتي مع جو مريح. الفطائر النباتية والأوعية والحلويات.</div>
+<div class="place-meta">📍 Jl. Drupadi · 55-110K</div>
+</div>
+<h2>🏄 ركوب الأمواج</h2>
+<table>
+<tr><th>بقعة</th><th>مستوى</th><th>رقاقة</th></tr>
+<tr><td><strong>Seminyak Beach</strong></td><td>مبتدئين</td><td>شاطئ واسع وأمواج لطيفة ومدارس</td></tr>
+<tr><td><strong>Double Six</strong></td><td>مبتدئين</td><td>استراحة شاطئ ناعمة، جيدة للتعلم</td></tr>
+<tr><td><strong>Petitenget</strong></td><td>متوسط</td><td>موجات أقوى قليلا، وعدد أقل من الناس</td></tr>
+</table>
+<p><strong>المدارس:</strong> مدرسة Rip Curl لركوب الأمواج، ومدرسة Pro Surf. 400-600 ألف لكل درس. الأمواج أكثر ليونة مما كانت عليه في كانجو - وهي جيدة لأول مرة.</p>
+<h2>🤿 الغوص</h2>
+<p>لا توجد مواقع للغوص في سيمينياك. الأقرب: <strong>Nusa Penida</strong> (ساعتان، مانتي)، <strong>Tulamben</strong> (3 ساعات، يو إس إس ليبرتي). تنظم محلات الغوص رحلات يومية مع خدمة النقل.</p>
+<h2>🫁الغوص الحر</h2>
+<p>ليس في سيمينياك - الأقرب هو: <strong>أميد</strong> (3 ساعات)، <strong>Nusa Penida</strong>. المدارس من كانجو تنظم الرحلات.</p>
+<h2>🐠 الغطس</h2>
+<p>ليس في سيمينياك - المياه الموحلة والأمواج. الأقرب: <strong>Sanur</strong> (30 دقيقة)، <strong>Nusa Penida</strong> (رحلة يومية).</p>
+<h2>🏖شواطئ بدون أمواج</h2>
+<p>جميع شواطئ سيمينياك بها أمواج. للسباحة المريحة: <strong>Sanur</strong> (30 دقيقة) أو <strong>Nusa Dua</strong> (45 دقيقة).</p>
+<h2>🧘 اليوغا والعافية</h2>
+<div class="place">
+<div class="place-name">Bodyworks Bali</div>
+<div class="place-desc">سبا + استوديو لليوجا. تدليك بالي، وعلم المنعكسات، ودروس اليوغا.</div>
+<div class="place-meta">📍جل. كايو جاتي · تدليك من 150 ألف · يوجا 130 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Prana Spa</div>
+<div class="place-desc">منتجع صحي فاخر على الطراز المغربي. التدليك والحمام التقليدي وعلاجات الايورفيدا.</div>
+<div class="place-meta">📍جل. كونتي · تدليك من 300 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Jiwa Bikram Yoga</div>
+<div class="place-desc">اليوغا الساخنة (بيكرام). غرفة مكيفة، 40 درجة مئوية. أنت تعرق لترا.</div>
+<div class="place-meta">📍جل. رايا باسانجكاسا · 150 ألفًا للدرس</div>
+</div>
+<h2>🏋️ صالات رياضية</h2>
+<div class="place">
+<div class="place-name">Motion Fitness</div>
+<div class="place-desc">الصالة الرياضية الحديثة: تمارين القلب والقوة والتدريب الوظيفي.</div>
+<div class="place-meta">📍جل. رايا سيمينياك · 100 ألف/يوم · من 900 ألف/شهر</div>
+</div>
+<div class="place">
+<div class="place-name">S2 Fitness</div>
+<div class="place-desc">قاعة مدمجة مع معدات جيدة. المدربين الشخصيين.</div>
+<div class="place-meta">📍جل. ناكولا · 80 ألف/يوم · من 800 ألف/شهر</div>
+</div>
+<h2>🌅 غروب الشمس / شروق الشمس</h2>
+<table>
+<tr><th>مكان</th><th>يكتب</th><th>الاهتزاز</th></tr>
+<tr><td><strong>Potato Head</strong></td><td>🌅 غروب الشمس</td><td>أفضل نادي الشاطئ والتصميم وحمام السباحة</td></tr>
+<tr><td><strong>Ku De Ta</strong></td><td>🌅 غروب الشمس</td><td>كلاسيكيات سيمينياك، الكوكتيلات، دي جي</td></tr>
+<tr><td><strong>Double Six Beach</strong></td><td>🌅 غروب الشمس</td><td>أكياس الفول على الرمال، ديمقراطية</td></tr>
+<tr><td><strong>W Bali</strong></td><td>🌅 غروب الشمس</td><td>بار فاخر على السطح، بانوراما</td></tr>
+</table>
+<h2>🌋 البراكين والجبال القريبة</h2>
+<div class="place">
+<div class="place-name">جونونج باتور</div>
+<div class="place-desc">الصعود عند الفجر. 2.5 ساعة من سيمينياك.</div>
+<div class="place-meta">📍 كينتاماني · من 400 ألف مع الدليل</div>
+</div>
+<div class="place">
+<div class="place-name">جونونج اجونج</div>
+<div class="place-desc">البركان الرئيسي (3142 م). 3.5 ساعة من سيمينياك.</div>
+<div class="place-meta">📍 كارانجاسم · من 800 ألف</div>
+</div>
+<h2>🌾 مصاطب الأرز القريبة</h2>
+<div class="place">
+<div class="place-name">Tegallalang</div>
+<div class="place-desc">المدرجات الشهيرة. 1.5-2 ساعة من سيمينياك.</div>
+<div class="place-meta">📍أوبود · المدخل 25 ك</div>
+</div>
+<div class="place">
+<div class="place-name">حقول الأرز كانجو</div>
+<div class="place-desc">تقع أقرب حقول الأرز على بعد 15 دقيقة بالسكوتر (بيريرينان).</div>
+</div>
+<h2>⛳ الجولف</h2>
+<div class="place">
+<div class="place-name">Bali Beach Golf Course</div>
+<div class="place-desc">أقرب ميدان . 9 حفر بجانب المحيط في سانور.</div>
+<div class="place-meta">📍 سانور · 30 دقيقة من سيمينياك · من 700 ألف/جولة</div>
+</div>
+<h2>🍓 المزارع</h2>
+<p>لا توجد مزارع في سيمينياك - إنها منطقة حضرية. الأقرب: <strong>Bali Pulina</strong> (أوبود، 1.5 ساعة) - القهوة، <strong>Strawberry Farm</strong> (بيدوجول، ساعتان) - الفراولة.</p>
+<h2>🍉أسواق الفاكهة</h2>
+<div class="place">
+<div class="place-name">Pasar Kreneng</div>
+<div class="place-desc">السوق الكبير في دينباسار. الفواكه والخضروات والتوابل. 20 دقيقة من سيمينياك.</div>
+<div class="place-meta">📍 دينباسار · 5-12 يوم</div>
+</div>
+<div class="place">
+<div class="place-name">الفاكهة تقف على الطريق</div>
+<div class="place-desc">وفقا ل جى. طريق الغروب - صواني بالمانجو والبابايا والرامبوتان. 3 مرات أرخص من السوبر ماركت.</div>
+</div>
+<h2>🛍 التسوق</h2>
+<div class="place">
+<div class="place-name">Jl. Kayu Aya (Eat Street)</div>
+<div class="place-desc">الشارع الرئيسي: محلات المصممين والمعارض والمجوهرات. جادة بالينيز ميلروز.</div>
+</div>
+<div class="place">
+<div class="place-name">Seminyak Village</div>
+<div class="place-desc">مركز تسوق يضم ماركات عالمية ومحلية. كوندي!</div>
+<div class="place-meta">📍 Jl. Kayu Jati</div>
+</div>
+<div class="place">
+<div class="place-name">Kendra Gallery</div>
+<div class="place-desc">الفن والتصميم الباليني. عناصر داخلية فريدة من نوعها.</div>
+</div>
+<h2>🛒 محلات البقالة</h2>
+<div class="place">
+<div class="place-name">Pepito Market</div>
+<div class="place-desc">المنتجات المستوردة: الجبن الأوروبي، النبيذ، الوجبات الخفيفة. عدة نقاط.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak</div>
+</div>
+<div class="place">
+<div class="place-name">Coco Supermarket</div>
+<div class="place-desc">سوبر ماركت كبير مع واردات واسعة. أرخص من بيبيتو.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak</div>
+</div>
+<h2>👕 المغاسل</h2>
+<div class="place">
+<div class="place-name">Seminyak Laundry</div>
+<div class="place-desc">غسيل + كي. أعرب في 6 ساعات. الاستلام والتسليم.</div>
+<div class="place-meta">📍جل. ناكولا · من 8 كيلو/كجم</div>
+</div>
+<div class="place">
+<div class="place-name">Premium Laundry</div>
+<div class="place-desc">الملابس الرقيقة، التنظيف الجاف، فساتين السهرة. جودة الخدمة.</div>
+<div class="place-meta">📍جل. رايا سيمينياك · من 15 ألف/كجم</div>
+</div>
+<h2>🎉 النوادي والحياة الليلية</h2>
+<div class="place">
+<div class="place-name">Potato Head Beach Club</div>
+<div class="place-desc">نادي الشاطئ الشهير. تصميم، حمام سباحة، دي جي، كوكتيلات. يجب أن نرى المكان.</div>
+<div class="place-meta">📍جل. بيتيتنغيت دخول مجاني، كوكتيلات 150-250 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Ku De Ta</div>
+<div class="place-desc">أحد نوادي الشاطئ الأولى في بالي. غروب الشمس، وتناول الطعام الفاخر، وليالي النادي.</div>
+<div class="place-meta">📍جل. كايو آية · الكوكتيلات 150-200 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Motel Mexicola</div>
+<div class="place-desc">البار المكسيكي: التاكو، المارجريتا، النيون، الموسيقى. حفلة كل مساء.</div>
+<div class="place-meta">📍جل. كايو جاتي · الكوكتيلات 100-150 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Mirror Bali</div>
+<div class="place-desc">ملهى ليلي في مبنى الكاتدرائية. الداخلية القوطية، والإلكترونيات، وعرض النار.</div>
+<div class="place-meta">📍جل. بيتيتنغيت · الدخول من 150 ألف</div>
+</div>
+<h2>🏥 العيادات والصيدليات</h2>
+<div class="place">
+<div class="place-name">BaliMéd Hospital</div>
+<div class="place-desc">مستشفى كامل مع غرفة الطوارئ. الموظفين الناطقين باللغة الإنجليزية. الاستقبال من 300 الف</div>
+<div class="place-meta">📍 Jl. Sunset Road</div>
+</div>
+<div class="place">
+<div class="place-name">Seminyak Clinic</div>
+<div class="place-desc">عيادة خاصة: معالج، طبيب جلدية، طب أسنان. الاستقبال من 250 الف</div>
+<div class="place-meta">📍 Jl. Raya Seminyak</div>
+</div>
+<div class="place">
+<div class="place-name">Guardian / Kimia Farma</div>
+<div class="place-desc">الصيدليات في جميع أنحاء المنطقة. الأدوية الأساسية، الحماية من الشمس، طارد البعوض.</div>
+</div>
+<h2>🛕 المعابد</h2>
+<div class="place">
+<div class="place-name">Pura Petitenget</div>
+<div class="place-desc">معبد هندوسي مهم على الشاطئ. مراسم، قرابين. مجانا.</div>
+<div class="place-meta">📍 Jl. Petitenget</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Masceti</div>
+<div class="place-desc">معبد الشاطئ مع احتفالات منتظمة. جميلة عند غروب الشمس.</div>
+<div class="place-meta">📍 Seminyak Beach</div>
+</div>
+<p>المساجد والكنائس - في دينباسار (15-20 دقيقة). المعبد البوذي - فيهارا دارمايانا (كوتا، 10 دقائق).</p>
+<h2>🇷🇺 الجالية الروسية</h2>
+<div class="place">
+<div class="place-name">محادثات برقية</div>
+<div class="place-desc">"الروس سيمينياك"، "دردشة بالي" - الإيجارات والمطاعم والحفلات.</div>
+</div>
+<div class="place">
+<div class="place-name">المطاعم الروسية</div>
+<div class="place-desc">أقل مما كانت عليه في كانجو، ولكن هناك. "مقهى موسكو" - المطبخ الروسي، والجو العائلي.</div>
+</div>
+<p>يوجد عدد أقل من الروس في سيمينياك مقارنةً بمدينة كانجو - حيث يوجد عدد أكبر من الأستراليين والأوروبيين هنا. ولكن هناك مجتمع.</p>
+<h2>🎒 رياض الأطفال والمدارس</h2>
+<div class="place">
+<div class="place-name">Bali Island School</div>
+<div class="place-desc">مدرسة كامبريدج الدولية. 3-18 سنة. مستوى عال.</div>
+<div class="place-meta">📍جل. كونتي · من 6000 دولار في السنة</div>
+</div>
+<div class="place">
+<div class="place-name">رياض الأطفال</div>
+<div class="place-desc">حدائق مونتيسوري الدولية، ريجيو إميليا. المجموعات الروسية - ابحث عنهم في "أمهات بالي".</div>
+</div>
+<h2>📸 مواقع الصور</h2>
+<p>• رأس البطاطس - العمارة وحمام السباحة<br/>
+• Double Six Beach – غروب الشمس، الصور الظلية<br/>
+• بورا بيتيتنغيت – معبد على الشاطئ<br/>
+• محلات شارع إيت – واجهات مشرقة<br/>
+• موتيل ميكسيكولا – لافتات نيون<br/>
+• كو دي تا – غروب الشمس وحفلات الكوكتيل</p>
+<h2>🏠 السكن</h2>
+<table>
+<tr><th>يكتب</th><th>السعر/الشهر</th><th>أين تنظر</th></tr>
+<tr><td>غرفة / دار الضيافة</td><td>$350-550</td><td>الحجز في الموقع</td></tr>
+<tr><td>استوديو / غرفة نوم واحدة</td><td>$600-1000</td><td>Facebook groups, Flokq</td></tr>
+<tr><td>فيلا بغرفة نوم واحدة مع مسبح</td><td>$1000-2000</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>فيلا فاخرة</td><td>$2500-6000</td><td>اتصالات مباشرة، وكلاء</td></tr>
+</table>
+<p>سيمينياك أغلى بنسبة 20-30٪ من كانجو. أفضل لأولئك الذين يقدرون البنية التحتية والقرب من المطار.</p>
+<h2>🛵 النقل</h2>
+<p>• <strong>سكوتر:</strong> 700 ألف-1 مليون/شهر<br/>
+• <strong>Grab/Gojek:</strong> من 12 كيلو (العديد من السائقين، سريع)<br/>
+• <strong>إلى المطار:</strong> 20-30 دقيقة، 80-150 ك<br/>
+• <strong>إلى كانجو:</strong> 15-20 دقيقة<br/>
+• <strong>إلى أوبود:</strong> 1.5 ساعة</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 سر المنطقة</div>
+<div class="secret-text">جى. دروبادي و جى. ناكولا - الشوارع الهادئة في وسط سيمينياك مع الفلل المحلية والفيلات الصغيرة بأسعار أقل مرتين من الشوارع الرئيسية. تقع جميع الفنادق الفاخرة على بعد 5 دقائق سيرًا على الأقدام.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ سلبيات</div>
+<div class="warn-text">غالي. الاختناقات المرورية ثابتة (خاصة جى رايا سيمينياك). لا توجد أرصفة - فالمشي خطير. شواطئ لركوب الأمواج وليس للسباحة. صاخبة. وقوف السيارات مشكلة. الأسعار في المطاعم هي نفسها كما في أوروبا.</div>
+</div>
+<div class="divider"></div>
+<h2>💰ميزانية الشهر</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">الحد الأدنى</div>
+<div class="budget-price">$800</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">مريح</div>
+<div class="budget-price">$1800</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$4500</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · دليل مناطق بالي · 2026</div>
+</body>
+</html>

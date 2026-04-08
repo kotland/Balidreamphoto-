@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>Uluwatu</em></h1>
+<p class="sub">Complete guide to the area · @balidreamphoto</p>
+<div class="tag">🏄 Surfing</div>
+<div class="tag">🌅 Sunsets</div>
+<div class="tag">🛕 Temples</div>
+<div class="tag">🏖 Beaches</div>
+<div class="tag">🧘 Yoga</div>
+<div class="tag">📸 Cliffs</div>
+<div class="tag">🍜 Restaurants</div>
+<div class="vibe">“White sand, turquoise water, rocks over the ocean, sunset from the monkey temple. Bali as you imagined it.”</div>
+<p>Uluwatu is the Bukit Peninsula in southern Bali. The best beaches of the island, world surfing, cliffs overlooking the Indian Ocean. It's quieter and more beautiful here than on the west coast. For those who need the ocean, not a party. Growing rapidly: new villas and cliff clubs every year.</p>
+<h2>☕ Coffee shops</h2>
+<div class="place">
+<div class="place-name">Drifter Surf Shop &amp; Cafe</div>
+<div class="place-desc">Surf shop + specialty coffee. Cozy courtyard, good flat white, surf vibe.</div>
+<div class="place-meta">📍Jl. Labuan Sait · Coffee 40-60K · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Suka Espresso</div>
+<div class="place-desc">Best coffee in Uluwatu. Pour-over, V60, beans from Flores and Java.</div>
+<div class="place-meta">📍Jl. Labuansait · Coffee 35-55K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">BGS Uluwatu</div>
+<div class="place-desc">Surf cafe with good coffee, brunch and views. Relaxed atmosphere.</div>
+<div class="place-meta">📍Jl. Pantai Suluban · Coffee 40-55K · WiFi ⭐⭐⭐</div>
+</div>
+<h2>💻 Coworking spaces</h2>
+<div class="place">
+<div class="place-name">Outpost Uluwatu</div>
+<div class="place-desc">Coworking space with a swimming pool and a view of the jungle. WiFi is stable.</div>
+<div class="place-meta">📍Jl. Labuansait · 200K/day · 2.5M/month · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<p>There are few coworking spaces. Many work from a cafe (Drifter, Suka) or from a villa.</p>
+<h2>🍜 Restaurants</h2>
+<h3>Budget (30-60K)</h3>
+<div class="place">
+<div class="place-name">Warung Bule</div>
+<div class="place-desc">Warung near Padang Padang. Nasi goreng, martabak. Local prices.</div>
+<div class="place-meta">📍 Jl. Labuan Sait · 25-50K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Local Uluwatu</div>
+<div class="place-desc">Simple Indonesian food. Cheap and honest.</div>
+<div class="place-meta">📍 Jl. Uluwatu · 20-45K</div>
+</div>
+<h3>Medium (80-200K)</h3>
+<div class="place">
+<div class="place-name">Bukit Cafe</div>
+<div class="place-desc">Healthy food, smoothie bowls, sandwiches. Popular among surfers.</div>
+<div class="place-meta">📍 Jl. Labuan Sait · 70-150K</div>
+</div>
+<div class="place">
+<div class="place-name">Mango Tree Cafe</div>
+<div class="place-desc">Balinese and Western cuisine. View of the jungle, evening illumination.</div>
+<div class="place-meta">📍 Jl. Pantai Suluban · 80-180K</div>
+</div>
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Single Fin</div>
+<div class="place-desc">Legendary cliff bar above Suluban Beach. Sunsets, DJ on Sundays, cocktails.</div>
+<div class="place-meta">📍 Jl. Pantai Suluban · 150-350K</div>
+</div>
+<div class="place">
+<div class="place-name">El Kabron</div>
+<div class="place-desc">Spanish cuisine on the rock. Seafood, paella, pool over the ocean.</div>
+<div class="place-meta">📍 Jl. Pantai Cemongkak · 300-600K</div>
+</div>
+<div class="place">
+<div class="place-name">Ulu Cliffhouse</div>
+<div class="place-desc">Cliff club with infinity pool. Brunch, sushi, cocktails over turquoise water.</div>
+<div class="place-meta">📍 Jl. Belangan · 250-500K</div>
+</div>
+<h2>🥗 Vegetarian establishments</h2>
+<div class="place">
+<div class="place-name">Bukit Cafe</div>
+<div class="place-desc">Large vegetarian menu: bowls, salads, curries. Everything is fresh.</div>
+<div class="place-meta">📍 Jl. Labuan Sait · 70-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Cashew Tree</div>
+<div class="place-desc">Vegetarian dishes + raw desserts. Quiet garden, Ubud vibe.</div>
+<div class="place-meta">📍 Jl. Pantai Balangan · 60-120K</div>
+</div>
+<h2>🌱 Vegan places</h2>
+<div class="place">
+<div class="place-name">The Loft Uluwatu</div>
+<div class="place-desc">Plant-based cafe. Vegan burgers, smoothie bowls, dairy-free lattes.</div>
+<div class="place-meta">📍 Jl. Labuan Sait · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Nalu Bowls</div>
+<div class="place-desc">Acai bowls, smoothies, vegan snacks. Fresh and fast.</div>
+<div class="place-meta">📍 Jl. Labuan Sait · 50-90K</div>
+</div>
+<h2>🏄 Surfing</h2>
+<table>
+<tr><th>Spot</th><th>Level</th><th>Chip</th></tr>
+<tr><td><strong>Padang Padang</strong></td><td>Advanced</td><td>Barrels (tubes). "Bali Pipeline". Only about!</td></tr>
+<tr><td><strong>Uluwatu</strong></td><td>Average+</td><td>Reef break, long walls, entrance cave</td></tr>
+<tr><td><strong>Dreamland</strong></td><td>Beginners+</td><td>Beachbreak, sand, good for learning</td></tr>
+<tr><td><strong>Bingin</strong></td><td>Average+</td><td>Short powerful left, few people</td></tr>
+<tr><td><strong>Balangan</strong></td><td>Average</td><td>Long left, beautiful beach</td></tr>
+<tr><td><strong>Impossibles</strong></td><td>Advanced</td><td>Three sections, long waves, rock descent</td></tr>
+</table>
+<p><strong>Schools:</strong> Rapture Surf Camp, Uluwatu Surf Villas (lessons + accommodation). 400-600K per lesson. Best season: April-October (dry, offshore).</p>
+<h2>🤿 Diving</h2>
+<div class="place">
+<div class="place-name">Nusa Penida (30 min by boat)</div>
+<div class="place-desc">Manta Point, Crystal Bay, Toyapakeh Wall. Manti, mola-mola (July-October).</div>
+<div class="place-meta">📍 Day trip from 1.5M</div>
+</div>
+<p><strong>Schools:</strong> Dive Concepts, Blue Corner Dive - based in the Uluwatu and Jimbaran area.</p>
+<h2>🫁 Freediving</h2>
+<div class="place">
+<div class="place-name">Freedive Flow</div>
+<div class="place-desc">Freediving courses with training in Penida. AIDA/SSI certification.</div>
+<div class="place-meta">📍 Uluwatu area · Course from 5M</div>
+</div>
+<p>Training in the pools of the villas, diving in Nusa Penida (close to the south).</p>
+<h2>🐠 Snorkeling</h2>
+<div class="place">
+<div class="place-name">Padang Padang Beach</div>
+<div class="place-desc">In calm weather, visibility is good, fish are near the reef. But there are waves!</div>
+</div>
+<div class="place">
+<div class="place-name">Nusa Penida</div>
+<div class="place-desc">Snorkeling day trip: Manta Bay, Crystal Bay, Gamat Bay. From 500K.</div>
+</div>
+<h2>🏖 Beaches without waves</h2>
+<div class="place">
+<div class="place-name">Thomas Beach</div>
+<div class="place-desc">Hidden beach with relatively calm water. Few people.</div>
+<div class="place-meta">📍 15 min from the center of Uluwatu</div>
+</div>
+<div class="place">
+<div class="place-name">Green Bowl Beach</div>
+<div class="place-desc">Secret beach - 300 steps down. Often calm water, caves. Few people.</div>
+<div class="place-meta">📍 20 minutes from the center · No beach at high tide</div>
+</div>
+<p>In general, the south of Bali is undulating. For a guaranteed relaxing swim: <strong>Nusa Dua</strong> (30 min).</p>
+<h2>🧘 Yoga and wellness</h2>
+<div class="place">
+<div class="place-name">Morning Light Yoga</div>
+<div class="place-desc">Yoga on a cliff overlooking the ocean. Morning classes at dawn.</div>
+<div class="place-meta">📍 Bingin · 130-160K/lesson</div>
+</div>
+<div class="place">
+<div class="place-name">Uluwatu Surf Villas Yoga</div>
+<div class="place-desc">Yoga + surfing combo. Outdoor chalet, view of Uluwatu break.</div>
+<div class="place-meta">📍Jl. Pantai Suluban · 150K/lesson</div>
+</div>
+<h2>🏋️ Gyms</h2>
+<div class="place">
+<div class="place-name">Vault Uluwatu</div>
+<div class="place-desc">Modern gym: crossfit, weightlifting, swimming pool.</div>
+<div class="place-meta">📍Jl. Labuan Sait · from 1M/month</div>
+</div>
+<div class="place">
+<div class="place-name">Bukit Gym</div>
+<div class="place-desc">Budget room with basic equipment. Enough to keep fit.</div>
+<div class="place-meta">📍Jl. Uluwatu · from 500K/month</div>
+</div>
+<h2>🌅 Sunsets / Sunrises</h2>
+<table>
+<tr><th>Place</th><th>Type</th><th>Vibe</th></tr>
+<tr><td><strong>Uluwatu Temple</strong></td><td>🌅 Sunset</td><td>Temple on the 70m rock + Kecak dance at sunset</td></tr>
+<tr><td><strong>Single Fin</strong></td><td>🌅 Sunset</td><td>Cliff bar, DJ, cocktails</td></tr>
+<tr><td><strong>Balangan Beach</strong></td><td>🌅 Sunset</td><td>Quiet beach, golden light on the rocks</td></tr>
+<tr><td><strong>El Kabron</strong></td><td>🌅 Sunset</td><td>Swimming pool on a rock, champagne</td></tr>
+<tr><td><strong>Nyang Nyang Beach</strong></td><td>🌄 Sunrise</td><td>Wild beach, complete privacy</td></tr>
+</table>
+<h2>🌋 Volcanoes and mountains nearby</h2>
+<p>Uluwatu is in the south, far from the volcanoes. Nearest: <strong>Gunung Batur</strong> (Kintamani, 2.5-3 hours). <strong>Gunung Agung</strong> — 3.5 hours.</p>
+<h2>🌾 Rice terraces nearby</h2>
+<p>There are no rice terraces in Uluwatu - it is a rocky peninsula. Nearest: <strong>Jatiluwih</strong> (2 hours), <strong>Tegallalang</strong> (2 hours, via Ubud).</p>
+<h2>⛳ Golf</h2>
+<div class="place">
+<div class="place-name">New Kuta Golf</div>
+<div class="place-desc">18 holes on the rocks above the ocean. One of the most beautiful golf courses in Asia!</div>
+<div class="place-meta">📍 Pecatu · 10 min from the center · from 1.5M/round</div>
+</div>
+<div class="place">
+<div class="place-name">Bali National Golf Club</div>
+<div class="place-desc">Professional field in Nusa Dua. 30 min from Uluwatu.</div>
+<div class="place-meta">📍 Nusa Dua · from 1.8M/round</div>
+</div>
+<h2>🍓 Farms</h2>
+<p>There are no farms in Uluwatu - the landscape is rocky. Nearest: <strong>Bali Pulina</strong> (Ubud, 2 hours) - coffee, <strong>Strawberry Farm</strong> (Bedugul, 2.5 hours).</p>
+<h2>🍉 Fruit markets</h2>
+<div class="place">
+<div class="place-name">Pasar Pecatu</div>
+<div class="place-desc">Small local market. Fruits, vegetables. In the morning the best choice.</div>
+<div class="place-meta">📍 Pecatu · Morning</div>
+</div>
+<div class="place">
+<div class="place-name">Fruit stalls</div>
+<div class="place-desc">On the road from Jimbaran there are roadside stalls with mango, herring, and rambutan.</div>
+</div>
+<h2>🛍 Shopping</h2>
+<p>Shopping in Uluwatu is minimal. Surf shops (Drifter, Rhythm) + small boutiques. For serious shopping: <strong>Seminyak</strong> (40 min).</p>
+<h2>🛒 Grocery stores</h2>
+<div class="place">
+<div class="place-name">Frestive Pecatu</div>
+<div class="place-desc">Supermarket with a basic assortment. There are few imported goods.</div>
+<div class="place-meta">📍 Pecatu</div>
+</div>
+<div class="place">
+<div class="place-name">The Cashier (Bingin)</div>
+<div class="place-desc">Small store with organic products. Healthy lifestyle, vegan, gluten-free.</div>
+</div>
+<p>For imported products: <strong>Pepito</strong> in Seminyak (40 min) or order online.</p>
+<h2>👕 Laundries</h2>
+<div class="place">
+<div class="place-name">Uluwatu Laundry</div>
+<div class="place-desc">Washing + ironing, pickup around the area.</div>
+<div class="place-meta">📍Jl. Labuan Sait · from 8K/kg</div>
+</div>
+<p>There are few laundry facilities - most villas have a washing machine or service.</p>
+<h2>🎉 Clubs and nightlife</h2>
+<div class="place">
+<div class="place-name">Single Fin</div>
+<div class="place-desc">Sunday Sessions - legendary Sunday parties on the rock. DJ, dancing, sunset.</div>
+<div class="place-meta">📍Jl. Pantai Suluban · Entry from 100K</div>
+</div>
+<div class="place">
+<div class="place-name">Ulu Cliffhouse</div>
+<div class="place-desc">Pool parties, DJ, brunch parties. More glamorous vibe.</div>
+<div class="place-meta">📍 Jl. Belangan</div>
+</div>
+<div class="place">
+<div class="place-name">Savaya</div>
+<div class="place-desc">Luxury club on the rock. International DJs, dress code, expensive, but wow.</div>
+<div class="place-meta">📍Jl. Belangan · Login from 300K</div>
+</div>
+<p>Nightlife ends early (23-24). For late nights: Seminyak or Kuta.</p>
+<h2>🏥 Clinics and pharmacies</h2>
+<div class="place">
+<div class="place-name">Bali Jimbaran Bay Clinic</div>
+<div class="place-desc">Nearest quality clinic (Jimbaran). English speaking doctors.</div>
+<div class="place-meta">📍 Jimbaran · 20 min from Uluwatu · Reception from 250K</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma Pecatu</div>
+<div class="place-desc">Pharmacy with basic medicines.</div>
+<div class="place-meta">📍 Pecatu</div>
+</div>
+<p>Serious medicine: <strong>BIMC Hospital</strong> (Jimbaran, 25 min).</p>
+<h2>🛕 Temples</h2>
+<div class="place">
+<div class="place-name">Pura Luhur Uluwatu</div>
+<div class="place-desc">One of the 6 main temples of Bali. 70m cliff above the ocean. Kecak dance at sunset - a must see!</div>
+<div class="place-meta">📍Jl. Raya Uluwatu · Entry 50K · Kecak 100K (18:00)</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Gunung Payung</div>
+<div class="place-desc">Quiet temple on the rock. Few tourists, stunning ocean views.</div>
+<div class="place-meta">📍 Kutuh · Free</div>
+</div>
+<h2>🇷🇺 Russian community</h2>
+<div class="place">
+<div class="place-name">Telegram chats</div>
+<div class="place-desc">"Bukit/Uluwatu Russians", "Bali South" - rental, recommendations.</div>
+</div>
+<p>There are more and more Russians in Uluwatu - the area is growing. There are Russian-speaking surf instructors and realtors. The community is smaller than in Canggu.</p>
+<h2>🎒 Kindergartens and schools</h2>
+<div class="place">
+<div class="place-name">Bukit Montessori</div>
+<div class="place-desc">Montessori kindergarten. Small groups, English.</div>
+<div class="place-meta">📍 Pecatu · from 3M/month</div>
+</div>
+<p>There are few schools - most go to Seminyak (Bali Island School) or Denpasar.</p>
+<h2>📸 Photo locations</h2>
+<p>• Uluwatu Temple - temple on the rock, sunset<br/>
+• Kelingking Beach (Nusa Penida day trip)<br/>
+• Balangan Beach – golden sand, rocks<br/>
+• Padang Padang - the beach from the movie<br/>
+• Single Fin – view of surfers from the cliff<br/>
+• Nyang Nyang Beach - wild empty beach<br/>
+• Green Bowl Beach - caves</p>
+<h2>🏠 Housing</h2>
+<table>
+<tr><th>Type</th><th>Price/month</th><th>Where to look</th></tr>
+<tr><td>Room/guesthouse</td><td>$250-450</td><td>Booking, on site</td></tr>
+<tr><td>Studio / 1BR</td><td>$500-800</td><td>Facebook, Flokq</td></tr>
+<tr><td>Villa with pool</td><td>$800-1500</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Luxury Cliff Villa</td><td>$2000-6000</td><td>Agents, direct contacts</td></tr>
+</table>
+<p><strong>Best areas:</strong> Bingin (quiet, surf), Balangan (beach), Pecatu (infrastructure).</p>
+<h2>🛵 Transport</h2>
+<p>• <strong>Scooter:</strong> 700K-1M/month (MANDATORY - you can’t go anywhere without it!)<br/>
+• <strong>Grab/Gojek:</strong> few drivers, long wait<br/>
+• <strong>To the airport:</strong> 30-45 min, 100-200K<br/>
+• <strong>To Seminyak:</strong> 40-50 min<br/>
+• <strong>To Canggu:</strong> 50-70 min</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 Secret of the area</div>
+<div class="secret-text">Nyang Nyang Beach is one of the most beautiful and empty beaches in Bali. 500 steps down, white sand for a kilometer, not a single person. The sunset here is like on a desert island.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ Cons</div>
+<div class="warn-text">You can't go anywhere without a scooter. Grab/Gojek don't work well. Few shops and restaurants. There are hundreds of steps down to the beaches. Far from the airport due to traffic jams. The infrastructure is developing, but is still poor. The roads are narrow and of poor quality.</div>
+</div>
+<div class="divider"></div>
+<h2>💰 Budget for the month</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Minimum</div>
+<div class="budget-price">$550</div>
+<div class="budget-unit">per month</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Comfortable</div>
+<div class="budget-price">$1300</div>
+<div class="budget-unit">per month</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$3500</div>
+<div class="budget-unit">per month</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · Guide to Bali districts · 2026</div>
+</body>
+</html>

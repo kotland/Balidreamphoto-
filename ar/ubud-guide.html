@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>اوبود</em></h1>
+<p class="sub">الدليل الكامل للمنطقة · @balidreamphoto</p>
+<div class="tag">🧘 اليوغا</div>
+<div class="tag">🌾 مصاطب الأرز</div>
+<div class="tag">🎨 الفن</div>
+<div class="tag">🌱 نباتي</div>
+<div class="tag">🛕 المعابد</div>
+<div class="tag">🌋 البراكين</div>
+<div class="tag">💻 مساحات العمل المشترك</div>
+<div class="tag">🍜 مطاعم</div>
+<div class="vibe">"استيقظت في الغابة، وممارسة اليوغا عند الفجر، والقهوة المطلة على مصاطب الأرز، وأصوات الجاميلان من المعبد في المساء."</div>
+<p>أوبود هي القلب الثقافي لبالي. الأدغال والمعابد وحقول الأرز ومنتجعات اليوغا وأفضل الأطعمة النباتية في الجزيرة. هذا هو المكان الذي يعيش فيه الفنانون والباحثون الروحيون والعاملون عن بعد الذين لا يحتاجون إلى المحيط. متوسط ​​العمر 30-45. أكثر هدوءًا وأرخص من كانجو.</p>
+<h2>☕ المقاهي</h2>
+<div class="place">
+<div class="place-name">Seniman Coffee Studio</div>
+<div class="place-desc">أفضل قهوة متخصصة في أوبود. الفاصوليا الخاصة بك، المحمصة في الموقع، المسكوبة، المشروب البارد.</div>
+<div class="place-meta">📍جل. سريويداري · القهوة 35-60 ك · واي فاي ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Anomali Coffee</div>
+<div class="place-desc">العلامة التجارية الإندونيسية المتخصصة. الحبوب من جميع أنحاء الأرخبيل. شرفة مريحة.</div>
+<div class="place-meta">📍جل. رايا أوبود · القهوة 35-55 ك · واي فاي ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Mudra Cafe</div>
+<div class="place-desc">قهوة + حلويات نيئة. جو هادئ، إطلالة على الحديقة. مثالية للصباح.</div>
+<div class="place-meta">📍جل. هانومان · القهوة 30-50 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Kopi Toko Djawa</div>
+<div class="place-desc">طراز استعماري، شرفة مطلة على الشارع. القهوة الجاوية والبالية.</div>
+<div class="place-meta">📍جل. جوتاما · القهوة 30-45 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<h2>💻 مساحات العمل المشترك</h2>
+<div class="place">
+<div class="place-name">Outpost Ubud</div>
+<div class="place-desc">مساحة العمل المشتركة الرئيسية في أوبود. مبنى من الخيزران في الغابة وحمام سباحة وخدمة WiFi سريعة.</div>
+<div class="place-meta">📍جل. Raya Nyuh Kuning · 250 ألف/يوم · 3 ملايين/شهر · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">هوبود (الآن ليفيت هب)</div>
+<div class="place-desc">أسطورة بين مساحات العمل المشتركة. بناء الخيزران، والفعاليات المجتمعية، وورش العمل.</div>
+<div class="place-meta">📍جل. غابة القرود · 200 ألف/يوم · 2.5 مليون/شهر · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Genius Cafe</div>
+<div class="place-desc">مقهى للعمل مع منطقة هادئة. قهوة جيدة + مساحة عمل.</div>
+<div class="place-meta">📍جل. Raya Ubud · الحد الأدنى للطلب 150 ألف · WiFi ⭐⭐⭐⭐</div>
+</div>
+<h2>🍜 مطاعم</h2>
+<h3>الميزانية (25-50 ألف)</h3>
+<div class="place">
+<div class="place-name">Warung Biah Biah</div>
+<div class="place-desc">المطبخ البالي الأصيل: ناسي تشامبور، لاوار، ساتاي. الأسعار المحلية.</div>
+<div class="place-meta">📍 Jl. Suweta · 20-40K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Igelanca</div>
+<div class="place-desc">طعام منزلي. بابي جولينج (خنزير رضيع مشوي) هو تخصص.</div>
+<div class="place-meta">📍 Jl. Raya Ubud · 25-45K</div>
+</div>
+<div class="place">
+<div class="place-name">باسار أوبود (السوق)</div>
+<div class="place-desc">سوق الصباح مع طعام الشارع. باكسو، مارتاباك، ناسي جورينج من 15 ألفًا.</div>
+<div class="place-meta">📍مركز اوبود · ١٥-٣٥ ك</div>
+</div>
+<h3>متوسطة (80-180 ألف)</h3>
+<div class="place">
+<div class="place-name">Locavore To Go</div>
+<div class="place-desc">نسخة الميزانية من Locavore الشهير. منتجات المزرعة والسندويشات والأوعية.</div>
+<div class="place-meta">📍 Jl. Dewi Sita · 70-140K</div>
+</div>
+<div class="place">
+<div class="place-name">Clear Cafe</div>
+<div class="place-desc">مطعم متعدد المستويات في حديقة استوائية. الانصهار الآسيوي، الغذاء الصحي.</div>
+<div class="place-meta">📍 Jl. Hanoman · 80-160K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Pulau Kelapa</div>
+<div class="place-desc">المطبخ الإندونيسي في حديقة جميلة. ريندانج، بيبس، جادو جادو.</div>
+<div class="place-meta">📍 Jl. Monkey Forest · 70-150K</div>
+</div>
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Locavore</div>
+<div class="place-desc">أفضل 1 مطعم في بالي. مجموعات تذوق المزرعة. احجز قبل شهر!</div>
+<div class="place-meta">📍جل. ديوي سيتا · مجموعة من 1.2 متر</div>
+</div>
+<div class="place">
+<div class="place-name">Mozaic</div>
+<div class="place-desc">الانصهار الفرنسي الإندونيسي. حديقة رومانسية، قائمة تذوق.</div>
+<div class="place-meta">📍جل. رايا سانجينجان · مجموعة من 900 ألف</div>
+</div>
+<h2>🥗 مؤسسات نباتية</h2>
+<div class="place">
+<div class="place-name">Sage</div>
+<div class="place-desc">مطعم نباتي بالكامل. لوحات جميلة، المكونات العضوية.</div>
+<div class="place-meta">📍 Jl. Goutama · 70-140K</div>
+</div>
+<div class="place">
+<div class="place-name">Moksa</div>
+<div class="place-desc">نباتي من المزرعة إلى المائدة. حديقتك الخاصة، دروس الطبخ.</div>
+<div class="place-meta">📍 Jl. Puskesmas · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Earth Cafe</div>
+<div class="place-desc">مقهى نباتي بقائمة ضخمة: أطعمة آسيوية وغربية ونيئة.</div>
+<div class="place-meta">📍 Jl. Goutama Selatan · 55-110K</div>
+</div>
+<h2>🌱أماكن نباتية</h2>
+<div class="place">
+<div class="place-name">Alchemy</div>
+<div class="place-desc">عبادة مقهى نباتي خام. لوح السلطة والعصائر الباردة والشوكولاتة المصنوعة من حبوب الكاكاو.</div>
+<div class="place-meta">📍 Jl. Penestanan Kelod · 60-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Sayuri Healing Food</div>
+<div class="place-desc">الانصهار الياباني النباتي. السوشي الخام، الحلويات الحية، مفهوم فريد من نوعه.</div>
+<div class="place-meta">📍 Jl. Sukma · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Seeds of Life</div>
+<div class="place-desc">مطعم نباتي خام + أكاديمية للأغذية الخام. أفضل الحلويات الغذائية الخام في بالي.</div>
+<div class="place-meta">📍 Jl. Goutama · 55-120K</div>
+</div>
+<h2>🏄 ركوب الأمواج</h2>
+<p>لا توجد رياضة ركوب الأمواج في أوبود، فهي منطقة جبلية لا يمكن الوصول إليها من المحيط. الأقرب: <strong>كانجو</strong> (1-1.5 ساعة)، <strong>كيراماس</strong> (45 دقيقة، المستوى المتقدم).</p>
+<h2>🤿 الغوص</h2>
+<p>لا يوجد أي خط ساحلي في أوبود. الأقرب: <strong>بادانجباي</strong> (1.5 ساعة) - بلو لاجون والشعاب المرجانية. <strong>تولامبين</strong> (ساعتان) - يو إس إس ليبرتي. <strong>Nusa Penida</strong> (2+ ساعة) - مانتي.</p>
+<h2>🫁الغوص الحر</h2>
+<p>ليس في أوبود - الأقرب هو: <strong>أميد</strong> (ساعاتين)، <strong>Nusa Penida</strong> (2.5 ساعة). المدارس تنظم التحويلات.</p>
+<h2>🐠 الغطس</h2>
+<p>ليس في أوبود - الأقرب هو: <strong>بادانجباي</strong> (بلو لاجون، 1.5 ساعة)، <strong>أميد</strong> (حطام السفينة اليابانية، ساعتان).</p>
+<h2>🏖شواطئ بدون أمواج</h2>
+<p>لا توجد شواطئ في أوبود - فهي منطقة جبلية. الأقرب: <strong>Sanur</strong> (ساعة واحدة) - مياه هادئة ومثالية للسباحة.</p>
+<h2>🧘 اليوغا والعافية</h2>
+<div class="place">
+<div class="place-name">Yoga Barn</div>
+<div class="place-desc">استوديو اليوغا الرئيسي في أوبود. أكثر من 15 حصة في اليوم: الفينياسا، الكونداليني، رقصة النشوة. حديقة، مقهى.</div>
+<div class="place-meta">📍جل. هانومان · 130-180 ألف/درس · غير محدود من 1.5 مليون/أسبوع</div>
+</div>
+<div class="place">
+<div class="place-name">Radiantly Alive</div>
+<div class="place-desc">اليوغا لجميع المستويات. المعلمين المحترفين، تشال جميلة.</div>
+<div class="place-meta">📍جل. جيمباوان · 150-180 ألف/الدرس</div>
+</div>
+<div class="place">
+<div class="place-name">Intuitive Flow</div>
+<div class="place-desc">Vinyasa وHatha في شالا مفتوحة تطل على حقول الأرز. سحر.</div>
+<div class="place-meta">📍جل. تيرتا تاوار · 120-150 ألف/درس</div>
+</div>
+<div class="place">
+<div class="place-name">Taksu Spa</div>
+<div class="place-desc">التدليك البالي وحمامات الزهور والشفاء بالطاقة. سبا في الحديقة.</div>
+<div class="place-meta">📍جل. جوتاما · مساج من 200 ألف</div>
+</div>
+<h2>🏋️ صالات رياضية</h2>
+<div class="place">
+<div class="place-name">Ubud Fitness Center</div>
+<div class="place-desc">صالة الألعاب الرياضية الرئيسية. تمارين القلب، الأوزان الحرة، المعدات البسيطة.</div>
+<div class="place-meta">📍جل. هانومان · 80 ألف/يوم · 600 ألف/شهر</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Fitness Ubud</div>
+<div class="place-desc">صالة ألعاب رياضية صغيرة مع معدات تمارين جيدة. منطقة كروس فيت.</div>
+<div class="place-meta">📍جل. رايا بينجوسيكان · 70 ألف/يوم · 500 ألف/شهر</div>
+</div>
+<p>أوبود لا يتعلق بالكراسي الهزازة. هناك المزيد من اليوغا، والجري عبر حقول الأرز والرحلات. هناك عدد قليل من القاعات الجادة.</p>
+<h2>🌅 غروب الشمس / شروق الشمس</h2>
+<table>
+<tr><th>مكان</th><th>يكتب</th><th>الاهتزاز</th></tr>
+<tr><td><strong>Campuhan Ridge Walk</strong></td><td>🌅 الغروب / 🌄 الشروق</td><td>طريق على طول تلة بين واديين. الضوء الذهبي.</td></tr>
+<tr><td><strong>Tegallalang</strong></td><td>🌄 شروق الشمس</td><td>مصاطب الأرز في ضباب الصباح</td></tr>
+<tr><td><strong>Mount Batur</strong></td><td>🌄 شروق الشمس</td><td>الفجر من البركان - يجب أن تفعل</td></tr>
+<tr><td><strong>Karsa Spa</strong></td><td>🌅 غروب الشمس</td><td>منظر لحقول الأرز من المقهى</td></tr>
+<tr><td><strong>Sari Organik</strong></td><td>🌅 غروب الشمس</td><td>مطعم بين حقول الأرز</td></tr>
+</table>
+<h2>🌋 البراكين والجبال القريبة</h2>
+<div class="place">
+<div class="place-name">جونونج باتور</div>
+<div class="place-desc">الصعود عند الفجر (صعود لمدة ساعتين). منظر للبحيرة في الحفرة. يجب القيام به!</div>
+<div class="place-meta">📍 كينتاماني · ساعة واحدة من أوبود · رحلة من مسافة 400 كيلومتر مع مرشد</div>
+</div>
+<div class="place">
+<div class="place-name">جونونج اجونج</div>
+<div class="place-desc">البركان الرئيسي في بالي (3142 م). تتبع جدي 6-8 ساعات. مطلوب دليل.</div>
+<div class="place-meta">📍 كارانجاسم · ساعتين من أوبود · من 800 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">جونونج أبانج</div>
+<div class="place-desc">ثالث أعلى بركان. عدد أقل من السياح، الغابة، منظر باتور.</div>
+<div class="place-meta">📍 كينتاماني · ساعة ونصف من أوبود · من 500 ألف</div>
+</div>
+<h2>🌾 مصاطب الأرز القريبة</h2>
+<div class="place">
+<div class="place-name">Tegallalang Rice Terrace</div>
+<div class="place-desc">المدرجات المتتالية الشهيرة. إنستغرام كلاسيك. تعال بحلول الساعة 7 صباحًا - لا توجد حشود.</div>
+<div class="place-meta">📍 15 دقيقة من المركز · المدخل 25 ك</div>
+</div>
+<div class="place">
+<div class="place-name">Campuhan Ridge Walk</div>
+<div class="place-desc">المسار على طول سلسلة التلال. حقول الأرز على كلا الجانبين. مجانا.</div>
+<div class="place-meta">📍5 دقائق من المركز</div>
+</div>
+<div class="place">
+<div class="place-name">Jatiluwih</div>
+<div class="place-desc">اليونسكو. شرفات ضخمة بدون حشود. الأكثر إثارة للإعجاب في بالي.</div>
+<div class="place-meta">📍 ساعة واحدة من اوبود · المدخل 40 ك</div>
+</div>
+<h2>⛳ الجولف</h2>
+<p>لا توجد ملاعب جولف في أوبود. الأقرب: <strong>Handara Golf &amp; Resort</strong> (بيدوجول، ساعة واحدة) - حقل جبلي في حفرة، من 1.2 متر/جولة. <strong>Bali National Golf Club</strong> (نوسا دوا، 1.5 ساعة).</p>
+<h2>🍓 المزارع</h2>
+<div class="place">
+<div class="place-name">Bali Pulina</div>
+<div class="place-desc">مزرعة البن مع تذوق قهوة لوواك. جولة مجانية، مناظر الغابة.</div>
+<div class="place-meta">📍تيجالالانج · 20 دقيقة من المركز</div>
+</div>
+<div class="place">
+<div class="place-name">Satria Coffee Plantation</div>
+<div class="place-desc">مزرعة عائلية صغيرة. تجهيز القهوة والشاي والكاكاو. لا حشود.</div>
+<div class="place-meta">📍تيجالالانج · 25 دقيقة من المركز</div>
+</div>
+<div class="place">
+<div class="place-name">Ubud Organic Farm</div>
+<div class="place-desc">مزرعة عضوية مع جولة. يزرعون الخضار والتوابل ويعلمونهم كيفية الطهي.</div>
+<div class="place-meta">📍جل. سويتا · 30 دقيقة من المركز</div>
+</div>
+<h2>🍉أسواق الفاكهة</h2>
+<div class="place">
+<div class="place-name">باسار أوبود (سوق الصباح)</div>
+<div class="place-desc">حتى الساعة 8 صباحًا يوجد سوق حقيقي للمزارعين. الفواكه والخضروات والتوابل بالأسعار المحلية.</div>
+<div class="place-meta">📍مركز أوبود · 5-8 صباحًا</div>
+</div>
+<div class="place">
+<div class="place-name">Organic Farmers Market</div>
+<div class="place-desc">في أيام السبت. الخضروات العضوية والفواكه والخبز والمربيات من المزارعين المحليين.</div>
+<div class="place-meta">📍 بيتزا باجوس، جى. بينغوسيكان سات 9-13</div>
+</div>
+<h2>🛍 التسوق</h2>
+<div class="place">
+<div class="place-name">باسار أوبود (نهارًا)</div>
+<div class="place-desc">بعد الساعة 10 صباحًا يوجد سوق للهدايا التذكارية. عباءات وتماثيل وسلال. صفقة بنسبة 50%!</div>
+<div class="place-meta">📍مركز أوبود</div>
+</div>
+<div class="place">
+<div class="place-name">Jl. Hanoman Boutiques</div>
+<div class="place-desc">محلات المصممين: الملابس المصنوعة من الأقمشة الطبيعية والمجوهرات والسيراميك.</div>
+</div>
+<div class="place">
+<div class="place-name">Threads of Life</div>
+<div class="place-desc">معرض المنسوجات: الأقمشة التقليدية المصنوعة يدويًا من حرفيي القرية.</div>
+<div class="place-meta">📍 Jl. Kajeng</div>
+</div>
+<h2>🛒 محلات البقالة</h2>
+<div class="place">
+<div class="place-name">Bintang Supermarket</div>
+<div class="place-desc">السوبر ماركت الرئيسي في اوبود. المنتجات المستوردة والأجبان والنبيذ والمواد الكيميائية المنزلية.</div>
+<div class="place-meta">📍 Jl. Raya Sanggingan</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Buda</div>
+<div class="place-desc">عضوي: خالي من الغلوتين، التوفو، التمبيه، حليب الجوز.</div>
+<div class="place-meta">📍 Jl. Jembawan</div>
+</div>
+<div class="place">
+<div class="place-name">Delta Dewata</div>
+<div class="place-desc">سوبر ماركت كبير يضم مجموعة واسعة من المنتجات، بما في ذلك الواردات.</div>
+<div class="place-meta">📍 Jl. Andong</div>
+</div>
+<h2>👕 المغاسل</h2>
+<div class="place">
+<div class="place-name">Ubud Laundry</div>
+<div class="place-desc">غسيل سريع + كي. الاستلام والتسليم في أوبود.</div>
+<div class="place-meta">📍جل. هانومان · من 7 كيلو/كجم</div>
+</div>
+<div class="place">
+<div class="place-name">Green Laundry</div>
+<div class="place-desc">غسيل صديق للبيئة، والأشياء الحساسة. جودة الخدمة.</div>
+<div class="place-meta">📍جل. غابة القرود · من 10 ألف/كجم</div>
+</div>
+<p>الخدمة الذاتية ليست كافية. يتم تسليم معظمها: يتم تسليمها في الصباح، أو استلامها في المساء أو في اليوم التالي.</p>
+<h2>🎉 النوادي والحياة الليلية</h2>
+<p>أوبود ليس مكانًا للحفلات. هناك عدد قليل من الحانات ولا توجد نوادي. ولكن هناك:</p>
+<div class="place">
+<div class="place-name">CP Lounge</div>
+<div class="place-desc">بار جاز مع موسيقى حية. الكوكتيلات، جو حميم.</div>
+<div class="place-meta">📍 Jl. Monkey Forest</div>
+</div>
+<div class="place">
+<div class="place-name">No Más</div>
+<div class="place-desc">بار يقدم المأكولات المكسيكية. المارجريتا، الموسيقى الحية في أيام الجمعة.</div>
+<div class="place-meta">📍 Jl. Goutama</div>
+</div>
+<div class="place">
+<div class="place-name">Yoga Barn Ecstatic Dance</div>
+<div class="place-desc">رقصة النشوة يوم الجمعة. حفلة رصينة: الرقص حافي القدمين حتى الفجر.</div>
+<div class="place-meta">📍 Jl. Hanoman · 150K</div>
+</div>
+<h2>🏥 العيادات والصيدليات</h2>
+<div class="place">
+<div class="place-name">Ubud Care Clinic</div>
+<div class="place-desc">الأطباء الناطقين باللغة الإنجليزية، الممارسة العامة، طب الأسنان. الاستقبال من 200 الف</div>
+<div class="place-meta">📍 Jl. Raya Ubud</div>
+</div>
+<div class="place">
+<div class="place-name">Toya Medika Clinic</div>
+<div class="place-desc">عيادة 24 ساعة مع الفحوصات. الاستقبال من 150 الف</div>
+<div class="place-meta">📍 Jl. Raya Mas</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma / K24</div>
+<div class="place-desc">صيدليات بها أدوية أساسية. المضادات الحيوية ومسكنات الألم رخيصة الثمن.</div>
+<div class="place-meta">📍مركز أوبود · من 10 آلاف</div>
+</div>
+<h2>🛕 المعابد</h2>
+<div class="place">
+<div class="place-name">Pura Tirta Empul</div>
+<div class="place-desc">الربيع المقدس. يعتبر الاستحمام الطقسي تجربة قوية. مطلوب سارونج.</div>
+<div class="place-meta">📍 تامباكسيرينج · 30 دقيقة من اوبود · المدخل 50 ك</div>
+</div>
+<div class="place">
+<div class="place-name">جوا جاجاه (كهف الفيلة)</div>
+<div class="place-desc">معبد قديم من القرن التاسع في كهف. النقوش البارزة والحمامات والجو الغامض.</div>
+<div class="place-meta">📍6 كم من المركز · الدخول 50 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Gunung Kawi</div>
+<div class="place-desc">معابد منحوتة في الصخر من القرن الحادي عشر. 300 خطوة للأسفل عبر حقول الأرز.</div>
+<div class="place-meta">📍 تامباكسيرينج · 30 دقيقة من اوبود · المدخل 50 ك</div>
+</div>
+<div class="place">
+<div class="place-name">Saraswati Temple</div>
+<div class="place-desc">معبد بركة اللوتس في وسط أوبود. مجانا. رقص ليونج في المساء.</div>
+<div class="place-meta">📍جل. رايا اوبود مجانا</div>
+</div>
+<h2>🇷🇺 الجالية الروسية</h2>
+<div class="place">
+<div class="place-name">محادثات برقية</div>
+<div class="place-desc">"Ubud Russians"، "Bali Ubud Chat" - الإيجارات والتوصيات والأحداث.</div>
+</div>
+<div class="place">
+<div class="place-name">المجتمع الروسي</div>
+<div class="place-desc">أقل مما كانت عليه في كانجو، ولكنها مستقرة. خلوات اليوغا باللغة الروسية والدوائر النسائية.</div>
+</div>
+<div class="place">
+<div class="place-name">المتخصصين الناطقين بالروسية</div>
+<div class="place-desc">ابحث في الدردشات: المعالجين الطبيعيين، مستشاري الأيورفيدا، المرشدين - كل شيء موجود.</div>
+</div>
+<h2>🎒 رياض الأطفال والمدارس</h2>
+<div class="place">
+<div class="place-name">Green School Bali</div>
+<div class="place-desc">المدرسة البيئية الشهيرة المصنوعة من الخيزران. البرنامج الدولي الطبيعة. 3-18 سنة.</div>
+<div class="place-meta">📍جل. رايا سيبانج كاجا · من 10000 دولار في السنة</div>
+</div>
+<div class="place">
+<div class="place-name">Pelangi School</div>
+<div class="place-desc">مدرسة بالي الدولية. المدرسة الخضراء يمكن الوصول إليها بسهولة أكبر. 2-12 سنة.</div>
+<div class="place-meta">📍جل. رايا نيوه كونينج · من 3000 دولار في السنة</div>
+</div>
+<div class="place">
+<div class="place-name">رياض الأطفال الروسية</div>
+<div class="place-desc">هناك مجموعات صغيرة - ابحث عن "Bali Moms" في الدردشة. من 2M/شهر</div>
+</div>
+<h2>📸 مواقع الصور</h2>
+<p>• تيجالالانج - مصاطب الأرز المتتالية<br/>
+• ممشى كامبوهان ريدج - طريق شروق الشمس<br/>
+• غابة القرود - القرود في الغابة<br/>
+• تيرتا إمبول – الاستحمام في الربيع<br/>
+• بورا جونونج كاوي – معابد صخرية<br/>
+• أي مقهى يطل على حقول الأرز<br/>
+• بوابة هندارا (على الطريق المؤدي إلى بيدوغول)</p>
+<h2>🏠 السكن</h2>
+<table>
+<tr><th>يكتب</th><th>السعر/الشهر</th><th>أين تنظر</th></tr>
+<tr><td>دار الضيافة / الغرفة</td><td>$200-400</td><td>الحجز في الموقع</td></tr>
+<tr><td>استوديو / غرفة نوم واحدة</td><td>$400-700</td><td>Facebook groups, Flokq</td></tr>
+<tr><td>فيلا مع مسبح</td><td>$700-1200</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>فيلا فاخرة في الغابة</td><td>$1500-4000</td><td>اتصالات مباشرة، وكلاء</td></tr>
+</table>
+<p><strong>أفضل المناطق:</strong> Penestanan (فيلات هادئة في حقول الأرز)، Nyuh Kuning (بالقرب من Monkey Forest)، Sanggingan (مناظر). أوبود أرخص بنسبة 20-30% من كانجو.</p>
+<h2>🛵 النقل</h2>
+<p>• <strong>سكوتر:</strong> 600 ألف - 900 ألف شهريًا (كن حذرًا - الطرق الجبلية الضيقة!)<br/>
+• <strong>Grab/Gojek:</strong> إنهم يعملون، ولكن عدد السائقين أقل مما هو عليه في كانجو. من 10K<br/>
+• <strong>إلى المطار:</strong> 1.5-2 ساعة، 300-400 ك<br/>
+• <strong>إلى كانجو:</strong> 1-1.5 ساعة<br/>
+• <strong>إلى سانور:</strong> 45-60 دقيقة</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 سر المنطقة</div>
+<div class="secret-text">Penestanan هي منطقة هادئة تقع على تلة فوق Ubud. الفلل بين حقول الأرز لا يوجد فيها سائح واحد. الأسعار أقل مرتين من المركز. أفضل مكان للإقامة الطويلة.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ سلبيات</div>
+<div class="warn-text">الرطوبة 85-95% - تصبح الأشياء متعفنة. هناك الكثير من القرود (يسرقون النظارات والهواتف). لا يوجد شاطئ. بعيد عن المطار. الحياة الليلية الصغيرة. البعوض خلال موسم الأمطار. الطرق الضيقة مع القرود.</div>
+</div>
+<div class="divider"></div>
+<h2>💰ميزانية الشهر</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">الحد الأدنى</div>
+<div class="budget-price">$500</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">مريح</div>
+<div class="budget-price">$1100</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$3000</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · دليل مناطق بالي · 2026</div>
+</body>
+</html>

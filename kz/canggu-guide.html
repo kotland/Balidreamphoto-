@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>Канггу</em></h1>
+<p class="sub">Аймақ бойынша толық нұсқаулық · @balidreamphoto</p>
+<div class="tag">🏄 Серфинг</div>
+<div class="tag">💻 Коворкинг орындары</div>
+<div class="tag">🧘 Йога</div>
+<div class="tag">🛍 Сауда</div>
+<div class="tag">🍜 Мейрамханалар</div>
+<div class="tag">🎉 Клубтар</div>
+<div class="tag">🏋️ Спорт залдары</div>
+<div class="tag">🌅 Күннің батуы</div>
+<div class="vibe">«Таңертең серфинг жасаңыз, түсте күріш алқабына қарайтын кафеден жұмыс жасаңыз, кешке достарыңызбен күн батқанда. Қайталаңыз».</div>
+<p>Канггу цифрлық көшпенділердің бейресми астанасы болып табылады. Егер сіз желіде жұмыс істесеңіз, мазмұн жасасаңыз, серфинг жасасаңыз немесе өнімділік пен көңіл көтеру арасындағы тепе-теңдікте өмір сүргіңіз келсе, бұл орын. Көптеген орыстар, австралиялықтар, еуропалықтар. Орташа жас 25-35.</p>
+<h2>☕ Кофеханалар</h2>
+<div class="place">
+<div class="place-name">Crate Cafe</div>
+<div class="place-desc">Аңызға айналған таңғы ас + арнайы кофе. Жергілікті қуырғыштардың бұршақтары. Барлығы ноутбукпен.</div>
+<div class="place-meta">📍Jl. Canggu Padang Linjong · Кофе 45-65K · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Hungry Bird Coffee</div>
+<div class="place-desc">Канггудағы ең жақсы арнайы кофе. Меншікті дәндер, құйылатын, V60. Кофе гектері - осында.</div>
+<div class="place-meta">📍Jl. Рая Семат · Кофе 40-60К · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Machinery Cafe</div>
+<div class="place-desc">Өнеркәсіптік лифт, үлкен кеңістік, кешке дейін таңғы ас. Жалпақ ақ - үстіңгі.</div>
+<div class="place-meta">📍Jl. Batu Bolong · Кофе 45-70K · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Doppio Coffee</div>
+<div class="place-desc">Керемет эспрессосы бар шағын кофехана. Жылдам, дәмді, көрсетілімсіз.</div>
+<div class="place-meta">📍Jl. Pantai Berawa · Кофе 35-55K</div>
+</div>
+<div class="place">
+<div class="place-name">Satu-Satu Coffee</div>
+<div class="place-desc">Бали дәндері, тыныш атмосфера, суық қайнату - ыстықта құтқару.</div>
+<div class="place-meta">📍Jl. Pantai Batu Bolong · Кофе 40-60K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<h2>💻 Коворкинг орындары</h2>
+<div class="place">
+<div class="place-name">Dojo Bali</div>
+<div class="place-desc">Канггудағы негізгі коворкинг кеңістігі. 24/7, жылдам WiFi (100+ Мбит/с), қоғамдық іс-шаралар, бассейн.</div>
+<div class="place-meta">📍Jl. Batu Mejan · 250K/күн · 3М/ай · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Outpost Canggu</div>
+<div class="place-desc">Екі қабат, кондоминиум, Skype кабиналары, төменгі қабаттағы кафе. Ауыр жұмыс атмосферасы.</div>
+<div class="place-meta">📍Jl. Рая Канггу · 200K/күн · 2,5 млн/ай · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Tribal Bali</div>
+<div class="place-desc">Коворкинг + коливинг. Бассейн, йога, қауымдастық. Бойдақтар үшін өте қолайлы.</div>
+<div class="place-meta">📍Jl. Нелайян · 200K/күн · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Biliq Bali</div>
+<div class="place-desc">Жақсы WiFi бар бюджеттік коворкинг кеңістігі. Тыныш, кондиционер, кеңсені жалға алуға болады.</div>
+<div class="place-meta">📍Jl. Pantai Berawa · 150K/күн · 1,8M/ай</div>
+</div>
+<h2>🍜 Мейрамханалар</h2>
+<h3>Бюджет (30-60 мың)</h3>
+<div class="place">
+<div class="place-name">Warung Bu Mi</div>
+<div class="place-desc">Нағыз индонезиялық тағам. Наси Чампур, ми горенг. Мұнда жергілікті тұрғындар тамақтанады.</div>
+<div class="place-meta">📍 Jl. Batu Bolong · 25-45K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Local</div>
+<div class="place-desc">Наси горенг әжесіне ұқсайды. Пенни үшін үлкен бөліктер.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 20-40K</div>
+</div>
+<div class="place">
+<div class="place-name">Night Market Berawa</div>
+<div class="place-desc">Кешке көше тағамдары. Сатай, бақсо, мартабақ. Атмосфера!</div>
+<div class="place-meta">📍 Берава · Кеш · 15-50К</div>
+</div>
+<h3>Орташа (80-200К)</h3>
+<div class="place">
+<div class="place-name">Milk &amp; Madu</div>
+<div class="place-desc">Классикалық таңғы ас. Құймақ, жұмыртқа бенедикт, жақсы кофе.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 80-150K</div>
+</div>
+<div class="place">
+<div class="place-name">BGS Bali</div>
+<div class="place-desc">Серф-бар + гамбургерлер + атмосфера. Кешке жанды музыка.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 90-180K</div>
+</div>
+<div class="place">
+<div class="place-name">Betelnut Cafe</div>
+<div class="place-desc">Салауатты тағам, смузи табақтары, салаттар. Әдемі интерьер, Канггу виби.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 80-160K</div>
+</div>
+<h3>Fine dining (200K+)</h3>
+<div class="place">
+<div class="place-name">La Brisa</div>
+<div class="place-desc">Қайта өңделген ағаштан жасалған Boho жағажай клубы. Теңіз өнімдері, коктейльдер, күннің батуы. Брондау!</div>
+<div class="place-meta">📍 Echo Beach · 200-500K</div>
+</div>
+<div class="place">
+<div class="place-name">Ji Terrace by the Sea</div>
+<div class="place-desc">Жартастағы азиялық синтез. Мұхиттың панорамалық көрінісі. Деректер орны.</div>
+<div class="place-meta">📍 Echo Beach · 250-600K</div>
+</div>
+<h2>🥗 Вегетариандық мекемелер</h2>
+<div class="place">
+<div class="place-name">Shady Shack</div>
+<div class="place-desc">Вегетариандық, әдемі, инстаграмға жарамды. Смути табақтары, карри, джекфрут такосы.</div>
+<div class="place-meta">📍 Jl. Tanah Barak · 70-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Peloton Supershop</div>
+<div class="place-desc">Салауатты тағам, тостағандар, жаңа сығылған шырындар. Барлығы вегетариандық, көбісі вегетариандық.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 65-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Alive Wholefoods</div>
+<div class="place-desc">Органикалық, шикі тағам, глютенсіз тағамдар. Салауатты таңғы ас үшін тыныш орын.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 70-100K</div>
+</div>
+<h2>🌱 Вегетариандық орындар</h2>
+<div class="place">
+<div class="place-name">Bali Buda</div>
+<div class="place-desc">Органикалық кафе + дүкен. Вегетариандық мәзір, темпе гамбургерлері, шикі тағам десерттері.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 60-110K</div>
+</div>
+<div class="place">
+<div class="place-name">The Loft</div>
+<div class="place-desc">Толығымен өсімдікке негізделген дәмхана. Тостағандар, каррилер, вегетариандық ірімшіктер.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Samadi Bali</div>
+<div class="place-desc">Вегетариандық кафесі бар йога орталығы. Органикалық тостағандар, суық сығымдалған шырындар.</div>
+<div class="place-meta">📍 Jl. Padang Linjong · 55-100K</div>
+</div>
+<h2>🏄 Серфинг</h2>
+<table>
+<tr><th>Дақ</th><th>Деңгей</th><th>Чип</th></tr>
+<tr><td><strong>Batu Bolong</strong></td><td>Жаңадан бастаушылар</td><td>Басты мерекелік орын, жағалаудағы мектептер</td></tr>
+<tr><td><strong>Echo Beach</strong></td><td>Орташа+</td><td>Күшті толқындар, рифтердің үзілуі</td></tr>
+<tr><td><strong>Berawa</strong></td><td>Жаңадан бастаушылар</td><td>Кең жағажай демалысы, адам аз</td></tr>
+<tr><td><strong>Pererenan</strong></td><td>Орташа</td><td>Тыныш, өзіңіздің ұзын толқындарыңыз үшін</td></tr>
+<tr><td><strong>Seseh</strong></td><td>Орташа+</td><td>Жабайы, қара құм, бос құрам</td></tr>
+</table>
+<p><strong>Мектептер:</strong> Odysseys Surf School, Бали Green Surf School, Canggu Surf Camp. Бір сабаққа 350-500 мың (1,5 сағат). Тақтаны жалға алу: сағатына 50-100 мың. Ең жақсы маусым: сәуір-қазан.</p>
+<h2>🤿 Дайвинг</h2>
+<p>Канггудың өзінде сүңгу жоқ - лайлы су, күшті ағыс. Ең жақын суға түсу орындары:</p>
+<div class="place">
+<div class="place-name">Nusa Penida (1,5 сағат)</div>
+<div class="place-desc">Манта нүктесі, Кристал шығанағы. Манты, мола-мола (шілде-қазан). Бір күндік сапар 2М.</div>
+</div>
+<div class="place">
+<div class="place-name">Туламбен (2,5 сағат)</div>
+<div class="place-desc">USS Liberty - суға батқан кеме. Трансфермен 1,5 миллионнан бастап сүңгуір сапары.</div>
+</div>
+<p><strong>Канггу мектептері:</strong> Blue Season Bali, Bali Diving Academy - пикаппен сапарларды ұйымдастырыңыз.</p>
+<h2>🫁 Фридайвинг</h2>
+<p>Канггудағы бассейндерде жаттығу, Нуса Пенида мен Амедте сүңгу.</p>
+<div class="place">
+<div class="place-name">Apnea Bali</div>
+<div class="place-desc">AIDA курстары, финдер бассейнінде жаттығу. Пенидаға саяхат.</div>
+<div class="place-meta">📍 Канггу · Бағасы 4,5 млн</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Freediving</div>
+<div class="place-desc">SSI курстары, бассейн сессиялары + Нуса Пенидадағы ашық су.</div>
+<div class="place-meta">📍 Канггу · 5 миллионнан бастап курс</div>
+</div>
+<h2>🐠 Суда жүзу</h2>
+<p>Канггуда толқындар мен лай су жоқ. Ең жақын: <strong>Nusa Penida</strong> (1,5 сағат, 500 мыңнан бір күндік сапар), <strong>Amed</strong> (2,5 сағат), <strong>Sanur</strong> (теңіздегі рифтер, 45 мин).</p>
+<h2>🏖 Толқынсыз жағажайлар</h2>
+<p>Канггуда жүзуге арналған тыныш жағажайлар жоқ - барлық жерде толқындар мен күшті ағыстар бар. Ең жақын: <strong>Sanur</strong> (45 мин) – маржан рифімен қорғалған тыныш су. <strong>Nusa Dua</strong> (1 сағат) - көгілдір лагуна.</p>
+<h2>🧘 Йога және сауықтыру</h2>
+<div class="place">
+<div class="place-name">The Practice Bali</div>
+<div class="place-desc">Ең жақсы студиялардың бірі. Виняса, хатха, инь. Әдемі бамбук шала.</div>
+<div class="place-meta">📍Jl. Паданг Линджонг · 150-180K/сабақ</div>
+</div>
+<div class="place">
+<div class="place-name">Samadi Bali</div>
+<div class="place-desc">Йога + органикалық кафе + жексенбілік базар. Қоғамдастық атмосферасы.</div>
+<div class="place-meta">📍Jl. Паданг Линджонг · 130-160K/сабақ</div>
+</div>
+<div class="place">
+<div class="place-name">Serenity Yoga</div>
+<div class="place-desc">Бюджеттік йога. Таңертеңгілік сабақтар далаға қарайтын ашық шаледе.</div>
+<div class="place-meta">📍Jl. Нелайян · 100-130K/сабақ</div>
+</div>
+<h2>🏋️ Спорт залдары</h2>
+<div class="place">
+<div class="place-name">Finns Recreation Club</div>
+<div class="place-desc">Үлкен кешен: спорт залы, 25 метрлік бассейн, боулинг, батуттар.</div>
+<div class="place-meta">📍Jl. Pantai Berawa · 250K/күн · 1,5 млн/айдан бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Body Factory Bali</div>
+<div class="place-desc">Кроссфит, ауыр атлетика, функционалдық жаттығулар. Ауыр адамдар үшін.</div>
+<div class="place-meta">📍Jl. Pantai Berawa · 1,2 млн/айдан бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Canggu Studio</div>
+<div class="place-desc">Жақсы жабдықтары бар бюджеттік бөлме. Жаттығу машиналары, бос салмақтар.</div>
+<div class="place-meta">📍Jl. Batu Bolong · 700K/айдан бастап</div>
+</div>
+<h2>🌅 Күннің батуы / Күннің шығуы</h2>
+<table>
+<tr><th>Орын</th><th>Түр</th><th>Vibe</th></tr>
+<tr><td><strong>Echo Beach</strong></td><td>🌅 Күннің батуы</td><td>Құмдағы сыра, артқы жағында серферлер</td></tr>
+<tr><td><strong>La Brisa</strong></td><td>🌅 Күннің батуы</td><td>Бохо клубы, бұршақ пакеттері, коктейльдер</td></tr>
+<tr><td><strong>The Lawn</strong></td><td>🌅 Күннің батуы</td><td>Панорамасы бар бассейн бар</td></tr>
+<tr><td><strong>Tanah Lot</strong> (20 мин)</td><td>🌅 Күннің батуы</td><td>Мұхит храмы - №1 Балидегі күн батуы</td></tr>
+<tr><td><strong>Berawa Beach</strong></td><td>🌅 Күннің батуы</td><td>Тыныш, көп адам жоқ</td></tr>
+</table>
+<p>Канггудағы күннің шығуы ең жақсы емес (батыс жағалау). Күннің шығуы үшін Санурға немесе Батур жанартауына барыңыз.</p>
+<h2>🌋 Жақын жерде жанартаулар мен таулар</h2>
+<div class="place">
+<div class="place-name">Гунунг Батур</div>
+<div class="place-desc">Таң атқанда көтерілу (2 сағат көтерілу). Гидпен 400 мыңға дейін серуендеу.</div>
+<div class="place-meta">📍 Кинтамани · Канггудан 2 сағат</div>
+</div>
+<div class="place">
+<div class="place-name">Гунунг Агунг</div>
+<div class="place-desc">Балидің негізгі жанартауы (3142 м). Күрделі бақылау 6-8 сағат. Нұсқаулық қажет.</div>
+<div class="place-meta">📍 Карангасем · Канггудан 3 сағат · 800К бастап</div>
+</div>
+<h2>🌾 Жақын жерде күріш террассалары</h2>
+<div class="place">
+<div class="place-name">Переренан күріш алқаптары</div>
+<div class="place-desc">Тікелей Канггуға! Күн шыққанда немесе батқанда серуендеу тегін және әдемі.</div>
+<div class="place-meta">📍 Канггу орталығынан 10 мин</div>
+</div>
+<div class="place">
+<div class="place-name">Тегаллаланг</div>
+<div class="place-desc">Атақты каскадты террассалар. Инстаграм классикасы. Таңертең ертерек.</div>
+<div class="place-meta">📍 Убуд · Канггудан 1,5 сағат · Кіру 25К</div>
+</div>
+<div class="place">
+<div class="place-name">Jatiluwih</div>
+<div class="place-desc">ЮНЕСКО. Көпшіліксіз үлкен террассалар. Скутерге мінуге болады, ғажайып көріністер.</div>
+<div class="place-meta">📍 Табанан · Канггудан 1,5 сағат · Кіру 40К</div>
+</div>
+<h2>⛳ Гольф</h2>
+<div class="place">
+<div class="place-name">Bali National Golf Club</div>
+<div class="place-desc">18 шұңқыр, мұхит көрінісі. Кәсіби сала.</div>
+<div class="place-meta">📍 Нуса Дуа · Канггудан 1 сағат · 1,8М/айналымнан</div>
+</div>
+<div class="place">
+<div class="place-name">Handara Golf &amp; Resort</div>
+<div class="place-desc">Кратердегі тау өрісі. Фотосуреттерге арналған салқын, әдемі, әйгілі қақпа.</div>
+<div class="place-meta">📍 Бедугул · Канггудан 1,5 сағат · 1,2М/айналымнан</div>
+</div>
+<h2>🍓 Фермалар</h2>
+<div class="place">
+<div class="place-name">Bali Pulina Coffee Plantation</div>
+<div class="place-desc">Лувак кофесі мен какао дәмі. Тегін экскурсия, джунгли көріністері.</div>
+<div class="place-meta">📍 Убуд · Канггудан 1,5 сағат</div>
+</div>
+<div class="place">
+<div class="place-name">Strawberry Farm Bedugul</div>
+<div class="place-desc">Таудағы құлпынай теру. Фотосуреттер мен балалар үшін тамаша орын.</div>
+<div class="place-meta">📍 Бедугул · Канггудан 1,5 сағат · Кіру 25К</div>
+</div>
+<div class="place">
+<div class="place-name">Big Tree Farms</div>
+<div class="place-desc">Шоколад фабрикасына саяхат. Бали какаосынан жасалған шоколад дәмі.</div>
+<div class="place-meta">📍Jl. Рая Сибанг Каджа · Канггудан 30 минут</div>
+</div>
+<h2>🍉 Жеміс базарлары</h2>
+<div class="place">
+<div class="place-name">Пасар Канггу (таңертеңгілік базар)</div>
+<div class="place-desc">Фермерлердің жаңа піскен жемістері. Манго, папайя, рамбутан, майшабақ. Бағалары кафелерден 3 есе төмен.</div>
+<div class="place-meta">📍Jl. Рая Кангу · таңғы 6-10</div>
+</div>
+<div class="place">
+<div class="place-name">Samadi Sunday Market</div>
+<div class="place-desc">Жексенбі күндері фермерлер базары. Органикалық көкөністер, жемістер, нан, бал.</div>
+<div class="place-meta">📍 Самади Бали · 9-14 күн</div>
+</div>
+<h2>🛍 Сауда</h2>
+<div class="place">
+<div class="place-name">Love Anchor Market</div>
+<div class="place-desc">Демалыс күндері барахолка. Киім, зергерлік бұйымдар, кәдесыйлар. Сауда!</div>
+<div class="place-meta">📍Jl. Pantai Batu Bolong Сенбі</div>
+</div>
+<div class="place">
+<div class="place-name">Batu Bolong Street</div>
+<div class="place-desc">Бүкіл көше бутиктерге, серфинг дүкендеріне және дизайнерлік дүкендерге толы. Бали Мелроз даңғ.</div>
+</div>
+<div class="place">
+<div class="place-name">Berawa Boutiques</div>
+<div class="place-desc">Дизайнерлік бутиктердің жаңа толқыны. Киім, декор, қолдан жасалған зергерлік бұйымдар.</div>
+</div>
+<h2>🛒 Азық-түлік дүкендері</h2>
+<div class="place">
+<div class="place-name">Pepito Market</div>
+<div class="place-desc">Импорттық өнімдер: еуропалық ірімшіктер, шарап, жеңіл тағамдар. Қымбат, бірақ бәрі бар.</div>
+<div class="place-meta">📍 Канггудағы бірнеше нүкте</div>
+</div>
+<div class="place">
+<div class="place-name">Frestive Supermarket</div>
+<div class="place-desc">Үлкен супермаркет. Тұрмыстық химиядан бастап жаңа піскен теңіз өнімдеріне дейін.</div>
+<div class="place-meta">📍 Jl. Raya Canggu</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Buda Shop</div>
+<div class="place-desc">Органикалық, глютенсіз, салауатты өмір салтын ұстанатын өнімдер. Тофу, темпе, жаңғақ сүті.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong</div>
+</div>
+<h2>👕 Кірлер</h2>
+<div class="place">
+<div class="place-name">Quick Laundry Canggu</div>
+<div class="place-desc">24 сағат бұрын жуу + үтіктеу. Экспресс – 6 сағат. Салмағы бойынша.</div>
+<div class="place-meta">📍Jl. Бату Болон · 8К/кг бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Mr. White Laundry</div>
+<div class="place-desc">Сапалы кір: нәзік заттар, химиялық тазалау. Алып алу және жеткізу.</div>
+<div class="place-meta">📍Jl. Пантай Берава · 12К/кг</div>
+</div>
+<p>Өзіне-өзі қызмет көрсететін кір жуғыш машиналар аз - барлық дерлік кір жууға арналған. Орташа бағасы: кг үшін 7-12К, 24 сағатта дайын.</p>
+<h2>🎉 Клубтар мен түнгі өмір</h2>
+<div class="place">
+<div class="place-name">Old Man's</div>
+<div class="place-desc">Канггу туралы аңыз. Жанды музыка, сыра (35K Bintang), кеш сайын кеш. Нөлдік пафос.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong</div>
+</div>
+<div class="place">
+<div class="place-name">Finn's Beach Club</div>
+<div class="place-desc">Күндізгі бассейн кеші, диджейлер, коктейльдер (150-200K). Негізгі жағажай клубы.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa</div>
+</div>
+<div class="place">
+<div class="place-name">Tamora Gallery</div>
+<div class="place-desc">Түнгі клуб: электроника, техно. Кеш ашылады және таңға дейін ашық болады.</div>
+<div class="place-meta">📍 Jl. Subak Sari</div>
+</div>
+<div class="place">
+<div class="place-name">Sand Bar</div>
+<div class="place-desc">Эхо жағажайындағы бар. Күннің батуы → музыка → құмда билеу.</div>
+<div class="place-meta">📍 Echo Beach</div>
+</div>
+<h2>🏥 Емханалар мен дәріханалар</h2>
+<div class="place">
+<div class="place-name">Canggu Medical Clinic</div>
+<div class="place-desc">Ағылшын тілінде сөйлейтін дәрігерлер, жалпы тәжірибе, сынақтар. Қабылдау 200 мыңнан.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa</div>
+</div>
+<div class="place">
+<div class="place-name">Unicare Clinic</div>
+<div class="place-desc">Халықаралық клиника: терапевт, дерматолог, тіс дәрігері. Қабылдау 300 мыңнан.</div>
+<div class="place-meta">📍 Jl. Raya Canggu</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma / Guardian</div>
+<div class="place-desc">Негізгі дәрі-дәрмектері бар дәріханалар. Антибиотиктер рецептсіз, арзан.</div>
+<div class="place-meta">📍 Chang бойынша · Дәрілер 10K</div>
+</div>
+<h2>🛕 Храмдар</h2>
+<div class="place">
+<div class="place-name">Tanah Lot</div>
+<div class="place-desc">Мұхиттағы жартастағы храм. Мұндағы басты тартымдылық – таңғажайып күннің батуы.</div>
+<div class="place-meta">📍 Канггудан 20 минут · Кіру 60 мың</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Batu Bolong</div>
+<div class="place-desc">Бату-Болонг жағажайындағы жартаста орналасқан шағын индуизм ғибадатханасы. Тегін.</div>
+<div class="place-meta">📍 Batu Bolong Beach</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Petitenget</div>
+<div class="place-desc">Канггу мен Семиняк шекарасындағы ежелгі ғибадатхана. Толық ай рәсімдері.</div>
+<div class="place-meta">📍Jl. Петитенгет · Канггудан 15 мин</div>
+</div>
+<p>Мешіттер, шіркеулер - Денпасарда (30-40 мин). Буддистік монастырь Брахма Вихара Арама - Ловинада (3 сағат).</p>
+<h2>🇷🇺 Орыс қауымы</h2>
+<div class="place">
+<div class="place-name">Telegram чаттары</div>
+<div class="place-desc">«Канггу орыстары», «Бали чаты», «Бали аналары» - жалға алу, ұсыныстар, кештер.</div>
+</div>
+<div class="place">
+<div class="place-name">Орыс мейрамханалары</div>
+<div class="place-desc">«Мама Ресей», «Пелмени Бали» - борщ, тұшпара, ірімшік торттары. Үйге деген ностальгия.</div>
+</div>
+<div class="place">
+<div class="place-name">Орысша сөйлейтін дәрігерлер</div>
+<div class="place-desc">«Бали медицинасы» чаттары – терапевтер, стоматологтар, педиатрлар орыс тілінде іздеңіз.</div>
+</div>
+<p>Канггудағы орыс қауымдастығы - Балидегі ең үлкен қауымдастықтың бірі. Орысша білетін күтуші, заңгер, риэлторды табу оңай.</p>
+<h2>🎒 Балабақшалар мен мектептер</h2>
+<div class="place">
+<div class="place-name">Canggu Community School</div>
+<div class="place-desc">Халықаралық мектеп, Кембридж бағдарламасы. Оқыту ағылшын тілі.</div>
+<div class="place-meta">📍Jl. Субак Сари · жылына $5000 бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Montessori Garden Bali</div>
+<div class="place-desc">Монтессори жүйесі бойынша балабақша. 2-6 жас. Ағылшын + Индонезия.</div>
+<div class="place-meta">📍 Переренан · айына 3 миллионнан бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Орыс балабақшалары</div>
+<div class="place-desc">Канггудағы бірнеше жеке орыс балабақшалары - чатта «Бали аналарын» іздеңіз. Айына 2 миллионнан бастап</div>
+</div>
+<h2>📸 Фото орындар</h2>
+<p>• Переренан күріш алқаптары – алтын сағат<br/>
+• Танах Лот – күн батқандағы ғибадатхана<br/>
+• Echo Beach - артқы жарықтандырылған серферлер<br/>
+• Бату Болон – таңғы серфинг<br/>
+• Күріш алқабына қарайтын кафе<br/>
+• Love Anchor Market - ашық түстер<br/>
+• La Brisa - бохо интерьері</p>
+<h2>🏠 Тұрғын үй</h2>
+<table>
+<tr><th>Түр</th><th>Баға/ай</th><th>Қайда қарау керек</th></tr>
+<tr><td>Бірлескен бөлме</td><td>$300-500</td><td>Outpost, Tribal, Dojo</td></tr>
+<tr><td>Студия / 1Б</td><td>$500-800</td><td>Facebook groups, Flokq</td></tr>
+<tr><td>Бассейні бар 1 бөлмелі вилла</td><td>$800-1500</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Люкс вилла 2BR+</td><td>$2000-5000</td><td>Тікелей байланыстар, агенттер</td></tr>
+</table>
+<p><strong>Ең жақсы аймақтар:</strong> Переренан (тыныш, виллалар), Берава (барлығына жақын), Бату Болон (кеш). FB сайтында іздеу: «Canggu қауымдастығы», «Бали ұзақ мерзімді жалға беру».</p>
+<h2>🛵 Көлік</h2>
+<p>• <strong>Скутер:</strong> 700K-1M/ай (халықаралық құқықтар қажет!)<br/>
+• <strong>Grab/Gojek:</strong> сапарға 15 мыңнан бастап<br/>
+• <strong>Әуежайға:</strong> 45-60 мин, 150-250К<br/>
+• <strong>Убуд қаласына:</strong> 1-1,5 сағат<br/>
+• <strong>Семинякқа:</strong> 15-20 мин</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 Аймақтың құпиясы</div>
+<div class="secret-text">Переренан – «2 жылдан кейін Канггу». Тыныш, арзанырақ, әдемірек. Білетіндер қазірдің өзінде көшіп жатыр. Мұнда ең жақсы виллалар мен кафелер ашылады.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ Кемшіліктері</div>
+<div class="warn-text">Қарбалас уақытта кептеліс (16-19). Мұхит жүзу үшін қауіпті (күшті ағыс). Жыл сайын баға өсіп келеді. Құрылыс пен шу көп. Жаңбырлы маусымда (қараша-наурыз) жолдарды су басып қалады. Кейде жағажайларда қоқыс болады.</div>
+</div>
+<div class="divider"></div>
+<h2>💰 Бір айға арналған бюджет</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Ең аз</div>
+<div class="budget-price">$600</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Ыңғайлы</div>
+<div class="budget-price">$1400</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$3500</div>
+<div class="budget-unit">айына</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · Бали аудандарына арналған гид · 2026 ж</div>
+</body>
+</html>

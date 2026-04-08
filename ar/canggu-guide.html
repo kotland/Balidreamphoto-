@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>كانجو</em></h1>
+<p class="sub">الدليل الكامل للمنطقة · @balidreamphoto</p>
+<div class="tag">🏄 ركوب الأمواج</div>
+<div class="tag">💻 مساحات العمل المشترك</div>
+<div class="tag">🧘 اليوغا</div>
+<div class="tag">🛍 التسوق</div>
+<div class="tag">🍜 مطاعم</div>
+<div class="tag">🎉 الأندية</div>
+<div class="tag">🏋️ صالات رياضية</div>
+<div class="tag">🌅 غروب الشمس</div>
+<div class="vibe">"ركوب الأمواج في الصباح، والعمل من مقهى يطل على حقول الأرز في فترة ما بعد الظهر، وغروب الشمس مع الأصدقاء في المساء. كرر ذلك."</div>
+<p>كانجو هي العاصمة غير الرسمية للبدو الرحل. إذا كنت تعمل عبر الإنترنت، أو تنشئ محتوى، أو تتصفح الإنترنت، أو ترغب فقط في العيش في توازن بين الإنتاجية والمتعة، فهذا هو المكان المناسب. العديد من الروس والأستراليين والأوروبيين. متوسط ​​العمر 25-35.</p>
+<h2>☕ المقاهي</h2>
+<div class="place">
+<div class="place-name">Crate Cafe</div>
+<div class="place-desc">وجبات إفطار أسطورية + قهوة متخصصة. الفول من المحامص المحلية. كل ذلك مع أجهزة الكمبيوتر المحمولة.</div>
+<div class="place-meta">📍جل. كانجو بادانج لينجونج · القهوة 45-65 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Hungry Bird Coffee</div>
+<div class="place-desc">أفضل قهوة متخصصة في كانجو. الحبوب الخاصة، صب، V60. خبراء القهوة - هنا.</div>
+<div class="place-meta">📍جل. راية سمات · القهوة 40-60 ك · واي فاي ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Machinery Cafe</div>
+<div class="place-desc">دور علوي صناعي، مساحة كبيرة، فطور وغداء حتى المساء. أبيض مسطح - أعلى.</div>
+<div class="place-meta">📍جل. باتو بولونج · القهوة 45-70 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Doppio Coffee</div>
+<div class="place-desc">مقهى صغير يقدم قهوة إسبرسو ممتازة. سريع ولذيذ، لا التباهي.</div>
+<div class="place-meta">📍جل. بانتاي بيراوا · القهوة 35-55 ك</div>
+</div>
+<div class="place">
+<div class="place-name">Satu-Satu Coffee</div>
+<div class="place-desc">الحبوب البالية، الجو الهادئ، المشروب البارد - الخلاص في الحرارة.</div>
+<div class="place-meta">📍جل. بانتاي باتو بولونج · القهوة 40-60 ك · واي فاي ⭐⭐⭐⭐</div>
+</div>
+<h2>💻 مساحات العمل المشترك</h2>
+<div class="place">
+<div class="place-name">Dojo Bali</div>
+<div class="place-desc">مساحة العمل المشتركة الرئيسية في كانجو. 24/7، واي فاي سريع (100+ ميجابت في الثانية)، فعاليات مجتمعية، حمام سباحة.</div>
+<div class="place-meta">📍جل. باتو ميجان · 250 ألف/يوم · 3 مليون/شهر · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Outpost Canggu</div>
+<div class="place-desc">طابقين، شقة، أكشاك سكايب، مقهى في الطابق السفلي. جو العمل الجاد.</div>
+<div class="place-meta">📍جل. Raya Canggu · 200 ألف/يوم · 2.5 مليون/شهر · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Tribal Bali</div>
+<div class="place-desc">العمل المشترك + التلوين. حمام سباحة، يوغا، مجتمع. مثالية للأفراد.</div>
+<div class="place-meta">📍جل. نيليان · 200 ألف/يوم · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Biliq Bali</div>
+<div class="place-desc">مساحة عمل مشتركة اقتصادية مع خدمة WiFi جيدة. هادئ ومكيف، يمكنك استئجار مكتب.</div>
+<div class="place-meta">📍جل. بانتاي بيراوا · 150 ألف/يوم · 1.8 مليون/شهر</div>
+</div>
+<h2>🍜 مطاعم</h2>
+<h3>الميزانية (30-60 ألف)</h3>
+<div class="place">
+<div class="place-name">Warung Bu Mi</div>
+<div class="place-desc">الطعام الإندونيسي الأصيل. ناسي تشامبور، مي جورينج. السكان المحليين يأكلون هنا.</div>
+<div class="place-meta">📍 Jl. Batu Bolong · 25-45K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Local</div>
+<div class="place-desc">ناسي جورينج مثل الجدة. أجزاء ضخمة مقابل أجر ضئيل.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 20-40K</div>
+</div>
+<div class="place">
+<div class="place-name">Night Market Berawa</div>
+<div class="place-desc">طعام الشارع في المساء. ساتاي، باكسو، مارتاباك. أَجواء!</div>
+<div class="place-meta">📍 بيراوة · مساءً · 15-50 ك</div>
+</div>
+<h3>متوسطة (80-200 ألف)</h3>
+<div class="place">
+<div class="place-name">Milk &amp; Madu</div>
+<div class="place-desc">برنش كلاسيكي. الفطائر والبيض بينيديكت والقهوة الجيدة.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 80-150K</div>
+</div>
+<div class="place">
+<div class="place-name">BGS Bali</div>
+<div class="place-desc">بار الأمواج + البرجر + الجو. الموسيقى الحية في المساء.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 90-180K</div>
+</div>
+<div class="place">
+<div class="place-name">Betelnut Cafe</div>
+<div class="place-desc">الطعام الصحي، أوعية العصائر، والسلطات. الداخلية الجميلة، كانجو فيبي.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 80-160K</div>
+</div>
+<h3>Fine dining (200K+)</h3>
+<div class="place">
+<div class="place-name">La Brisa</div>
+<div class="place-desc">نادي شاطئ بوهو مصنوع من الخشب المعاد تدويره. المأكولات البحرية، الكوكتيلات، غروب الشمس. كتاب!</div>
+<div class="place-meta">📍 Echo Beach · 200-500K</div>
+</div>
+<div class="place">
+<div class="place-name">Ji Terrace by the Sea</div>
+<div class="place-desc">الانصهار الآسيوي على الصخرة. مناظر بانورامية للمحيط. بقعة البيانات.</div>
+<div class="place-meta">📍 Echo Beach · 250-600K</div>
+</div>
+<h2>🥗 مؤسسات نباتية</h2>
+<div class="place">
+<div class="place-name">Shady Shack</div>
+<div class="place-desc">نباتية وجميلة وقابلة للانستغرام. أوعية العصير، الكاري، تاكو الجاك فروت.</div>
+<div class="place-meta">📍 Jl. Tanah Barak · 70-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Peloton Supershop</div>
+<div class="place-desc">الطعام الصحي والأوعية والعصائر الطازجة. كل شيء نباتي، والكثير نباتي.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 65-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Alive Wholefoods</div>
+<div class="place-desc">الأطعمة العضوية الخام والأطباق الخالية من الغلوتين. مكان هادئ لتناول وجبة فطور صحية.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 70-100K</div>
+</div>
+<h2>🌱أماكن نباتية</h2>
+<div class="place">
+<div class="place-name">Bali Buda</div>
+<div class="place-desc">مقهى عضوي + متجر. قائمة طعام نباتية، برجر تمبيه، حلويات من الأطعمة النيئة.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 60-110K</div>
+</div>
+<div class="place">
+<div class="place-name">The Loft</div>
+<div class="place-desc">مقهى نباتي بالكامل. الأطباق والكاري وكعك الجبن النباتي.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Samadi Bali</div>
+<div class="place-desc">مركز اليوغا مع مقهى نباتي. الأوعية العضوية والعصائر الباردة.</div>
+<div class="place-meta">📍 Jl. Padang Linjong · 55-100K</div>
+</div>
+<h2>🏄 ركوب الأمواج</h2>
+<table>
+<tr><th>بقعة</th><th>مستوى</th><th>رقاقة</th></tr>
+<tr><td><strong>Batu Bolong</strong></td><td>مبتدئين</td><td>مكان الحفلة الرئيسي، المدارس على الشاطئ</td></tr>
+<tr><td><strong>Echo Beach</strong></td><td>متوسط+</td><td>موجات قوية، وكسر الشعاب المرجانية</td></tr>
+<tr><td><strong>Berawa</strong></td><td>مبتدئين</td><td>استراحة واسعة على الشاطئ، عدد قليل من الناس</td></tr>
+<tr><td><strong>Pererenan</strong></td><td>متوسط</td><td>هادئ، لموجاتك الطويلة</td></tr>
+<tr><td><strong>Seseh</strong></td><td>متوسط+</td><td>البرية، الرمال السوداء، تشكيلة فارغة</td></tr>
+</table>
+<p><strong>المدارس:</strong> مدرسة أوديسي لركوب الأمواج، ومدرسة بالي جرين لركوب الأمواج، ومخيم كانجو لركوب الأمواج. 350-500 ألف لكل درس (1.5 ساعة). تأجير اللوحة: 50-100 ألف/ساعة. أفضل موسم: أبريل-أكتوبر.</p>
+<h2>🤿 الغوص</h2>
+<p>لا يوجد غوص في كانجو نفسها - مياه موحلة وتيارات قوية. أقرب مواقع الغوص:</p>
+<div class="place">
+<div class="place-name">نوسا بينيدا (1.5 ساعة)</div>
+<div class="place-desc">مانتا بوينت، كريستال باي. مانتي، مولا مولا (يوليو-أكتوبر). رحلة ليوم واحد من 2M.</div>
+</div>
+<div class="place">
+<div class="place-name">تولامبين (2.5 ساعة)</div>
+<div class="place-desc">يو إس إس ليبرتي هي سفينة غارقة. رحلة غوص من 1.5 متر مع النقل.</div>
+</div>
+<p><strong>المدارس في كانجو:</strong> بلو سيزون بالي، أكاديمية بالي للغوص - تنظيم الرحلات مع النقل.</p>
+<h2>🫁الغوص الحر</h2>
+<p>التدريب في حمامات السباحة في كانجو، والغوص في نوسا بينيدا وآميد.</p>
+<div class="place">
+<div class="place-name">Apnea Bali</div>
+<div class="place-desc">دورات AIDA، التدريب في تجمع الفنلنديين. رحلات إلى بينيدا.</div>
+<div class="place-meta">📍 كانجو · السعر يبدأ من 4.5 مليون</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Freediving</div>
+<div class="place-desc">دورات SSI وجلسات البلياردو + المياه المفتوحة في نوسا بينيدا.</div>
+<div class="place-meta">📍 كانجو · الدورة من 5M</div>
+</div>
+<h2>🐠 الغطس</h2>
+<p>في كانجو لا توجد أمواج ومياه موحلة. الأقرب: <strong>Nusa Penida</strong> (ساعة ونصف، رحلة يومية من 500 ألف)، <strong>Amed</strong> (2.5 ساعة)، <strong>Sanur</strong> (الشعاب المرجانية البحرية، 45 دقيقة).</p>
+<h2>🏖شواطئ بدون أمواج</h2>
+<p>لا توجد شواطئ هادئة للسباحة في كانجو - فهناك أمواج وتيارات قوية في كل مكان. الأقرب: <strong>Sanur</strong> (45 دقيقة) - مياه هادئة محمية بشعاب مرجانية. <strong>Nusa Dua</strong> (ساعة واحدة) - البحيرة الفيروزية.</p>
+<h2>🧘 اليوغا والعافية</h2>
+<div class="place">
+<div class="place-name">The Practice Bali</div>
+<div class="place-desc">واحدة من أفضل الاستوديوهات. فينياسا، هاثا، يين. شالا الخيزران الجميلة.</div>
+<div class="place-meta">📍جل. بادانج لينجونج · 150-180 ألف/الدرس</div>
+</div>
+<div class="place">
+<div class="place-name">Samadi Bali</div>
+<div class="place-desc">يوجا + مقهى أورجانيك + سوق الأحد. جو المجتمع.</div>
+<div class="place-meta">📍جل. بادانج لينجونج · 130-160 ألف/الدرس</div>
+</div>
+<div class="place">
+<div class="place-name">Serenity Yoga</div>
+<div class="place-desc">اليوغا الميزانية. دروس صباحية في شاليه مفتوح مطل على الحقول.</div>
+<div class="place-meta">📍جل. نيليان · 100-130 ألف/درس</div>
+</div>
+<h2>🏋️ صالات رياضية</h2>
+<div class="place">
+<div class="place-name">Finns Recreation Club</div>
+<div class="place-desc">مجمع ضخم: صالة ألعاب رياضية وحمام سباحة بطول 25 مترًا وصالة بولينغ وترامبولين.</div>
+<div class="place-meta">📍جل. بانتاي بيراوا · 250 ألف/يوم · من 1.5 مليون/شهر</div>
+</div>
+<div class="place">
+<div class="place-name">Body Factory Bali</div>
+<div class="place-desc">كروس فيت، رفع الأثقال، التدريب الوظيفي. للجادين.</div>
+<div class="place-meta">📍جل. بانتاي بيراوا · من 1.2 مليون/شهر</div>
+</div>
+<div class="place">
+<div class="place-name">Canggu Studio</div>
+<div class="place-desc">غرفة اقتصادية مع معدات جيدة. آلات التمارين الرياضية، الأوزان الحرة.</div>
+<div class="place-meta">📍جل. باتو بولونج · من 700 ألف/شهر</div>
+</div>
+<h2>🌅 غروب الشمس / شروق الشمس</h2>
+<table>
+<tr><th>مكان</th><th>يكتب</th><th>الاهتزاز</th></tr>
+<tr><td><strong>Echo Beach</strong></td><td>🌅 غروب الشمس</td><td>البيرة على الرمال، راكبو الأمواج في الخلفية</td></tr>
+<tr><td><strong>La Brisa</strong></td><td>🌅 غروب الشمس</td><td>نادي بوهو، أكياس الفول، الكوكتيلات</td></tr>
+<tr><td><strong>The Lawn</strong></td><td>🌅 غروب الشمس</td><td>بار حمام السباحة مع بانوراما</td></tr>
+<tr><td><strong>Tanah Lot</strong> (20 دقيقة)</td><td>🌅 غروب الشمس</td><td>معبد المحيط - رقم 1 غروب الشمس في بالي</td></tr>
+<tr><td><strong>Berawa Beach</strong></td><td>🌅 غروب الشمس</td><td>هادئ، لا يوجد حشود</td></tr>
+</table>
+<p>شروق الشمس في كانجو ليس الأفضل (الساحل الغربي). لشروق الشمس، اذهب إلى سانور أو بركان باتور.</p>
+<h2>🌋 البراكين والجبال القريبة</h2>
+<div class="place">
+<div class="place-name">جونونج باتور</div>
+<div class="place-desc">الصعود عند الفجر (صعود لمدة ساعتين). الرحلات من 400 كيلو مع مرشد.</div>
+<div class="place-meta">📍 كينتاماني · ساعتين من كانجو</div>
+</div>
+<div class="place">
+<div class="place-name">جونونج اجونج</div>
+<div class="place-desc">البركان الرئيسي في بالي (3142 م). تتبع جدي 6-8 ساعات. مطلوب دليل.</div>
+<div class="place-meta">📍كارانغاسيم · 3 ساعات من كانجو · من 800 ألف</div>
+</div>
+<h2>🌾 مصاطب الأرز القريبة</h2>
+<div class="place">
+<div class="place-name">حقول الأرز بيريرينان</div>
+<div class="place-desc">مباشرة إلى كانجو! المشي عند شروق الشمس أو غروبها مجاني وجميل.</div>
+<div class="place-meta">📍10 دقائق من وسط كانجو</div>
+</div>
+<div class="place">
+<div class="place-name">تيجالالانج</div>
+<div class="place-desc">المدرجات المتتالية الشهيرة. إنستغرام كلاسيك. أفضل في الصباح الباكر.</div>
+<div class="place-meta">📍 اوبود · 1.5 ساعة من كانجو · المدخل 25 ك</div>
+</div>
+<div class="place">
+<div class="place-name">Jatiluwih</div>
+<div class="place-desc">اليونسكو. شرفات ضخمة بدون حشود. يمكنك ركوب دراجة نارية، مناظر مذهلة.</div>
+<div class="place-meta">📍 تابانان · ساعة ونصف من كانجو · المدخل 40 ك</div>
+</div>
+<h2>⛳ الجولف</h2>
+<div class="place">
+<div class="place-name">Bali National Golf Club</div>
+<div class="place-desc">18 حفرة، إطلالة على المحيط. المجال المهني.</div>
+<div class="place-meta">📍 نوسا دوا · ساعة واحدة من كانجو · من 1.8 م/جولة</div>
+</div>
+<div class="place">
+<div class="place-name">Handara Golf &amp; Resort</div>
+<div class="place-desc">حقل الجبل في الحفرة. بوابة رائعة وجميلة ومشهورة للصور.</div>
+<div class="place-meta">📍 بيدوغول · 1.5 ساعة من كانجو · من 1.2 م/جولة</div>
+</div>
+<h2>🍓 المزارع</h2>
+<div class="place">
+<div class="place-name">Bali Pulina Coffee Plantation</div>
+<div class="place-desc">تذوق قهوة لواك والكاكاو. جولة مجانية، مناظر الغابة.</div>
+<div class="place-meta">📍 اوبود · 1.5 ساعة من كانجو</div>
+</div>
+<div class="place">
+<div class="place-name">Strawberry Farm Bedugul</div>
+<div class="place-desc">قطف الفراولة في الجبال. مكان عظيم للصور والأطفال.</div>
+<div class="place-meta">📍 بيدوغول · 1.5 ساعة من كانجو · المدخل 25 ك</div>
+</div>
+<div class="place">
+<div class="place-name">Big Tree Farms</div>
+<div class="place-desc">جولة في مصنع الشوكولاتة. تذوق الشوكولاتة من الكاكاو البالي.</div>
+<div class="place-meta">📍جل. رايا سيبانج كاجا · 30 دقيقة من كانجو</div>
+</div>
+<h2>🍉أسواق الفاكهة</h2>
+<div class="place">
+<div class="place-name">باسار كانجو (سوق الصباح)</div>
+<div class="place-desc">فواكه طازجة من المزارعين. مانجو، بابايا، رامبوتان، رنجة. الأسعار أقل بثلاث مرات من المقاهي.</div>
+<div class="place-meta">📍جل. رايا كانجو · 6-10 صباحًا</div>
+</div>
+<div class="place">
+<div class="place-name">Samadi Sunday Market</div>
+<div class="place-desc">سوق المزارعين يوم الأحد. الخضروات العضوية، الفواكه، الخبز، العسل.</div>
+<div class="place-meta">📍صمدي بالي · الأحد 9-14</div>
+</div>
+<h2>🛍 التسوق</h2>
+<div class="place">
+<div class="place-name">Love Anchor Market</div>
+<div class="place-desc">سوق البرغوث في عطلة نهاية الأسبوع. الملابس والمجوهرات والهدايا التذكارية. مساومة!</div>
+<div class="place-meta">📍جل. بانتاي باتو بولونج السبت والأحد</div>
+</div>
+<div class="place">
+<div class="place-name">Batu Bolong Street</div>
+<div class="place-desc">يمتلئ الشارع بأكمله بالبوتيكات ومحلات ركوب الأمواج ومتاجر المصممين. جادة بالينيز ميلروز.</div>
+</div>
+<div class="place">
+<div class="place-name">Berawa Boutiques</div>
+<div class="place-desc">موجة جديدة من محلات المصممين. الملابس والديكور والمجوهرات المصنوعة يدويا.</div>
+</div>
+<h2>🛒 محلات البقالة</h2>
+<div class="place">
+<div class="place-name">Pepito Market</div>
+<div class="place-desc">المنتجات المستوردة: الجبن الأوروبي، النبيذ، الوجبات الخفيفة. باهظة الثمن، ولكن كل شيء هناك.</div>
+<div class="place-meta">📍عدة نقاط في كانجو</div>
+</div>
+<div class="place">
+<div class="place-name">Frestive Supermarket</div>
+<div class="place-desc">سوبر ماركت كبير. كل شيء من المواد الكيميائية المنزلية إلى المأكولات البحرية الطازجة.</div>
+<div class="place-meta">📍 Jl. Raya Canggu</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Buda Shop</div>
+<div class="place-desc">منتجات عضوية، خالية من الغلوتين، وأسلوب حياة صحي. التوفو، التمبي، حليب الجوز.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong</div>
+</div>
+<h2>👕 المغاسل</h2>
+<div class="place">
+<div class="place-name">Quick Laundry Canggu</div>
+<div class="place-desc">الغسيل + الكي قبل 24 ساعة. اكسبرس - 6 ساعات. بالوزن.</div>
+<div class="place-meta">📍جل. باتو بولونج · من 8 كيلو/كجم</div>
+</div>
+<div class="place">
+<div class="place-name">Mr. White Laundry</div>
+<div class="place-desc">غسيل عالي الجودة: العناصر الحساسة، التنظيف الجاف. الاستلام والتسليم.</div>
+<div class="place-meta">📍جل. بانتاي بيراوا · من 12 ألف/كجم</div>
+</div>
+<p>يوجد عدد قليل من الغسالات ذاتية الخدمة - حيث يتم توصيل جميع المغاسل تقريبًا. متوسط ​​السعر: 7-12 ألف للكيلو، جاهز خلال 24 ساعة.</p>
+<h2>🎉 النوادي والحياة الليلية</h2>
+<div class="place">
+<div class="place-name">Old Man's</div>
+<div class="place-desc">أسطورة كانجو. الموسيقى الحية والبيرة (35K Bintang) والحفلة كل ليلة. صفر شفقة.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong</div>
+</div>
+<div class="place">
+<div class="place-name">Finn's Beach Club</div>
+<div class="place-desc">حفلة نهارية على المسبح، دي جي، كوكتيلات (150-200 ألف). نادي الشاطئ الرئيسي.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa</div>
+</div>
+<div class="place">
+<div class="place-name">Tamora Gallery</div>
+<div class="place-desc">النادي الليلي: الإلكترونيات والتكنو. يفتح متأخرا ويبقى مفتوحا حتى الصباح.</div>
+<div class="place-meta">📍 Jl. Subak Sari</div>
+</div>
+<div class="place">
+<div class="place-name">Sand Bar</div>
+<div class="place-desc">بار مباشرة على شاطئ إيكو. غروب الشمس → موسيقى → الرقص على الرمال.</div>
+<div class="place-meta">📍 Echo Beach</div>
+</div>
+<h2>🏥 العيادات والصيدليات</h2>
+<div class="place">
+<div class="place-name">Canggu Medical Clinic</div>
+<div class="place-desc">الأطباء الناطقين باللغة الإنجليزية، الممارسة العامة، الاختبارات. الاستقبال من 200 الف</div>
+<div class="place-meta">📍 Jl. Pantai Berawa</div>
+</div>
+<div class="place">
+<div class="place-name">Unicare Clinic</div>
+<div class="place-desc">العيادة الدولية: معالج، طبيب جلدية، طبيب أسنان. الاستقبال من 300 الف</div>
+<div class="place-meta">📍 Jl. Raya Canggu</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma / Guardian</div>
+<div class="place-desc">صيدليات بها أدوية أساسية. المضادات الحيوية بدون وصفة طبية ورخيصة.</div>
+<div class="place-meta">📍 في جميع أنحاء تشانغ · الأدوية من 10 آلاف</div>
+</div>
+<h2>🛕 المعابد</h2>
+<div class="place">
+<div class="place-name">Tanah Lot</div>
+<div class="place-desc">معبد على صخرة في المحيط. عامل الجذب الرئيسي هو غروب الشمس المذهل هنا.</div>
+<div class="place-meta">📍20 دقيقة من كانجو · الدخول 60 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Batu Bolong</div>
+<div class="place-desc">معبد هندوسي صغير على منحدر على شاطئ باتو بولونج. مجانا.</div>
+<div class="place-meta">📍 Batu Bolong Beach</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Petitenget</div>
+<div class="place-desc">معبد قديم على حدود كانجو وسيمينياك. مراسم اكتمال القمر.</div>
+<div class="place-meta">📍جل. بيتيتنغيت · 15 دقيقة من كانجو</div>
+</div>
+<p>المساجد والكنائس - في دينباسار (30-40 دقيقة). الدير البوذي براهما فيهارا أراما – في لوفينا (3 ساعات).</p>
+<h2>🇷🇺 الجالية الروسية</h2>
+<div class="place">
+<div class="place-name">محادثات برقية</div>
+<div class="place-desc">"Canggu Russians"، "Bali Chat"، "Bali Moms" - الإيجارات والتوصيات والحفلات.</div>
+</div>
+<div class="place">
+<div class="place-name">المطاعم الروسية</div>
+<div class="place-desc">"ماما روسيا"، "بيلميني بالي" - بورشت، زلابية، كعك الجبن. الحنين للمنزل.</div>
+</div>
+<div class="place">
+<div class="place-name">الأطباء الناطقين بالروسية</div>
+<div class="place-desc">ابحث في محادثات "طب بالي" - المعالجون وأطباء الأسنان وأطباء الأطفال الذين يتحدثون اللغة الروسية.</div>
+</div>
+<p>الجالية الروسية في كانجو هي واحدة من أكبر الجالية في بالي. من السهل العثور على مربية ومحامي وسمسار عقارات يتحدث الروسية.</p>
+<h2>🎒 رياض الأطفال والمدارس</h2>
+<div class="place">
+<div class="place-name">Canggu Community School</div>
+<div class="place-desc">المدرسة الدولية، برنامج كامبريدج. لغة التدريس الانجليزية .</div>
+<div class="place-meta">📍جل. سوباك ساري · من 5000 دولار في السنة</div>
+</div>
+<div class="place">
+<div class="place-name">Montessori Garden Bali</div>
+<div class="place-desc">الروضة وفق نظام مونتيسوري. 2-6 سنوات. الإنجليزية + الإندونيسية.</div>
+<div class="place-meta">📍بيريرينان · من 3 شهور/شهر</div>
+</div>
+<div class="place">
+<div class="place-name">رياض الأطفال الروسية</div>
+<div class="place-desc">العديد من رياض الأطفال الروسية الخاصة في كانجو - ابحث عن "أمهات بالي" في الدردشة. من 2M/شهر</div>
+</div>
+<h2>📸 مواقع الصور</h2>
+<p>• حقول أرز بيريرينان – الساعة الذهبية<br/>
+• تاناه لوت – المعبد عند غروب الشمس<br/>
+• إيكو بيتش - متصفحي بإضاءة خلفية<br/>
+• باتو بولونج – ركوب الأمواج في الصباح<br/>
+• مقهى يطل على حقول الأرز<br/>
+• سوق مرساة الحب – الألوان الزاهية<br/>
+• لا بريسا - تصميم داخلي بوهو</p>
+<h2>🏠 السكن</h2>
+<table>
+<tr><th>يكتب</th><th>السعر/الشهر</th><th>أين تنظر</th></tr>
+<tr><td>غرفة في كولينج</td><td>$300-500</td><td>Outpost, Tribal, Dojo</td></tr>
+<tr><td>استوديو / غرفة نوم واحدة</td><td>$500-800</td><td>Facebook groups, Flokq</td></tr>
+<tr><td>فيلا بغرفة نوم واحدة مع مسبح</td><td>$800-1500</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>فيلا فاخرة 2 غرف نوم +</td><td>$2000-5000</td><td>اتصالات مباشرة، وكلاء</td></tr>
+</table>
+<p><strong>أفضل المناطق:</strong> بيريرينان (فيلات هادئة)، بيراوا (قريب من كل شيء)، باتو بولونج (حفلة). ابحث على فيسبوك: "مجتمع كانجو"، "الإيجارات طويلة الأجل في بالي".</p>
+<h2>🛵 النقل</h2>
+<p>• <strong>سكوتر:</strong> 700 ألف - 1 مليون شهريًا (الحقوق الدولية مطلوبة!)<br/>
+• <strong>Grab/Gojek:</strong> من 15 ألف للرحلة الواحدة<br/>
+• <strong>إلى المطار:</strong> 45-60 دقيقة، 150-250 ك<br/>
+• <strong>إلى أوبود:</strong> 1-1.5 ساعة<br/>
+• <strong>إلى سيمينياك:</strong> 15-20 دقيقة</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 سر المنطقة</div>
+<div class="secret-text">Pererenan هو "Canggu في عامين." أكثر هدوءًا وأرخص وأكثر جمالاً. أولئك الذين يعرفون ينتقلون إلى هناك بالفعل. أفضل الفيلات والمقاهي مفتوحة هنا.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ سلبيات</div>
+<div class="warn-text">ازدحامات مرورية خلال ساعة الذروة (16-19). المحيط خطير للسباحة (التيارات القوية). الأسعار ترتفع كل عام. الكثير من البناء والضوضاء. خلال موسم الأمطار (نوفمبر-مارس) تغمر الطرق. في بعض الأحيان تكون هناك قمامة على الشواطئ.</div>
+</div>
+<div class="divider"></div>
+<h2>💰ميزانية الشهر</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">الحد الأدنى</div>
+<div class="budget-price">$600</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">مريح</div>
+<div class="budget-price">$1400</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$3500</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · دليل مناطق بالي · 2026</div>
+</body>
+</html>

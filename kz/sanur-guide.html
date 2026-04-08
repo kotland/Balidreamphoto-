@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>Санур</em></h1>
+<p class="sub">Аймақ бойынша толық нұсқаулық · @balidreamphoto</p>
+<div class="tag">🏖 Тыныш жағажай</div>
+<div class="tag">🚲 Велосипедтер</div>
+<div class="tag">👨‍👩‍👧 Отбасылар</div>
+<div class="tag">🐠 Суда жүзу</div>
+<div class="tag">🌅 Күннің шығуы</div>
+<div class="tag">🍜 Мейрамханалар</div>
+<div class="tag">🤿 Дайвинг</div>
+<div class="vibe">"Мұхит бойымен велосипедпен жүру, Нуса Пенида көрінісімен таңғы ас, толқынсыз жүзу. Санур - хаосқа толы адамдар үшін Бали."</div>
+<p>Санур - шығыс жағалауы, тыныш су, ұзақ серуендеу, отбасылық атмосфера. Мұнда зейнеткерлер, балалы отбасылар мен сүңгуірлер тұрады. Риф сізді толқындардан қорғайды - сіз жүзе аласыз! Әуежайға жақын, Нуса Пенидаға паром. Орташа жас 35-55.</p>
+<h2>☕ Кофеханалар</h2>
+<div class="place">
+<div class="place-name">Genius Cafe Sanur</div>
+<div class="place-desc">Арнайы кофе, жақсы WiFi, жұмыс үшін тыныш атмосфера.</div>
+<div class="place-meta">📍Jl. Danau Tamblingan · Кофе 35-55K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Dusk Blue Cafe</div>
+<div class="place-desc">Арнайы сусындар бар стильді кофехана. Үстіне құйыңыз, салқын қайнатыңыз.</div>
+<div class="place-meta">📍Jl. Danau Tamblingan · Кофе 35-50K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Sanur Brewing Company</div>
+<div class="place-desc">Кофехана + шағын сыра зауыты. Таңғы ас, таңғы ас, жақсы эспрессо.</div>
+<div class="place-meta">📍Jl. Danau Tamblingan Coffee 30-50K</div>
+</div>
+<h2>💻 Коворкинг орындары</h2>
+<p>Санурда арнайы коворкинг орындары аз. Олар кафеден жұмыс істейді (Genius, Dusk Blue - жақсы WiFi). Маңызды коворкинг кеңістігі үшін: <strong>Канггу</strong> (1 сағат) немесе <strong>Денпасар</strong> (20 мин).</p>
+<h2>🍜 Мейрамханалар</h2>
+<h3>Бюджет (25-50 мың)</h3>
+<div class="place">
+<div class="place-name">Warung Mak Beng</div>
+<div class="place-desc">1941 жылдан бері Санур аңыз! Бір ғана тағам - күріш қосылған қуырылған балық. Кезек тұрарлық.</div>
+<div class="place-meta">📍 Jl. Hang Tuah · 35K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Baby Monkeys</div>
+<div class="place-desc">Жергілікті тағамдар: наси-чампур, сото айам. Арзан, дәмді, отбасылық атмосфера.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 25-45K</div>
+</div>
+<h3>Орташа (80-180К)</h3>
+<div class="place">
+<div class="place-name">Three Monkeys Sanur</div>
+<div class="place-desc">Тропикалық бақтағы әдемі мейрамхана. Батыс және Азия тағамдары.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 80-170K</div>
+</div>
+<div class="place">
+<div class="place-name">Massimo</div>
+<div class="place-desc">Санурдағы ең жақсы итальяндық тағам. Паста, ағаштан жасалған пицца, желато.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 90-200K</div>
+</div>
+<h3>Fine dining (200K+)</h3>
+<div class="place">
+<div class="place-name">Kayumanis Sanur</div>
+<div class="place-desc">Тропикалық бақта тамаша түскі ас. Жоғары деңгейдегі индонезиялық тағамдар.</div>
+<div class="place-meta">📍 Jl. Pungutan · 200-500K</div>
+</div>
+<h2>🥗 Вегетариандық мекемелер</h2>
+<div class="place">
+<div class="place-name">Soul on the Beach</div>
+<div class="place-desc">Жағалаудағы вегетариандық дәмхана. Ыдыстар, салаттар, жаңа сығылған шырындар.</div>
+<div class="place-meta">📍 Beachfront · 60-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Organik Sanur</div>
+<div class="place-desc">Органикалық тағамдар, вегетариандық мәзір. Смути табақтары, тосттар.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 55-110K</div>
+</div>
+<h2>🌱 Вегетариандық орындар</h2>
+<div class="place">
+<div class="place-name">Nourish Sanur</div>
+<div class="place-desc">Өсімдік негізіндегі кафе: вегетариандық табақтар, кешью десерттері, шырындар.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 55-100K</div>
+</div>
+<div class="place">
+<div class="place-name">The Greenhouse</div>
+<div class="place-desc">Вегетариандық мәзір + органикалық дүкен. Шикі десерттер.</div>
+<div class="place-meta">📍 Jl. Bypass Ngurah Rai · 50-100K</div>
+</div>
+<h2>🏄 Серфинг</h2>
+<div class="place">
+<div class="place-name">Sanur Reef</div>
+<div class="place-desc">Орта деңгейге арналған риф орны. Дұрыс үзіліс, орынға қайық керек.</div>
+<div class="place-meta">📍 Теңізде · Қайық 100К</div>
+</div>
+<div class="place">
+<div class="place-name">Hyatt Reef</div>
+<div class="place-desc">Тағы бір риф орны. Орташа деңгей. Толқындар Канггуға қарағанда кішірек.</div>
+</div>
+<p>Санурда серфинг басты нәрсе емес. Толқындар әлсіз және рефті. Жақсы серфинг үшін: <strong>Канггу</strong> (1 сағат), <strong>Керамалар</strong> (30 мин).</p>
+<h2>🤿 Дайвинг</h2>
+<div class="place">
+<div class="place-name">Crystal Divers</div>
+<div class="place-desc">Балидегі ең жақсы дайвинг орталықтарының бірі. PADI курстары, Нуса Пенида мен Туламбенге саяхат.</div>
+<div class="place-meta">📍Jl. Danau Tamblingan 6M ашық су</div>
+</div>
+<div class="place">
+<div class="place-name">Blue Season Bali</div>
+<div class="place-desc">Кәсіби орталық: курстар, күндік саяхаттар, сафари. Қонақ үйден алып кету.</div>
+<div class="place-meta">📍Jl. Danau Poso · 1,5 миллионнан бір күндік саяхат</div>
+</div>
+<p>Санур - Балидегі негізгі сүңгуір базасы. Нуса Пенидадағы пирске жақын, күндік сапарларға ыңғайлы.</p>
+<h2>🫁 Фридайвинг</h2>
+<div class="place">
+<div class="place-name">Bali Freediving</div>
+<div class="place-desc">Санурдағы SSI курстары. Бассейн сеанстары + Нуса Пенидадағы ашық су.</div>
+<div class="place-meta">📍 Санур · Бағасы 4,5 млн</div>
+</div>
+<h2>🐠 Суда жүзу</h2>
+<div class="place">
+<div class="place-name">Санур рифі (жағадан)</div>
+<div class="place-desc">Жағажайдан тура! Риф жағадан 50-100 м. Балық, маржан. Маска + қанаттар - міне, солай.</div>
+<div class="place-meta">📍 Санурдағы кез келген жағажай · Тегін</div>
+</div>
+<div class="place">
+<div class="place-name">Serangan Island</div>
+<div class="place-desc">Тасбақа аралы - тасбақалар + рифтер. Санурдан қайықпен 15 мин.</div>
+<div class="place-meta">📍 200 мыңнан бастап қайық</div>
+</div>
+<h2>🏖 Толқынсыз жағажайлар</h2>
+<div class="place">
+<div class="place-name">Sanur Beach</div>
+<div class="place-desc">Санурдағы БАРЛЫҚ жағажайлар тыныш! Риф толқындардан қорғайды. Балалар мен жүзу үшін өте қолайлы.</div>
+<div class="place-meta">📍 Бүкіл жағалау · 4 км жағажайлар</div>
+</div>
+<div class="place">
+<div class="place-name">Mertasari Beach</div>
+<div class="place-desc">Оңтүстік бөлігі. Біршама кеңірек, тыныш. Желді маусымда кайтсерфинг.</div>
+</div>
+<div class="place">
+<div class="place-name">Sindhu Beach</div>
+<div class="place-desc">Орталық жағажай. Жағалау, кафелер, Пенидаға қайықтар. Әдемі күннің шығуы.</div>
+</div>
+<h2>🧘 Йога және сауықтыру</h2>
+<div class="place">
+<div class="place-name">Power of Now Oasis</div>
+<div class="place-desc">Жағажайдағы йога студиясы. Мұхитқа қарайтын таңғы сабақтар. Медитациялар.</div>
+<div class="place-meta">📍 Жағажайда · 120-150К/сабақ</div>
+</div>
+<div class="place">
+<div class="place-name">Jamu Spa</div>
+<div class="place-desc">Дәстүрлі бали спа. Массаж, гүл ванналары, скрабтар.</div>
+<div class="place-meta">📍Jl. Danau Tamblingan · Массаж 150K</div>
+</div>
+<h2>🏋️ Спорт залдары</h2>
+<div class="place">
+<div class="place-name">Taman Gym Sanur</div>
+<div class="place-desc">Бас зал. Жаттығу машиналары, бос салмақтар, кардио.</div>
+<div class="place-meta">📍Jl. Ngurah Rai айналып өту · 60K/күн · 500K/ай</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Fitness Sanur</div>
+<div class="place-desc">Негізгі жабдықтары бар шағын бөлме.</div>
+<div class="place-meta">📍Jl. Danau Tamblingan · 50K/күн · 400K/ай</div>
+</div>
+<h2>🌅 Күннің батуы / Күннің шығуы</h2>
+<table>
+<tr><th>Орын</th><th>Түр</th><th>Vibe</th></tr>
+<tr><td><strong>Sindhu Beach</strong></td><td>🌄 Күннің шығуы</td><td>Балидегі ең жақсы күннің шығуы - көкжиекте Нуса Пенида</td></tr>
+<tr><td><strong>Жағалау</strong></td><td>🌄 Күннің шығуы</td><td>Таңертең жағажайда велосипедпен жүру</td></tr>
+<tr><td><strong>Sanur Beach</strong></td><td>🌄 Күннің шығуы</td><td>Таңертеңгі жарықта балық аулайтын қайықтар</td></tr>
+</table>
+<p>Санур – шығыс жағалауы, осында <strong>күннің батуы емес, шығуы</strong>. Күн бату үшін: Канггу/Семинякқа дейін (1 сағат).</p>
+<h2>🌋 Жақын жерде жанартаулар мен таулар</h2>
+<div class="place">
+<div class="place-name">Гунунг Батур</div>
+<div class="place-desc">Санұрдан 1,5-2 сағат. Таң атқанда өрмелеу.</div>
+<div class="place-meta">📍 Kintamani · 400K бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Гунунг Агунг</div>
+<div class="place-desc">Санұрдан 2-2,5 сағат.</div>
+<div class="place-meta">📍 Қараңғасем · 800 мыңнан бастап</div>
+</div>
+<h2>🌾 Жақын жерде күріш террассалары</h2>
+<p>Санурда күріш террассалары жоқ - бұл қалалық аймақ. Ең жақын: <strong>Tegallalang</strong> (Убуд, 1,5 сағат), <strong>Jatiluwih</strong> (2 сағат).</p>
+<h2>⛳ Гольф</h2>
+<div class="place">
+<div class="place-name">Bali Beach Golf Course</div>
+<div class="place-desc">Санурда 9 тесік! Мұхитқа жақын, қол жетімді баға. Релаксация үшін.</div>
+<div class="place-meta">📍 Гранд Инна Бали жағажайы · 700 мың айналымнан</div>
+</div>
+<h2>🍓 Фермалар</h2>
+<p>Санурда шаруа қожалықтары жоқ – бұл жағалаудағы қала. Ең жақын: <strong>Bali Pulina</strong> (Убуд, 1,5 сағат) - кофе, <strong>Strawberry Farm</strong> (Бедугүл, 2 сағат).</p>
+<h2>🍉 Жеміс базарлары</h2>
+<div class="place">
+<div class="place-name">Pasar Sindhu</div>
+<div class="place-desc">Таңертеңгілік базар + түнгі базар (Түнгі базар). Жемістер, көше тағамдары, атмосфера.</div>
+<div class="place-meta">📍Jl. Danau Tamblingan · Таңертең 6-10 / Кеш 17-22</div>
+</div>
+<h2>🛍 Сауда</h2>
+<div class="place">
+<div class="place-name">Jl. Danau Tamblingan</div>
+<div class="place-desc">Негізгі көше: бутиктер, галереялар, кәдесый дүкендері. Жайлы сауда.</div>
+</div>
+<div class="place">
+<div class="place-name">Hardy's Supermarket</div>
+<div class="place-desc">Ірі әмбебап дүкен: киім-кешек, кәдесыйлар, өнімдер - барлығы бір жерде.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan</div>
+</div>
+<h2>🛒 Азық-түлік дүкендері</h2>
+<div class="place">
+<div class="place-name">Hardy's Sanur</div>
+<div class="place-desc">Үлкен супермаркет. Жергілікті және импорттық өнімдер, тұрмыстық химия.</div>
+</div>
+<div class="place">
+<div class="place-name">Pepito Market</div>
+<div class="place-desc">Импорттық өнімдер: ірімшіктер, шарап, еуропалық брендтер.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan</div>
+</div>
+<h2>👕 Кірлер</h2>
+<div class="place">
+<div class="place-name">Sanur Laundry</div>
+<div class="place-desc">Жуу + үтіктеу, алып кету және жеткізу. Жылдам және арзан.</div>
+<div class="place-meta">📍Jl. Danau Tamblingan · 7K/кг бастап</div>
+</div>
+<h2>🎉 Клубтар мен түнгі өмір</h2>
+<p>Санур тыныш аймақ. Клубтар жоқ. Барлар 23:00-де жабылады. Тамақ:</p>
+<div class="place">
+<div class="place-name">Casablanca Sanur</div>
+<div class="place-desc">Жанды музыка бар бар. Коктейльдер, жайлы атмосфера.</div>
+</div>
+<div class="place">
+<div class="place-name">Lilla Pantai</div>
+<div class="place-desc">Серуендеу жолындағы жағажай бар. Сыра, күннің батуы (жақсы, дерлік), тату халық.</div>
+</div>
+<p>Түнгі өмір үшін: <strong>Семиняк</strong> (30 мин) немесе <strong>Кута</strong> (20 мин).</p>
+<h2>🏥 Емханалар мен дәріханалар</h2>
+<div class="place">
+<div class="place-name">Kasih Ibu Hospital</div>
+<div class="place-desc">ER, хирургия, педиатрия бар толық аурухана. Балидегі ең жақсы ауруханалардың бірі.</div>
+<div class="place-meta">📍Jl. Теуку Умар · орталықтан 15 мин</div>
+</div>
+<div class="place">
+<div class="place-name">Sanur Clinic</div>
+<div class="place-desc">Жеке клиника: терапевт, тесттер. Ағылшын тілінде сөйлейтін персонал.</div>
+<div class="place-meta">📍Jl. Danau Tamblingan · Қабылдау 200 мың</div>
+</div>
+<h2>🛕 Храмдар</h2>
+<div class="place">
+<div class="place-name">Pura Blanjong</div>
+<div class="place-desc">9 ғасырдағы тас стеласы бар көне ғибадатхана - Балидегі ең көне жазу.</div>
+<div class="place-meta">📍Jl. Danau Poso · Тегін</div>
+</div>
+<div class="place">
+<div class="place-name">Le Mayeur Museum</div>
+<div class="place-desc">Жағажайдағы бельгиялық суретшінің мұражай-үйі. Кескіндеме, бақша, тарих.</div>
+<div class="place-meta">📍 Жағажай жағасы · Кіру 50 мың</div>
+</div>
+<h2>🇷🇺 Орыс қауымы</h2>
+<p>Санурда орыстар аз - бұл аумақ австралиялықтар мен зейнеткерлерге көбірек арналған. Орыс тілділер бар, бірақ бөлек қауым жоқ. Чат: «Бали чаты», «Бали орыстары» - генерал.</p>
+<h2>🎒 Балабақшалар мен мектептер</h2>
+<div class="place">
+<div class="place-name">Sanur Independent School</div>
+<div class="place-desc">Халықаралық мектеп. Кембридж бағдарламасы, шағын сыныптар.</div>
+<div class="place-meta">📍 Санур · жылына $4000 бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Taman Rama School</div>
+<div class="place-desc">Халықаралық аккредитациясы бар Бали мектебі. Неғұрлым қолжетімді.</div>
+<div class="place-meta">📍Jl. Айналып өту · жылына $2000 бастап</div>
+</div>
+<h2>📸 Фото орындар</h2>
+<p>• Синдху жағажайында күннің шығуы – балық аулау қайықтары<br/>
+• Жағалау – велосипедтер, пальмалар<br/>
+• Ле Майер мұражайы – отаршылдық сәулет<br/>
+• Пасар Синдху түнгі базары – көше тағамдары<br/>
+• Жағажайдан Нуса Пениданың көрінісі</p>
+<h2>🏠 Тұрғын үй</h2>
+<table>
+<tr><th>Түр</th><th>Баға/ай</th><th>Қайда қарау керек</th></tr>
+<tr><td>Бөлме/қонақ үй</td><td>$200-350</td><td>Брондау, сайтта</td></tr>
+<tr><td>Студия / 1Б</td><td>$350-600</td><td>Facebook groups</td></tr>
+<tr><td>Бассейні бар вилла</td><td>$600-1200</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Люкс вилла</td><td>$1500-3000</td><td>Агенттер</td></tr>
+</table>
+<p>Санур Семиняк пен Канггудан арзанырақ. Жақсы инфрақұрылым, тыныш, отбасылар үшін өте қолайлы.</p>
+<h2>🛵 Көлік</h2>
+<p>• <strong>Велосипед:</strong> Санурдағы ең жақсы тасымалдаулар! Жағалау тегіс. Күніне 50 мың теңгеден жалға алу<br/>
+• <strong>Скутер:</strong> Айына 600-800 мың<br/>
+• <strong>Grab/Gojek:</strong> 10K бастап, жақсы жұмыс істейді<br/>
+• <strong>Әуежайға:</strong> 25-35 мин, 80-150К<br/>
+• <strong>Нуса Пенидаға паром:</strong> Санурдағы оң жақ пирс, 200К, 30 мин</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 Аймақтың құпиясы</div>
+<div class="secret-text">Пасар Синдху түнгі базары - Балидің оңтүстігіндегі ең жақсы көше тағамдарының түнгі базары. 15 мыңға Сатай, 20 мыңға мартабак, 10 мыңға жаңа шырын. Нағыз Индонезияның атмосферасы - туристік қосымша ақысыз.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ Кемшіліктері</div>
+<div class="warn-text">Жастар үшін қызықсыз. Кішкентай түнгі өмір. Жағажай жоғары толқында анық емес. «Бабушкин ауданы» - шетелдіктердің орташа жасы 50+. WiFi Канггуға қарағанда әлсіз. Коворкинг орындары аз.</div>
+</div>
+<div class="divider"></div>
+<h2>💰 Бір айға арналған бюджет</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Ең аз</div>
+<div class="budget-price">$450</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Ыңғайлы</div>
+<div class="budget-price">$1000</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$2500</div>
+<div class="budget-unit">айына</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · Бали аудандарына арналған гид · 2026 ж</div>
+</body>
+</html>

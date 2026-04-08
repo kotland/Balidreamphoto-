@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>Семиняк</em></h1>
+<p class="sub">Аймақ бойынша толық нұсқаулық · @balidreamphoto</p>
+<div class="tag">🎉 Клубтар</div>
+<div class="tag">🛍 Сауда</div>
+<div class="tag">🍜 Мейрамханалар</div>
+<div class="tag">🌅 Күннің батуы</div>
+<div class="tag">🏖 Жағажайлар</div>
+<div class="tag">💆 СПА</div>
+<div class="tag">🏄 Серфинг</div>
+<div class="vibe">«Дизайн кафесінде таңғы ас, бутиктерде шоппинг, коктейльмен жағажай клубында күннің батуы. Бали әдемі өмірді ұнататындар үшін».</div>
+<p>Семиняк - Балидің ең әдемі аймағы. Ең жақсы мейрамханалар, бутиктер, жағажай клубтары және түнгі өмір. Мұнда бюджеті бар шетелдіктер, модельдер, фуд-блогерлер мен кәсіпкерлер тұрады. Канггуға қарағанда әуежайға жақынырақ. Орташа жас 28-40.</p>
+<h2>☕ Кофеханалар</h2>
+<div class="place">
+<div class="place-name">Revolver Espresso</div>
+<div class="place-desc">Бүйірлік көшедегі таңғажайып кофехана. Семиняктағы ең жақсы эспрессо. Кезекте тұру – сапаның белгісі.</div>
+<div class="place-meta">📍Jl. Kayu Aya Gang 51 · Кофе 40-60K · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Cafe Organic</div>
+<div class="place-desc">Салауатты өмір салты кафесі + арнайы кофе. Смути табақтары, авокадо тосттар. Instagram интерьері.</div>
+<div class="place-meta">📍Jl. Petitenget · Кофе 45-65K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Sea Circus</div>
+<div class="place-desc">Жанды Мексикалық діріл. Жақсы кофе + таңғы ас. Көңілді атмосфера.</div>
+<div class="place-meta">📍Jl. Каю Ая · Кофе 40-55К · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Anomali Coffee</div>
+<div class="place-desc">Индонезияның арнайы бренді. Архипелагтың түкпір-түкпірінен бұршақ, тыныш террассалар.</div>
+<div class="place-meta">📍Jl. Рая Семиняк · Кофе 35-55К · WiFi ⭐⭐⭐⭐</div>
+</div>
+<h2>💻 Коворкинг орындары</h2>
+<div class="place">
+<div class="place-name">Kumpul Coworking</div>
+<div class="place-desc">Кәсіби коворкинг кеңістігі. Кондиционер, мәжіліс залдары, принтер.</div>
+<div class="place-meta">📍Jl. Күн батуы жолы · 200 мың/күн · 2,5 млн/ай · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Кафе-коворкинг орындары</div>
+<div class="place-desc">Семинякта олар кафелерден жұмыс істейді: Cafe Organic, Revolver, Shelter Cafe - барлық жерде WiFi.</div>
+</div>
+<p>Канггуға қарағанда арнайы коворкинг орындары аз. Көпшілігі кафеден немесе үйден жұмыс істейді.</p>
+<h2>🍜 Мейрамханалар</h2>
+<h3>Бюджет (30-60 мың)</h3>
+<div class="place">
+<div class="place-name">Warung Made</div>
+<div class="place-desc">1969 жылдан бері Семиняк аңыз. Индонезия тағамдары, үлкен порциялар.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak · 30-60K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Murah</div>
+<div class="place-desc">Жергілікті тағам: наси горенг, ми горенг, сото айам. Арзан әрі дәмді.</div>
+<div class="place-meta">📍 Jl. Nakula · 20-40K</div>
+</div>
+<h3>Орташа (100-250K)</h3>
+<div class="place">
+<div class="place-name">Mama San</div>
+<div class="place-desc">Отаршылдық қоймадағы азиялық синтез. Дим сом, карри, коктейльдер. Брондау!</div>
+<div class="place-meta">📍 Jl. Raya Kerobokan · 120-250K</div>
+</div>
+<div class="place">
+<div class="place-name">Barbacoa</div>
+<div class="place-desc">Оңтүстік американдық гриль. Грильде пісірілген стейктер, цевиче, тако. Атмосфералық интерьер.</div>
+<div class="place-meta">📍 Jl. Petitenget · 150-300K</div>
+</div>
+<div class="place">
+<div class="place-name">Sisterfields</div>
+<div class="place-desc">Австралиялық таңғы ас: бенедикт жұмыртқасы, бургер, жалпақ ақ. Үздік таңғы ас.</div>
+<div class="place-meta">📍 Jl. Kayu Cendana · 100-200K</div>
+</div>
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Sarong</div>
+<div class="place-desc">Балидегі ең жақсы мейрамханалардың бірі. Оңтүстік Азия тағамдары, 11 тағамдық дәм мәзірі.</div>
+<div class="place-meta">📍Jl. Petitenget · 800K бастап жиналады</div>
+</div>
+<div class="place">
+<div class="place-name">Merah Putih</div>
+<div class="place-desc">Әсерлі бамбук ғимаратында индонезиялық асхана. Rendang жоғары тағамдар.</div>
+<div class="place-meta">📍 Jl. Petitenget · 250-500K</div>
+</div>
+<h2>🥗 Вегетариандық мекемелер</h2>
+<div class="place">
+<div class="place-name">Cafe Organic</div>
+<div class="place-desc">Мәзірдің 80% вегетариандық. Ыдыстар, салаттар, смузилер. Әдемі презентация.</div>
+<div class="place-meta">📍 Jl. Petitenget · 70-140K</div>
+</div>
+<div class="place">
+<div class="place-name">Earth Cafe &amp; Market</div>
+<div class="place-desc">Вегетариандық кафе + органикалық азық-түлік дүкені. Карри, тостағандар, шырындар.</div>
+<div class="place-meta">📍 Jl. Kayu Aya · 60-120K</div>
+</div>
+<h2>🌱 Вегетариандық орындар</h2>
+<div class="place">
+<div class="place-name">Kynd Community</div>
+<div class="place-desc">Толығымен вегетариандық және инстаграмм кінәлі. Қызғылт смузи табақтары, гамбургерлер.</div>
+<div class="place-meta">📍 Jl. Petitenget · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Shelter Cafe</div>
+<div class="place-desc">Жайлы атмосферасы бар өсімдік тектес кафе. Вегетариандық құймақ, тостағандар, десерттер.</div>
+<div class="place-meta">📍 Jl. Drupadi · 55-110K</div>
+</div>
+<h2>🏄 Серфинг</h2>
+<table>
+<tr><th>Дақ</th><th>Деңгей</th><th>Чип</th></tr>
+<tr><td><strong>Seminyak Beach</strong></td><td>Жаңадан бастаушылар</td><td>Кең жағажай, нәзік толқындар, мектептер</td></tr>
+<tr><td><strong>Double Six</strong></td><td>Жаңадан бастаушылар</td><td>Жұмсақ жағажай демалысы, оқу үшін жақсы</td></tr>
+<tr><td><strong>Petitenget</strong></td><td>Орташа</td><td>Сәл күшті толқындар, аз адамдар</td></tr>
+</table>
+<p><strong>Мектептер:</strong> Rip Curl Surf мектебі, Pro Surf School. Бір сабаққа 400-600 мың. Толқындар Канггуға қарағанда жұмсақ - бірінші рет жақсы.</p>
+<h2>🤿 Дайвинг</h2>
+<p>Семинякта сүңгуір алаңдары жоқ. Ең жақын: <strong>Nusa Penida</strong> (2 сағат, манты), <strong>Tulamben</strong> (3 сағат, USS Liberty). Дайвинг дүкендері алып кететін күндік сапарларды ұйымдастырады.</p>
+<h2>🫁 Фридайвинг</h2>
+<p>Семинякта емес - ең жақыны: <strong>Амед</strong> (3 сағат), <strong>Nusa Penida</strong>. Канггу мектептері саяхаттар ұйымдастырады.</p>
+<h2>🐠 Суда жүзу</h2>
+<p>Семинякта емес - лай су, толқын. Ең жақын: <strong>Sanur</strong> (30 мин), <strong>Nusa Penida</strong> (күндік саяхат).</p>
+<h2>🏖 Толқынсыз жағажайлар</h2>
+<p>Семиняк жағажайларының барлығында толқындар бар. Босаңсытып жүзу үшін: <strong>Sanur</strong> (30 мин) немесе <strong>Nusa Dua</strong> (45 мин).</p>
+<h2>🧘 Йога және сауықтыру</h2>
+<div class="place">
+<div class="place-name">Bodyworks Bali</div>
+<div class="place-desc">Spa + йога студиясы. Бали массажы, рефлексология, йога сабақтары.</div>
+<div class="place-meta">📍Jl. Каю Джати · Массаж 150К · Йога 130K</div>
+</div>
+<div class="place">
+<div class="place-name">Prana Spa</div>
+<div class="place-desc">Марокко стиліндегі сәнді СПА. Массаж, хаммам, аюрведиялық процедуралар.</div>
+<div class="place-meta">📍Jl. Кунти · Массаж 300K бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Jiwa Bikram Yoga</div>
+<div class="place-desc">Ыстық йога (бикрам). Кондиционерленген бөлме, 40°C. Сіз литр терлейсіз.</div>
+<div class="place-meta">📍Jl. Рая Басангкаса · 150K/сабақ</div>
+</div>
+<h2>🏋️ Спорт залдары</h2>
+<div class="place">
+<div class="place-name">Motion Fitness</div>
+<div class="place-desc">Заманауи жаттығу залы: кардио, күш, функционалдық жаттығулар.</div>
+<div class="place-meta">📍Jl. Рая Семиняк · 100K/күн · 900K/айдан бастап</div>
+</div>
+<div class="place">
+<div class="place-name">S2 Fitness</div>
+<div class="place-desc">Жақсы жабдықталған ықшам зал. Жеке жаттықтырушылар.</div>
+<div class="place-meta">📍Jl. Накула · 80K/күн · 800K/айдан бастап</div>
+</div>
+<h2>🌅 Күннің батуы / Күннің шығуы</h2>
+<table>
+<tr><th>Орын</th><th>Түр</th><th>Vibe</th></tr>
+<tr><td><strong>Potato Head</strong></td><td>🌅 Күннің батуы</td><td>Ең жақсы жағажай клубы, дизайн, бассейн</td></tr>
+<tr><td><strong>Ku De Ta</strong></td><td>🌅 Күннің батуы</td><td>Семиняк классикасы, коктейльдер, диджей</td></tr>
+<tr><td><strong>Double Six Beach</strong></td><td>🌅 Күннің батуы</td><td>Құмдағы бұршақ қаптары, демократиялық</td></tr>
+<tr><td><strong>W Bali</strong></td><td>🌅 Күннің батуы</td><td>Төбедегі сәнді бар, панорама</td></tr>
+</table>
+<h2>🌋 Жақын жерде жанартаулар мен таулар</h2>
+<div class="place">
+<div class="place-name">Гунунг Батур</div>
+<div class="place-desc">Таң атқанда өрмелеу. Семиняктан 2,5 сағат.</div>
+<div class="place-meta">📍 Kintamani · гидпен 400K бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Гунунг Агунг</div>
+<div class="place-desc">Негізгі жанартау (3142 м). Семиняктан 3,5 сағат.</div>
+<div class="place-meta">📍 Қараңғасем · 800 мыңнан бастап</div>
+</div>
+<h2>🌾 Жақын жерде күріш террассалары</h2>
+<div class="place">
+<div class="place-name">Tegallalang</div>
+<div class="place-desc">Танымал террассалар. Семиняктан 1,5-2 сағат.</div>
+<div class="place-meta">📍 Убуд · Кіру 25К</div>
+</div>
+<div class="place">
+<div class="place-name">Канггу күріш алқаптары</div>
+<div class="place-desc">Ең жақын күріш алқаптары скутермен (Перенан) 15 минутта.</div>
+</div>
+<h2>⛳ Гольф</h2>
+<div class="place">
+<div class="place-name">Bali Beach Golf Course</div>
+<div class="place-desc">Ең жақын өріс. Санурдағы мұхиттағы 9 шұңқыр.</div>
+<div class="place-meta">📍 Санур · Семиняктан 30 мин · 700К/турдан</div>
+</div>
+<h2>🍓 Фермалар</h2>
+<p>Семинякта шаруа қожалықтары жоқ – бұл қалалық аймақ. Ең жақын: <strong>Bali Pulina</strong> (Убуд, 1,5 сағат) - кофе, <strong>Strawberry Farm</strong> (Бедугүл, 2 сағат) – құлпынай.</p>
+<h2>🍉 Жеміс базарлары</h2>
+<div class="place">
+<div class="place-name">Pasar Kreneng</div>
+<div class="place-desc">Денпасардағы үлкен базар. Жемістер, көкөністер, дәмдеуіштер. Семиняктан 20 минут.</div>
+<div class="place-meta">📍 Денпасар · 5-12 күн</div>
+</div>
+<div class="place">
+<div class="place-name">Жемістер жолда тұр</div>
+<div class="place-desc">Дж. Күн батуы жолы - манго, папайя, рамбутан салынған науалар. Супермаркеттен 3 есе арзан.</div>
+</div>
+<h2>🛍 Сауда</h2>
+<div class="place">
+<div class="place-name">Jl. Kayu Aya (Eat Street)</div>
+<div class="place-desc">Негізгі көше: дизайнерлік бутиктер, галереялар, зергерлік бұйымдар. Бали Мелроз даңғ.</div>
+</div>
+<div class="place">
+<div class="place-name">Seminyak Village</div>
+<div class="place-desc">Халықаралық және жергілікті брендтері бар сауда орталығы. Конди!</div>
+<div class="place-meta">📍 Jl. Kayu Jati</div>
+</div>
+<div class="place">
+<div class="place-name">Kendra Gallery</div>
+<div class="place-desc">Бали өнері мен дизайны. Бірегей интерьер заттары.</div>
+</div>
+<h2>🛒 Азық-түлік дүкендері</h2>
+<div class="place">
+<div class="place-name">Pepito Market</div>
+<div class="place-desc">Импорттық өнімдер: еуропалық ірімшіктер, шарап, жеңіл тағамдар. Бірнеше ұпай.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak</div>
+</div>
+<div class="place">
+<div class="place-name">Coco Supermarket</div>
+<div class="place-desc">Кең импорты бар ірі супермаркет. Пепитоға қарағанда арзанырақ.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak</div>
+</div>
+<h2>👕 Кірлер</h2>
+<div class="place">
+<div class="place-name">Seminyak Laundry</div>
+<div class="place-desc">Жуу + үтіктеу. 6 сағатта экспресс. Алып алу және жеткізу.</div>
+<div class="place-meta">📍Jl. Накула · 8К/кг бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Premium Laundry</div>
+<div class="place-desc">Нәзік заттар, химиялық тазалау, кешкі көйлектер. Сапалы қызмет.</div>
+<div class="place-meta">📍Jl. Рая Семиняк · 15К/кг бастап</div>
+</div>
+<h2>🎉 Клубтар мен түнгі өмір</h2>
+<div class="place">
+<div class="place-name">Potato Head Beach Club</div>
+<div class="place-desc">Танымал жағажай клубы. Дизайн, бассейн, диджей, коктейльдер. Көру керек жер.</div>
+<div class="place-meta">📍Jl. Petitenget Кіру тегін, коктейльдер 150-250K</div>
+</div>
+<div class="place">
+<div class="place-name">Ku De Ta</div>
+<div class="place-desc">Балидегі алғашқы жағажай клубтарының бірі. Күннің батуы, тамаша түскі ас, клуб түндері.</div>
+<div class="place-meta">📍Jl. Каю Ая · Коктейльдер 150-200К</div>
+</div>
+<div class="place">
+<div class="place-name">Motel Mexicola</div>
+<div class="place-desc">Мексикалық бар: тако, маргарита, неон, музыка. Әр кеш сайын кеш.</div>
+<div class="place-meta">📍Jl. Kayu Jati · Коктейльдер 100-150K</div>
+</div>
+<div class="place">
+<div class="place-name">Mirror Bali</div>
+<div class="place-desc">Собор ғимаратындағы түнгі клуб. Готикалық интерьер, электроника, өрт шоуы.</div>
+<div class="place-meta">📍Jl. Petitenget · Кіру 150 мыңнан</div>
+</div>
+<h2>🏥 Емханалар мен дәріханалар</h2>
+<div class="place">
+<div class="place-name">BaliMéd Hospital</div>
+<div class="place-desc">ER бар толық аурухана. Ағылшын тілінде сөйлейтін персонал. Қабылдау 300 мыңнан.</div>
+<div class="place-meta">📍 Jl. Sunset Road</div>
+</div>
+<div class="place">
+<div class="place-name">Seminyak Clinic</div>
+<div class="place-desc">Жеке клиника: терапевт, дерматолог, стоматология. Қабылдау 250 мың.</div>
+<div class="place-meta">📍 Jl. Raya Seminyak</div>
+</div>
+<div class="place">
+<div class="place-name">Guardian / Kimia Farma</div>
+<div class="place-desc">Барлық аймақтағы дәріханалар. Негізгі дәрі-дәрмектер, күннен қорғау, москит репелленттері.</div>
+</div>
+<h2>🛕 Храмдар</h2>
+<div class="place">
+<div class="place-name">Pura Petitenget</div>
+<div class="place-desc">Жағажайдағы маңызды индуизм храмы. Салтанатты рәсімдер, тартулар. Тегін.</div>
+<div class="place-meta">📍 Jl. Petitenget</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Masceti</div>
+<div class="place-desc">Тұрақты рәсімдері бар жағажай храмы. Күн батқанда әдемі.</div>
+<div class="place-meta">📍 Seminyak Beach</div>
+</div>
+<p>Мешіттер, шіркеулер - Денпасарда (15-20 мин). Будда храмы - Вихара Дхармаяна (Кута, 10 мин).</p>
+<h2>🇷🇺 Орыс қауымы</h2>
+<div class="place">
+<div class="place-name">Telegram чаттары</div>
+<div class="place-desc">«Семиняк орыстары», «Бали чат» - жалға беру, мейрамханалар, кештер.</div>
+</div>
+<div class="place">
+<div class="place-name">Орыс мейрамханалары</div>
+<div class="place-desc">Канггудағыдан аз, бірақ сонда. «Кафе Мәскеу» - орыс тағамдары, үй атмосферасы.</div>
+</div>
+<p>Канггуға қарағанда Семинякта орыстар аз - мұнда австралиялықтар мен еуропалықтар көп. Бірақ қоғам бар.</p>
+<h2>🎒 Балабақшалар мен мектептер</h2>
+<div class="place">
+<div class="place-name">Bali Island School</div>
+<div class="place-desc">Кембридж халықаралық мектебі. 3-18 жас. Жоғары деңгей.</div>
+<div class="place-meta">📍Jl. Кунти · жылына $6000 бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Балабақшалар</div>
+<div class="place-desc">Халықаралық Монтессори бақтары, Реджио Эмилия. Орыс топтары - оларды «Бали аналарынан» іздеңіз.</div>
+</div>
+<h2>📸 Фото орындар</h2>
+<p>• Potato Head - сәулет және бассейн<br/>
+• Double Six Beach – күннің батуы, силуэт<br/>
+• Пура Петитенгет – жағажайдағы ғибадатхана<br/>
+• Eat Street бутиктер – жарқын қасбеттер<br/>
+• Motel Mexicola - неон белгілері<br/>
+• Ку Де Та – күннің батуы және коктейльдер</p>
+<h2>🏠 Тұрғын үй</h2>
+<table>
+<tr><th>Түр</th><th>Баға/ай</th><th>Қайда қарау керек</th></tr>
+<tr><td>Бөлме/қонақ үй</td><td>$350-550</td><td>Брондау, сайтта</td></tr>
+<tr><td>Студия / 1Б</td><td>$600-1000</td><td>Facebook groups, Flokq</td></tr>
+<tr><td>Бассейні бар 1 бөлмелі вилла</td><td>$1000-2000</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Люкс вилла</td><td>$2500-6000</td><td>Тікелей байланыстар, агенттер</td></tr>
+</table>
+<p>Семиняк Канггудан 20-30% қымбат. Инфрақұрылымды және әуежайға жақындығын бағалайтындар үшін жақсы.</p>
+<h2>🛵 Көлік</h2>
+<p>• <strong>Скутер:</strong> 700K-1M/ай<br/>
+• <strong>Grab/Gojek:</strong> 12K бастап (көптеген жүргізушілер, жылдам)<br/>
+• <strong>Әуежайға:</strong> 20-30 мин, 80-150К<br/>
+• <strong>Канггуға:</strong> 15-20 мин<br/>
+• <strong>Убуд қаласына:</strong> 1,5 сағат</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 Аймақтың құпиясы</div>
+<div class="secret-text">Jl. Друпади және Джл. Накула - Семиняк орталығындағы тыныш көшелер, жергілікті варунгтары мен шағын виллалары негізгі көшелерден 2 есе төмен бағамен. Барлық люкс қонақүйлер жаяу 5 минуттық жерде.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ Кемшіліктері</div>
+<div class="warn-text">Қымбат. Көлік кептелісі тұрақты (әсіресе Jl. Raya Seminyak). Жаяу жүргіншілер жолы жоқ – жаяу жүру қауіпті. Жағажайлар жүзуге емес, серфингке арналған. Шулы. Автотұрақ мәселесі. Мейрамханалардағы баға Еуропадағы бағамен бірдей.</div>
+</div>
+<div class="divider"></div>
+<h2>💰 Бір айға арналған бюджет</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Ең аз</div>
+<div class="budget-price">$800</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Ыңғайлы</div>
+<div class="budget-price">$1800</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$4500</div>
+<div class="budget-unit">айына</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · Бали аудандарына арналған гид · 2026 ж</div>
+</body>
+</html>

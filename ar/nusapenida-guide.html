@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>نوسا بينيدا</em></h1>
+<p class="sub">الدليل الكامل للمنطقة · @balidreamphoto</p>
+<div class="tag">📸 مواقع الصور</div>
+<div class="tag">🤿 الغوص</div>
+<div class="tag">🐠 الغطس</div>
+<div class="tag">🫁الغوص الحر</div>
+<div class="tag">🏖 الشواطئ</div>
+<div class="tag">🌅 غروب الشمس</div>
+<div class="tag">🛕 المعابد</div>
+<div class="vibe">"تتساقط الصخور في المحيط الفيروزي، وتسبح أسماك شيطان البحر تحتي، وشاطئ تي ريكس يبدو وكأنه من كوكب آخر. نوسا بينيدا هي بالي على المنشطات."</div>
+<p>نوسا بينيدا هي جزيرة تقع على بعد 30 دقيقة بالقارب السريع من سانور. المناظر الطبيعية الأكثر إثارة في بالي: المنحدرات، والمياه الفيروزية، وأشعة شيطان البحر، وشاطئ كيلينجكينج. تتطور الجزيرة بسرعة، لكنها لا تزال برية: طرق سيئة، وبنية تحتية بسيطة، ولكنها تتمتع بجمال لا يصدق. للرحلات اليومية أو الإقامات الطويلة المليئة بالمغامرات.</p>
+<h2>☕ المقاهي</h2>
+<div class="place">
+<div class="place-name">Penida Colada</div>
+<div class="place-desc">المقهى الرئيسي بالجزيرة. قهوة جيدة، الإفطار، إطلالة على الميناء.</div>
+<div class="place-meta">📍 توياباكيه · قهوة 30-50 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Amok Sunset Bar</div>
+<div class="place-desc">مقهى مطل على الصخور. القهوة والعصائر وغروب الشمس.</div>
+<div class="place-meta">📍كريستال باي · القهوة 30-45 ك · واي فاي ⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Full Circle Cafe</div>
+<div class="place-desc">القهوة المتخصصة في الجزيرة! مشروبات المؤلف، جو مريح.</div>
+<div class="place-meta">📍بيد · قهوة 35-55 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<h2>💻 مساحات العمل المشترك</h2>
+<p>لا توجد مساحات عمل مشتركة في نوسا بينيدا. سرعة WiFi في المقهى هي 5-15 ميجابت في الثانية (غير مستقرة). تتحسن تغطية شبكة 4G، لكنها لا يمكن الاعتماد عليها بالنسبة لمكالمات الفيديو. للعمل عن بعد: البقاء في بالي، والذهاب إلى بينيدا لقضاء عطلة نهاية الأسبوع.</p>
+<h2>🍜 مطاعم</h2>
+<h3>الميزانية (20-50 ألف)</h3>
+<div class="place">
+<div class="place-name">Warung Made Penida</div>
+<div class="place-desc">المطبخ البالي محلي الصنع. ناسي تشامبور مطلة على البحر. الأسعار المحلية.</div>
+<div class="place-meta">📍 Toyapakeh · 20-40K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Pondok</div>
+<div class="place-desc">وارونج على الطريق الرئيسي. مي جورينج، ساتاي. بسيطة ولذيذة.</div>
+<div class="place-meta">📍 Ped · 15-35K</div>
+</div>
+<h3>متوسطة (60-150 ألف)</h3>
+<div class="place">
+<div class="place-name">Penida Colada Restaurant</div>
+<div class="place-desc">المطبخ الغربي والإندونيسي. البيتزا، البرغر، المأكولات البحرية. أفضل خيار.</div>
+<div class="place-meta">📍 Toyapakeh · 60-150K</div>
+</div>
+<div class="place">
+<div class="place-name">La Nusa Beach Club</div>
+<div class="place-desc">نادي الشاطئ مع حوض سباحة، والمأكولات البحرية، والكوكتيلات. الراحة بين الرحلات.</div>
+<div class="place-meta">📍 Toyapakeh · 80-200K</div>
+</div>
+<h3>Fine dining (200K+)</h3>
+<div class="place">
+<div class="place-name">Maruti Cliff Restaurant</div>
+<div class="place-desc">مطعم على منحدر مع مناظر بانورامية. المأكولات البحرية، غروب الشمس، الرومانسية.</div>
+<div class="place-meta">📍 West Penida · 150-350K</div>
+</div>
+<h2>🥗 مؤسسات نباتية</h2>
+<div class="place">
+<div class="place-name">Penida Colada</div>
+<div class="place-desc">الخيارات النباتية في القائمة: الأطباق والسلطات والعصائر.</div>
+<div class="place-meta">📍 Toyapakeh · 55-120K</div>
+</div>
+<div class="place">
+<div class="place-name">وارونج مع التوفو/التيمبه</div>
+<div class="place-desc">في أي وارونج يمكنك طلب ناسي تشامبور بدون لحم: التوفو والتيمبيه والخضروات.</div>
+<div class="place-meta">📍في كل مكان · 20-35 ألف</div>
+</div>
+<h2>🌱أماكن نباتية</h2>
+<p>لا توجد مطاعم نباتية منفصلة في نوسا بينيدا. يقدم Warungi التمبيه والتوفو. للحصول على قائمة نباتية كاملة: بالي (أوبود، كانجو).</p>
+<h2>🏄 ركوب الأمواج</h2>
+<p>هناك أماكن في نوسا بينيدا، ولكن فقط لذوي الخبرة:</p>
+<div class="place">
+<div class="place-name">Toyapakeh Reef</div>
+<div class="place-desc">استراحة الشعاب المرجانية لذوي الخبرة. تيارات قوية، والشعاب المرجانية الضحلة.</div>
+</div>
+<p>الجزيرة ليست لركوب الأمواج. لركوب الأمواج: <strong>أولواتو</strong> أو <strong>كانجو</strong> (العودة إلى بالي).</p>
+<h2>🤿 الغوص</h2>
+<div class="place">
+<div class="place-name">Manta Point</div>
+<div class="place-desc">محطة تنظيف مانتا راي. أشعة شيطان البحر الضخمة (التي يصل طولها إلى 5 أمتار) تدور حولك. أحد أفضل مواقع الغوص في العالم!</div>
+<div class="place-meta">📍 جنوب بينيدا · العمق 10-18 م</div>
+</div>
+<div class="place">
+<div class="place-name">Crystal Bay</div>
+<div class="place-desc">مولا مولا (سمكة شمس المحيط) من يوليو إلى أكتوبر! الرؤية الكريستالية والتيارات.</div>
+<div class="place-meta">📍 غرب بنيدا · العمق 5-35 م</div>
+</div>
+<div class="place">
+<div class="place-name">Toyapakeh Wall</div>
+<div class="place-desc">جدار به شعاب مرجانية ناعمة ونباتات جورجونية عملاقة. تيارات قوية = الكثير من الأسماك.</div>
+<div class="place-meta">📍 توياباكيه · العمق 5-40 م</div>
+</div>
+<div class="place">
+<div class="place-name">Manta Bay</div>
+<div class="place-desc">نقطة أخرى مع أشعة مانتا. أقل ازدحاما من مانتا بوينت.</div>
+</div>
+<p><strong>المدارس في بينيدا:</strong></p>
+<div class="place">
+<div class="place-name">Blue Corner Dive</div>
+<div class="place-desc">PADI 5 نجوم على الجزيرة. غوصات ممتعة من ارتفاع 800 كيلومتر، والمياه المفتوحة من عمق 6 أمتار.</div>
+<div class="place-meta">📍 Toyapakeh</div>
+</div>
+<div class="place">
+<div class="place-name">Sanctum Dive Nusa Penida</div>
+<div class="place-desc">المركز المهني. الغوص التقني، وأجهزة إعادة التنفس، ورحلات السفاري.</div>
+<div class="place-meta">📍 Ped</div>
+</div>
+<p>⚠️ التيارات على بينيدا قوية. تأكد من الغوص مع دليل من ذوي الخبرة. ليس للمبتدئين بدون مدرب.</p>
+<h2>🫁الغوص الحر</h2>
+<div class="place">
+<div class="place-name">Freedive Nusa Penida</div>
+<div class="place-desc">دورات AIDA في الجزيرة. جلسات المياه المفتوحة + أشعة المانتا. تجربة فريدة من نوعها!</div>
+<div class="place-meta">📍 توياباكيه · الدورة من 5M</div>
+</div>
+<div class="place">
+<div class="place-name">رحلات الغوص الحر من بالي</div>
+<div class="place-desc">تنظم المدارس من Amed وCanggu رحلات يومية إلى Penida للغواصين الأحرار.</div>
+</div>
+<h2>🐠 الغطس</h2>
+<div class="place">
+<div class="place-name">Manta Bay</div>
+<div class="place-desc">الغطس بأشعة مانتا! تتغذى بالقرب من السطح - ويمكن رؤيتها بالقناع. لا تنسى!</div>
+<div class="place-meta">📍 جنوب بينيدا · رحلة من 350 ك</div>
+</div>
+<div class="place">
+<div class="place-name">Crystal Bay</div>
+<div class="place-desc">المياه الكريستالية والشعاب المرجانية والأسماك الاستوائية. ممكن من الشاطئ.</div>
+<div class="place-meta">📍كريستال باي · حر من الشاطئ</div>
+</div>
+<div class="place">
+<div class="place-name">Gamat Bay</div>
+<div class="place-desc">خليج هادئ مع الشعاب المرجانية والسلاحف. قليل من الناس.</div>
+<div class="place-meta">📍 غرب بينيدا · مجاناً</div>
+</div>
+<div class="place">
+<div class="place-name">Wall Point</div>
+<div class="place-desc">جدار تحت الماء. الغطس فوق الهاوية - الشعاب المرجانية العمودية.</div>
+<div class="place-meta">📍 توياباكيه · القارب من 200 ألف</div>
+</div>
+<h2>🏖شواطئ بدون أمواج</h2>
+<div class="place">
+<div class="place-name">Crystal Bay</div>
+<div class="place-desc">خليج محمي، رمال بيضاء، مياه فيروزية. أفضل شاطئ للسباحة في بينيدا.</div>
+</div>
+<div class="place">
+<div class="place-name">Atuh Beach</div>
+<div class="place-desc">كوف بين الصخور. المياه الهادئة والرمال البيضاء. 300+ خطوات للأسفل!</div>
+</div>
+<div class="place">
+<div class="place-name">Gamat Bay</div>
+<div class="place-desc">خليج هادئ صغير. المياه الهادئة، والغطس من الشاطئ.</div>
+</div>
+<p>⚠️ تتمتع العديد من شواطئ بينيدا بتيارات قوية. السباحة فقط في الخلجان المحمية. Kelingking - للصور فقط، السباحة خطيرة!</p>
+<h2>🧘 اليوغا والعافية</h2>
+<div class="place">
+<div class="place-name">اليوغا في بيوت الضيافة</div>
+<div class="place-desc">تقدم بعض الفنادق (لا نوسا، سيمابو هيلز) اليوغا في الصباح. 100-150 ألف.</div>
+</div>
+<div class="place">
+<div class="place-name">تدليك على الشاطئ</div>
+<div class="place-desc">تدليك بالي مباشرة على شاطئ كريستال باي. بسيطة ومريحة.</div>
+<div class="place-meta">📍كريستال باي · من 80 ألف/ساعة</div>
+</div>
+<h2>🏋️ صالات رياضية</h2>
+<p>لا توجد صالات رياضية في نوسا بينيدا. التدريب: المشي على الصخور والسباحة والغوص الحر. هذه جزيرة للمغامرة وليست للتأرجح.</p>
+<h2>🌅 غروب الشمس / شروق الشمس</h2>
+<table>
+<tr><th>مكان</th><th>يكتب</th><th>الاهتزاز</th></tr>
+<tr><td><strong>Crystal Bay</strong></td><td>🌅 غروب الشمس</td><td>تغرب الشمس خلف بالي - السماء الذهبية وأشجار النخيل</td></tr>
+<tr><td><strong>Kelingking Beach viewpoint</strong></td><td>🌅 غروب الشمس</td><td>صخرة تي ريكس في ضوء غروب الشمس - واو</td></tr>
+<tr><td><strong>Atuh Beach</strong></td><td>🌄 شروق الشمس</td><td>الصخور في ضوء الصباح، الساحل الشرقي</td></tr>
+<tr><td><strong>Thousand Islands viewpoint</strong></td><td>🌄 شروق الشمس</td><td>بانوراما 270 درجة - الصخور والجزر والمحيط</td></tr>
+</table>
+<h2>🌋 البراكين والجبال القريبة</h2>
+<p>لا توجد براكين في نوسا بينيدا (وهي جزيرة من الحجر الجيري). عرض <strong>جونونج اجونج</strong> من الساحل - مذهل! للتسلق: العودة إلى بالي.</p>
+<h2>🌾 مصاطب الأرز القريبة</h2>
+<p>لا توجد مصاطب للأرز في نوسا بينيدا - مناظر طبيعية من الحجر الجيري الجاف والأعشاب البحرية. للمدرجات: <strong>اوبود</strong> (بالي).</p>
+<h2>⛳ الجولف</h2>
+<p>لا يوجد جولف في نوسا بينيدا. الأقرب: <strong>Bali National</strong> (نوسا دوا، بالي).</p>
+<h2>🍓 المزارع</h2>
+<div class="place">
+<div class="place-name">Seaweed Farms</div>
+<div class="place-desc">مزارع الأعشاب البحرية هي الصناعة الرئيسية في الجزيرة. يمكنك مشاهدة العملية وتجربتها.</div>
+<div class="place-meta">📍جانب ليمبونجان مجاني</div>
+</div>
+<p>لا توجد مزارع للبن أو الفراولة. للمزارع: أوبود أو بيدوغول (بالي).</p>
+<h2>🍉أسواق الفاكهة</h2>
+<div class="place">
+<div class="place-name">Pasar Sampalan</div>
+<div class="place-desc">السوق الرئيسي للجزيرة يقع في العاصمة. الفواكه والخضروات والأسماك. صباح.</div>
+<div class="place-meta">📍سامبالان · الصباح 6-10</div>
+</div>
+<p>يعد اختيار الفواكه أكثر تواضعًا مما هو عليه في بالي - حيث يتم جلب الكثير منها من الجزيرة الكبيرة.</p>
+<h2>🛍 التسوق</h2>
+<p>لا يوجد تسوق في نوسا بينيدا. الهدايا التذكارية الصغيرة في مناطق الجذب. للتسوق: بالي.</p>
+<h2>🛒 محلات البقالة</h2>
+<div class="place">
+<div class="place-name">Minimarket (Alfamart)</div>
+<div class="place-desc">عدة مواقع في توياباكيه وبيد. المجموعة الأساسية: الماء والوجبات الخفيفة والمعكرونة.</div>
+</div>
+<p>لا توجد منتجات مستوردة. كل شيء أساسي. للتسوق الجاد: بالي.</p>
+<h2>👕 المغاسل</h2>
+<div class="place">
+<div class="place-name">مغاسل الفنادق</div>
+<div class="place-desc">تقوم معظم بيوت الضيافة بغسيل الملابس. 5-8 كيلو/كجم. لا توجد خدمة ذاتية.</div>
+</div>
+<h2>🎉 النوادي والحياة الليلية</h2>
+<p>لا توجد حياة ليلية. في المساء - العشاء في وارونج والبيرة والنجوم. للحفلات: العودة إلى بالي.</p>
+<h2>🏥 العيادات والصيدليات</h2>
+<div class="place">
+<div class="place-name">Puskesmas Nusa Penida</div>
+<div class="place-desc">عيادة الدولة. الطب الأساسي للغاية.</div>
+<div class="place-meta">📍 Sampalan</div>
+</div>
+<div class="place">
+<div class="place-name">Nusa Penida Clinic</div>
+<div class="place-desc">عيادة خاصة صغيرة للمشاكل الأساسية.</div>
+<div class="place-meta">📍البيدج · الاستقبال من 150 ألف</div>
+</div>
+<p>⚠️ للطب الخطير: الإخلاء إلى بالي (القارب السريع 30 دقيقة → مستشفى BIMC). <strong>التأمين مطلوب!</strong></p>
+<h2>🛕 المعابد</h2>
+<div class="place">
+<div class="place-name">Pura Goa Giri Putri</div>
+<div class="place-desc">معبد داخل كهف ضخم! المدخل من خلال فجوة ضيقة في الصخر. مكان غامض.</div>
+<div class="place-meta">📍 سوانا · التبرع بالدخول · مطلوب سارونج</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Paluang (T-Rex Temple)</div>
+<div class="place-desc">معبد على قمة منحدر يطل على تي ريكس (كيلينجكينج). مكان حيوي.</div>
+<div class="place-meta">📍 Bunga Mekar</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Penataran Ped</div>
+<div class="place-desc">المعبد الرئيسي للجزيرة. احتفالات واسعة النطاق، والشعب البالي يأتون من بالي.</div>
+<div class="place-meta">📍بيدج · مجاني</div>
+</div>
+<h2>🇷🇺 الجالية الروسية</h2>
+<p>لا يوجد تقريبًا أي روس يعيشون بشكل دائم في نوسا بينيدا. هناك العديد من السياح الروس في رحلات يومية. للمجتمع: بالي (كانجو، أوبود).</p>
+<h2>🎒 رياض الأطفال والمدارس</h2>
+<p>لا توجد مدارس دولية أو رياض أطفال للوافدين في نوسا بينيدا. الجزيرة غير مناسبة للعائلات التي لديها أطفال في سن المدرسة.</p>
+<h2>📸 مواقع الصور</h2>
+<p>• <strong>Kelingking Beach</strong> — صخرة تي ريكس، الصورة رقم 1 في بالي<br/>
+• <strong>Broken Beach</strong> — قوس في الصخر، حمام سباحة فيروزي<br/>
+• <strong>Angel's Billabong</strong> — حمام سباحة طبيعي لا متناهي على الصخر<br/>
+• <strong>Crystal Bay</strong> - أشجار النخيل والمياه الفيروزية<br/>
+• <strong>Atuh Beach</strong> - الصخور والرمال البيضاء<br/>
+• <strong>Thousand Islands viewpoint</strong> — بانوراما الصخور<br/>
+• <strong>Diamond Beach</strong> - درج في الصخر إلى الشاطئ الأبيض<br/>
+• تحت الماء – أشعة مانتا، والشعاب المرجانية، ومولا مولا</p>
+<h2>🏠 السكن</h2>
+<table>
+<tr><th>يكتب</th><th>السعر/الشهر</th><th>أين تنظر</th></tr>
+<tr><td>غرفة / دار الضيافة</td><td>$150-300</td><td>الحجز في الموقع</td></tr>
+<tr><td>بنغل مع إطلالة</td><td>$300-600</td><td>Airbnb، في الموقع</td></tr>
+<tr><td>فيلا</td><td>$500-1000</td><td>Airbnb</td></tr>
+<tr><td>بيت شجرة فاخر / منحدر</td><td>$1000-2500</td><td>Airbnb, Semabu Hills</td></tr>
+</table>
+<p><strong>أفضل المناطق:</strong> توياباكيه (الميناء، البنية التحتية)، كريستال باي (الشاطئ، غروب الشمس)، بيد (وسط الجزيرة).</p>
+<h2>🛵 النقل</h2>
+<p>• <strong>سكوتر:</strong> 70-100 ألف/يوم (الطرق سيئة - حفر، طرق ترابية، تلال. الخبرة مطلوبة!)<br/>
+• <strong>Grab/Gojek:</strong> لا يعمل<br/>
+• <strong>القارب السريع من بالي:</strong> من سانور، 200-300 ك، 30 دقيقة. عدة رحلات يوميا.<br/>
+• <strong>جولة يومية مع السائق:</strong> 500-700 ألف/يوم (موصى به - الطرق خطرة)<br/>
+• <strong>تأجير سيارة مع سائق:</strong> 600-800 ألف/يوم</p>
+<p>⚠️ الطرق في نوسا بينيدا هي الأخطر في بالي. نزول حاد ونقص الأسوار والثقوب. إذا لم تكن لديك خبرة في ركوب السكوتر - <strong>خذ سيارة مع السائق</strong>.</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 سر المنطقة</div>
+<div class="secret-text">شلال Peguyangan ليس شلالًا، ولكنه عبارة عن درج مكون من 700 درجة يؤدي إلى نبع مقدس في الصخر. توجد على طول الطريق برك زرقاء بها مياه مالحة على مستويات مختلفة من الصخور. قليل من الناس يأتون - لكن هذا أحد أكثر الأماكن سحراً في بالي بأكملها. تعال في الصباح الباكر.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ سلبيات</div>
+<div class="warn-text">الطرق سيئة للغاية (واحدة من الأسوأ في إندونيسيا). نزول خطير إلى الشواطئ (مئات الخطوات، بدون حواجز حماية). واي فاي ضعيف. عدد قليل من المتاجر والمطاعم. لا دواء (الإخلاء إلى بالي). تعني التيارات البحرية القوية أن السباحة غير ممكنة في كل مكان. خلال موسم الأمطار، تغسل الطرق. يوجد الكثير من السياح في Kelingking من الساعة 10:00 إلى الساعة 15:00.</div>
+</div>
+<div class="divider"></div>
+<h2>💰ميزانية الشهر</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">الحد الأدنى</div>
+<div class="budget-price">$350</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">مريح</div>
+<div class="budget-price">$700</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$1800</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · دليل مناطق بالي · 2026</div>
+</body>
+</html>

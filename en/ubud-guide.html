@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>Ubud</em></h1>
+<p class="sub">Complete guide to the area · @balidreamphoto</p>
+<div class="tag">🧘 Yoga</div>
+<div class="tag">🌾 Rice terraces</div>
+<div class="tag">🎨 Art</div>
+<div class="tag">🌱 Vegan</div>
+<div class="tag">🛕 Temples</div>
+<div class="tag">🌋 Volcanoes</div>
+<div class="tag">💻 Coworking spaces</div>
+<div class="tag">🍜 Restaurants</div>
+<div class="vibe">“Woke up in the jungle, yoga at dawn, coffee overlooking the rice terraces, sounds of gamelan from the temple in the evening.”</div>
+<p>Ubud is the cultural heart of Bali. Jungles, temples, rice fields, yoga retreats and the best vegetarian food on the island. This is where artists, spiritual seekers and remote workers live who don't need the ocean. Average age 30-45. Quieter and cheaper than Canggu.</p>
+<h2>☕ Coffee shops</h2>
+<div class="place">
+<div class="place-name">Seniman Coffee Studio</div>
+<div class="place-desc">Best specialty coffee in Ubud. Own beans, roasted on site, pour-over, cold brew.</div>
+<div class="place-meta">📍Jl. Sriwedari · Coffee 35-60K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Anomali Coffee</div>
+<div class="place-desc">Indonesian specialty brand. Grains from all over the archipelago. Cozy terrace.</div>
+<div class="place-meta">📍Jl. Raya Ubud · Coffee 35-55K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Mudra Cafe</div>
+<div class="place-desc">Coffee + raw desserts. Quiet atmosphere, garden view. Ideal for the morning.</div>
+<div class="place-meta">📍Jl. Hanoman · Coffee 30-50K · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Kopi Toko Djawa</div>
+<div class="place-desc">Colonial style, balcony overlooking the street. Javanese and Balinese coffee.</div>
+<div class="place-meta">📍Jl. Goutama · Coffee 30-45K · WiFi ⭐⭐⭐</div>
+</div>
+<h2>💻 Coworking spaces</h2>
+<div class="place">
+<div class="place-name">Outpost Ubud</div>
+<div class="place-desc">The main coworking space in Ubud. Bamboo building in the jungle, swimming pool, fast WiFi.</div>
+<div class="place-meta">📍Jl. Raya Nyuh Kuning · 250K/day · 3M/month · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Hubud (now Livit Hub)</div>
+<div class="place-desc">A legend among coworking spaces. Bamboo construction, community events, workshops.</div>
+<div class="place-meta">📍Jl. Monkey Forest · 200K/day · 2.5M/month · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Genius Cafe</div>
+<div class="place-desc">Cafe-coworking with a quiet area. Good coffee + work space.</div>
+<div class="place-meta">📍Jl. Raya Ubud · 150K minimum order · WiFi ⭐⭐⭐⭐</div>
+</div>
+<h2>🍜 Restaurants</h2>
+<h3>Budget (25-50K)</h3>
+<div class="place">
+<div class="place-name">Warung Biah Biah</div>
+<div class="place-desc">Authentic Balinese cuisine: nasi champur, lawar, satay. Local prices.</div>
+<div class="place-meta">📍 Jl. Suweta · 20-40K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Igelanca</div>
+<div class="place-desc">Homemade food. Babi guling (roasted suckling pig) is a specialty.</div>
+<div class="place-meta">📍 Jl. Raya Ubud · 25-45K</div>
+</div>
+<div class="place">
+<div class="place-name">Pasar Ubud (market)</div>
+<div class="place-desc">Morning market with street food. Bakso, martabak, nasi goreng from 15K.</div>
+<div class="place-meta">📍 Ubud Center · 15-35K</div>
+</div>
+<h3>Medium (80-180K)</h3>
+<div class="place">
+<div class="place-name">Locavore To Go</div>
+<div class="place-desc">Budget version of the famous Locavore. Farm products, sandwiches, bowls.</div>
+<div class="place-meta">📍 Jl. Dewi Sita · 70-140K</div>
+</div>
+<div class="place">
+<div class="place-name">Clear Cafe</div>
+<div class="place-desc">Multi-level restaurant in a tropical garden. Asian fusion, healthy food.</div>
+<div class="place-meta">📍 Jl. Hanoman · 80-160K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Pulau Kelapa</div>
+<div class="place-desc">Indonesian cuisine in a beautiful garden. Rendang, pepes, gado-gado.</div>
+<div class="place-meta">📍 Jl. Monkey Forest · 70-150K</div>
+</div>
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Locavore</div>
+<div class="place-desc">Top 1 restaurant in Bali. Farm tasting sets. Book a month in advance!</div>
+<div class="place-meta">📍Jl. Dewi Sita · Set from 1.2M</div>
+</div>
+<div class="place">
+<div class="place-name">Mozaic</div>
+<div class="place-desc">French-Indonesian fusion. Romantic garden, tasting menu.</div>
+<div class="place-meta">📍Jl. Raya Sanggingan · Set from 900K</div>
+</div>
+<h2>🥗 Vegetarian establishments</h2>
+<div class="place">
+<div class="place-name">Sage</div>
+<div class="place-desc">Completely vegetarian restaurant. Beautiful plates, organic ingredients.</div>
+<div class="place-meta">📍 Jl. Goutama · 70-140K</div>
+</div>
+<div class="place">
+<div class="place-name">Moksa</div>
+<div class="place-desc">Farm-to-table vegetarian. Your own garden, cooking classes.</div>
+<div class="place-meta">📍 Jl. Puskesmas · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Earth Cafe</div>
+<div class="place-desc">Vegetarian cafe with a huge menu: Asian, Western, raw food.</div>
+<div class="place-meta">📍 Jl. Goutama Selatan · 55-110K</div>
+</div>
+<h2>🌱 Vegan places</h2>
+<div class="place">
+<div class="place-name">Alchemy</div>
+<div class="place-desc">Cult raw vegan cafe. Salad bar, cold-pressed juices, chocolate made from cocoa beans.</div>
+<div class="place-meta">📍 Jl. Penestanan Kelod · 60-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Sayuri Healing Food</div>
+<div class="place-desc">Japanese-vegan fusion. Raw sushi, live desserts, a unique concept.</div>
+<div class="place-meta">📍 Jl. Sukma · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Seeds of Life</div>
+<div class="place-desc">Raw vegan restaurant + raw food academy. The best raw food desserts in Bali.</div>
+<div class="place-meta">📍 Jl. Goutama · 55-120K</div>
+</div>
+<h2>🏄 Surfing</h2>
+<p>There is no surfing in Ubud - it is a mountainous area with no access to the ocean. Nearest: <strong>Canggu</strong> (1-1.5 hours), <strong>Keramas</strong> (45 min, advanced level).</p>
+<h2>🤿 Diving</h2>
+<p>There is no - no coastline in Ubud. Nearest: <strong>Padangbai</strong> (1.5 hours) - Blue Lagoon, reefs. <strong>Tulamben</strong> (2 hours) - USS Liberty. <strong>Nusa Penida</strong> (2+ hours) - manti.</p>
+<h2>🫁 Freediving</h2>
+<p>Not in Ubud - the closest one is: <strong>Amed</strong> (2 hours), <strong>Nusa Penida</strong> (2.5 hours). Schools organize transfers.</p>
+<h2>🐠 Snorkeling</h2>
+<p>Not in Ubud - the closest one is: <strong>Padangbai</strong> (Blue Lagoon, 1.5 hours), <strong>Amed</strong> (Japanese Shipwreck, 2 hours).</p>
+<h2>🏖 Beaches without waves</h2>
+<p>There are no beaches in Ubud - it is a mountainous area. Nearest: <strong>Sanur</strong> (1 hour) - calm water, ideal for swimming.</p>
+<h2>🧘 Yoga and wellness</h2>
+<div class="place">
+<div class="place-name">Yoga Barn</div>
+<div class="place-desc">Ubud's premier yoga studio. 15+ classes per day: vinyasa, kundalini, ecstatic dance. Garden, cafe.</div>
+<div class="place-meta">📍Jl. Hanoman · 130-180K/lesson · Unlimited from 1.5M/week</div>
+</div>
+<div class="place">
+<div class="place-name">Radiantly Alive</div>
+<div class="place-desc">Yoga for all levels. Professional teachers, beautiful chawl.</div>
+<div class="place-meta">📍Jl. Jembawan · 150-180K/lesson</div>
+</div>
+<div class="place">
+<div class="place-name">Intuitive Flow</div>
+<div class="place-desc">Vinyasa and hatha in an open shala overlooking the rice fields. Magic.</div>
+<div class="place-meta">📍Jl. Tirta Tawar · 120-150K/lesson</div>
+</div>
+<div class="place">
+<div class="place-name">Taksu Spa</div>
+<div class="place-desc">Balinese massage, flower baths, energy healing. Spa in the garden.</div>
+<div class="place-meta">📍Jl. Goutama · Massage from 200K</div>
+</div>
+<h2>🏋️ Gyms</h2>
+<div class="place">
+<div class="place-name">Ubud Fitness Center</div>
+<div class="place-desc">Main gym. Cardio, free weights, simple equipment.</div>
+<div class="place-meta">📍Jl. Hanoman · 80K/day · 600K/month</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Fitness Ubud</div>
+<div class="place-desc">Small gym with good exercise equipment. Crossfit zone.</div>
+<div class="place-meta">📍Jl. Raya Pengosekan · 70K/day · 500K/month</div>
+</div>
+<p>Ubud is not about rocking chairs. There is more yoga, running through rice fields and trekking. There are few serious halls.</p>
+<h2>🌅 Sunsets / Sunrises</h2>
+<table>
+<tr><th>Place</th><th>Type</th><th>Vibe</th></tr>
+<tr><td><strong>Campuhan Ridge Walk</strong></td><td>🌅 Sunset / 🌄 Sunrise</td><td>A path along a hill between two valleys. Golden light.</td></tr>
+<tr><td><strong>Tegallalang</strong></td><td>🌄 Sunrise</td><td>Rice terraces in the morning mist</td></tr>
+<tr><td><strong>Mount Batur</strong></td><td>🌄 Sunrise</td><td>Dawn from the volcano - must do</td></tr>
+<tr><td><strong>Karsa Spa</strong></td><td>🌅 Sunset</td><td>View of rice fields from a cafe</td></tr>
+<tr><td><strong>Sari Organik</strong></td><td>🌅 Sunset</td><td>Restaurant among rice fields</td></tr>
+</table>
+<h2>🌋 Volcanoes and mountains nearby</h2>
+<div class="place">
+<div class="place-name">Gunung Batur</div>
+<div class="place-desc">Ascent at dawn (2 hours ascent). View of the lake in the crater. Must-do!</div>
+<div class="place-meta">📍 Kintamani · 1 hour from Ubud · Trekking from 400K with guide</div>
+</div>
+<div class="place">
+<div class="place-name">Gunung Agung</div>
+<div class="place-desc">Bali's main volcano (3142m). Serious tracking 6-8 hours. A guide is required.</div>
+<div class="place-meta">📍 Karangasem · 2 hours from Ubud · from 800K</div>
+</div>
+<div class="place">
+<div class="place-name">Gunung Abang</div>
+<div class="place-desc">The third highest volcano. Fewer tourists, jungle, view of Batur.</div>
+<div class="place-meta">📍 Kintamani · 1.5 hours from Ubud · from 500K</div>
+</div>
+<h2>🌾 Rice terraces nearby</h2>
+<div class="place">
+<div class="place-name">Tegallalang Rice Terrace</div>
+<div class="place-desc">The famous cascading terraces. Instagram classic. Come by 7am - no crowds.</div>
+<div class="place-meta">📍 15 min from the center · Entrance 25K</div>
+</div>
+<div class="place">
+<div class="place-name">Campuhan Ridge Walk</div>
+<div class="place-desc">Path along the ridge of the hill. Rice fields on both sides. For free.</div>
+<div class="place-meta">📍 5 min from the center</div>
+</div>
+<div class="place">
+<div class="place-name">Jatiluwih</div>
+<div class="place-desc">UNESCO. Huge terraces without crowds. The most impressive in Bali.</div>
+<div class="place-meta">📍 1 hour from Ubud · Entrance 40K</div>
+</div>
+<h2>⛳ Golf</h2>
+<p>There are no golf courses in Ubud. Nearest: <strong>Handara Golf &amp; Resort</strong> (Bedugul, 1 hour) - mountain field in a crater, from 1.2M/round. <strong>Bali National Golf Club</strong> (Nusa Dua, 1.5 hours).</p>
+<h2>🍓 Farms</h2>
+<div class="place">
+<div class="place-name">Bali Pulina</div>
+<div class="place-desc">Coffee plantation with Luwak coffee tasting. Free tour, jungle views.</div>
+<div class="place-meta">📍 Tegallalang · 20 min from the center</div>
+</div>
+<div class="place">
+<div class="place-name">Satria Coffee Plantation</div>
+<div class="place-desc">Small family farm. Processing of coffee, tea, cocoa. No crowds.</div>
+<div class="place-meta">📍 Tegallalang · 25 min from the center</div>
+</div>
+<div class="place">
+<div class="place-name">Ubud Organic Farm</div>
+<div class="place-desc">Organic farm with tour. They grow vegetables and spices and teach them how to cook.</div>
+<div class="place-meta">📍Jl. Suweta · 30 min from center</div>
+</div>
+<h2>🍉 Fruit markets</h2>
+<div class="place">
+<div class="place-name">Pasar Ubud (morning market)</div>
+<div class="place-desc">Until 8 am there is a real farmers market. Fruits, vegetables, spices at local prices.</div>
+<div class="place-meta">📍 Ubud Center · 5-8 am</div>
+</div>
+<div class="place">
+<div class="place-name">Organic Farmers Market</div>
+<div class="place-desc">On Saturdays. Organic vegetables, fruits, bread, jams from local farmers.</div>
+<div class="place-meta">📍 Pizza Bagus, Jl. Pengosekan Sat 9-13</div>
+</div>
+<h2>🛍 Shopping</h2>
+<div class="place">
+<div class="place-name">Pasar Ubud (daytime)</div>
+<div class="place-desc">After 10 am there is a souvenir market. Sarongs, figurines, baskets. Bargain for 50%!</div>
+<div class="place-meta">📍 Ubud Center</div>
+</div>
+<div class="place">
+<div class="place-name">Jl. Hanoman Boutiques</div>
+<div class="place-desc">Designer boutiques: clothes made from natural fabrics, jewelry, ceramics.</div>
+</div>
+<div class="place">
+<div class="place-name">Threads of Life</div>
+<div class="place-desc">Textile gallery: traditional handmade fabrics from village artisans.</div>
+<div class="place-meta">📍 Jl. Kajeng</div>
+</div>
+<h2>🛒 Grocery stores</h2>
+<div class="place">
+<div class="place-name">Bintang Supermarket</div>
+<div class="place-desc">The main supermarket in Ubud. Imported products, cheeses, wine, household chemicals.</div>
+<div class="place-meta">📍 Jl. Raya Sanggingan</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Buda</div>
+<div class="place-desc">Organic: Gluten-free, tofu, tempeh, nut milk.</div>
+<div class="place-meta">📍 Jl. Jembawan</div>
+</div>
+<div class="place">
+<div class="place-name">Delta Dewata</div>
+<div class="place-desc">Large supermarket with a wide range of products, including imports.</div>
+<div class="place-meta">📍 Jl. Andong</div>
+</div>
+<h2>👕 Laundries</h2>
+<div class="place">
+<div class="place-name">Ubud Laundry</div>
+<div class="place-desc">Quick wash + ironing. Pickup and delivery in Ubud.</div>
+<div class="place-meta">📍Jl. Hanoman · from 7K/kg</div>
+</div>
+<div class="place">
+<div class="place-name">Green Laundry</div>
+<div class="place-desc">Eco-wash, delicate items. Quality service.</div>
+<div class="place-meta">📍Jl. Monkey Forest · from 10K/kg</div>
+</div>
+<p>Self-service is not enough. Most are drop-off: handed over in the morning, picked up in the evening or the next day.</p>
+<h2>🎉 Clubs and nightlife</h2>
+<p>Ubud is not a party place. There are few bars, no clubs. But there is:</p>
+<div class="place">
+<div class="place-name">CP Lounge</div>
+<div class="place-desc">Jazz bar with live music. Cocktails, intimate atmosphere.</div>
+<div class="place-meta">📍 Jl. Monkey Forest</div>
+</div>
+<div class="place">
+<div class="place-name">No Más</div>
+<div class="place-desc">Bar with Mexican cuisine. Margaritas, live music on Fridays.</div>
+<div class="place-meta">📍 Jl. Goutama</div>
+</div>
+<div class="place">
+<div class="place-name">Yoga Barn Ecstatic Dance</div>
+<div class="place-desc">Ecstatic dance on Fridays. Sober party: barefoot dancing until dawn.</div>
+<div class="place-meta">📍 Jl. Hanoman · 150K</div>
+</div>
+<h2>🏥 Clinics and pharmacies</h2>
+<div class="place">
+<div class="place-name">Ubud Care Clinic</div>
+<div class="place-desc">English speaking doctors, general practice, dentistry. Reception from 200K.</div>
+<div class="place-meta">📍 Jl. Raya Ubud</div>
+</div>
+<div class="place">
+<div class="place-name">Toya Medika Clinic</div>
+<div class="place-desc">24-hour clinic with tests. Reception from 150K.</div>
+<div class="place-meta">📍 Jl. Raya Mas</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma / K24</div>
+<div class="place-desc">Pharmacies with basic medicines. Antibiotics and painkillers are cheap.</div>
+<div class="place-meta">📍 Ubud Center · from 10K</div>
+</div>
+<h2>🛕 Temples</h2>
+<div class="place">
+<div class="place-name">Pura Tirta Empul</div>
+<div class="place-desc">Sacred spring. Ritual bathing is a powerful experience. Sarong is required.</div>
+<div class="place-meta">📍 Tampaksiring · 30 min from Ubud · Entrance 50K</div>
+</div>
+<div class="place">
+<div class="place-name">Goa Gajah (Elephant Cave)</div>
+<div class="place-desc">An ancient temple of the 9th century in a cave. Bas-reliefs, baths, mystical atmosphere.</div>
+<div class="place-meta">📍 6 km from the center · Admission 50K</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Gunung Kawi</div>
+<div class="place-desc">Temples carved into the rock from the 11th century. 300 steps down through rice fields.</div>
+<div class="place-meta">📍 Tampaksiring · 30 min from Ubud · Entrance 50K</div>
+</div>
+<div class="place">
+<div class="place-name">Saraswati Temple</div>
+<div class="place-desc">Lotus pond temple in the center of Ubud. For free. Evening legong dancing.</div>
+<div class="place-meta">📍Jl. Raya Ubud Free</div>
+</div>
+<h2>🇷🇺 Russian community</h2>
+<div class="place">
+<div class="place-name">Telegram chats</div>
+<div class="place-desc">“Ubud Russians”, “Bali Ubud Chat” - rentals, recommendations, events.</div>
+</div>
+<div class="place">
+<div class="place-name">Russian community</div>
+<div class="place-desc">Less than in Canggu, but stable. Russian-language yoga retreats, women's circles.</div>
+</div>
+<div class="place">
+<div class="place-name">Russian-speaking specialists</div>
+<div class="place-desc">Search in chats: naturopaths, Ayurveda consultants, guides - everything is there.</div>
+</div>
+<h2>🎒 Kindergartens and schools</h2>
+<div class="place">
+<div class="place-name">Green School Bali</div>
+<div class="place-desc">The famous eco-school made of bamboo. International program, nature. 3-18 years old.</div>
+<div class="place-meta">📍Jl. Raya Sibang Kaja · from $10,000/year</div>
+</div>
+<div class="place">
+<div class="place-name">Pelangi School</div>
+<div class="place-desc">Bali International School. Green School is more accessible. 2-12 years.</div>
+<div class="place-meta">📍Jl. Raya Nyuh Kuning · from $3000/year</div>
+</div>
+<div class="place">
+<div class="place-name">Russian kindergartens</div>
+<div class="place-desc">There are small groups - look for “Bali Moms” in the chat. From 2M/month</div>
+</div>
+<h2>📸 Photo locations</h2>
+<p>• Tegallalang - cascading rice terraces<br/>
+• Campuhan Ridge Walk - Sunrise Trail<br/>
+• Monkey Forest - monkeys in the jungle<br/>
+• Tirta Empul - bathing in the spring<br/>
+• Pura Gunung Kawi - rock temples<br/>
+• Any cafe overlooking the rice fields<br/>
+• Handara Gate (on the road to Bedugul)</p>
+<h2>🏠 Housing</h2>
+<table>
+<tr><th>Type</th><th>Price/month</th><th>Where to look</th></tr>
+<tr><td>Guesthouse/room</td><td>$200-400</td><td>Booking, on site</td></tr>
+<tr><td>Studio / 1BR</td><td>$400-700</td><td>Facebook groups, Flokq</td></tr>
+<tr><td>Villa with pool</td><td>$700-1200</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Luxury villa in the jungle</td><td>$1500-4000</td><td>Direct contacts, agents</td></tr>
+</table>
+<p><strong>Best areas:</strong> Penestanan (quiet, villas in rice fields), Nyuh Kuning (near Monkey Forest), Sanggingan (views). Ubud is 20-30% cheaper than Canggu.</p>
+<h2>🛵 Transport</h2>
+<p>• <strong>Scooter:</strong> 600K-900K/month (be careful - narrow mountain roads!)<br/>
+• <strong>Grab/Gojek:</strong> they work, but there are fewer drivers than in Canggu. from 10K<br/>
+• <strong>To the airport:</strong> 1.5-2 hours, 300-400K<br/>
+• <strong>To Canggu:</strong> 1-1.5 hours<br/>
+• <strong>To Sanur:</strong> 45-60 min</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 Secret of the area</div>
+<div class="secret-text">Penestanan is a quiet area on a hill above Ubud. Villas among rice fields, not a single tourist. Prices are 2 times lower than the center. The best spot for long-stay.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ Cons</div>
+<div class="warn-text">Humidity 85-95% - things become moldy. There are a lot of monkeys (they steal glasses and phones). No beach. Far from the airport. Little nightlife. Mosquitoes during the rainy season. Narrow roads with monkeys.</div>
+</div>
+<div class="divider"></div>
+<h2>💰 Budget for the month</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Minimum</div>
+<div class="budget-price">$500</div>
+<div class="budget-unit">per month</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Comfortable</div>
+<div class="budget-price">$1100</div>
+<div class="budget-unit">per month</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$3000</div>
+<div class="budget-unit">per month</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · Guide to Bali districts · 2026</div>
+</body>
+</html>

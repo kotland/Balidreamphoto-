@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>Canggu</em></h1>
+<p class="sub">Complete guide to the area · @balidreamphoto</p>
+<div class="tag">🏄 Surfing</div>
+<div class="tag">💻 Coworking spaces</div>
+<div class="tag">🧘 Yoga</div>
+<div class="tag">🛍 Shopping</div>
+<div class="tag">🍜 Restaurants</div>
+<div class="tag">🎉 Clubs</div>
+<div class="tag">🏋️ Gyms</div>
+<div class="tag">🌅 Sunsets</div>
+<div class="vibe">“Surf in the morning, work from a cafe overlooking the rice fields in the afternoon, sunset with friends in the evening. Repeat."</div>
+<p>Canggu is the unofficial capital of digital nomads. If you work online, create content, surf, or just want to live in a balance between productivity and fun, this is the place. Many Russians, Australians, Europeans. Average age 25-35.</p>
+<h2>☕ Coffee shops</h2>
+<div class="place">
+<div class="place-name">Crate Cafe</div>
+<div class="place-desc">Legendary breakfasts + specialty coffee. Beans from local roasters. All with laptops.</div>
+<div class="place-meta">📍Jl. Canggu Padang Linjong · Coffee 45-65K · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Hungry Bird Coffee</div>
+<div class="place-desc">The best specialty coffee in Canggu. Own grains, pour-over, V60. Coffee geeks - here.</div>
+<div class="place-meta">📍Jl. Raya Semat · Coffee 40-60K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Machinery Cafe</div>
+<div class="place-desc">Industrial loft, huge space, brunch until evening. Flat white - top.</div>
+<div class="place-meta">📍Jl. Batu Bolong · Coffee 45-70K · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Doppio Coffee</div>
+<div class="place-desc">Small coffee shop with excellent espresso. Fast, tasty, no show-off.</div>
+<div class="place-meta">📍Jl. Pantai Berawa · Coffee 35-55K</div>
+</div>
+<div class="place">
+<div class="place-name">Satu-Satu Coffee</div>
+<div class="place-desc">Balinese grains, quiet atmosphere, cold brew - salvation in the heat.</div>
+<div class="place-meta">📍Jl. Pantai Batu Bolong · Coffee 40-60K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<h2>💻 Coworking spaces</h2>
+<div class="place">
+<div class="place-name">Dojo Bali</div>
+<div class="place-desc">The main coworking space in Canggu. 24/7, fast WiFi (100+ Mbps), community events, swimming pool.</div>
+<div class="place-meta">📍Jl. Batu Mejan · 250K/day · 3M/month · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Outpost Canggu</div>
+<div class="place-desc">Two floors, condo, Skype booths, cafe downstairs. Serious work atmosphere.</div>
+<div class="place-meta">📍Jl. Raya Canggu · 200K/day · 2.5M/month · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Tribal Bali</div>
+<div class="place-desc">Coworking + coliving. Swimming pool, yoga, community. Ideal for singles.</div>
+<div class="place-meta">📍Jl. Nelayan · 200K/day · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Biliq Bali</div>
+<div class="place-desc">Budget coworking space with good WiFi. Quiet, air conditioned, you can rent an office.</div>
+<div class="place-meta">📍Jl. Pantai Berawa · 150K/day · 1.8M/month</div>
+</div>
+<h2>🍜 Restaurants</h2>
+<h3>Budget (30-60K)</h3>
+<div class="place">
+<div class="place-name">Warung Bu Mi</div>
+<div class="place-desc">Authentic Indonesian food. Nasi champur, mi goreng. Locals eat here.</div>
+<div class="place-meta">📍 Jl. Batu Bolong · 25-45K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Local</div>
+<div class="place-desc">Nasi goreng like grandma's. Huge portions for pennies.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 20-40K</div>
+</div>
+<div class="place">
+<div class="place-name">Night Market Berawa</div>
+<div class="place-desc">Street food in the evening. Satay, bakso, martabak. Atmosphere!</div>
+<div class="place-meta">📍 Berawa · Evening · 15-50K</div>
+</div>
+<h3>Medium (80-200K)</h3>
+<div class="place">
+<div class="place-name">Milk &amp; Madu</div>
+<div class="place-desc">Brunch classic. Pancakes, eggs benedict, good coffee.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 80-150K</div>
+</div>
+<div class="place">
+<div class="place-name">BGS Bali</div>
+<div class="place-desc">Surf bar + burgers + atmosphere. Live music in the evening.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 90-180K</div>
+</div>
+<div class="place">
+<div class="place-name">Betelnut Cafe</div>
+<div class="place-desc">Healthy food, smoothie bowls, salads. Beautiful interior, Canggu vibe.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 80-160K</div>
+</div>
+<h3>Fine dining (200K+)</h3>
+<div class="place">
+<div class="place-name">La Brisa</div>
+<div class="place-desc">Boho beach club made from recycled wood. Seafood, cocktails, sunset. Book!</div>
+<div class="place-meta">📍 Echo Beach · 200-500K</div>
+</div>
+<div class="place">
+<div class="place-name">Ji Terrace by the Sea</div>
+<div class="place-desc">Asian fusion on the rock. Panoramic ocean views. Data spot.</div>
+<div class="place-meta">📍 Echo Beach · 250-600K</div>
+</div>
+<h2>🥗 Vegetarian establishments</h2>
+<div class="place">
+<div class="place-name">Shady Shack</div>
+<div class="place-desc">Vegetarian, beautiful, Instagrammable. Smoothie bowls, curries, jackfruit tacos.</div>
+<div class="place-meta">📍 Jl. Tanah Barak · 70-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Peloton Supershop</div>
+<div class="place-desc">Healthy food, bowls, freshly squeezed juices. Everything is vegetarian, much is vegan.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 65-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Alive Wholefoods</div>
+<div class="place-desc">Organic, raw food, gluten-free dishes. Quiet place for a healthy breakfast.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 70-100K</div>
+</div>
+<h2>🌱 Vegan places</h2>
+<div class="place">
+<div class="place-name">Bali Buda</div>
+<div class="place-desc">Organic cafe + shop. Vegan menu, tempeh burgers, raw food desserts.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong · 60-110K</div>
+</div>
+<div class="place">
+<div class="place-name">The Loft</div>
+<div class="place-desc">Completely plant-based cafe. Bowls, curries, vegan cheesecakes.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Samadi Bali</div>
+<div class="place-desc">Yoga center with vegan cafe. Organic bowls, cold-pressed juices.</div>
+<div class="place-meta">📍 Jl. Padang Linjong · 55-100K</div>
+</div>
+<h2>🏄 Surfing</h2>
+<table>
+<tr><th>Spot</th><th>Level</th><th>Chip</th></tr>
+<tr><td><strong>Batu Bolong</strong></td><td>Beginners</td><td>Main party place, schools on the shore</td></tr>
+<tr><td><strong>Echo Beach</strong></td><td>Average+</td><td>Powerful waves, reef break</td></tr>
+<tr><td><strong>Berawa</strong></td><td>Beginners</td><td>Wide beach break, few people</td></tr>
+<tr><td><strong>Pererenan</strong></td><td>Average</td><td>Quiet, for your own, long waves</td></tr>
+<tr><td><strong>Seseh</strong></td><td>Average+</td><td>Wild, black sand, empty lineup</td></tr>
+</table>
+<p><strong>Schools:</strong> Odysseys Surf School, Bali Green Surf School, Canggu Surf Camp. 350-500K per lesson (1.5 hours). Board rental: 50-100K/hour. Best season: April-October.</p>
+<h2>🤿 Diving</h2>
+<p>There is no diving in Canggu itself - muddy water, strong currents. Nearest dive sites:</p>
+<div class="place">
+<div class="place-name">Nusa Penida (1.5 hours)</div>
+<div class="place-desc">Manta Point, Crystal Bay. Manti, mola-mola (July-October). Day trip from 2M.</div>
+</div>
+<div class="place">
+<div class="place-name">Tulamben (2.5 hours)</div>
+<div class="place-desc">USS Liberty is a sunken ship. Dive trip from 1.5M with transfer.</div>
+</div>
+<p><strong>Schools in Canggu:</strong> Blue Season Bali, Bali Diving Academy - organize trips with pickup.</p>
+<h2>🫁 Freediving</h2>
+<p>Training in pools in Canggu, diving in Nusa Penida and Amed.</p>
+<div class="place">
+<div class="place-name">Apnea Bali</div>
+<div class="place-desc">AIDA courses, training in the Finns pool. Trips to Penida.</div>
+<div class="place-meta">📍 Canggu · Rate from 4.5M</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Freediving</div>
+<div class="place-desc">SSI courses, pool sessions + open water in Nusa Penida.</div>
+<div class="place-meta">📍 Canggu · Course from 5M</div>
+</div>
+<h2>🐠 Snorkeling</h2>
+<p>In Canggu there are no waves and muddy water. Nearest: <strong>Nusa Penida</strong> (1.5 hours, day trip from 500K), <strong>Amed</strong> (2.5 hours), <strong>Sanur</strong> (reefs offshore, 45 min).</p>
+<h2>🏖 Beaches without waves</h2>
+<p>There are no calm beaches for swimming in Canggu - there are waves and strong currents everywhere. Nearest: <strong>Sanur</strong> (45 min) - calm water, protected by a coral reef. <strong>Nusa Dua</strong> (1 hour) - turquoise lagoon.</p>
+<h2>🧘 Yoga and wellness</h2>
+<div class="place">
+<div class="place-name">The Practice Bali</div>
+<div class="place-desc">One of the best studios. Vinyasa, hatha, yin. Beautiful bamboo shala.</div>
+<div class="place-meta">📍Jl. Padang Linjong · 150-180K/lesson</div>
+</div>
+<div class="place">
+<div class="place-name">Samadi Bali</div>
+<div class="place-desc">Yoga + organic cafe + Sunday market. Community atmosphere.</div>
+<div class="place-meta">📍Jl. Padang Linjong · 130-160K/lesson</div>
+</div>
+<div class="place">
+<div class="place-name">Serenity Yoga</div>
+<div class="place-desc">Budget yoga. Morning classes in an open chalet overlooking the fields.</div>
+<div class="place-meta">📍Jl. Nelayan · 100-130K/lesson</div>
+</div>
+<h2>🏋️ Gyms</h2>
+<div class="place">
+<div class="place-name">Finns Recreation Club</div>
+<div class="place-desc">Huge complex: gym, 25m swimming pool, bowling alley, trampolines.</div>
+<div class="place-meta">📍Jl. Pantai Berawa · 250K/day · from 1.5M/month</div>
+</div>
+<div class="place">
+<div class="place-name">Body Factory Bali</div>
+<div class="place-desc">Crossfit, weightlifting, functional training. For the serious ones.</div>
+<div class="place-meta">📍Jl. Pantai Berawa · from 1.2M/month</div>
+</div>
+<div class="place">
+<div class="place-name">Canggu Studio</div>
+<div class="place-desc">Budget room with good equipment. Exercise machines, free weights.</div>
+<div class="place-meta">📍Jl. Batu Bolong · from 700K/month</div>
+</div>
+<h2>🌅 Sunsets / Sunrises</h2>
+<table>
+<tr><th>Place</th><th>Type</th><th>Vibe</th></tr>
+<tr><td><strong>Echo Beach</strong></td><td>🌅 Sunset</td><td>Beer on the sand, surfers in the background</td></tr>
+<tr><td><strong>La Brisa</strong></td><td>🌅 Sunset</td><td>Boho club, bean bags, cocktails</td></tr>
+<tr><td><strong>The Lawn</strong></td><td>🌅 Sunset</td><td>Pool bar with panorama</td></tr>
+<tr><td><strong>Tanah Lot</strong> (20 min)</td><td>🌅 Sunset</td><td>Ocean Temple - #1 Bali Sunset</td></tr>
+<tr><td><strong>Berawa Beach</strong></td><td>🌅 Sunset</td><td>Quiet, no crowds</td></tr>
+</table>
+<p>Sunrises in Canggu are not the best (west coast). For sunrises, go to Sanur or Batur volcano.</p>
+<h2>🌋 Volcanoes and mountains nearby</h2>
+<div class="place">
+<div class="place-name">Gunung Batur</div>
+<div class="place-desc">Ascent at dawn (2 hours ascent). Trekking from 400K with guide.</div>
+<div class="place-meta">📍 Kintamani · 2 hours from Canggu</div>
+</div>
+<div class="place">
+<div class="place-name">Gunung Agung</div>
+<div class="place-desc">Bali's main volcano (3142m). Serious tracking 6-8 hours. A guide is required.</div>
+<div class="place-meta">📍 Karangasem · 3 hours from Canggu · from 800K</div>
+</div>
+<h2>🌾 Rice terraces nearby</h2>
+<div class="place">
+<div class="place-name">Pererenan rice fields</div>
+<div class="place-desc">Straight to Canggu! A walk at sunrise or sunset is free and beautiful.</div>
+<div class="place-meta">📍 10 min from the center of Canggu</div>
+</div>
+<div class="place">
+<div class="place-name">Tegallalang</div>
+<div class="place-desc">The famous cascading terraces. Instagram classic. Better early in the morning.</div>
+<div class="place-meta">📍 Ubud · 1.5 hours from Canggu · Entrance 25K</div>
+</div>
+<div class="place">
+<div class="place-name">Jatiluwih</div>
+<div class="place-desc">UNESCO. Huge terraces without crowds. You can ride a scooter, amazing views.</div>
+<div class="place-meta">📍 Tabanan · 1.5 hours from Canggu · Entrance 40K</div>
+</div>
+<h2>⛳ Golf</h2>
+<div class="place">
+<div class="place-name">Bali National Golf Club</div>
+<div class="place-desc">18 holes, ocean view. Professional field.</div>
+<div class="place-meta">📍 Nusa Dua · 1 hour from Canggu · from 1.8M/round</div>
+</div>
+<div class="place">
+<div class="place-name">Handara Golf &amp; Resort</div>
+<div class="place-desc">Mountain field in the crater. Cool, beautiful, famous gate for photos.</div>
+<div class="place-meta">📍 Bedugul · 1.5 hours from Canggu · from 1.2M/round</div>
+</div>
+<h2>🍓 Farms</h2>
+<div class="place">
+<div class="place-name">Bali Pulina Coffee Plantation</div>
+<div class="place-desc">Luwak coffee and cocoa tasting. Free tour, jungle views.</div>
+<div class="place-meta">📍 Ubud · 1.5 hours from Canggu</div>
+</div>
+<div class="place">
+<div class="place-name">Strawberry Farm Bedugul</div>
+<div class="place-desc">Picking strawberries in the mountains. Great place for photos and kids.</div>
+<div class="place-meta">📍 Bedugul · 1.5 hours from Canggu · Entrance 25K</div>
+</div>
+<div class="place">
+<div class="place-name">Big Tree Farms</div>
+<div class="place-desc">Chocolate factory tour. Chocolate tasting from Balinese cocoa.</div>
+<div class="place-meta">📍Jl. Raya Sibang Kaja · 30 min from Canggu</div>
+</div>
+<h2>🍉 Fruit markets</h2>
+<div class="place">
+<div class="place-name">Pasar Canggu (morning market)</div>
+<div class="place-desc">Fresh fruit from farmers. Mango, papaya, rambutan, herring. Prices are 3 times lower than cafes.</div>
+<div class="place-meta">📍Jl. Raya Canggu · 6-10 am</div>
+</div>
+<div class="place">
+<div class="place-name">Samadi Sunday Market</div>
+<div class="place-desc">Farmer's market on Sundays. Organic vegetables, fruits, bread, honey.</div>
+<div class="place-meta">📍 Samadi Bali · Sun 9-14</div>
+</div>
+<h2>🛍 Shopping</h2>
+<div class="place">
+<div class="place-name">Love Anchor Market</div>
+<div class="place-desc">Flea market on weekends. Clothing, jewelry, souvenirs. Bargain!</div>
+<div class="place-meta">📍Jl. Pantai Batu Bolong Sat-Sun</div>
+</div>
+<div class="place">
+<div class="place-name">Batu Bolong Street</div>
+<div class="place-desc">The entire street is filled with boutiques, surf shops, and designer stores. Balinese Melrose Ave.</div>
+</div>
+<div class="place">
+<div class="place-name">Berawa Boutiques</div>
+<div class="place-desc">A new wave of designer boutiques. Clothing, decor, handmade jewelry.</div>
+</div>
+<h2>🛒 Grocery stores</h2>
+<div class="place">
+<div class="place-name">Pepito Market</div>
+<div class="place-desc">Imported products: European cheeses, wine, snacks. Expensive, but everything is there.</div>
+<div class="place-meta">📍 Several points in Canggu</div>
+</div>
+<div class="place">
+<div class="place-name">Frestive Supermarket</div>
+<div class="place-desc">Large supermarket. Everything from household chemicals to fresh seafood.</div>
+<div class="place-meta">📍 Jl. Raya Canggu</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Buda Shop</div>
+<div class="place-desc">Organic, gluten-free, healthy lifestyle products. Tofu, tempeh, nut milk.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong</div>
+</div>
+<h2>👕 Laundries</h2>
+<div class="place">
+<div class="place-name">Quick Laundry Canggu</div>
+<div class="place-desc">Washing + ironing 24 hours before. Express - 6 hours. By weight.</div>
+<div class="place-meta">📍Jl. Batu Bolong · from 8K/kg</div>
+</div>
+<div class="place">
+<div class="place-name">Mr. White Laundry</div>
+<div class="place-desc">Quality laundry: delicate items, dry cleaning. Pickup and delivery.</div>
+<div class="place-meta">📍Jl. Pantai Berawa · from 12K/kg</div>
+</div>
+<p>There are few self-service washing machines - almost all laundries are drop-off. Average price: 7-12K per kg, ready in 24 hours.</p>
+<h2>🎉 Clubs and nightlife</h2>
+<div class="place">
+<div class="place-name">Old Man's</div>
+<div class="place-desc">Legend of Canggu. Live music, beer (35K Bintang), party every night. Zero pathos.</div>
+<div class="place-meta">📍 Jl. Pantai Batu Bolong</div>
+</div>
+<div class="place">
+<div class="place-name">Finn's Beach Club</div>
+<div class="place-desc">Daytime pool party, DJ, cocktails (150-200K). Main beach club.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa</div>
+</div>
+<div class="place">
+<div class="place-name">Tamora Gallery</div>
+<div class="place-desc">Night club: electronics, techno. Opens late and stays open until morning.</div>
+<div class="place-meta">📍 Jl. Subak Sari</div>
+</div>
+<div class="place">
+<div class="place-name">Sand Bar</div>
+<div class="place-desc">Bar right on Echo Beach. Sunset → music → dancing on the sand.</div>
+<div class="place-meta">📍 Echo Beach</div>
+</div>
+<h2>🏥 Clinics and pharmacies</h2>
+<div class="place">
+<div class="place-name">Canggu Medical Clinic</div>
+<div class="place-desc">English-speaking doctors, general practice, tests. Reception from 200K.</div>
+<div class="place-meta">📍 Jl. Pantai Berawa</div>
+</div>
+<div class="place">
+<div class="place-name">Unicare Clinic</div>
+<div class="place-desc">International clinic: therapist, dermatologist, dentist. Reception from 300K.</div>
+<div class="place-meta">📍 Jl. Raya Canggu</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma / Guardian</div>
+<div class="place-desc">Pharmacies with basic medicines. Antibiotics without a prescription, cheap.</div>
+<div class="place-meta">📍 All over Chang · Medicines from 10K</div>
+</div>
+<h2>🛕 Temples</h2>
+<div class="place">
+<div class="place-name">Tanah Lot</div>
+<div class="place-desc">Temple on a rock in the ocean. The main attraction is the incredible sunset here.</div>
+<div class="place-meta">📍 20 min from Canggu · Admission 60K</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Batu Bolong</div>
+<div class="place-desc">A small Hindu temple on a cliff right on Batu Bolong Beach. For free.</div>
+<div class="place-meta">📍 Batu Bolong Beach</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Petitenget</div>
+<div class="place-desc">An ancient temple on the border of Canggu and Seminyak. Full moon ceremonies.</div>
+<div class="place-meta">📍Jl. Petitenget · 15 min from Canggu</div>
+</div>
+<p>Mosques, churches - in Denpasar (30-40 min). Buddhist monastery Brahma Vihara Arama - in Lovina (3 hours).</p>
+<h2>🇷🇺 Russian community</h2>
+<div class="place">
+<div class="place-name">Telegram chats</div>
+<div class="place-desc">“Canggu Russians”, “Bali Chat”, “Bali Moms” - rentals, recommendations, parties.</div>
+</div>
+<div class="place">
+<div class="place-name">Russian restaurants</div>
+<div class="place-desc">“Mama Russia”, “Pelmeni Bali” - borscht, dumplings, cheesecakes. Nostalgia for home.</div>
+</div>
+<div class="place">
+<div class="place-name">Russian speaking doctors</div>
+<div class="place-desc">Search in “Bali Medicine” chats - therapists, dentists, pediatricians with Russian.</div>
+</div>
+<p>The Russian community in Canggu is one of the largest in Bali. It's easy to find a nanny, lawyer, realtor who speaks Russian.</p>
+<h2>🎒 Kindergartens and schools</h2>
+<div class="place">
+<div class="place-name">Canggu Community School</div>
+<div class="place-desc">International school, Cambridge program. English language of instruction.</div>
+<div class="place-meta">📍Jl. Subak Sari · from $5000/year</div>
+</div>
+<div class="place">
+<div class="place-name">Montessori Garden Bali</div>
+<div class="place-desc">Kindergarten according to the Montessori system. 2-6 years. English + Indonesian.</div>
+<div class="place-meta">📍 Pererenan · from 3M/month</div>
+</div>
+<div class="place">
+<div class="place-name">Russian kindergartens</div>
+<div class="place-desc">Several private Russian kindergartens in Canggu - look for “Bali Moms” in the chat. From 2M/month</div>
+</div>
+<h2>📸 Photo locations</h2>
+<p>• Pererenan rice fields – golden hour<br/>
+• Tanah Lot – temple at sunset<br/>
+• Echo Beach - backlit surfers<br/>
+• Batu Bolong – morning surf<br/>
+• Cafe overlooking the rice fields<br/>
+• Love Anchor Market - bright colors<br/>
+• La Brisa - boho interior</p>
+<h2>🏠 Housing</h2>
+<table>
+<tr><th>Type</th><th>Price/month</th><th>Where to look</th></tr>
+<tr><td>Room in coliving</td><td>$300-500</td><td>Outpost, Tribal, Dojo</td></tr>
+<tr><td>Studio / 1BR</td><td>$500-800</td><td>Facebook groups, Flokq</td></tr>
+<tr><td>Villa 1BR with pool</td><td>$800-1500</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Luxury villa 2BR+</td><td>$2000-5000</td><td>Direct contacts, agents</td></tr>
+</table>
+<p><strong>Best areas:</strong> Pererenan (quiet, villas), Berawa (close to everything), Batu Bolong (party). Search on FB: “Canggu Community”, “Bali Long Term Rentals”.</p>
+<h2>🛵 Transport</h2>
+<p>• <strong>Scooter:</strong> 700K-1M/month (international rights required!)<br/>
+• <strong>Grab/Gojek:</strong> from 15K per trip<br/>
+• <strong>To the airport:</strong> 45-60 min, 150-250K<br/>
+• <strong>To Ubud:</strong> 1-1.5 hours<br/>
+• <strong>To Seminyak:</strong> 15-20 min</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 Secret of the area</div>
+<div class="secret-text">Pererenan is “Canggu in 2 years.” Quieter, cheaper, more beautiful. Those who know are already moving there. The best villas and cafes open here.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ Cons</div>
+<div class="warn-text">Traffic jams during rush hour (16-19). The ocean is dangerous for swimming (strong currents). Prices are rising every year. Lots of construction and noise. During the rainy season (November-March) the roads are flooded. Sometimes there is trash on the beaches.</div>
+</div>
+<div class="divider"></div>
+<h2>💰 Budget for the month</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Minimum</div>
+<div class="budget-price">$600</div>
+<div class="budget-unit">per month</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Comfortable</div>
+<div class="budget-price">$1400</div>
+<div class="budget-unit">per month</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$3500</div>
+<div class="budget-unit">per month</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · Guide to Bali districts · 2026</div>
+</body>
+</html>

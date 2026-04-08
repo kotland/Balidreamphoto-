@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>سانور</em></h1>
+<p class="sub">الدليل الكامل للمنطقة · @balidreamphoto</p>
+<div class="tag">🏖 شاطئ هادئ</div>
+<div class="tag">🚲 دراجات</div>
+<div class="tag">👨‍👩‍👧 عائلات</div>
+<div class="tag">🐠 الغطس</div>
+<div class="tag">🌅 شروق الشمس</div>
+<div class="tag">🍜 مطاعم</div>
+<div class="tag">🤿 الغوص</div>
+<div class="vibe">"ركوب الدراجة على طول المحيط، وتناول الإفطار مع إطلالة على نوسا بينيدا، والسباحة دون أمواج. سانور هي بالي لأولئك الذين نالوا قدرًا كبيرًا من الفوضى."</div>
+<p>سانور - الساحل الشرقي، المياه الهادئة، المنتزه الطويل، الجو العائلي. يعيش هنا المغتربون المتقاعدون والعائلات التي لديها أطفال وغواصون. الشعاب المرجانية تحميك من الأمواج - يمكنك السباحة! بالقرب من المطار، العبارة إلى نوسا بينيدا. متوسط ​​العمر 35-55.</p>
+<h2>☕ المقاهي</h2>
+<div class="place">
+<div class="place-name">Genius Cafe Sanur</div>
+<div class="place-desc">قهوة متخصصة وواي فاي جيد وأجواء هادئة للعمل.</div>
+<div class="place-meta">📍جل. داناو تامبلينجان · القهوة 35-55 ك · واي فاي ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Dusk Blue Cafe</div>
+<div class="place-desc">مقهى أنيق يقدم مشروبات مميزة. صب أكثر من ذلك، الشراب البارد.</div>
+<div class="place-meta">📍جل. داناو تامبلينجان · القهوة 35-50 ك · واي فاي ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Sanur Brewing Company</div>
+<div class="place-desc">مقهى + مصنع جعة صغير. الإفطار والغداء، إسبرسو جيد.</div>
+<div class="place-meta">📍جل. قهوة داناو تامبلينجان 30-50 ك</div>
+</div>
+<h2>💻 مساحات العمل المشترك</h2>
+<p>هناك عدد قليل من مساحات العمل المشتركة المخصصة في سانور. إنهم يعملون من مقهى (Genius، Dusk Blue - شبكة WiFi جيدة). للحصول على مساحة عمل مشتركة جادة: <strong>كانجو</strong> (ساعة واحدة) أو <strong>دينباسار</strong> (20 دقيقة).</p>
+<h2>🍜 مطاعم</h2>
+<h3>الميزانية (25-50 ألف)</h3>
+<div class="place">
+<div class="place-name">Warung Mak Beng</div>
+<div class="place-desc">أسطورة سانور منذ عام 1941! طبق واحد فقط - السمك المقلي مع الأرز. قائمة الانتظار يستحق كل هذا العناء.</div>
+<div class="place-meta">📍 Jl. Hang Tuah · 35K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Baby Monkeys</div>
+<div class="place-desc">المطبخ المحلي: ناسي تشامبور، سوتو أيام. جو عائلى رخيص ولذيذ.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 25-45K</div>
+</div>
+<h3>متوسطة (80-180 ألف)</h3>
+<div class="place">
+<div class="place-name">Three Monkeys Sanur</div>
+<div class="place-desc">مطعم جميل في حديقة استوائية. المطبخ الغربي والآسيوي.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 80-170K</div>
+</div>
+<div class="place">
+<div class="place-name">Massimo</div>
+<div class="place-desc">أفضل الأطعمة الإيطالية في سانور. المعكرونة والبيتزا المطهوة على الحطب والجيلاتو.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 90-200K</div>
+</div>
+<h3>Fine dining (200K+)</h3>
+<div class="place">
+<div class="place-name">Kayumanis Sanur</div>
+<div class="place-desc">تناول الطعام الفاخر في حديقة استوائية. المطبخ الإندونيسي عالي المستوى.</div>
+<div class="place-meta">📍 Jl. Pungutan · 200-500K</div>
+</div>
+<h2>🥗 مؤسسات نباتية</h2>
+<div class="place">
+<div class="place-name">Soul on the Beach</div>
+<div class="place-desc">مقهى نباتي على الجسر. الأطباق والسلطات والعصائر الطازجة.</div>
+<div class="place-meta">📍 Beachfront · 60-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Organik Sanur</div>
+<div class="place-desc">الأطباق العضوية، القائمة النباتية. أوعية عصير، خبز محمص.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 55-110K</div>
+</div>
+<h2>🌱أماكن نباتية</h2>
+<div class="place">
+<div class="place-name">Nourish Sanur</div>
+<div class="place-desc">مقهى نباتي: أوعية نباتية، حلويات الكاجو، العصائر.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan · 55-100K</div>
+</div>
+<div class="place">
+<div class="place-name">The Greenhouse</div>
+<div class="place-desc">قائمة نباتية + متجر عضوي. الحلويات الخام.</div>
+<div class="place-meta">📍 Jl. Bypass Ngurah Rai · 50-100K</div>
+</div>
+<h2>🏄 ركوب الأمواج</h2>
+<div class="place">
+<div class="place-name">Sanur Reef</div>
+<div class="place-desc">بقعة الشعاب المرجانية للمستوى المتوسط. الاستراحة الصحيحة، بحاجة إلى قارب إلى المكان.</div>
+<div class="place-meta">📍بحري · قارب 100 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Hyatt Reef</div>
+<div class="place-desc">بقعة أخرى للشعاب المرجانية. مستوى متوسط. الأمواج أصغر مما كانت عليه في كانجو.</div>
+</div>
+<p>ركوب الأمواج في سانور ليس هو الشيء الرئيسي. الأمواج ضعيفة ومرجانية. لتصفح جيد: <strong>كانجو</strong> (ساعة واحدة)، <strong>كيراماس</strong> (30 دقيقة).</p>
+<h2>🤿 الغوص</h2>
+<div class="place">
+<div class="place-name">Crystal Divers</div>
+<div class="place-desc">أحد أفضل مراكز الغوص في بالي. دورات PADI ورحلات إلى نوسا بينيدا وتولامبين.</div>
+<div class="place-meta">📍جل. داناو تامبلينجان المياه المفتوحة من ارتفاع 6 أمتار</div>
+</div>
+<div class="place">
+<div class="place-name">Blue Season Bali</div>
+<div class="place-desc">المركز المهني: الدورات والرحلات اليومية ورحلات السفاري. بيك اب من الفندق.</div>
+<div class="place-meta">📍جل. داناو بوسو · رحلة نهارية من 1.5 متر</div>
+</div>
+<p>سانور هي قاعدة الغوص الرئيسية في بالي. بالقرب من الرصيف في نوسا بينيدا، ملائم للرحلات اليومية.</p>
+<h2>🫁الغوص الحر</h2>
+<div class="place">
+<div class="place-name">Bali Freediving</div>
+<div class="place-desc">دورات SSI في سانور. جلسات حمام السباحة + المياه المفتوحة في نوسا بينيدا.</div>
+<div class="place-meta">📍 سانور · السعر يبدأ من 4.5 مليون</div>
+</div>
+<h2>🐠 الغطس</h2>
+<div class="place">
+<div class="place-name">سانور ريف (من الشاطئ)</div>
+<div class="place-desc">مباشرة من الشاطئ! الشعاب المرجانية 50-100 متر من الشاطئ. الأسماك والشعاب المرجانية. قناع + زعانف - هذا كل شيء.</div>
+<div class="place-meta">📍 أي شاطئ في سانور · مجاناً</div>
+</div>
+<div class="place">
+<div class="place-name">Serangan Island</div>
+<div class="place-desc">جزيرة السلحفاة - السلاحف + الشعاب المرجانية. 15 دقيقة بالقارب من سانور.</div>
+<div class="place-meta">📍قارب من 200 ألف</div>
+</div>
+<h2>🏖شواطئ بدون أمواج</h2>
+<div class="place">
+<div class="place-name">Sanur Beach</div>
+<div class="place-desc">جميع الشواطئ في سانور هادئة! الشعاب المرجانية تحمي من الأمواج. مثالية للأطفال والسباحة.</div>
+<div class="place-meta">📍السد بالكامل · 4 كم من الشواطئ</div>
+</div>
+<div class="place">
+<div class="place-name">Mertasari Beach</div>
+<div class="place-desc">الجزء الجنوبي. أوسع قليلا وأكثر هدوءا. ركوب الأمواج شراعيًا في موسم الرياح.</div>
+</div>
+<div class="place">
+<div class="place-name">Sindhu Beach</div>
+<div class="place-desc">الشاطئ المركزي. الجسر والمقاهي والقوارب إلى بينيدا. شروق الشمس الجميل.</div>
+</div>
+<h2>🧘 اليوغا والعافية</h2>
+<div class="place">
+<div class="place-name">Power of Now Oasis</div>
+<div class="place-desc">استوديو اليوغا على الشاطئ. دروس صباحية مطلة على المحيط. تأملات.</div>
+<div class="place-meta">📍على شاطئ البحر · 120-150 ألف للدرس</div>
+</div>
+<div class="place">
+<div class="place-name">Jamu Spa</div>
+<div class="place-desc">منتجع صحي بالي تقليدي. التدليك، حمامات الزهور، الدعك.</div>
+<div class="place-meta">📍جل. داناو تامبلينجان · تدليك من 150 ألف</div>
+</div>
+<h2>🏋️ صالات رياضية</h2>
+<div class="place">
+<div class="place-name">Taman Gym Sanur</div>
+<div class="place-desc">القاعة الرئيسية. آلات التمارين الرياضية، الأوزان الحرة، تمارين القلب.</div>
+<div class="place-meta">📍جل. تجاوز نجوراه راي · 60 ألف/يوم · 500 ألف/شهر</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Fitness Sanur</div>
+<div class="place-desc">غرفة صغيرة مع المعدات الأساسية.</div>
+<div class="place-meta">📍جل. داناو تامبلينجان · 50 ألف/يوم · 400 ألف/شهر</div>
+</div>
+<h2>🌅 غروب الشمس / شروق الشمس</h2>
+<table>
+<tr><th>مكان</th><th>يكتب</th><th>الاهتزاز</th></tr>
+<tr><td><strong>Sindhu Beach</strong></td><td>🌄 شروق الشمس</td><td>أفضل شروق الشمس في بالي - نوسا بينيدا في الأفق</td></tr>
+<tr><td><strong>الجسر</strong></td><td>🌄 شروق الشمس</td><td>دراجة عند الفجر على طول الشاطئ</td></tr>
+<tr><td><strong>Sanur Beach</strong></td><td>🌄 شروق الشمس</td><td>قوارب الصيد في ضوء الصباح</td></tr>
+</table>
+<p>سانور - الساحل الشرقي، هنا <strong>شروق الشمس وليس غروب الشمس</strong>. لغروب الشمس: قم بالقيادة إلى كانجو/سيمينياك (ساعة واحدة).</p>
+<h2>🌋 البراكين والجبال القريبة</h2>
+<div class="place">
+<div class="place-name">جونونج باتور</div>
+<div class="place-desc">1.5-2 ساعة من سانور. الصعود عند الفجر.</div>
+<div class="place-meta">📍 كينتاماني · من 400 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">جونونج اجونج</div>
+<div class="place-desc">2-2.5 ساعة من سانور.</div>
+<div class="place-meta">📍 كارانجاسم · من 800 ألف</div>
+</div>
+<h2>🌾 مصاطب الأرز القريبة</h2>
+<p>لا توجد مصاطب للأرز في سانور - فهي منطقة حضرية. الأقرب: <strong>Tegallalang</strong> (أوبود، 1.5 ساعة)، <strong>Jatiluwih</strong> (ساعاتين).</p>
+<h2>⛳ الجولف</h2>
+<div class="place">
+<div class="place-name">Bali Beach Golf Course</div>
+<div class="place-desc">9 حفر في سانور! بالقرب من المحيط، بأسعار معقولة. للاسترخاء.</div>
+<div class="place-meta">📍شاطئ جراند إينا بالي · من 700 ألف/جولة</div>
+</div>
+<h2>🍓 المزارع</h2>
+<p>لا توجد مزارع في سانور - إنها مدينة ساحلية. الأقرب: <strong>Bali Pulina</strong> (أوبود، 1.5 ساعة) - القهوة، <strong>Strawberry Farm</strong> (بيدوجول، ساعتان).</p>
+<h2>🍉أسواق الفاكهة</h2>
+<div class="place">
+<div class="place-name">Pasar Sindhu</div>
+<div class="place-desc">السوق الصباحي + السوق الليلي (السوق الليلي). الفواكه، طعام الشارع، الجو.</div>
+<div class="place-meta">📍جل. داناو تامبلينجان · الصباح 6-10 / المساء 17-22</div>
+</div>
+<h2>🛍 التسوق</h2>
+<div class="place">
+<div class="place-name">Jl. Danau Tamblingan</div>
+<div class="place-desc">الشارع الرئيسي: المحلات والمعارض ومحلات بيع التذكارات. تسوق مريح.</div>
+</div>
+<div class="place">
+<div class="place-name">Hardy's Supermarket</div>
+<div class="place-desc">متجر كبير متعدد الأقسام: الملابس والهدايا التذكارية والمنتجات - الكل في واحد.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan</div>
+</div>
+<h2>🛒 محلات البقالة</h2>
+<div class="place">
+<div class="place-name">Hardy's Sanur</div>
+<div class="place-desc">سوبر ماركت كبير. المنتجات المحلية والمستوردة والكيماويات المنزلية.</div>
+</div>
+<div class="place">
+<div class="place-name">Pepito Market</div>
+<div class="place-desc">المنتجات المستوردة: الجبن، النبيذ، الماركات الأوروبية.</div>
+<div class="place-meta">📍 Jl. Danau Tamblingan</div>
+</div>
+<h2>👕 المغاسل</h2>
+<div class="place">
+<div class="place-name">Sanur Laundry</div>
+<div class="place-desc">غسيل + كوي واستلام وتسليم. سريع ورخيص.</div>
+<div class="place-meta">📍جل. داناو تامبلينجان · من 7 كيلو/كجم</div>
+</div>
+<h2>🎉 النوادي والحياة الليلية</h2>
+<p>سانور منطقة هادئة. لا توجد أندية. إغلاق الحانات بحلول الساعة 23:00. يأكل:</p>
+<div class="place">
+<div class="place-name">Casablanca Sanur</div>
+<div class="place-desc">بار مع موسيقى حية. الكوكتيلات، جو مريح.</div>
+</div>
+<div class="place">
+<div class="place-name">Lilla Pantai</div>
+<div class="place-desc">بار الشاطئ على الكورنيش. البيرة، غروب الشمس (حسنًا، تقريبًا)، حشد ودود.</div>
+</div>
+<p>للحياة الليلية: <strong>سيمينياك</strong> (30 دقيقة) أو <strong>كوتا</strong> (20 دقيقة).</p>
+<h2>🏥 العيادات والصيدليات</h2>
+<div class="place">
+<div class="place-name">Kasih Ibu Hospital</div>
+<div class="place-desc">مستشفى كامل به غرف الطوارئ والجراحة وطب الأطفال. واحدة من أفضل المستشفيات في بالي.</div>
+<div class="place-meta">📍جل. تيوكو عمر · 15 دقيقة من المركز</div>
+</div>
+<div class="place">
+<div class="place-name">Sanur Clinic</div>
+<div class="place-desc">عيادة خاصة: معالج، تحاليل. الموظفين الناطقين باللغة الإنجليزية.</div>
+<div class="place-meta">📍جل. داناو تامبلينجان · الاستقبال من 200 ألف</div>
+</div>
+<h2>🛕 المعابد</h2>
+<div class="place">
+<div class="place-name">Pura Blanjong</div>
+<div class="place-desc">معبد قديم به شاهدة حجرية من القرن التاسع - أقدم نقش في بالي.</div>
+<div class="place-meta">📍جل. داناو بوسو · مجاني</div>
+</div>
+<div class="place">
+<div class="place-name">Le Mayeur Museum</div>
+<div class="place-desc">متحف منزل فنان بلجيكي على الشاطئ. الرسم، الحديقة، التاريخ.</div>
+<div class="place-meta">📍واجهة الشاطئ · المدخل 50 ألف</div>
+</div>
+<h2>🇷🇺 الجالية الروسية</h2>
+<p>يوجد عدد قليل من الروس في سانور - المنطقة مخصصة أكثر للأستراليين والمتقاعدين. هناك متحدثون باللغة الروسية، ولكن لا يوجد مجتمع منفصل. الدردشات: "دردشة بالي"، "روس بالي" - عامة.</p>
+<h2>🎒 رياض الأطفال والمدارس</h2>
+<div class="place">
+<div class="place-name">Sanur Independent School</div>
+<div class="place-desc">مدرسة دولية. برنامج كامبريدج، فصول صغيرة.</div>
+<div class="place-meta">📍 سانور · ابتداءً من 4000 دولار في السنة</div>
+</div>
+<div class="place">
+<div class="place-name">Taman Rama School</div>
+<div class="place-desc">المدرسة البالية مع الاعتماد الدولي. أكثر سهولة.</div>
+<div class="place-meta">📍جل. تجاوز · من 2000 دولار/سنة</div>
+</div>
+<h2>📸 مواقع الصور</h2>
+<p>• شروق الشمس على شاطئ سيندهو – قوارب الصيد<br/>
+• السد – الدراجات وأشجار النخيل<br/>
+• متحف لو مايور – العمارة الاستعمارية<br/>
+• سوق باسار سيندهو الليلي - طعام الشارع<br/>
+• منظر نوسا بينيدا من الشاطئ</p>
+<h2>🏠 السكن</h2>
+<table>
+<tr><th>يكتب</th><th>السعر/الشهر</th><th>أين تنظر</th></tr>
+<tr><td>غرفة / دار الضيافة</td><td>$200-350</td><td>الحجز في الموقع</td></tr>
+<tr><td>استوديو / غرفة نوم واحدة</td><td>$350-600</td><td>Facebook groups</td></tr>
+<tr><td>فيلا مع مسبح</td><td>$600-1200</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>فيلا فاخرة</td><td>$1500-3000</td><td>الوكلاء</td></tr>
+</table>
+<p>سانور أرخص من سيمينياك وكانجو. بنية تحتية جيدة وهادئة ومثالية للعائلات.</p>
+<h2>🛵 النقل</h2>
+<p>• <strong>الدراجة:</strong> أفضل وسائل النقل في سانور! السد مسطح. الإيجار يبدأ من 50 ألف/اليوم<br/>
+• <strong>سكوتر:</strong> 600 ألف - 800 ألف / شهر<br/>
+• <strong>Grab/Gojek:</strong> من 10K، يعمل بشكل جيد<br/>
+• <strong>إلى المطار:</strong> 25-35 دقيقة، 80-150 ك<br/>
+• <strong>العبارة إلى نوسا بينيدا:</strong> الرصيف الأيمن في سانور، 200 ك، 30 دقيقة</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 سر المنطقة</div>
+<div class="secret-text">يعد سوق باسار سيندهو الليلي أفضل سوق ليلي لأطعمة الشوارع في جنوب بالي. ساتيه بـ 15 ألف، مرتباك بـ 20 ألف، عصير طازج بـ 10 ألف. أجواء إندونيسيا الحقيقية - بدون رسوم سياحية إضافية.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ سلبيات</div>
+<div class="warn-text">مملة للشباب. الحياة الليلية الصغيرة. الشاطئ غير واضح عند ارتفاع المد. "منطقة بابوشكين" - متوسط ​​عمر الوافدين هو 50+. خدمة الاتصال اللاسلكي بالإنترنت عبر تقنية واي فاي أضعف مما كانت عليه في كانجو. مساحات عمل مشتركة قليلة.</div>
+</div>
+<div class="divider"></div>
+<h2>💰ميزانية الشهر</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">الحد الأدنى</div>
+<div class="budget-price">$450</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">مريح</div>
+<div class="budget-price">$1000</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$2500</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · دليل مناطق بالي · 2026</div>
+</body>
+</html>

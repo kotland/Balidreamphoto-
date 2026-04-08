@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>Улувату</em></h1>
+<p class="sub">Аймақ бойынша толық нұсқаулық · @balidreamphoto</p>
+<div class="tag">🏄 Серфинг</div>
+<div class="tag">🌅 Күннің батуы</div>
+<div class="tag">🛕 Храмдар</div>
+<div class="tag">🏖 Жағажайлар</div>
+<div class="tag">🧘 Йога</div>
+<div class="tag">📸 Жартастар</div>
+<div class="tag">🍜 Мейрамханалар</div>
+<div class="vibe">«Ақ құм, көгілдір су, мұхит үстіндегі тастар, маймыл ғибадатханасынан күннің батуы. Сіз елестеткендей Бали».</div>
+<p>Улувату - Балидің оңтүстігіндегі Букит түбегі. Аралдың ең жақсы жағажайлары, әлемдік серфинг, Үнді мұхитына қарайтын жартастар. Бұл жерде батыс жағалауға қарағанда тыныш және әдемірек. Кешке емес, мұхитқа мұқтаж жандар үшін. Жылдам өсуде: жыл сайын жаңа виллалар мен жартас клубтары.</p>
+<h2>☕ Кофеханалар</h2>
+<div class="place">
+<div class="place-name">Drifter Surf Shop &amp; Cafe</div>
+<div class="place-desc">Серфинг дүкені + арнайы кофе. Ыңғайлы аула, жақсы тегіс ақ, серфинг виб.</div>
+<div class="place-meta">📍Jl. Labuan Sait · Кофе 40-60K · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Suka Espresso</div>
+<div class="place-desc">Улуватудағы ең жақсы кофе. Pour-over, V60, Флорес және Java бұршақтары.</div>
+<div class="place-meta">📍Jl. Labuansait · Кофе 35-55K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">BGS Uluwatu</div>
+<div class="place-desc">Жақсы кофе, таңғы ас және көріністері бар серф-кафе. Тыныш атмосфера.</div>
+<div class="place-meta">📍Jl. Pantai Suluban · Кофе 40-55K · WiFi ⭐⭐⭐</div>
+</div>
+<h2>💻 Коворкинг орындары</h2>
+<div class="place">
+<div class="place-name">Outpost Uluwatu</div>
+<div class="place-desc">Бассейні және джунгли көрінісі бар коворкинг кеңістігі. WiFi тұрақты.</div>
+<div class="place-meta">📍Jl. Лабуансаит · 200K/күн · 2,5 млн/ай · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<p>Коворкинг орындары аз. Көпшілігі кафеден (Дрифтер, Сука) немесе вилладан жұмыс істейді.</p>
+<h2>🍜 Мейрамханалар</h2>
+<h3>Бюджет (30-60 мың)</h3>
+<div class="place">
+<div class="place-name">Warung Bule</div>
+<div class="place-desc">Паданг Паданг маңындағы Варунг. Наси горенг, мартабак. Жергілікті бағалар.</div>
+<div class="place-meta">📍 Jl. Labuan Sait · 25-50K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Local Uluwatu</div>
+<div class="place-desc">Қарапайым индонезиялық тағам. Арзан және адал.</div>
+<div class="place-meta">📍 Jl. Uluwatu · 20-45K</div>
+</div>
+<h3>Орташа (80-200К)</h3>
+<div class="place">
+<div class="place-name">Bukit Cafe</div>
+<div class="place-desc">Салауатты тағам, смузи табақтары, бутербродтар. Серферлер арасында танымал.</div>
+<div class="place-meta">📍 Jl. Labuan Sait · 70-150K</div>
+</div>
+<div class="place">
+<div class="place-name">Mango Tree Cafe</div>
+<div class="place-desc">Бали және батыс тағамдары. Джунгли көрінісі, кешкі жарықтандыру.</div>
+<div class="place-meta">📍 Jl. Pantai Suluban · 80-180K</div>
+</div>
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Single Fin</div>
+<div class="place-desc">Сұлубан жағажайының үстіндегі аңызға айналған жартас бар. Күннің батуы, жексенбіде диджей, коктейльдер.</div>
+<div class="place-meta">📍 Jl. Pantai Suluban · 150-350K</div>
+</div>
+<div class="place">
+<div class="place-name">El Kabron</div>
+<div class="place-desc">Тас үстіндегі испан тағамдары. Теңіз өнімдері, паэлла, мұхит үстіндегі бассейн.</div>
+<div class="place-meta">📍 Jl. Pantai Cemongkak · 300-600K</div>
+</div>
+<div class="place">
+<div class="place-name">Ulu Cliffhouse</div>
+<div class="place-desc">Шексіздік бассейні бар жартас клубы. Түскі ас, суши, көгілдір су үстіндегі коктейльдер.</div>
+<div class="place-meta">📍 Jl. Belangan · 250-500K</div>
+</div>
+<h2>🥗 Вегетариандық мекемелер</h2>
+<div class="place">
+<div class="place-name">Bukit Cafe</div>
+<div class="place-desc">Үлкен вегетариандық мәзір: тостағандар, салаттар, каррилер. Барлығы жаңа.</div>
+<div class="place-meta">📍 Jl. Labuan Sait · 70-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Cashew Tree</div>
+<div class="place-desc">Вегетариандық тағамдар + шикі десерттер. Тыныш бақ, Убуд атмосферасы.</div>
+<div class="place-meta">📍 Jl. Pantai Balangan · 60-120K</div>
+</div>
+<h2>🌱 Вегетариандық орындар</h2>
+<div class="place">
+<div class="place-name">The Loft Uluwatu</div>
+<div class="place-desc">Өсімдік негізіндегі дәмхана. Вегетариандық бургерлер, смузи табақтары, сүтсіз латтелер.</div>
+<div class="place-meta">📍 Jl. Labuan Sait · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Nalu Bowls</div>
+<div class="place-desc">Acai тостағандары, смузилер, вегетариандық тағамдар. Балғын және жылдам.</div>
+<div class="place-meta">📍 Jl. Labuan Sait · 50-90K</div>
+</div>
+<h2>🏄 Серфинг</h2>
+<table>
+<tr><th>Дақ</th><th>Деңгей</th><th>Чип</th></tr>
+<tr><td><strong>Padang Padang</strong></td><td>Жетілдірілген</td><td>Бөшкелер (түтіктер). «Бали құбыры». Тек шамамен!</td></tr>
+<tr><td><strong>Uluwatu</strong></td><td>Орташа+</td><td>Риф сынуы, ұзын қабырғалар, кіреберіс үңгір</td></tr>
+<tr><td><strong>Dreamland</strong></td><td>Жаңадан бастаушылар+</td><td>Жағажай, құм, оқуға жақсы</td></tr>
+<tr><td><strong>Bingin</strong></td><td>Орташа+</td><td>Қысқа күшті сол, аз адам</td></tr>
+<tr><td><strong>Balangan</strong></td><td>Орташа</td><td>Ұзын сол, әдемі жағажай</td></tr>
+<tr><td><strong>Impossibles</strong></td><td>Жетілдірілген</td><td>Үш бөлім, ұзын толқындар, жартастың түсуі</td></tr>
+</table>
+<p><strong>Мектептер:</strong> Rapture Surf Camp, Uluwatu Surf Villas (сабақ + тұру). Бір сабаққа 400-600 мың. Ең жақсы маусым: сәуір-қазан (құрғақ, теңіз).</p>
+<h2>🤿 Дайвинг</h2>
+<div class="place">
+<div class="place-name">Нуса Пенида (қайықпен 30 мин)</div>
+<div class="place-desc">Манта нүктесі, Кристал шығанағы, Тояпакех қабырғасы. Манты, мола-мола (шілде-қазан).</div>
+<div class="place-meta">📍 Бір күндік саяхат 1,5 млн</div>
+</div>
+<p><strong>Мектептер:</strong> Дайв концептілері, көк бұрыштық сүңгуір – Улувату және Джимбаран аймағында орналасқан.</p>
+<h2>🫁 Фридайвинг</h2>
+<div class="place">
+<div class="place-name">Freedive Flow</div>
+<div class="place-desc">Пенидадағы жаттығулармен фридивинг курстары. AIDA/SSI сертификаты.</div>
+<div class="place-meta">📍 Улувату ауданы · 5М бастап курс</div>
+</div>
+<p>Вилла бассейндерінде жаттығу, Нуса Пенидада (оңтүстікке жақын) суға түсу.</p>
+<h2>🐠 Суда жүзу</h2>
+<div class="place">
+<div class="place-name">Padang Padang Beach</div>
+<div class="place-desc">Тыныш ауа-райында көріну жақсы, балықтар рифке жақын. Бірақ толқындар бар!</div>
+</div>
+<div class="place">
+<div class="place-name">Nusa Penida</div>
+<div class="place-desc">Сноркинг күндік саяхаты: Манта шығанағы, Кристал шығанағы, Гамат шығанағы. 500 мыңнан.</div>
+</div>
+<h2>🏖 Толқынсыз жағажайлар</h2>
+<div class="place">
+<div class="place-name">Thomas Beach</div>
+<div class="place-desc">Салыстырмалы түрде тыныш суы бар жасырын жағажай. Аз адам.</div>
+<div class="place-meta">📍 Улувату орталығынан 15 мин</div>
+</div>
+<div class="place">
+<div class="place-name">Green Bowl Beach</div>
+<div class="place-desc">Құпия жағажай - 300 қадам төмен. Көбінесе тыныш су, үңгірлер. Аз адам.</div>
+<div class="place-meta">📍 Орталықтан 20 минуттық жерде · Су толқынында жағажай жоқ</div>
+</div>
+<p>Жалпы, Балидің оңтүстігі толқынды. Кепілдендірілген босаңсыған жүзу үшін: <strong>Nusa Dua</strong> (30 мин).</p>
+<h2>🧘 Йога және сауықтыру</h2>
+<div class="place">
+<div class="place-name">Morning Light Yoga</div>
+<div class="place-desc">Мұхитқа қарайтын жартастағы йога. Таңертеңгілік сабақтар.</div>
+<div class="place-meta">📍 Бингин · 130-160К/сабақ</div>
+</div>
+<div class="place">
+<div class="place-name">Uluwatu Surf Villas Yoga</div>
+<div class="place-desc">Йога + серфинг комбо. Ашық шале, Улувату үзілісінің көрінісі.</div>
+<div class="place-meta">📍Jl. Пантай Сұлубан · 150К/сабақ</div>
+</div>
+<h2>🏋️ Спорт залдары</h2>
+<div class="place">
+<div class="place-name">Vault Uluwatu</div>
+<div class="place-desc">Заманауи жаттығу залы: кроссфит, ауыр атлетика, бассейн.</div>
+<div class="place-meta">📍Jl. Лабуан Сайт · айына 1 миллионнан бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Bukit Gym</div>
+<div class="place-desc">Негізгі жабдықтары бар бюджеттік бөлме. Дене шынықтыру үшін жеткілікті.</div>
+<div class="place-meta">📍Jl. Uluwatu · 500K/айдан бастап</div>
+</div>
+<h2>🌅 Күннің батуы / Күннің шығуы</h2>
+<table>
+<tr><th>Орын</th><th>Түр</th><th>Vibe</th></tr>
+<tr><td><strong>Uluwatu Temple</strong></td><td>🌅 Күннің батуы</td><td>70 м жартастағы храм + күн батқанда Кечак биі</td></tr>
+<tr><td><strong>Single Fin</strong></td><td>🌅 Күннің батуы</td><td>Клифф-бар, диджей, коктейльдер</td></tr>
+<tr><td><strong>Balangan Beach</strong></td><td>🌅 Күннің батуы</td><td>Тыныш жағажай, жартастағы алтын сәуле</td></tr>
+<tr><td><strong>El Kabron</strong></td><td>🌅 Күннің батуы</td><td>Жартастағы жүзу бассейні, шампан</td></tr>
+<tr><td><strong>Nyang Nyang Beach</strong></td><td>🌄 Күннің шығуы</td><td>Жабайы жағажай, толық құпиялылық</td></tr>
+</table>
+<h2>🌋 Жақын жерде жанартаулар мен таулар</h2>
+<p>Улувату оңтүстікте, жанартаулардан алыс орналасқан. Ең жақын: <strong>Гунунг Батур</strong> (Кинтамани, 2,5-3 сағат). <strong>Гунунг Агунг</strong> — 3,5 сағат.</p>
+<h2>🌾 Жақын жерде күріш террассалары</h2>
+<p>Улуватуда күріш террассалары жоқ - бұл жартасты түбек. Ең жақын: <strong>Jatiluwih</strong> (2 сағат), <strong>Tegallalang</strong> (2 сағат, Убуд арқылы).</p>
+<h2>⛳ Гольф</h2>
+<div class="place">
+<div class="place-name">New Kuta Golf</div>
+<div class="place-desc">Мұхит үстіндегі жартастардағы 18 шұңқыр. Азиядағы ең әдемі гольф алаңдарының бірі!</div>
+<div class="place-meta">📍 Пекату · орталықтан 10 мин · 1,5М/айналымнан</div>
+</div>
+<div class="place">
+<div class="place-name">Bali National Golf Club</div>
+<div class="place-desc">Нуса Дуадағы кәсіби сала. Улуватудан 30 минут.</div>
+<div class="place-meta">📍 Nusa Dua · 1,8М/айналымнан</div>
+</div>
+<h2>🍓 Фермалар</h2>
+<p>Улуватуда фермалар жоқ - ландшафт тасты. Ең жақын: <strong>Bali Pulina</strong> (Убуд, 2 сағат) - кофе, <strong>Strawberry Farm</strong> (Бедугүл, 2,5 сағат).</p>
+<h2>🍉 Жеміс базарлары</h2>
+<div class="place">
+<div class="place-name">Pasar Pecatu</div>
+<div class="place-desc">Шағын жергілікті базар. Жемістер, көкөністер. Таңертең ең жақсы таңдау.</div>
+<div class="place-meta">📍 Pecatu · Таң</div>
+</div>
+<div class="place">
+<div class="place-name">Жеміс дүңгіршектері</div>
+<div class="place-desc">Джимбаран жолында манго, майшабақ және рамбутан бар жол бойындағы дүңгіршектер бар.</div>
+</div>
+<h2>🛍 Сауда</h2>
+<p>Улуватуда сауда жасау өте аз. Серфинг дүкендері (Drifter, Rhythm) + шағын бутиктер. Маңызды сатып алу үшін: <strong>Семиняк</strong> (40 мин).</p>
+<h2>🛒 Азық-түлік дүкендері</h2>
+<div class="place">
+<div class="place-name">Frestive Pecatu</div>
+<div class="place-desc">Негізгі ассортименті бар супермаркет. Импорттық тауарлар аз.</div>
+<div class="place-meta">📍 Pecatu</div>
+</div>
+<div class="place">
+<div class="place-name">The Cashier (Bingin)</div>
+<div class="place-desc">Органикалық өнімдері бар шағын дүкен. Салауатты өмір салты, вегетариандық, глютенсіз.</div>
+</div>
+<p>Импорттық өнімдер үшін: <strong>Pepito</strong> Семинякта (40 мин) немесе онлайн тапсырыс беріңіз.</p>
+<h2>👕 Кірлер</h2>
+<div class="place">
+<div class="place-name">Uluwatu Laundry</div>
+<div class="place-desc">Жуу + үтіктеу, аумақты жинау.</div>
+<div class="place-meta">📍Jl. Лабуан Сайт · 8К/кг бастап</div>
+</div>
+<p>Кір жуу орындары аз - виллалардың көпшілігінде кір жуғыш машина немесе қызмет бар.</p>
+<h2>🎉 Клубтар мен түнгі өмір</h2>
+<div class="place">
+<div class="place-name">Single Fin</div>
+<div class="place-desc">Жексенбілік сессиялар - тастағы аңызға айналған жексенбілік кештер. Ди-джей, би, күн батуы.</div>
+<div class="place-meta">📍Jl. Pantai Suluban · Кіру 100 мың</div>
+</div>
+<div class="place">
+<div class="place-name">Ulu Cliffhouse</div>
+<div class="place-desc">Бассейн кештері, диджейлер, кешкі кештер. Неғұрлым тартымды діріл.</div>
+<div class="place-meta">📍 Jl. Belangan</div>
+</div>
+<div class="place">
+<div class="place-name">Savaya</div>
+<div class="place-desc">Жартастағы сәнді клуб. Халықаралық диджейлер, дресс-код, қымбат, бірақ уау.</div>
+<div class="place-meta">📍Jl. Belangan · 300K бастап кіру</div>
+</div>
+<p>Түнгі өмір ерте аяқталады (23-24). Кеш түндер үшін: Семиняк немесе Кута.</p>
+<h2>🏥 Емханалар мен дәріханалар</h2>
+<div class="place">
+<div class="place-name">Bali Jimbaran Bay Clinic</div>
+<div class="place-desc">Ең жақын сапа клиникасы (Джимбаран). Ағылшын тілінде сөйлейтін дәрігерлер.</div>
+<div class="place-meta">📍 Джимбаран · Улуватудан 20 мин · Қабылдау 250K</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma Pecatu</div>
+<div class="place-desc">Негізгі дәрілік заттары бар дәріхана.</div>
+<div class="place-meta">📍 Pecatu</div>
+</div>
+<p>Ауыр медицина: <strong>BIMC Hospital</strong> (Джимбаран, 25 мин).</p>
+<h2>🛕 Храмдар</h2>
+<div class="place">
+<div class="place-name">Pura Luhur Uluwatu</div>
+<div class="place-desc">Балидегі 6 негізгі храмдардың бірі. Мұхиттан 70 м биіктіктегі жартас. Күн батқандағы Кечак биі - міндетті түрде көру керек!</div>
+<div class="place-meta">📍Jl. Raya Uluwatu · Кіру 50K · Kecak 100K (18:00)</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Gunung Payung</div>
+<div class="place-desc">Жартастағы тыныш ғибадатхана. Туристер аз, мұхиттың керемет көрінісі.</div>
+<div class="place-meta">📍 Кутух · Тегін</div>
+</div>
+<h2>🇷🇺 Орыс қауымы</h2>
+<div class="place">
+<div class="place-name">Telegram чаттары</div>
+<div class="place-desc">«Букит/Улувату орыстары», «Бали Оңтүстік» - жалға алу, ұсыныстар.</div>
+</div>
+<p>Улуватуда орыстар көбейіп барады - аумақ өсіп келеді. Орыс тілді серфинг нұсқаушылары мен риэлторлар бар. Қауымдастық Канггуға қарағанда аз.</p>
+<h2>🎒 Балабақшалар мен мектептер</h2>
+<div class="place">
+<div class="place-name">Bukit Montessori</div>
+<div class="place-desc">Монтессори балабақшасы. Шағын топтар, ағылшын тілі.</div>
+<div class="place-meta">📍 Pecatu · айына 3 миллионнан бастап</div>
+</div>
+<p>Мектептер аз - көпшілігі Семинякқа (Бали аралындағы мектеп) немесе Денпасарға барады.</p>
+<h2>📸 Фото орындар</h2>
+<p>• Улувату храмы – жартастағы ғибадатхана, күннің батуы<br/>
+• Келингинг жағажайы (Нуса Пенида күндік саяхаты)<br/>
+• Баланган жағажайы – алтын құм, тастар<br/>
+• Паданг Паданг – фильмдегі жағажай<br/>
+• Single Fin – жартастан серферлердің көрінісі<br/>
+• Nyang Nyang Beach - жабайы бос жағажай<br/>
+• Green Bowl Beach - үңгірлер</p>
+<h2>🏠 Тұрғын үй</h2>
+<table>
+<tr><th>Түр</th><th>Баға/ай</th><th>Қайда қарау керек</th></tr>
+<tr><td>Бөлме/қонақ үй</td><td>$250-450</td><td>Брондау, сайтта</td></tr>
+<tr><td>Студия / 1Б</td><td>$500-800</td><td>Facebook, Flokq</td></tr>
+<tr><td>Бассейні бар вилла</td><td>$800-1500</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Люкс Cliff Villa</td><td>$2000-6000</td><td>Агенттер, тікелей байланыстар</td></tr>
+</table>
+<p><strong>Ең жақсы аймақтар:</strong> Бингин (тыныш, серфинг), Баланган (жағажай), Пекату (инфрақұрылым).</p>
+<h2>🛵 Көлік</h2>
+<p>• <strong>Скутер:</strong> 700K-1М/ай (МІНДЕТТІ - онсыз ешқайда бара алмайсыз!)<br/>
+• <strong>Grab/Gojek:</strong> аз жүргізушілер, көп күту<br/>
+• <strong>Әуежайға:</strong> 30-45 мин, 100-200К<br/>
+• <strong>Семинякқа:</strong> 40-50 мин<br/>
+• <strong>Канггуға:</strong> 50-70 мин</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 Аймақтың құпиясы</div>
+<div class="secret-text">Nyang Nyang Beach - Балидегі ең әдемі және бос жағажайлардың бірі. 500 адым төмен, бір шақырымға ақ құм, бір адам емес. Мұнда күннің батуы елсіз аралдағыдай.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ Кемшіліктері</div>
+<div class="warn-text">Скутерсіз ешқайда бара алмайсыз. Grab/Gojek жақсы жұмыс істемейді. Аз дүкендер мен мейрамханалар. Жағажайларға дейін жүздеген қадамдар бар. Кептеліске байланысты әуежайдан алыс. Инфрақұрылым дамып келеді, бірақ әлі де нашар. Жолдар тар, сапасыз.</div>
+</div>
+<div class="divider"></div>
+<h2>💰 Бір айға арналған бюджет</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Ең аз</div>
+<div class="budget-price">$550</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Ыңғайлы</div>
+<div class="budget-price">$1300</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$3500</div>
+<div class="budget-unit">айына</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · Бали аудандарына арналған гид · 2026 ж</div>
+</body>
+</html>

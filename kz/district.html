@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Район · Гайд · Где свои на Бали</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link href="style.css?v=1774488851" rel="stylesheet"/>
+<style>
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    </style>
+</head>
+<body>
+<div id="districtLoader" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(248,246,242,0.9);backdrop-filter:blur(5px);z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity 0.5s;">
+<img alt="Loading" src="img/star3.png" style="width:140px;height:140px;margin-bottom:20px;animation:pulse 2s infinite ease-in-out;"/>
+<h1 style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:8px;color:#2a6b5a;text-align:center;">Біз маршруттарды жинап жатырмыз...</h1>
+<p style="color:rgba(42,42,40,0.5);text-align:center;">Мәліметтер қорымен байланысу</p>
+</div>
+<div class="grad1"></div><div class="grad2"></div><div class="grad3"></div>
+<div class="app">
+<button class="btn btn-primary back-home-btn" onclick="window.location.href='guides.html#results'" style="font-size:13px;padding:8px 16px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1)">← Аймақтарды таңдауға оралыңыз</button>
+<div id="guideContent" style="display:block;overflow-y:auto;padding-bottom:80px;text-align:center;">
+<h1 id="districtTitle">Жүктелуде...</h1>
+<p class="sub">Аймақ бойынша толық нұсқаулық · @balidreamphoto</p>
+<div id="routesListContainer" style="text-align:left;">
+<div style="padding:20px; color:rgba(42,42,40,0.5);">Маршруттар жүктелуде...</div>
+</div>
+<div class="footer-guide">@balidreamphoto · Бали аудандарына арналған гид · 2026 ж</div>
+<div style="margin:20px 0 40px">
+<button class="btn btn-primary" onclick="window.location.href='guides.html#results'" style="padding:14px 28px;border-radius:14px;width:100%">← Аймақтарды таңдауға оралыңыз</button>
+</div>
+</div>
+<div id="routeScreen" style="display:none;padding-bottom:80px"></div>
+</div>
+<script src="js/app.js" type="module"></script>
+</body>
+</html>

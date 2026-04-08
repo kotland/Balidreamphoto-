@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>نوسا دوا</em></h1>
+<p class="sub">الدليل الكامل للمنطقة · @balidreamphoto</p>
+<div class="tag">🏖 شاطئ هادئ</div>
+<div class="tag">🏨 منتجعات</div>
+<div class="tag">⛳ الجولف</div>
+<div class="tag">👨‍👩‍👧 عائلات</div>
+<div class="tag">🐠 الغطس</div>
+<div class="tag">💆 سبا</div>
+<div class="tag">🛍 التسوق</div>
+<div class="vibe">"بحيرة فيروزية، رمال بيضاء، منتجع 5 نجوم، كوكتيل بجوار حمام السباحة. بالي بدون فوضى - لأولئك الذين يعرفون ما يريدون."</div>
+<p>نوسا دوا هي منطقة منتجعية في جنوب شرق بالي. أفضل الشواطئ للسباحة، منتجعات 5 نجوم، أرصفة نظيفة، أمن. تعيش هنا العائلات التي لديها أطفال ولاعبو غولف وأولئك الذين يريدون قضاء عطلة "طبيعية" على الشاطئ. القليل من النكهة البالية والكثير من الراحة.</p>
+<h2>☕ المقاهي</h2>
+<div class="place">
+<div class="place-name">Nyala Coffee</div>
+<div class="place-desc">القهوة المتخصصة بجوار الشاطئ. شقة بيضاء لطيفة، جو هادئ.</div>
+<div class="place-meta">📍 منطقة BTDC · القهوة 40-60 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Collection Cafes</div>
+<div class="place-desc">العديد من المقاهي في مركز التسوق. ستاربكس، ماركات محلية.</div>
+<div class="place-meta">📍 بالي كوليكشن مول · القهوة 35-70 ك</div>
+</div>
+<div class="place">
+<div class="place-name">المقاهي في المنتجعات</div>
+<div class="place-desc">سانت ريجيس، موليا، سوفيتيل - بارات اللوبي مع القهوة الممتازة. باهظة الثمن، ولكنها جميلة.</div>
+<div class="place-meta">📍منطقة المنتجع · القهوة 60-120 ك</div>
+</div>
+<h2>💻 مساحات العمل المشترك</h2>
+<p>لا توجد مساحات عمل مشتركة في نوسا دوا، فهذه منطقة منتجع. إنهم يعملون من مقهى أو ردهة المنتجع. للعمل الجاد: <strong>سانور</strong> (20 دقيقة) أو <strong>كانجو</strong> (ساعة واحدة).</p>
+<h2>🍜 مطاعم</h2>
+<h3>الميزانية (30-60 ألف)</h3>
+<div class="place">
+<div class="place-name">Warung Dobiel</div>
+<div class="place-desc">المأكولات المحلية خارج منطقة المنتجع. ناسي تشامبور، مي جورينج.</div>
+<div class="place-meta">📍 Jl. Pratama · 25-50K</div>
+</div>
+<div class="place">
+<div class="place-name">Nasi Ayam Kedewatan</div>
+<div class="place-desc">أرز مع دجاج بالي. بسيطة ولذيذة ورخيصة.</div>
+<div class="place-meta">📍 Jl. Pratama · 20-40K</div>
+</div>
+<h3>متوسطة (100-250 ألف)</h3>
+<div class="place">
+<div class="place-name">Nusa Dua Beach Grill</div>
+<div class="place-desc">المأكولات البحرية المشوية على الشاطئ مباشرة. جراد البحر وسرطان البحر والأسماك الطازجة.</div>
+<div class="place-meta">📍 BTDC Beach · 100-250K</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Cardamon</div>
+<div class="place-desc">المطبخ الهندي: الكاري، التندور، النان. واحدة من أفضل الهندية في بالي.</div>
+<div class="place-meta">📍 Jl. Pratama · 90-200K</div>
+</div>
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Kayuputi (St. Regis)</div>
+<div class="place-desc">تناول الطعام الراقى على الماء. مزيج آسيوي، مجموعات تذوق. رائع.</div>
+<div class="place-meta">📍 منتجع سانت ريجيس · يبدأ الارتفاع من 1.5 متر</div>
+</div>
+<div class="place">
+<div class="place-name">The Mulia Deli</div>
+<div class="place-desc">مخبز + مطعم في منتجع موليا. الحلويات، المأكولات البحرية، الغداء.</div>
+<div class="place-meta">📍 Mulia Resort · 200-500K</div>
+</div>
+<h2>🥗 مؤسسات نباتية</h2>
+<div class="place">
+<div class="place-name">مجموعة بالي - مقاهي صحية</div>
+<div class="place-desc">العديد من المقاهي التي تقدم خيارات نباتية في مركز التسوق.</div>
+<div class="place-meta">📍 Bali Collection · 60-130K</div>
+</div>
+<p>اختيار المؤسسات النباتية محدود. للتنوع: <strong>سانور</strong> (20 دقيقة) أو <strong>سيمينياك</strong> (45 دقيقة).</p>
+<h2>🌱أماكن نباتية</h2>
+<p>لا توجد مطاعم نباتية مخصصة في نوسا دوا. تقدم المنتجعات عادةً خيارات نباتية عند الطلب. للمقهى النباتي: <strong>سانور</strong> (20 دقيقة)، <strong>سيمينياك</strong> (45 دقيقة).</p>
+<h2>🏄 ركوب الأمواج</h2>
+<div class="place">
+<div class="place-name">سريلانكا (بقعة الشعاب المرجانية)</div>
+<div class="place-desc">استراحة الشعاب المرجانية للمستوى المتوسط ​​+. الموجة الصحيحة، بحاجة إلى قارب.</div>
+<div class="place-meta">📍 نوسا دوا البحرية · قارب 150 ألف</div>
+</div>
+<p>شواطئ نوسا دوا محمية بالشعاب المرجانية - ولا توجد أمواج تقريبًا. لركوب الأمواج: <strong>أولواتو</strong> (30 دقيقة)، <strong>كانجو</strong> (ساعة واحدة).</p>
+<h2>🤿 الغوص</h2>
+<div class="place">
+<div class="place-name">مراكز الغوص في المنتجعات</div>
+<div class="place-desc">جراند حياة، سوفيتيل - تنظيم رحلات يومية إلى نوسا بينيدا وتولامبين.</div>
+<div class="place-meta">📍رحلة نهارية من 2M</div>
+</div>
+<h2>🫁الغوص الحر</h2>
+<p>لا توجد مدارس في نوسا دوا. الأقرب: <strong>سانور</strong> (20 دقيقة) – الغوص الحر في بالي، أو <strong>أميد</strong> (2.5 ساعة).</p>
+<h2>🐠 الغطس</h2>
+<div class="place">
+<div class="place-name">Nusa Dua Reef</div>
+<div class="place-desc">الغطس من الشاطئ أو القارب. المياه الصافية والشعاب المرجانية والأسماك الاستوائية.</div>
+<div class="place-meta">📍 شاطئ BTDC · مجاني من الشاطئ / قارب من 200 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Tanjung Benoa Water Sports</div>
+<div class="place-desc">الغطس + الأنشطة المائية: الموز، التزلج الهوائي، الجت سكي.</div>
+<div class="place-meta">📍تانجونج بينوا · الغطس من مسافة 150 كيلو</div>
+</div>
+<h2>🏖شواطئ بدون أمواج</h2>
+<div class="place">
+<div class="place-name">Geger Beach</div>
+<div class="place-desc">أفضل شاطئ في نوسا دوا. بحيرة فيروزية ورمال بيضاء ولا توجد أمواج تقريبًا. عام!</div>
+<div class="place-meta">📍BTDC الجنوب · الدخول مجاني</div>
+</div>
+<div class="place">
+<div class="place-name">BTDC Beach</div>
+<div class="place-desc">شاطئ المنتجع. مياه نظيفة ومصانة جيدًا وهادئة. كراسي الاستلقاء للتشمس من 100 ألف.</div>
+</div>
+<div class="place">
+<div class="place-name">Mengiat Beach</div>
+<div class="place-desc">شاطئ واسع ومياه ضحلة - مثالي للأطفال. الغطس في الشعاب المرجانية.</div>
+</div>
+<p>نوسا دوا هو أفضل مكان في بالي للسباحة والاسترخاء!</p>
+<h2>🧘 اليوغا والعافية</h2>
+<div class="place">
+<div class="place-name">سبا في المنتجعات</div>
+<div class="place-desc">سبا سانت ريجيس ريميد، سبا موليا، سوفيتل سو سبا - من الطراز العالمي. مساج من 500 الف.</div>
+</div>
+<div class="place">
+<div class="place-name">Devdan Show</div>
+<div class="place-desc">عرض الرقص البالي في مسرح نوسا دوا. ملونة، لجميع أفراد الأسرة.</div>
+<div class="place-meta">📍BTDC · التذاكر تبدأ من 400 ألف</div>
+</div>
+<h2>🏋️ صالات رياضية</h2>
+<div class="place">
+<div class="place-name">صالات المنتجع</div>
+<div class="place-desc">يوجد في فنادق جراند حياة وويستن وهيلتون صالات رياضية للضيوف. مجانا للمقيمين.</div>
+</div>
+<p>هناك عدد قليل من الغرف الخاصة. بالنسبة للقاعة العامة: <strong>سانور</strong> (20 دقيقة).</p>
+<h2>🌅 غروب الشمس / شروق الشمس</h2>
+<table>
+<tr><th>مكان</th><th>يكتب</th><th>الاهتزاز</th></tr>
+<tr><td><strong>Geger Beach</strong></td><td>🌄 شروق الشمس</td><td>الماء الفيروزي في ضوء الصباح</td></tr>
+<tr><td><strong>Water Blow</strong></td><td>🌅 في أي وقت</td><td>تحطم الأمواج على الصخور - دراماتيكي!</td></tr>
+</table>
+<p>نوسا دوا - الساحل الشرقي، هنا <strong>شروق الشمس</strong>. لغروب الشمس: أولواتو (30 دقيقة)، جيمباران (20 دقيقة).</p>
+<h2>🌋 البراكين والجبال القريبة</h2>
+<p>بعيدًا عن البراكين. <strong>جونونج باتور</strong> - 2.5 ساعة. <strong>جونونج اجونج</strong> - 3 ساعات.</p>
+<h2>🌾 مصاطب الأرز القريبة</h2>
+<p>لا يوجد نوسا دوا. الأقرب: <strong>Tegallalang</strong> (ساعتان، أوبود)، <strong>Jatiluwih</strong> (2.5 ساعة).</p>
+<h2>⛳ الجولف</h2>
+<div class="place">
+<div class="place-name">Bali National Golf Club</div>
+<div class="place-desc">أفضل ملعب للجولف في بالي! 18 حفرة، إطلالة على المحيط، بطولات دولية.</div>
+<div class="place-meta">📍منطقة BTDC · من 1.8 م/الجولة</div>
+</div>
+<h2>🍓 المزارع</h2>
+<p>لا توجد مزارع في نوسا دوا. الأقرب: <strong>Bali Pulina</strong> (أوبود، ساعتان)، <strong>Strawberry Farm</strong> (بيدوجول، 2.5 ساعة).</p>
+<h2>🍉أسواق الفاكهة</h2>
+<div class="place">
+<div class="place-name">Pasar Bualu</div>
+<div class="place-desc">السوق المحلي عند مدخل BTDC. الفواكه والخضروات والوجبات الخفيفة بالأسعار المحلية.</div>
+<div class="place-meta">📍بوالو · الصباح</div>
+</div>
+<h2>🛍 التسوق</h2>
+<div class="place">
+<div class="place-name">Bali Collection</div>
+<div class="place-desc">مركز التسوق في BTDC: المحلات والمطاعم والهدايا التذكارية. كوندي!</div>
+<div class="place-meta">📍 BTDC Area</div>
+</div>
+<h2>🛒 محلات البقالة</h2>
+<div class="place">
+<div class="place-name">Hardy's Nusa Dua</div>
+<div class="place-desc">سوبر ماركت مع تشكيلة أساسية. مستورد قليلا.</div>
+<div class="place-meta">📍 Bualu</div>
+</div>
+<p>للاستيراد على نطاق واسع: <strong>Pepito</strong> (سيمينياك، 45 دقيقة).</p>
+<h2>👕 المغاسل</h2>
+<div class="place">
+<div class="place-name">مغاسل في المنتجعات</div>
+<div class="place-desc">تقدم جميع المنتجعات خدمة غسيل الملابس. أغلى من المعتاد (من 20 ألف للقطعة).</div>
+</div>
+<div class="place">
+<div class="place-name">Local Laundry Bualu</div>
+<div class="place-desc">مغاسل خارج BTDC. أرخص من المنتجعات.</div>
+<div class="place-meta">📍بوالو · من 8 ك/كجم</div>
+</div>
+<h2>🎉 النوادي والحياة الليلية</h2>
+<p>لا توجد حياة ليلية تقريبًا في نوسا دوا. تغلق بارات المنتجع الساعة 23:00. للحفلات: <strong>سيمينياك</strong> (45 دقيقة)، <strong>كوتا</strong> (30 دقيقة).</p>
+<h2>🏥 العيادات والصيدليات</h2>
+<div class="place">
+<div class="place-name">BIMC Hospital Nusa Dua</div>
+<div class="place-desc">المستشفى الدولي. الأفضل في جنوب بالي. الأطباء الناطقين باللغة الإنجليزية، ER 24/7.</div>
+<div class="place-meta">📍BTDC · الاستقبال من 500 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma / Guardian</div>
+<div class="place-desc">الصيدليات في مجموعة بالي وبوالو.</div>
+</div>
+<h2>🛕 المعابد</h2>
+<div class="place">
+<div class="place-name">Pura Geger</div>
+<div class="place-desc">معبد على منحدر فوق شاطئ جيجر. جميلة وهادئة وعدد قليل من السياح.</div>
+<div class="place-meta">📍 شاطئ جيجر · مجاناً</div>
+</div>
+<div class="place">
+<div class="place-name">Water Blow</div>
+<div class="place-desc">ليس معبدًا، ولكن يجب رؤيته - حيث تتصادم الأمواج مع الصخر مثل النافورة على ارتفاع 10 أمتار.</div>
+<div class="place-meta">📍BTDC · مجاني</div>
+</div>
+<h2>🇷🇺 الجالية الروسية</h2>
+<p>يوجد عدد قليل جدًا من الروس في نوسا دوا - وهي منطقة لقضاء العطلات، وليس للإقامات الطويلة. المرشدون الناطقون بالروسية متوافرون في الفنادق. لا يوجد مجتمع.</p>
+<h2>🎒 رياض الأطفال والمدارس</h2>
+<div class="place">
+<div class="place-name">Bali International School</div>
+<div class="place-desc">برنامج البكالوريا الدولية. واحدة من أفضل المدارس الدولية في بالي.</div>
+<div class="place-meta">📍 جيمباران · 15 دقيقة من نوسا دوا · ابتداءً من 10,000 دولار في السنة</div>
+</div>
+<h2>📸 مواقع الصور</h2>
+<p>• شاطئ جيجر – المياه الفيروزية<br/>
+• ضربة الماء - موجات مثيرة<br/>
+• بورا جيجر – معبد فوق الشاطئ<br/>
+• BTDC - حدائق المنتجع المشذبة<br/>
+• تانجونج بينوا – قوارب الصيد</p>
+<h2>🏠 السكن</h2>
+<table>
+<tr><th>يكتب</th><th>السعر/الشهر</th><th>أين تنظر</th></tr>
+<tr><td>دار ضيافة (بوالو)</td><td>$250-400</td><td>الحجز في الموقع</td></tr>
+<tr><td>شقق</td><td>$500-900</td><td>Airbnb</td></tr>
+<tr><td>منتجع مع مطبخ</td><td>$1000-2000</td><td>Booking, resort sites</td></tr>
+<tr><td>Luxury suite</td><td>$3000-10000</td><td>St. Regis, Mulia</td></tr>
+</table>
+<p>للإقامة الطويلة: المنطقة <strong>Bualu</strong> خارج BTDC - أرخص، هناك Warungs والمحلات التجارية.</p>
+<h2>🛵 النقل</h2>
+<p>• <strong>خدمة النقل في المنتجعات:</strong> انتقالات مجانية إلى مجموعة بالي<br/>
+• <strong>سكوتر:</strong> 700 ألف - 900 ألف / شهر<br/>
+• <strong>Grab/Gojek:</strong> من 15 ألف<br/>
+• <strong>إلى المطار:</strong> 15-25 دقيقة، 60-100 ك<br/>
+• <strong>إلى أولواتو:</strong> 20-30 دقيقة<br/>
+• <strong>إلى سيمينياك:</strong> 40-50 دقيقة</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 سر المنطقة</div>
+<div class="secret-text">قرية Bualu هي قرية تقع مباشرة عند مدخل BTDC. يعيش السكان المحليون هنا، والأسعار أقل بمقدار 3-5 مرات من أسعار المنتجعات. وارونج بـ 25 ألفًا، وفواكه في السوق، وغسيل الملابس بـ 7 ألفًا للكيلوجرام. 5 دقائق سيرا على الأقدام - وأنت مرة أخرى على شاطئ 5 نجوم.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ سلبيات</div>
+<div class="warn-text">معقمة - بدون نكهة بالينيزية. غالية (أسعار المنتجعات). لا الحياة الليلية. بالملل بعد 3 أيام. بعيدًا عن المعالم الثقافية. يوجد عدد قليل من warungs والمحلات التجارية داخل BTDC.</div>
+</div>
+<div class="divider"></div>
+<h2>💰ميزانية الشهر</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">الحد الأدنى</div>
+<div class="budget-price">$600</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">مريح</div>
+<div class="budget-price">$1500</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$5000</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · دليل مناطق بالي · 2026</div>
+</body>
+</html>

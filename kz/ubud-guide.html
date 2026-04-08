@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>Убуд</em></h1>
+<p class="sub">Аймақ бойынша толық нұсқаулық · @balidreamphoto</p>
+<div class="tag">🧘 Йога</div>
+<div class="tag">🌾 Күріш террассалары</div>
+<div class="tag">🎨 Өнер</div>
+<div class="tag">🌱 Вегетариандық</div>
+<div class="tag">🛕 Храмдар</div>
+<div class="tag">🌋 Жанартаулар</div>
+<div class="tag">💻 Коворкинг орындары</div>
+<div class="tag">🍜 Мейрамханалар</div>
+<div class="vibe">«Джунглиде ояндым, таңертең йога, күріш террассаларына қарайтын кофе, кешке ғибадатханадан гамелан дыбыстары».</div>
+<p>Убуд - Балидің мәдени жүрегі. Джунглилер, храмдар, күріш алқаптары, йога демалыстары және аралдағы ең жақсы вегетариандық тағамдар. Мұнда мұхитты қажет етпейтін суретшілер, рухани іздеушілер және шалғайдағы жұмысшылар тұрады. Орташа жас 30-45. Канггуға қарағанда тыныш және арзан.</p>
+<h2>☕ Кофеханалар</h2>
+<div class="place">
+<div class="place-name">Seniman Coffee Studio</div>
+<div class="place-desc">Убудтағы ең жақсы мамандандырылған кофе. Жеке бұршақтар, сайтта қуырылған, құйылған, салқын қайнатылған.</div>
+<div class="place-meta">📍Jl. Sriwedari · Кофе 35-60K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Anomali Coffee</div>
+<div class="place-desc">Индонезияның арнайы бренді. Архипелагтың барлық жерінен алынған дәндер. Ыңғайлы террассалар.</div>
+<div class="place-meta">📍Jl. Рая Убуд · Кофе 35-55К · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Mudra Cafe</div>
+<div class="place-desc">Кофе + шикі десерттер. Тыныш атмосфера, бақша көрінісі. Таңертеңгілік үшін өте қолайлы.</div>
+<div class="place-meta">📍Jl. Hanoman · Кофе 30-50K · WiFi ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Kopi Toko Djawa</div>
+<div class="place-desc">Колониялық стиль, көшеге қарайтын балкон. Яван және Бали кофесі.</div>
+<div class="place-meta">📍Jl. Гоутама · Кофе 30-45К · WiFi ⭐⭐⭐</div>
+</div>
+<h2>💻 Коворкинг орындары</h2>
+<div class="place">
+<div class="place-name">Outpost Ubud</div>
+<div class="place-desc">Убудтағы негізгі коворкинг кеңістігі. Джунглидегі бамбук ғимараты, бассейн, жылдам WiFi.</div>
+<div class="place-meta">📍Jl. Рая Нюх Кунинг · 250K/күн · 3М/ай · WiFi ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Hubud (қазіргі Livit Hub)</div>
+<div class="place-desc">Коворкинг кеңістігіндегі аңыз. Бамбуктан жасалған құрылыс, қоғамдық іс-шаралар, шеберханалар.</div>
+<div class="place-meta">📍Jl. Маймыл орманы · 200 мың/күн · 2,5 млн/ай · WiFi ⭐⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Genius Cafe</div>
+<div class="place-desc">Тыныш аймағы бар кафе-коворкинг. Жақсы кофе + жұмыс орны.</div>
+<div class="place-meta">📍Jl. Рая Убуд · Ең аз тапсырыс 150K · WiFi ⭐⭐⭐⭐</div>
+</div>
+<h2>🍜 Мейрамханалар</h2>
+<h3>Бюджет (25-50 мың)</h3>
+<div class="place">
+<div class="place-name">Warung Biah Biah</div>
+<div class="place-desc">Шынайы бали тағамдары: наси шампур, лауар, сатай. Жергілікті бағалар.</div>
+<div class="place-meta">📍 Jl. Suweta · 20-40K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Igelanca</div>
+<div class="place-desc">Үй тағамы. Баби гулинг (қуырылған емізетін шошқа) – мамандық.</div>
+<div class="place-meta">📍 Jl. Raya Ubud · 25-45K</div>
+</div>
+<div class="place">
+<div class="place-name">Пасар Убуд (базар)</div>
+<div class="place-desc">Көше тағамдары бар таңғы базар. Баксо, мартабак, наси горенг 15К.</div>
+<div class="place-meta">📍 Убуд орталығы · 15-35 мың</div>
+</div>
+<h3>Орташа (80-180К)</h3>
+<div class="place">
+<div class="place-name">Locavore To Go</div>
+<div class="place-desc">Әйгілі Локавордың бюджеттік нұсқасы. Ауыл шаруашылығы өнімдері, бутербродтар, тостағандар.</div>
+<div class="place-meta">📍 Jl. Dewi Sita · 70-140K</div>
+</div>
+<div class="place">
+<div class="place-name">Clear Cafe</div>
+<div class="place-desc">Тропикалық бақтағы көп деңгейлі мейрамхана. Азиялық фьюжн, пайдалы тағам.</div>
+<div class="place-meta">📍 Jl. Hanoman · 80-160K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Pulau Kelapa</div>
+<div class="place-desc">Әдемі бақтағы Индонезия тағамдары. Ренданг, пепес, гадо-гадо.</div>
+<div class="place-meta">📍 Jl. Monkey Forest · 70-150K</div>
+</div>
+<h3>Fine dining (300K+)</h3>
+<div class="place">
+<div class="place-name">Locavore</div>
+<div class="place-desc">Балидегі үздік 1 мейрамхана. Фермадағы дәмге арналған жиынтықтар. Бір ай бұрын тапсырыс беріңіз!</div>
+<div class="place-meta">📍Jl. Dewi Sita · 1,2М бастап орнату</div>
+</div>
+<div class="place">
+<div class="place-name">Mozaic</div>
+<div class="place-desc">Француз-индонезиялық синтез. Романтикалық бақ, дәм тату мәзірі.</div>
+<div class="place-meta">📍Jl. Рая Сангинган · 900K бастап жинағы</div>
+</div>
+<h2>🥗 Вегетариандық мекемелер</h2>
+<div class="place">
+<div class="place-name">Sage</div>
+<div class="place-desc">Толығымен вегетариандық мейрамхана. Әдемі табақтар, органикалық ингредиенттер.</div>
+<div class="place-meta">📍 Jl. Goutama · 70-140K</div>
+</div>
+<div class="place">
+<div class="place-name">Moksa</div>
+<div class="place-desc">Фермадан үстелге дейін вегетариандық. Сіздің жеке бақшаңыз, аспаздық сабақтары.</div>
+<div class="place-meta">📍 Jl. Puskesmas · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Earth Cafe</div>
+<div class="place-desc">Үлкен мәзірі бар вегетариандық кафе: азиялық, батыстық, шикі тағамдар.</div>
+<div class="place-meta">📍 Jl. Goutama Selatan · 55-110K</div>
+</div>
+<h2>🌱 Вегетариандық орындар</h2>
+<div class="place">
+<div class="place-name">Alchemy</div>
+<div class="place-desc">Шикі вегетариандық дәмхана. Салат бар, салқын сығымдалған шырындар, какао бұршақтарынан жасалған шоколад.</div>
+<div class="place-meta">📍 Jl. Penestanan Kelod · 60-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Sayuri Healing Food</div>
+<div class="place-desc">Жапон-вегетариандық синтез. Шикі суши, тірі десерттер, ерекше концепция.</div>
+<div class="place-meta">📍 Jl. Sukma · 65-130K</div>
+</div>
+<div class="place">
+<div class="place-name">Seeds of Life</div>
+<div class="place-desc">Шикі вегетариандық мейрамхана + шикі тағам академиясы. Балидегі ең жақсы шикі тағам десерттері.</div>
+<div class="place-meta">📍 Jl. Goutama · 55-120K</div>
+</div>
+<h2>🏄 Серфинг</h2>
+<p>Убудта серфинг жоқ – бұл мұхитқа шыға алмайтын таулы аймақ. Ең жақын: <strong>Канггу</strong> (1-1,5 сағат), <strong>Керамалар</strong> (45 мин, жоғары деңгей).</p>
+<h2>🤿 Дайвинг</h2>
+<p>Убудта жағалау сызығы жоқ. Ең жақын: <strong>Паданбай</strong> (1,5 сағат) - Көк лагуна, рифтер. <strong>Туламбен</strong> (2 сағат) - USS Liberty. <strong>Nusa Penida</strong> (2+ сағат) - манты.</p>
+<h2>🫁 Фридайвинг</h2>
+<p>Убудта емес - ең жақыны: <strong>Амед</strong> (2 сағат), <strong>Nusa Penida</strong> (2,5 сағат). Мектептер ауыстыруды ұйымдастырады.</p>
+<h2>🐠 Суда жүзу</h2>
+<p>Убудта емес - ең жақыны: <strong>Паданбай</strong> (Көк лагуна, 1,5 сағат), <strong>Амед</strong> (Жапондық кеме апаты, 2 сағат).</p>
+<h2>🏖 Толқынсыз жағажайлар</h2>
+<p>Убудта жағажайлар жоқ - бұл таулы аймақ. Ең жақын: <strong>Sanur</strong> (1 сағат) - жүзуге өте ыңғайлы, тыныш су.</p>
+<h2>🧘 Йога және сауықтыру</h2>
+<div class="place">
+<div class="place-name">Yoga Barn</div>
+<div class="place-desc">Убуддағы ең басты йога студиясы. Күніне 15+ сабақ: виньяса, кундалини, экстатикалық би. Бақша, кафе.</div>
+<div class="place-meta">📍Jl. Hanoman · 130-180K/сабақ · Аптасына 1,5 миллионнан шектеусіз</div>
+</div>
+<div class="place">
+<div class="place-name">Radiantly Alive</div>
+<div class="place-desc">Барлық деңгейлерге арналған йога. Кәсіби ұстаздар, әдемі шал.</div>
+<div class="place-meta">📍Jl. Джембаван · 150-180K/сабақ</div>
+</div>
+<div class="place">
+<div class="place-name">Intuitive Flow</div>
+<div class="place-desc">Виняса мен хатха күріш алқаптарына қарайтын ашық шала ішінде. Сиқыр.</div>
+<div class="place-meta">📍Jl. Тирта Тавар · 120-150К/сабақ</div>
+</div>
+<div class="place">
+<div class="place-name">Taksu Spa</div>
+<div class="place-desc">Бали массажы, гүл ванналары, энергияны емдеу. Бақшадағы СПА.</div>
+<div class="place-meta">📍Jl. Гоутама · Массаж 200K бастап</div>
+</div>
+<h2>🏋️ Спорт залдары</h2>
+<div class="place">
+<div class="place-name">Ubud Fitness Center</div>
+<div class="place-desc">Негізгі спорт залы. Кардио, еркін салмақ, қарапайым құрал-жабдықтар.</div>
+<div class="place-meta">📍Jl. Hanoman · 80K/күн · 600K/ай</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Fitness Ubud</div>
+<div class="place-desc">Жақсы жаттығу жабдықтары бар шағын спорт залы. Кроссфит аймағы.</div>
+<div class="place-meta">📍Jl. Рая Пенгосекан · 70K/күн · 500K/ай</div>
+</div>
+<p>Убуд тербелетін орындықтар туралы емес. Йога, күріш алқаптары арқылы жүгіру және треккинг көбірек. Маңызды залдар аз.</p>
+<h2>🌅 Күннің батуы / Күннің шығуы</h2>
+<table>
+<tr><th>Орын</th><th>Түр</th><th>Vibe</th></tr>
+<tr><td><strong>Campuhan Ridge Walk</strong></td><td>🌅 Күннің батуы / 🌄 Күннің шығуы</td><td>Екі аңғардың арасындағы төбенің бойындағы жол. Алтын жарық.</td></tr>
+<tr><td><strong>Tegallalang</strong></td><td>🌄 Күннің шығуы</td><td>Таңертеңгі тұмандағы күріш террассалары</td></tr>
+<tr><td><strong>Mount Batur</strong></td><td>🌄 Күннің шығуы</td><td>Жанартаудан шыққан таң - істеу керек</td></tr>
+<tr><td><strong>Karsa Spa</strong></td><td>🌅 Күннің батуы</td><td>Кафеден күріш алқабының көрінісі</td></tr>
+<tr><td><strong>Sari Organik</strong></td><td>🌅 Күннің батуы</td><td>Күріш алқабының арасындағы мейрамхана</td></tr>
+</table>
+<h2>🌋 Жақын жерде жанартаулар мен таулар</h2>
+<div class="place">
+<div class="place-name">Гунунг Батур</div>
+<div class="place-desc">Таң атқанда көтерілу (2 сағат көтерілу). Кратердегі көлдің көрінісі. Міндетті түрде!</div>
+<div class="place-meta">📍 Кинтамани · Убудтан 1 сағат · Гидпен 400 мың қашықтықтағы треккинг</div>
+</div>
+<div class="place">
+<div class="place-name">Гунунг Агунг</div>
+<div class="place-desc">Балидің негізгі жанартауы (3142 м). Күрделі бақылау 6-8 сағат. Нұсқаулық қажет.</div>
+<div class="place-meta">📍 Карангасем · Убудтан 2 сағат · 800К бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Гунунг Абанг</div>
+<div class="place-desc">Үшінші ең жоғары жанартау. Туристер аз, джунгли, Батурдың көрінісі.</div>
+<div class="place-meta">📍 Kintamani · Убудтан 1,5 сағат · 500K бастап</div>
+</div>
+<h2>🌾 Жақын жерде күріш террассалары</h2>
+<div class="place">
+<div class="place-name">Tegallalang Rice Terrace</div>
+<div class="place-desc">Атақты каскадты террассалар. Инстаграм классикасы. Таңертеңгі сағат 7-де келіңіз - көп адам жоқ.</div>
+<div class="place-meta">📍 Орталықтан 15 мин · Кіру 25К</div>
+</div>
+<div class="place">
+<div class="place-name">Campuhan Ridge Walk</div>
+<div class="place-desc">Төбенің жотасымен өтетін жол. Екі жақтағы күріш алқабы. Тегін.</div>
+<div class="place-meta">📍 Орталықтан 5 мин</div>
+</div>
+<div class="place">
+<div class="place-name">Jatiluwih</div>
+<div class="place-desc">ЮНЕСКО. Көпшіліксіз үлкен террассалар. Балидегі ең әсерлі.</div>
+<div class="place-meta">📍 Убудтан 1 сағат · Кіру 40К</div>
+</div>
+<h2>⛳ Гольф</h2>
+<p>Убудта гольф алаңдары жоқ. Ең жақын: <strong>Handara Golf &amp; Resort</strong> (Бедугүл, 1 сағат) - кратердегі тау өрісі, 1,2М/дөңгелектен. <strong>Bali National Golf Club</strong> (Нуса Дуа, 1,5 сағат).</p>
+<h2>🍓 Фермалар</h2>
+<div class="place">
+<div class="place-name">Bali Pulina</div>
+<div class="place-desc">Luwak кофе дәмі бар кофе плантациясы. Тегін экскурсия, джунгли көріністері.</div>
+<div class="place-meta">📍 Тегаллаланг · Орталықтан 20 мин</div>
+</div>
+<div class="place">
+<div class="place-name">Satria Coffee Plantation</div>
+<div class="place-desc">Шағын отбасылық ферма. Кофе, шай, какао өңдеу. Көпшілік жоқ.</div>
+<div class="place-meta">📍 Тегаллаланг · Орталықтан 25 мин</div>
+</div>
+<div class="place">
+<div class="place-name">Ubud Organic Farm</div>
+<div class="place-desc">Экскурсиясы бар органикалық ферма. Олар көкөністер мен дәмдеуіштерді өсіріп, тамақ жасауды үйретеді.</div>
+<div class="place-meta">📍Jl. Сувета · орталықтан 30 мин</div>
+</div>
+<h2>🍉 Жеміс базарлары</h2>
+<div class="place">
+<div class="place-name">Пасар Убуд (таңертеңгілік базар)</div>
+<div class="place-desc">Таңертеңгі сағат 8-ге дейін нағыз фермерлер базары. Жемістер, көкөністер, дәмдеуіштер жергілікті бағамен.</div>
+<div class="place-meta">📍 Убуд орталығы · таңғы 5-8</div>
+</div>
+<div class="place">
+<div class="place-name">Organic Farmers Market</div>
+<div class="place-desc">Сенбі күндері. Жергілікті фермерлерден органикалық көкөністер, жемістер, нан, джемдер.</div>
+<div class="place-meta">📍 Pizza Bagus, Jl. Пенгосекан сенбі 9-13</div>
+</div>
+<h2>🛍 Сауда</h2>
+<div class="place">
+<div class="place-name">Пасар Убуд (күндізгі)</div>
+<div class="place-desc">Сағат 10-нан кейін кәдесыйлар базары бар. Саронгтар, мүсіншелер, себеттер. 50%-ға мәміле жасаңыз!</div>
+<div class="place-meta">📍 Убуд орталығы</div>
+</div>
+<div class="place">
+<div class="place-name">Jl. Hanoman Boutiques</div>
+<div class="place-desc">Дизайнерлік бутиктер: табиғи матадан жасалған киімдер, зергерлік бұйымдар, керамика.</div>
+</div>
+<div class="place">
+<div class="place-name">Threads of Life</div>
+<div class="place-desc">Тоқыма галереясы: ауыл қолөнершілерінің дәстүрлі қолдан жасалған маталары.</div>
+<div class="place-meta">📍 Jl. Kajeng</div>
+</div>
+<h2>🛒 Азық-түлік дүкендері</h2>
+<div class="place">
+<div class="place-name">Bintang Supermarket</div>
+<div class="place-desc">Убудтағы негізгі супермаркет. Импорттық өнімдер, ірімшіктер, шарап, тұрмыстық химия.</div>
+<div class="place-meta">📍 Jl. Raya Sanggingan</div>
+</div>
+<div class="place">
+<div class="place-name">Bali Buda</div>
+<div class="place-desc">Органикалық: глютенсіз, тофу, темпе, жаңғақ сүті.</div>
+<div class="place-meta">📍 Jl. Jembawan</div>
+</div>
+<div class="place">
+<div class="place-name">Delta Dewata</div>
+<div class="place-desc">Кең ассортименті бар үлкен супермаркет, соның ішінде импорт.</div>
+<div class="place-meta">📍 Jl. Andong</div>
+</div>
+<h2>👕 Кірлер</h2>
+<div class="place">
+<div class="place-name">Ubud Laundry</div>
+<div class="place-desc">Жылдам жуу + үтіктеу. Убудта алып кету және жеткізу.</div>
+<div class="place-meta">📍Jl. Ханоман · 7K/кг бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Green Laundry</div>
+<div class="place-desc">Экологиялық жуу, нәзік заттар. Сапалы қызмет.</div>
+<div class="place-meta">📍Jl. Маймыл орманы · 10К/кг</div>
+</div>
+<p>Өзіне-өзі қызмет көрсету жеткіліксіз. Көбісі әкетуге арналған: таңертең тапсырылады, кешке немесе келесі күні алынады.</p>
+<h2>🎉 Клубтар мен түнгі өмір</h2>
+<p>Убуд ойын-сауық орны емес. Барлар аз, клубтар жоқ. Бірақ бар:</p>
+<div class="place">
+<div class="place-name">CP Lounge</div>
+<div class="place-desc">Жанды музыкасы бар джаз бар. Коктейльдер, интимдік атмосфера.</div>
+<div class="place-meta">📍 Jl. Monkey Forest</div>
+</div>
+<div class="place">
+<div class="place-name">No Más</div>
+<div class="place-desc">Мексика асханасы бар бар. Маргарита, жұма күндері жанды музыка.</div>
+<div class="place-meta">📍 Jl. Goutama</div>
+</div>
+<div class="place">
+<div class="place-name">Yoga Barn Ecstatic Dance</div>
+<div class="place-desc">Жұма күндері экстатикалық би. Сабырлы кеш: таң атқанша жалаңаяқ билеу.</div>
+<div class="place-meta">📍 Jl. Hanoman · 150K</div>
+</div>
+<h2>🏥 Емханалар мен дәріханалар</h2>
+<div class="place">
+<div class="place-name">Ubud Care Clinic</div>
+<div class="place-desc">Ағылшын тілінде сөйлейтін дәрігерлер, жалпы тәжірибе, стоматология. Қабылдау 200 мыңнан.</div>
+<div class="place-meta">📍 Jl. Raya Ubud</div>
+</div>
+<div class="place">
+<div class="place-name">Toya Medika Clinic</div>
+<div class="place-desc">Тестілері бар тәулік бойы жұмыс істейтін емхана. Қабылдау 150 мың.</div>
+<div class="place-meta">📍 Jl. Raya Mas</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma / K24</div>
+<div class="place-desc">Негізгі дәрі-дәрмектері бар дәріханалар. Антибиотиктер мен ауырсынуды басатын дәрілер арзан.</div>
+<div class="place-meta">📍 Убуд орталығы · 10 мыңнан бастап</div>
+</div>
+<h2>🛕 Храмдар</h2>
+<div class="place">
+<div class="place-name">Pura Tirta Empul</div>
+<div class="place-desc">Қасиетті көктем. Салттық шомылу - бұл күшті тәжірибе. Саронг қажет.</div>
+<div class="place-meta">📍 Тампаксиринг · Убудтан 30 мин · Кіру 50К</div>
+</div>
+<div class="place">
+<div class="place-name">Гоа Гаджа (піл үңгірі)</div>
+<div class="place-desc">Үңгірдегі 9 ғасырдағы көне ғибадатхана. Барельефтер, ванналар, мистикалық атмосфера.</div>
+<div class="place-meta">📍 Орталықтан 6 км · Кіру 50 мың</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Gunung Kawi</div>
+<div class="place-desc">11 ғасырдан бастап жартасқа қашалған храмдар. Күріш алқаптары арқылы 300 қадам төмен.</div>
+<div class="place-meta">📍 Тампаксиринг · Убудтан 30 мин · Кіру 50К</div>
+</div>
+<div class="place">
+<div class="place-name">Saraswati Temple</div>
+<div class="place-desc">Убуд орталығындағы лотос тоған храмы. Тегін. Кешкі легонг биі.</div>
+<div class="place-meta">📍Jl. Рая Убуд тегін</div>
+</div>
+<h2>🇷🇺 Орыс қауымы</h2>
+<div class="place">
+<div class="place-name">Telegram чаттары</div>
+<div class="place-desc">«Убуд орыстары», «Бали Убуд чаты» - жалға алу, ұсыныстар, оқиғалар.</div>
+</div>
+<div class="place">
+<div class="place-name">орыс қауымы</div>
+<div class="place-desc">Канггуға қарағанда аз, бірақ тұрақты. Орыс тіліндегі йога жаттығулары, әйелдер үйірмесі.</div>
+</div>
+<div class="place">
+<div class="place-name">Орыс тілді мамандар</div>
+<div class="place-desc">Чаттарда іздеу: натуропаттар, аюрведалық кеңесшілер, гидтер - бәрі бар.</div>
+</div>
+<h2>🎒 Балабақшалар мен мектептер</h2>
+<div class="place">
+<div class="place-name">Green School Bali</div>
+<div class="place-desc">Бамбуктан жасалған атақты экомектеп. Халықаралық бағдарлама, табиғат. 3-18 жас.</div>
+<div class="place-meta">📍Jl. Рая Сибанг Каджа · жылына $10 000 бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Pelangi School</div>
+<div class="place-desc">Бали халықаралық мектебі. Жасыл мектеп қолжетімдірек. 2-12 жас.</div>
+<div class="place-meta">📍Jl. Рая Нюх Кунинг · жылына $3000 бастап</div>
+</div>
+<div class="place">
+<div class="place-name">Орыс балабақшалары</div>
+<div class="place-desc">Шағын топтар бар - чатта «Бали аналарын» іздеңіз. Айына 2 миллионнан бастап</div>
+</div>
+<h2>📸 Фото орындар</h2>
+<p>• Tegallalang – күріш террассалары<br/>
+• Кампухан жотасымен серуендеу – Күн шығу жолы<br/>
+• Маймыл орманы – джунглидегі маймылдар<br/>
+• Тирта Эмпул – көктемде шомылу<br/>
+• Пура Гунунг Кави – жартас храмдары<br/>
+• Күріш алқабына қарайтын кез келген дәмхана<br/>
+• Хандара қақпасы (Бедугүлге баратын жолда)</p>
+<h2>🏠 Тұрғын үй</h2>
+<table>
+<tr><th>Түр</th><th>Баға/ай</th><th>Қайда қарау керек</th></tr>
+<tr><td>Қонақ үй/бөлме</td><td>$200-400</td><td>Брондау, сайтта</td></tr>
+<tr><td>Студия / 1Б</td><td>$400-700</td><td>Facebook groups, Flokq</td></tr>
+<tr><td>Бассейні бар вилла</td><td>$700-1200</td><td>Airbnb, Villa Finder</td></tr>
+<tr><td>Джунглидегі сәнді вилла</td><td>$1500-4000</td><td>Тікелей байланыстар, агенттер</td></tr>
+</table>
+<p><strong>Ең жақсы аймақтар:</strong> Пенестанан (тыныш, күріш алқабындағы виллалар), Нюх Кунинг (Маймыл орманының жанында), Сангинган (көру). Убуд Канггудан 20-30% арзан.</p>
+<h2>🛵 Көлік</h2>
+<p>• <strong>Скутер:</strong> 600K-900K/ай (сақ болыңыз - тар тау жолдары!)<br/>
+• <strong>Grab/Gojek:</strong> олар жұмыс істейді, бірақ Канггуға қарағанда жүргізушілер аз. 10 мыңнан<br/>
+• <strong>Әуежайға:</strong> 1,5-2 сағат, 300-400 мың<br/>
+• <strong>Канггуға:</strong> 1-1,5 сағат<br/>
+• <strong>Санұрға:</strong> 45-60 мин</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 Аймақтың құпиясы</div>
+<div class="secret-text">Пенестанан - Убуд үстіндегі төбедегі тыныш аймақ. Күріш алқабының арасындағы виллалар, бір турист емес. Бағалар орталықтан 2 есе төмен. Ұзақ тұру үшін ең жақсы орын.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ Кемшіліктері</div>
+<div class="warn-text">Ылғалдылық 85-95% - заттар көгереді. Маймылдар көп (көзілдірік пен телефон ұрлайды). Жағажай жоқ. Әуежайдан алыс. Кішкентай түнгі өмір. Жаңбырлы маусымда масалар. Маймылдар бар тар жолдар.</div>
+</div>
+<div class="divider"></div>
+<h2>💰 Бір айға арналған бюджет</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">Ең аз</div>
+<div class="budget-price">$500</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Ыңғайлы</div>
+<div class="budget-price">$1100</div>
+<div class="budget-unit">айына</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$3000</div>
+<div class="budget-unit">айына</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · Бали аудандарына арналған гид · 2026 ж</div>
+</body>
+</html>

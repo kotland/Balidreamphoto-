@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>أميد</em></h1>
+<p class="sub">الدليل الكامل للمنطقة · @balidreamphoto</p>
+<div class="tag">🤿 الغوص</div>
+<div class="tag">🫁الغوص الحر</div>
+<div class="tag">🐠 الغطس</div>
+<div class="tag">🌋 البراكين</div>
+<div class="tag">🏖 الشواطئ</div>
+<div class="tag">🧘 اليوغا</div>
+<div class="tag">🌅 شروق الشمس</div>
+<div class="vibe">"الرمال البركانية السوداء، أغونغ في الأفق، غاصت من الشاطئ - وأنت بين الشعاب المرجانية. بالي بدون مرشحات إنستغرام."</div>
+<p>آمد هي قرية صيد في شمال شرق بالي. عاصمة الغوص والغوص الحر في الجزيرة. الشواطئ السوداء والمياه الهادئة والشعاب المرجانية مباشرة من الشاطئ وإطلالات على أجونج. يعيش هنا الغواصون والغواصون الأحرار وأولئك الذين سئموا الفوضى الجنوبية. الحد الأدنى من البنية التحتية، الحد الأقصى من الجمال. متوسط ​​العمر 25-40.</p>
+<h2>☕ المقاهي</h2>
+<div class="place">
+<div class="place-name">Wawa Wewe II Cafe</div>
+<div class="place-desc">مقهى مطل على الخليج وأجونج. القهوة البالية، إفطار بسيط. أَجواء!</div>
+<div class="place-meta">📍جل. رايا عميد · القهوة 20-35 ك · واي فاي ⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Gusto Cafe</div>
+<div class="place-desc">أفضل قهوة في آمد. قهوة اسبريسو إيطالية ومعجنات طازجة وحديقة هادئة.</div>
+<div class="place-meta">📍بونوتان · قهوة 30-50 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Blue Earth Village Cafe</div>
+<div class="place-desc">مقهى في فندق صديق للبيئة. قهوة عضوية، وجبات إفطار صحية، إطلالة على المحيط.</div>
+<div class="place-meta">📍لين · قهوة 25-40 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<h2>💻 مساحات العمل المشترك</h2>
+<p>لا توجد مساحات عمل مشتركة في آمد. شبكة WiFi في المقاهي وبيوت الضيافة - 5-20 ميجابت في الثانية (غير مستقرة). للعمل الجاد: <strong>كانجو</strong> (3 ساعات) أو <strong>اوبود</strong> (ساعاتين). يستخدم العديد من العاملين عن بعد Starlink أو جهاز توجيه 4G.</p>
+<h2>🍜 مطاعم</h2>
+<h3>الميزانية (25-50 ألف)</h3>
+<div class="place">
+<div class="place-name">Warung Enak</div>
+<div class="place-desc">الطعام الإندونيسي محلي الصنع. ناسي تشامبور، مي جورينج. منظر للخليج.</div>
+<div class="place-meta">📍 Amed Beach · 20-40K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Ombak</div>
+<div class="place-desc">وارونج على الشاطئ. أسماك مشوية طازجة مباشرة من قوارب الصيادين.</div>
+<div class="place-meta">📍 Jemeluk · 25-50K</div>
+</div>
+<h3>متوسطة (70-150 ألف)</h3>
+<div class="place">
+<div class="place-name">Galanga Restaurant</div>
+<div class="place-desc">المطبخ التايلاندي والإندونيسي. كاري، باد تاي، مأكولات بحرية طازجة.</div>
+<div class="place-meta">📍 Bunutan · 60-130K</div>
+</div>
+<div class="place">
+<div class="place-name">The Grill Amed</div>
+<div class="place-desc">المأكولات البحرية المشوية: جراد البحر، الباراكودا، الحبار. اخترت في العداد.</div>
+<div class="place-meta">📍 Jl. Raya Amed · 70-180K</div>
+</div>
+<h3>Fine dining (150K+)</h3>
+<div class="place">
+<div class="place-name">Blue Earth Village Restaurant</div>
+<div class="place-desc">المأكولات العضوية، ومجموعات التذوق، وإطلالات على المحيط. أفضل مطعم في آمد.</div>
+<div class="place-meta">📍 Lean · 150-300K</div>
+</div>
+<h2>🥗 مؤسسات نباتية</h2>
+<div class="place">
+<div class="place-name">Smiling Buddha</div>
+<div class="place-desc">مقهى نباتي مع قائمة كبيرة: الكاري التوفو والتيمبه والعصائر الطازجة.</div>
+<div class="place-meta">📍 Jemeluk · 50-100K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Pantai</div>
+<div class="place-desc">وارونج مع خيارات نباتية جيدة: جادو جادو، الكاري النباتي.</div>
+<div class="place-meta">📍 Amed Beach · 35-70K</div>
+</div>
+<h2>🌱أماكن نباتية</h2>
+<div class="place">
+<div class="place-name">Blue Earth Village</div>
+<div class="place-desc">الكثير من الخيارات النباتية: الأطباق والسلطات والحلويات النيئة. المكونات العضوية.</div>
+<div class="place-meta">📍 Lean · 55-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Apneista Cafe</div>
+<div class="place-desc">مقهى في مدرسة الغوص الحر. طعام صحي، أوعية نباتية، وعصائر.</div>
+<div class="place-meta">📍 Jemeluk · 50-100K</div>
+</div>
+<h2>🏄 ركوب الأمواج</h2>
+<p>لا يوجد ركوب الأمواج في آمد - مياه هادئة وخلجان محمية. الأقرب: <strong>كيراماس</strong> (1.5 ساعة) - موجات قوية، مستوى متقدم. <strong>كانجو</strong> (3 ساعات) - لجميع المستويات.</p>
+<h2>🤿 الغوص</h2>
+<div class="place">
+<div class="place-name">حطام سفينة يو إس إس ليبرتي (تولامبين)</div>
+<div class="place-desc">حطام الحرب العالمية الثانية - أفضل موقع للغوص في بالي! المدخل من الشاطئ بعمق 5-30 م. المرجان والأسماك والسلاحف.</div>
+<div class="place-meta">📍 تولامبين · 20 دقيقة من آمد</div>
+</div>
+<div class="place">
+<div class="place-name">Jemeluk Bay</div>
+<div class="place-desc">حديقة المرجان مباشرة من الشاطئ. الغوص على الحائط والشعاب المرجانية والأسماك الملائكية والسلاحف.</div>
+<div class="place-meta">📍 Jemeluk · Shore entry</div>
+</div>
+<div class="place">
+<div class="place-name">Japanese Shipwreck</div>
+<div class="place-desc">حطام سفينة صغيرة على ارتفاع 3-12 م. مثالية للمبتدئين.</div>
+<div class="place-meta">📍 Lipah Bay · Shore entry</div>
+</div>
+<div class="place">
+<div class="place-name">Pyramids (Amed)</div>
+<div class="place-desc">الشعاب المرجانية الاصطناعية - الأهرامات على الرمال. الكثير من الأسماك، مكان جميل.</div>
+</div>
+<p><strong>المدارس:</strong></p>
+<div class="place">
+<div class="place-name">Adventure Divers Bali</div>
+<div class="place-desc">بادي 5 نجوم. المياه المفتوحة من 5.5 متر، واكتشف الغوص من 1 متر. المدربين الناطقين باللغة الروسية!</div>
+<div class="place-meta">📍آميد · دورات PADI + غوصات ممتعة</div>
+</div>
+<div class="place">
+<div class="place-name">Euro Dive Amed</div>
+<div class="place-desc">المركز المهني. الغوص التقني، أجهزة إعادة التنفس. للجادين.</div>
+<div class="place-meta">📍جيميلوك · المياه المفتوحة من 6م</div>
+</div>
+<h2>🫁الغوص الحر</h2>
+<div class="place">
+<div class="place-name">Apneista</div>
+<div class="place-desc">أفضل مدرسة للغوص الحر في بالي (وواحدة من أفضل المدارس في العالم). دورات AIDA/SSI، عمق مباشر من الشاطئ يصل إلى 60 مترًا فما فوق.</div>
+<div class="place-meta">📍جيميلوك · AIDA 2 من 5M · AIDA 3 من 6M</div>
+</div>
+<div class="place">
+<div class="place-name">Freedive Amed</div>
+<div class="place-desc">دورات للمبتدئين والمتقدمين. حمام سباحة + مياه مفتوحة. مجموعات صغيرة.</div>
+<div class="place-meta">📍آمد · الدورة من 4M</div>
+</div>
+<div class="place">
+<div class="place-name">Ocean Sun Freediving</div>
+<div class="place-desc">دورات SSI، وجلسات تدريبية، ورحلات السفاري للغوص الحر.</div>
+<div class="place-meta">📍آمد · السعر يبدأ من 4.5 مليون</div>
+</div>
+<p>آمد - <strong>عاصمة الغوص الحر بالي</strong>. يبدأ العمق مباشرة من الشاطئ، بمياه هادئة ودافئة (28-30 درجة مئوية). الظروف المثالية على مدار السنة.</p>
+<h2>🐠 الغطس</h2>
+<div class="place">
+<div class="place-name">Jemeluk Bay</div>
+<div class="place-desc">أفضل الغطس في بالي مباشرة من الشاطئ! الشعاب المرجانية، سمكة المهرج، والسلاحف. قناع + زعانف - هذا كل شيء.</div>
+<div class="place-meta">📍جيميلوك · مجاني · تأجير الكمامة 30 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Japanese Shipwreck</div>
+<div class="place-desc">سفينة غارقة على عمق 3 أمتار - يمكن رؤيتها حتى أثناء الغطس!</div>
+<div class="place-meta">📍خليج ليباه حر</div>
+</div>
+<div class="place">
+<div class="place-name">USS Liberty (Tulamben)</div>
+<div class="place-desc">أجزاء السفينة على ارتفاع 3-5 متر - متاحة للغطس. مدهش!</div>
+<div class="place-meta">📍 تولامبين · 20 دقيقة · الدخول 30 ك</div>
+</div>
+<h2>🏖شواطئ بدون أمواج</h2>
+<div class="place">
+<div class="place-name">Jemeluk Bay</div>
+<div class="place-desc">خليج محمي ومياه هادئة ورمال سوداء. السباحة + الغطس.</div>
+</div>
+<div class="place">
+<div class="place-name">Amed Beach</div>
+<div class="place-desc">الشاطئ الرئيسي للقرية. قوارب الصيد (جوكونج)، المياه الهادئة، إطلالة على أجونج.</div>
+</div>
+<div class="place">
+<div class="place-name">Lipah Bay</div>
+<div class="place-desc">خليج صغير بالحصى. مياه هادئة للغاية، الغطس الرائع.</div>
+</div>
+<p>تقريبا جميع شواطئ آمد بدون أمواج. مثالية للسباحة!</p>
+<h2>🧘 اليوغا والعافية</h2>
+<div class="place">
+<div class="place-name">Blue Earth Village Yoga</div>
+<div class="place-desc">يوغا صباحية في شالا من الخيزران مطلة على المحيط. فينياسا، هاثا.</div>
+<div class="place-meta">📍 العجاف · 100-130 ألف/درس</div>
+</div>
+<div class="place">
+<div class="place-name">Amed Spa &amp; Massage</div>
+<div class="place-desc">تدليك بالي على الشاطئ. بسيطة ورخيصة ومريحة.</div>
+<div class="place-meta">📍على طول الشاطئ · تدليك من 80 ألف</div>
+</div>
+<h2>🏋️ صالات رياضية</h2>
+<p>لا توجد صالات رياضية في آمد. التدريبات: السباحة في المحيط، والغوص الحر، والمشي لمسافات طويلة في البركان. للصالة: اذهب إلى <strong>كارانجاسيم</strong> (30 دقيقة) - توجد قاعة بسيطة.</p>
+<h2>🌅 غروب الشمس / شروق الشمس</h2>
+<table>
+<tr><th>مكان</th><th>يكتب</th><th>الاهتزاز</th></tr>
+<tr><td><strong>Jemeluk Viewpoint</strong></td><td>🌄 شروق الشمس</td><td>أجونج عند شروق الشمس - واحدة من أفضل المناظر في بالي</td></tr>
+<tr><td><strong>Amed Beach</strong></td><td>🌄 شروق الشمس</td><td>قوارب الصيد في ضوء الصباح</td></tr>
+<tr><td><strong>أي مقهى على الشاطئ</strong></td><td>🌅 غروب الشمس</td><td>تغرب الشمس خلف الجبال - باللون الوردي والبرتقالي</td></tr>
+</table>
+<p>آمد - <strong>الساحل الشرقي</strong>، هناك شروق الشمس المذهل المطل على لومبوك. غروب الشمس جميل أيضًا - تغرب الشمس خلف أجونج.</p>
+<h2>🌋 البراكين والجبال القريبة</h2>
+<div class="place">
+<div class="place-name">جونونج اجونج</div>
+<div class="place-desc">يقع البركان الرئيسي في بالي (3142 مترًا) في سماء المنطقة مباشرةً! يبدأ الصعود من بورا بيساكيه أو باسار أجونج.</div>
+<div class="place-meta">📍 30-45 دقيقة قبل بداية الرحلة · الرحلة 6-8 ساعات · من 800 ألف مع مرشد</div>
+</div>
+<div class="place">
+<div class="place-name">جونونج ليمبويانج</div>
+<div class="place-desc">"بوابة الجنة" هو معبد شهير يطل على أجونج. الرحلات إلى الأعلى.</div>
+<div class="place-meta">📍40 دقيقة من آمد · المدخل 50 ك</div>
+</div>
+<div class="place">
+<div class="place-name">جونونج باتور</div>
+<div class="place-desc">الصعود عند الفجر. 1.5 ساعة من آمد.</div>
+<div class="place-meta">📍 كينتاماني · من 400 ألف</div>
+</div>
+<h2>🌾 مصاطب الأرز القريبة</h2>
+<div class="place">
+<div class="place-name">Tirta Gangga</div>
+<div class="place-desc">قصر الماء + حقول الأرز حوله. أجمل مناظر شرق بالي.</div>
+<div class="place-meta">📍 30 دقيقة من آمد · المدخل 40 ك</div>
+</div>
+<div class="place">
+<div class="place-name">حقول الأرز سايدمان</div>
+<div class="place-desc">وادي هادئ مع تراسات ونسيج إيكات. المناطق النائية البالية.</div>
+<div class="place-meta">📍 ساعة واحدة من آمد</div>
+</div>
+<h2>⛳ الجولف</h2>
+<p>لا توجد ملاعب جولف في آمد والمنطقة المحيطة بها. الأقرب: <strong>Handara Golf</strong> (بيدوجول، 3 ساعات)، <strong>Bali National</strong> (نوسا دوا، 3 ساعات).</p>
+<h2>🍓 المزارع</h2>
+<div class="place">
+<div class="place-name">مزارع القهوة سايدمان</div>
+<div class="place-desc">المزارع العائلية الصغيرة. القهوة، الكاكاو، الفانيليا. جولات بالاتفاق.</div>
+<div class="place-meta">📍 سايدمان · ساعة واحدة من آمد</div>
+</div>
+<div class="place">
+<div class="place-name">Tirta Gangga Salt Farm</div>
+<div class="place-desc">المدرجات الملحية هي تعدين الملح التقليدي. مشهد فريد من نوعه.</div>
+<div class="place-meta">📍ساحل آمد · مجاناً</div>
+</div>
+<h2>🍉أسواق الفاكهة</h2>
+<div class="place">
+<div class="place-name">Pasar Karangasem</div>
+<div class="place-desc">سوق محلي كبير في مدينة كارانجاسيم. الفواكه والخضروات والأسماك. بالي الحقيقية.</div>
+<div class="place-meta">📍 كارانجاسم · 30 دقيقة من آمد · الصباح</div>
+</div>
+<p>يوجد في آمد نفسها متاجر صغيرة تبيع الفواكه الأساسية. لمجموعة كبيرة - السوق في كارانجاسيم.</p>
+<h2>🛍 التسوق</h2>
+<p>لا يوجد عمليا أي تسوق في آمد. الهدايا التذكارية الصغيرة، وبحر. للتسوق: <strong>اوبود</strong> (ساعتان) أو <strong>سيمينياك</strong> (3 ساعات).</p>
+<h2>🛒 محلات البقالة</h2>
+<div class="place">
+<div class="place-name">Minimarket (Alfamart / Indomaret)</div>
+<div class="place-desc">متاجر صغيرة تحتوي على الإمدادات الأساسية: الماء والوجبات الخفيفة والمعكرونة ومنتجات النظافة.</div>
+<div class="place-meta">📍في الطريق أميد</div>
+</div>
+<p>لا توجد منتجات مستوردة. بالنسبة للسلع الأوروبية: اطلب عبر الإنترنت أو سافر إلى <strong>دينباسار</strong>.</p>
+<h2>👕 المغاسل</h2>
+<div class="place">
+<div class="place-name">مغاسل في بيوت الضيافة</div>
+<div class="place-desc">تقوم معظم الفنادق وبيوت الضيافة بغسل الملابس بمعدل 5-8 آلاف/كجم. لا توجد خدمة ذاتية.</div>
+</div>
+<h2>🎉 النوادي والحياة الليلية</h2>
+<p>لا توجد حياة ليلية في آمد. في المساء - العشاء في وارونج، البيرة (بينتانج 25-35 ألف) على الشاطئ، النجوم. النوادي والحانات مع منسقي الأغاني - صفر. هذه قرية. للحفلات: <strong>سيمينياك</strong> (3 ساعات) أو <strong>كانجو</strong> (3 ساعات).</p>
+<h2>🏥 العيادات والصيدليات</h2>
+<div class="place">
+<div class="place-name">Amed Clinic</div>
+<div class="place-desc">عيادة صغيرة للمشاكل الأساسية. طبيب يتحدث الانجليزية.</div>
+<div class="place-meta">📍آمد · الاستقبال من 150 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">RSUD Karangasem Hospital</div>
+<div class="place-desc">أقرب مستشفى. أساسية، ولكن هناك ER.</div>
+<div class="place-meta">📍 كارانجاسم · 30 دقيقة من آمد</div>
+</div>
+<p>للطب الخطير: <strong>BIMC</strong> أو <strong>Kasih Ibu</strong> في دينباسار (2.5-3 ساعات). لديك التأمين مع الإخلاء!</p>
+<h2>🛕 المعابد</h2>
+<div class="place">
+<div class="place-name">Pura Lempuyang (Luhur Lempuyang)</div>
+<div class="place-desc">"بوابة الجنة" - إطار يطل على أجونج. 7 معابد في الطريق إلى الأعلى.</div>
+<div class="place-meta">📍40 دقيقة من آمد · الدخول 50 ألف · مطلوب سارونج</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Besakih</div>
+<div class="place-desc">أم جميع المعابد في بالي. مجمع ضخم على منحدر أجونج.</div>
+<div class="place-meta">📍 ساعة واحدة من آمد · المدخل 60 ك</div>
+</div>
+<div class="place">
+<div class="place-name">Tirta Gangga</div>
+<div class="place-desc">قصر الماء في الراجح. نوافير، حمامات سباحة، سمك الشبوط كوي. جميل!</div>
+<div class="place-meta">📍 30 دقيقة من آمد · المدخل 40 ك</div>
+</div>
+<h2>🇷🇺 الجالية الروسية</h2>
+<p>يوجد عدد قليل من الروس في آمد، لكن مجتمع الغوص الحر دولي - يوجد مدربون روس. ابحث في الدردشات: "Bali East"، "Freediving Bali". لا توجد مطاعم روسية.</p>
+<h2>🎒 رياض الأطفال والمدارس</h2>
+<p>لا توجد رياض أطفال أو مدارس للمغتربين في آمد. المنطقة ليست للعائلات التي لديها أطفال في سن المدرسة. أقرب المدارس: <strong>اوبود</strong> (ساعتان) - المدرسة الخضراء، بيلانجي.</p>
+<h2>📸 مواقع الصور</h2>
+<p>• وجهة نظر خليج جيميلوك – أجونج عند شروق الشمس<br/>
+• قوارب الصيد (جوكونج) على الشاطئ<br/>
+• تحت الماء – الشعاب المرجانية، والسلاحف، وحطام السفينة ليبرتي<br/>
+• بورا ليمبويانغ - "بوابة الجنة"<br/>
+• تيرتا جانجا – قصر المياه<br/>
+• المدرجات المالحة على الساحل<br/>
+• منظر لومبوك من النقطة الشرقية</p>
+<h2>🏠 السكن</h2>
+<table>
+<tr><th>يكتب</th><th>السعر/الشهر</th><th>أين تنظر</th></tr>
+<tr><td>غرفة / دار الضيافة</td><td>$150-300</td><td>الحجز في الموقع</td></tr>
+<tr><td>بنغل على الشاطئ</td><td>$300-500</td><td>على الفور، الفيسبوك</td></tr>
+<tr><td>فيلا مطلة</td><td>$500-1000</td><td>Airbnb</td></tr>
+<tr><td>فيلا فاخرة</td><td>$1000-2000</td><td>Airbnb، اتصالات مباشرة</td></tr>
+</table>
+<p>Amed هي واحدة من أرخص المناطق في بالي. احجز الأيام الأولى عبر الإنترنت، ثم ابحث عنها محليًا - فهي أرخص مرتين.</p>
+<h2>🛵 النقل</h2>
+<p>• <strong>سكوتر:</strong> 500 ألف - 700 ألف شهريًا (إلزامي - لا توجد وسائل نقل عام)<br/>
+• <strong>Grab/Gojek:</strong> تقريبا لا يعمل<br/>
+• <strong>إلى المطار:</strong> 2.5-3 ساعات، 500-700 ألف (نقل)<br/>
+• <strong>إلى أوبود:</strong> ساعاتين<br/>
+• <strong>إلى تولامبين:</strong> 20 دقيقة<br/>
+• <strong>إلى لمبويانغ:</strong> 40 دقيقة</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 سر المنطقة</div>
+<div class="secret-text">أثناء اكتمال القمر، يخرج سكان الشعاب المرجانية الليليين إلى خليج جيميلوك. الغطس الليلي باستخدام مصباح يدوي - الأخطبوطات والروبيان السرعوف وسمك الببغاء النائم. اسأل مركز الغوص عن الغطس الليلي. لا تنسى.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ سلبيات</div>
+<div class="warn-text">بعيد جدًا عن المطار (3 ساعات). خدمة الاتصال اللاسلكي بالإنترنت عبر تقنية واي فاي سيئة. هناك عدد قليل من المتاجر، ولا توجد منتجات مستوردة. لا الحياة الليلية. لا صالات رياضية. طريق ضيق على طول الساحل (خطير في الليل). خدمات طبية قليلة. خلال موسم الأمطار، يتم غسل الطريق أحيانًا.</div>
+</div>
+<div class="divider"></div>
+<h2>💰ميزانية الشهر</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">الحد الأدنى</div>
+<div class="budget-price">$350</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">مريح</div>
+<div class="budget-price">$700</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$1500</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · دليل مناطق بالي · 2026</div>
+</body>
+</html>

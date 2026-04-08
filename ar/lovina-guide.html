@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f6f2;font-family:'Inter',sans-serif;color:#2a2a28;padding:40px 32px;max-width:680px;margin:0 auto;line-height:1.6}
+h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+h1 em{font-style:italic;font-weight:400;color:#2a6b5a}
+.sub{font-size:15px;color:rgba(42,42,40,0.5);margin-bottom:40px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2a6b5a;margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(42,107,90,0.15)}
+h3{font-size:18px;font-weight:700;margin-top:24px;margin-bottom:10px}
+p{font-size:14px;color:rgba(42,42,40,0.7);margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:50px;background:rgba(42,107,90,0.06);color:#2a6b5a;border:1px solid rgba(42,107,90,0.1);margin-right:6px;margin-bottom:6px}
+.vibe{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#2a6b5a;margin:20px 0;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+th{text-align:left;font-weight:600;color:rgba(42,42,40,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;border-bottom:2px solid rgba(0,0,0,0.06)}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(42,42,40,0.75)}
+tr:last-child td{border:none}
+.place{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.place-name{font-weight:600;font-size:14px;margin-bottom:3px}
+.place-desc{font-size:13px;color:rgba(42,42,40,0.55)}
+.place-meta{font-size:11px;color:rgba(42,107,90,0.6);margin-top:4px}
+.secret{background:rgba(42,107,90,0.04);border-left:3px solid #2a6b5a;padding:16px 20px;border-radius:0 12px 12px 0;margin:16px 0}
+.secret-title{font-weight:700;font-size:13px;color:#2a6b5a;margin-bottom:6px}
+.secret-text{font-size:14px;color:rgba(42,42,40,0.65);font-style:italic}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.budget-card{background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.04);border-radius:12px;padding:16px;text-align:center}
+.budget-label{font-size:11px;color:rgba(42,42,40,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.budget-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2a6b5a}
+.budget-unit{font-size:11px;color:rgba(42,42,40,0.4)}
+.warn{background:rgba(200,100,80,0.05);border-left:3px solid rgba(200,100,80,0.4);padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0}
+.warn-title{font-weight:700;font-size:13px;color:rgba(180,80,60,0.7);margin-bottom:4px}
+.warn-text{font-size:13px;color:rgba(42,42,40,0.6)}
+.footer-guide{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.04);font-size:11px;color:rgba(42,42,40,0.25);letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(42,107,90,0.1),transparent);margin:32px 0}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<h1><em>لوفينا</em></h1>
+<p class="sub">الدليل الكامل للمنطقة · @balidreamphoto</p>
+<div class="tag">🐬 الدلافين</div>
+<div class="tag">🏖 شاطئ هادئ</div>
+<div class="tag">🤿 الغوص</div>
+<div class="tag">🌋 الجبال</div>
+<div class="tag">🛕 المعابد</div>
+<div class="tag">♨️ ينابيع حارة</div>
+<div class="tag">🍜 فارونجي</div>
+<div class="vibe">"الدلافين عند شروق الشمس، والينابيع الساخنة في الغابة، والعشاء على الشاطئ لمسافة 30 ألفًا. لوفينا هي بالي التي نسيت السياح."</div>
+<p>لوفينا هو الساحل الشمالي لبالي. الرمال السوداء والبحر الهادئ والدلافين والينابيع الساخنة والاختناقات المرورية الصفرية. المتقاعدون والرحالة وأولئك الذين يريدون أرخص وأهدأ بالي يعيشون هنا. البنية التحتية ضئيلة، لكنها إندونيسيا الحقيقية. متوسط ​​عمر الوافدين هو 40-60 سنة.</p>
+<h2>☕ المقاهي</h2>
+<div class="place">
+<div class="place-name">Kopi Bali House</div>
+<div class="place-desc">القهوة البالية والجاوية. أجواء بسيطة، الذوق الحقيقي.</div>
+<div class="place-meta">📍جل. رايا لوفينا · القهوة 15-30 ك · واي فاي ⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Spice Beach Club</div>
+<div class="place-desc">بار الشاطئ مع قهوة جيدة وإطلالة. أحد الأماكن "العصرية" القليلة.</div>
+<div class="place-meta">📍شاطئ لوفينا · القهوة 30-50 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<div class="place">
+<div class="place-name">Global Village Kafe</div>
+<div class="place-desc">مقهى يقدم الطعام الغربي والبالي. قهوة جيدة، زاوية الكتب.</div>
+<div class="place-meta">📍 كاليبوكبوك · القهوة 20-40 ك · واي فاي ⭐⭐⭐</div>
+</div>
+<p>القهوة المتخصصة نادرة في لوفينا. لمحبي القهوة: أحضر حبوب القهوة الخاصة بك أو اشرب مشروبًا بالينيزي.</p>
+<h2>💻 مساحات العمل المشترك</h2>
+<p>لا توجد مساحات عمل مشتركة في لوفينا. واي فاي 3-10 ميجابت في الثانية. للعمل عن بعد: هذا ليس الخيار الأفضل. <strong>كانجو</strong> (3 ساعات)، <strong>اوبود</strong> (2.5 ساعة).</p>
+<h2>🍜 مطاعم</h2>
+<h3>الميزانية (15-40 ألفًا)</h3>
+<div class="place">
+<div class="place-name">Warung Music</div>
+<div class="place-desc">موسيقى حية في المساء + طعام إندونيسي رخيص. بينتانج 20 ألف!</div>
+<div class="place-meta">📍 Kalibukbuk · 15-35K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Dolphin</div>
+<div class="place-desc">وارونج على الشاطئ. ناسي جورينج، سمك مشوي. الأسعار المحلية.</div>
+<div class="place-meta">📍 Lovina Beach · 15-30K</div>
+</div>
+<h3>متوسطة (50-130 ألف)</h3>
+<div class="place">
+<div class="place-name">Jasmine Kitchen</div>
+<div class="place-desc">المطبخ التايلاندي من الشيف التايلاندي. باد تاي، توم يم، كاري أخضر.</div>
+<div class="place-meta">📍 Kalibukbuk · 50-120K</div>
+</div>
+<div class="place">
+<div class="place-name">Sea Breeze Cafe</div>
+<div class="place-desc">المأكولات البحرية، المأكولات الغربية، البيتزا. إطلالة على البحر.</div>
+<div class="place-meta">📍 Jl. Raya Lovina · 60-130K</div>
+</div>
+<h3>Fine dining (150K+)</h3>
+<div class="place">
+<div class="place-name">Damai Restaurant</div>
+<div class="place-desc">في فندق بوتيكي في الجبال. منظر بانورامي، طعام إندونيسي فاخر.</div>
+<div class="place-meta">📍 Damai Lovina Villas · 150-350K</div>
+</div>
+<h2>🥗 مؤسسات نباتية</h2>
+<div class="place">
+<div class="place-name">Global Village Kafe</div>
+<div class="place-desc">خيارات نباتية جيدة: شريحة لحم التمبيه، الكاري النباتي، العصائر.</div>
+<div class="place-meta">📍 Kalibukbuk · 40-90K</div>
+</div>
+<div class="place">
+<div class="place-name">Warung Bambu</div>
+<div class="place-desc">المطبخ البالي مع قائمة نباتية. جادو جادو، التوفو المقلي.</div>
+<div class="place-meta">📍 Jl. Raya Lovina · 25-60K</div>
+</div>
+<h2>🌱أماكن نباتية</h2>
+<p>لا توجد مطاعم نباتية منفصلة في لوفينا. يمكنك في warungs طلب المتفحم والتوفو والخضروات. للمقهى النباتي: <strong>اوبود</strong> (2.5 ساعة).</p>
+<h2>🏄 ركوب الأمواج</h2>
+<p>لا يوجد ركوب الأمواج في لوفينا - الساحل الشمالي، البحر هادئ، لا توجد أمواج. الأقرب: <strong>ميديفي</strong> (ميدوي، ساعتين غربًا) - استراحة طويلة من النقطة اليسرى.</p>
+<h2>🤿 الغوص</h2>
+<div class="place">
+<div class="place-name">Menjangan Island</div>
+<div class="place-desc">أفضل الغوص في شمال بالي! الغوص على الحائط، رؤية كريستالية (30 م+)، مرجانية مروحية.</div>
+<div class="place-meta">📍حديقة غرب بالي الوطنية · ساعة ونصف من لوفينا · رحلة نهارية من مسافة 1.5 متر</div>
+</div>
+<div class="place">
+<div class="place-name">Lovina Reef</div>
+<div class="place-desc">الشعاب المرجانية المحلية. صورة ماكرو، عاريات البزاق، فرس البحر.</div>
+<div class="place-meta">📍 لوفينا البحرية · من 800 ألف/2 غطسة</div>
+</div>
+<p><strong>المدارس:</strong> سبايس دايف، مركز لوفينا للغوص - دورات PADI ورحلات يومية.</p>
+<h2>🫁الغوص الحر</h2>
+<p>لا توجد مدارس للغوص الحر في لوفينا. الأقرب: <strong>أميد</strong> (3 ساعات) - أبنيستا، أفضل مدرسة في بالي.</p>
+<h2>🐠 الغطس</h2>
+<div class="place">
+<div class="place-name">Lovina Reef</div>
+<div class="place-desc">الغطس من القارب. المرجان، ملائكية البحر، ثعابين موراي. كومبو مع الدلافين.</div>
+<div class="place-meta">📍قارب يبدأ من 150 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Menjangan Island</div>
+<div class="place-desc">الغطس المذهل: المياه الكريستالية والجدران المرجانية والسلاحف.</div>
+<div class="place-meta">📍ساعة ونصف · رحلة نهارية من 800 ألف</div>
+</div>
+<h2>🏖شواطئ بدون أمواج</h2>
+<div class="place">
+<div class="place-name">Lovina Beach</div>
+<div class="place-desc">الشاطئ بأكمله عبارة عن مياه هادئة. الرمال السوداء، وقوارب الصيد، هادئة. يمكنك السباحة في كل مكان.</div>
+</div>
+<div class="place">
+<div class="place-name">Kalibukbuk Beach</div>
+<div class="place-desc">الجزء المركزي. مطاعم على الشاطئ وكراسي استلقاء للتشمس ومياه هادئة.</div>
+</div>
+<p>الساحل الشمالي بأكمله بدون أمواج. مثالية للسباحة والأطفال.</p>
+<h2>🧘 اليوغا والعافية</h2>
+<div class="place">
+<div class="place-name">Zen Resort Bali</div>
+<div class="place-desc">منتجع صحي مع اليوجا والتأمل والأيورفيدا. برامج التخلص من السموم.</div>
+<div class="place-meta">📍 سيريريت · 20 دقيقة من لوفينا · الخلوات من 3M</div>
+</div>
+<div class="place">
+<div class="place-name">إير باناس بنجار (الينابيع الساخنة)</div>
+<div class="place-desc">ينابيع المياه الساخنة الطبيعية في الغابة. حمامات كبريتية، شلال. يجب زيارة!</div>
+<div class="place-meta">📍 بنجار · 15 دقيقة من لوفينا · الدخول 20 ألف</div>
+</div>
+<h2>🏋️ صالات رياضية</h2>
+<p>لا توجد صالات رياضية في لوفينا. التمارين الرياضية: السباحة، المشي لمسافات طويلة، ركوب الدراجات. أقرب قاعة: <strong>Singaraja</strong> (15 دقيقة) - قاعة محلية صغيرة.</p>
+<h2>🌅 غروب الشمس / شروق الشمس</h2>
+<table>
+<tr><th>مكان</th><th>يكتب</th><th>الاهتزاز</th></tr>
+<tr><td><strong>Lovina Beach</strong></td><td>🌄 شروق الشمس</td><td>الدلافين + شروق الشمس (جولة بالقارب الساعة 5:30)</td></tr>
+<tr><td><strong>Pantai Penimbangan</strong></td><td>🌅 غروب الشمس</td><td>شاطئ هادئ، الاتجاه الغربي - غروب الشمس الحقيقي!</td></tr>
+<tr><td><strong>Damai Restaurant</strong></td><td>🌅 غروب الشمس</td><td>بانوراما من الجبل إلى الساحل</td></tr>
+</table>
+<p>لوفينا فريدة من نوعها: الساحل الشمالي به شروق الشمس وغروبها (الساحل يمتد من الشرق إلى الغرب).</p>
+<h2>🌋 البراكين والجبال القريبة</h2>
+<div class="place">
+<div class="place-name">جونونج باتور</div>
+<div class="place-desc">الصعود عند الفجر. 1.5 ساعة من لوفينا عبر الجبال.</div>
+<div class="place-meta">📍 كينتاماني · من 400 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Munduk Waterfalls</div>
+<div class="place-desc">سلسلة من الشلالات في الغابة الجبلية. الرحلات والبرودة والطيور.</div>
+<div class="place-meta">📍موندوك · 45 دقيقة من لوفينا</div>
+</div>
+<div class="place">
+<div class="place-name">Twin Lakes (Tamblingan &amp; Buyan)</div>
+<div class="place-desc">بحيرتين جبليتين في الحفرة. باطني، في الضباب. التجديف والرحلات.</div>
+<div class="place-meta">📍منطقة بيدوغول · ساعة واحدة من لوفينا</div>
+</div>
+<h2>🌾 مصاطب الأرز القريبة</h2>
+<div class="place">
+<div class="place-name">Jatiluwih</div>
+<div class="place-desc">شرفات اليونسكو. 1.5 ساعة من لوفينا عبر الجبال. طريق مذهل!</div>
+<div class="place-meta">📍 تابانان · تسجيل الدخول 40 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">حقول أرز موندوك</div>
+<div class="place-desc">المدرجات الجبلية بدون سياح. في الطريق إلى الشلالات.</div>
+<div class="place-meta">📍موندوك · 45 دقيقة</div>
+</div>
+<h2>⛳ الجولف</h2>
+<p>لا توجد ملاعب جولف في لوفينا أو المنطقة المحيطة بها. الأقرب: <strong>Handara Golf</strong> (بيدوجول، 1.5 ساعة) - حقل جبلي.</p>
+<h2>🍓 المزارع</h2>
+<div class="place">
+<div class="place-name">Munduk Coffee Plantations</div>
+<div class="place-desc">مزارع البن في الجبال. أرابيكا، روبوستا، القرنفل. جولات مع تذوق.</div>
+<div class="place-meta">📍موندوك · 45 دقيقة من لوفينا</div>
+</div>
+<div class="place">
+<div class="place-name">Strawberry Farm Bedugul</div>
+<div class="place-desc">مزرعة الفراولة في الجبال. قطف الفراولة، الصورة.</div>
+<div class="place-meta">📍بيدوجول · 1.5 ساعة · الدخول 25 ألف</div>
+</div>
+<h2>🍉أسواق الفاكهة</h2>
+<div class="place">
+<div class="place-name">Pasar Singaraja</div>
+<div class="place-desc">أكبر سوق في شمال بالي. الفواكه والخضروات والأسماك والتوابل. حقيقي!</div>
+<div class="place-meta">📍سينغاراجا · 15 دقيقة من لوفينا · الصباح</div>
+</div>
+<h2>🛍 التسوق</h2>
+<p>لا يوجد عمليا التسوق. الهدايا التذكارية الصغيرة والعباءات والتماثيل. للتسوق: <strong>سيمينياك</strong> (3 ساعات) أو <strong>اوبود</strong> (2.5 ساعة).</p>
+<h2>🛒 محلات البقالة</h2>
+<div class="place">
+<div class="place-name">Hardy's Singaraja</div>
+<div class="place-desc">سوبر ماركت في سينجاراجا. الأساسية + بعض المنتجات المستوردة.</div>
+<div class="place-meta">📍سينجاراجا · 15 دقيقة من لوفينا</div>
+</div>
+<div class="place">
+<div class="place-name">Minimarket (Alfamart)</div>
+<div class="place-desc">متاجر صغيرة تحتوي على الإمدادات الأساسية في لوفينا نفسها.</div>
+</div>
+<h2>👕 المغاسل</h2>
+<div class="place">
+<div class="place-name">مغاسل الفنادق</div>
+<div class="place-desc">تقوم معظم بيوت الضيافة بغسل الملابس بمعدل 5-7 كيلو جرام/كجم. هناك عدد قليل من المغاسل الخاصة.</div>
+</div>
+<h2>🎉 النوادي والحياة الليلية</h2>
+<p>لا توجد حياة ليلية. العديد من الحانات على الشاطئ تغلق عند 22-23. موسيقى وارونج - موسيقى حية في المساء. إنها قرية وجميلة.</p>
+<h2>🏥 العيادات والصيدليات</h2>
+<div class="place">
+<div class="place-name">RSUD Buleleng Hospital</div>
+<div class="place-desc">المستشفى الحكومي في سينجاراجا. الطب الأساسي، ER.</div>
+<div class="place-meta">📍سينجاراجا · 15 دقيقة من لوفينا</div>
+</div>
+<div class="place">
+<div class="place-name">Kimia Farma Singaraja</div>
+<div class="place-desc">صيدلية بالأدوية الأساسية.</div>
+<div class="place-meta">📍 Singaraja</div>
+</div>
+<p>للطب الخطير: <strong>دينباسار</strong> (3 ساعات). لديك التأمين مع الإخلاء!</p>
+<h2>🛕 المعابد</h2>
+<div class="place">
+<div class="place-name">Brahma Vihara Arama</div>
+<div class="place-desc">الدير البوذي الوحيد في بالي! أسطح برتقالية، ستوبا، التأمل. الصمت.</div>
+<div class="place-meta">📍بنجار · 15 دقيقة من لوفينا · التبرع</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Ulun Danu Bratan</div>
+<div class="place-desc">المعبد الموجود على البحيرة عبارة عن منظر للبطاقة البريدية لبالي. على الطريق من لوفينا إلى الجنوب.</div>
+<div class="place-meta">📍 بيدوغول · 1.5 ساعة · الدخول 75 ألف</div>
+</div>
+<div class="place">
+<div class="place-name">Pura Beji Sangsit</div>
+<div class="place-desc">معبد هندوسي ذو منحوتات حجرية فريدة من نوعها. النمط الباليني الشمالي.</div>
+<div class="place-meta">📍 سانجسيت · 20 دقيقة · مجاناً</div>
+</div>
+<h2>🇷🇺 الجالية الروسية</h2>
+<p>لا يوجد عمليا أي روس في لوفينا. لا يوجد مجتمع منفصل. للتواصل الروسي: <strong>كانجو</strong> أو <strong>اوبود</strong>.</p>
+<h2>🎒 رياض الأطفال والمدارس</h2>
+<p>لا توجد مدارس دولية في لوفينا. توجد مدارس محلية (اللغة الإندونيسية). للعائلات الوافدة: غير مناسبة للإقامة الطويلة مع الأطفال في سن المدرسة.</p>
+<h2>📸 مواقع الصور</h2>
+<p>• الدلافين عند الفجر (من القارب)<br/>
+• الهواء باناس بنجار - الينابيع الساخنة في الغابة<br/>
+• براهما فيهارا آراما – دير بوذي<br/>
+• Twin Lakes - بحيرات جبلية في الضباب<br/>
+• شلال موندوك – شلال في الغابة<br/>
+• قوارب الصيد على الرمال السوداء<br/>
+• بورا أولون دانو براتان – معبد على البحيرة</p>
+<h2>🏠 السكن</h2>
+<table>
+<tr><th>يكتب</th><th>السعر/الشهر</th><th>أين تنظر</th></tr>
+<tr><td>غرفة / دار الضيافة</td><td>$100-200</td><td>في الموقع، الحجز</td></tr>
+<tr><td>بنغل على الشاطئ</td><td>$200-400</td><td>على الفور</td></tr>
+<tr><td>فيلا / منزل</td><td>$400-800</td><td>Airbnb، في الموقع</td></tr>
+<tr><td>فيلا فاخرة</td><td>$800-1500</td><td>Airbnb, Damai Villas</td></tr>
+</table>
+<p>لوفينا هي أرخص منطقة في بالي للإقامة الطويلة. انظر محليًا - الأسعار أقل بمقدار 2-3 مرات عبر الإنترنت.</p>
+<h2>🛵 النقل</h2>
+<p>• <strong>سكوتر:</strong> 400 ألف - 600 ألف / شهر (الطرق جيدة، لا توجد حركة مرور)<br/>
+• <strong>Grab/Gojek:</strong> لا يعمل في لوفينا<br/>
+• <strong>إلى المطار:</strong> 3-3.5 ساعات، 500-700 ك (الانتقال عبر الجبال)<br/>
+• <strong>إلى أوبود:</strong> 2.5 ساعة<br/>
+• <strong>إلى مونجوك:</strong> 45 دقيقة<br/>
+• <strong>Perama Bus:</strong> خدمة نقل مكوكية إلى أوبود، كوتو، سانور - من 100 ألف</p>
+<div class="divider"></div>
+<div class="secret">
+<div class="secret-title">🤫 سر المنطقة</div>
+<div class="secret-text">شلال سيكومبول (ساعة واحدة من لوفينا) هو أجمل شلال في بالي. يوجد نهرين في الغابة، ويقودك المرشدون المحليون إلى أسفل عبر مزارع الموز. عدد السياح قليل لأنها بعيدة عن الجنوب. يستحق كل دقيقة من الرحلة.</div>
+</div>
+<div class="warn">
+<div class="warn-title">⚠️ سلبيات</div>
+<div class="warn-text">بعيد جدًا عن كل شيء (المطار 3+ ساعات). خدمة الاتصال اللاسلكي بالإنترنت عبر تقنية واي فاي سيئة. عدد قليل من المطاعم والمحلات التجارية. لا الحياة الليلية. لا صالات رياضية. لا توجد مساحات للعمل المشترك. الشواطئ ذات الرمال السوداء (البعض لا يحبها). موسم الأمطار - الطرق عبر الجبال خطيرة. القليل من الدواء.</div>
+</div>
+<div class="divider"></div>
+<h2>💰ميزانية الشهر</h2>
+<div class="budget-grid">
+<div class="budget-card">
+<div class="budget-label">الحد الأدنى</div>
+<div class="budget-price">$300</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">مريح</div>
+<div class="budget-price">$600</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+<div class="budget-card">
+<div class="budget-label">Luxury</div>
+<div class="budget-price">$1200</div>
+<div class="budget-unit">كل شهر</div>
+</div>
+</div>
+<div class="footer-guide">@balidreamphoto · دليل مناطق بالي · 2026</div>
+</body>
+</html>
