@@ -208,13 +208,11 @@ async function fetchAllPlaces() {
     
     try {
         while (true) {
-            const res = await fetch(`${SUPABASE_URL}/places?select=*&offset=${offset}&limit=${limit}`, {
-                headers: {
-                    "apikey": SUPABASE_ANON,
-                    "Authorization": `Bearer ${SUPABASE_ANON}`
-                }
-            });
-            const data = await res.json();
+            if (!window.ALL_PLACES_EN) {
+                const r = await fetch("../places_en.json?v=" + Date.now());
+                window.ALL_PLACES_EN = await r.json();
+            }
+            const data = window.ALL_PLACES_EN.slice(offset, offset + limit);
             if (!data || data.length === 0) break;
             allPlaces = allPlaces.concat(data);
             if (data.length < limit) break;
