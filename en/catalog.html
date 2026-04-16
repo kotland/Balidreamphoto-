@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
-<title>Каталог мест</title>
+<title>Catalog мест</title>
 <link href="style.css?v=1774488851" rel="stylesheet"/>
 <script>
 window.onerror = function(msg, url, line) {
@@ -39,7 +39,7 @@ window.renderFavoritesOverlay = function() {
     let favs = JSON.parse(localStorage.getItem('bali_favorites') || '[]');
     let content = document.getElementById('favoritesContent');
     if (favs.length === 0) {
-        content.innerHTML = '<div style="text-align:center; padding:60px 20px; color:rgba(42,42,40,0.5);"><div style="font-size:40px; margin-bottom:12px; opacity:0.5;">🤍</div><div style="font-size:16px; font-weight:600; color:#2a2a28; margin-bottom:8px;">Пока ничего нет</div><div style="font-size:13px;">Нажимайте на сердечки в каталоге, чтобы собрать свой личный вишлист мест.</div></div>';
+        content.innerHTML = '<div style="text-align:center; padding:60px 20px; color:rgba(42,42,40,0.5);"><div style="font-size:40px; margin-bottom:12px; opacity:0.5;">🤍</div><div style="font-size:16px; font-weight:600; color:#2a2a28; margin-bottom:8px;">Nothing here yet</div><div style="font-size:13px;">Click the heart icons in the catalog to build your personal wishlist of places.</div></div>';
         return;
     }
     let htmlStr = '';
@@ -54,7 +54,7 @@ window.renderFavoritesOverlay = function() {
                 <div class="fav-card-title">${escapeHtml(p.name)}</div>
                 <div class="fav-card-meta">${district} · ${cat}</div>
                                 <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
-                ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Открыть на карте</a></div>` : ''}
+                ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Open on Map</a></div>` : ''}
             </div>`;
         } else {
             // Unmatched place, maybe database was updated
@@ -62,7 +62,7 @@ window.renderFavoritesOverlay = function() {
             <div class="fav-card" style="opacity: 0.5;">
                 <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(name)}">❤️</div>
                 <div class="fav-card-title">${escapeHtml(name)}</div>
-                <div class="fav-card-meta">Локация устарела</div>
+                <div class="fav-card-meta">Location outdated</div>
             </div>`;
         }
     });
@@ -77,7 +77,7 @@ window.removeFavoriteOverlay = function(btn) {
     localStorage.setItem('bali_favorites', JSON.stringify(favs));
     syncFavoritesToSupabase(favs);
     let countEl = document.getElementById('floatingFavCount');
-    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
+    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' saved';
     
     // Animate removing the card
     let card = btn.parentElement;
@@ -344,7 +344,7 @@ function getFavorites() {
     let favs = localStorage.getItem('bali_favorites');
     favs = favs ? JSON.parse(favs) : [];
     let countEl = document.getElementById('floatingFavCount');
-    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
+    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' saved';
     return favs;
 }
 
@@ -378,7 +378,7 @@ async function loadFavoritesFromSupabase() {
                 localStorage.setItem('bali_favorites', JSON.stringify(data[0].favorites));
                 // Force UI update if already rendered
                 let countEl = document.getElementById('floatingFavCount');
-                if (countEl) countEl.innerText = '❤️ ' + data[0].favorites.length + ' сохранённых';
+                if (countEl) countEl.innerText = '❤️ ' + data[0].favorites.length + ' saved';
             }
         } catch(e) { console.error("Load favs error:", e); }
     }
@@ -398,9 +398,9 @@ window.toggleFavorite = function(name, event) {
     
     let heartContainer = event.currentTarget;
     if (idx > -1) {
-        heartContainer.innerHTML = '<div style="font-size:22px;">🤍</div><div style="font-size:9px; font-weight:600; color:rgba(42,42,40,0.4); margin-top:2px;">сохранить</div>';
+        heartContainer.innerHTML = '<div style="font-size:22px;">🤍</div><div style="font-size:9px; font-weight:600; color:rgba(42,42,40,0.4); margin-top:2px;">Save</div>';
     } else {
-        heartContainer.innerHTML = '<div style="font-size:22px;">❤️</div><div style="font-size:9px; font-weight:600; color:#e83e8c; margin-top:2px;">сохранено</div>';
+        heartContainer.innerHTML = '<div style="font-size:22px;">❤️</div><div style="font-size:9px; font-weight:600; color:#e83e8c; margin-top:2px;">Saved</div>';
     }
     
     // If we are currently in Favorites view, we should re-filter
@@ -410,7 +410,7 @@ window.toggleFavorite = function(name, event) {
     
     // Update floating button count immediately
     let countEl = document.getElementById('floatingFavCount');
-    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
+    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' saved';
     
     // Also deduplicate just in case
     let uniqueFavs = [...new Set(favs)];
@@ -435,11 +435,11 @@ window.toggleShowFavorites = function() {
         
         if(btn) { btn.style.background = 'rgba(255, 182, 193, 0.2)'; btn.style.border = '1px solid #e83e8c'; }
         if(fBtn) { fBtn.style.background = '#e83e8c'; fBtn.style.color = '#fff'; }
-        if(pageTitle) { pageTitle.innerText = 'Мои сохранёнки'; pageTitle.style.color = '#e83e8c'; }
+        if(pageTitle) { pageTitle.innerText = 'My Wishlist'; pageTitle.style.color = '#e83e8c'; }
     } else {
         if(btn) { btn.style.background = 'white'; btn.style.border = '1px solid rgba(42,107,90,0.2)'; }
         if(fBtn) { fBtn.style.background = '#fff'; fBtn.style.color = '#e83e8c'; }
-        if(pageTitle) { pageTitle.innerText = 'Каталог'; pageTitle.style.color = '#2a2a28'; }
+        if(pageTitle) { pageTitle.innerText = 'Catalog'; pageTitle.style.color = '#2a2a28'; }
     }
     
     window.applyFilters();
@@ -467,7 +467,7 @@ function loadMoreCards() {
     
     let html = '';
     if (p.isTopChoice) {
-      html += '<div style="display:inline-block;background:#fff9e6;color:#b38a00;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;margin-bottom:8px;border:1px solid rgba(179,138,0,0.2)">⭐️ Выбор большинства</div>';
+      html += '<div style="display:inline-block;background:#fff9e6;color:#b38a00;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;margin-bottom:8px;border:1px solid rgba(179,138,0,0.2)">⭐️ Top Choice</div>';
     }
     
     
@@ -490,11 +490,11 @@ function loadMoreCards() {
     html += '<div class="place-desc">' + escapeHtml(p.desc) + (p.price ? ' · ' + escapeHtml(p.price) : '') + '</div>';
     
     if (p.signatureDish) {
-      html += '<div style="margin-top:12px;padding-top:12px;border-top:1px dashed rgba(0,0,0,0.1);font-size:13px;color:rgba(42,42,40,0.8)"><span style="font-weight:600">🍽 Стоит попробовать:</span> ' + escapeHtml(p.signatureDish) + '</div>';
+      html += '<div style="margin-top:12px;padding-top:12px;border-top:1px dashed rgba(0,0,0,0.1);font-size:13px;color:rgba(42,42,40,0.8)"><span style="font-weight:600">🍽 Signature Dish:</span> ' + escapeHtml(p.signatureDish) + '</div>';
     }
     
     if (p.maps) {
-      html += '<div class="place-meta" style="margin-top:12px">📍 <a href="' + escapeHtml(p.maps) + '" target="_blank" style="color:#2a6b5a;text-decoration:none;font-weight:500;">Открыть на карте</a></div>';
+      html += '<div class="place-meta" style="margin-top:12px">📍 <a href="' + escapeHtml(p.maps) + '" target="_blank" style="color:#2a6b5a;text-decoration:none;font-weight:500;">Open on Map</a></div>';
     }
     
     el.innerHTML = html;
@@ -559,7 +559,7 @@ window.renderFavoritesOverlay = function() {
     let favs = JSON.parse(localStorage.getItem('bali_favorites') || '[]');
     let content = document.getElementById('favoritesContent');
     if (favs.length === 0) {
-        content.innerHTML = '<div style="text-align:center; padding:60px 20px; color:rgba(42,42,40,0.5);"><div style="font-size:40px; margin-bottom:12px; opacity:0.5;">🤍</div><div style="font-size:16px; font-weight:600; color:#2a2a28; margin-bottom:8px;">Пока ничего нет</div><div style="font-size:13px;">Нажимайте на сердечки в каталоге, чтобы собрать свой личный вишлист мест.</div></div>';
+        content.innerHTML = '<div style="text-align:center; padding:60px 20px; color:rgba(42,42,40,0.5);"><div style="font-size:40px; margin-bottom:12px; opacity:0.5;">🤍</div><div style="font-size:16px; font-weight:600; color:#2a2a28; margin-bottom:8px;">Nothing here yet</div><div style="font-size:13px;">Click the heart icons in the catalog to build your personal wishlist of places.</div></div>';
         return;
     }
     let htmlStr = '';
@@ -574,7 +574,7 @@ window.renderFavoritesOverlay = function() {
                 <div class="fav-card-title">${escapeHtml(p.name)}</div>
                 <div class="fav-card-meta">${district} · ${cat}</div>
                                 <div class="fav-card-desc">${escapeHtml(p.desc)}</div>
-                ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Открыть на карте</a></div>` : ''}
+                ${p.maps && p.maps !== '#' && p.maps.length > 5 ? `<div style="margin-top:12px;"><a href="${escapeHtml(p.maps)}" target="_blank" style="background:rgba(42,107,90,0.1); color:#2A6B5A; font-weight:600; font-size:12px; text-decoration:none; padding:6px 12px; border-radius:8px; display:inline-block;">📍 Open on Map</a></div>` : ''}
             </div>`;
         } else {
             // Unmatched place, maybe database was updated
@@ -582,7 +582,7 @@ window.renderFavoritesOverlay = function() {
             <div class="fav-card" style="opacity: 0.5;">
                 <div class="fav-card-remove" onclick="removeFavoriteOverlay(this)" data-name="${encodeURIComponent(name)}">❤️</div>
                 <div class="fav-card-title">${escapeHtml(name)}</div>
-                <div class="fav-card-meta">Локация устарела</div>
+                <div class="fav-card-meta">Location outdated</div>
             </div>`;
         }
     });
@@ -597,7 +597,7 @@ window.removeFavoriteOverlay = function(btn) {
     localStorage.setItem('bali_favorites', JSON.stringify(favs));
     syncFavoritesToSupabase(favs);
     let countEl = document.getElementById('floatingFavCount');
-    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' сохранённых';
+    if (countEl) countEl.innerText = '❤️ ' + favs.length + ' saved';
     
     // Animate removing the card
     let card = btn.parentElement;
